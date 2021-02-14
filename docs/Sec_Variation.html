@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-02-13T21:56:19-07:00       *-->
+<!--*       on 2021-02-13T22:24:00-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -219,15 +219,15 @@ s:=\sqrt{V_S}=\sqrt{\frac{\sum (x_i-\mu)^2}{n-1}}
 <p id="p-149">Run the following code to:</p>
 <ul class="disc">
 <li id="li-104">Generates a sample of size 10 from <code class="code-inline tex2jax_ignore">L</code> above and computes the sample standard deviation.</li>
-<li id="li-105">Repeats the above 100 times.</li>
+<li id="li-105">Repeats the above 1000 times.</li>
 <li id="li-106">Plots the distribution of the above 1000 deviations, and computes the <em class="emphasis">average</em> deviation.</li>
 </ul>
 <p data-braille="continuation"><div class="sagecell-r" id="sage-31"><script type="text/x-sage">L=c(1,1,1,1,1,2,2,2,2,2,3,3,3,3,3,4,4,4,4,4,5,5,5,5,5)
 
-samp_sd = rep(NA, 100)         #creates an empty vector of length 100
+samp_sd = rep(NA, 1000)         #creates an empty vector of length 100
 
 
-for(i in 1:100){
+for(i in 1:1000){
   samp = sample(L, 10, replace=TRUE)         # obtain a sample of size 10 from the L
   samp_sd[i] = sd(samp)        # save sample sd in ith element of samp_sd
   }
@@ -237,7 +237,31 @@ hist(samp_sd)                   #plots a histogram of the sample deviations
 abline(v = m, col = "red")
 print(m)
 </script></div></p></article><article class="task exercise-like" id="task-52"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-150">These values are all <em class="emphasis">sample</em> standard deviations.  Which of the deviations computed in (a) do they most closely resemble?</p></article></article></section></div></main>
+<p id="p-150">These values are all <em class="emphasis">sample</em> standard deviations.  Which of the deviations computed in (a) do they most closely resemble?</p></article></article><article class="activity project-like" id="activity-ncbirthsdeviation"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.5.5</span><span class="period">.</span><span class="space"> </span><span class="title">Birth Weight Standard Deviation.</span>
+</h6>
+<article class="task exercise-like" id="task-53"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-151">Run the following code to display the standard deviation of the birth weight of babies from North Carolina in 2004 in pounds: <div class="sagecell-r" id="sage-32"><script type="text/x-sage">sd(ncbirths$weight)
+</script></div></p></article><article class="task exercise-like" id="task-54"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-152">Run the following code to display the histogram birth weight of babies from North Carolina in 2004 in pounds, along with the mean, plus and minus 1 standard deviation: <div class="sagecell-r" id="sage-33"><script type="text/x-sage">m=mean(ncbirths$weight)
+s=sd(ncbirths$weight)
+hist(ncbirths$weight)
+abline(v = m, col = "red")
+abline(v = m-s, col = "forestgreen")
+abline(v = m+s, col = "forestgreen")
+</script></div></p></article></article><article class="activity project-like" id="activity-ncbirthsdeviation2"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.5.6</span><span class="period">.</span><span class="space"> </span><span class="title">Standard Deviation of Variable of Choice.</span>
+</h6>
+<article class="task exercise-like" id="task-55"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-153">Fix the following code to display the standard deviation of a variable of your choosing: <div class="sagecell-r" id="sage-34"><script type="text/x-sage">sd(ncbirths$FIXME)
+</script></div></p></article><article class="task exercise-like" id="task-56"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-154">Fix the following code to display the histogram of your chosen variable, along with the mean, plus and minus 1 standard deviation: <div class="sagecell-r" id="sage-35"><script type="text/x-sage">m=mean(ncbirths$FIXME)
+s=sd(ncbirths$FIXME)
+hist(ncbirths$FIXME)
+abline(v = m, col = "red")
+abline(v = m-s, col = "forestgreen")
+abline(v = m+s, col = "forestgreen")
+</script></div></p></article></article></section></div></main>
 </div>
 </body>
 </html>

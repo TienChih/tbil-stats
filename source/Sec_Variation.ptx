@@ -206,7 +206,7 @@ relate (or not relate) to the majority of the data?
               Run the following code to:
               <ul>
                 <li>Generates a sample of size 10 from <c>L</c> above and computes the sample standard deviation.</li>
-                <li>Repeats the above 100 times.</li>
+                <li>Repeats the above 1000 times.</li>
                 <li>Plots the distribution of the above 1000 deviations, and computes the <em>average</em> deviation.</li>
 
                </ul> 
@@ -216,10 +216,10 @@ relate (or not relate) to the majority of the data?
           <input>
           L=c(1,1,1,1,1,2,2,2,2,2,3,3,3,3,3,4,4,4,4,4,5,5,5,5,5)
 
-          samp_sd = rep(NA, 100)         #creates an empty vector of length 100
+          samp_sd = rep(NA, 1000)         #creates an empty vector of length 100
 
 
-          for(i in 1:100){
+          for(i in 1:1000){
             samp = sample(L, 10, replace=TRUE)         # obtain a sample of size 10 from the L
             samp_sd[i] = sd(samp)        # save sample sd in ith element of samp_sd
             }
@@ -247,8 +247,79 @@ relate (or not relate) to the majority of the data?
 
 
 
+<activity xml:id="activity-ncbirthsdeviation">
+    <title>Birth Weight Standard Deviation</title>
+    <task>
+      <p>
+      Run the following code to display the standard deviation of the birth weight of babies from North Carolina in 2004 in pounds:
+      <sage language="r">
+          <input>
+          sd(ncbirths$weight)
+
+          </input>
+        </sage>
+      </p>
+     </task> 
+
+    <task>
+      <p>
+      Run the following code to display the histogram birth weight of babies from North Carolina in 2004 in pounds, along with the mean, plus and minus 1 standard deviation:
+      <sage language="r">
+          <input>
+          m=mean(ncbirths$weight)
+          s=sd(ncbirths$weight)
+          hist(ncbirths$weight)
+          abline(v = m, col = "red")
+          abline(v = m-s, col = "forestgreen")
+          abline(v = m+s, col = "forestgreen")
+
+          </input>
+        </sage>
+      </p>
+     </task> 
+     
 
 
+
+</activity>
+
+
+
+<activity xml:id="activity-ncbirthsdeviation2">
+    <title>Standard Deviation of Variable of Choice</title>
+    <task>
+      <p>
+      Fix the following code to display the standard deviation of a variable of your choosing:
+      <sage language="r">
+          <input>
+          sd(ncbirths$FIXME)
+
+          </input>
+        </sage>
+      </p>
+     </task> 
+
+    <task>
+      <p>
+      Fix the following code to display the histogram of your chosen variable, along with the mean, plus and minus 1 standard deviation:
+      <sage language="r">
+          <input>
+          m=mean(ncbirths$FIXME)
+          s=sd(ncbirths$FIXME)
+          hist(ncbirths$FIXME)
+          abline(v = m, col = "red")
+          abline(v = m-s, col = "forestgreen")
+          abline(v = m+s, col = "forestgreen")
+
+          </input>
+        </sage>
+      </p>
+     </task> 
+     
+
+
+
+</activity>
 
 
 
