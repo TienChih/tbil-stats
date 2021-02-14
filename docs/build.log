@@ -1,0 +1,4 @@
+Messages from application of /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/pretext/static/xsl/pretext-html.xsl:
+MBX:WARNING: There are apparent XML elements in locations that should be text only (1 times).
+MBX:WARNING: There is an apparent XML element (<xi:include>) inside an <input> element, which should only contain text.  Using an escaped "less than" ('&lt;') might be the solution, or using a CDATA section.
+             located within: "measurements-center-pizza-mean" (xml:id)

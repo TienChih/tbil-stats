@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-02-13T21:56:19-07:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Variation of Data</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-r' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
+                           linked: true,
+                           languages: ['r'],
+                           evalButtonText: 'Evaluate (R)'});
+});
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\Q}{\terminology{Question:\ }}
+\newcommand{\Sol}{\terminology{Solution:\ }}
+\newcommand{\Fisg}{\emph{Fisg}}
+\newcommand{\Iisg}{\emph{Iisg}}
+\newcommand{\Pisg}{\emph{Pisg}}
+\newcommand{\Tisg}{\emph{Tisg}}
+\newcommand{\Dom}{\emph{Dom}}
+\newcommand{\Img}{\emph{Im}}
+\DeclareMathOperator{\id}{id}
+\newcommand{\bcup}{\displaystyle\bigcup}
+\newcommand{\bcap}{\displaystyle\bigcap}
+\newcommand{\dsum}{\displaystyle\sum}
+\newcommand{\dint}{\displaystyle\int}
+\newcommand{\R}[1]{\mathbb{R}^{#1}}
+\newcommand{\C}[1]{\mathbb{C}^{#1}}
+\newcommand{\Z}[1]{\mathbb{Z}^{#1}}
+\newcommand{\K}[1]{\mathbb{K}^{#1}}
+\newcommand{\limit}[2]{\displaystyle{ \lim_{#1 \to #2}}}
+\newcommand{\TCB}[1]{\textcolor{blue}{#1}}
+\newcommand{\TCR}[1]{\textcolor{red}{#1}}
+\newcommand{\TCO}[1]{\textcolor{orange}{#1}}
+\newcommand{\TCG}[1]{\textcolor{ForestGreen}{#1}}
+\DeclareMathOperator{\Endo}{Endo}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Obj}{Obj}
+\DeclareMathOperator{\pleat}{\mathcal{P}\ell}
+\def\PX{\mathfrak{W}G}
+\def\Gph{\mathsf{Gph}}
+\def\HoGph{\mathsf{HoGph}}
+\def\into{\hookrightarrow}
+\def\con{\underline{}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Team Based Statistics</span></a></h1>
+<p class="byline">Tien Chih</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="Sec_Center.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="Chap_DataBasics.html" title="Up">Up</a><span id="nextbutton" class="next-button button toolbar-item disabled">Next</span></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="Sec_Center.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="Chap_DataBasics.html" title="Up">Up</a><span class="next-button button toolbar-item disabled">Next</span>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="author-bio-TC.html" data-scroll="author-bio-TC">Author Biography</a></li>
+<li><a href="dedication-1.html" data-scroll="dedication-1">Dedication</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_DataBasics.html" data-scroll="Chap_DataBasics"><span class="codenumber">1</span> <span class="title">Data Basics</span></a><ul>
+<li><a href="Sec_Variables.html" data-scroll="Sec_Variables">Variables</a></li>
+<li><a href="Sec_Sampling.html" data-scroll="Sec_Sampling">Sampling</a></li>
+<li><a href="Sec_Visualization.html" data-scroll="Sec_Visualization">Visualizing Data</a></li>
+<li><a href="Sec_Center.html" data-scroll="Sec_Center">Centers of Data</a></li>
+<li><a href="Sec_Variation.html" data-scroll="Sec_Variation" class="active">Variation of Data</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="Sec_Variation"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.5</span> <span class="title">Variation of Data</span>
+</h2>
+<section class="introduction" id="introduction-10">Knowing averages or center of data sets only tells part of the story.  We also should know how the data <em class="emphasis">varies</em> or <em class="emphasis">spread</em>.  As in the idea of averages,  there are different ways to approach this. <p id="p-121">Run the following code to download the ncbirths data set: <div class="sagecell-r" id="sage-30"><script type="text/x-sage">ncbirths = read.csv("https://www.openintro.org/data/csv/ncbirths.csv")
+</script></div></p>
+<p id="p-122">In 2004, the state of North Carolina released to the public a large data set containing information on births recorded in this state. This data set has been of interest to medical researchers who are studying the relation between habits and practices of expectant mothers and the birth of their children. This is a random sample of 1,000 cases from this data set.</p></section><article class="exploration project-like" id="measurement-spread-preview"><h6 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">1.5.1</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-11"><p id="p-123">Consider the data in the lists <code class="code-inline tex2jax_ignore">L1=[13, 13, 12, 10, 10, 14, 12, 11, 10, 14, 15, 10, 11, 13, 14, 14, 14, 15, 14, 11]</code> and <code class="code-inline tex2jax_ignore">L2=[19, 12, 13, 9, 15, 5, 7, 12, 9, 14, 8, 20, 19, 15, 13, 8, 14, 14, 7, 17]</code>.</p></div>
+<article class="task exercise-like" id="task-34"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-124">Show that the mean, median, and mode for the data in the first list are the same as the second list.</p></article><article class="task exercise-like" id="task-35"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-125">Draw a dot plot or histogram visualizing the data in each list. <iframe src="https://www.desmos.com/calculator/gwpku3krgv" id="interactive-7" width="600" height="600"></iframe></p></article><article class="task exercise-like" id="task-36"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-126">What does the visualization tell you about the data that the measures of center do not?</p></article></article><article class="activity project-like" id="activity-35"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.5.2</span><span class="period">.</span>
+</h6>
+<div class="introduction" id="introduction-12"><p id="p-127">Often we are interested in the <dfn class="terminology">spread</dfn> of values in a dataset. The simplest measure of spread is the <dfn class="terminology">range</dfn> of data: the difference between its largest value (its <dfn class="terminology">maximum</dfn>) and its smallest value (its <dfn class="terminology">minimum</dfn>). For example, the range of the values in \(3,3,6,7,12,12,16,19\) is \(\text{max}-\text{min}=19-3=16\text{.}\)</p></div>
+<article class="task exercise-like" id="task-37"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-128">Find the maximum, minimum, and range for the values \(9, 2, 3, 5, 3, 6, 2, 8\text{.}\)</p></article><article class="task exercise-like" id="task-38"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-129">Find the maximum, minimum, and range for the values \(5, 0, 4, 500, 2, 5, 4, 2\text{.}\)</p></article><article class="task exercise-like" id="task-39"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-130">What do you notice about the previous tasks? How does the range relate (or not relate) to the majority of the data?</p></article></article><article class="activity project-like" id="activity-derivingvariation"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.5.3</span><span class="period">.</span><span class="space"> </span><span class="title">Measuring the Spread of Data.</span>
+</h6>
+<div class="introduction" id="introduction-13"><p id="p-131">Intuitively, we likely think of the “spread” as a sort of summed distance of data points from the center of the data.  The more points are far away from the center, or the farther away they are, the more “spread” out the data is.  We will walk through a formulation of this notion.</p></div>
+<article class="task exercise-like" id="task-40"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-132">Consider the data set <code class="code-inline tex2jax_ignore">S=[1,2,3,4,5]</code>.  Compute the mean of \(S\text{,}\) \(\bar{x}=S\text{.}\)</p></article><article class="task exercise-like" id="task-41"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-133">Compute a list of differences of each data point from the mean: \([1-\bar{x}, 2-\bar{x}, 3-\bar{x}, 4-\bar{x}, 5-\bar{x} ]\text{.}\)</p></article><article class="task exercise-like" id="task-42"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-134">As a proposed measure of spread, compute a sum of all these values: \((1-\bar{x})+ (2-\bar{x})+ (3-\bar{x})+ (4-\bar{x})+ (5-\bar{x}) \text{.}\)</p></article><article class="task exercise-like" id="task-43"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-135">What do you think of the proposed measure we computed?  What, if anything, may be wrong with it?</p></article><article class="task exercise-like" id="task-44"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-136">To modify this proposed measure of spread, compute a sum of all the differences <em class="emphasis">squared</em>: \((1-\bar{x})^2+ (2-\bar{x})^2+ (3-\bar{x})^2+ (4-\bar{x})^2+ (5-\bar{x})^2 \text{.}\)  What is this change meant to fix?</p></article><article class="task exercise-like" id="task-45"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-137">What do you think of the modified measure we computed compared to what we did in (c)?</p></article><article class="task exercise-like" id="task-46"><h6 class="heading"><span class="codenumber">(g)</span></h6>
+<p id="p-138">Consider the data set <code class="code-inline tex2jax_ignore">T=[1,1,2,2,3,3,4,4,5,5]</code>.  Compute the mean of \(T, \bar{x}'\text{.}\)  Do we think \(T\) is more, less or equally spread out than \(S\text{?}\)</p></article><article class="task exercise-like" id="task-47"><h6 class="heading"><span class="codenumber">(h)</span></h6>
+<p id="p-139">Repeat the process done in (e) but for \(T\text{,}\) that is \((1-\bar{x})^2+ (1-\bar{x})^2+ (2-\bar{x})^2+(2-\bar{x})^2+ (3-\bar{x})^2+(3-\bar{x})^2+ (4-\bar{x})^2+(4-\bar{x})^2+ (5-\bar{x})^2+(5-\bar{x})^2 \text{.}\)  How does this value compare to the value found in (e)?  What is accounting for this difference?</p></article><article class="task exercise-like" id="task-48"><h6 class="heading"><span class="codenumber">(i)</span></h6>
+<p id="p-140">Repeat the process done in (e) but for \(T\text{.}\)  How does this value compare to the value found in (e)?  What is accounting for this difference?</p></article><article class="task exercise-like" id="task-49"><h6 class="heading"><span class="codenumber">(j)</span></h6>
+<p id="p-141">Divide the value found in (e) by the number of data points in \(S\) and the value found in (h) by the number of data points in \(T\text{.}\)  How do these values compare?</p></article></article><article class="definition definition-like" id="definition-13"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.5.1</span><span class="period">.</span>
+</h6>
+<ol id="p-143" class="decimal">
+<li id="li-100">The <em class="emphasis">population variance</em>  of a data set is a measure of “spread” denoted by<div class="displaymath">
+\begin{equation*}
+V_P:=\frac{\sum (x_i-\mu)^2}{n} 
+\end{equation*}
+</div>
+</li>
+<li id="li-101">A theoretically useful measure of spread with the same units as the original variable would be the <em class="emphasis">population standard deviation</em> denoted by<div class="displaymath">
+\begin{equation*}
+\sigma:=\sqrt{V_P}=\sqrt{\frac{\sum (x_i-\mu)^2}{n}} 
+\end{equation*}
+</div>
+</li>
+</ol></article><p id="p-144">Naturally, if we have a notion of a <em class="emphasis">population</em> variance or standard deviation, then we should have a notion for <em class="emphasis">sample</em> deviation or variance.</p>
+<article class="definition definition-like" id="definition-14"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.5.2</span><span class="period">.</span>
+</h6>
+<ol id="p-145" class="decimal">
+<li id="li-102">The <em class="emphasis">sample variance</em>  is  denoted by<div class="displaymath">
+\begin{equation*}
+V_S:=\frac{\sum (x_i-\mu)^2}{n-1} 
+\end{equation*}
+</div>
+</li>
+<li id="li-103">The <em class="emphasis">sample standard deviation</em> is denoted by<div class="displaymath">
+\begin{equation*}
+s:=\sqrt{V_S}=\sqrt{\frac{\sum (x_i-\mu)^2}{n-1}} 
+\end{equation*}
+</div>
+</li>
+</ol></article><article class="activity project-like" id="activity-simulatedssd"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.5.4</span><span class="period">.</span><span class="space"> </span><span class="title">Simulated Sample Standard Deviation.</span>
+</h6>
+<div class="introduction" id="introduction-14"><p id="p-146">One may wonder at this point, why compute population and sample variances or deviations differently?  here, we illustrate why.</p></div>
+<article class="task exercise-like" id="task-50"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-147">Compute the population and sample deviations for <code class="code-inline tex2jax_ignore">L=[1,1,1,1,1,2,2,2,2,2,3,3,3,3,3,4,4,4,4,4,5,5,5,5,5]</code>.</p>
+<p id="p-148"><iframe src="https://www.desmos.com/calculator/kzztoxadul" id="interactive-8" width="600" height="600"></iframe></p></article><article class="task exercise-like" id="task-51"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-149">Run the following code to:</p>
+<ul class="disc">
+<li id="li-104">Generates a sample of size 10 from <code class="code-inline tex2jax_ignore">L</code> above and computes the sample standard deviation.</li>
+<li id="li-105">Repeats the above 100 times.</li>
+<li id="li-106">Plots the distribution of the above 1000 deviations, and computes the <em class="emphasis">average</em> deviation.</li>
+</ul>
+<p data-braille="continuation"><div class="sagecell-r" id="sage-31"><script type="text/x-sage">L=c(1,1,1,1,1,2,2,2,2,2,3,3,3,3,3,4,4,4,4,4,5,5,5,5,5)
+
+samp_sd = rep(NA, 100)         #creates an empty vector of length 100
+
+
+for(i in 1:100){
+  samp = sample(L, 10, replace=TRUE)         # obtain a sample of size 10 from the L
+  samp_sd[i] = sd(samp)        # save sample sd in ith element of samp_sd
+  }
+
+m=mean(samp_sd)  
+hist(samp_sd)                   #plots a histogram of the sample deviations
+abline(v = m, col = "red")
+print(m)
+</script></div></p></article><article class="task exercise-like" id="task-52"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-150">These values are all <em class="emphasis">sample</em> standard deviations.  Which of the deviations computed in (a) do they most closely resemble?</p></article></article></section></div></main>
+</div>
+</body>
+</html>

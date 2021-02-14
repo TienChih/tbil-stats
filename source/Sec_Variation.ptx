@@ -1,0 +1,257 @@
+<section xml:id="Sec_Variation">
+
+    <title>Variation of Data</title>
+<introduction>
+    Knowing averages or center of data sets only tells part of the story.  We also should know how the data <em>varies</em> or <em>spread</em>.  As in the idea of averages,  there are different ways to approach this. 
+
+
+
+    <p>
+  Run the following code to download the ncbirths data set:
+
+  <sage language="r">
+          <input>
+            ncbirths = read.csv("https://www.openintro.org/data/csv/ncbirths.csv")
+            
+          </input>
+        </sage>
+
+</p>
+
+<p>
+  In 2004, the state of North Carolina released to the public a large data set containing information on births recorded in this state. This data set has been of interest to medical researchers who are studying the relation between habits and practices of expectant mothers and the birth of their children. This is a random sample of 1,000 cases from this data set.
+
+
+</p>
+
+</introduction>
+<exploration xml:id="measurement-spread-preview">
+        <introduction>
+            <p>
+Consider the data in the lists
+<c>L1=[13, 13, 12, 10, 10, 14, 12, 11, 10, 14, 15, 10, 11, 13, 14, 14, 14, 15, 14, 11]</c>
+and
+<c>L2=[19, 12, 13, 9, 15, 5, 7, 12, 9, 14, 8, 20, 19, 15, 13, 8, 14, 14, 7, 17]</c>.
+            </p>
+        </introduction>
+        <task>
+            <p>
+Show that the mean, median, and mode for the data in the first list are the same as the second list.
+            </p>
+        </task>
+        <task>
+            <p>
+Draw a dot plot or histogram visualizing the data in each list.
+
+  <interactive desmos="gwpku3krgv"/>
+            </p>
+        </task>
+        <task>
+            <p>
+What does the visualization tell you about the data that the measures of center do not?
+            </p>
+        </task>
+    </exploration>
+
+
+
+
+    <activity>
+        <introduction>
+            <p>
+Often we are interested in the <term>spread</term> of values in a dataset. The simplest
+measure of spread is the <term>range</term> of data: the difference between its
+largest value (its <term>maximum</term>) and its smallest value (its <term>minimum</term>).
+For example, the range of the values in
+<m>3,3,6,7,12,12,16,19</m> is <m>\text{max}-\text{min}=19-3=16</m>.
+            </p>
+        </introduction>
+        <task>
+            <p>
+Find the maximum, minimum, and range for the values
+<m>9, 2, 3, 5, 3, 6, 2, 8</m>.
+            </p>
+        </task>
+        <task>
+            <p>
+Find the maximum, minimum, and range for the values
+<m>5, 0, 4, 500, 2, 5, 4, 2</m>.
+            </p>
+        </task>
+        <task>
+            <p>
+What do you notice about the previous tasks? How does the range
+relate (or not relate) to the majority of the data?
+            </p>
+        </task>
+        
+    </activity>
+
+
+<activity xml:id="activity-derivingvariation">
+    <title>Measuring the Spread of Data</title>
+<introduction>
+    <p>Intuitively, we likely think of the <q>spread</q> as a sort of summed distance of data points from the center of the data.  The more points are far away from the center, or the farther away they are, the more <q>spread</q> out the data is.  We will walk through a formulation of this notion.</p>
+    
+</introduction>
+
+<task>
+    <p>Consider the data set <c>S=[1,2,3,4,5]</c>.  Compute the mean of <m>S</m>, <m>\bar{x}=S</m>.</p>
+</task>
+
+<task>
+    <p>Compute a list of differences of each data point from the mean: <m>[1-\bar{x}, 2-\bar{x}, 3-\bar{x}, 4-\bar{x}, 5-\bar{x} ]</m>.</p>
+</task>
+
+<task>
+    <p>As a proposed measure of spread, compute a sum of all these values: <m>(1-\bar{x})+ (2-\bar{x})+ (3-\bar{x})+ (4-\bar{x})+ (5-\bar{x}) </m>.</p>
+</task>
+
+<task>
+    <p>What do you think of the proposed measure we computed?  What, if anything, may be wrong with it? </p>
+</task>
+
+
+<task>
+    <p>To modify this proposed measure of spread, compute a sum of all the differences <em>squared</em>: <m>(1-\bar{x})^2+ (2-\bar{x})^2+ (3-\bar{x})^2+ (4-\bar{x})^2+ (5-\bar{x})^2 </m>.  What is this change meant to fix?</p>
+</task>
+
+<task>
+    <p>What do you think of the modified measure we computed compared to what we did in (c)? </p>
+</task>
+
+<task>
+    <p>Consider the data set <c>T=[1,1,2,2,3,3,4,4,5,5]</c>.  Compute the mean of <m>T, \bar{x}'</m>.  Do we think <m>T</m> is more, less or equally spread out than <m>S</m>?</p>
+</task>
+
+<task>
+    <p>Repeat the process done in (e) but for <m>T</m>, that is <m>(1-\bar{x})^2+ (1-\bar{x})^2+ (2-\bar{x})^2+(2-\bar{x})^2+ (3-\bar{x})^2+(3-\bar{x})^2+ (4-\bar{x})^2+(4-\bar{x})^2+ (5-\bar{x})^2+(5-\bar{x})^2 </m>.  How does this value compare to the value found in (e)?  What is accounting for this difference?</p>
+</task>
+
+<task>
+    <p>Repeat the process done in (e) but for <m>T</m>.  How does this value compare to the value found in (e)?  What is accounting for this difference?</p>
+</task>
+
+<task>
+    <p>Divide the value found in (e) by the number of data points in <m>S</m> and the value found in (h) by the number of data points in <m>T</m>.  How do these values compare?</p>
+</task>
+
+<p>
+  What we just computed was the <em>population variance</em> for these data sets.
+</p>
+
+</activity>
+
+
+
+
+<definition>
+  <p>
+    <ol>
+      <li> The <em> population variance</em>  of a data set is a measure of <q>spread</q> denoted by <me>V_P:=\frac{\sum (x_i-\mu)^2}{n} </me></li>
+
+      <li> A theoretically useful measure of spread with the same units as the original variable would be the <em>population standard deviation</em> denoted by  <me>\sigma:=\sqrt{V_P}=\sqrt{\frac{\sum (x_i-\mu)^2}{n}} </me></li>
+
+     </ol> 
+
+
+  </p>
+</definition>
+
+
+
+<p>
+  Naturally, if we have a notion of a <em>population</em> variance or standard deviation, then we should have a notion for <em>sample</em> deviation or variance.
+</p>
+
+
+<definition>
+  <p>
+    <ol>
+      <li> The <em> sample variance</em>  is  denoted by <me>V_S:=\frac{\sum (x_i-\mu)^2}{n-1} </me></li>
+
+      <li> The <em>sample standard deviation</em> is denoted by  <me>s:=\sqrt{V_S}=\sqrt{\frac{\sum (x_i-\mu)^2}{n-1}} </me></li>
+
+     </ol> 
+
+
+  </p>
+</definition>
+
+
+
+<activity xml:id="activity-simulatedssd">
+    <title>Simulated Sample Standard Deviation</title>
+    <introduction>
+        <p>
+          One may wonder at this point, why compute population and sample variances or deviations differently?  here, we illustrate why.
+
+        </p>
+            </introduction>
+
+
+        <task>
+            <p>
+              Compute the population and sample deviations for <c>L=[1,1,1,1,1,2,2,2,2,2,3,3,3,3,3,4,4,4,4,4,5,5,5,5,5]</c>.</p>
+              <p>
+
+              <interactive desmos="kzztoxadul"/>
+
+
+            </p>
+        </task>
+
+        <task>
+            <p>
+              Run the following code to:
+              <ul>
+                <li>Generates a sample of size 10 from <c>L</c> above and computes the sample standard deviation.</li>
+                <li>Repeats the above 100 times.</li>
+                <li>Plots the distribution of the above 1000 deviations, and computes the <em>average</em> deviation.</li>
+
+               </ul> 
+             
+
+          <sage language="r">
+          <input>
+          L=c(1,1,1,1,1,2,2,2,2,2,3,3,3,3,3,4,4,4,4,4,5,5,5,5,5)
+
+          samp_sd = rep(NA, 100)         #creates an empty vector of length 100
+
+
+          for(i in 1:100){
+            samp = sample(L, 10, replace=TRUE)         # obtain a sample of size 10 from the L
+            samp_sd[i] = sd(samp)        # save sample sd in ith element of samp_sd
+            }
+
+          m=mean(samp_sd)  
+          hist(samp_sd)                   #plots a histogram of the sample deviations
+          abline(v = m, col = "red")
+          print(m)
+
+          </input>
+          </sage>
+
+
+            </p>
+        </task>
+      
+        <task>
+          <p>
+            These values are all <em>sample</em> standard deviations.  Which of the deviations computed in (a) do they most closely resemble?
+          </p>
+        </task>
+
+</activity>
+
+
+
+
+
+
+
+
+
+
+
+</section>
