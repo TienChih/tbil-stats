@@ -25,6 +25,13 @@
 </p>
 
 </introduction>
+
+
+<subsection>
+  <title>Variance and Standard Deviation</title>
+
+
+
 <exploration xml:id="measurement-spread-preview">
         <introduction>
             <p>
@@ -287,6 +294,9 @@ relate (or not relate) to the majority of the data?
 
 <activity xml:id="activity-ncbirthsdeviation2">
     <title>Standard Deviation of Variable of Choice</title>
+    <task><p>
+      Follow this link and identify a numerical vairable whose standard deviation you wish to find. <url>https://www.openintro.org/data/index.php?data=ncbirths</url>.
+    </p></task>
     <task>
       <p>
       Fix the following code to display the standard deviation of a variable of your choosing:
@@ -321,8 +331,270 @@ relate (or not relate) to the majority of the data?
 
 </activity>
 
+</subsection>
 
 
+
+<subsection>
+  <title>Quartiles and IQR</title>
+
+<activity xml:id="activity-quartiles">
+    <title>Introducing Quartiles</title>
+<introduction>
+    <p>Consider the set of data <c>[40, 19, 33, 42, 48, 23, 13, 16, 47,  6, 32,  9, 12, 31,  4, 43, 49, 25, 37, 26]</c></p>
+    
+</introduction>
+
+<task>
+    <p>Write out this list in order and identify the median.  (Not just the value but specifically which term, or between which terms).  Label this <m>Q_2</m>.</p>
+</task>
+
+<task>
+    <p> If the median is a part of the data set, then remove it and seperate the terms before and after <m>Q_2</m> into two seperate equally sized set.</p>
+</task>
+
+<task>
+    <p> Find the median of the set of data before <m>Q_2</m>.  Call this value <m>Q_1</m>.</p>
+</task>
+
+<task>
+    <p> Find the median of the set of data after <m>Q_2</m>.  Call this value <m>Q_3</m>.</p>
+</task>
+
+<task>
+    <p> What proportion of the data is less than <m>Q_1</m>?  Between <m>Q_1</m> and <m>Q_2</m>?  Between <m>Q_2</m> and <m>Q_3</m>?  Greater than <m>Q_3</m>?</p>
+</task>
+
+<task>
+    <p> Compute the <m>IQR</m> where <me>IQR:=Q_3-Q_1.</me></p>
+</task>
+
+</activity>
+
+<definition>
+  <p>
+    The <em>First Quartile</em> usually denoted <m>Q_1</m> is a value for which 25% of the data lies below this value.  The <em>Third Quartile</em> usually denoted <m>Q_3</m> is a value for which 25% of the data lies above <m>Q_3</m>.  The <m>IQR</m> is the difference between these values, and is also a measure of <m>spread</m>.
+  </p>
+
+</definition>
+
+<remark>
+  <p>
+    Note that a quarter of the data (hence the name) falls below <m>Q_1</m>, a quarter between <m>Q_1</m> and the median <m>Q_2</m>, a quarter between <m>Q_2</m> and <m>Q_3</m> and the final quarter above <m>Q_3</m>.
+  </p>
+  </remark>
+
+  <definition>
+  <p>
+    A <em>boxplot</em> is a plot summarizing the min, max and 3 quartiles of a data set:
+  </p>
+  <figure>
+  <p>
+    <interactive desmos = "pae5y6rt2g"/>
+  </p>
+  <caption>A boxplot summarizing the findings of <xref ref="activity-quartiles"/>.  Click on the histogram button to show the data distribution.</caption>
+</figure>
+
+</definition>
+
+
+
+
+
+
+<activity xml:id="activity-outliers">
+    <title>Identifying Outliers</title>
+<introduction>
+  <p>
+    Quartiles and the <m>IQR</m> provide a useful heuristic to identify outliers to our data.  Outliers are data points that are outlandishly distinct from the rest of the data set and can potentially screw the results.
+  </p>
+    <p>Consider the set of data <c>[2,66,8,14,9,2,3,11,62,8,45,19,12,41,5,5,5,85,52,8,96,5,2,2,15,12,0,1]</c></p>
+    
+</introduction>
+
+<task>
+    <p>Identify the min, <m>Q_1</m>, median, <m>Q_3</m> and max for this data set.  This is called the <em>5 number summary</em>.</p>
+</task>
+
+<task>
+    <p> We define <em>right outliers</em> to be any data points in the set greater than <m>Q_3+1.5\cdot IQR+</m>.</p>
+    <p> We define <em>left outliers</em> to be any data points in the set less than <m>Q_1-1.5\cdot IQR</m>.</p>
+    <p>Does this set have any outliers?  What (if any) are they?</p>
+</task>
+
+<task>
+    <p> Remove the outliers from the set and recompute the min, <m>Q_1</m>, median, <m>Q_3</m> and max for the modified data set.</p>
+</task>
+
+<task>
+    <p> Plot a boxplot for the original data set.</p>
+    <p> <interactive desmos="fxqeuayamh"/></p>
+</task>
+
+<task>
+    <p>Click <c>Exclude Outliers</c>, how does this boxplot compare to what we found in (c).</p>
+</task>
+
+</activity>
+
+
+
+
+
+
+<activity xml:id="activity-ncbirthsdboxplot">
+    <title>Birth Weight Box Plot</title>
+    <task>
+      <p>
+      Run the following code to display a summary of the birth weight of babies from North Carolina in 2004 in pounds:
+      <sage language="r">
+          <input>
+          summary(ncbirths$weight)
+
+          </input>
+        </sage>
+      </p>
+     </task> 
+
+    <task>
+      <p>
+      Run the following code to display the boxplot for birth weight of babies from North Carolina in 2004 in pounds.  Note that this command automatically removed the outliers.
+      <sage language="r">
+          <input>
+          boxplot(ncbirths$weight)
+
+          </input>
+        </sage>
+      </p>
+     </task> 
+     <task>
+         <p>Look at the 5 numbers listed below the <c>$stats</c> output.  This is the 5 number summary of the data set with the outliers removed.  What are the min, <m>Q_1</m>, median, <m>Q_3</m>, max of this data with outliers removed?</p>
+     </task>
+
+
+
+</activity>
+
+
+
+
+<activity xml:id="activity-ncbirthsdboxplot2">
+    <title>Box Plot of Variable of Choice</title>
+    <task><p>
+      Follow this link and identify a numerical vairable whose box plot you wish to find. <url>https://www.openintro.org/data/index.php?data=ncbirths</url>.
+    </p></task>
+    <task>
+      <p>
+      Fix the following code to display a summary of the numerical variable of your choice:
+      <sage language="r">
+          <input>
+          summary(ncbirths$FIXME)
+
+          </input>
+        </sage>
+      </p>
+     </task> 
+
+    <task>
+      <p>
+      Fix the following code to display the boxplot the numerical variable of your choice.  Note that this command automatically removed the outliers.
+      <sage language="r">
+          <input>
+          boxplot(ncbirths$FIXME)
+
+          </input>
+        </sage>
+      </p>
+     </task> 
+     <task>
+         <p>Look at the 5 numbers listed below the <c>$stats</c> output.  This is the 5 number summary of the data set with the outliers removed.  What are the min, <m>Q_1</m>, median, <m>Q_3</m>, max of this data with outliers removed?</p>
+     </task>
+
+
+
+</activity>
+
+
+
+<activity xml:id="activity-subgroups">
+    <title>Comparing Subgroups</title>
+    <introduction>
+        <p>Box plots can be used to quickly compare the distribution of a random variable across different groups.</p>
+        
+
+    </introduction>
+
+
+    <task>
+      <p>
+      Run the following code to display a boxplots of the birth weight of babies from North Carolina in 2004 in pounds, as seperated into smoker and nonsmoker categories:
+      <sage language="r">
+          <input>
+          boxplot(ncbirths$weight~ncbirths$habit)
+
+          </input>
+        </sage>
+      </p>
+     </task> 
+
+     <task><p> What do these boxplots tell you about birth weights between smoking and nonsmoking mothers?</p></task>
+
+</activity>
+
+
+<activity xml:id="activity-subgroups">
+    <title>Comparing Subgroups of Chosen Variable</title>
+     <task><p>
+      Follow this link and identify a numerical vairable whose box plots you wish to find, and a categorical variable you wish to seperate the data by. <url>https://www.openintro.org/data/index.php?data=ncbirths</url>.
+    </p></task>
+
+
+    <task>
+      <p>
+      Fix the following code to display a boxplots of the numerical variable of your choice, as seperated by your chosen categorical variable:
+      <sage language="r">
+          <input>
+          boxplot(ncbirths$FIXME~ncbirths$FIXME)
+
+          </input>
+        </sage>
+      </p>
+     </task> 
+
+     <task><p> What does these boxplots tell you about your chosen variables?</p></task>
+
+</activity>
+
+
+
+
+<activity xml:id="activity-robustness">
+    <title>Robustness of Measurements</title>
+    <introduction>
+    <p>
+    Mean and standard deviation are typically what are used to measure centrality and spread, and have many theoritical properties which make them well suited for this purpose.  One may wonder what purpose median and <m>IQR</m> serve.  We will explore that here.
+  </p>
+    <p>Consider the set of data <c>[7,5,1,2,10,9,4,1,8,3,9,1,4,3,4]</c></p>
+    
+</introduction>
+
+<task>
+         <p>Compute the mean, and sample standard deviation, then the median and <m>IQR</m>:</p>
+         <p> <interactive desmos="nrzkxjx7oi"/></p>
+     </task>
+
+     <task>
+      <p>  Add the data point <c>100</c> to this list and recompute the mean, and sample standard deviation, then the median and <m>IQR</m>.
+      </p>
+     </task>
+
+     <task><p> Which values shifted more by adding the extremal value?  Which stayed closer to their original values?</p></task>
+
+</activity>
+
+
+
+</subsection>
 
 
 </section>
