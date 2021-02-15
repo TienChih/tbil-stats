@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-02-13T22:24:00-07:00       *-->
+<!--*       on 2021-02-14T21:03:12-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -148,7 +148,10 @@ MathJax.Hub.Config({
 </h2>
 <section class="introduction" id="introduction-10">Knowing averages or center of data sets only tells part of the story.  We also should know how the data <em class="emphasis">varies</em> or <em class="emphasis">spread</em>.  As in the idea of averages,  there are different ways to approach this. <p id="p-121">Run the following code to download the ncbirths data set: <div class="sagecell-r" id="sage-30"><script type="text/x-sage">ncbirths = read.csv("https://www.openintro.org/data/csv/ncbirths.csv")
 </script></div></p>
-<p id="p-122">In 2004, the state of North Carolina released to the public a large data set containing information on births recorded in this state. This data set has been of interest to medical researchers who are studying the relation between habits and practices of expectant mothers and the birth of their children. This is a random sample of 1,000 cases from this data set.</p></section><article class="exploration project-like" id="measurement-spread-preview"><h6 class="heading">
+<p id="p-122">In 2004, the state of North Carolina released to the public a large data set containing information on births recorded in this state. This data set has been of interest to medical researchers who are studying the relation between habits and practices of expectant mothers and the birth of their children. This is a random sample of 1,000 cases from this data set.</p></section><section class="subsection" id="subsection-6"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.5.1</span> <span class="title">Variance and Standard Deviation</span>
+</h3>
+<article class="exploration project-like" id="measurement-spread-preview"><h6 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">1.5.1</span><span class="period">.</span>
 </h6>
 <div class="introduction" id="introduction-11"><p id="p-123">Consider the data in the lists <code class="code-inline tex2jax_ignore">L1=[13, 13, 12, 10, 10, 14, 12, 11, 10, 14, 15, 10, 11, 13, 14, 14, 14, 15, 14, 11]</code> and <code class="code-inline tex2jax_ignore">L2=[19, 12, 13, 9, 15, 5, 7, 12, 9, 14, 8, 20, 19, 15, 13, 8, 14, 14, 7, 17]</code>.</p></div>
@@ -253,15 +256,102 @@ abline(v = m+s, col = "forestgreen")
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.5.6</span><span class="period">.</span><span class="space"> </span><span class="title">Standard Deviation of Variable of Choice.</span>
 </h6>
 <article class="task exercise-like" id="task-55"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-153">Fix the following code to display the standard deviation of a variable of your choosing: <div class="sagecell-r" id="sage-34"><script type="text/x-sage">sd(ncbirths$FIXME)
-</script></div></p></article><article class="task exercise-like" id="task-56"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-154">Fix the following code to display the histogram of your chosen variable, along with the mean, plus and minus 1 standard deviation: <div class="sagecell-r" id="sage-35"><script type="text/x-sage">m=mean(ncbirths$FIXME)
+<p id="p-153">Follow this link and identify a numerical vairable whose standard deviation you wish to find. <a class="external" href="" target="_blank">https://www.openintro.org/data/index.php?data=ncbirths</a>.</p></article><article class="task exercise-like" id="task-56"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-154">Fix the following code to display the standard deviation of a variable of your choosing: <div class="sagecell-r" id="sage-34"><script type="text/x-sage">sd(ncbirths$FIXME)
+</script></div></p></article><article class="task exercise-like" id="task-57"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-155">Fix the following code to display the histogram of your chosen variable, along with the mean, plus and minus 1 standard deviation: <div class="sagecell-r" id="sage-35"><script type="text/x-sage">m=mean(ncbirths$FIXME)
 s=sd(ncbirths$FIXME)
 hist(ncbirths$FIXME)
 abline(v = m, col = "red")
 abline(v = m-s, col = "forestgreen")
 abline(v = m+s, col = "forestgreen")
-</script></div></p></article></article></section></div></main>
+</script></div></p></article></article></section><section class="subsection" id="subsection-7"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.5.2</span> <span class="title">Quartiles and IQR</span>
+</h3>
+<article class="activity project-like" id="activity-quartiles"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.5.7</span><span class="period">.</span><span class="space"> </span><span class="title">Introducing Quartiles.</span>
+</h6>
+<div class="introduction" id="introduction-15"><p id="p-156">Consider the set of data <code class="code-inline tex2jax_ignore">[40, 19, 33, 42, 48, 23, 13, 16, 47,  6, 32,  9, 12, 31,  4, 43, 49, 25, 37, 26]</code></p></div>
+<article class="task exercise-like" id="task-58"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-157">Write out this list in order and identify the median.  (Not just the value but specifically which term, or between which terms).  Label this \(Q_2\text{.}\)</p></article><article class="task exercise-like" id="task-59"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-158">If the median is a part of the data set, then remove it and seperate the terms before and after \(Q_2\) into two seperate equally sized set.</p></article><article class="task exercise-like" id="task-60"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-159">Find the median of the set of data before \(Q_2\text{.}\)  Call this value \(Q_1\text{.}\)</p></article><article class="task exercise-like" id="task-61"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-160">Find the median of the set of data after \(Q_2\text{.}\)  Call this value \(Q_3\text{.}\)</p></article><article class="task exercise-like" id="task-62"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-161">What proportion of the data is less than \(Q_1\text{?}\)  Between \(Q_1\) and \(Q_2\text{?}\)  Between \(Q_2\) and \(Q_3\text{?}\)  Greater than \(Q_3\text{?}\)</p></article><article class="task exercise-like" id="task-63"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-162">Compute the \(IQR\) where</p>
+<div class="displaymath">
+\begin{equation*}
+IQR:=Q_3-Q_1.
+\end{equation*}
+</div></article></article><article class="definition definition-like" id="definition-15"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.5.3</span><span class="period">.</span>
+</h6>
+<p id="p-163">The <em class="emphasis">First Quartile</em> usually denoted \(Q_1\) is a value for which 25% of the data lies below this value.  The <em class="emphasis">Third Quartile</em> usually denoted \(Q_3\) is a value for which 25% of the data lies above \(Q_3\text{.}\)  The \(IQR\) is the difference between these values, and is also a measure of \(spread\text{.}\)</p></article><article class="remark remark-like" id="remark-2"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.5.4</span><span class="period">.</span>
+</h6>
+<p id="p-164">Note that a quarter of the data (hence the name) falls below \(Q_1\text{,}\) a quarter between \(Q_1\) and the median \(Q_2\text{,}\) a quarter between \(Q_2\) and \(Q_3\) and the final quarter above \(Q_3\text{.}\)</p></article><article class="definition definition-like" id="definition-16"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.5.5</span><span class="period">.</span>
+</h6>
+<p id="p-165">A <em class="emphasis">boxplot</em> is a plot summarizing the min, max and 3 quartiles of a data set:</p>
+<figure class="figure figure-like" id="figure-11"><p id="p-166"><iframe src="https://www.desmos.com/calculator/pae5y6rt2g" id="interactive-9" width="600" height="600"></iframe></p>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.5.6<span class="period">.</span></span><span class="space"> </span>A boxplot summarizing the findings of <a class="xref" data-knowl="./knowl/activity-quartiles.html" title="Activity 1.5.7: Introducing Quartiles">Activity 1.5.7</a>.  Click on the histogram button to show the data distribution.</figcaption></figure></article><article class="activity project-like" id="activity-outliers"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.5.8</span><span class="period">.</span><span class="space"> </span><span class="title">Identifying Outliers.</span>
+</h6>
+<div class="introduction" id="introduction-16">
+<p id="p-167">Quartiles and the \(IQR\) provide a useful heuristic to identify outliers to our data.  Outliers are data points that are outlandishly distinct from the rest of the data set and can potentially screw the results.</p>
+<p id="p-168">Consider the set of data <code class="code-inline tex2jax_ignore">[2,66,8,14,9,2,3,11,62,8,45,19,12,41,5,5,5,85,52,8,96,5,2,2,15,12,0,1]</code></p>
+</div>
+<article class="task exercise-like" id="task-64"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-169">Identify the min, \(Q_1\text{,}\) median, \(Q_3\) and max for this data set.  This is called the <em class="emphasis">5 number summary</em>.</p></article><article class="task exercise-like" id="task-65"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-170">We define <em class="emphasis">right outliers</em> to be any data points in the set greater than \(Q_3+1.5\cdot IQR+\text{.}\)</p>
+<p id="p-171">We define <em class="emphasis">left outliers</em> to be any data points in the set less than \(Q_1-1.5\cdot IQR\text{.}\)</p>
+<p id="p-172">Does this set have any outliers?  What (if any) are they?</p></article><article class="task exercise-like" id="task-66"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-173">Remove the outliers from the set and recompute the min, \(Q_1\text{,}\) median, \(Q_3\) and max for the modified data set.</p></article><article class="task exercise-like" id="task-67"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-174">Plot a boxplot for the original data set.</p>
+<p id="p-175"><iframe src="https://www.desmos.com/calculator/fxqeuayamh" id="interactive-10" width="600" height="600"></iframe></p></article><article class="task exercise-like" id="task-68"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-176">Click <code class="code-inline tex2jax_ignore">Exclude Outliers</code>, how does this boxplot compare to what we found in (c).</p></article></article><article class="activity project-like" id="activity-ncbirthsdboxplot"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.5.9</span><span class="period">.</span><span class="space"> </span><span class="title">Birth Weight Box Plot.</span>
+</h6>
+<article class="task exercise-like" id="task-69"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-177">Run the following code to display a summary of the birth weight of babies from North Carolina in 2004 in pounds: <div class="sagecell-r" id="sage-36"><script type="text/x-sage">summary(ncbirths$weight)
+</script></div></p></article><article class="task exercise-like" id="task-70"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-178">Run the following code to display the boxplot for birth weight of babies from North Carolina in 2004 in pounds.  Note that this command automatically removed the outliers. <div class="sagecell-r" id="sage-37"><script type="text/x-sage">boxplot(ncbirths$weight)
+</script></div></p></article><article class="task exercise-like" id="task-71"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-179">Look at the 5 numbers listed below the <code class="code-inline tex2jax_ignore">$stats</code> output.  This is the 5 number summary of the data set with the outliers removed.  What are the min, \(Q_1\text{,}\) median, \(Q_3\text{,}\) max of this data with outliers removed?</p></article></article><article class="activity project-like" id="activity-ncbirthsdboxplot2"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.5.10</span><span class="period">.</span><span class="space"> </span><span class="title">Box Plot of Variable of Choice.</span>
+</h6>
+<article class="task exercise-like" id="task-72"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-180">Follow this link and identify a numerical vairable whose box plot you wish to find. <a class="external" href="" target="_blank">https://www.openintro.org/data/index.php?data=ncbirths</a>.</p></article><article class="task exercise-like" id="task-73"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-181">Fix the following code to display a summary of the numerical variable of your choice: <div class="sagecell-r" id="sage-38"><script type="text/x-sage">summary(ncbirths$FIXME)
+</script></div></p></article><article class="task exercise-like" id="task-74"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-182">Fix the following code to display the boxplot the numerical variable of your choice.  Note that this command automatically removed the outliers. <div class="sagecell-r" id="sage-39"><script type="text/x-sage">boxplot(ncbirths$FIXME)
+</script></div></p></article><article class="task exercise-like" id="task-75"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-183">Look at the 5 numbers listed below the <code class="code-inline tex2jax_ignore">$stats</code> output.  This is the 5 number summary of the data set with the outliers removed.  What are the min, \(Q_1\text{,}\) median, \(Q_3\text{,}\) max of this data with outliers removed?</p></article></article><article class="activity project-like" id="activity-subgroups"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.5.11</span><span class="period">.</span><span class="space"> </span><span class="title">Comparing Subgroups.</span>
+</h6>
+<div class="introduction" id="introduction-17"><p id="p-184">Box plots can be used to quickly compare the distribution of a random variable across different groups.</p></div>
+<article class="task exercise-like" id="task-76"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-185">Run the following code to display a boxplots of the birth weight of babies from North Carolina in 2004 in pounds, as seperated into smoker and nonsmoker categories: <div class="sagecell-r" id="sage-40"><script type="text/x-sage">boxplot(ncbirths$weight~ncbirths$habit)
+</script></div></p></article><article class="task exercise-like" id="task-77"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-186">What do these boxplots tell you about birth weights between smoking and nonsmoking mothers?</p></article></article><article class="activity project-like" id="activity-subgroups"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.5.12</span><span class="period">.</span><span class="space"> </span><span class="title">Comparing Subgroups of Chosen Variable.</span>
+</h6>
+<article class="task exercise-like" id="task-78"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-187">Follow this link and identify a numerical vairable whose box plots you wish to find, and a categorical variable you wish to seperate the data by. <a class="external" href="" target="_blank">https://www.openintro.org/data/index.php?data=ncbirths</a>.</p></article><article class="task exercise-like" id="task-79"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-188">Fix the following code to display a boxplots of the numerical variable of your choice, as seperated by your chosen categorical variable: <div class="sagecell-r" id="sage-41"><script type="text/x-sage">boxplot(ncbirths$FIXME~ncbirths$FIXME)
+</script></div></p></article><article class="task exercise-like" id="task-80"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-189">What does these boxplots tell you about your chosen variables?</p></article></article><article class="activity project-like" id="activity-robustness"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.5.13</span><span class="period">.</span><span class="space"> </span><span class="title">Robustness of Measurements.</span>
+</h6>
+<div class="introduction" id="introduction-18">
+<p id="p-190">Mean and standard deviation are typically what are used to measure centrality and spread, and have many theoritical properties which make them well suited for this purpose.  One may wonder what purpose median and \(IQR\) serve.  We will explore that here.</p>
+<p id="p-191">Consider the set of data <code class="code-inline tex2jax_ignore">[7,5,1,2,10,9,4,1,8,3,9,1,4,3,4]</code></p>
+</div>
+<article class="task exercise-like" id="task-81"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-192">Compute the mean, and sample standard deviation, then the median and \(IQR\text{:}\)</p>
+<p id="p-193"><iframe src="https://www.desmos.com/calculator/nrzkxjx7oi" id="interactive-11" width="600" height="600"></iframe></p></article><article class="task exercise-like" id="task-82"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-194">Add the data point <code class="code-inline tex2jax_ignore">100</code> to this list and recompute the mean, and sample standard deviation, then the median and \(IQR\text{.}\)</p></article><article class="task exercise-like" id="task-83"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-195">Which values shifted more by adding the extremal value?  Which stayed closer to their original values?</p></article></article></section></section></div></main>
 </div>
 </body>
 </html>
