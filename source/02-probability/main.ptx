@@ -1,0 +1,14 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="Chap_Probability">
+  <title>Probability</title>
+  <introduction>
+    <p>
+      Placeholder.
+    </p>
+  </introduction>
+  <xi:include  href="Sec_Introprob.ptx"/> 
+  <xi:include  href="Sec_Conditionalprob.ptx"/> 
+
+
+
+  
+</chapter>

@@ -157,7 +157,9 @@
     </preface>  -->
 
     </frontmatter>
-    <xi:include href="./Chap_DataBasics.ptx"/>
+    <xi:include href="./01-basics/main.ptx" />
+    <xi:include href="./02-probability/main.ptx" />
+
     <!--<backmatter>
       <xi:include href="./bibliography.ptx"/>
     </backmatter>-->
