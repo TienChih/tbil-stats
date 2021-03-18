@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-03-03T19:46:33-07:00       *-->
+<!--*       on 2021-03-17T22:09:57-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -117,10 +117,10 @@ MathJax.Hub.Config({
 </div></div>
 <nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="Sec_Introprob.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="Chap_Probability.html" title="Up">Up</a><span id="nextbutton" class="next-button button toolbar-item disabled">Next</span></span></div>
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="Sec_Introprob.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="Chap_Probability.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="Sec_Bayes.html" title="Next">Next</a></span></div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="Sec_Introprob.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="Chap_Probability.html" title="Up">Up</a><span class="next-button button toolbar-item disabled">Next</span>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="Sec_Introprob.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="Chap_Probability.html" title="Up">Up</a><a class="next-button button toolbar-item" href="Sec_Bayes.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -145,6 +145,8 @@ MathJax.Hub.Config({
 <a href="Chap_Probability.html" data-scroll="Chap_Probability"><span class="codenumber">2</span> <span class="title">Probability</span></a><ul>
 <li><a href="Sec_Introprob.html" data-scroll="Sec_Introprob">Introduction to Probability</a></li>
 <li><a href="Sec_Conditionalprob.html" data-scroll="Sec_Conditionalprob" class="active">Conditional Probability</a></li>
+<li><a href="Sec_Bayes.html" data-scroll="Sec_Bayes">Bayes Theorem</a></li>
+<li><a href="Sec_RandomVariablez.html" data-scroll="Sec_RandomVariablez">Random Variables</a></li>
 </ul>
 </li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -264,69 +266,13 @@ samp=loans[index,]
 
 table(samp$grade,samp$homeownership)
 </script></div></p></article></article></section><section class="subsection" id="subsection-11"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">2.2.2</span> <span class="title">Using Conditional Probability</span>
-</h3>
-<article class="remark remark-like" id="remark-5"><h6 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.2.5</span><span class="period">.</span>
-</h6>
-<p id="p-312">Reworking <a class="xref" data-knowl="./knowl/DefinitionConditional.html" title="Definition 2.2.1">Definition 2.2.1</a> we get:</p>
-<div class="displaymath">
-\begin{align*}
-P(A|B)\amp=\frac{P(A\ \text{and} \ B)}{P(B)}\\
-P(A\ \text{and} \ B)\amp=P(A|B)P(B)
-\end{align*}
-</div></article><article class="activity project-like" id="activity-conditional-on-coffee"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.7</span><span class="period">.</span><span class="space"> </span><span class="title">Conditional Probability and Coffee.</span>
-</h6>
-<div class="introduction" id="introduction-31">
-<p id="p-313">Consider a group of coffee drinkers and select one at random.  Let \(C\) denote “selected person uses cream” and let \(S\) denote “selected person uses sugar”.  Suppose that 70% of coffee drinkers use cream (\(P(C)\)), out of coffee drinkers who use cream, 80% use sugar (\(P(S|C)\)), and out of those who do not use cream, 40% use sugar (\(P(S|C^c)\)).</p>
-<p id="p-314">Consider this was about a group of 100 coffee drinkers.</p>
-</div>
-<article class="task exercise-like" id="task-159"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-315">How many coffee drinkers in this group use cream?</p></article><article class="task exercise-like" id="task-160"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-316">How many of the cream users use sugar?</p></article><article class="task exercise-like" id="task-161"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-317">How many of the cream users do not use sugar?</p></article><article class="task exercise-like" id="task-162"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-318">How many coffee drinkers in this group do not use use cream?</p></article><article class="task exercise-like" id="task-163"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-319">How many of the non-cream users use sugar?</p></article><article class="task exercise-like" id="task-164"><h6 class="heading"><span class="codenumber">(f)</span></h6>
-<p id="p-320">How many of the non-cream users do not use sugar?</p></article><article class="task exercise-like" id="task-165"><h6 class="heading"><span class="codenumber">(g)</span></h6>
-<p id="p-321">Fill out the  Venn Diagram of coffee drinkers: <figure class="figure figure-like" id="figure-19"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-19.svg" role="img" style="width: 100%; height: auto;" alt="Test Venn Diagram."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.6<span class="period">.</span></span><span class="space"> </span>\(C\) cream, \(S\) sugar.</figcaption></figure></p></article><article class="task exercise-like" id="task-166"><h6 class="heading"><span class="codenumber">(h)</span></h6>
-<p id="p-322">How many people used sugar?</p></article><article class="task exercise-like" id="task-167"><h6 class="heading"><span class="codenumber">(i)</span></h6>
-<p id="p-323">What is \(P(S)\text{?}\)</p></article><article class="task exercise-like" id="task-168"><h6 class="heading"><span class="codenumber">(j)</span></h6>
-<p id="p-324">What is \(P(C|S)\text{?}\)</p></article><article class="task exercise-like" id="task-169"><h6 class="heading"><span class="codenumber">(k)</span></h6>
-<p id="p-325">What is \(P(C^c|S^c)\text{?}\)</p></article></article><article class="activity project-like" id="activity-coffee-simulate"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.8</span><span class="period">.</span><span class="space"> </span><span class="title">Simulating Coffee Drinkers.</span>
-</h6>
-<div class="introduction" id="introduction-32"><p id="p-326">Suppose that  a coffee drinkers has a 70% chance to use cream (\(P(C)\)), out of coffee drinkers who use cream, they have an 80% chance to use sugar (\(P(S|C)\)), and out of those who do not use cream, they have a 40% chance to use sugar (\(P(S|C^c)\)).</p></div>
-<article class="task exercise-like" id="task-170"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-327">Run the following code to simulate 100 random coffee drinkers and whether or not they use cream.</p>
-<p id="p-328"><div class="sagecell-r" id="sage-62"><script type="text/x-sage">cream = sample(c("cream", "no cream"), 100, replace = TRUE, prob = c(0.7, 0.3))
-</script></div></p></article><article class="task exercise-like" id="task-171"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-329">Run the following code to simulate the coffee drinker's sugar preference, based on if they use cream.</p>
-<p id="p-330"><div class="sagecell-r" id="sage-63"><script type="text/x-sage">sugar = rep(NA, 100)
-
-for(i in 1:100){
-  if(cream[i]=="cream"){
-    sugar[i]=sample(c("sugar", "no sugar"), 1, replace = TRUE, prob = c(0.8, 0.2))
-  }
-  else{
-    sugar[i]=sample(c("sugar", "no sugar"), 1, replace = TRUE, prob = c(0.4, 0.6))
-  }
-}
-
-sugar
-</script></div></p></article><article class="task exercise-like" id="task-172"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-331">Run the following code to show coffee drinkers preferences for cream and sugar.</p>
-<p id="p-332"><div class="sagecell-r" id="sage-64"><script type="text/x-sage">table(cream,sugar)
-</script></div></p></article><article class="task exercise-like" id="task-173"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-333">How do these values compare to what you found in <a class="xref" data-knowl="./knowl/activity-conditional-on-coffee.html" title="Activity 2.2.7: Conditional Probability and Coffee">Activity 2.2.7</a>?</p></article></article></section><section class="subsection" id="subsection-12"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">2.2.3</span> <span class="title">Independence</span>
+<span class="type">Subsection</span> <span class="codenumber">2.2.2</span> <span class="title">Independence</span>
 </h3>
 <article class="activity project-like" id="activity-doubledie"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.9</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.7</span><span class="period">.</span>
 </h6>
-<div class="introduction" id="introduction-33">
-<p id="p-334">Suppose you roll a pair of dice, a blue dice and a green dice.  Consider the possible blue-green outcomes:</p>
+<div class="introduction" id="introduction-31">
+<p id="p-312">Suppose you roll a pair of dice, a blue dice and a green dice.  Consider the possible blue-green outcomes:</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{cccccc}
@@ -341,98 +287,89 @@ sugar
 </div>
 <p data-braille="continuation">Let \(A\) denote the outcome “The blue die comes up a 5”, and \(B\) denote the outcome “The green comes up even”.</p>
 </div>
-<article class="task exercise-like" id="task-174"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-335">Which of these outcomes correspond to \(A\text{?}\)</p></article><article class="task exercise-like" id="task-175"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-336">What is \(P(A)\text{?}\)</p></article><article class="task exercise-like" id="task-176"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-337">Which of these outcomes correspond to \(B\text{?}\)</p></article><article class="task exercise-like" id="task-177"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-338">What is \(P(B)\text{?}\)</p></article><article class="task exercise-like" id="task-178"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-339">Out of the outcomes which correspond to \(B\text{,}\) which of them correspond to \(A\text{?}\)</p></article><article class="task exercise-like" id="task-179"><h6 class="heading"><span class="codenumber">(f)</span></h6>
-<p id="p-340">What is \(P(A|B)\text{?}\)</p></article><article class="task exercise-like" id="task-180"><h6 class="heading"><span class="codenumber">(g)</span></h6>
-<p id="p-341">What do you notice about \(P(A)\) compared to \(P(A|B)\text{?}\)   How does restricting to even green outcomes change (if at all) the likelihood of blue coming up a 5?</p></article></article><article class="activity project-like" id="activity-doubledie-simulate"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.10</span><span class="period">.</span><span class="space"> </span><span class="title">Simulating the double die.</span>
+<article class="task exercise-like" id="task-159"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-313">Which of these outcomes correspond to \(A\text{?}\)</p></article><article class="task exercise-like" id="task-160"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-314">What is \(P(A)\text{?}\)</p></article><article class="task exercise-like" id="task-161"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-315">Which of these outcomes correspond to \(B\text{?}\)</p></article><article class="task exercise-like" id="task-162"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-316">What is \(P(B)\text{?}\)</p></article><article class="task exercise-like" id="task-163"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-317">Out of the outcomes which correspond to \(B\text{,}\) which of them correspond to \(A\text{?}\)</p></article><article class="task exercise-like" id="task-164"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-318">What is \(P(A|B)\text{?}\)</p></article><article class="task exercise-like" id="task-165"><h6 class="heading"><span class="codenumber">(g)</span></h6>
+<p id="p-319">What do you notice about \(P(A)\) compared to \(P(A|B)\text{?}\)   How does restricting to even green outcomes change (if at all) the likelihood of blue coming up a 5?</p></article></article><article class="activity project-like" id="activity-doubledie-simulate"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.8</span><span class="period">.</span><span class="space"> </span><span class="title">Simulating the double die.</span>
 </h6>
-<div class="introduction" id="introduction-34"><p id="p-342">We simulate 100 rolls of a pair of dice.</p></div>
-<article class="task exercise-like" id="task-181"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-343">Run the following code to simulate 1000 blue die rolls and 1000 green die rolls, and show the first 10 pairs.</p>
-<p id="p-344"><div class="sagecell-r" id="sage-65"><script type="text/x-sage">bluedie = sample(1:6, 1000, replace = TRUE)
+<div class="introduction" id="introduction-32"><p id="p-320">We simulate 100 rolls of a pair of dice.</p></div>
+<article class="task exercise-like" id="task-166"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-321">Run the following code to simulate 1000 blue die rolls and 1000 green die rolls, and show the first 10 pairs.</p>
+<p id="p-322"><div class="sagecell-r" id="sage-62"><script type="text/x-sage">bluedie = sample(1:6, 1000, replace = TRUE)
 greendie = sample(1:6, 1000, replace = TRUE)
 
 doubledie=data.frame(bluedie, greendie)
 
 head(doubledie, n=10)
-</script></div></p></article><article class="task exercise-like" id="task-182"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-345">Run the following code to see how many of these rolls satisfied \(A\text{:}\) “the blue die comes up a 5”.</p>
-<p id="p-346"><div class="sagecell-r" id="sage-66"><script type="text/x-sage">length(which(doubledie$bluedie==5))
-</script></div> What proportion of the die rolls was \(A\) satisfied?</p></article><article class="task exercise-like" id="task-183"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-347">Run the following code to see how many of these rolls satisfied \(B\text{:}\) “the green die comes up even”.</p>
-<p id="p-348"><div class="sagecell-r" id="sage-67"><script type="text/x-sage">length(which(doubledie$greendie%%2==0))
-</script></div> What proportion of the die rolls was \(B\) satisfied?</p></article><article class="task exercise-like" id="task-184"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-349">Run the following code to subset out the pairs satisfying \(B\) i.e. where the green die was even, and display the first 10 rows.</p>
-<p id="p-350"><div class="sagecell-r" id="sage-68"><script type="text/x-sage">greendieeven=subset(doubledie, doubledie$greendie%%2==0)
+</script></div></p></article><article class="task exercise-like" id="task-167"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-323">Run the following code to see how many of these rolls satisfied \(A\text{:}\) “the blue die comes up a 5”.</p>
+<p id="p-324"><div class="sagecell-r" id="sage-63"><script type="text/x-sage">length(which(doubledie$bluedie==5))
+</script></div> What proportion of the die rolls was \(A\) satisfied?</p></article><article class="task exercise-like" id="task-168"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-325">Run the following code to see how many of these rolls satisfied \(B\text{:}\) “the green die comes up even”.</p>
+<p id="p-326"><div class="sagecell-r" id="sage-64"><script type="text/x-sage">length(which(doubledie$greendie%%2==0))
+</script></div> What proportion of the die rolls was \(B\) satisfied?</p></article><article class="task exercise-like" id="task-169"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-327">Run the following code to subset out the pairs satisfying \(B\) i.e. where the green die was even, and display the first 10 rows.</p>
+<p id="p-328"><div class="sagecell-r" id="sage-65"><script type="text/x-sage">greendieeven=subset(doubledie, doubledie$greendie%%2==0)
 
 head(greendieeven, n=10)
-</script></div></p></article><article class="task exercise-like" id="task-185"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-351">Run the following code to see how many of the rolls satisfying \(B\) also satisfied \(A\text{.}\)</p>
-<p id="p-352"><div class="sagecell-r" id="sage-69"><script type="text/x-sage">length(which(greendieeven$bluedie==5))
+</script></div></p></article><article class="task exercise-like" id="task-170"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-329">Run the following code to see how many of the rolls satisfying \(B\) also satisfied \(A\text{.}\)</p>
+<p id="p-330"><div class="sagecell-r" id="sage-66"><script type="text/x-sage">length(which(greendieeven$bluedie==5))
 </script></div> What proportion of the die rolls satisfying \(B\) was \(A\) also satisfied?</p></article></article><article class="definition definition-like" id="DefinitionIndependence"><h6 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.2.7</span><span class="period">.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.2.5</span><span class="period">.</span>
 </h6>
-<p id="p-353">Events \(A, B\) are <dfn class="terminology">independent</dfn> of each other if the outcome of one event does not change the probability of the other occuring.  That is</p>
+<p id="p-331">Events \(A, B\) are <dfn class="terminology">independent</dfn> of each other if the outcome of one event does not change the probability of the other occuring.  That is</p>
 <div class="displaymath">
 \begin{equation*}
 P(A|B)=P(A).
 \end{equation*}
-</div></article><article class="remark remark-like" id="remark-6"><h6 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.2.8</span><span class="period">.</span>
+</div></article><article class="remark remark-like" id="remark-5"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.2.6</span><span class="period">.</span>
 </h6>
-<p id="p-354">Events \(A, B\) are <dfn class="terminology">independent</dfn> if and only if:</p>
+<p id="p-332">Events \(A, B\) are <dfn class="terminology">independent</dfn> if and only if:</p>
 <div class="displaymath">
 \begin{align*}
 P(A|B)\amp= P(A)\\
 \frac{P(A\ \text{and}\ B)}{P(B)}\amp= P(A)\\
 P(A\ \text{and}\  B)\amp= P(A)P(B).
 \end{align*}
-</div></article><article class="remark remark-like" id="remark-7"><h6 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.2.9</span><span class="period">.</span>
+</div></article><article class="remark remark-like" id="remark-6"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.2.7</span><span class="period">.</span>
 </h6>
-<p id="p-355">We think of two events as “independent” if knowing the outcome of one event will not change how we think of the outcome of another event.</p>
-<p id="p-356">For example, “It rains today” and “I flip a coin and get a heads”.  The chance of getting that heads remains unchanged whether or not it rains!</p>
-<p id="p-357">In general, it's hard to know if two events are independent or not!  Things may seem unrelated, but share hidden connections and causes.  The world is a complicated place!</p></article><article class="activity project-like" id="activity-which-are-independent"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.11</span><span class="period">.</span><span class="space"> </span><span class="title">Which are Independent?</span>
+<p id="p-333">We think of two events as “independent” if knowing the outcome of one event will not change how we think of the outcome of another event.</p>
+<p id="p-334">For example, “It rains today” and “I flip a coin and get a heads”.  The chance of getting that heads remains unchanged whether or not it rains!</p>
+<p id="p-335">In general, it's hard to know if two events are independent or not!  Things may seem unrelated, but share hidden connections and causes.  The world is a complicated place!</p></article><article class="activity project-like" id="activity-which-are-independent"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.9</span><span class="period">.</span><span class="space"> </span><span class="title">Which are Independent?</span>
 </h6>
-<article class="task exercise-like" id="task-186"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-358">In <a class="xref" data-knowl="./knowl/rolling-die-conditional.html" title="Exploration 2.2.1">Exploration 2.2.1</a> are \(A\) and \(B\) independent?  Why or why not?</p></article><article class="task exercise-like" id="task-187"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-359">In <a class="xref" data-knowl="./knowl/activity-conditionalprobstudents.html" title="Activity 2.2.5: Conditional Probability Students">Activity 2.2.5</a> are \(R\) and \(C\) independent?  Why or why not?</p></article><article class="task exercise-like" id="task-188"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-360">In <a class="xref" data-knowl="./knowl/activity-loan-conditional.html" title="Activity 2.2.6: Conditional Probability and Loan Data">Activity 2.2.6</a> are “applicant owns a home” and “applicant recieves grade “A” loan” independent?  Why or why not?</p></article><article class="task exercise-like" id="task-189"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-361">In <a class="xref" data-knowl="./knowl/activity-conditional-on-coffee.html" title="Activity 2.2.7: Conditional Probability and Coffee">Activity 2.2.7</a> are \(C\) and \(S\) independent?  Why or why not?</p></article><article class="task exercise-like" id="task-190"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-362">In <a class="xref" data-knowl="./knowl/activity-doubledie.html" title="Activity 2.2.9">Activity 2.2.9</a> are \(A\) and \(B\) independent?  Why or why not?</p></article></article><article class="activity project-like" id="activity-which-are-independent"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.12</span><span class="period">.</span><span class="space"> </span><span class="title">Which are Independent?</span>
+<article class="task exercise-like" id="task-171"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-336">In <a class="xref" data-knowl="./knowl/rolling-die-conditional.html" title="Exploration 2.2.1">Exploration 2.2.1</a> are \(A\) and \(B\) independent?  Why or why not?</p></article><article class="task exercise-like" id="task-172"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-337">In <a class="xref" data-knowl="./knowl/activity-conditionalprobstudents.html" title="Activity 2.2.5: Conditional Probability Students">Activity 2.2.5</a> are \(R\) and \(C\) independent?  Why or why not?</p></article><article class="task exercise-like" id="task-173"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-338">In <a class="xref" data-knowl="./knowl/activity-loan-conditional.html" title="Activity 2.2.6: Conditional Probability and Loan Data">Activity 2.2.6</a> are “applicant owns a home” and “applicant recieves grade “A” loan” independent?  Why or why not?</p></article><article class="task exercise-like" id="task-174"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-339">In <a class="xref" data-knowl="./knowl/activity-doubledie.html" title="Activity 2.2.7">Activity 2.2.7</a> are \(A\) and \(B\) independent?  Why or why not?</p></article></article><article class="activity project-like" id="activity-cards1"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.10</span><span class="period">.</span><span class="space"> </span><span class="title">Cards and Independence.</span>
 </h6>
-<article class="task exercise-like" id="task-191"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-363">In <a class="xref" data-knowl="./knowl/rolling-die-conditional.html" title="Exploration 2.2.1">Exploration 2.2.1</a> are \(A\) and \(B\) independent?  Why or why not?</p></article><article class="task exercise-like" id="task-192"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-364">In <a class="xref" data-knowl="./knowl/activity-conditionalprobstudents.html" title="Activity 2.2.5: Conditional Probability Students">Activity 2.2.5</a> are \(R\) and \(C\) independent?  Why or why not?</p></article><article class="task exercise-like" id="task-193"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-365">In <a class="xref" data-knowl="./knowl/activity-loan-conditional.html" title="Activity 2.2.6: Conditional Probability and Loan Data">Activity 2.2.6</a> are “applicant owns a home” and “applicant recieves grade “A” loan” independent?  Why or why not?</p></article><article class="task exercise-like" id="task-194"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-366">In <a class="xref" data-knowl="./knowl/activity-conditional-on-coffee.html" title="Activity 2.2.7: Conditional Probability and Coffee">Activity 2.2.7</a> are \(C\) and \(S\) independent?  Why or why not?</p></article><article class="task exercise-like" id="task-195"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-367">In <a class="xref" data-knowl="./knowl/activity-doubledie.html" title="Activity 2.2.9">Activity 2.2.9</a> are \(A\) and \(B\) independent?  Why or why not?</p></article></article><article class="activity project-like" id="activity-cards1"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.13</span><span class="period">.</span><span class="space"> </span><span class="title">Cards and Independence.</span>
+<div class="introduction" id="introduction-33"><p id="p-340">Consider the standard 52 card deck, with 4 suits (Diamonds, Clubs, Hearts, Spades) and 13 values (2-10, Jack, Queen, King, Ace).  Suppose we draw one card from this deck.</p></div>
+<article class="task exercise-like" id="task-175"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-341">Suppose</p></article><article class="task exercise-like" id="task-176"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-342">What is the probability that you draw a Spade?</p></article><article class="task exercise-like" id="task-177"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-343">What is the probability that you draw an Ace?</p></article><article class="task exercise-like" id="task-178"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-344">What is the probability that you draw an Ace of Spades?</p></article><article class="task exercise-like" id="task-179"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-345">Are drawing an Ace and a Spade Independent?  Why or why not?</p></article><article class="task exercise-like" id="task-180"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-346">Suppose I draw a second card without replacement.  Is the event that this second card an Ace independent of the event that the original card were an Ace?  (Hint: Does the outcome that the first card is or is not an ace effect the outcome that the second card would be?)</p></article></article><article class="activity project-like" id="activity-cards2"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.11</span><span class="period">.</span><span class="space"> </span><span class="title">Cards and Independence part 2.</span>
 </h6>
-<div class="introduction" id="introduction-35"><p id="p-368">Consider the standard 52 card deck, with 4 suits (Diamonds, Clubs, Hearts, Spades) and 13 values (2-10, Jack, Queen, King, Ace).  Suppose we draw one card from this deck.</p></div>
-<article class="task exercise-like" id="task-196"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-369">Suppose</p></article><article class="task exercise-like" id="task-197"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-370">What is the probability that you draw a Spade?</p></article><article class="task exercise-like" id="task-198"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-371">What is the probability that you draw an Ace?</p></article><article class="task exercise-like" id="task-199"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-372">What is the probability that you draw an Ace of Spades?</p></article><article class="task exercise-like" id="task-200"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-373">Are drawing an Ace and a Spade Independent?  Why or why not?</p></article><article class="task exercise-like" id="task-201"><h6 class="heading"><span class="codenumber">(f)</span></h6>
-<p id="p-374">Suppose I draw a second card without replacement.  Is the event that this second card an Ace independent of the event that the original card were an Ace?  (Hint: Does the outcome that the first card is or is not an ace effect the outcome that the second card would be?)</p></article></article><article class="activity project-like" id="activity-cards2"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.14</span><span class="period">.</span><span class="space"> </span><span class="title">Cards and Independence part 2.</span>
-</h6>
-<div class="introduction" id="introduction-36"><p id="p-375">Consider the standard 52 card deck, with 4 suits (Diamonds, Clubs, Hearts, Spades) and 13 values (2-10, Jack, Queen, King, Ace).  Suppose we draw a card from this deck, record the value, put it back, reshuffle, and draw again.</p></div>
-<article class="task exercise-like" id="task-202"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-376">Explain using the meaning of independence (without using arithmetic) to explain why the outcomes of these draws are independent.</p></article><article class="task exercise-like" id="task-203"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-377">What is the probability the first card is a Heart?</p></article><article class="task exercise-like" id="task-204"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-378">What is the probability the second card is a Heart?</p></article><article class="task exercise-like" id="task-205"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-379">Using the fact that the draws are independent, what is the probability the cards are both Hearts?</p></article><article class="task exercise-like" id="task-206"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-380">What is the probability that the first card is a Queen and the second note a Queen?</p></article></article></section></section></div></main>
+<div class="introduction" id="introduction-34"><p id="p-347">Consider the standard 52 card deck, with 4 suits (Diamonds, Clubs, Hearts, Spades) and 13 values (2-10, Jack, Queen, King, Ace).  Suppose we draw a card from this deck, record the value, put it back, reshuffle, and draw again.</p></div>
+<article class="task exercise-like" id="task-181"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-348">Explain using the meaning of independence (without using arithmetic) to explain why the outcomes of these draws are independent.</p></article><article class="task exercise-like" id="task-182"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-349">What is the probability the first card is a Heart?</p></article><article class="task exercise-like" id="task-183"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-350">What is the probability the second card is a Heart?</p></article><article class="task exercise-like" id="task-184"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-351">Using the fact that the draws are independent, what is the probability the cards are both Hearts?</p></article><article class="task exercise-like" id="task-185"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-352">What is the probability that the first card is a Queen and the second note a Queen?</p></article></article></section></section></div></main>
 </div>
 </body>
 </html>
