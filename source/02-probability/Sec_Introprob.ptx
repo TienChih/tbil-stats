@@ -171,7 +171,7 @@ Run the following code to show a plot of 10 die rolls, and the proportion of die
        <p>
         We let <m>A\ \text{and}\ B</m> denote the event <q>both <m>A</m> and <m>B</m> occur at the same time.</q>
         <figure>
-<caption><m>A\ \text{and}\ B</m> </caption>      
+<caption><m>A\ \text{and} B</m> </caption>      
       <image>
  <description>Test Venn Diagram.</description>     
 <latex-image>
@@ -225,13 +225,13 @@ Run the following code to show a plot of 10 die rolls, and the proportion of die
 
     <task>
       <p>
-        Consider the event  <m>A\ \text{and}\ B</m>. Give a verbal description of this event.
+        Consider the event  <m>A\ \text{and} B</m>. Give a verbal description of this event.
       </p>
     </task>
 
     <task>
       <p>
-         What outcomes belong to <m>A\ \text{and}\ B</m>?
+         What outcomes belong to <m>A\ \text{and} B</m>?
       </p>
     </task>
 
@@ -263,13 +263,13 @@ Run the following code to show a plot of 10 die rolls, and the proportion of die
 
     <task>
       <p>
-        Consider the event  <m>A^c\ \text{and}\ B</m>. Give a verbal description of this event.
+        Consider the event  <m>A^c\ \text{and} B</m>. Give a verbal description of this event.
       </p>
     </task>
 
     <task>
       <p>
-         What outcomes belong to <m>A^c\ \text{and}\ B</m>?
+         What outcomes belong to <m>A^c\ \text{and} B</m>?
       </p>
     </task>
 
@@ -322,7 +322,7 @@ Run the following code to show a plot of 10 die rolls, and the proportion of die
 
     <task>
       <p>
-         What is <m>P(A\ \text{and}\ B)</m>?
+         What is <m>P(A\ \text{and} B)</m>?
       </p>
     </task>
 
@@ -372,9 +372,9 @@ Run the following code to show a plot of 10 die rolls, and the proportion of die
 
 
 
-<remark>
+<remark xml:id="remarkIE">
   <statement>
-    <p>  Given events <m>A, B</m>, we have that: <me>P(A\cup B)=P(A)+P(B)-P(A\ \text{and}\ B).</me>
+    <p>  Given events <m>A, B</m>, we have that: <me>P(A\cup B)=P(A)+P(B)-P(A\ \text{and} B).</me>
       This  corresponds to the outcomes of <m>A</m> plus the outcomes of <m>B</m>, then removing the  overlap.
     </p>
     <p>Given event <m>A</m>, we have that <m>P(A^c)=1-P(A)</m>.  This corresponds to all outcomes, removing the ones belonging to <m>A</m>.</p>
@@ -424,7 +424,7 @@ Run the following code to show a plot of 10 die rolls, and the proportion of die
      </task> 
 
      <task>
-         <p>Suppose we pick a loan at random.  Let <m>J</m> denote the event <q>joint application</q> and <m>M</m> denote <q>applicant(s) with a mortage</q>.  Find <m>P(J), P(M), P(M\ \text{and}\ J), P(M\cup J)</m> </p>
+         <p>Suppose we pick a loan at random.  Let <m>J</m> denote the event <q>joint application</q> and <m>M</m> denote <q>applicant(s) with a mortage</q>.  Find <m>P(J), P(M), P(M\ \text{and} J), P(M\cup J)</m> </p>
      </task>
 
     <task>
