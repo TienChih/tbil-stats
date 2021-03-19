@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-03-19T13:38:15-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-r' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
+                           linked: true,
+                           languages: ['r'],
+                           evalButtonText: 'Evaluate (R)'});
+});
+</script>
+</head>
+<body>
+<article class="activity project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">Bayes Theorem and Smallpox.</span>
+</h6>
+<div class="introduction">
+<p xmlns:svg="http://www.w3.org/2000/svg">We show how Bayes Theorem is applied.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Recall that there are 6224 patients in the <code class="code-inline tex2jax_ignore">smallpox</code> data set.</p>
+</div>
+<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to show how many patients were “inoculated”.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg"><div class="sagecell-r" id="sage-71"><script type="text/x-sage">length(which(smallpox$inoculated=="yes"))
+</script></div></p>
+<p xmlns:svg="http://www.w3.org/2000/svg">What is <code class="code-inline tex2jax_ignore">P(inoculated)</code>?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to subset the patients who were “inoculated”, the patients who were “not inoculated” and show how many patients were not inoculated.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg"><div class="sagecell-r" id="sage-72"><script type="text/x-sage">inocpatients=subset(smallpox, smallpox$inoculated=="yes")
+notinocpatients=subset(smallpox, smallpox$inoculated=="no")
+nrow(notinocpatients)
+</script></div></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(c)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to see how many incoulated patients died.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg"><div class="sagecell-r" id="sage-73"><script type="text/x-sage">length(which(inocpatients$result=="died"))
+</script></div></p>
+<p xmlns:svg="http://www.w3.org/2000/svg">What is <code class="code-inline tex2jax_ignore">P(died|inoculated)</code></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(d)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to see how many not incoulated patients died.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg"><div class="sagecell-r" id="sage-74"><script type="text/x-sage">length(which(notinocpatients$result=="died"))
+</script></div></p>
+<p xmlns:svg="http://www.w3.org/2000/svg">What is <code class="code-inline tex2jax_ignore">P(died|not inoculated)</code></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(e)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Use <a class="xref" data-knowl="./knowl/TheoremBayes.html" title="Theorem 2.3.6: Bayes Theorem">Theorem 2.3.6</a> to find <code class="code-inline tex2jax_ignore">P(inoculated|died)</code></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(f)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to subset the patients who  “died” and show how many patients this was.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg"><div class="sagecell-r" id="sage-75"><script type="text/x-sage">diedpatients=subset(smallpox, smallpox$result=="died")
+nrow(diedpatients)
+</script></div></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(g)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to show how many of the patients who died were inoculated.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg"><div class="sagecell-r" id="sage-76"><script type="text/x-sage">length(which(diedpatients$inoculated=="yes"))
+</script></div></p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Compute <code class="code-inline tex2jax_ignore">P(inoculated|died)</code> directly.  How does this compare to what you found in (e)?  To <code class="code-inline tex2jax_ignore">P(inoculated)</code>?</p></article></article><span class="incontext"><a href="Sec_Bayes.html#activity-smallpox-bayes">in-context</a></span>
+</body>
+</html>

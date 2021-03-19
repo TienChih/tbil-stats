@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-03-19T13:38:15-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-r' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
+                           linked: true,
+                           languages: ['r'],
+                           evalButtonText: 'Evaluate (R)'});
+});
+</script>
+</head>
+<body>
+<article class="activity project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">Breast Cancer Simulation.</span>
+</h6>
+<div class="introduction"><p xmlns:svg="http://www.w3.org/2000/svg">In Canada, 0.35% of women develop breast cancer <code class="code-inline tex2jax_ignore">P(BC)=0.0035</code>.  Of the women who have breast cancer and get tested, 89% will test positive <code class="code-inline tex2jax_ignore">P(positive|BC)=0.89</code>, and of those who do not have breast cancer, 7% will (falsely) test positive regardless. <code class="code-inline tex2jax_ignore">P(positive| not BC)=0.07</code>.</p></div>
+<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Use <a class="xref" data-knowl="./knowl/TheoremBayes.html" title="Theorem 2.3.6: Bayes Theorem">Theorem 2.3.6</a> to find the probability a woman has breast cancer if she tests positive for breast cancer (<code class="code-inline tex2jax_ignore">P(BC|positive)</code>).</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to simulate 10,000 random women receiving a breast cancer test <code class="code-inline tex2jax_ignore">BC</code> and whether or not they have breast cancer.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg"><div class="sagecell-r" id="sage-77"><script type="text/x-sage">cancer = sample(c("BC", "noBC"), 10000, replace = TRUE, prob = c(0.0035, 0.9965))
+summary(cancer)
+</script></div></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(c)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to determine if each woman tests <code class="code-inline tex2jax_ignore">positive</code> or <code class="code-inline tex2jax_ignore">negative</code>.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg"><div class="sagecell-r" id="sage-78"><script type="text/x-sage">testresult = rep(NA, 10000)
+
+for(i in 1:10000){
+  if(cancer[i]=="BC"){
+    testresult[i]=sample(c("positive", "negative"), 1, replace = TRUE, prob = c(0.89, 0.11))
+  }
+  else{
+    testresult[i]=sample(c("positive", "negative"), 1, replace = TRUE, prob = c(0.07, 0.93))
+  }
+}
+
+summary(testresult)
+</script></div></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(d)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to combine <code class="code-inline tex2jax_ignore">cancer</code> and <code class="code-inline tex2jax_ignore">testresult</code> into a single dataframe <code class="code-inline tex2jax_ignore">testsubject</code>.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg"><div class="sagecell-r" id="sage-79"><script type="text/x-sage">testsubject=data.frame(cancer, testresult)
+
+names(testsubject)
+</script></div></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(e)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to subset <code class="code-inline tex2jax_ignore">testsubject</code> who tested positive and see how many that is.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg"><div class="sagecell-r" id="sage-80"><script type="text/x-sage">testpositive=subset(testsubject, testsubject$testresult=="positive")
+
+length(testpositive$testresult)
+</script></div></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(f)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to see how many women who tested positive for breast cancer had breast cancer.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg"><div class="sagecell-r" id="sage-81"><script type="text/x-sage">testpositive=subset(testsubject, testsubject$testresult=="positive")
+
+length(which(testpositive$cancer=="BC"))
+</script></div></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(g)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Find the proportion of women who had breast cancer <em class="emphasis">out of</em> those who tested positive.  How does this value compare to what you found in (a)?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(h)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to show a contingency table for testing positive and breast cancer.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg"><div class="sagecell-r" id="sage-82"><script type="text/x-sage">counts = table(testsubject$cancer, testsubject$testresult)
+counts
+</script></div></p></article></article><span class="incontext"><a href="Sec_Bayes.html#activity-breastcancer">in-context</a></span>
+</body>
+</html>

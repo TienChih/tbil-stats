@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-03-19T13:45:01-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Bayes Theorem</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-r' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
+                           linked: true,
+                           languages: ['r'],
+                           evalButtonText: 'Evaluate (R)'});
+});
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\Q}{\terminology{Question:\ }}
+\newcommand{\Sol}{\terminology{Solution:\ }}
+\newcommand{\Fisg}{\emph{Fisg}}
+\newcommand{\Iisg}{\emph{Iisg}}
+\newcommand{\Pisg}{\emph{Pisg}}
+\newcommand{\Tisg}{\emph{Tisg}}
+\newcommand{\Dom}{\emph{Dom}}
+\newcommand{\Img}{\emph{Im}}
+\DeclareMathOperator{\id}{id}
+\newcommand{\bcup}{\displaystyle\bigcup}
+\newcommand{\bcap}{\displaystyle\bigcap}
+\newcommand{\dsum}{\displaystyle\sum}
+\newcommand{\dint}{\displaystyle\int}
+\newcommand{\R}[1]{\mathbb{R}^{#1}}
+\newcommand{\C}[1]{\mathbb{C}^{#1}}
+\newcommand{\Z}[1]{\mathbb{Z}^{#1}}
+\newcommand{\K}[1]{\mathbb{K}^{#1}}
+\newcommand{\limit}[2]{\displaystyle{ \lim_{#1 \to #2}}}
+\newcommand{\TCB}[1]{\textcolor{blue}{#1}}
+\newcommand{\TCR}[1]{\textcolor{red}{#1}}
+\newcommand{\TCO}[1]{\textcolor{orange}{#1}}
+\newcommand{\TCG}[1]{\textcolor{ForestGreen}{#1}}
+\DeclareMathOperator{\Endo}{Endo}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Obj}{Obj}
+\DeclareMathOperator{\pleat}{\mathcal{P}\ell}
+\def\PX{\mathfrak{W}G}
+\def\Gph{\mathsf{Gph}}
+\def\HoGph{\mathsf{HoGph}}
+\def\into{\hookrightarrow}
+\def\con{\underline{}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Team Based Statistics</span></a></h1>
+<p class="byline">Tien Chih</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="Sec_Conditionalprob.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="Chap_Probability.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="Sec_RandomVariables.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="Sec_Conditionalprob.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="Chap_Probability.html" title="Up">Up</a><a class="next-button button toolbar-item" href="Sec_RandomVariables.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="author-bio-TC.html" data-scroll="author-bio-TC">Author Biography</a></li>
+<li><a href="dedication-1.html" data-scroll="dedication-1">Dedication</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_DataBasics.html" data-scroll="Chap_DataBasics"><span class="codenumber">1</span> <span class="title">Data Basics</span></a><ul>
+<li><a href="Sec_Variables.html" data-scroll="Sec_Variables">Variables</a></li>
+<li><a href="Sec_Sampling.html" data-scroll="Sec_Sampling">Sampling</a></li>
+<li><a href="Sec_Visualization.html" data-scroll="Sec_Visualization">Visualizing Data</a></li>
+<li><a href="Sec_Center.html" data-scroll="Sec_Center">Centers of Data</a></li>
+<li><a href="Sec_Variation.html" data-scroll="Sec_Variation">Variation of Data</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Probability.html" data-scroll="Chap_Probability"><span class="codenumber">2</span> <span class="title">Probability</span></a><ul>
+<li><a href="Sec_Introprob.html" data-scroll="Sec_Introprob">Introduction to Probability</a></li>
+<li><a href="Sec_Conditionalprob.html" data-scroll="Sec_Conditionalprob">Conditional Probability</a></li>
+<li><a href="Sec_Bayes.html" data-scroll="Sec_Bayes" class="active">Bayes Theorem</a></li>
+<li><a href="Sec_RandomVariables.html" data-scroll="Sec_RandomVariables">Random Variables</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Distributions.html" data-scroll="Chap_Distributions"><span class="codenumber">3</span> <span class="title">Distributions</span></a><ul><li><a href="Sec_Normal.html" data-scroll="Sec_Normal">Normal Distribution</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="Sec_Bayes"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.3</span> <span class="title">Bayes Theorem</span>
+</h2>
+<section class="introduction" id="introduction-35"><p id="p-353">In <a href="Sec_Conditionalprob.html" class="internal" title="Section 2.2: Conditional Probability">Section 2.2</a> we saw that some events can change the likelihood of other events.  If we consider something like smoking and lung cancer, it's well understood that whether or not one smokes differentiates the probability that one contracts lung cancer.  Thus, we should be able to predict lung cancer rates from smoking rates, and vice versa.  We will make that formal here.</p>
+<p id="p-354">Run the following code to download the <code class="code-inline tex2jax_ignore">smallpox</code> data set, and display the variables it records: <div class="sagecell-r" id="sage-67"><script type="text/x-sage">smallpox = read.csv("https://www.openintro.org/data/csv/smallpox.csv")
+
+names(smallpox)
+</script></div></p></section><section class="subsection" id="subsection-12"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.3.1</span> <span class="title">Using Conditional Probability</span>
+</h3>
+<article class="remark remark-like" id="remarkprod"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.3.1</span><span class="period">.</span>
+</h6>
+<p id="p-355">Reworking <a class="xref" data-knowl="./knowl/DefinitionConditional.html" title="Definition 2.2.1">Definition 2.2.1</a> we get:</p>
+<div class="displaymath">
+\begin{align*}
+P(A|B)\amp=\frac{P(A\ \text{and} \ B)}{P(B)}\\
+P(A\ \text{and} \ B)\amp=P(A|B)P(B)
+\end{align*}
+</div></article><article class="activity project-like" id="activity-conditional-on-coffee"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Conditional Probability and Coffee.</span>
+</h6>
+<div class="introduction" id="introduction-36">
+<p id="p-356">Consider a group of coffee drinkers and select one at random.  Let \(C\) denote “selected person uses cream” and let \(S\) denote “selected person uses sugar”.  Suppose that 70% of coffee drinkers use cream (\(P(C)\)), out of coffee drinkers who use cream, 80% use sugar (\(P(S|C)\)), and out of those who do not use cream, 40% use sugar (\(P(S|C^c)\)).</p>
+<p id="p-357">Consider this was about a group of 100 coffee drinkers.</p>
+</div>
+<article class="task exercise-like" id="task-186"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-358">How many coffee drinkers in this group use cream?</p></article><article class="task exercise-like" id="task-187"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-359">How many of the cream users use sugar?</p></article><article class="task exercise-like" id="task-188"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-360">How many of the cream users do not use sugar?</p></article><article class="task exercise-like" id="task-189"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-361">How many coffee drinkers in this group do not use use cream?</p></article><article class="task exercise-like" id="task-190"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-362">How many of the non-cream users use sugar?</p></article><article class="task exercise-like" id="task-191"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-363">How many of the non-cream users do not use sugar?</p></article><article class="task exercise-like" id="task-192"><h6 class="heading"><span class="codenumber">(g)</span></h6>
+<p id="p-364">Fill out the  Venn Diagram of coffee drinkers: <figure class="figure figure-like" id="figure-19"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-19.svg" role="img" style="width: 100%; height: auto;" alt="Test Venn Diagram."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.2<span class="period">.</span></span><span class="space"> </span>\(C\) cream, \(S\) sugar.</figcaption></figure></p></article><article class="task exercise-like" id="task-193"><h6 class="heading"><span class="codenumber">(h)</span></h6>
+<p id="p-365">How many people used sugar?</p></article><article class="task exercise-like" id="task-194"><h6 class="heading"><span class="codenumber">(i)</span></h6>
+<p id="p-366">What is \(P(S)\text{?}\)</p></article><article class="task exercise-like" id="task-195"><h6 class="heading"><span class="codenumber">(j)</span></h6>
+<p id="p-367">What is \(P(C|S)\text{?}\)</p></article><article class="task exercise-like" id="task-196"><h6 class="heading"><span class="codenumber">(k)</span></h6>
+<p id="p-368">What is \(P(C^c|S^c)\text{?}\)</p></article></article><article class="activity project-like" id="activity-coffee-simulate"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Simulating Coffee Drinkers.</span>
+</h6>
+<div class="introduction" id="introduction-37"><p id="p-369">Suppose that  a coffee drinkers has a 70% chance to use cream (\(P(C)\)), out of coffee drinkers who use cream, they have an 80% chance to use sugar (\(P(S|C)\)), and out of those who do not use cream, they have a 40% chance to use sugar (\(P(S|C^c)\)).</p></div>
+<article class="task exercise-like" id="task-197"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-370">Run the following code to simulate 100 random coffee drinkers and whether or not they use cream.</p>
+<p id="p-371"><div class="sagecell-r" id="sage-68"><script type="text/x-sage">cream = sample(c("cream", "no cream"), 100, replace = TRUE, prob = c(0.7, 0.3))
+</script></div></p></article><article class="task exercise-like" id="task-198"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-372">Run the following code to simulate the coffee drinker's sugar preference, based on if they use cream.</p>
+<p id="p-373"><div class="sagecell-r" id="sage-69"><script type="text/x-sage">sugar = rep(NA, 100)
+
+for(i in 1:100){
+  if(cream[i]=="cream"){
+    sugar[i]=sample(c("sugar", "no sugar"), 1, replace = TRUE, prob = c(0.8, 0.2))
+  }
+  else{
+    sugar[i]=sample(c("sugar", "no sugar"), 1, replace = TRUE, prob = c(0.4, 0.6))
+  }
+}
+
+sugar
+</script></div></p></article><article class="task exercise-like" id="task-199"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-374">Run the following code to show coffee drinkers preferences for cream and sugar.</p>
+<p id="p-375"><div class="sagecell-r" id="sage-70"><script type="text/x-sage">table(cream,sugar)
+</script></div></p></article><article class="task exercise-like" id="task-200"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-376">How do these values compare to what you found in <a class="xref" data-knowl="./knowl/activity-conditional-on-coffee.html" title="Activity 2.3.1: Conditional Probability and Coffee">Activity 2.3.1</a>?</p></article></article><article class="remark remark-like" id="remarksum"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.3.3</span><span class="period">.</span>
+</h6>
+<p id="p-377">Given events \(X\) and \(Y\text{,}\) note that each event in \(X\) either satisfies \(Y\text{,}\) or doesn't.  Thus we have:</p>
+<div class="displaymath">
+\begin{equation*}
+P(X)= P(X\ \text{and}\ Y)+P(X\ \text{and}\ Y^c)
+\end{equation*}
+</div>
+<p data-braille="continuation"><figure class="figure figure-like" id="figure-20"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-20.svg" role="img" style="width: 100%; height: auto;" alt="Test Venn Diagram."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.4<span class="period">.</span></span><span class="space"> </span>Every event in \(X\) is either in \(Y\) or isn't.</figcaption></figure></p></article></section><section class="subsection" id="subsection-13"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.3.2</span> <span class="title">Bayes Theorem</span>
+</h3>
+<article class="remark remark-like" id="remark-preBayes"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.3.5</span><span class="period">.</span>
+</h6>
+<p id="p-378">Consider that given events \(A\) and \(B\text{.}\)  From <a class="xref" data-knowl="./knowl/remarksum.html" title="Remark 2.3.3">Remark 2.3.3</a> we have that:</p>
+<div class="displaymath">
+\begin{equation*}
+P(A) = P(A\ \text{and}\ B) + P(A\ \text{and}\ B^c).
+\end{equation*}
+</div>
+<p data-braille="continuation">Then from <a class="xref" data-knowl="./knowl/remarkprod.html" title="Remark 2.3.1">Remark 2.3.1</a> we get</p>
+<div class="displaymath">
+\begin{equation*}
+P(A)=P(A|B)P(B) + P(A|B^c)P(B^c).
+\end{equation*}
+</div>
+<p data-braille="continuation">Then via <a class="xref" data-knowl="./knowl/remarkIE.html" title="Remark 2.1.8">Remark 2.1.8</a></p>
+<div class="displaymath">
+\begin{equation*}
+P(A)=P(A|B)P(B) + P(A|B^c)(1-P(B)).
+\end{equation*}
+</div></article><article class="activity project-like" id="activity-conditional-on-coffee2"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Conditional Probability and Coffee revisited.</span>
+</h6>
+<div class="introduction" id="introduction-38"><p id="p-379">Recall <a class="xref" data-knowl="./knowl/activity-conditional-on-coffee.html" title="Activity 2.3.1: Conditional Probability and Coffee">Activity 2.3.1</a>  Let \(C\) denote “selected person uses cream” and let \(S\) denote “selected person uses sugar”.  Recall that out of coffee drinkers who use cream, 80% use sugar (\(P(S|C)\)), and out of those who do not use cream, 40% use sugar (\(P(S|C^c)\)).</p></div>
+<article class="task exercise-like" id="task-201"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-380">If 70% of coffee drinkers use cream (\(P(C)=0.7\)), use <a class="xref" data-knowl="./knowl/remark-preBayes.html" title="Remark 2.3.5">Remark 2.3.5</a> to show how what proportion of people use sugar (\(P(S)\)).  How does this solution compare to what you found in <a class="xref" data-knowl="./knowl/activity-conditional-on-coffee.html" title="Activity 2.3.1: Conditional Probability and Coffee">Activity 2.3.1</a>?</p></article><article class="task exercise-like" id="task-202"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-381">If 20% of coffee drinkers use cream (\(P(C)=0.2\)), use <a class="xref" data-knowl="./knowl/remark-preBayes.html" title="Remark 2.3.5">Remark 2.3.5</a> to show how what proportion of people use sugar (\(P(S)\)).</p></article><article class="task exercise-like" id="task-203"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-382">If 50% of coffee drinkers use cream (\(P(C)=0.5\)), use <a class="xref" data-knowl="./knowl/remark-preBayes.html" title="Remark 2.3.5">Remark 2.3.5</a> to show how what proportion of people use sugar (\(P(S)\)).</p></article><article class="task exercise-like" id="task-204"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-383">If 0% of coffee drinkers use cream (\(P(C)=0\)), use <a class="xref" data-knowl="./knowl/remark-preBayes.html" title="Remark 2.3.5">Remark 2.3.5</a> to show how what proportion of people use sugar (\(P(S)\)).</p></article><article class="task exercise-like" id="task-205"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-384">If 100% of coffee drinkers use cream (\(P(C)=1\)), use <a class="xref" data-knowl="./knowl/remark-preBayes.html" title="Remark 2.3.5">Remark 2.3.5</a> to show how what proportion of people use sugar (\(P(S)\)).</p></article><article class="task exercise-like" id="task-206"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-385">In the <code class="code-inline tex2jax_ignore">Desmos</code> interative below, let <code class="code-inline tex2jax_ignore">X</code> denote \(P(S)\) and \(Y\) denote \(P(C)\text{.}\)  Note that <code class="code-inline tex2jax_ignore">X_GivenY</code>\(=P(S|C)=0.8)\) and <code class="code-inline tex2jax_ignore">X_GivenNotY</code>\(=P(S|C^c)=0.4)\) are already set.  Set <code class="code-inline tex2jax_ignore">Y</code> to be equal to <code class="code-inline tex2jax_ignore">0, 0.2, 0.5, 0.7, 1</code>.  What do the visuals tell you for each setting?  How do the <code class="code-inline tex2jax_ignore">X</code> values compare to what you found above?</p>
+<p id="p-386"><iframe src="https://www.desmos.com/calculator/hjllhcppyl" id="interactive-12" width="600" height="600"></iframe></p></article></article><article class="activity project-like" id="activity-Zombie"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Zombie Apocalypse.</span>
+</h6>
+<div class="introduction" id="introduction-39">
+<p id="p-387">Suppose that during the zombie apocalypse, an anti-zombification serum is developed.  People who take the serum have a 10% chance of becoming zombies, but those who don't have an 85% chance of becoming zombies. Suppose that in a town, 60% of the residents had become zombies.</p>
+<p id="p-388">Let \(S\) denote the event “took the serum” and \(Z\) denote the event “became a zombie”.</p>
+</div>
+<article class="task exercise-like" id="task-207"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-389">“People who take the serum have a 10% chance of becoming zombies” corresponds to which of the following?</p>
+<ul class="disc">
+<li id="li-107">\(\displaystyle P(Z)\)</li>
+<li id="li-108">\(\displaystyle P(S)\)</li>
+<li id="li-109">\(\displaystyle P(Z|S)\)</li>
+<li id="li-110">\(\displaystyle P(Z\ \text{and}\ S)\)</li>
+</ul></article><article class="task exercise-like" id="task-208"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-390">“Those who don't have an 85% chance of becoming zombies” corresponds to which of the following?</p>
+<ul class="disc">
+<li id="li-111">\(\displaystyle P(Z|S^c)\)</li>
+<li id="li-112">\(\displaystyle P(S^c)\)</li>
+<li id="li-113">\(\displaystyle P(Z\ \text{and}\ S^c)\)</li>
+<li id="li-114">\(\displaystyle P(S|Z)\)</li>
+</ul></article><article class="task exercise-like" id="task-209"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-391">“60% of the residents had become zombies” corresponds to which of the following?</p>
+<ul class="disc">
+<li id="li-115">\(\displaystyle P(Z|S)\)</li>
+<li id="li-116">\(\displaystyle P(Z|S^c)\)</li>
+<li id="li-117">\(\displaystyle P(Z\ \text{or}\ )\)</li>
+<li id="li-118">\(\displaystyle P(Z)\)</li>
+</ul></article><article class="task exercise-like" id="task-210"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-392">Use what you found above and <a class="xref" data-knowl="./knowl/remark-preBayes.html" title="Remark 2.3.5">Remark 2.3.5</a> to find \(P(S)\text{.}\)</p></article><article class="task exercise-like" id="task-211"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-393">Using the <code class="code-inline tex2jax_ignore">Desmos</code> interative below, letting <code class="code-inline tex2jax_ignore">X</code> denote \(P(Z)\) and \(Y\) denote \(P(S)\text{,}\) set <code class="code-inline tex2jax_ignore">Y</code> to the appropriate value to verify that <code class="code-inline tex2jax_ignore">X</code> is 0.6.</p>
+<p id="p-394"><iframe src="https://www.desmos.com/calculator/vzgydct9ac" id="interactive-13" width="600" height="600"></iframe></p></article></article><article class="theorem theorem-like" id="TheoremBayes"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">Bayes Theorem.</span>
+</h6>
+<p id="p-395">Given events, \(A, B\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+P(B|A)=\frac{P(A|B)P(B)}{P(A|B)P(B)+P(A|B^c)(1-P(B))}
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-1"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-1"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-1"><article class="hiddenproof">Via <a class="xref" data-knowl="./knowl/remarkprod.html" title="Remark 2.3.1">Remark 2.3.1</a> amd <a class="xref" data-knowl="./knowl/remark-preBayes.html" title="Remark 2.3.5">Remark 2.3.5</a>: <div class="displaymath" id="p-396">
+\begin{align*}
+P(B|A)\amp=\frac{P(A\ \text{and}\ B)}{P(A)}\\
+\amp=\frac{P(A|B)P(B)}{P(A)}\\
+\amp=\frac{P(A|B)P(B)}{P(A|B)P(B) + P(A|B^c)(1-P(B))}
+\end{align*}
+</div></article></div>
+<article class="activity project-like" id="activity-smallpox-bayes"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">Bayes Theorem and Smallpox.</span>
+</h6>
+<div class="introduction" id="introduction-40">
+<p id="p-397">We show how Bayes Theorem is applied.</p>
+<p id="p-398">Recall that there are 6224 patients in the <code class="code-inline tex2jax_ignore">smallpox</code> data set.</p>
+</div>
+<article class="task exercise-like" id="task-212"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-399">Run the following code to show how many patients were “inoculated”.</p>
+<p id="p-400"><div class="sagecell-r" id="sage-71"><script type="text/x-sage">length(which(smallpox$inoculated=="yes"))
+</script></div></p>
+<p id="p-401">What is <code class="code-inline tex2jax_ignore">P(inoculated)</code>?</p></article><article class="task exercise-like" id="task-213"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-402">Run the following code to subset the patients who were “inoculated”, the patients who were “not inoculated” and show how many patients were not inoculated.</p>
+<p id="p-403"><div class="sagecell-r" id="sage-72"><script type="text/x-sage">inocpatients=subset(smallpox, smallpox$inoculated=="yes")
+notinocpatients=subset(smallpox, smallpox$inoculated=="no")
+nrow(notinocpatients)
+</script></div></p></article><article class="task exercise-like" id="task-214"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-404">Run the following code to see how many incoulated patients died.</p>
+<p id="p-405"><div class="sagecell-r" id="sage-73"><script type="text/x-sage">length(which(inocpatients$result=="died"))
+</script></div></p>
+<p id="p-406">What is <code class="code-inline tex2jax_ignore">P(died|inoculated)</code></p></article><article class="task exercise-like" id="task-215"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-407">Run the following code to see how many not incoulated patients died.</p>
+<p id="p-408"><div class="sagecell-r" id="sage-74"><script type="text/x-sage">length(which(notinocpatients$result=="died"))
+</script></div></p>
+<p id="p-409">What is <code class="code-inline tex2jax_ignore">P(died|not inoculated)</code></p></article><article class="task exercise-like" id="task-216"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-410">Use <a class="xref" data-knowl="./knowl/TheoremBayes.html" title="Theorem 2.3.6: Bayes Theorem">Theorem 2.3.6</a> to find <code class="code-inline tex2jax_ignore">P(inoculated|died)</code></p></article><article class="task exercise-like" id="task-217"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-411">Run the following code to subset the patients who  “died” and show how many patients this was.</p>
+<p id="p-412"><div class="sagecell-r" id="sage-75"><script type="text/x-sage">diedpatients=subset(smallpox, smallpox$result=="died")
+nrow(diedpatients)
+</script></div></p></article><article class="task exercise-like" id="task-218"><h6 class="heading"><span class="codenumber">(g)</span></h6>
+<p id="p-413">Run the following code to show how many of the patients who died were inoculated.</p>
+<p id="p-414"><div class="sagecell-r" id="sage-76"><script type="text/x-sage">length(which(diedpatients$inoculated=="yes"))
+</script></div></p>
+<p id="p-415">Compute <code class="code-inline tex2jax_ignore">P(inoculated|died)</code> directly.  How does this compare to what you found in (e)?  To <code class="code-inline tex2jax_ignore">P(inoculated)</code>?</p></article></article><article class="activity project-like" id="activity-breastcancer"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">Breast Cancer Simulation.</span>
+</h6>
+<div class="introduction" id="introduction-41"><p id="p-416">In Canada, 0.35% of women develop breast cancer <code class="code-inline tex2jax_ignore">P(BC)=0.0035</code>.  Of the women who have breast cancer and get tested, 89% will test positive <code class="code-inline tex2jax_ignore">P(positive|BC)=0.89</code>, and of those who do not have breast cancer, 7% will (falsely) test positive regardless. <code class="code-inline tex2jax_ignore">P(positive| not BC)=0.07</code>.</p></div>
+<article class="task exercise-like" id="task-219"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-417">Use <a class="xref" data-knowl="./knowl/TheoremBayes.html" title="Theorem 2.3.6: Bayes Theorem">Theorem 2.3.6</a> to find the probability a woman has breast cancer if she tests positive for breast cancer (<code class="code-inline tex2jax_ignore">P(BC|positive)</code>).</p></article><article class="task exercise-like" id="task-220"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-418">Run the following code to simulate 10,000 random women receiving a breast cancer test <code class="code-inline tex2jax_ignore">BC</code> and whether or not they have breast cancer.</p>
+<p id="p-419"><div class="sagecell-r" id="sage-77"><script type="text/x-sage">cancer = sample(c("BC", "noBC"), 10000, replace = TRUE, prob = c(0.0035, 0.9965))
+summary(cancer)
+</script></div></p></article><article class="task exercise-like" id="task-221"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-420">Run the following code to determine if each woman tests <code class="code-inline tex2jax_ignore">positive</code> or <code class="code-inline tex2jax_ignore">negative</code>.</p>
+<p id="p-421"><div class="sagecell-r" id="sage-78"><script type="text/x-sage">testresult = rep(NA, 10000)
+
+for(i in 1:10000){
+  if(cancer[i]=="BC"){
+    testresult[i]=sample(c("positive", "negative"), 1, replace = TRUE, prob = c(0.89, 0.11))
+  }
+  else{
+    testresult[i]=sample(c("positive", "negative"), 1, replace = TRUE, prob = c(0.07, 0.93))
+  }
+}
+
+summary(testresult)
+</script></div></p></article><article class="task exercise-like" id="task-222"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-422">Run the following code to combine <code class="code-inline tex2jax_ignore">cancer</code> and <code class="code-inline tex2jax_ignore">testresult</code> into a single dataframe <code class="code-inline tex2jax_ignore">testsubject</code>.</p>
+<p id="p-423"><div class="sagecell-r" id="sage-79"><script type="text/x-sage">testsubject=data.frame(cancer, testresult)
+
+names(testsubject)
+</script></div></p></article><article class="task exercise-like" id="task-223"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-424">Run the following code to subset <code class="code-inline tex2jax_ignore">testsubject</code> who tested positive and see how many that is.</p>
+<p id="p-425"><div class="sagecell-r" id="sage-80"><script type="text/x-sage">testpositive=subset(testsubject, testsubject$testresult=="positive")
+
+length(testpositive$testresult)
+</script></div></p></article><article class="task exercise-like" id="task-224"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-426">Run the following code to see how many women who tested positive for breast cancer had breast cancer.</p>
+<p id="p-427"><div class="sagecell-r" id="sage-81"><script type="text/x-sage">testpositive=subset(testsubject, testsubject$testresult=="positive")
+
+length(which(testpositive$cancer=="BC"))
+</script></div></p></article><article class="task exercise-like" id="task-225"><h6 class="heading"><span class="codenumber">(g)</span></h6>
+<p id="p-428">Find the proportion of women who had breast cancer <em class="emphasis">out of</em> those who tested positive.  How does this value compare to what you found in (a)?</p></article><article class="task exercise-like" id="task-226"><h6 class="heading"><span class="codenumber">(h)</span></h6>
+<p id="p-429">Run the following code to show a contingency table for testing positive and breast cancer.</p>
+<p id="p-430"><div class="sagecell-r" id="sage-82"><script type="text/x-sage">counts = table(testsubject$cancer, testsubject$testresult)
+counts
+</script></div></p></article></article></section></section></div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-03-19T13:44:58-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Variables</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-r' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
+                           linked: true,
+                           languages: ['r'],
+                           evalButtonText: 'Evaluate (R)'});
+});
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\Q}{\terminology{Question:\ }}
+\newcommand{\Sol}{\terminology{Solution:\ }}
+\newcommand{\Fisg}{\emph{Fisg}}
+\newcommand{\Iisg}{\emph{Iisg}}
+\newcommand{\Pisg}{\emph{Pisg}}
+\newcommand{\Tisg}{\emph{Tisg}}
+\newcommand{\Dom}{\emph{Dom}}
+\newcommand{\Img}{\emph{Im}}
+\DeclareMathOperator{\id}{id}
+\newcommand{\bcup}{\displaystyle\bigcup}
+\newcommand{\bcap}{\displaystyle\bigcap}
+\newcommand{\dsum}{\displaystyle\sum}
+\newcommand{\dint}{\displaystyle\int}
+\newcommand{\R}[1]{\mathbb{R}^{#1}}
+\newcommand{\C}[1]{\mathbb{C}^{#1}}
+\newcommand{\Z}[1]{\mathbb{Z}^{#1}}
+\newcommand{\K}[1]{\mathbb{K}^{#1}}
+\newcommand{\limit}[2]{\displaystyle{ \lim_{#1 \to #2}}}
+\newcommand{\TCB}[1]{\textcolor{blue}{#1}}
+\newcommand{\TCR}[1]{\textcolor{red}{#1}}
+\newcommand{\TCO}[1]{\textcolor{orange}{#1}}
+\newcommand{\TCG}[1]{\textcolor{ForestGreen}{#1}}
+\DeclareMathOperator{\Endo}{Endo}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Obj}{Obj}
+\DeclareMathOperator{\pleat}{\mathcal{P}\ell}
+\def\PX{\mathfrak{W}G}
+\def\Gph{\mathsf{Gph}}
+\def\HoGph{\mathsf{HoGph}}
+\def\into{\hookrightarrow}
+\def\con{\underline{}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Team Based Statistics</span></a></h1>
+<p class="byline">Tien Chih</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="Chap_DataBasics.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="Chap_DataBasics.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="Sec_Sampling.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="Chap_DataBasics.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="Chap_DataBasics.html" title="Up">Up</a><a class="next-button button toolbar-item" href="Sec_Sampling.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="author-bio-TC.html" data-scroll="author-bio-TC">Author Biography</a></li>
+<li><a href="dedication-1.html" data-scroll="dedication-1">Dedication</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_DataBasics.html" data-scroll="Chap_DataBasics"><span class="codenumber">1</span> <span class="title">Data Basics</span></a><ul>
+<li><a href="Sec_Variables.html" data-scroll="Sec_Variables" class="active">Variables</a></li>
+<li><a href="Sec_Sampling.html" data-scroll="Sec_Sampling">Sampling</a></li>
+<li><a href="Sec_Visualization.html" data-scroll="Sec_Visualization">Visualizing Data</a></li>
+<li><a href="Sec_Center.html" data-scroll="Sec_Center">Centers of Data</a></li>
+<li><a href="Sec_Variation.html" data-scroll="Sec_Variation">Variation of Data</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Probability.html" data-scroll="Chap_Probability"><span class="codenumber">2</span> <span class="title">Probability</span></a><ul>
+<li><a href="Sec_Introprob.html" data-scroll="Sec_Introprob">Introduction to Probability</a></li>
+<li><a href="Sec_Conditionalprob.html" data-scroll="Sec_Conditionalprob">Conditional Probability</a></li>
+<li><a href="Sec_Bayes.html" data-scroll="Sec_Bayes">Bayes Theorem</a></li>
+<li><a href="Sec_RandomVariables.html" data-scroll="Sec_RandomVariables">Random Variables</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Distributions.html" data-scroll="Chap_Distributions"><span class="codenumber">3</span> <span class="title">Distributions</span></a><ul><li><a href="Sec_Normal.html" data-scroll="Sec_Normal">Normal Distribution</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="Sec_Variables"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.1</span> <span class="title">Variables</span>
+</h2>
+<section class="introduction" id="introduction-2"><p id="p-8">Place Holder</p>
+<article class="activity project-like" id="activity-sleep"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">An Introductory Activity.</span>
+</h6>
+<ol id="p-9" class="decimal">
+<li id="li-1">As a class write down the average time (in hours, to the nearest half-hour) they sleep per night.</li>
+<li id="li-2">Then create a simple graph (called a dot plot) of the data.</li>
+</ol>
+<p data-braille="continuation">For example, consider the following data:</p>
+<div class="displaymath">
+\begin{equation*}
+5, 5.5, 6, 6, 6, 6.5, 6.5, 6.5, 6.5, 7, 7, 8, 8, 9
+\end{equation*}
+</div>
+<p data-braille="continuation">The dot plot for this data would be as follows: <figure class="figure figure-like" id="figure-1"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="images/DotPlot.png" style="width: 100%; height: auto;" alt="Frequency of Average Time (in Hours) Spent Sleeping per Night."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.1<span class="period">.</span></span><span class="space"> </span>Frequency of Average Time (in Hours) Spent Sleeping per Night.</figcaption></figure></p>
+<p id="p-10">Then, discuss the following questions:</p>
+<ol class="decimal">
+<li id="li-3">Does your dot plot look the same as or different from the example? Why?</li>
+<li id="li-4">If you did the same exercise in an English class with the same number of students, do you think the results would be the same? Why or why not?</li>
+<li id="li-5">Where do your data appear to cluster? How could you interpret the clustering?</li>
+<li id="li-6">What could we say about the Average Sleeping time of other students at your school?  Would it matter if they were taking Statistics?  Why or why not?</li>
+<li id="li-7">What are some reasons one may doubt the conclusions you've reached?</li>
+</ol></article><p id="p-11">Congratulations!  You're on your way to becoming a Statistician.</p>
+<article class="definition definition-like" id="definition-1"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.2</span><span class="period">.</span>
+</h6>
+<ul id="p-12" class="disc">
+<li id="li-8">
+<em class="emphasis">Descriptive Statsitics</em> is the organization and summary of data.</li>
+<li id="li-9">
+<em class="emphasis">Inferential Statistics</em> is using data to infer conclusions, and assesing the relative confidence we can state those conclusions</li>
+</ul></article></section><section class="subsection" id="subsection-1"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.1.1</span> <span class="title">Types of Variables</span>
+</h3>\<p id="p-13">When we do either descriptive or inferential statistics, we are describing or infering properties of <em class="emphasis">variables</em>.  Variables come in two types, each with two subcategories.</p>
+<article class="definition definition-like" id="definition-2"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="period">.</span>
+</h6>
+<ul class="disc">
+<li id="li-10">
+<p id="p-14"><em class="emphasis">Numerical</em> variables are variables who's values are representable as numbers which can meaningfully be summed, subtracted or averaged.</p>
+<ul class="circle">
+<li id="li-11">
+<em class="emphasis">Discrete</em> variables have values spaced out by regular units, typically whole number value.</li>
+<li id="li-12">
+<em class="emphasis">Continuous</em> variables have values where number between values are also potential values.</li>
+</ul>
+</li>
+<li id="li-13">
+<p id="p-15"><em class="emphasis">Categorical</em> variables have values that are categories rather than numerical.</p>
+<ul class="circle">
+<li id="li-14">
+<em class="emphasis">Ordinal</em> variables have values which have a natural ranking.</li>
+<li id="li-15">
+<em class="emphasis">Nominal</em> variables do not exhibit a natural ranking.</li>
+</ul>
+</li>
+</ul></article><article class="activity project-like" id="activity-variables"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Classifying Variables.</span>
+</h6>
+<p id="p-16">For each of the following, classify the variable type and subcategory.</p>
+<ol class="decimal">
+<li id="li-16">The colors of crayons in a 24-crayon box.</li>
+<li id="li-17">Student ID Numbers.</li>
+<li id="li-18">Grade Point Averages.</li>
+<li id="li-19">Pounds of fish caught on a fishing trip.</li>
+<li id="li-20">Number of fish caught on a fishing trip.</li>
+<li id="li-21">Year of Birth.</li>
+<li id="li-22">Annual income in dollars.</li>
+<li id="li-23">A satisfaction survey of a social website by number: 1 = very satisfied, 2 = somewhat satisfied, 3 = not satisfied.</li>
+</ol>
+<p data-braille="continuation">Then, for each of the four subcategories, come up with two additional examples.</p></article><article class="activity project-like" id="activity-variablesR"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Classifying Variables from a Data Set.</span>
+</h6>
+<ol id="p-17" class="decimal">
+<li id="li-24"><p id="p-18">Run the following code to download the Heart Transplant data and to display it. <div class="sagecell-r" id="sage-1"><script type="text/x-sage">heart_transplant = read.csv("https://www.openintro.org/data/csv/heart_transplant.csv")
+heart_transplant
+</script></div></p></li>
+<li id="li-25">
+<p id="p-19">Run names(heart_transplant) to see just the variable names. <div class="sagecell-r" id="sage-2"><script type="text/x-sage">names(heart_transplant)
+</script></div> The meaning of these variables are:</p>
+<ul class="disc">
+<li id="li-26">id - ID number of the patient.</li>
+<li id="li-27">acceptyear - Year of acceptance as a heart transplant candidate.</li>
+<li id="li-28">age - Age of the patient at the beginning of the study.</li>
+<li id="li-29">survived - Survival status with levels alive and dead.</li>
+<li id="li-30">survtime - Number of days patients were alive after the date they were determined to be a candidate for a heart transplant until the termination date of the study</li>
+<li id="li-31">prior - Whether or not the patient had prior surgery with levels yes and no.</li>
+<li id="li-32">transplant - Transplant status with levels control (did not receive a transplant) and treatment (received a transplant).</li>
+<li id="li-33">wait - Waiting Time for Transplant</li>
+</ul>
+</li>
+<li id="li-34">For each variable in this data set, which type and subcategory is it?</li>
+</ol></article></section><section class="subsection" id="subsection-2"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.1.2</span> <span class="title">Relationships Between Variables</span>
+</h3>
+<p id="p-20">Much of data analysis is centered on not one, but two or more variables at the same time, to observe any relationships (or lack thereof) between variables.</p>
+<p id="p-21">To facilitate this, we often plot pairs of numerical varaibles as <em class="emphasis">scatterplots</em> where the \(x\) and \(y\) coordinates are each different numerical variables.  When then look for patterns in the resulting plot.</p>
+<article class="activity project-like" id="activity-4"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.1.4</span><span class="period">.</span>
+</h6>
+<p id="p-22">Consider the following figure comparing change in County's population compared to their median household income. <figure class="figure figure-like" id="figure-2"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="images/popincome.svg" role="img" style="width: 100%; height: auto;" alt="Change in popultation vs change in per capita income"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.4<span class="period">.</span></span><span class="space"> </span>Change in population of a county versus  median household income of the same county.  Owsley County of Kentucky, is highlighted, which lost 3.63% of its population from 2010 to 2017 and had median household income of $22,736.</figcaption></figure></p>
+<ol class="decimal">
+<li id="li-35">Does there seem to be a positive, negative, or no relationship between the change in population and the median household income?</li>
+<li id="li-36">Is this relationship (if any) strong or weak?</li>
+<li id="li-37">What might account for this relationship, or lack of relationship?</li>
+</ol></article><p id="p-23">A relationship between variables of this sort is often referred to as <em class="emphasis">correlation</em>.</p>
+<article class="activity project-like" id="activity-5"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.1.5</span><span class="period">.</span>
+</h6>
+<p id="p-24">Consider the following figure comparing the percentage of housing in a County that is multi-unit compared to home ownership rates in those Counties. <figure class="figure figure-like" id="figure-3"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="images/multiunitsVsOwnership.svg" role="img" style="width: 100%; height: auto;" alt="Multi Unit vs Ownership"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.5<span class="period">.</span></span><span class="space"> </span>Home ownership rates versus  percentage of housing that is multi-unit in the same county.  The highlighted dot represents Chattahoochee County, Georgia, which has a multi-unit rate of 39.4% and a homeownership rate of 31.3%.</figcaption></figure></p>
+<ol class="decimal">
+<li id="li-38">Does there seem to be a positive, negative, or no relationship between the percentage of housing that is multi-unit and the home ownership rate?</li>
+<li id="li-39">Is this relationship (if any) strong or weak?</li>
+<li id="li-40">What might account for this relationship, or lack of relationship?</li>
+</ol></article><article class="activity project-like" id="activity-6"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.1.6</span><span class="period">.</span>
+</h6>
+<p id="p-25">Recall the Heart Transplant Data from <a class="xref" data-knowl="./knowl/activity-variablesR.html" title="Activity 1.1.3: Classifying Variables from a Data Set">Activity 1.1.3</a> Run the following code to plot the age of a patient at the start of the study compared to number of days the patient survived over the course of the study. <div class="sagecell-r" id="sage-3"><script type="text/x-sage">         plot(heart_transplant$age, heart_transplant$survtime, main="Age of Patient vs Days Survived",
+xlab="Age of Patient ", ylab="Days Survived ", pch=19)
+</script></div></p>
+<ol class="decimal">
+<li id="li-41">Does there seem to be a positive, negative, or no relationship between the age of a patient and the number of days they survived?</li>
+<li id="li-42">Is this relationship (if any) strong or weak?</li>
+<li id="li-43">What might account for this relationship, or lack of relationship?</li>
+</ol></article><article class="definition definition-like" id="definition-3"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.6</span><span class="period">.</span>
+</h6>
+<p id="p-26">When we suspect one variable might causally affect another, we label the first variable the <em class="emphasis">explanatory variable</em> and the second the <em class="emphasis">response variable</em>.</p>
+<p id="p-27">Note that for a given pair of variables <em class="emphasis">unless</em> we hypothesize a relationship between them, <em class="emphasis">neither</em> label would apply.</p></article><article class="remark remark-like" id="remark-1"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.1.7</span><span class="period">.</span>
+</h6>
+<p id="p-28">Note that if two variables have a positive or negative relationship, even a strong one, that there does <em class="emphasis">not</em> neccesarily exist any casual link between them!</p>
+<p id="p-29">Correlation \(\neq\) Causation!</p></article><article class="activity project-like" id="activity-corrcause"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">Correlation and Causation.</span>
+</h6>
+<p id="p-30">Come up with a pair of variables who may be strongly correlated (positively or negatively) but have no casual relationship.</p></article><p id="p-31">For more (some funny!) examples, visit the site Spurious Correlations: <a class="external" href="" target="_blank">https://www.tylervigen.com/spurious-correlations</a>.</p></section></section></div></main>
+</div>
+</body>
+</html>

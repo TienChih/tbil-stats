@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-03-19T13:38:16-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-r' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
+                           linked: true,
+                           languages: ['r'],
+                           evalButtonText: 'Evaluate (R)'});
+});
+</script>
+</head>
+<body>
+<article class="activity project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.7</span><span class="period">.</span><span class="space"> </span><span class="title">Lottery Winnings.</span>
+</h6>
+<div class="introduction"><p xmlns:svg="http://www.w3.org/2000/svg">Suppose a lottery ticket that costs $2 has a 20% chance of winning $5, a 0.1% chance of winning $100 and a 0.001% chance of winning $10000.  Let \(X\) denote the winnings of a ticket.</p></div>
+<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">What are the possible <em class="emphasis">net</em> winnings (\(X_i\)) of a ticket?  (Remember to account for the $2 purchasing cost, and that there is a scenario where you do not win).</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
+<p>Write down a table recording each of the \(X_i\) and their associated probability:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{array}{|c|c|c|c|c|}
+\hline
+X_i \amp \hspace{1in} \amp \hspace{1in} \amp \hspace{1in} \amp \hspace{1in} \\
+\hline
+P(X=X_i) \amp  \amp  \amp \amp \\
+\hline
+\end{array}
+\end{equation*}
+</div></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(c)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Compute \(E(X), Var(X)\text{.}\)</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(d)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Do you think overall, do you think the lottery ticket sellers make or lose money?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(e)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to simulate 1,000,000 lottery ticket winnings and plot a histogram of their outputs.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg"><div class="sagecell-r" id="sage-92"><script type="text/x-sage">ticketwinnings = sample(c(-2, 3, 98, 998), 1000000, replace = TRUE, prob = c(0.6989, 0.3, 0.001, 0.0001))
+hist(ticketwinnings)
+</script></div></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(f)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to find the mean and variance of these winnings.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg"><div class="sagecell-r" id="sage-93"><script type="text/x-sage">mean(ticketwinnings)
+</script></div> <div class="sagecell-r" id="sage-94"><script type="text/x-sage">var(ticketwinnings)
+</script></div></p>
+<p xmlns:svg="http://www.w3.org/2000/svg">How do these values compare to the what you found in (c)?</p></article></article><span class="incontext"><a href="Sec_RandomVariables.html#activity-lottery">in-context</a></span>
+</body>
+</html>

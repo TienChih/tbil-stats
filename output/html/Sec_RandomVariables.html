@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-03-19T13:45:02-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Random Variables</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-r' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
+                           linked: true,
+                           languages: ['r'],
+                           evalButtonText: 'Evaluate (R)'});
+});
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\Q}{\terminology{Question:\ }}
+\newcommand{\Sol}{\terminology{Solution:\ }}
+\newcommand{\Fisg}{\emph{Fisg}}
+\newcommand{\Iisg}{\emph{Iisg}}
+\newcommand{\Pisg}{\emph{Pisg}}
+\newcommand{\Tisg}{\emph{Tisg}}
+\newcommand{\Dom}{\emph{Dom}}
+\newcommand{\Img}{\emph{Im}}
+\DeclareMathOperator{\id}{id}
+\newcommand{\bcup}{\displaystyle\bigcup}
+\newcommand{\bcap}{\displaystyle\bigcap}
+\newcommand{\dsum}{\displaystyle\sum}
+\newcommand{\dint}{\displaystyle\int}
+\newcommand{\R}[1]{\mathbb{R}^{#1}}
+\newcommand{\C}[1]{\mathbb{C}^{#1}}
+\newcommand{\Z}[1]{\mathbb{Z}^{#1}}
+\newcommand{\K}[1]{\mathbb{K}^{#1}}
+\newcommand{\limit}[2]{\displaystyle{ \lim_{#1 \to #2}}}
+\newcommand{\TCB}[1]{\textcolor{blue}{#1}}
+\newcommand{\TCR}[1]{\textcolor{red}{#1}}
+\newcommand{\TCO}[1]{\textcolor{orange}{#1}}
+\newcommand{\TCG}[1]{\textcolor{ForestGreen}{#1}}
+\DeclareMathOperator{\Endo}{Endo}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Obj}{Obj}
+\DeclareMathOperator{\pleat}{\mathcal{P}\ell}
+\def\PX{\mathfrak{W}G}
+\def\Gph{\mathsf{Gph}}
+\def\HoGph{\mathsf{HoGph}}
+\def\into{\hookrightarrow}
+\def\con{\underline{}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Team Based Statistics</span></a></h1>
+<p class="byline">Tien Chih</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="Sec_Bayes.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="Chap_Probability.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="Chap_Distributions.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="Sec_Bayes.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="Chap_Probability.html" title="Up">Up</a><a class="next-button button toolbar-item" href="Chap_Distributions.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="author-bio-TC.html" data-scroll="author-bio-TC">Author Biography</a></li>
+<li><a href="dedication-1.html" data-scroll="dedication-1">Dedication</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_DataBasics.html" data-scroll="Chap_DataBasics"><span class="codenumber">1</span> <span class="title">Data Basics</span></a><ul>
+<li><a href="Sec_Variables.html" data-scroll="Sec_Variables">Variables</a></li>
+<li><a href="Sec_Sampling.html" data-scroll="Sec_Sampling">Sampling</a></li>
+<li><a href="Sec_Visualization.html" data-scroll="Sec_Visualization">Visualizing Data</a></li>
+<li><a href="Sec_Center.html" data-scroll="Sec_Center">Centers of Data</a></li>
+<li><a href="Sec_Variation.html" data-scroll="Sec_Variation">Variation of Data</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Probability.html" data-scroll="Chap_Probability"><span class="codenumber">2</span> <span class="title">Probability</span></a><ul>
+<li><a href="Sec_Introprob.html" data-scroll="Sec_Introprob">Introduction to Probability</a></li>
+<li><a href="Sec_Conditionalprob.html" data-scroll="Sec_Conditionalprob">Conditional Probability</a></li>
+<li><a href="Sec_Bayes.html" data-scroll="Sec_Bayes">Bayes Theorem</a></li>
+<li><a href="Sec_RandomVariables.html" data-scroll="Sec_RandomVariables" class="active">Random Variables</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Distributions.html" data-scroll="Chap_Distributions"><span class="codenumber">3</span> <span class="title">Distributions</span></a><ul><li><a href="Sec_Normal.html" data-scroll="Sec_Normal">Normal Distribution</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="Sec_RandomVariables"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.4</span> <span class="title">Random Variables</span>
+</h2>
+<section class="introduction" id="introduction-42"><p id="p-431">In <a href="Sec_Center.html" class="internal" title="Section 1.4: Centers of Data">Section 1.4</a>, and <a href="Sec_Variation.html" class="internal" title="Section 1.5: Variation of Data">Section 1.5</a> we found how to find the mean, variance and a standard deviation of a finite population.  Then previously in this chapter, we studied the probability of individual events either happening or not happening.  In this section, we look at the collection of outcomes of random process, and measure centrality and spread of these processes.</p>
+<article class="definition definition-like" id="definition-21"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.4.1</span><span class="period">.</span>
+</h6>
+<p id="p-432">A <em class="emphasis">random variable</em> random process or variable with a numerical outcome.</p></article><article class="remark remark-like" id="remark-10"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.4.2</span><span class="period">.</span>
+</h6>
+<p id="p-433">Given a random variable \(X\) with a finite number of outcomes, we denote them \(X_1,\ldots,X_n\text{,}\) and the probability that \(X\) takes on the value \(X_i\) is \(P(X=X_i)\text{..}\)</p>
+<p id="p-434">Then since these are all the possible probabilities we have:</p>
+<ol class="decimal">
+<li id="li-119">\(\displaystyle 0\leq P(X=X_i)\leq 1\)</li>
+<li id="li-120">\(\displaystyle \sum P(X=X_i)=1\)</li>
+</ol></article><article class="exploration project-like" id="exploration-textbooks"><h6 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.4.1</span><span class="period">.</span><span class="space"> </span><span class="title">Textbooks for a class.</span>
+</h6>
+<div class="introduction" id="introduction-43"><p id="p-435">Two books are assigned for a statistics class: a textbook and its corresponding study guide. The university bookstore determined 20% of enrolled students do not buy either book, 55% buy the textbook only, and 25% buy both books, and these percentages are relatively constant from one term to another.</p></div>
+<article class="task exercise-like" id="task-227"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-436">If there are 100 students enrolled, how many books should the bookstore expect to sell to this class?</p></article><article class="task exercise-like" id="task-228"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-437">The textbook costs $137 and the study guide $33. How much revenue should the bookstore expect from this class of 100 students?</p></article><article class="task exercise-like" id="task-229"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-438">What is the average revenue per student for this course?</p></article></article></section><section class="subsection" id="subsection-14"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.4.1</span> <span class="title">Expectation</span>
+</h3>
+<article class="definition definition-like" id="definition-expectedvalue"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.4.3</span><span class="period">.</span>
+</h6>
+<p id="p-439">Given a random variable \(X\text{,}\) the <em class="emphasis">expected value</em> of \(X\) denoted \(E(X)\) is the mean outcome of \(X\text{.}\)</p>
+<p id="p-440">Note that \(E(x)\) need not be an outcome of \(X\text{.}\)</p></article><article class="remark remark-like" id="remark-expectedvalue"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.4.4</span><span class="period">.</span>
+</h6>
+<p id="p-441">For a random variable \(X\) with a finite number of ouctomes \(X_1, \ldots, X_n\) the expectation of \(X\) is computed</p>
+<div class="displaymath">
+\begin{equation*}
+E(X)=\sum P(X=X_i)\cdot X_i.
+\end{equation*}
+</div></article><article class="activity project-like" id="activity-simulatetextbook"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.2</span><span class="period">.</span><span class="space"> </span><span class="title">Simulating Textbook Purchases.</span>
+</h6>
+<div class="introduction" id="introduction-44"><p id="p-442">Suppose from <a class="xref" data-knowl="./knowl/exploration-textbooks.html" title="Exploration 2.4.1: Textbooks for a class">Exploration 2.4.1</a> that each student has a 20% chance of not purchasing either book, a 55% chance of purchasing a textbook for $137, and a 25% chance of purchasing a textbook and study guide for $170.  Let \(X\) denote the amount of money a student spends.</p></div>
+<article class="task exercise-like" id="task-230"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-443">What is the probability that a student spends $0 (\(P(X=0)=?\))</p></article><article class="task exercise-like" id="task-231"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-444">What is the probability that a student spends $137 (\(P(X=137)=?\))</p></article><article class="task exercise-like" id="task-232"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-445">What is the probability that a student spends $170 (\(P(X=170)=?\))</p></article><article class="task exercise-like" id="task-233"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-446">Use <a class="xref" data-knowl="./knowl/remark-expectedvalue.html" title="Remark 2.4.4">Remark 2.4.4</a> to compute \(E(X)\text{.}\)  How does this value compare to what you found in <a class="xref" data-knowl="./knowl/exploration-textbooks.html" title="Exploration 2.4.1: Textbooks for a class">Exploration 2.4.1</a> (c)?</p></article><article class="task exercise-like" id="task-234"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-447">Run the following code to simulate 100 students and their purchases, and display a histogram of their purchases.</p>
+<p id="p-448"><div class="sagecell-r" id="sage-83"><script type="text/x-sage">textbookpurchases = sample(c(0, 137, 170), 100, replace = TRUE, prob = c(0.2, 0.55, 0.25))
+hist(textbookpurchases)
+</script></div></p></article><article class="task exercise-like" id="task-235"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-449">Run the following code to show the mean revenue spent by students.</p>
+<p id="p-450"><div class="sagecell-r" id="sage-84"><script type="text/x-sage">mean(textbookpurchases)
+</script></div></p>
+<p id="p-451">How does this value compare to what you found in (d)?</p></article><article class="task exercise-like" id="task-236"><h6 class="heading"><span class="codenumber">(g)</span></h6>
+<p id="p-452">Modify the following code to simulate 10,000 students and their purchases, and display a histogram of their purchases, and the mean purchaseprice.</p>
+<p id="p-453"><div class="sagecell-r" id="sage-85"><script type="text/x-sage">textbookpurchases = sample(c(0, 137, 170), FIXME, replace = TRUE, prob = c(0.2, 0.55, 0.25))
+hist(textbookpurchases)
+mean(textbookpurchases)
+</script></div></p>
+<p id="p-454">How does this value compare to what you found in (d)? In (f)?</p></article></article></section><section class="subsection" id="subsection-15"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.4.2</span> <span class="title">Variance</span>
+</h3>
+<article class="exploration project-like" id="exploration-dice"><h6 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">Outcomes of dice.</span>
+</h6>
+<div class="introduction" id="introduction-45"><p id="p-455">Consider the equally likely outcomes of a dice roll <code class="code-inline tex2jax_ignore">1, 2, 3, 4, 5, 6</code>.</p></div>
+<article class="task exercise-like" id="task-237"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-456">Find the population mean and variance of this set.</p></article><article class="task exercise-like" id="task-238"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-457">Run the following code to simulate 1,000 die rolls and plot a histogram of their outputs.</p>
+<p id="p-458"><div class="sagecell-r" id="sage-86"><script type="text/x-sage">dierolls = sample(c(1, 2, 3, 4, 5, 6), 1000, replace = TRUE, prob = c(1/6, 1/6, 1/6, 1/6, 1/6, 1/6))
+hist(dierolls)
+</script></div></p></article><article class="task exercise-like" id="task-239"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-459">Run the following code to find the mean and variance of these dierolls.</p>
+<p id="p-460"><div class="sagecell-r" id="sage-87"><script type="text/x-sage">mean(dierolls)
+</script></div> <div class="sagecell-r" id="sage-88"><script type="text/x-sage">var(dierolls)
+</script></div></p>
+<p id="p-461">How do these values compare to the what you found in (a)?</p></article></article><article class="remark remark-like" id="remark-varianceRV"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.4.5</span><span class="period">.</span>
+</h6>
+<p id="p-462">For a random variable \(X\) with a finite number of ouctomes \(X_1, \ldots, X_n\) the <em class="emphasis">variance</em> of \(X\text{,}\) denoted \(Var(X)\text{,}\)  is computed</p>
+<div class="displaymath">
+\begin{equation*}
+E(X)=\sum P(X=X_i)\cdot (X_i-E(X)).
+\end{equation*}
+</div>
+<p id="p-463">Then the <em class="emphasis">standard deviation</em> of \(X\) is computed</p>
+<div class="displaymath">
+\begin{equation*}
+\sigma_X=\sqrt{Var(X)}=\sqrt{\sum P(X=X_i)\cdot (X_i-E(X))}.
+\end{equation*}
+</div></article><article class="activity project-like" id="activity-comparison"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.4</span><span class="period">.</span><span class="space"> </span><span class="title">Comparing to Data Sets.</span>
+</h6>
+<article class="task exercise-like" id="task-240"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-464">Compare how expectation is computed in <a class="xref" data-knowl="./knowl/remark-expectedvalue.html" title="Remark 2.4.4">Remark 2.4.4</a>  and that of the mean in <a href="Sec_Center.html" class="internal" title="Section 1.4: Centers of Data">Section 1.4</a>.  What connections can you see?</p></article><article class="task exercise-like" id="task-241"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-465">Compare how variance is computed in <a class="xref" data-knowl="./knowl/remark-varianceRV.html" title="Remark 2.4.5">Remark 2.4.5</a>  and that of the population variance in <a class="xref" data-knowl="./knowl/definition-popvariance.html" title="Definition 1.5.1">Definition 1.5.1</a>.  What connections can you see?</p></article></article><article class="activity project-like" id="activity-dievariance"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.5</span><span class="period">.</span><span class="space"> </span><span class="title">Die Variance.</span>
+</h6>
+<div class="introduction" id="introduction-46"><p id="p-466">Let \(X\) denote the outcome of a Die Roll.</p></div>
+<article class="task exercise-like" id="task-242"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-467">For each outcome of a die roll (\(X_i=1,\ldots,6\)), find the probability that a die will give that value (\(P(X=X_i)\)).</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{|c|c|c|c|c|c|c|}
+\hline
+X_i \amp \hspace{1in} \amp \hspace{1in} \amp \hspace{1in} \amp \hspace{1in} \amp \hspace{1in} \amp \hspace{1in}  \\
+\hline
+P(X=X_i) \amp  \amp  \amp \amp \amp \amp \\
+\hline
+\end{array}
+\end{equation*}
+</div></article><article class="task exercise-like" id="task-243"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-468">Compute \(E(X)\text{.}\)</p></article><article class="task exercise-like" id="task-244"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-469">Compute \(Var(X)\text{.}\)</p></article><article class="task exercise-like" id="task-245"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-470">How do these values compare to what you found in <a class="xref" data-knowl="./knowl/exploration-dice.html" title="Exploration 2.4.3: Outcomes of dice">Exploration 2.4.3</a> (a) and (c)?</p></article></article><article class="activity project-like" id="activity-fastfood"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.6</span><span class="period">.</span><span class="space"> </span><span class="title">Fast Food Order.</span>
+</h6>
+<div class="introduction" id="introduction-47"><p id="p-471">Suppose customers for a fast food chain have a 40% chance of ordering the regular combo for $5, a 25% chance of ordering the large for $7.50 and a 35% chance of ordering the jumbo for $12.  Let \(X\) denote the money spent.</p></div>
+<article class="task exercise-like" id="task-246"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-472">Write down a table recording each of the \(X_i\) and their associated probability:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{|c|c|c|c|}
+\hline
+X_i \amp 5 \amp 7.50 \amp 12 \\
+\hline
+P(X=X_i) \amp \hspace{1in} \amp \hspace{1in} \amp \hspace{1in}   \\
+\hline
+\end{array}
+\end{equation*}
+</div></article><article class="task exercise-like" id="task-247"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-473">Compute \(E(X), Var(X)\text{.}\)</p></article><article class="task exercise-like" id="task-248"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-474">Run the following code to simulate 200 customers and plot a histogram of their purchase amounts.</p>
+<p id="p-475"><div class="sagecell-r" id="sage-89"><script type="text/x-sage">ordercost = sample(c(5, 7.5, 12), 200, replace = TRUE, prob = c(0.4, 0.25, 0.35))
+hist(ordercost)
+</script></div></p></article><article class="task exercise-like" id="task-249"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-476">Run the following code to find the mean and variance of the purchase amounts.</p>
+<p id="p-477"><div class="sagecell-r" id="sage-90"><script type="text/x-sage">mean(ordercost)
+</script></div> <div class="sagecell-r" id="sage-91"><script type="text/x-sage">var(ordercost)
+</script></div></p>
+<p id="p-478">How do these values compare to the what you found in (b)?</p></article></article><article class="activity project-like" id="activity-lottery"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.7</span><span class="period">.</span><span class="space"> </span><span class="title">Lottery Winnings.</span>
+</h6>
+<div class="introduction" id="introduction-48"><p id="p-479">Suppose a lottery ticket that costs $2 has a 20% chance of winning $5, a 0.1% chance of winning $100 and a 0.001% chance of winning $10000.  Let \(X\) denote the winnings of a ticket.</p></div>
+<article class="task exercise-like" id="task-250"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-480">What are the possible <em class="emphasis">net</em> winnings (\(X_i\)) of a ticket?  (Remember to account for the $2 purchasing cost, and that there is a scenario where you do not win).</p></article><article class="task exercise-like" id="task-251"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-481">Write down a table recording each of the \(X_i\) and their associated probability:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{|c|c|c|c|c|}
+\hline
+X_i \amp \hspace{1in} \amp \hspace{1in} \amp \hspace{1in} \amp \hspace{1in} \\
+\hline
+P(X=X_i) \amp  \amp  \amp \amp \\
+\hline
+\end{array}
+\end{equation*}
+</div></article><article class="task exercise-like" id="task-252"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-482">Compute \(E(X), Var(X)\text{.}\)</p></article><article class="task exercise-like" id="task-253"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-483">Do you think overall, do you think the lottery ticket sellers make or lose money?</p></article><article class="task exercise-like" id="task-254"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-484">Run the following code to simulate 1,000,000 lottery ticket winnings and plot a histogram of their outputs.</p>
+<p id="p-485"><div class="sagecell-r" id="sage-92"><script type="text/x-sage">ticketwinnings = sample(c(-2, 3, 98, 998), 1000000, replace = TRUE, prob = c(0.6989, 0.3, 0.001, 0.0001))
+hist(ticketwinnings)
+</script></div></p></article><article class="task exercise-like" id="task-255"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-486">Run the following code to find the mean and variance of these winnings.</p>
+<p id="p-487"><div class="sagecell-r" id="sage-93"><script type="text/x-sage">mean(ticketwinnings)
+</script></div> <div class="sagecell-r" id="sage-94"><script type="text/x-sage">var(ticketwinnings)
+</script></div></p>
+<p id="p-488">How do these values compare to the what you found in (c)?</p></article></article></section><section class="subsection" id="subsection-16"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.4.3</span> <span class="title">Linear Combinations of Random Variables</span>
+</h3>
+<article class="exploration project-like" id="exploration-sumdie"><h6 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.4.8</span><span class="period">.</span><span class="space"> </span><span class="title">Sum of Dice.</span>
+</h6>
+<div class="introduction" id="introduction-49">
+<p id="p-489">We saw in <a class="xref" data-knowl="./knowl/exploration-dice.html" title="Exploration 2.4.3: Outcomes of dice">Exploration 2.4.3</a> the distribution, mean and variance of the outcome of a die roll, \(X\text{.}\)  Consider rolling a pair of die, a blue and green one as in <a class="xref" data-knowl="./knowl/activity-doubledie.html" title="Activity 2.2.7">Activity 2.2.7</a>.  Consider the possible pairs of outcomes.</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{cccccc}
+(1,1)\amp(2,1)\amp(3,1)\amp(4,1)\amp(5,1)\amp(6,1)\\
+(1,2)\amp(2,2)\amp(3,2)\amp(4,2)\amp(5,2)\amp(6,2)\\
+(1,3)\amp(2,3)\amp(3,3)\amp(4,3)\amp(5,3)\amp(6,3)\\
+(1,4)\amp(2,4)\amp(3,4)\amp(4,4)\amp(5,4)\amp(6,4)\\
+(1,5)\amp(2,5)\amp(3,5)\amp(4,5)\amp(5,5)\amp(6,5)\\
+(1,6)\amp(2,6)\amp(3,6)\amp(4,6)\amp(5,6)\amp(6,6)\\
+\end{array}
+\end{equation*}
+</div>
+<p id="p-490">Let \(Y\) denote the sum of both die.</p>
+</div>
+<article class="task exercise-like" id="task-256"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-491">What are the possible values of \(Y\)</p></article><article class="task exercise-like" id="task-257"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-492">For each possible sum (\(Y_i\)), find the probability that the sum of the die will give that value (\(P(Y=Y_i)\)).</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+Y_i \amp \hspace{0.5in} \amp \hspace{0.5in} \amp \hspace{0.5in} \amp \hspace{0.5in} \amp \hspace{0.5in} \amp \hspace{0.5in} \amp \hspace{0.5in} \amp \hspace{0.5in} \amp \hspace{0.5in} \amp \hspace{0.5in} \amp \hspace{0.5in} \\
+\hline
+P(Y=Y_i) \amp  \amp  \amp \amp \amp \amp  \amp  \amp \amp \amp \amp  \\
+\hline
+\end{array}
+\end{equation*}
+</div></article><article class="task exercise-like" id="task-258"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-493">Compute \(E(Y)\) and \(Var(Y)\text{.}\)</p>
+<p id="p-494">How do these values compare to \(E(X), Var(X)\) found in <a class="xref" data-knowl="./knowl/activity-dievariance.html" title="Activity 2.4.5: Die Variance">Activity 2.4.5</a>?</p></article><article class="task exercise-like" id="task-259"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-495">Run the following code to simulate 1,000 blue and green die rolls and plot a histogram of their sum.</p>
+<p id="p-496"><div class="sagecell-r" id="sage-95"><script type="text/x-sage">bluedierolls = sample(c(1, 2, 3, 4, 5, 6), 1000, replace = TRUE, prob = c(1/6, 1/6, 1/6, 1/6, 1/6, 1/6))
+greendierolls = sample(c(1, 2, 3, 4, 5, 6), 1000, replace = TRUE, prob = c(1/6, 1/6, 1/6, 1/6, 1/6, 1/6))
+diesum=bluedierolls+greendierolls
+hist(diesum)
+</script></div></p></article><article class="task exercise-like" id="task-260"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-497">Run the following code to find the mean and variance of these dierolls.</p>
+<p id="p-498"><div class="sagecell-r" id="sage-96"><script type="text/x-sage">mean(diesum)
+</script></div> <div class="sagecell-r" id="sage-97"><script type="text/x-sage">var(diesum)
+</script></div></p>
+<p id="p-499">How do these values compare to the what you found in (c)?</p></article></article><article class="remark remark-like" id="remark-linofEandV"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.4.6</span><span class="period">.</span>
+</h6>
+<p id="p-500">Given random vriables \(X, Y\) and a constant \(c\text{,}\) the random variable \(X+Y\) has:</p>
+<div class="displaymath">
+\begin{equation*}
+E(X+Y)=E(X), +E(Y), Var(X+Y)=Var(X)+Var(Y)
+\end{equation*}
+</div>
+<p data-braille="continuation">and the random variable \(cX\) has</p>
+<div class="displaymath">
+\begin{equation*}
+E(cX)=cE(X), Var(cX)=c^2Var(X).
+\end{equation*}
+</div></article><p id="p-501">What was computed in <a class="xref" data-knowl="./knowl/exploration-sumdie.html" title="Exploration 2.4.8: Sum of Dice">Exploration 2.4.8</a> is the expectation and variance of \(Y=X_B+X_G\) the sum of the blue and green die rolls.  Note that both \(X_B, X_G\) have the same expectation and variance as a single die roll \(X\) as in <a class="xref" data-knowl="./knowl/activity-dievariance.html" title="Activity 2.4.5: Die Variance">Activity 2.4.5</a>.</p>
+<article class="activity project-like" id="activity-diffdie"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.9</span><span class="period">.</span><span class="space"> </span><span class="title">Difference of Dice.</span>
+</h6>
+<div class="introduction" id="introduction-50">
+<p id="p-502">W Consider rolling a pair of die, a blue and green one as in <a class="xref" data-knowl="./knowl/exploration-sumdie.html" title="Exploration 2.4.8: Sum of Dice">Exploration 2.4.8</a>.  Consider the possible pairs of outcomes.</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{cccccc}
+(1,1)\amp(2,1)\amp(3,1)\amp(4,1)\amp(5,1)\amp(6,1)\\
+(1,2)\amp(2,2)\amp(3,2)\amp(4,2)\amp(5,2)\amp(6,2)\\
+(1,3)\amp(2,3)\amp(3,3)\amp(4,3)\amp(5,3)\amp(6,3)\\
+(1,4)\amp(2,4)\amp(3,4)\amp(4,4)\amp(5,4)\amp(6,4)\\
+(1,5)\amp(2,5)\amp(3,5)\amp(4,5)\amp(5,5)\amp(6,5)\\
+(1,6)\amp(2,6)\amp(3,6)\amp(4,6)\amp(5,6)\amp(6,6)\\
+\end{array}
+\end{equation*}
+</div>
+<p id="p-503">Let \(Z\) denote the difference of the green die subtracted from the blue die (\(Z=X_B-X_G\)).  Note that \(Z=X_B+(-1)X_G\text{.}\)</p>
+</div>
+<article class="task exercise-like" id="task-261"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-504">Use <a class="xref" data-knowl="./knowl/remark-linofEandV.html" title="Remark 2.4.6">Remark 2.4.6</a> to rewrite</p>
+<div class="displaymath">
+\begin{equation*}
+E(X_B+(-1)X_G)=E(X_B)+E((-1)X_G)=E(X_B)+(-1)E(X_G)
+\end{equation*}
+</div>
+<p data-braille="continuation">and compute \(E(X_B+(-1)X_G).\)</p></article><article class="task exercise-like" id="task-262"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-505">Use <a class="xref" data-knowl="./knowl/remark-linofEandV.html" title="Remark 2.4.6">Remark 2.4.6</a> to rewrite</p>
+<div class="displaymath">
+\begin{equation*}
+Var(X_B+(-1)X_G)=Var(X_B)+Var((-1)X_G)=Var(X_B)+(-1)^2Var(X_G)
+\end{equation*}
+</div>
+<p data-braille="continuation">and compute \(Var(X_B+(-1)X_G).\)</p></article><article class="task exercise-like" id="task-263"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-506">Run the following code to simulate 1,000 blue and green die rolls and plot a histogram of their differences.</p>
+<p id="p-507"><div class="sagecell-r" id="sage-98"><script type="text/x-sage">bluedierolls = sample(c(1, 2, 3, 4, 5, 6), 1000, replace = TRUE, prob = c(1/6, 1/6, 1/6, 1/6, 1/6, 1/6))
+greendierolls = sample(c(1, 2, 3, 4, 5, 6), 1000, replace = TRUE, prob = c(1/6, 1/6, 1/6, 1/6, 1/6, 1/6))
+diediff=bluedierolls-greendierolls
+hist(diediff)
+</script></div></p></article><article class="task exercise-like" id="task-264"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-508">Run the following code to find the mean and variance of these dierolls.</p>
+<p id="p-509"><div class="sagecell-r" id="sage-99"><script type="text/x-sage">mean(diediff)
+</script></div> <div class="sagecell-r" id="sage-100"><script type="text/x-sage">var(diediff)
+</script></div></p>
+<p id="p-510">How do these values compare to the what you found in (a) and (b)?</p></article></article><article class="activity project-like" id="activity-fastfoodgroup"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.10</span><span class="period">.</span><span class="space"> </span><span class="title">Fast Food Group Order.</span>
+</h6>
+<div class="introduction" id="introduction-51"><p id="p-511">Recall the fast food orders of <a class="xref" data-knowl="./knowl/activity-fastfood.html" title="Activity 2.4.6: Fast Food Order">Activity 2.4.6</a>. Suppose a group of ten friends order together, and let the cost of their order be \(G=X_1+\ldots X_{10}\) where each \(X_i\) is the cost of an individual order as in <a class="xref" data-knowl="./knowl/activity-fastfood.html" title="Activity 2.4.6: Fast Food Order">Activity 2.4.6</a>.</p></div>
+<article class="task exercise-like" id="task-265"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-512">Use <a class="xref" data-knowl="./knowl/remark-linofEandV.html" title="Remark 2.4.6">Remark 2.4.6</a> and the fact that</p>
+<div class="displaymath">
+\begin{equation*}
+G=X_1+X_2+X_3+X_4+X_5+X_6+X_7+X_8+X_9+X_{10}
+\end{equation*}
+</div>
+<p data-braille="continuation">to find \(E(G), Var(G)\text{.}\)</p></article><article class="task exercise-like" id="task-266"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-513">Run the following code to simulate 200 groups of ten and plot a histogram of their purchase amounts.</p>
+<p id="p-514"><div class="sagecell-r" id="sage-101"><script type="text/x-sage">  groupcost=rep(0, 200)
+  for(i in 1:10){
+   groupcost = groupcost+sample(c(5, 7.5, 12), 200, replace = TRUE, prob = c(0.4, 0.25, 0.35))
+}
+  hist(groupcost)
+</script></div></p></article><article class="task exercise-like" id="task-267"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-515">Run the following code to find the mean and variance of the purchase amounts.</p>
+<p id="p-516"><div class="sagecell-r" id="sage-102"><script type="text/x-sage">mean(groupcost)
+</script></div> <div class="sagecell-r" id="sage-103"><script type="text/x-sage">var(groupcost)
+</script></div></p>
+<p id="p-517">How do these values compare to the what you found in (a)?</p></article></article><article class="activity project-like" id="activity-icecream"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.11</span><span class="period">.</span><span class="space"> </span><span class="title">Ice Cream.</span>
+</h6>
+<div class="introduction" id="introduction-52"><p id="p-518">Suppose that a box of Ice Cream comes with on average 60 oz of ice cream, but because theyre not all packed evenly, with a standard deviation of 2 oz.  Suppose a scoop of ice cream is 3oz, but with standard deviation of 0.15oz.</p></div>
+<article class="task exercise-like" id="task-268"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-519">Let \(B\) denote the number of oz in a box of ice cream and find \(E(B), Var(B)\text{.}\)  (Hint: recall <a class="xref" data-knowl="./knowl/remark-varianceRV.html" title="Remark 2.4.5">Remark 2.4.5</a> and the relationship between standard deviation and variance.)</p></article><article class="task exercise-like" id="task-269"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-520">Let \(S\) denote the number of oz in a scoop of ice cream and find \(E(S), Var(S)\text{.}\)</p></article><article class="task exercise-like" id="task-270"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-521">Let \(R\) denote the amount of ice cream remaining in a box after I take 2 scoops out, note that \(R=B-S_1-S_2=B+(-1)S_1+(-1)S_2\text{.}\)</p>
+<p id="p-522">Find \(E(R), Var(R)\text{.}\)</p></article><article class="task exercise-like" id="task-271"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-523">Run the following code to simulate 1000 boxes of icecream with 2 scoops removed.</p>
+<p id="p-524"><div class="sagecell-r" id="sage-104"><script type="text/x-sage">boxoz=rnorm(1000, mean = 60, sd = 2)
+scooponeoz=rnorm(1000, mean = 2, sd = .15)
+scooptwooz=rnorm(1000, mean = 2, sd = .15)
+
+remainicecream=boxoz-scooponeoz-scooptwooz
+hist(remainicecream)
+</script></div></p></article><article class="task exercise-like" id="task-272"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-525">Run the following code to find the mean and variance of these remains.</p>
+<p id="p-526"><div class="sagecell-r" id="sage-105"><script type="text/x-sage">mean(remainicecream)
+</script></div> <div class="sagecell-r" id="sage-106"><script type="text/x-sage">var(remainicecream)
+</script></div></p>
+<p id="p-527">How do these values compare to the what you found in (c)?</p></article></article></section></section></div></main>
+</div>
+</body>
+</html>

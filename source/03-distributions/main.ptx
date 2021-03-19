@@ -1,0 +1,14 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="Chap_Distributions">
+  <title>Distributions</title>
+  <introduction>
+    <p>
+      Placeholder.
+    </p>
+  </introduction>
+  <xi:include  href="Sec_Normal.ptx"/> 
+  
+
+
+
+  
+</chapter>
