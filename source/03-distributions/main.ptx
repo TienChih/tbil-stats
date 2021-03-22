@@ -5,7 +5,8 @@
       Placeholder.
     </p>
   </introduction>
-  <xi:include  href="Sec_Normal.ptx"/> 
+  <xi:include  href="Sec_StandardNormal.ptx"/> 
+  <xi:include  href="Sec_GeneralNormal.ptx"/> 
   
 
 

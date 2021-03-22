@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-03-21T20:48:46-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-r' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
+                           linked: true,
+                           languages: ['r'],
+                           evalButtonText: 'Evaluate (R)'});
+});
+</script>
+</head>
+<body>
+<article class="activity project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Ahi Tuna part 4: Simulation.</span>
+</h6>
+<div class="introduction"><p xmlns:svg="http://www.w3.org/2000/svg">Suppose Ahi tuna weights are normally distributed with mean 120 lbs and standard deviation 25 lb's as in <a class="xref" data-knowl="./knowl/activity-tuna.html" title="Activity 3.2.2: Ahi Tuna: Computing Probabilities">Activity 3.2.2</a>.    Let \(X\) denote the weight of a random fish.</p></div>
+<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to simulate the weights of 1000 random Ahi Tuna: <div class="sagecell-r" id="sage-112"><script type="text/x-sage">n=1000
+ahiweight=rnorm(n,mean=120, sd=25)
+hist(ahiweight)
+</script></div></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to see what proportion of tuna weighing over 150 lbs: <div class="sagecell-r" id="sage-113"><script type="text/x-sage">length(which(ahiweight>150))/n
+</script></div> How does this value compare to what you found in <a class="xref" data-knowl="./knowl/activity-tuna.html" title="Activity 3.2.2: Ahi Tuna: Computing Probabilities">Activity 3.2.2</a> (c)?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(c)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code setting <code class="code-inline tex2jax_ignore">X0</code> to be the \(x_0\) found in <a class="xref" data-knowl="./knowl/activity-tuna2.html" title="Activity 3.2.3: Ahi Tuna part 2: Computing Weights">Activity 3.2.3</a> (b). <div class="sagecell-r" id="sage-114"><script type="text/x-sage">X0=FIXME
+length(which(ahiweight>X0))/n
+</script></div> How does this compare to what you observed in  <a class="xref" data-knowl="./knowl/activity-tuna2.html" title="Activity 3.2.3: Ahi Tuna part 2: Computing Weights">Activity 3.2.3</a> (b)?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(d)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to see what proportion of tuna weigh between 50 and 100 pounds: <div class="sagecell-r" id="sage-115"><script type="text/x-sage">length(which(100>ahiweight & ahiweight>50))/n
+</script></div> How does this value compare to what you found in <a class="xref" data-knowl="./knowl/activity-tuna.html" title="Activity 3.2.2: Ahi Tuna: Computing Probabilities">Activity 3.2.2</a> (e)?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(e)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code setting <code class="code-inline tex2jax_ignore">k</code> to be the \(k\) found in <a class="xref" data-knowl="./knowl/activity-tuna2.html" title="Activity 3.2.3: Ahi Tuna part 2: Computing Weights">Activity 3.2.3</a> (d). <div class="sagecell-r" id="sage-116"><script type="text/x-sage">k=FIXME
+length(which(120+k>ahiweight & ahiweight>120-k))/n
+</script></div> How does this compare to what you observed in <a class="xref" data-knowl="./knowl/activity-tuna2.html" title="Activity 3.2.3: Ahi Tuna part 2: Computing Weights">Activity 3.2.3</a> (d)?</p></article></article><span class="incontext"><a href="Sec_GeneralNormal.html#activity-tuna4">in-context</a></span>
+</body>
+</html>
