@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-03-30T21:27:38-06:00       *-->
+<!--*       on 2021-04-01T10:03:59-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -32,17 +32,18 @@
 </head>
 <body>
 <article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Task</span><span class="space"> </span><span class="codenumber">3.4.2.e</span><span class="period">.</span>
+<span class="type">Task</span><span class="space"> </span><span class="codenumber">3.4.3.b</span><span class="period">.</span>
 </h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Modify and run the following code to simulate 1000 trials of  free throws for the teammate and plot a histogram of the number of succesful free throws: <div class="sagecell-r" id="sage-122"><script type="text/x-sage">numbasketsTM = rep(0, 1000)
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to simulate 1000 trials of <code class="code-inline tex2jax_ignore">freethrows=4</code> free throws taken with <code class="code-inline tex2jax_ignore">p=0.9</code> probability of success each, and plot a histogram of the number of succesful free throws: <div class="sagecell-r" id="sage-120"><script type="text/x-sage">numbaskets = rep(0, 1000)
 
-freethrows=FIXME
-p=FIXME
+freethrows=4
+p=0.9
 
 for(i in 1:freethrows){
-  numbasketsTM=numbasketsTM+sample(c(1, 0), 1000, replace = TRUE, prob = c(p, 1-p)) 
+  numbaskets=numbaskets+sample(c(1, 0), 1000, replace = TRUE, prob = c(p, 1-p)) 
 }
-hist(numbasketsTM)
+hist(numbaskets)
+print(freethrows)
 </script></div></p></article><span class="incontext"><a href="Sec_Binomial.html#task-372">in-context</a></span>
 </body>
 </html>
