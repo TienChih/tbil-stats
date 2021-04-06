@@ -476,7 +476,7 @@
           <sage language="r">
           <input>
         numheads = rep(0, 1000)
-        coinflips=1000
+        coinflips=100
 
         m=coinflips*0.5
         std=sqrt(coinflips*0.5*(1-0.5))

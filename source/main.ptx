@@ -52,6 +52,9 @@
 \usetikzlibrary{shapes, fit}
 \usetikzlibrary{through,intersections,decorations,shadows,fadings}
 \usepackage{pgfplots}
+\pgfmathdeclarefunction{gauss}{2}{%
+  \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+}
 </latex-image-preamble>
   </docinfo>
 
@@ -160,6 +163,7 @@
     <xi:include href="./01-basics/main.ptx" />
     <xi:include href="./02-probability/main.ptx" />
     <xi:include href="./03-distributions/main.ptx" />
+    <xi:include href="./04-foundations/main.ptx" />
 
     <!--<backmatter>
       <xi:include href="./bibliography.ptx"/>

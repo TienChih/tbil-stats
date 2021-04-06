@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-06T11:17:29-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Point Estimates</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-r' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
+                           linked: true,
+                           languages: ['r'],
+                           evalButtonText: 'Evaluate (R)'});
+});
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\Q}{\terminology{Question:\ }}
+\newcommand{\Sol}{\terminology{Solution:\ }}
+\newcommand{\Fisg}{\emph{Fisg}}
+\newcommand{\Iisg}{\emph{Iisg}}
+\newcommand{\Pisg}{\emph{Pisg}}
+\newcommand{\Tisg}{\emph{Tisg}}
+\newcommand{\Dom}{\emph{Dom}}
+\newcommand{\Img}{\emph{Im}}
+\DeclareMathOperator{\id}{id}
+\newcommand{\bcup}{\displaystyle\bigcup}
+\newcommand{\bcap}{\displaystyle\bigcap}
+\newcommand{\dsum}{\displaystyle\sum}
+\newcommand{\dint}{\displaystyle\int}
+\newcommand{\R}[1]{\mathbb{R}^{#1}}
+\newcommand{\C}[1]{\mathbb{C}^{#1}}
+\newcommand{\Z}[1]{\mathbb{Z}^{#1}}
+\newcommand{\K}[1]{\mathbb{K}^{#1}}
+\newcommand{\limit}[2]{\displaystyle{ \lim_{#1 \to #2}}}
+\newcommand{\TCB}[1]{\textcolor{blue}{#1}}
+\newcommand{\TCR}[1]{\textcolor{red}{#1}}
+\newcommand{\TCO}[1]{\textcolor{orange}{#1}}
+\newcommand{\TCG}[1]{\textcolor{ForestGreen}{#1}}
+\DeclareMathOperator{\Endo}{Endo}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Obj}{Obj}
+\DeclareMathOperator{\pleat}{\mathcal{P}\ell}
+\def\PX{\mathfrak{W}G}
+\def\Gph{\mathsf{Gph}}
+\def\HoGph{\mathsf{HoGph}}
+\def\into{\hookrightarrow}
+\def\con{\underline{}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Team Based Statistics</span></a></h1>
+<p class="byline">Tien Chih</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="Chap_Foundations.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="Chap_Foundations.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="Sec_ConfidenceInterval.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="Chap_Foundations.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="Chap_Foundations.html" title="Up">Up</a><a class="next-button button toolbar-item" href="Sec_ConfidenceInterval.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="author-bio-TC.html" data-scroll="author-bio-TC">Author Biography</a></li>
+<li><a href="dedication-1.html" data-scroll="dedication-1">Dedication</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_DataBasics.html" data-scroll="Chap_DataBasics"><span class="codenumber">1</span> <span class="title">Data Basics</span></a><ul>
+<li><a href="Sec_Variables.html" data-scroll="Sec_Variables">Variables</a></li>
+<li><a href="Sec_Sampling.html" data-scroll="Sec_Sampling">Sampling</a></li>
+<li><a href="Sec_Visualization.html" data-scroll="Sec_Visualization">Visualizing Data</a></li>
+<li><a href="Sec_Center.html" data-scroll="Sec_Center">Centers of Data</a></li>
+<li><a href="Sec_Variation.html" data-scroll="Sec_Variation">Variation of Data</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Probability.html" data-scroll="Chap_Probability"><span class="codenumber">2</span> <span class="title">Probability</span></a><ul>
+<li><a href="Sec_Introprob.html" data-scroll="Sec_Introprob">Introduction to Probability</a></li>
+<li><a href="Sec_Conditionalprob.html" data-scroll="Sec_Conditionalprob">Conditional Probability</a></li>
+<li><a href="Sec_Bayes.html" data-scroll="Sec_Bayes">Bayes Theorem</a></li>
+<li><a href="Sec_RandomVariables.html" data-scroll="Sec_RandomVariables">Random Variables</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Distributions.html" data-scroll="Chap_Distributions"><span class="codenumber">3</span> <span class="title">Distributions</span></a><ul>
+<li><a href="Sec_StandardNormal.html" data-scroll="Sec_StandardNormal">Standard Normal Distribution</a></li>
+<li><a href="Sec_GeneralNormal.html" data-scroll="Sec_GeneralNormal">General Normal Distribution</a></li>
+<li><a href="Sec_Counting.html" data-scroll="Sec_Counting">Counting Principles</a></li>
+<li><a href="Sec_Binomial.html" data-scroll="Sec_Binomial">Binomial Distribution</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Foundations.html" data-scroll="Chap_Foundations"><span class="codenumber">4</span> <span class="title">Foundations for Inference</span></a><ul>
+<li><a href="Sec_PointEstimates.html" data-scroll="Sec_PointEstimates" class="active">Point Estimates</a></li>
+<li><a href="Sec_ConfidenceInterval.html" data-scroll="Sec_ConfidenceInterval">Confidence Intervals</a></li>
+<li><a href="Sec_HypothesisTesing.html" data-scroll="Sec_HypothesisTesing">Hypothesis Testing</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="Sec_PointEstimates"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">4.1</span> <span class="title">Point Estimates</span>
+</h2>
+<section class="introduction" id="introduction-83"><p id="p-729">We now begin combining the concepts learned in previous chapters to get to the real heart of statistics.  <em class="emphasis">Variables</em> that occur in the world that we care about are <em class="emphasis">Random Variables</em> that we discuss in <a href="Chap_Probability.html" class="internal" title="Chapter 2: Probability">Chapter 2</a>.  But we almost never can work with the variable directly, just a sample of data from that variable as in <a href="Chap_DataBasics.html" class="internal" title="Chapter 1: Data Basics">Chapter 1</a>.  We will use what we learned about <a href="Chap_Distributions.html" class="internal" title="Chapter 3: Distributions">Chapter 3</a> to make predictions about the original random variable.</p></section><section class="subsection" id="subsection-22"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.1.1</span> <span class="title">Point Estimates vs Parameters of interest</span>
+</h3>
+<article class="definition definition-like" id="definition-28"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.1.1</span><span class="period">.</span>
+</h6>
+<p id="p-730">A statistic about a population we wish to measure or estimate is a <em class="emphasis">parameter of interest</em>.    An estimate of that statistic is a <em class="emphasis">point estimate</em>.  The difference between the  the point estimate and the parameter of interest (positive or negative) is the <em class="emphasis">error</em>.  The <em class="emphasis">sampling error</em> is how much the error will tend to vary between samples.  The <em class="emphasis">sample size</em> is the size of the sample.</p>
+<p id="p-731"><em class="emphasis">Bias</em> describes a systematic tendency to over or underestimate the true population value.  We use the sampling techniques in <a href="Chap_DataBasics.html" class="internal" title="Chapter 1: Data Basics">Chapter 1</a> to minimize bias.</p></article><article class="example example-like" id="example-parameterpoint"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-parameterpoint"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Male African Elephants.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-parameterpoint"><article class="example example-like"><p id="p-732">To predict the mean weight of Male African Elephants, 100 Male African Elephants were weighed, and the average of these 100 elephants was 6175 kg.  The actual mean weight of Male African  Elephants is 6300 kg.</p>
+<ul id="p-733" class="disc">
+<li id="li-133">The <em class="emphasis">parameter of interest</em> is the mean weight of Male African Elephants.</li>
+<li id="li-134">The <em class="emphasis">point estimate</em> is the mean weight of the 100 sampled Male African Elephants, 6175 kg.</li>
+<li id="li-135">The <em class="emphasis">error</em> is the difference between the point estimate and the parameter of interest, -225 kg.</li>
+<li id="li-136">The <em class="emphasis">sample size</em> is 100 elephants.</li>
+</ul></article></div>
+<article class="activity project-like" id="activity-parameter-of-interest"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Parameters of Interest.</span>
+</h6>
+<div class="introduction" id="introduction-84"><p id="p-734">For each of the following, determine if the paramter of interest is a <em class="emphasis">mean</em> or a <em class="emphasis">proportion</em>.  (To help answer this, consider if the underlying variable is <em class="emphasis">numerical</em> or <em class="emphasis">categorical</em>.)</p></div>
+<article class="task exercise-like" id="task-408"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-735">200 college students were surveyed to see what the cost of their textbooks were.</p></article><article class="task exercise-like" id="task-409"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-736">200 college students were surveyed to see if their professors used Open Educational Resources in their courses.</p></article><article class="task exercise-like" id="task-410"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-737">In a survey, adult women were asked if they experienced sexual discrimination in their place of work.</p></article><article class="task exercise-like" id="task-411"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-738">Adults were asked in a survey how much they spent on groceries every month.</p></article><article class="task exercise-like" id="task-412"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-739">Highschool students were asked how many hours a week they spend on the internet.</p></article><article class="task exercise-like" id="task-413"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-740">Adults were asked if an advanced degree was neccesary for their current occupation.</p></article></article></section><section class="subsection" id="subsection-23"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.1.2</span> <span class="title">Variability in Point Estimates</span>
+</h3>
+<article class="exploration project-like" id="exploration-solarenergy"><h6 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">4.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">American's Support for Solar Energy.</span>
+</h6>
+<div class="introduction" id="introduction-85"><p id="p-741">Suppose that the proportion of American adults who support the expansion of solar energy were 88%.  If we sampled 1000 random American's, we wouldn't neccesarily expect exactly 88% of them to support Solar Energy would we?  Maybe we would get a group of 1000 that had more support for solar, or less.  How much variability can we expect?</p></div>
+<article class="task exercise-like" id="task-414"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-742">Run the following code to create a vector of 250 million Americans, of whom 88% support solar energy and 12% do not: <div class="sagecell-r" id="sage-136"><script type="text/x-sage">pop_size = 250000000
+possible_entries = c(rep("support", 0.88 * pop_size), rep("not", 0.12 * pop_size))
+summary(possible_entries)
+</script></div></p></article><article class="task exercise-like" id="task-415"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-743">Run the following code to sample 1000 Americans from this Population: <div class="sagecell-r" id="sage-137"><script type="text/x-sage">sample_group=sample(possible_entries, size=1000)
+summary(sample_group)
+</script></div></p></article><article class="task exercise-like" id="task-416"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-744">Run the following code to see what proportion of the sample group support solar energy: <div class="sagecell-r" id="sage-138"><script type="text/x-sage">length(which(sample_group=="support"))/1000
+</script></div> What is the error?</p></article><article class="task exercise-like" id="task-417"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-745">Rerun (b) and (c), what do we notice about the error?</p></article><article class="task exercise-like" id="task-418"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-746">Run the following code to simulate 10,000 possible surveys, and display a histogram of the proportion of respondents who support solar energy: <div class="sagecell-r" id="sage-139"><script type="text/x-sage">trials=10000       
+solar_support= rep(0, trials)
+
+sample_size=1000
+
+
+for(i in 1:trials){
+  samp=sample(possible_entries, size=sample_size)
+  solar_support[i]=length(which(samp=="support"))/1000
+}
+hist(solar_support, breaks=25)
+print(sample_size)
+</script></div> What do we notice about the shape of the histogram?</p></article></article><article class="remark remark-like" id="remark-27"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.1.3</span><span class="period">.</span>
+</h6>
+<p id="p-747">Notice that  every time we sampled, we get a potentially different proportion of respondents who support solar energy.  Thus, the proportion of respondents who support solar energy (\(\hat{p}\)) is a <em class="emphasis">random variable</em> and thus has a mean, and a standard deviation.  We will call this standard deviation the <em class="emphasis">sampling error</em> as it measure the tendency of \(\hat{p}\) to deviate from it's mean.</p>
+<p id="p-748">In general, we call \(\hat{p}\) the <em class="emphasis">sample proportion</em> or the proportion of a sample which satisfies some condition, which is a point-estimate for \(p\) the population proportion (which satisfies the same condition). The distribution of \(\hat{p}\) is the <em class="emphasis">sampling distribution</em>.</p></article><article class="theorem theorem-like" id="theorem-CLTprop"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">The Central Limit Theorem (Proportion).</span>
+</h6>
+<p id="p-749">For a sufficiently large sample (typically \(pn, p(1-n)\geq 10\) or at least 10 “successes” and “failures”) the sample distribution of\(\hat{p}\) is approximately <em class="emphasis">normally distributed</em> with pararmeters</p>
+<div class="displaymath">
+\begin{equation*}
+\mu_{\hat{p}}=p,\ \ \  SE_{\hat{p}}=\sqrt{\frac{p(1-p)}{n}}.
+\end{equation*}
+</div>
+<p id="p-750">This is very similar to <a class="xref" data-knowl="./knowl/remark-normalapproximation.html" title="Remark 3.4.5">Remark 3.4.5</a></p></article><article class="activity project-like" id="activity-solar"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Normal Approximation for Solar Energy Support.</span>
+</h6>
+<div class="introduction" id="introduction-86"><p id="p-751">In <a class="xref" data-knowl="./knowl/exploration-solarenergy.html" title="Exploration 4.1.2: American's Support for Solar Energy">Exploration 4.1.2</a> we have a population where the proportion of support for solar energy is \(p=0.88\text{.}\)  Moreover, we have a sample size of \(n=1000\text{.}\)</p></div>
+<article class="task exercise-like" id="task-419"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-752">Compute \(np, n(1-p)\) and ensure that both values are at least 10.</p></article><article class="task exercise-like" id="task-420"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-753">Follow <a class="xref" data-knowl="./knowl/theorem-CLTprop.html" title="Theorem 4.1.4: The Central Limit Theorem (Proportion)">Theorem 4.1.4</a> to compute \(\mu_{\hat{p}}\) and \(SE_{\hat{p}}\text{.}\)</p></article><article class="task exercise-like" id="task-421"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-754">Fix and run un the following code to display the histogram from <a class="xref" data-knowl="./knowl/exploration-solarenergy.html" title="Exploration 4.1.2: American's Support for Solar Energy">Exploration 4.1.2</a> (e), overlayed with a normal curve with mean <code class="code-inline tex2jax_ignore">mu_p</code>=\(\mu_{\hat{p}}\) and <code class="code-inline tex2jax_ignore">SE_p</code>=\(SE_{\hat{p}}\text{.}\) <div class="sagecell-r" id="sage-140"><script type="text/x-sage">mu_p=FIXME
+SE_p=FIXME
+
+hist(solar_support, prob=TRUE, breaks=25)
+curve(dnorm(x, mean=mu_p, sd=SE_p), col="darkblue", lwd=2, add=TRUE, yaxt="n")
+print(sample_size)
+</script></div> How well does the normal curve match the histogram?</p></article><article class="task exercise-like" id="task-422"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-755">Use the normal approximation for \(\hat{p}\) with mean \(\mu_{\hat{p}}\) and standard deviation \(SE_{\hat{p}}\) to compute \(P(\hat{p}\lt0.85)\text{.}\) <div class="sagecell-r" id="sage-141"><script type="text/x-sage">
+</script></div></p></article><article class="task exercise-like" id="task-423"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-756">Use the normal approximation for \(\hat{p}\) to find an interval \([0.88-k, 0.88+k]\) so that there is a 95% chance \(\hat{p}\) falls in this interval. <div class="sagecell-r" id="sage-142"><script type="text/x-sage">
+</script></div></p></article><article class="task exercise-like" id="task-424"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-757">Take a moment and appreciate how closely the sample proportions model the population proportion, despite 1000 adults being a paltry percentage of 250 million adults.</p></article></article><article class="activity project-like" id="activity-merchandise"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Merchandise Purchasing.</span>
+</h6>
+<div class="introduction" id="introduction-87"><p id="p-758">A recording artist wants to know what percentage of attendees of their shows purchase merchandise at the shows.  They randomly survey 100 attendees of their recent shows, and found that 22 of them purchased merchandise.</p></div>
+<article class="task exercise-like" id="task-425"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-759">What is the <em class="emphasis">population</em> under consideration?</p>
+<ol class="decimal">
+<li id="li-137">People who listen to music.</li>
+<li id="li-138">100 attendees.</li>
+<li id="li-139">People who attended the recording artist's shows.</li>
+<li id="li-140">22 people who purchased merchandise.</li>
+</ol></article><article class="task exercise-like" id="task-426"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-760">What is the parameter of interest?</p>
+<ol class="decimal">
+<li id="li-141">The average number of shows fans attend a year.</li>
+<li id="li-142">Proportion of show attendees who purchase merchandise.</li>
+<li id="li-143">The average amount of money spent on merchandise.</li>
+<li id="li-144">Proportion of people who bought the artist's album who attended shows.</li>
+</ol></article><article class="task exercise-like" id="task-427"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-761">What is the point estimate (\(\hat{p}\)) for the parameter?</p></article><article class="task exercise-like" id="task-428"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-762">Use <a class="xref" data-knowl="./knowl/theorem-CLTprop.html" title="Theorem 4.1.4: The Central Limit Theorem (Proportion)">Theorem 4.1.4</a> and the point estimate to compute the Sample Error for the point estimate.</p></article><article class="task exercise-like" id="task-429"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-763">Suppose that the actual percentage of show attendees who purchase merchandise is 25%.  Is this suprising?</p></article><article class="task exercise-like" id="task-430"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-764">Recompute the Sample Error using \(p=0.25\)  Is it much different than what you found in (d)?</p></article><article class="task exercise-like" id="task-431"><h6 class="heading"><span class="codenumber">(g)</span></h6>
+<p id="p-765">Fix and run the following code to simulate the 1000 surveys of size <code class="code-inline tex2jax_ignore">n</code>=100, probability <code class="code-inline tex2jax_ignore">p</code>=0.25, and point estimate <code class="code-inline tex2jax_ignore">phat</code>\(=\hat{p}=22/100\text{,}\) as well as plot a histogram of the survey results, and the normal approximation: <div class="sagecell-r" id="sage-143"><script type="text/x-sage">trials=1000
+
+n=FIXME
+p=FIXME
+phat=FIXME
+
+mu_p=p
+SE_p=sqrt(p*(1-p)/n)
+
+results=rep(0,trials)
+
+for(i in 1:n){
+  results=results+sample(c(1, 0), trials, replace = TRUE, prob = c(p, 1-p)) 
+}
+
+proportion=results/n
+
+hist(proportion, prob=TRUE, breaks=25)
+curve(dnorm(x, mean=mu_p, sd=SE_p), col="darkblue", lwd=2, add=TRUE, yaxt="n")
+abline(v=phat, col="red",lwd=3, lty=2 )
+print(trials)
+</script></div> Would 22 respondents replying that they purchased merchandise be abnormal?</p></article></article><article class="activity project-like" id="activity-smoking"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">Adults who Smoke.</span>
+</h6>
+<div class="introduction" id="introduction-88"><p id="p-766">A research team wishes to decide what percentage of adults in a town smokes.  In an survey of 232 adults from the town, 48 of them smoke.</p></div>
+<article class="task exercise-like" id="task-432"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-767">What is the population under consideration?</p>
+<ol class="decimal">
+<li id="li-145">Adults who smoke.</li>
+<li id="li-146">The adults who live in the town.</li>
+<li id="li-147">232 adults.</li>
+<li id="li-148">48 smokers.</li>
+</ol></article><article class="task exercise-like" id="task-433"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-768">What is the parameter of interest?</p>
+<ol class="decimal">
+<li id="li-149">Proportion of adults who smoke.</li>
+<li id="li-150">Proportion of adults living in this town who smoke.</li>
+<li id="li-151">Average number of times adults smoke each week.</li>
+<li id="li-152">Proportion of adult humans on earth who live in this town.</li>
+</ol></article><article class="task exercise-like" id="task-434"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-769">What is the point estimate for the parameter?</p></article><article class="task exercise-like" id="task-435"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-770">Use <a class="xref" data-knowl="./knowl/theorem-CLTprop.html" title="Theorem 4.1.4: The Central Limit Theorem (Proportion)">Theorem 4.1.4</a> and the point estimate to compute the Sample Error for the point estimate.</p></article><article class="task exercise-like" id="task-436"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-771">Suppose that the actual percentage of adults who smoke in the town is 20%.  Is this suprising?</p></article><article class="task exercise-like" id="task-437"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-772">Recompute the Sample Error using \(p=0.2\)  Is it much different than what you found in (d)?</p></article><article class="task exercise-like" id="task-438"><h6 class="heading"><span class="codenumber">(g)</span></h6>
+<p id="p-773">Fix and run the following code to simulate the 1000 surveys of size <code class="code-inline tex2jax_ignore">n</code>, probability <code class="code-inline tex2jax_ignore">p</code> and point estimate <code class="code-inline tex2jax_ignore">phat</code>, as well as plot a histogram of the survey results, and the normal approximation: <div class="sagecell-r" id="sage-144"><script type="text/x-sage">trials=1000
+
+n=FIXME
+p=FIXME
+phat=FIXME
+
+mu_p=p
+SE_p=sqrt(p*(1-p)/n)
+
+results=rep(0,trials)
+
+for(i in 1:n){
+  results=results+sample(c(1, 0), trials, replace = TRUE, prob = c(p, 1-p)) 
+}
+
+proportion=results/n
+
+hist(proportion, prob=TRUE, breaks=25)
+curve(dnorm(x, mean=mu_p, sd=SE_p), col="darkblue", lwd=2, add=TRUE, yaxt="n")
+abline(v=phat, col="red",lwd=3, lty=2 )
+print(trials)
+</script></div> Would 48 respondents replying that they smoke be abnormal?</p></article></article></section></section></div></main>
+</div>
+</body>
+</html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-01T10:03:46-06:00       *-->
+<!--*       on 2021-04-06T11:17:28-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -117,10 +117,10 @@ MathJax.Hub.Config({
 </div></div>
 <nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="Sec_Counting.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="Chap_Distributions.html" title="Up">Up</a><span id="nextbutton" class="next-button button toolbar-item disabled">Next</span></span></div>
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="Sec_Counting.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="Chap_Distributions.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="Chap_Foundations.html" title="Next">Next</a></span></div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="Sec_Counting.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="Chap_Distributions.html" title="Up">Up</a><span class="next-button button toolbar-item disabled">Next</span>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="Sec_Counting.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="Chap_Distributions.html" title="Up">Up</a><a class="next-button button toolbar-item" href="Chap_Foundations.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -155,6 +155,13 @@ MathJax.Hub.Config({
 <li><a href="Sec_GeneralNormal.html" data-scroll="Sec_GeneralNormal">General Normal Distribution</a></li>
 <li><a href="Sec_Counting.html" data-scroll="Sec_Counting">Counting Principles</a></li>
 <li><a href="Sec_Binomial.html" data-scroll="Sec_Binomial" class="active">Binomial Distribution</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Foundations.html" data-scroll="Chap_Foundations"><span class="codenumber">4</span> <span class="title">Foundations for Inference</span></a><ul>
+<li><a href="Sec_PointEstimates.html" data-scroll="Sec_PointEstimates">Point Estimates</a></li>
+<li><a href="Sec_ConfidenceInterval.html" data-scroll="Sec_ConfidenceInterval">Confidence Intervals</a></li>
+<li><a href="Sec_HypothesisTesing.html" data-scroll="Sec_HypothesisTesing">Hypothesis Testing</a></li>
 </ul>
 </li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -354,7 +361,7 @@ print(coinflips)
 <article class="task exercise-like" id="task-398"><h6 class="heading"><span class="codenumber">(a)</span></h6>
 <p id="p-716">Use <a class="xref" data-knowl="./knowl/remark-normalapproximation.html" title="Remark 3.4.5">Remark 3.4.5</a> to find the mean and standard deviation of the normal random variable \(N_X\) that approximates \(X\text{.}\)</p></article><article class="task exercise-like" id="task-399"><h6 class="heading"><span class="codenumber">(b)</span></h6>
 <p id="p-717">Fix and run the following code to simulate 1000 events where you flip  <code class="code-inline tex2jax_ignore">coinflips=1000</code> coins, and record the number of resulting heads, as well as display a normal curve over the histogram: <div class="sagecell-r" id="sage-131"><script type="text/x-sage">numheads = rep(0, 1000)
-coinflips=1000
+coinflips=100
 
 m=coinflips*0.5
 std=sqrt(coinflips*0.5*(1-0.5))
