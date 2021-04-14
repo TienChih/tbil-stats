@@ -709,11 +709,11 @@
                       </p></task>
 
                       <task>
-                        <p>Let <m>X</m> be the normal variable mean <m>\mu_{\hat{p}}</m> and standard deviation <m>SE_{\hat{p}}</m>. Compute <m>P(X> p+|p-\hat{p}|)</m>.
+                        <p>Let <m>X</m> be the normal variable mean <m>\mu_{\hat{p}}</m> and standard deviation <m>SE_{\hat{p}}</m>. Compute <m>P(X> p_0+|p_0-\hat{p}|)</m>.
                       </p></task>
 
                        <task>
-                        <p>Compute <m>P(X\lt p-|p-\hat{p}|)</m>.  How does this compare to what you found in (f)?
+                        <p>Compute <m>P(X\lt p_0-|p_0-\hat{p}|)</m>.  How does this compare to what you found in (f)?
                       </p></task>
 
                       <task>
@@ -729,6 +729,12 @@
                       <task>
                         <p>Compute the <m>p</m>-value.</p>
                       </task>
+
+                       <task>
+                <p>
+                  State the meaning of the <m>p</m>-value within the context of this problem in a complete sentence.
+                </p>
+              </task>
 
                       <task>
                         <p>Do we accept or reject the null hypothesis?</p>
@@ -804,6 +810,12 @@
                       <task>
                         <p>Compute the <m>p</m>-value.</p>
                       </task>
+
+                       <task>
+                <p>
+                  State the meaning of the <m>p</m>-value within the context of this problem in a complete sentence.
+                </p>
+              </task>
 
                       <task>
                         <p>Do we accept or reject the null hypothesis?</p>
@@ -885,6 +897,12 @@
                         <p>Compute the <m>p</m>-value.</p>
                       </task>
 
+                       <task>
+                <p>
+                  State the meaning of the <m>p</m>-value within the context of this problem in a complete sentence.
+                </p>
+              </task>
+
                       <task>
                         <p>Do we accept or reject the null hypothesis?</p>
                       </task>
@@ -964,6 +982,12 @@
                       <task>
                         <p>Compute the <m>p</m>-value.</p>
                       </task>
+
+                       <task>
+                <p>
+                  State the meaning of the <m>p</m>-value within the context of this problem in a complete sentence.
+                </p>
+              </task>
 
                       <task>
                         <p>Do we accept or reject the null hypothesis?</p>
@@ -1062,6 +1086,12 @@
                         <p>Compute the <m>p</m>-value.</p>
                       </task>
 
+                       <task>
+                <p>
+                  State the meaning of the <m>p</m>-value within the context of this problem in a complete sentence.
+                </p>
+              </task>
+
                       <task>
                         <p>Do we accept or reject the null hypothesis?</p>
                       </task>
@@ -1090,56 +1120,6 @@
                  
               </activity>
 
-
-              <remark xml:id="remark-Rpropht">
-              <title>Using <c>R</c> to Hypothesis Test.</title>
-              <p>
-                Note that we can use <c>R</c> to more directly compute <m>p</m>-values.
-
-
-                <ol>
-                 <li>Suppose you want to know if the proportion of donuts sold in a donut shop having filling is <m>H_A: p>0.25, H_0:p=0.25</m>.  If you sample <m>n=30</m> randomly sold donuts and found 12 of them to have filling, then you can compute the <m>p</m>-value via:
-
-                  <sage language="r">
-                      <input>
-                      prop.test(12,30,0.25,alternative="greater")
-                      </input>
-                      </sage>
-
-                </li>
-
-                 
-                  <li>Suppose you want to know if the proportion of donuts sold in a donut shop having filling is <m>H_A: p\lt 0.35, H_0:p=0.35</m>.  If you sample <m>n=40</m> randomly sold donuts and found 10 of them to have filling, then you can compute the <m>p</m>-value via:
-
-                  <sage language="r">
-                      <input>
-                      prop.test(10,40,0.35,alternative="less")
-                      </input>
-                      </sage>
-                    </li>
-
-                    <li>Suppose you want to know if the proportion of donuts sold in a donut shop having filling is <m>H_A: p\neq 0.5, H_0:p=0.55</m>.  If you sample <m>n=100</m> randomly sold donuts and found 62 of them to have filling, then you can compute the <m>p</m>-value via:
-
-                  <sage language="r">
-                      <input>
-                      prop.test(62,100,0.5,alternative="two.sided")
-                      </input>
-                      </sage>
-                    </li>
-
-                    <li>You may notice that in the above computations, a <em>95% confidence interval</em> is also computed (as well as the sample proportion).  We can adjust this if we choose.  If you sample <m>n=75</m> randomly sold donuts and found 43 of them to have filling, then you can compute a 99% confidence interval for the true proportion of donuts sold with filling via via:
-
-                  <sage language="r">
-                      <input>
-                      prop.test(43,75,conf.level=0.99)
-                      </input>
-                      </sage>
-                    </li>
-
-                </ol>
-
-             </p>
-            </remark>
 
 
 

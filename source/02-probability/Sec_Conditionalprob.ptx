@@ -601,7 +601,7 @@ Run the following code to see how many of the rolls satisfying <m>B</m> also sat
 </definition>
 
 
-<remark>
+<remark xml:id="remark-proddefofind">
   <statement>
     <p>
       Events <m>A, B</m> are <term>independent</term> if and only if:
