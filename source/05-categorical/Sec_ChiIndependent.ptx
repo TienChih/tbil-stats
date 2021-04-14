@@ -125,7 +125,7 @@ P_\ell \amp n_{\ell,1} \amp n_{\ell,2} \amp \cdots \amp n_{\ell,k} \\
               We first note that the probability that if we selected an arbitrary data point from this sample, the probability it has Population <m>P_i</m>  is the sum of row <m>i</m> divided by <m>n</m> the size of the sample. Similarly, the probability it has Outcome <m>O_j</m>  is the sum of column <m>j</m> divided by <m>n</m> the size of the sample.  From this, <em>IF</em> we were to assume events <m>P_i, O_j</m> were independent, we would have <m>P(P_i\cap O_j)=P(P_i)P(O_j)</m> and the expected number of occurences from a sample of size <m>n</m> from Population <m>P_i</m> with Outcome <m>O_j</m> is: <me>E_{i,j}=n\cdot P(P_i)P(O_j)=n\cdot \frac{\text{sum of row $i$}}{n}\frac{\text{sum of column $j$}}{n}=\frac{\text{sum of row $i$}\cdot \text{sum of column $j$}}{n}.</me>  From here we can compute a table of <em>expected frequencys</em>.  <me>
 \begin{array}{|c|c|c|c|c|}
 \hline
-\textbf{Sample Frequency} \amp O_1 \amp O_2 \amp \cdots \amp O_k  \\
+\textbf{Expected Frequency} \amp O_1 \amp O_2 \amp \cdots \amp O_k  \\
 \hline
 P_1 \amp E_{1,1} \amp E_{1,2} \amp \cdots \amp E_{1,k} \\
 \hline
@@ -426,20 +426,22 @@ chisq.test(datamatrix, correct=FALSE)
         </activity>
 
 
-        <activity xml:id="activity-CorporalPunishment">
-            <title>Corporal Punishment</title>
+        <activity xml:id="activity-Energy">
+            <title>Pew Survey on Energy Sources in 2018</title>
             <introduction>
                 <p>
-                We examine data from a study of the Gallup Institute in Denmark in 1979 about the attitude of a random sample of 1,456 persons towards corporal punishment of children.
+                We examine data from a US-based survey on support for expanding six different sources of energy, including solar, wind, offshore drilling, hydrolic fracturing ("fracking"), coal, and nuclear.
+
+
               </p>
 
               <p>
-                Run the following code to download <c>Punishment.csv</c> data set and to display it's variables.
+                Run the following code to download <c>pew_energy_2018.csv</c> data set and to display it's variables.
 
                 <sage language="r">
                       <input>
-                      punishment = read.csv("https://vincentarelbundock.github.io/Rdatasets/csv/vcd/Punishment.csv")
-                      names(punishment)
+                      energy = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/pew_energy_2018.csv")
+                      names(energy)
                       </input>
                       </sage>
               </p>
@@ -451,20 +453,67 @@ chisq.test(datamatrix, correct=FALSE)
 
             <task>
               <p>
-                A researcher is curious to see if a person's education level is independent of their attitude torwards corporal punishment.  State a null and alternative for the <m>\chi^2</m> independence test.
+                A researcher is curious to see if a person's position on expanding solar energy is independent of their attitude torwards expanding coal mining.  State a null and alternative for the <m>\chi^2</m> independence test.
               </p>
             </task>
 
             <task>
               <p>
-                Run the following code to display a sample frequency table comparing education levels and attitude torwards corporal punishment.
+                Run the following code to display a sample frequency table comparing support levels for expanding solar energy as rows and expanding coal mining as columns.
                 <sage language="r">
                       <input>
-                      table(punishments$attitude, punishments$education)
+                      table(energy$solar_panel_farms, energy$coal_mining)
                       </input>
                       </sage>
                     </p>
                   </task>
+
+               <task>
+              <p>
+                Run the following code to show a mosaic plots comparing support of expansion for solar and coal energy.  What can you tell from this plot?
+                <sage language="r">
+                      <input>
+                      counts=table(energy$solar_panel_farms, energy$coal_mining)
+                      mosaicplot(counts)
+                      </input>
+                      </sage>
+                    </p>
+                  </task>   
+
+              <task>
+              <p>
+                Run the following code to run the <m>\chi^2</m> independence test on <c>energy$solar_panel_farms</c> and <c>energy$coal_mining</c>.
+                <sage language="r">
+                      <input>
+                      chisq.test(energy$solar_panel_farms, energy$coal_mining, correct=FALSE)
+                      </input>
+                      </sage>
+                    </p>
+                  </task>    
+
+
+                   <task>
+                <p>
+                  State the meaning of the <m>p</m>-value within the context of this problem in a complete sentence.
+                </p>
+              </task>
+
+                <task>
+                <p>
+                  If we had a level of significance <m>\alpha=0.05</m> do we accept or reject the null hypothesis?</p>
+                </task>
+
+                <task>
+                <p>
+                  Is it plausible for support for solar and coal expansion to be independent?
+                </p>
+              </task>
+
+              <task>
+                <p>
+                  Pick any two energy sources and repeat the steps above for those energy sources.
+                </p>
+              </task>
 
         </activity>
 

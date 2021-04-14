@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-13T17:18:01-06:00       *-->
+<!--*       on 2021-04-13T18:45:30-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -343,19 +343,28 @@ Women         FIXME   FIXME      FIXME
 
 datamatrix = as.matrix(read.table(textConnection(Input),header=TRUE,row.names=1))
 chisq.test(datamatrix, correct=FALSE)
-</script></div> How does the \(\chi^2\) value and the \(p\)-value compare to what you found in (b)?</p></article></article><article class="activity project-like" id="activity-CorporalPunishment"><h6 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.4.6</span><span class="period">.</span><span class="space"> </span><span class="title">Corporal Punishment.</span>
+</script></div> How does the \(\chi^2\) value and the \(p\)-value compare to what you found in (b)?</p></article></article><article class="activity project-like" id="activity-Energy"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.4.6</span><span class="period">.</span><span class="space"> </span><span class="title">Pew Survey on Energy Sources in 2018.</span>
 </h6>
 <div class="introduction" id="introduction-27">
-<p id="p-206">We examine data from a study of the Gallup Institute in Denmark in 1979 about the attitude of a random sample of 1,456 persons towards corporal punishment of children.</p>
-<p id="p-207">Run the following code to download <code class="code-inline tex2jax_ignore">Punishment.csv</code> data set and to display it's variables. <div class="sagecell-r" id="sage-32"><script type="text/x-sage">punishment = read.csv("https://vincentarelbundock.github.io/Rdatasets/csv/vcd/Punishment.csv")
-names(punishment)
+<p id="p-206">We examine data from a US-based survey on support for expanding six different sources of energy, including solar, wind, offshore drilling, hydrolic fracturing ("fracking"), coal, and nuclear.</p>
+<p id="p-207">Run the following code to download <code class="code-inline tex2jax_ignore">pew_energy_2018.csv</code> data set and to display it's variables. <div class="sagecell-r" id="sage-32"><script type="text/x-sage">energy = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/pew_energy_2018.csv")
+names(energy)
 </script></div></p>
 </div>
 <article class="task exercise-like" id="task-119"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-208">A researcher is curious to see if a person's education level is independent of their attitude torwards corporal punishment.  State a null and alternative for the \(\chi^2\) independence test.</p></article><article class="task exercise-like" id="task-120"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-209">Run the following code to display a sample frequency table comparing education levels and attitude torwards corporal punishment. <div class="sagecell-r" id="sage-33"><script type="text/x-sage">table(punishments$attitude, punishments$education)
-</script></div></p></article></article></section></section></div></main>
+<p id="p-208">A researcher is curious to see if a person's position on expanding solar energy is independent of their attitude torwards expanding coal mining.  State a null and alternative for the \(\chi^2\) independence test.</p></article><article class="task exercise-like" id="task-120"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-209">Run the following code to display a sample frequency table comparing support levels for expanding solar energy as rows and expanding coal mining as columns. <div class="sagecell-r" id="sage-33"><script type="text/x-sage">table(energy$solar_panel_farms, energy$coal_mining)
+</script></div></p></article><article class="task exercise-like" id="task-121"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-210">Run the following code to show a mosaic plots comparing support of expansion for solar and coal energy.  What can you tell from this plot? <div class="sagecell-r" id="sage-34"><script type="text/x-sage">counts=table(energy$solar_panel_farms, energy$coal_mining)
+mosaicplot(counts)
+</script></div></p></article><article class="task exercise-like" id="task-122"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-211">Run the following code to run the \(\chi^2\) independence test on <code class="code-inline tex2jax_ignore">energy$solar_panel_farms</code> and <code class="code-inline tex2jax_ignore">energy$coal_mining</code>. <div class="sagecell-r" id="sage-35"><script type="text/x-sage">chisq.test(energy$solar_panel_farms, energy$coal_mining, correct=FALSE))
+</script></div></p></article><article class="task exercise-like" id="task-123"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-212">State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-124"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-213">If we had a level of significance \(\alpha=0.05\) do we accept or reject the null hypothesis?</p></article><article class="task exercise-like" id="task-125"><h6 class="heading"><span class="codenumber">(g)</span></h6>
+<p id="p-214">Is it plausible for support for solar and coal expansion to be independent?</p></article><article class="task exercise-like" id="task-126"><h6 class="heading"><span class="codenumber">(h)</span></h6>
+<p id="p-215">Pick any two energy sources and repeat the steps above for those energy sources.</p></article></article></section></section></div></main>
 </div>
 </body>
 </html>
