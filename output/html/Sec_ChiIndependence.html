@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-13T18:45:30-06:00       *-->
+<!--*       on 2021-04-14T11:10:22-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -224,7 +224,7 @@ E_{i,j}=n\cdot P(P_i)P(O_j)=n\cdot \frac{\text{sum of row $i$}}{n}\frac{\text{su
 \begin{equation*}
 \begin{array}{|c|c|c|c|c|}
 \hline
-\textbf{Sample Frequency} \amp O_1 \amp O_2 \amp \cdots \amp O_k  \\
+\textbf{Expected Frequency} \amp O_1 \amp O_2 \amp \cdots \amp O_k  \\
 \hline
 P_1 \amp E_{1,1} \amp E_{1,2} \amp \cdots \amp E_{1,k} \\
 \hline
@@ -359,12 +359,35 @@ names(energy)
 <p id="p-210">Run the following code to show a mosaic plots comparing support of expansion for solar and coal energy.  What can you tell from this plot? <div class="sagecell-r" id="sage-34"><script type="text/x-sage">counts=table(energy$solar_panel_farms, energy$coal_mining)
 mosaicplot(counts)
 </script></div></p></article><article class="task exercise-like" id="task-122"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-211">Run the following code to run the \(\chi^2\) independence test on <code class="code-inline tex2jax_ignore">energy$solar_panel_farms</code> and <code class="code-inline tex2jax_ignore">energy$coal_mining</code>. <div class="sagecell-r" id="sage-35"><script type="text/x-sage">chisq.test(energy$solar_panel_farms, energy$coal_mining, correct=FALSE))
+<p id="p-211">Run the following code to run the \(\chi^2\) independence test on <code class="code-inline tex2jax_ignore">energy$solar_panel_farms</code> and <code class="code-inline tex2jax_ignore">energy$coal_mining</code>. <div class="sagecell-r" id="sage-35"><script type="text/x-sage">chisq.test(energy$solar_panel_farms, energy$coal_mining, correct=FALSE)
 </script></div></p></article><article class="task exercise-like" id="task-123"><h6 class="heading"><span class="codenumber">(e)</span></h6>
 <p id="p-212">State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-124"><h6 class="heading"><span class="codenumber">(f)</span></h6>
 <p id="p-213">If we had a level of significance \(\alpha=0.05\) do we accept or reject the null hypothesis?</p></article><article class="task exercise-like" id="task-125"><h6 class="heading"><span class="codenumber">(g)</span></h6>
 <p id="p-214">Is it plausible for support for solar and coal expansion to be independent?</p></article><article class="task exercise-like" id="task-126"><h6 class="heading"><span class="codenumber">(h)</span></h6>
-<p id="p-215">Pick any two energy sources and repeat the steps above for those energy sources.</p></article></article></section></section></div></main>
+<p id="p-215">Pick any two energy sources and repeat the steps above for those energy sources.</p></article></article><article class="activity project-like" id="activity-Movies"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.4.7</span><span class="period">.</span><span class="space"> </span><span class="title">Movie Data.</span>
+</h6>
+<div class="introduction" id="introduction-28">
+<p id="p-216">We examine data  obtained from IMDB and Rotten Tomatoes. The data represent 456 randomly sampled movies released between 1972 to 2014 in the Unites States.</p>
+<p id="p-217">Run the following code to download <code class="code-inline tex2jax_ignore">movies.Rdata</code> data set and to display it's variables. <div class="sagecell-r" id="sage-36"><script type="text/x-sage">load(url("https://github.com/TienChih/tbil-stats/raw/main/data/movies.Rdata"))
+names(movies)
+</script></div></p>
+</div>
+<article class="task exercise-like" id="task-127"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-218">We're curious to see if genre of a movie, and how Rotten Tomatoes rates it, are independent.  State a null and alternative for the \(\chi^2\) independence test.</p></article><article class="task exercise-like" id="task-128"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-219">Run the following code to display a sample frequency table comparing the genre of a movie and their Rotten Tomatoes score. <div class="sagecell-r" id="sage-37"><script type="text/x-sage">table(movies$genre, movies$critics_rating)
+</script></div></p></article><article class="task exercise-like" id="task-129"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-220">Run the following code to show a mosaic plots comparing the genre of a movie and their Rotten Tomatoes score.  What can you tell from this plot? <div class="sagecell-r" id="sage-38"><script type="text/x-sage">counts=table(movies$genre, movies$critics_rating)
+mosaicplot(counts)
+</script></div></p></article><article class="task exercise-like" id="task-130"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-221">Run the following code to run the \(\chi^2\) independence test on <code class="code-inline tex2jax_ignore">movies$genre</code> and <code class="code-inline tex2jax_ignore">movies$critics_rating</code>. <div class="sagecell-r" id="sage-39"><script type="text/x-sage">chisq.test(movies$genre, movies$critics_rating, correct=FALSE)
+</script></div></p></article><article class="task exercise-like" id="task-131"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-222">State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-132"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-223">If we had a level of significance \(\alpha=0.05\) do we accept or reject the null hypothesis?</p></article><article class="task exercise-like" id="task-133"><h6 class="heading"><span class="codenumber">(g)</span></h6>
+<p id="p-224">Is it plausible for support for the genre of a movie and the Rotten Tomatoes rating to be independent?</p></article><article class="task exercise-like" id="task-134"><h6 class="heading"><span class="codenumber">(h)</span></h6>
+<p id="p-225">Run the following code to obtain summaries of the variables.  Which are categorical? <div class="sagecell-r" id="sage-40"><script type="text/x-sage">summary(movies)
+</script></div></p></article><article class="task exercise-like" id="task-135"><h6 class="heading"><span class="codenumber">(i)</span></h6>
+<p id="p-226">Repeat the above steps comparing any two categorical variables of your choice.</p></article></article></section></section></div></main>
 </div>
 </body>
 </html>

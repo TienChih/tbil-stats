@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-13T18:45:32-06:00       *-->
+<!--*       on 2021-04-14T11:10:24-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -47,7 +47,7 @@ names(energy)
 <p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to show a mosaic plots comparing support of expansion for solar and coal energy.  What can you tell from this plot? <div class="sagecell-r" id="sage-34"><script type="text/x-sage">counts=table(energy$solar_panel_farms, energy$coal_mining)
 mosaicplot(counts)
 </script></div></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(d)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to run the \(\chi^2\) independence test on <code class="code-inline tex2jax_ignore">energy$solar_panel_farms</code> and <code class="code-inline tex2jax_ignore">energy$coal_mining</code>. <div class="sagecell-r" id="sage-35"><script type="text/x-sage">chisq.test(energy$solar_panel_farms, energy$coal_mining, correct=FALSE))
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to run the \(\chi^2\) independence test on <code class="code-inline tex2jax_ignore">energy$solar_panel_farms</code> and <code class="code-inline tex2jax_ignore">energy$coal_mining</code>. <div class="sagecell-r" id="sage-35"><script type="text/x-sage">chisq.test(energy$solar_panel_farms, energy$coal_mining, correct=FALSE)
 </script></div></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(e)</span></h6>
 <p xmlns:svg="http://www.w3.org/2000/svg">State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(f)</span></h6>
 <p xmlns:svg="http://www.w3.org/2000/svg">If we had a level of significance \(\alpha=0.05\) do we accept or reject the null hypothesis?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(g)</span></h6>
