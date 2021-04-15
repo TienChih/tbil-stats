@@ -16,7 +16,7 @@
 
   <sage language="r">
           <input>
-            loans = read.csv("https://www.openintro.org/data/csv/loans_full_schema.csv")
+            loans = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/loans_full_schema.csv")
             
             names(loans)
           </input>

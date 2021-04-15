@@ -160,10 +160,10 @@
     </preface>  -->
 
     </frontmatter>
-    <!--<xi:include href="./01-basics/main.ptx" />
+    <xi:include href="./01-basics/main.ptx" />
     <xi:include href="./02-probability/main.ptx" />
     <xi:include href="./03-distributions/main.ptx" />
-    <xi:include href="./04-foundations/main.ptx" />-->
+    <xi:include href="./04-foundations/main.ptx" />
     <xi:include href="./05-categorical/main.ptx" />
 
     <!--<backmatter>

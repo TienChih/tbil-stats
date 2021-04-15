@@ -6,12 +6,12 @@
   </p>
 
 <p>
-  Run the following code to download the hsb2 data set:
+  Run the following code to download the <c>hsb2.csv</c> data set:
 
   <sage language="r">
           <input>
-            hsb2 = read.csv("https://www.openintro.org/data/csv/hsb2.csv")
-            
+            hsb2 = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/hsb2.csv")
+            names(hsb2)
           </input>
         </sage>
 

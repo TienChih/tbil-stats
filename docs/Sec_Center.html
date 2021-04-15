@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-06T11:17:22-06:00       *-->
+<!--*       on 2021-04-15T17:43:36-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -164,12 +164,21 @@ MathJax.Hub.Config({
 <li><a href="Sec_HypothesisTesing.html" data-scroll="Sec_HypothesisTesing">Hypothesis Testing</a></li>
 </ul>
 </li>
+<li class="link">
+<a href="Chap_Categorical.html" data-scroll="Chap_Categorical"><span class="codenumber">5</span> <span class="title">Inference for Categorical Variables</span></a><ul>
+<li><a href="Sec_SizeofSampleCat.html" data-scroll="Sec_SizeofSampleCat">Size of Samples (Categorical)</a></li>
+<li><a href="Sec_TwoVarCat.html" data-scroll="Sec_TwoVarCat">Comparing Two Categorical Variables</a></li>
+<li><a href="Sec_ChiSquare.html" data-scroll="Sec_ChiSquare">Chi-Squared Test and Goodness of Fit</a></li>
+<li><a href="Sec_ChiIndependence.html" data-scroll="Sec_ChiIndependence">Chi-Squared Test and Independence</a></li>
+</ul>
+</li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="Sec_Center"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.4</span> <span class="title">Centers of Data</span>
 </h2>
-<section class="introduction" id="introduction-5">When using data to make predictions about random variables, it is useful to be able to discuss the notion of central or “average” values of that data.  There are different ways to approach this. <p id="p-74">Run the following code to download the ncbirths data set: <div class="sagecell-r" id="sage-16"><script type="text/x-sage">ncbirths = read.csv("https://www.openintro.org/data/csv/ncbirths.csv")
+<section class="introduction" id="introduction-5">When using data to make predictions about random variables, it is useful to be able to discuss the notion of central or “average” values of that data.  There are different ways to approach this. <p id="p-74">Run the following code to download the <code class="code-inline tex2jax_ignore">ncbirths,csv</code> data set: <div class="sagecell-r" id="sage-16"><script type="text/x-sage">ncbirths = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/ncbiths.csv")
+names(ncbirths)
 </script></div></p>
 <p id="p-75">In 2004, the state of North Carolina released to the public a large data set containing information on births recorded in this state. This data set has been of interest to medical researchers who are studying the relation between habits and practices of expectant mothers and the birth of their children. This is a random sample of 1,000 cases from this data set.</p></section><article class="exploration project-like" id="measurements-center-preview"><h6 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">1.4.1</span><span class="period">.</span>

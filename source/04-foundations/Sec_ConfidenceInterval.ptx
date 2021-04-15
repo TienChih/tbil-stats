@@ -182,6 +182,21 @@
           <task>
             <p>
               Use <xref  ref="remark-95prop"/> to compute a 95% confidence interval for <m>p</m>: the proportion of Americams who prefer their steaks medium-rare.  Is 23% in this interval?
+              <sage language="r">
+                      <input>
+        
+                      </input>
+                      </sage>
+                  <hint>
+                    <title>Desmos</title>
+                    <p>
+
+                      <interactive desmos="84dbdr69to"/>
+                      <interactive desmos="ca5xk6sbyl"/>
+
+                    </p>
+
+                  </hint>
             </p>
           </task>
 
@@ -206,6 +221,11 @@
               <p>
                 Use this new result to comput <m>\hat{p}, SE_{\hat{p}}</m> and a new 95% Confidence Interval.  Does THIS new interval contain 23%?
               </p>
+            </task>
+
+             <task>
+            <p>
+              State what this confidence interval means in the context of this problem using complete sentences.</p>
             </task>
 
             <task>
@@ -390,9 +410,30 @@
               </p>
             </task>
 
+             <task>
+            <p>
+              State what this confidence interval means in the context of this problem using complete sentences.</p>
+            </task>
+
             <task>
               <p>
                 Find a value <m>z^*</m> so that given the standard normal random variable <m>Z</m>, <m>P(-z^*\lt Z\lt z^*)=0.85</m>.
+
+                <sage language="r">
+                      <input>
+        
+                      </input>
+                      </sage>
+                  <hint>
+                    <title>Desmos</title>
+                    <p>
+
+                      <interactive desmos="84dbdr69to"/>
+                      <interactive desmos="ca5xk6sbyl"/>
+
+                    </p>
+
+                  </hint>
               </p>
             </task>
 
@@ -402,10 +443,113 @@
               </p>
             </task>
 
+             <task>
+            <p>
+              State what this confidence interval means in the context of this problem using complete sentences.</p>
+            </task>
+
+
+
 
 
 
           </activity>
+
+
+
+          <activity xml:id="activity-military">
+      <title>Branches of the US Military</title>
+      <introduction>
+          <p>We consider what proportion of the Military belongs to which branch of service.</p>
+
+          <p>
+            Run the following code to download <c>military.csv</c> and display it's variables.
+             <sage language="r">
+                      <input>
+                      military = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/military.csv")
+                      names(military)
+                      </input>
+                      </sage>
+                  This dataset contains demographic information on every member of the US armed forces including gender, race, and rank.
+
+
+          </p>
+
+          <p>Let <m>p</m> denote the proportion of military members who are in the Army.
+        </p>
+
+          
+      </introduction>
+
+     
+
+
+      <task>
+        <p>
+          Run the following to sample <c>n=50</c> random members of the military:
+          <sage language="r">
+                      <input>
+                      n=50
+                      index = sample(1:nrow(military), n)
+                      samp=military[index,]
+                      </input>
+                      </sage>
+                  </p>
+              </task>
+
+              <task>
+                <p>
+          Run the following to see how many members of our sample are in the Army:
+          <sage language="r">
+                      <input>
+                      length(which(samp$branch=="army"))
+                      </input>
+                      </sage>
+                      Let <m>\hat{p}</m> denote the proportion of the sample that's in the army.
+                  </p>
+          </task>
+
+
+          <task>
+                <p>
+          Use <m>\hat{p}</m> above and <m>n=50</m>. to compute a 95% confidence interval for the proportion of miliary members in the Army.
+           <sage language="r">
+                      <input>
+        
+                      </input>
+                      </sage>
+                  <hint>
+                    <title>Desmos</title>
+                    <p>
+
+                      <interactive desmos="84dbdr69to"/>
+                      <interactive desmos="ca5xk6sbyl"/>
+
+                    </p>
+
+                  </hint>
+                  </p>
+          </task>
+
+          <task>
+            <p>
+              State what this confidence interval means in the context of this problem using complete sentences.</p>
+            </task>
+
+
+            <task>
+                <p>
+          Run the following to see the actual proportion of military members in the Army:
+          <sage language="r">
+                      <input>
+                      length(which(military$branch=="army"))/nrow(military)
+                      </input>
+                      </sage>
+                      Is this in your condidence interval?
+                  </p>
+          </task>
+
+  </activity>
 
 
 

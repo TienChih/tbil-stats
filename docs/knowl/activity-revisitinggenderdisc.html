@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:44:15-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-r' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
+                           linked: true,
+                           languages: ['r'],
+                           evalButtonText: 'Evaluate (R)'});
+});
+</script>
+</head>
+<body>
+<article class="activity project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Gender and Raises: Hypothesis Test.</span>
+</h6>
+<div class="introduction">
+<p xmlns:svg="http://www.w3.org/2000/svg">Recall that from <a class="xref" data-knowl="./knowl/exploration-genderdisc.html" title="Exploration 5.2.1: Gender and Raises">Exploration 5.2.1</a> that we have \(n_1=312\)  men and \(n_2=216\)  women, of whom \(x_1=72\) men and \(x_2=30\) women got raises. The company claims that men and women have equal raise rates.  The watchdog group claims that mean get more raises than women.  Suppose we use a \(\alpha=0.05\) level of significance.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg"><div class="sagecell-r" id="sage-183"><script type="text/x-sage">
+</script></div> <a class="hint-knowl original" data-knowl="./knowl/hint-13-hidden.html" title="Hint 1: Desmos"><span class="type">Hint</span><span class="space"> </span><span class="title">Desmos</span></a></p>
+</div>
+<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
+<p>Which of the following best describes the null hypothesis \(H_0\text{?}\)</p>
+<ul class="disc">
+<li>\(p_1-p_2\lt 0\text{.}\)</li>
+<li>\(p_1-p_2&gt; 0\text{.}\)</li>
+<li>\(p_1-p_2\neq 0\text{.}\)</li>
+<li>\(p_1-p_2= 0\text{.}\)</li>
+</ul></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
+<p>Which of the following best describes the alternative hypothesis \(H_A\text{?}\)</p>
+<ul class="disc">
+<li>\(p_1-p_2\lt 0\text{.}\)</li>
+<li>\(p_1-p_2&gt; 0\text{.}\)</li>
+<li>\(p_1-p_2\neq 0\text{.}\)</li>
+<li>\(p_1-p_2= 0\text{.}\)</li>
+</ul></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(c)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Compute \(p_{pool}\text{.}\)</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(d)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Assuming the null hypothesis, follow <a class="xref" data-knowl="./knowl/remark-diffiszero.html" title="Remark 5.2.7">Remark 5.2.7</a> to compute \(\mu_D, SE_D\text{.}\)</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(e)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Compute \(d=\hat{p_1}-\hat{p_2}\) the difference in proportions of men and women who got raises.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(f)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Let \(X\) be the normal variable mean \(\mu_{D}\) and standard deviation \(SE_{D}\text{.}\) Compute \(P(D&gt; p_0+|p_0-d|)\text{.}\)</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(g)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Use the above value to compute the \(p\)-value.  (This is an area of one tail.)</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(h)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Compute the \(z\)-score for \(\hat{p}\text{,}\) call this \(z_{\hat{p}}\text{.}\)</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(i)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Let \(Z\) denote the standard normal variable.  Compute \(P(Z&gt;|z_{\hat{p}}|)\) and \(P(Z\lt -|z_{\hat{p}}|)\text{.}\)  How does these values compare to what you found in (f) and (g)?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(j)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Compute the \(p\)-value.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(k)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(l)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Do we accept or reject the null hypothesis?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(m)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">What sort of error could have been made? (Type 1 or Type 2)</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(n)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to sample <code class="code-inline tex2jax_ignore">num_men=312</code> men where \(men_raise=72\) get raises, then samples <code class="code-inline tex2jax_ignore">num_women=216</code> men where \(women_raise=30\) get raises.  It does this <code class="code-inline tex2jax_ignore">trials=1000</code> times and plots a histogram of the differences. <div class="sagecell-r" id="sage-184"><script type="text/x-sage">trials=1000
+num_men=312
+num_women=216
+m_raise=72
+w_raise=30
+
+raise_rate=(m_raise+w_raise)/(num_men+num_women)
+diffraise=rep(NA, trials)
+
+for(i in 1:trials){
+	menraise=sample(c("RAISE", "NO"), num_men, replace=TRUE, prob=c(raise_rate, 1-raise_rate))
+	womenraise=sample(c("RAISE", "NO"), num_women, replace=TRUE, prob=c(raise_rate, 1-raise_rate))
+	diffraise[i]=length(which(menraise=="RAISE"))/num_men-length(which(womenraise=="RAISE"))/num_women
+}
+hist(diffraise, breaks=25, prob=TRUE)
+</script></div></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(o)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Fix and run the following code to plot a normal curve with mean <code class="code-inline tex2jax_ignore">mu_D=</code>\(p_0\) and standard deviation <code class="code-inline tex2jax_ignore">SE_D=</code>\(SE_D\text{,}\) and plot a line for the observed difference <code class="code-inline tex2jax_ignore">observed_diff=</code>\(d\) <div class="sagecell-r" id="sage-185"><script type="text/x-sage">mu_D=FIXME
+SE_D=FIXME
+observed_diff=FIXME
+
+hist(diffraise, breaks=25, prob=TRUE)
+curve(dnorm(x, mean=mu_D, sd=SE_D), col="darkblue", lwd=2, add=TRUE, yaxt="n")
+abline(v = observed_diff, col="red", lwd=3, lty=2)
+</script></div> How well does this curve match the histogram?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(p)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to see what proportion of these differences are greater than or equal to the <code class="code-inline tex2jax_ignore">observed_diff</code>.  How does this compare to the \(p\)-value? <div class="sagecell-r" id="sage-186"><script type="text/x-sage">length(which(diffraise>=observed_diff))/trials
+</script></div></p></article></article><span class="incontext"><a href="Sec_TwoVarCat.html#activity-revisitinggenderdisc">in-context</a></span>
+</body>
+</html>

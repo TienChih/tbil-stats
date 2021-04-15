@@ -8,12 +8,12 @@
   </p>
 
     <p>
-  Run the following code to download the ncbirths data set:
+  Run the following code to download the <c>ncbirths.csv</c> data set:
 
   <sage language="r">
           <input>
-            ncbirths = read.csv("https://www.openintro.org/data/csv/ncbirths.csv")
-            
+            ncbirths = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/ncbirths.csv")
+            names(ncbirths)
           </input>
         </sage>
 

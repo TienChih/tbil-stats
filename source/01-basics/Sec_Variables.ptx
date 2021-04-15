@@ -123,10 +123,10 @@ The dot plot for this data would be as follows:
         <ol>
           <li>
             <p>
-              Run the following code to download the Heart Transplant data and to display it.
+              Run the following code to download the <c>heart_transplant.csv</c> data and to display it.
         <sage language="r">
           <input>
-            heart_transplant = read.csv("https://www.openintro.org/data/csv/heart_transplant.csv")
+            heart_transplant = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/heart_transplant.csv")
             heart_transplant
           </input>
         </sage>
@@ -134,7 +134,7 @@ The dot plot for this data would be as follows:
         </li>
 
         <li>
-        <p>  Run names(heart_transplant) to see just the variable names.
+        <p>  Run <c>names(heart_transplant)</c> to see just the variable names.
 
         <sage language="r">
           <input>

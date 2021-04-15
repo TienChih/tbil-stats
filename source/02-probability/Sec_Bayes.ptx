@@ -12,7 +12,7 @@
 
   <sage language="r">
           <input>
-            smallpox = read.csv("https://www.openintro.org/data/csv/smallpox.csv")
+            smallpox = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/smallpox.csv")
             
             names(smallpox)
           </input>

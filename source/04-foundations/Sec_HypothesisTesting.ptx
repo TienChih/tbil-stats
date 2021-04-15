@@ -650,24 +650,7 @@
                       <p>
                         Let <m>p</m> denote the proportion of students at this university that have done undergraduate research.  Suppose the level of significance is <m>\alpha=0.05</m></p>
 
-                        <p>
-                    <sage language="r">
-                      <input>
-        
-                      </input>
-                      </sage>
-                  <hint>
-                    <title>Desmos</title>
-                    <p>
-
-                      <interactive desmos="84dbdr69to"/>
-                      <interactive desmos="ca5xk6sbyl"/>
-
-                    </p>
-
-                  </hint>
-
-                  </p>
+                       
                       
                   </introduction>
 
@@ -698,7 +681,10 @@
 
                       <task>
                         <p>Compute <m>\hat{p}</m>.</p>
+                        
                       </task>
+
+                      
 
                       <task>
                         <p>Assuming the null hypothesis, compute <m>\mu_{\hat{p}}, SE_{\hat{p}}</m>.</p>
@@ -710,11 +696,52 @@
 
                       <task>
                         <p>Let <m>X</m> be the normal variable mean <m>\mu_{\hat{p}}</m> and standard deviation <m>SE_{\hat{p}}</m>. Compute <m>P(X> p_0+|p_0-\hat{p}|)</m>.
-                      </p></task>
+                      </p>
+
+                      <p>
+                    <sage language="r">
+                      <input>
+        
+                      </input>
+                      </sage>
+                  <hint>
+                    <title>Desmos</title>
+                    <p>
+
+                      <interactive desmos="84dbdr69to"/>
+                      <interactive desmos="ca5xk6sbyl"/>
+
+                    </p>
+
+                  </hint>
+              </p>
+
+
+                    </task>
 
                        <task>
                         <p>Compute <m>P(X\lt p_0-|p_0-\hat{p}|)</m>.  How does this compare to what you found in (f)?
-                      </p></task>
+                      </p>
+
+                      <p>
+                    <sage language="r">
+                      <input>
+        
+                      </input>
+                      </sage>
+                  <hint>
+                    <title>Desmos</title>
+                    <p>
+
+                      <interactive desmos="84dbdr69to"/>
+                      <interactive desmos="ca5xk6sbyl"/>
+
+                    </p>
+
+                  </hint>
+              </p>
+
+                    </task>
 
                       <task>
                         <p>Compute the <m>z</m>-score for <m>\hat{p}</m>, call this <m>z_{\hat{p}}</m>.
@@ -755,24 +782,7 @@
                       <p>
                         Let <m>p</m> denote the proportion of restaurant in her town which close within a year.  Suppose her level of significance is <m>\alpha=0.05</m></p>
 
-                        <p>
-                    <sage language="r">
-                      <input>
-        
-                      </input>
-                      </sage>
-                  <hint>
-                    <title>Desmos</title>
-                    <p>
-
-                      <interactive desmos="84dbdr69to"/>
-                      <interactive desmos="ca5xk6sbyl"/>
-
-                    </p>
-
-                  </hint>
-
-                  </p>
+                      
                          </introduction>
 
                       <task>
@@ -809,6 +819,24 @@
 
                       <task>
                         <p>Compute the <m>p</m>-value.</p>
+                          <p>
+                    <sage language="r">
+                      <input>
+        
+                      </input>
+                      </sage>
+                  <hint>
+                    <title>Desmos</title>
+                    <p>
+
+                      <interactive desmos="84dbdr69to"/>
+                      <interactive desmos="ca5xk6sbyl"/>
+
+                    </p>
+
+                  </hint>
+
+                  </p>
                       </task>
 
                        <task>
@@ -841,24 +869,7 @@
                       <p>
                         Let <m>p</m> denote the proportion machines that need repair in a month.  Suppose the level of significance is <m>\alpha=0.05</m></p>
 
-                        <p>
-                    <sage language="r">
-                      <input>
-        
-                      </input>
-                      </sage>
-                  <hint>
-                    <title>Desmos</title>
-                    <p>
-
-                      <interactive desmos="84dbdr69to"/>
-                      <interactive desmos="ca5xk6sbyl"/>
-
-                    </p>
-
-                  </hint>
-
-                  </p>
+                      
                          </introduction>
 
                       <task>
@@ -895,6 +906,24 @@
 
                       <task>
                         <p>Compute the <m>p</m>-value.</p>
+                          <p>
+                    <sage language="r">
+                      <input>
+        
+                      </input>
+                      </sage>
+                  <hint>
+                    <title>Desmos</title>
+                    <p>
+
+                      <interactive desmos="84dbdr69to"/>
+                      <interactive desmos="ca5xk6sbyl"/>
+
+                    </p>
+
+                  </hint>
+
+                  </p>
                       </task>
 
                        <task>
@@ -927,24 +956,7 @@
                       <p>
                         Let <m>p</m> denote the proportion of people in their town who have heard of them.  Suppose the level of significance is <m>\alpha=0.05</m></p>
 
-                        <p>
-                    <sage language="r">
-                      <input>
-        
-                      </input>
-                      </sage>
-                  <hint>
-                    <title>Desmos</title>
-                    <p>
-
-                      <interactive desmos="84dbdr69to"/>
-                      <interactive desmos="ca5xk6sbyl"/>
-
-                    </p>
-
-                  </hint>
-
-                  </p>
+                       
                          </introduction>
 
                       <task>
@@ -981,6 +993,24 @@
 
                       <task>
                         <p>Compute the <m>p</m>-value.</p>
+                          <p>
+                    <sage language="r">
+                      <input>
+        
+                      </input>
+                      </sage>
+                  <hint>
+                    <title>Desmos</title>
+                    <p>
+
+                      <interactive desmos="84dbdr69to"/>
+                      <interactive desmos="ca5xk6sbyl"/>
+
+                    </p>
+
+                  </hint>
+
+                  </p>
                       </task>
 
                        <task>
@@ -1012,24 +1042,7 @@
                       <p>
                         Let <m>p</m> denote the proportion of customers who order the Extra Large Combo.  Suppose the level of significance is <m>\alpha=0.05</m></p>
 
-                        <p>
-                    <sage language="r">
-                      <input>
-        
-                      </input>
-                      </sage>
-                  <hint>
-                    <title>Desmos</title>
-                    <p>
-
-                      <interactive desmos="84dbdr69to"/>
-                      <interactive desmos="ca5xk6sbyl"/>
-
-                    </p>
-
-                  </hint>
-
-                  </p>
+                        
                          </introduction>
 
                       <task>
@@ -1084,6 +1097,24 @@
 
                       <task>
                         <p>Compute the <m>p</m>-value.</p>
+                        <p>
+                    <sage language="r">
+                      <input>
+        
+                      </input>
+                      </sage>
+                  <hint>
+                    <title>Desmos</title>
+                    <p>
+
+                      <interactive desmos="84dbdr69to"/>
+                      <interactive desmos="ca5xk6sbyl"/>
+
+                    </p>
+
+                  </hint>
+
+                  </p>
                       </task>
 
                        <task>
@@ -1125,7 +1156,51 @@
 
 
 
+            <activity xml:id="activity-proptestR">
+                <title>Using <c>R</c> to Hypothesis Test</title>
+                <introduction>
+                    <p>We can use <c>R</c> to Hypothesis Test Directly.</p>
+                    
+                </introduction>
 
+                <task>
+                  <p>
+                    Suppose we wanted to know if more than 30% of donuts sold in a shop had filling  <m>(H_A:p>0.3)</m>.  We sample 40 donuts and found 16 of them had filling.  Run the following code to obtain the <m>p</m>-value:
+                    <sage language="r">
+                      <input>
+                      prop.test(16, 40, 
+                          p=0.3, alternative="greater", correct=FALSE)
+                      </input>
+                      </sage>
+                    </p>
+                  </task>
+
+
+                  <task>
+                  <p>
+                    Suppose we wanted to know if less than 45% of donuts sold in a shop had sprinkles <m>(H_A:p\lt 0.45)</m>.  We sample 60 donuts and found 12 of them had filling.  Run the following code to obtain the <m>p</m>-value:
+                    <sage language="r">
+                      <input>
+                      prop.test(12, 60, 
+                          p=0.45, alternative="less", correct=FALSE)
+                      </input>
+                      </sage>
+                    </p>
+                  </task>
+
+                  <task>
+                  <p>
+                    Suppose we wanted to know if customer satisfaction was or wasn't 50% <m>(H_A:p\neq0.5)</m>.  We sample 100 customers and and found 88 were satisfies.  Run the following code to obtain the <m>p</m>-value:
+                    <sage language="r">
+                      <input>
+                      prop.test(88, 100, 
+                          p=0.5, alternative="two.sided", correct=FALSE)
+                      </input>
+                      </sage>
+                    </p>
+                  </task>
+
+            </activity>
 
 
 

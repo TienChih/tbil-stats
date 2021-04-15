@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-06T11:17:46-06:00       *-->
+<!--*       on 2021-04-15T17:44:08-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,11 +12,52 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-r' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
+                           linked: true,
+                           languages: ['r'],
+                           evalButtonText: 'Evaluate (R)'});
+});
+</script>
 </head>
 <body>
 <article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Task</span><span class="space"> </span><span class="codenumber">4.2.3.a</span><span class="period">.</span>
+<span class="type">Task</span><span class="space"> </span><span class="codenumber">4.2.2.g</span><span class="period">.</span>
 </h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">If you needed an interval that had a 99% chance to contain the population proportion, should it be wider or narrower?</p></article><span class="incontext"><a href="Sec_ConfidenceInterval.html#task-447">in-context</a></span>
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to, for 100 times, sample 50 Americans and construct a confidence interval based on the results. <div class="sagecell-r" id="sage-148"><script type="text/x-sage">  numsamp=100
+n=50
+p=0.23
+
+samp_phat = rep(NA, numsamp)
+samp_SE = rep(NA, numsamp)
+color_vec=rep(NA, numsamp)
+
+for(i in 1:numsamp){
+  samp = rbinom(1,n,p) # obtain a sample of size n  from the population
+  samp_phat[i] = samp/n    # Find the proportion for this sample
+  samp_SE[i] = sqrt(samp_phat[i]*(1-samp_phat[i])/n)  # Find the Sampling Error
+}
+lower_vector = samp_phat - 1.96 * samp_SE
+upper_vector = samp_phat + 1.96 * samp_SE
+
+for (j in 1:numsamp){
+  color_vec[j]="red"
+  if(p>=lower_vector[j] & upper_vector[j]>=p){color_vec[j]="blue"}
+}
+plot(c(min(lower_vector),max(upper_vector)), c(0, 1 + numsamp), type = "n")
+for (i in 1:numsamp) lines( c(lower_vector[i], upper_vector[i]),c(i, i), lwd = 2, col=color_vec[i], add=TRUE)
+abline(v = p, lwd = 2, lty = 2)
+</script></div></p>
+<p xmlns:svg="http://www.w3.org/2000/svg">How many of these intervals do <em class="emphasis">not</em> contain 23%?  Is this suprising?</p></article><span class="incontext"><a href="Sec_ConfidenceInterval.html#task-447">in-context</a></span>
 </body>
 </html>

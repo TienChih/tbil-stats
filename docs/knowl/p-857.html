@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-06T11:17:47-06:00       *-->
+<!--*       on 2021-04-15T17:44:10-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,7 +15,38 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Compute \(\hat{p}\text{.}\)</p>
+<p>The way \(p\)-values are computed depends on the form of the alternative hypothesis:</p>
+<ul class="disc">
+<li>
+<em xmlns:svg="http://www.w3.org/2000/svg" class="alert">If \(H_A\) is of the form \(p&gt;p_0\)</em> then allowing \(X\) to be the normal variable with mean \(\mu_{\hat{p}}\) and standard deviation \(SE_{\hat{p}}\text{,}\) the \(p\)-value is<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+p\text{-value}=P(X&gt;p_0).
+\end{equation*}
+</div>
+<figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-24.svg" role="img" style="width: 100%; height: auto;" alt="\(p\)-value for \(H_A:p&gt;p_0\text{.}\)"></div>
+<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.9<span class="period">.</span></span><span class="space"> </span>\(p\)-value for \(H_A:p&gt;p_0\text{.}\)</figcaption></figure> Equivalently, we can find the corresponding \(z\)-score of \(\hat{p}\) and find the probability that \(P(Z&gt;z_{\hat{p}})\) for the standard normal vairable \(Z\text{:}\) <figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-25.svg" role="img" style="width: 100%; height: auto;" alt="\(p\)-value for \(H_A:p&gt;p_0\text{.}\)"></div>
+<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.10<span class="period">.</span></span><span class="space"> </span>\(p\)-value for \(H_A:p&gt;p_0\) using \(z\)-scores.</figcaption></figure>
+</li>
+<li>
+<em xmlns:svg="http://www.w3.org/2000/svg" class="alert">If \(H_A\) is of the form \(p\lt p_0\)</em> then allowing \(X\) to be the normal variable with mean \(\mu_{\hat{p}}\) and standard deviation \(SE_{\hat{p}}\text{,}\) the \(p\)-value is<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+p\text{-value}=P(X\lt p_0).
+\end{equation*}
+</div>
+<figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-26.svg" role="img" style="width: 100%; height: auto;" alt="\(p\)-value for \(H_A:p\lt p_0\text{.}\)"></div>
+<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.11<span class="period">.</span></span><span class="space"> </span>\(p\)-value for \(H_A:p\lt p_0\text{.}\)</figcaption></figure> Equivalently, we can find the corresponding \(z\)-score of \(\hat{p}\) and find the probability that \(P(Z\lt z_{\hat{p}})\) for the standard normal vairable \(Z\text{:}\) <figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-27.svg" role="img" style="width: 100%; height: auto;" alt="\(p\)-value for \(H_A:p\lt p_0\text{.}\)"></div>
+<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.12<span class="period">.</span></span><span class="space"> </span>\(p\)-value for \(H_A:p\lt p_0\) using \(z\)-scores.</figcaption></figure>
+</li>
+<li>
+<em xmlns:svg="http://www.w3.org/2000/svg" class="alert">If \(H_A\) is of the form \(p\neq p_0\)</em> then things are more complicated.  We still let \(X\)  be the normal variable with mean \(\mu_{\hat{p}}\) and standard deviation \(SE_{\hat{p}}\text{.}\)   But in this case, means at least as far to the left <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">or</em> the right of \(p\text{.}\) So we can compute the \(p\)-value via<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+p\text{-value}=P(|X-p_0|&gt; |\hat{p}-p_0|)=P(X&gt;p_0+|p_0-\hat{p}|)+P(X\lt p_0-|p_0-\hat{p}|). 
+\end{equation*}
+</div>
+<figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-28.svg" role="img" style="width: 100%; height: auto;" alt="\(p\)-value for \(H_A:p\neq p_0\text{.}\)"></div>
+<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.13<span class="period">.</span></span><span class="space"> </span>\(p\)-value for \(H_A:p\neq p_0\text{.}\)</figcaption></figure> Equivalently, we can find the corresponding \(z\)-score of \(\hat{p}\) and find the probability that \(P(|Z|&gt; |z_{\hat{p}}|)=P(Z&gt; |z_{\hat{p}}|)+P(Z\lt -|z_{\hat{p}}|)\) for the standard normal vairable \(Z\text{:}\) <figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-29.svg" role="img" style="width: 100%; height: auto;" alt="\(p\)-value for \(H_A:p\neq p_0\text{.}\)"></div>
+<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.14<span class="period">.</span></span><span class="space"> </span>\(p\)-value for \(H_A:p\neq p_0\) using \(z\)-scores.</figcaption></figure> It's also worth noting that for either of these tails, \(P(X&gt;p_0+|p-p_0|)=P(X\lt p_0-|p-p_0|)\)   and \(P(Z&gt; |z_{\hat{p}}|)=P(Z\lt -|z_{\hat{p}}|)\text{.}\)  So if you find one of these tails, you can double it to find the sum of both tails.</li>
+</ul>
 <span class="incontext"><a href="Sec_HypothesisTesing.html#p-857">in-context</a></span>
 </body>
 </html>
