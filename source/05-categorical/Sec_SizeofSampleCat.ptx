@@ -19,7 +19,7 @@
                 </p>
 
                 <p>
-                  Recall that the pieces neccesary to compute a 99% confidence interval are: <m>\hat{p}</m> the sample proportion, <m>n</m> the sample size, <m>SE_{\hat{p}}</m> the sampling error, and <m>z^*</m> the <m>z</m>-score associated with the 99% interval.
+                  Recall that the pieces neccesary to compute a 99% confidence interval are: <m>\hat{p}</m> the sample proportion, <m>n</m> the sample size, <m>SE_{\hat{p}}</m> the standard error, and <m>z^*</m> the <m>z</m>-score associated with the 99% interval.
                 </p>
                   
               </introduction>

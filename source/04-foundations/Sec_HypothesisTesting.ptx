@@ -348,7 +348,7 @@
       </image>
       </figure>
 
-      Equivalently, we can find the corresponding <m>z</m>-score of <m>\hat{p}</m> and find the probability that <m>P(Z>z_{\hat{p}})</m> for the standard normal vairable <m>Z</m>:
+      Equivalently, we can find the corresponding <m>z</m>-score of <m>\hat{p}</m> and find the probability that <m>P(Z>z_{\hat{p}})</m> for the standard normal variable <m>Z</m>:
 
       <figure>
 <caption><m>p</m>-value for <m>H_A:p>p_0</m> using <m>z</m>-scores.</caption>      
@@ -432,7 +432,7 @@
       </image>
       </figure>
 
-            Equivalently, we can find the corresponding <m>z</m>-score of <m>\hat{p}</m> and find the probability that <m>P(Z\lt z_{\hat{p}})</m> for the standard normal vairable <m>Z</m>:
+            Equivalently, we can find the corresponding <m>z</m>-score of <m>\hat{p}</m> and find the probability that <m>P(Z\lt z_{\hat{p}})</m> for the standard normal variable <m>Z</m>:
 
             <figure>
 <caption><m>p</m>-value for <m>H_A:p\lt p_0</m> using <m>z</m>-scores.</caption>      
@@ -477,7 +477,7 @@
 
 
 
-    <li><alert>If <m>H_A</m> is of the form <m>p\neq p_0</m></alert> then things are more complicated.  We still let <m>X</m>  be the normal variable with mean <m>\mu_{\hat{p}}</m> and standard deviation <m>SE_{\hat{p}}</m>.   But in this case, means at least as far to the left <em>or</em> the right of <m>p</m>. So we can compute the <m>p</m>-value via <me>p\text{-value}=P(|X-p_0|> |\hat{p}-p_0|)=P(X>p_0+|p_0-\hat{p}|)+P(X\lt p_0-|p_0-\hat{p}|). </me>
+    <li><alert>If <m>H_A</m> is of the form <m>p\neq p_0</m></alert> then things are more complicated.  We still let <m>X</m>  be the normal variable with mean <m>\mu_{\hat{p}}</m> and standard deviation <m>SE_{\hat{p}}</m>.   But in this case, extremal means at least as far to the left <em>or</em> the right of <m>p</m>. So we can compute the <m>p</m>-value via <me>p\text{-value}=P(|X-p_0|> |\hat{p}-p_0|)=P(X>p_0+|p_0-\hat{p}|)+P(X\lt p_0-|p_0-\hat{p}|). </me>
 
                    <figure>
 <caption><m>p</m>-value for <m>H_A:p\neq p_0</m>.</caption>      
@@ -520,7 +520,7 @@
       </image>
       </figure>
 
-            Equivalently, we can find the corresponding <m>z</m>-score of <m>\hat{p}</m> and find the probability that <m>P(|Z|> |z_{\hat{p}}|)=P(Z> |z_{\hat{p}}|)+P(Z\lt -|z_{\hat{p}}|)</m> for the standard normal vairable <m>Z</m>:
+            Equivalently, we can find the corresponding <m>z</m>-score of <m>\hat{p}</m> and find the probability that <m>P(|Z|> |z_{\hat{p}}|)=P(Z> |z_{\hat{p}}|)+P(Z\lt -|z_{\hat{p}}|)</m> for the standard normal variable <m>Z</m>:
 
             <figure>
 <caption><m>p</m>-value for <m>H_A:p\neq p_0</m> using <m>z</m>-scores.</caption>      
@@ -563,7 +563,7 @@
       </image>
       </figure>
 
-      It's also worth noting that for either of these tails, <m>P(X>p_0+|p-p_0|)=P(X\lt p_0-|p-p_0|)</m>   and <m>P(Z> |z_{\hat{p}}|)=P(Z\lt -|z_{\hat{p}}|)</m>.  So if you find one of these tails, you can double it to find the sum of both tails.
+      It's also worth noting that for either of these tails, <m>P(X>p_0+|\hat{p}-p_0|)=P(X\lt p_0-|\hat{p}-p_0|)</m>   and <m>P(Z> |z_{\hat{p}}|)=P(Z\lt -|z_{\hat{p}}|)</m>.  So if you find one of these tails, you can double it to find the sum of both tails.
 
     </li>
 
@@ -1159,7 +1159,7 @@
             <activity xml:id="activity-proptestR">
                 <title>Using <c>R</c> to Hypothesis Test</title>
                 <introduction>
-                    <p>We can use <c>R</c> to Hypothesis Test Directly.</p>
+                    <p>We can use <c>R</c> to Hypothesis Test Directly.  The structure of the command is <c>prop.test(numberof successes, sample size, p=p_0, alternative="greater, less, two.sided" depending on H_A, correct=FALSE)</c></p>
                     
                 </introduction>
 
@@ -1190,7 +1190,7 @@
 
                   <task>
                   <p>
-                    Suppose we wanted to know if customer satisfaction was or wasn't 50% <m>(H_A:p\neq0.5)</m>.  We sample 100 customers and and found 88 were satisfies.  Run the following code to obtain the <m>p</m>-value:
+                    Suppose we wanted to know if customer satisfaction was or wasn't 50% <m>(H_A:p\neq0.5)</m>.  We sample 100 customers and and found 88 were satisfied.  Run the following code to obtain the <m>p</m>-value:
                     <sage language="r">
                       <input>
                       prop.test(88, 100, 

@@ -190,7 +190,7 @@
 
           <remark>
             <p>
-              Notice that  every time we sampled, we get a potentially different proportion of respondents who support solar energy.  Thus, the proportion of respondents who support solar energy (<m>\hat{p}</m>) is a <em>random variable</em> and thus has a mean, and a standard deviation.  We will call this standard deviation the <em>sampling error</em> as it measure the tendency of <m>\hat{p}</m> to deviate from it's mean.</p>
+              Notice that  every time we sampled, we get a potentially different proportion of respondents who support solar energy.  Thus, the proportion of respondents who support solar energy (<m>\hat{p}</m>) is a <em>random variable</em> and thus has a mean, and a standard deviation.  We will call this standard deviation the <em>standard error</em> as it measure the tendency of <m>\hat{p}</m> to deviate from it's mean.</p>
 
               <p>
                 In general, we call <m>\hat{p}</m> the <em>sample proportion</em> or the proportion of a sample which satisfies some condition, which is a point-estimate for <m>p</m> the population proportion (which satisfies the same condition). The distribution of <m>\hat{p}</m> is the <em>sampling distribution</em>.
@@ -199,7 +199,7 @@
             <theorem xml:id="theorem-CLTprop">
               <title>The Central Limit Theorem (Proportion)</title>
               <p>
-                For a sufficiently large sample (typically <m>pn, p(1-n)\geq 10</m> or at least 10 <q>successes</q> and <q>failures</q>) the sample distribution of<m>\hat{p}</m> is approximately <em>normally distributed</em> with pararmeters <me>\mu_{\hat{p}}=p,\ \ \  SE_{\hat{p}}=\sqrt{\frac{p(1-p)}{n}}.</me>
+                For a sufficiently large sample (typically <m>pn, p(1-n)\geq 10</m> or at least 10 <q>successes</q> and <q>failures</q>) the sampling distribution of<m>\hat{p}</m> is approximately <em>normally distributed</em> with pararmeters <me>\mu_{\hat{p}}=p,\ \ \  SE_{\hat{p}}=\sqrt{\frac{p(1-p)}{n}}.</me>
               </p>
 
               <p>This is very similar to <xref ref="remark-normalapproximation"/></p>

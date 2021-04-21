@@ -135,7 +135,7 @@
         </statement>
         <solution>
           <p>
-            We note that the the sample size is <m>n=150</m> and the sample proportion is <me>\hat{p}=\frac{33}{150}=0.22</me> or 22% of the sample were cord cutters.  The sample proportion is a random variable distributed with estimated sampling error <me> SE_{\hat{p}}=\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}=\sqrt{\frac{0.22\cdot0.78}{150}}\approx 0.03382306.</me>
+            We note that the the sample size is <m>n=150</m> and the sample proportion is <me>\hat{p}=\frac{33}{150}=0.22</me> or 22% of the sample were cord cutters.  The sample proportion is a random variable distributed with estimated standard error <me> SE_{\hat{p}}=\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}=\sqrt{\frac{0.22\cdot0.78}{150}}\approx 0.03382306.</me>
           </p>
           <p>
             So following <xref ref="remark-95prop"/>, we have that the lower bound for our Confidence Interval is <me>\hat{p}-1.96SE_{\hat{p}}\approx 0.22-1.96\cdot0.03382306\approx 0.1537 </me> or 15.37%.  Similarly, the upper bound for our Confidence Interval is <me>\hat{p}+1.96SE_{\hat{p}}\approx 0.22+1.96\cdot0.03382306\approx 0.2863 </me> or 28.63%.
@@ -230,7 +230,7 @@
 
             <task>
             <p>
-              Run the following code to, for 100 times, sample 50 Americans and construct a confidence interval based on the results.
+              Run the following code to, for 100 times, sample 50 Americans and construct a 95% confidence interval based on the results.
 
           <sage language="r">
             <input>
@@ -245,7 +245,7 @@
         for(i in 1:numsamp){
           samp = rbinom(1,n,p) # obtain a sample of size n  from the population
           samp_phat[i] = samp/n    # Find the proportion for this sample
-          samp_SE[i] = sqrt(samp_phat[i]*(1-samp_phat[i])/n)  # Find the Sampling Error
+          samp_SE[i] = sqrt(samp_phat[i]*(1-samp_phat[i])/n)  # Find the standard error
         }
         lower_vector = samp_phat - 1.96 * samp_SE
         upper_vector = samp_phat + 1.96 * samp_SE
