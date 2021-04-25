@@ -60,9 +60,9 @@
             </p>
             </remark>
 
-            <definition>
+            <definition xml:id="definition-MoEprop">
               <p>
-                Given a confidence interval <m>[LB, UB]</m>  the point estimate (in this chapter <m>\hat{p}</m>) is halfway between the lower bound and upper bound <m>\frac{LB+UB}{2}</m>.  The <em>margin of error</em> is the difference between the bounds and the point estimate: <me>ME=UB-\hat{p}=\hat{p}-LB.</me>
+                Given a confidence interval <m>[LB, UB]</m>  the point estimate (in this chapter <m>\hat{p}</m>) is halfway between the lower bound and upper bound <m>\frac{UB-LB}{2}</m>.  The <em>margin of error</em> is the difference between the bounds and the point estimate: <me>ME=UB-\hat{p}=\hat{p}-LB.</me>
 
                 <figure>
 <caption>Margin of Error.</caption>      

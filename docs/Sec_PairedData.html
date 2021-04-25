@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-25T00:17:30-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Paired Numerical Data</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-r' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
+                           linked: true,
+                           languages: ['r'],
+                           evalButtonText: 'Evaluate (R)'});
+});
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\Q}{\terminology{Question:\ }}
+\newcommand{\Sol}{\terminology{Solution:\ }}
+\newcommand{\Fisg}{\emph{Fisg}}
+\newcommand{\Iisg}{\emph{Iisg}}
+\newcommand{\Pisg}{\emph{Pisg}}
+\newcommand{\Tisg}{\emph{Tisg}}
+\newcommand{\Dom}{\emph{Dom}}
+\newcommand{\Img}{\emph{Im}}
+\DeclareMathOperator{\id}{id}
+\newcommand{\bcup}{\displaystyle\bigcup}
+\newcommand{\bcap}{\displaystyle\bigcap}
+\newcommand{\dsum}{\displaystyle\sum}
+\newcommand{\dint}{\displaystyle\int}
+\newcommand{\R}[1]{\mathbb{R}^{#1}}
+\newcommand{\C}[1]{\mathbb{C}^{#1}}
+\newcommand{\Z}[1]{\mathbb{Z}^{#1}}
+\newcommand{\K}[1]{\mathbb{K}^{#1}}
+\newcommand{\limit}[2]{\displaystyle{ \lim_{#1 \to #2}}}
+\newcommand{\TCB}[1]{\textcolor{blue}{#1}}
+\newcommand{\TCR}[1]{\textcolor{red}{#1}}
+\newcommand{\TCO}[1]{\textcolor{orange}{#1}}
+\newcommand{\TCG}[1]{\textcolor{ForestGreen}{#1}}
+\DeclareMathOperator{\Endo}{Endo}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Obj}{Obj}
+\DeclareMathOperator{\pleat}{\mathcal{P}\ell}
+\def\PX{\mathfrak{W}G}
+\def\Gph{\mathsf{Gph}}
+\def\HoGph{\mathsf{HoGph}}
+\def\into{\hookrightarrow}
+\def\con{\underline{}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Team Based Statistics</span></a></h1>
+<p class="byline">Tien Chih</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="Sec_OneVarNum.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="Chap_Numerical.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="Sec_TwoVarNum.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="Sec_OneVarNum.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="Chap_Numerical.html" title="Up">Up</a><a class="next-button button toolbar-item" href="Sec_TwoVarNum.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="author-bio-TC.html" data-scroll="author-bio-TC">Author Biography</a></li>
+<li><a href="dedication-1.html" data-scroll="dedication-1">Dedication</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_DataBasics.html" data-scroll="Chap_DataBasics"><span class="codenumber">1</span> <span class="title">Data Basics</span></a><ul>
+<li><a href="Sec_Variables.html" data-scroll="Sec_Variables">Variables</a></li>
+<li><a href="Sec_Sampling.html" data-scroll="Sec_Sampling">Sampling</a></li>
+<li><a href="Sec_Visualization.html" data-scroll="Sec_Visualization">Visualizing Data</a></li>
+<li><a href="Sec_Center.html" data-scroll="Sec_Center">Centers of Data</a></li>
+<li><a href="Sec_Variation.html" data-scroll="Sec_Variation">Variation of Data</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Probability.html" data-scroll="Chap_Probability"><span class="codenumber">2</span> <span class="title">Probability</span></a><ul>
+<li><a href="Sec_Introprob.html" data-scroll="Sec_Introprob">Introduction to Probability</a></li>
+<li><a href="Sec_Conditionalprob.html" data-scroll="Sec_Conditionalprob">Conditional Probability</a></li>
+<li><a href="Sec_Bayes.html" data-scroll="Sec_Bayes">Bayes Theorem</a></li>
+<li><a href="Sec_RandomVariables.html" data-scroll="Sec_RandomVariables">Random Variables</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Distributions.html" data-scroll="Chap_Distributions"><span class="codenumber">3</span> <span class="title">Distributions</span></a><ul>
+<li><a href="Sec_StandardNormal.html" data-scroll="Sec_StandardNormal">Standard Normal Distribution</a></li>
+<li><a href="Sec_GeneralNormal.html" data-scroll="Sec_GeneralNormal">General Normal Distribution</a></li>
+<li><a href="Sec_Counting.html" data-scroll="Sec_Counting">Counting Principles</a></li>
+<li><a href="Sec_Binomial.html" data-scroll="Sec_Binomial">Binomial Distribution</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Foundations.html" data-scroll="Chap_Foundations"><span class="codenumber">4</span> <span class="title">Foundations for Inference</span></a><ul>
+<li><a href="Sec_PointEstimates.html" data-scroll="Sec_PointEstimates">Point Estimates</a></li>
+<li><a href="Sec_ConfidenceInterval.html" data-scroll="Sec_ConfidenceInterval">Confidence Intervals</a></li>
+<li><a href="Sec_HypothesisTesing.html" data-scroll="Sec_HypothesisTesing">Hypothesis Testing</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Categorical.html" data-scroll="Chap_Categorical"><span class="codenumber">5</span> <span class="title">Inference for Categorical Variables</span></a><ul>
+<li><a href="Sec_SizeofSampleCat.html" data-scroll="Sec_SizeofSampleCat">Size of Samples (Categorical)</a></li>
+<li><a href="Sec_TwoVarCat.html" data-scroll="Sec_TwoVarCat">Comparing Two Categorical Variables</a></li>
+<li><a href="Sec_ChiSquare.html" data-scroll="Sec_ChiSquare">Chi-Squared Test and Goodness of Fit</a></li>
+<li><a href="Sec_ChiIndependence.html" data-scroll="Sec_ChiIndependence">Chi-Squared Test and Independence</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Numerical.html" data-scroll="Chap_Numerical"><span class="codenumber">6</span> <span class="title">Inference for Numerical Variables</span></a><ul>
+<li><a href="Sec_tVariable.html" data-scroll="Sec_tVariable">The \(t\)-Variable and Sampling Distribution of Numerical Variables</a></li>
+<li><a href="Sec_OneVarNum.html" data-scroll="Sec_OneVarNum">Confidence Intervals and Hypothesis Testing for a single Numerical Variable</a></li>
+<li><a href="Sec_PairedData.html" data-scroll="Sec_PairedData" class="active">Paired Numerical Data</a></li>
+<li><a href="Sec_TwoVarNum.html" data-scroll="Sec_TwoVarNum">Comparing Two Numerical Variables</a></li>
+<li><a href="Sec_SizeofSampleNum.html" data-scroll="Sec_SizeofSampleNum">Size of Samples of Numerical Variables</a></li>
+<li><a href="Sec_ANOVA.html" data-scroll="Sec_ANOVA">ANOVA: Analysis of Variation</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="Sec_PairedData"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">6.3</span> <span class="title">Paired Numerical Data</span>
+</h2>
+<section class="introduction" id="introduction-153"><p id="p-1318">In this section, we consider differences in numerical data between populations where there is a natural pairing between the populations.</p>
+<article class="exploration project-like" id="exploration-bookstore"><h6 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">6.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">UCLA Bookstore vs Amazon.</span>
+</h6>
+<div class="introduction" id="introduction-154">
+<p id="p-1319">The authors of the excellent OpenIntro Statistics text noticed that their text was much more expensive at the UCLA bookstore than on Amazon in 2010.  Since then, more bookstores have transitioned to the online model, and have adapted to Amazon's presence in the marketplace.  Is there any average difference between UCLA and Amazon prices now?</p>
+<p id="p-1320">Run the following code to download  the <code class="code-inline tex2jax_ignore">textbooks.csv</code> data set which contains information about 73 textbooks sold by both the UCLA bookstore and Amazon, and display the variables: <div class="sagecell-r" id="sage-254"><script type="text/x-sage">textbooks = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/textbooks.csv")
+
+names(textbooks)
+</script></div></p>
+</div>
+<article class="task exercise-like" id="task-763"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-1321">Each row of this data frame represents a textbook sold by both the UCLA bookstore and Amazon.  Run the following to display the prices by the UCLA bookstore: <div class="sagecell-r" id="sage-255"><script type="text/x-sage">textbooks$ucla_new
+</script></div></p></article><article class="task exercise-like" id="task-764"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-1322">Run the following to display the prices of the same books by Amazon: <div class="sagecell-r" id="sage-256"><script type="text/x-sage">textbooks$amaz_new
+</script></div></p></article><article class="task exercise-like" id="task-765"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-1323">Run the following to compute the difference between the two stores for each text: <div class="sagecell-r" id="sage-257"><script type="text/x-sage">pricediff=textbooks$ucla_new-textbooks$amaz_new
+</script></div> This is a sample  of the differences. The true mean difference in textbook costs is denoted: \(\mu_{diff}\text{.}\)</p></article><article class="task exercise-like" id="task-766"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-1324">Which of the following best describes the null hypothesis \(H_0\text{,}\) that on average there is no difference on average between the cost of textbooks from either store?</p>
+<ul class="disc">
+<li id="li-311">\(\mu_{diff}\lt \$0\text{.}\)</li>
+<li id="li-312">\(\mu_{diff}&gt; \$0\text{.}\)</li>
+<li id="li-313">\(\mu_{diff}\neq \$0\text{.}\)</li>
+<li id="li-314">\(\mu_{diff}= \$0\text{.}\)</li>
+</ul></article><article class="task exercise-like" id="task-767"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-1325">Which of the following best describes the alternative hypothesis \(H_A\text{,}\) that there <em class="emphasis">is</em> some difference on average between the two stores?</p>
+<ul class="disc">
+<li id="li-315">\(\mu_{diff}\lt \$0\text{.}\)</li>
+<li id="li-316">\(\mu_{diff}&gt; \$0\text{.}\)</li>
+<li id="li-317">\(\mu_{diff}\neq \$0\text{.}\)</li>
+<li id="li-318">\(\mu_{diff}= \$0\text{.}\)</li>
+</ul></article><article class="task exercise-like" id="task-768"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-1326">Run the following code to display a histogram of the differences between stores: <div class="sagecell-r" id="sage-258"><script type="text/x-sage">hist(pricediff)
+abline(v = 0, col="red", lwd=3, lty=2)
+</script></div> Based on this graphic, do we think the null hypothesis is plausible?</p></article><article class="task exercise-like" id="task-769"><h6 class="heading"><span class="codenumber">(g)</span></h6>
+<p id="p-1327">Run the following to show the sample mean and standard deviation of the differences: <div class="sagecell-r" id="sage-259"><script type="text/x-sage">print(mean(pricediff))
+print(sd(pricediff))
+</script></div> This is a sample mean of the differences, \(\bar{x}_{diff}\text{,}\) and sample standard deviation of differences \(s_{diff}\text{.}\)</p></article><article class="task exercise-like" id="task-770"><h6 class="heading"><span class="codenumber">(h)</span></h6>
+<p id="p-1328">Find the standard error \(SE_{diff}\text{.}\)</p></article><article class="task exercise-like" id="task-771"><h6 class="heading"><span class="codenumber">(i)</span></h6>
+<p id="p-1329">Find \(t\)-score for \(\bar{x}_{diff}\text{.}\)</p></article><article class="task exercise-like" id="task-772"><h6 class="heading"><span class="codenumber">(j)</span></h6>
+<p id="p-1330">Compute a \(p\)-value (be sure to use the appropriate level of significance). <div class="sagecell-r" id="sage-260"><script type="text/x-sage">
+</script></div> <a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-25" id="hint-25"><span class="type">Hint</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-25"><div class="hint solution-like"><p id="p-1331"><iframe src="https://www.desmos.com/calculator/qrru08kps1" id="interactive-80" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/odp3hiqj8r" id="interactive-81" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-773"><h6 class="heading"><span class="codenumber">(k)</span></h6>
+<p id="p-1332">State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-774"><h6 class="heading"><span class="codenumber">(l)</span></h6>
+<p id="p-1333">Do we  reject the null hypothesis?</p></article><article class="task exercise-like" id="task-775"><h6 class="heading"><span class="codenumber">(m)</span></h6>
+<p id="p-1334">What sort of error could have been made? (Type 1 or Type 2)</p></article><article class="task exercise-like" id="task-776"><h6 class="heading"><span class="codenumber">(n)</span></h6>
+<p id="p-1335">Run the following to compute the \(p\)-value another way, how does this compare to what you found above? <div class="sagecell-r" id="sage-261"><script type="text/x-sage">t.test(pricediff, mu=0, alternative="two.sided")
+</script></div></p></article><article class="task exercise-like" id="task-777"><h6 class="heading"><span class="codenumber">(o)</span></h6>
+<p id="p-1336">What store do we think charges more on average?  Or do we think they're the same?</p></article></article></section><section class="subsection" id="subsection-39"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.3.1</span> <span class="title">Paired Data</span>
+</h3>
+<article class="definition definition-like" id="definition-paireddata"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.3.1</span><span class="period">.</span>
+</h6>
+<p id="p-1337">We say two sets of observations from two different populations are <em class="emphasis">paired</em> if:</p>
+<ul class="disc">
+<li id="li-319">The observations are of the same size.</li>
+<li id="li-320">There is a <em class="emphasis">special</em> or <em class="emphasis">natural</em> relationship or pairing between each data point of one set and a data point of the other.</li>
+</ul>
+<p data-braille="continuation">So in <a class="xref" data-knowl="./knowl/exploration-bookstore.html" title="Exploration 6.3.1: UCLA Bookstore vs Amazon">Exploration 6.3.1</a> the natural pairing is between prices of the same book.</p></article><article class="activity project-like" id="activity-whichpaired"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Which are paired?</span>
+</h6>
+<div class="introduction" id="introduction-155"><p id="p-1338">For each of the following, describe whether or not the resulting data would be paired.  If not, explain why not.</p></div>
+<ol id="p-1339" class="decimal">
+<li id="li-321">A nutritionist studying the effect of a diet takes data from 50 subjects who are on the diet, and a control group of 50 subjects who are not.</li>
+<li id="li-322">A pharmacist studying the side-effects of a medication take's 50 patient's vital information one week before taking a medication, and a second time one week after the medication.</li>
+<li id="li-323">A social scientist studying gender inequality survey 100 randomly selected men and 100 randomly selected women to complete a survey on wages, salaries and income.</li>
+<li id="li-324">A pharmacist studying the side-effects of a medication take's a patients vital information one week before taking a medication, and a second time one week after the medication.</li>
+<li id="li-325">A math educator asks 40 students to rate their feelings about certain topics in math before and after a course.</li>
+<li id="li-326">An engineer at a automotive manufacturer crashes 80 cars with a newly designed safety feature and 80 cars without and measures the damage to the crash-test dummies.</li>
+</ol></article><article class="remark remark-like" id="remark-paireddata"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">6.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Hypothesis Testing and Confidence Intervals with Paired Data.</span>
+</h6>
+<p id="p-1340">If you have a collection of paired data, say \(x_1, x_2, \ldots, x_n\) and \(y_1, y_2, \ldots, y_n\text{,}\) this gives rise to a natural difference variable \(d=x-y\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{|c|c||c|}
+\hline
+\mathbf{x} \amp \mathbf{y} \amp \mathbf{d}\\
+\hline
+x_1 \amp y_1 \amp d_1=x_1-y_1\\
+x_2 \amp y_2 \amp d_2=x_2-y_2\\
+\vdots \amp \vdots \amp \vdots\\
+x_n \amp y_n \amp d_n=x_n-y_n\\
+\hline
+\end{array}
+\end{equation*}
+</div>
+<p id="p-1341">The difference between these variables is <em class="emphasis">itself</em> a random variable, with a population mean \(\mu_{d}\) and population standard deviation \(\sigma_{d}\text{.}\)  We can then perform any one variable numerical inference exactly as in we were in <a href="Sec_OneVarNum.html" class="internal" title="Section 6.2: Confidence Intervals and Hypothesis Testing for a single Numerical Variable">Section 6.2</a>.  We just have to properly interpret what statements about the difference mean:</p>
+<ul class="disc">
+<li id="li-327">A C% <em class="emphasis">confidence interval</em> for \(\mu_d\) is an interval that has a C% chance of containing the average difference between our two populations.</li>
+<li id="li-328">The null hypothesis \(\mu_d=\mu_0\) is the assumption that the average difference between the two populations could be \(\mu_0\text{.}\)</li>
+<li id="li-329">The alternative hypothesis \(\mu_d\lt \mu_0\) is the claim that the average difference between the two populations is less than \(\mu_0\text{.}\)</li>
+<li id="li-330">The alternative hypothesis \(\mu_d&gt; \mu_0\) is the claim that the average difference between the two populations is greater than \(\mu_0\text{.}\)</li>
+<li id="li-331">The alternative hypothesis \(\mu_d\neq \mu_0\) is the claim that the average difference between the two populations is different from \(\mu_0\text{.}\)</li>
+</ul></article><article class="activity project-like" id="activity-covidanxiety"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Student Anxiety and COVID-19.</span>
+</h6>
+<div class="introduction" id="introduction-156">
+<p id="p-1342">Ten students were surveyed and were asked to rank their anxiety about school on a scale from 1-10.  This was prior to the COVID pandemic.  The same students were surveyed again and asked the same question a year later after the pandemic begun.  The results are as follows:</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{|c|c|}
+\hline
+\text{Anxiety pre-Pandemic} \amp \text{Anxiety post-Pandemic}\\
+\hline
+5 \amp 7 \\
+3 \amp 6 \\
+10 \amp 10 \\
+8 \amp 9 \\
+7 \amp 4 \\
+8 \amp 10 \\
+4 \amp 4 \\
+1 \amp 3 \\
+7 \amp 6 \\
+2 \amp 2 \\
+\hline
+\end{array}
+\end{equation*}
+</div>
+</div>
+<article class="task exercise-like" id="task-778"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-1343">Find the pairwise difference between these observations.</p></article><article class="task exercise-like" id="task-779"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-1344">Compute the sample mean and standard deviation for the differences \(\bar{x}_d, s_d\text{.}\)</p></article><article class="task exercise-like" id="task-780"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-1345">Suppose we hypothesis that student anxiety went up from pre to post Pandemic.  Which of the following best describes the null hypothesis \(H_0\text{?}\)  Which the alternative?</p>
+<ul class="disc">
+<li id="li-332">\(\mu_d\lt 0\text{.}\)</li>
+<li id="li-333">\(\mu_d&gt; 0\text{.}\)</li>
+<li id="li-334">\(\mu_d\neq 0\text{.}\)</li>
+<li id="li-335">\(\mu_d= 0\text{.}\)</li>
+</ul></article><article class="task exercise-like" id="task-781"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-1346">Find the standard error \(SE\text{.}\)</p></article><article class="task exercise-like" id="task-782"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-1347">Find \(t\)-score for \(\bar{x}\text{.}\)</p></article><article class="task exercise-like" id="task-783"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-1348">Use any method to compute a \(p\)-value (be sure to use the appropriate level of significance). <div class="sagecell-r" id="sage-262"><script type="text/x-sage">
+</script></div> <a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-26" id="hint-26"><span class="type">Hint</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-26"><div class="hint solution-like"><p id="p-1349"><iframe src="https://www.desmos.com/calculator/qrru08kps1" id="interactive-82" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/odp3hiqj8r" id="interactive-83" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-784"><h6 class="heading"><span class="codenumber">(g)</span></h6>
+<p id="p-1350">State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-785"><h6 class="heading"><span class="codenumber">(h)</span></h6>
+<p id="p-1351">Do we  reject the null hypothesis?</p></article><article class="task exercise-like" id="task-786"><h6 class="heading"><span class="codenumber">(i)</span></h6>
+<p id="p-1352">What sort of error could have been made? (Type 1 or Type 2)</p></article><article class="task exercise-like" id="task-787"><h6 class="heading"><span class="codenumber">(j)</span></h6>
+<p id="p-1353">If instead we wanted to find a 99% confidence interval for  \(\mu_d\text{,}\) find \(t^*\) so that for the appropriate degrees of freedom, \(P(-t^*\lt t\lt t^*)=0.99\text{.}\) <div class="sagecell-r" id="sage-263"><script type="text/x-sage">
+</script></div> <a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-27" id="hint-27"><span class="type">Hint</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-27"><div class="hint solution-like"><p id="p-1354"><iframe src="https://www.desmos.com/calculator/qrru08kps1" id="interactive-84" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/odp3hiqj8r" id="interactive-85" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-788"><h6 class="heading"><span class="codenumber">(k)</span></h6>
+<p id="p-1355">Compute the  99% confidence interval for  \(\mu_d\text{.}\) <div class="sagecell-r" id="sage-264"><script type="text/x-sage">
+</script></div> <a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-28" id="hint-28"><span class="type">Hint</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-28"><div class="hint solution-like"><p id="p-1356"><iframe src="https://www.desmos.com/calculator/qrru08kps1" id="interactive-86" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/odp3hiqj8r" id="interactive-87" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-789"><h6 class="heading"><span class="codenumber">(l)</span></h6>
+<p id="p-1357">State what this confidence interval means in the context of this problem using complete sentences.</p></article></article><article class="activity project-like" id="activity-studentscores"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Online Tutoring and Changes in Test Scores.</span>
+</h6>
+<div class="introduction" id="introduction-157">
+<p id="p-1358">The <code class="code-inline tex2jax_ignore">studentscleaned.csv</code> data set consists of a sample of 4892 students who have taken a statistics course.  It records information such as their gender, major, whether or not they've participated in online statistics tutoring and their scores on the two exams in the course.</p>
+<p id="p-1359">Run the following code to download <code class="code-inline tex2jax_ignore">studentscleaned.csv</code> and display it's variables. <div class="sagecell-r" id="sage-265"><script type="text/x-sage">students = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/studentscleaned.csv")
+names(students)
+</script></div></p>
+</div>
+<article class="task exercise-like" id="task-790"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-1360">We are curious to see for students who have done the online tutoring, whether or not on average they will improve from test 1 to test 2.  Let \(d\) denote the score from the first test, subtracted from the score from the second test. Which of the following best describes the null hypothesis \(H_0\text{?}\)</p>
+<ul class="disc">
+<li id="li-336">\(\mu_d\lt 0\text{.}\)</li>
+<li id="li-337">\(\mu_d&gt; 0\text{.}\)</li>
+<li id="li-338">\(\mu_d\neq 0\text{.}\)</li>
+<li id="li-339">\(\mu_d= 0\text{.}\)</li>
+</ul></article><article class="task exercise-like" id="task-791"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-1361">Which of the following best describes the alternative hypothesis \(H_A\text{?}\)</p>
+<ul class="disc">
+<li id="li-340">\(\mu_d\lt 0\text{.}\)</li>
+<li id="li-341">\(\mu_d&gt; 0\text{.}\)</li>
+<li id="li-342">\(\mu_d\neq 0\text{.}\)</li>
+<li id="li-343">\(\mu_d= 0\text{.}\)</li>
+</ul></article><article class="task exercise-like" id="task-792"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-1362">We first subset out the students who took online tutoring.  Run the following to define <code class="code-inline tex2jax_ignore">studentstutor</code>, the subset of students who took online tutoring, and summarize the findings: <div class="sagecell-r" id="sage-266"><script type="text/x-sage">studentstutor=subset(students, students$online.tutorial==1)
+summary(studentstutor)
+</script></div></p></article><article class="task exercise-like" id="task-793"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-1363">Run the following code to define the difference of the scores between exams <code class="code-inline tex2jax_ignore">changeinscore</code> and display a histogram of the changes, including a line indicating 0 change, and a line indicating the sample average change: <div class="sagecell-r" id="sage-267"><script type="text/x-sage">changeinscore=studentstutor$score2-studentstutor$score1
+hist(changeinscore)
+abline(v = 0, col="red", lwd=3, lty=2)
+abline(v = mean(changeinscore), col="blue", lwd=3, lty=2)
+</script></div> Based on this graphic, do we think the null hypothesis is plausible?</p>
+<p id="p-1364">Fix and run the following code to perform the appropriate hypothesis test and compute a \(p\)-value: <div class="sagecell-r" id="sage-268"><script type="text/x-sage">t.test(changeinscore, mu=FIXME, alternative="FIXME")
+</script></div></p></article><article class="task exercise-like" id="task-794"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-1365">State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-795"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-1366">Do we  reject the null hypothesis?</p></article><article class="task exercise-like" id="task-796"><h6 class="heading"><span class="codenumber">(g)</span></h6>
+<p id="p-1367">What sort of error could have been made? (Type 1 or Type 2)</p></article><article class="task exercise-like" id="task-797"><h6 class="heading"><span class="codenumber">(h)</span></h6>
+<p id="p-1368">Fix and run the following to compute a  95% confidence interval for  \(\mu_d\text{.}\) <div class="sagecell-r" id="sage-269"><script type="text/x-sage">t.test(changeinscore, conf.level=FIXME)$conf.int
+</script></div></p></article><article class="task exercise-like" id="task-798"><h6 class="heading"><span class="codenumber">(i)</span></h6>
+<p id="p-1369">State what this confidence interval means in the context of this problem using complete sentences.</p></article><article class="task exercise-like" id="task-799"><h6 class="heading"><span class="codenumber">(j)</span></h6>
+<p id="p-1370">Repeat the above for students who did not do the online tutoring.</p></article></article><article class="activity project-like" id="activity-climatechage"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">Days of Extreme Temperature.</span>
+</h6>
+<div class="introduction" id="introduction-158">
+<p id="p-1371">The National Oceanic and Atmospheric Administration (NOAA) collects data on daily temperatures all across the globe.  We are interested in the number of days of extreme temperature at a sample of these locations, and how they may have changed over time.</p>
+<p id="p-1372">Run the following code to download <code class="code-inline tex2jax_ignore">climate70.csv</code> and display it's variables. <div class="sagecell-r" id="sage-270"><script type="text/x-sage">climate = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/climate70.csv")
+names(climate)
+</script></div> We record the Station ID, latitude and logitude of the NOAA stations, the number of days over 70 degrees in 1948 and 2018 at each of these locations, and the number of days over 90 degrees in both years at each of these locations.</p>
+</div>
+<article class="task exercise-like" id="task-800"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-1373">Let \(d\) denote the number of days over 70 degrees in 1948 subtracted from the number of days over 70 degrees in 2008. We are curious to see if there is any change in the average number of days over 70 degrees from 1948 to 2018. Which of the following best describes the null hypothesis \(H_0\text{?}\)</p>
+<ul class="disc">
+<li id="li-344">\(\mu_d\lt 0\text{.}\)</li>
+<li id="li-345">\(\mu_d&gt; 0\text{.}\)</li>
+<li id="li-346">\(\mu_d\neq 0\text{.}\)</li>
+<li id="li-347">\(\mu_d= 0\text{.}\)</li>
+</ul></article><article class="task exercise-like" id="task-801"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-1374">Which of the following best describes the alternative hypothesis \(H_A\text{?}\)</p>
+<ul class="disc">
+<li id="li-348">\(\mu_d\lt 0\text{.}\)</li>
+<li id="li-349">\(\mu_d&gt; 0\text{.}\)</li>
+<li id="li-350">\(\mu_d\neq 0\text{.}\)</li>
+<li id="li-351">\(\mu_d= 0\text{.}\)</li>
+</ul></article><article class="task exercise-like" id="task-802"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-1375">Run the following code to define the difference in number of days over 70 degrees <code class="code-inline tex2jax_ignore">changeindays70</code> and display a histogram of the changes, including a line indicating 0 change, and a line indicating the sample average change: <div class="sagecell-r" id="sage-271"><script type="text/x-sage">changeindays70=climate$dx70_2018-climate$dx70_1948
+hist(changeindays70)
+abline(v = 0, col="red", lwd=3, lty=2)
+abline(v = mean(changeindays70), col="blue", lwd=3, lty=2)
+</script></div> Based on this graphic, do we think the null hypothesis is plausible?</p>
+<p id="p-1376">Fix and run the following code to perform the appropriate hypothesis test and compute a \(p\)-value: <div class="sagecell-r" id="sage-272"><script type="text/x-sage">t.test(changeindays70, mu=FIXME, alternative="FIXME")
+</script></div></p></article><article class="task exercise-like" id="task-803"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-1377">State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-804"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-1378">Do we  reject the null hypothesis?</p></article><article class="task exercise-like" id="task-805"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-1379">What sort of error could have been made? (Type 1 or Type 2)</p></article><article class="task exercise-like" id="task-806"><h6 class="heading"><span class="codenumber">(g)</span></h6>
+<p id="p-1380">Fix and run the following to compute a  95% confidence interval for  \(\mu_d\text{.}\) <div class="sagecell-r" id="sage-273"><script type="text/x-sage">t.test(changeindays70, conf.level=FIXME)$conf.int
+</script></div></p></article><article class="task exercise-like" id="task-807"><h6 class="heading"><span class="codenumber">(h)</span></h6>
+<p id="p-1381">State what this confidence interval means in the context of this problem using complete sentences.</p></article><article class="task exercise-like" id="task-808"><h6 class="heading"><span class="codenumber">(i)</span></h6>
+<p id="p-1382">Repeat the above for days over 90.</p></article></article></section></section></div></main>
+</div>
+</body>
+</html>

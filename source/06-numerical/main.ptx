@@ -1,13 +1,16 @@
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="Chap_Numerical">
-  <title>Inference for Categorical Variables</title>
+  <title>Inference for Numerical Variables</title>
   <introduction>
     <p>
-      In <xref ref="Chap_categorical"/> we explored inference for categorical variables.  In this chapter, we transition to <em>numerical</em> variables.
+      In <xref ref="Chap_Categorical"/> we explored inference for categorical variables.  In this chapter, we transition to <em>numerical</em> variables.
     </p>
   </introduction>
   <xi:include  href="Sec_tVariable.ptx"/>
-  <xi:include  href="Sec_OneNumVar.ptx"/> 
-  <xi:include  href="Sec_PairedData.ptx"/> 
+  <xi:include  href="Sec_OneVarNum.ptx"/> 
+  <xi:include  href="Sec_PairedData.ptx"/>
+  <xi:include  href="Sec_TwoVarNum.ptx"/>
+  <xi:include  href="Sec_SizeofSampleNum.ptx"/> 
+  <xi:include  href="Sec_ANOVA.ptx"/> 
 
 
   

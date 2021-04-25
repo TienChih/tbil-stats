@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-15T17:43:47-06:00       *-->
+<!--*       on 2021-04-25T00:17:18-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -172,6 +172,16 @@ MathJax.Hub.Config({
 <li><a href="Sec_ChiIndependence.html" data-scroll="Sec_ChiIndependence">Chi-Squared Test and Independence</a></li>
 </ul>
 </li>
+<li class="link">
+<a href="Chap_Numerical.html" data-scroll="Chap_Numerical"><span class="codenumber">6</span> <span class="title">Inference for Numerical Variables</span></a><ul>
+<li><a href="Sec_tVariable.html" data-scroll="Sec_tVariable">The \(t\)-Variable and Sampling Distribution of Numerical Variables</a></li>
+<li><a href="Sec_OneVarNum.html" data-scroll="Sec_OneVarNum">Confidence Intervals and Hypothesis Testing for a single Numerical Variable</a></li>
+<li><a href="Sec_PairedData.html" data-scroll="Sec_PairedData">Paired Numerical Data</a></li>
+<li><a href="Sec_TwoVarNum.html" data-scroll="Sec_TwoVarNum">Comparing Two Numerical Variables</a></li>
+<li><a href="Sec_SizeofSampleNum.html" data-scroll="Sec_SizeofSampleNum">Size of Samples of Numerical Variables</a></li>
+<li><a href="Sec_ANOVA.html" data-scroll="Sec_ANOVA">ANOVA: Analysis of Variation</a></li>
+</ul>
+</li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="Sec_HypothesisTesing"><h2 class="heading hide-type">
@@ -303,7 +313,7 @@ p\text{-value}=P(X&gt;p_0).
 \end{equation*}
 </div>
 <figure class="figure figure-like" id="figure-24"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-24.svg" role="img" style="width: 100%; height: auto;" alt="\(p\)-value for \(H_A:p&gt;p_0\text{.}\)"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.9<span class="period">.</span></span><span class="space"> </span>\(p\)-value for \(H_A:p&gt;p_0\text{.}\)</figcaption></figure> Equivalently, we can find the corresponding \(z\)-score of \(\hat{p}\) and find the probability that \(P(Z&gt;z_{\hat{p}})\) for the standard normal vairable \(Z\text{:}\) <figure class="figure figure-like" id="figure-25"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-25.svg" role="img" style="width: 100%; height: auto;" alt="\(p\)-value for \(H_A:p&gt;p_0\text{.}\)"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.9<span class="period">.</span></span><span class="space"> </span>\(p\)-value for \(H_A:p&gt;p_0\text{.}\)</figcaption></figure> Equivalently, we can find the corresponding \(z\)-score of \(\hat{p}\) and find the probability that \(P(Z&gt;z_{\hat{p}})\) for the standard normal variable \(Z\text{:}\) <figure class="figure figure-like" id="figure-25"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-25.svg" role="img" style="width: 100%; height: auto;" alt="\(p\)-value for \(H_A:p&gt;p_0\text{.}\)"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.10<span class="period">.</span></span><span class="space"> </span>\(p\)-value for \(H_A:p&gt;p_0\) using \(z\)-scores.</figcaption></figure>
 </li>
 <li id="li-165">
@@ -313,18 +323,18 @@ p\text{-value}=P(X\lt p_0).
 \end{equation*}
 </div>
 <figure class="figure figure-like" id="figure-26"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-26.svg" role="img" style="width: 100%; height: auto;" alt="\(p\)-value for \(H_A:p\lt p_0\text{.}\)"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.11<span class="period">.</span></span><span class="space"> </span>\(p\)-value for \(H_A:p\lt p_0\text{.}\)</figcaption></figure> Equivalently, we can find the corresponding \(z\)-score of \(\hat{p}\) and find the probability that \(P(Z\lt z_{\hat{p}})\) for the standard normal vairable \(Z\text{:}\) <figure class="figure figure-like" id="figure-27"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-27.svg" role="img" style="width: 100%; height: auto;" alt="\(p\)-value for \(H_A:p\lt p_0\text{.}\)"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.11<span class="period">.</span></span><span class="space"> </span>\(p\)-value for \(H_A:p\lt p_0\text{.}\)</figcaption></figure> Equivalently, we can find the corresponding \(z\)-score of \(\hat{p}\) and find the probability that \(P(Z\lt z_{\hat{p}})\) for the standard normal variable \(Z\text{:}\) <figure class="figure figure-like" id="figure-27"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-27.svg" role="img" style="width: 100%; height: auto;" alt="\(p\)-value for \(H_A:p\lt p_0\text{.}\)"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.12<span class="period">.</span></span><span class="space"> </span>\(p\)-value for \(H_A:p\lt p_0\) using \(z\)-scores.</figcaption></figure>
 </li>
 <li id="li-166">
-<em class="alert">If \(H_A\) is of the form \(p\neq p_0\)</em> then things are more complicated.  We still let \(X\)  be the normal variable with mean \(\mu_{\hat{p}}\) and standard deviation \(SE_{\hat{p}}\text{.}\)   But in this case, means at least as far to the left <em class="emphasis">or</em> the right of \(p\text{.}\) So we can compute the \(p\)-value via<div class="displaymath">
+<em class="alert">If \(H_A\) is of the form \(p\neq p_0\)</em> then things are more complicated.  We still let \(X\)  be the normal variable with mean \(\mu_{\hat{p}}\) and standard deviation \(SE_{\hat{p}}\text{.}\)   But in this case, extremal means at least as far to the left <em class="emphasis">or</em> the right of \(p\text{.}\) So we can compute the \(p\)-value via<div class="displaymath">
 \begin{equation*}
 p\text{-value}=P(|X-p_0|&gt; |\hat{p}-p_0|)=P(X&gt;p_0+|p_0-\hat{p}|)+P(X\lt p_0-|p_0-\hat{p}|). 
 \end{equation*}
 </div>
 <figure class="figure figure-like" id="figure-28"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-28.svg" role="img" style="width: 100%; height: auto;" alt="\(p\)-value for \(H_A:p\neq p_0\text{.}\)"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.13<span class="period">.</span></span><span class="space"> </span>\(p\)-value for \(H_A:p\neq p_0\text{.}\)</figcaption></figure> Equivalently, we can find the corresponding \(z\)-score of \(\hat{p}\) and find the probability that \(P(|Z|&gt; |z_{\hat{p}}|)=P(Z&gt; |z_{\hat{p}}|)+P(Z\lt -|z_{\hat{p}}|)\) for the standard normal vairable \(Z\text{:}\) <figure class="figure figure-like" id="figure-29"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-29.svg" role="img" style="width: 100%; height: auto;" alt="\(p\)-value for \(H_A:p\neq p_0\text{.}\)"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.14<span class="period">.</span></span><span class="space"> </span>\(p\)-value for \(H_A:p\neq p_0\) using \(z\)-scores.</figcaption></figure> It's also worth noting that for either of these tails, \(P(X&gt;p_0+|p-p_0|)=P(X\lt p_0-|p-p_0|)\)   and \(P(Z&gt; |z_{\hat{p}}|)=P(Z\lt -|z_{\hat{p}}|)\text{.}\)  So if you find one of these tails, you can double it to find the sum of both tails.</li>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.13<span class="period">.</span></span><span class="space"> </span>\(p\)-value for \(H_A:p\neq p_0\text{.}\)</figcaption></figure> Equivalently, we can find the corresponding \(z\)-score of \(\hat{p}\) and find the probability that \(P(|Z|&gt; |z_{\hat{p}}|)=P(Z&gt; |z_{\hat{p}}|)+P(Z\lt -|z_{\hat{p}}|)\) for the standard normal variable \(Z\text{:}\) <figure class="figure figure-like" id="figure-29"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-29.svg" role="img" style="width: 100%; height: auto;" alt="\(p\)-value for \(H_A:p\neq p_0\text{.}\)"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.14<span class="period">.</span></span><span class="space"> </span>\(p\)-value for \(H_A:p\neq p_0\) using \(z\)-scores.</figcaption></figure> It's also worth noting that for either of these tails, \(P(X&gt;p_0+|\hat{p}-p_0|)=P(X\lt p_0-|\hat{p}-p_0|)\)   and \(P(Z&gt; |z_{\hat{p}}|)=P(Z\lt -|z_{\hat{p}}|)\text{.}\)  So if you find one of these tails, you can double it to find the sum of both tails.</li>
 </ul></article><article class="remark remark-like" id="remark-stepsofHT"><h6 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.3.15</span><span class="period">.</span><span class="space"> </span><span class="title">The Steps of Hypothesis Testing.</span>
 </h6>
@@ -361,7 +371,7 @@ p\text{-value}=P(|X-p_0|&gt; |\hat{p}-p_0|)=P(X&gt;p_0+|p_0-\hat{p}|)+P(X\lt p_0
 </div>
 <article class="task exercise-like" id="task-470"><h6 class="heading"><span class="codenumber">(a)</span></h6>
 <p id="p-861">Compare the \(p\)-value to \(\alpha=0.05\text{.}\)  Which is greater?</p></article><article class="task exercise-like" id="task-471"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-862">Do we accept or reject the null, based on <a class="xref" data-knowl="./knowl/remark-stepsofHT.html" title="Remark 4.3.15: The Steps of Hypothesis Testing">Remark 4.3.15</a>?</p></article></article><article class="remark remark-like" id="remark-35"><h6 class="heading">
+<p id="p-862">Do we  reject the null, based on <a class="xref" data-knowl="./knowl/remark-stepsofHT.html" title="Remark 4.3.15: The Steps of Hypothesis Testing">Remark 4.3.15</a>?</p></article></article><article class="remark remark-like" id="remark-35"><h6 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.3.16</span><span class="period">.</span>
 </h6>
 <p id="p-863">To summarize what we just did:</p>
@@ -400,7 +410,7 @@ p\text{-value}=P(|X-p_0|&gt; |\hat{p}-p_0|)=P(X&gt;p_0+|p_0-\hat{p}|)+P(X\lt p_0
 <p id="p-879">Let \(Z\) denote the standard normal variable.  Compute \(P(Z&gt;|z_{\hat{p}}|)\) and \(P(Z\lt -|z_{\hat{p}}|)\text{.}\)  How does these values compare to what you found in (f) and (g)?</p></article><article class="task exercise-like" id="task-481"><h6 class="heading"><span class="codenumber">(j)</span></h6>
 <p id="p-880">Compute the \(p\)-value.</p></article><article class="task exercise-like" id="task-482"><h6 class="heading"><span class="codenumber">(k)</span></h6>
 <p id="p-881">State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-483"><h6 class="heading"><span class="codenumber">(l)</span></h6>
-<p id="p-882">Do we accept or reject the null hypothesis?</p></article><article class="task exercise-like" id="task-484"><h6 class="heading"><span class="codenumber">(m)</span></h6>
+<p id="p-882">Do we  reject the null hypothesis?</p></article><article class="task exercise-like" id="task-484"><h6 class="heading"><span class="codenumber">(m)</span></h6>
 <p id="p-883">What sort of error could have been made? (Type 1 or Type 2)</p></article></article><article class="activity project-like" id="activity-resturaunt"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">Restaurant Closure Rate.</span>
 </h6>
@@ -429,7 +439,7 @@ p\text{-value}=P(|X-p_0|&gt; |\hat{p}-p_0|)=P(X&gt;p_0+|p_0-\hat{p}|)+P(X\lt p_0
 <p id="p-891"><div class="sagecell-r" id="sage-159"><script type="text/x-sage">
 </script></div> <a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-9" id="hint-9"><span class="type">Hint</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-9"><div class="hint solution-like"><p id="p-892"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-43" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-44" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-490"><h6 class="heading"><span class="codenumber">(f)</span></h6>
 <p id="p-893">State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-491"><h6 class="heading"><span class="codenumber">(g)</span></h6>
-<p id="p-894">Do we accept or reject the null hypothesis?</p></article><article class="task exercise-like" id="task-492"><h6 class="heading"><span class="codenumber">(h)</span></h6>
+<p id="p-894">Do we  reject the null hypothesis?</p></article><article class="task exercise-like" id="task-492"><h6 class="heading"><span class="codenumber">(h)</span></h6>
 <p id="p-895">What sort of error could have been made? (Type 1 or Type 2)</p></article></article><article class="activity project-like" id="activity-repair"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.3.7</span><span class="period">.</span><span class="space"> </span><span class="title">Machine Repair.</span>
 </h6>
@@ -458,7 +468,7 @@ p\text{-value}=P(|X-p_0|&gt; |\hat{p}-p_0|)=P(X&gt;p_0+|p_0-\hat{p}|)+P(X\lt p_0
 <p id="p-903"><div class="sagecell-r" id="sage-160"><script type="text/x-sage">
 </script></div> <a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-10" id="hint-10"><span class="type">Hint</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-10"><div class="hint solution-like"><p id="p-904"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-45" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-46" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-498"><h6 class="heading"><span class="codenumber">(f)</span></h6>
 <p id="p-905">State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-499"><h6 class="heading"><span class="codenumber">(g)</span></h6>
-<p id="p-906">Do we accept or reject the null hypothesis?</p></article><article class="task exercise-like" id="task-500"><h6 class="heading"><span class="codenumber">(h)</span></h6>
+<p id="p-906">Do we  reject the null hypothesis?</p></article><article class="task exercise-like" id="task-500"><h6 class="heading"><span class="codenumber">(h)</span></h6>
 <p id="p-907">What sort of error could have been made? (Type 1 or Type 2)</p></article></article><article class="activity project-like" id="activity-band"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.3.8</span><span class="period">.</span><span class="space"> </span><span class="title">Local Band.</span>
 </h6>
@@ -487,7 +497,7 @@ p\text{-value}=P(|X-p_0|&gt; |\hat{p}-p_0|)=P(X&gt;p_0+|p_0-\hat{p}|)+P(X\lt p_0
 <p id="p-915"><div class="sagecell-r" id="sage-161"><script type="text/x-sage">
 </script></div> <a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-11" id="hint-11"><span class="type">Hint</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-11"><div class="hint solution-like"><p id="p-916"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-47" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-48" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-506"><h6 class="heading"><span class="codenumber">(f)</span></h6>
 <p id="p-917">State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-507"><h6 class="heading"><span class="codenumber">(g)</span></h6>
-<p id="p-918">Do we accept or reject the null hypothesis?</p></article><article class="task exercise-like" id="task-508"><h6 class="heading"><span class="codenumber">(h)</span></h6>
+<p id="p-918">Do we  reject the null hypothesis?</p></article><article class="task exercise-like" id="task-508"><h6 class="heading"><span class="codenumber">(h)</span></h6>
 <p id="p-919">What sort of error could have been made? (Type 1 or Type 2)</p></article></article><article class="activity project-like" id="activity-burger"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.3.9</span><span class="period">.</span><span class="space"> </span><span class="title">Extra Large Combo.</span>
 </h6>
@@ -521,13 +531,13 @@ length(which(samp_customer=="EXTRALARGECOMBO"))
 <p id="p-928"><div class="sagecell-r" id="sage-163"><script type="text/x-sage">
 </script></div> <a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-12" id="hint-12"><span class="type">Hint</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-12"><div class="hint solution-like"><p id="p-929"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-49" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-50" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-515"><h6 class="heading"><span class="codenumber">(g)</span></h6>
 <p id="p-930">State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-516"><h6 class="heading"><span class="codenumber">(h)</span></h6>
-<p id="p-931">Do we accept or reject the null hypothesis?</p></article><article class="task exercise-like" id="task-517"><h6 class="heading"><span class="codenumber">(i)</span></h6>
+<p id="p-931">Do we  reject the null hypothesis?</p></article><article class="task exercise-like" id="task-517"><h6 class="heading"><span class="codenumber">(i)</span></h6>
 <p id="p-932">What sort of error could have been made? (Type 1 or Type 2)</p></article><article class="task exercise-like" id="task-518"><h6 class="heading"><span class="codenumber">(j)</span></h6>
 <p id="p-933">Run the following to display what <code class="code-inline tex2jax_ignore">p</code> was.  Did we mape an error?  If so what type? <div class="sagecell-r" id="sage-164"><script type="text/x-sage">p
 </script></div></p></article></article><article class="activity project-like" id="activity-proptestR"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.3.10</span><span class="period">.</span><span class="space"> </span><span class="title">Using <code class="code-inline tex2jax_ignore">R</code> to Hypothesis Test.</span>
 </h6>
-<div class="introduction" id="introduction-106"><p id="p-934">We can use <code class="code-inline tex2jax_ignore">R</code> to Hypothesis Test Directly.</p></div>
+<div class="introduction" id="introduction-106"><p id="p-934">We can use <code class="code-inline tex2jax_ignore">R</code> to Hypothesis Test Directly.  The structure of the command is <code class="code-inline tex2jax_ignore">prop.test(numberof successes, sample size, p=p_0, alternative="greater, less, two.sided" depending on H_A, correct=FALSE)</code></p></div>
 <article class="task exercise-like" id="task-519"><h6 class="heading"><span class="codenumber">(a)</span></h6>
 <p id="p-935">Suppose we wanted to know if more than 30% of donuts sold in a shop had filling  \((H_A:p&gt;0.3)\text{.}\)  We sample 40 donuts and found 16 of them had filling.  Run the following code to obtain the \(p\)-value: <div class="sagecell-r" id="sage-165"><script type="text/x-sage">prop.test(16, 40, 
     p=0.3, alternative="greater", correct=FALSE)
@@ -535,7 +545,7 @@ length(which(samp_customer=="EXTRALARGECOMBO"))
 <p id="p-936">Suppose we wanted to know if less than 45% of donuts sold in a shop had sprinkles \((H_A:p\lt 0.45)\text{.}\)  We sample 60 donuts and found 12 of them had filling.  Run the following code to obtain the \(p\)-value: <div class="sagecell-r" id="sage-166"><script type="text/x-sage">prop.test(12, 60, 
     p=0.45, alternative="less", correct=FALSE)
 </script></div></p></article><article class="task exercise-like" id="task-521"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-937">Suppose we wanted to know if customer satisfaction was or wasn't 50% \((H_A:p\neq0.5)\text{.}\)  We sample 100 customers and and found 88 were satisfies.  Run the following code to obtain the \(p\)-value: <div class="sagecell-r" id="sage-167"><script type="text/x-sage">prop.test(88, 100, 
+<p id="p-937">Suppose we wanted to know if customer satisfaction was or wasn't 50% \((H_A:p\neq0.5)\text{.}\)  We sample 100 customers and and found 88 were satisfied.  Run the following code to obtain the \(p\)-value: <div class="sagecell-r" id="sage-167"><script type="text/x-sage">prop.test(88, 100, 
     p=0.5, alternative="two.sided", correct=FALSE)
 </script></div></p></article></article></section></section></div></main>
 </div>

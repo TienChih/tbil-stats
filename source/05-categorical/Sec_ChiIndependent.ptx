@@ -274,7 +274,7 @@ As well as the table of computed expected frequencies computed in <xref ref="exp
 
                 <task>
                 <p>
-                  If we had a level of significance <m>\alpha=0.05</m> do we accept or reject the null hypothesis?</p>
+                  If we had a level of significance <m>\alpha=0.05</m> do we  reject the null hypothesis?</p>
                 </task>
 
                 <task>
@@ -390,7 +390,7 @@ datamatrix = as.matrix(read.table(textConnection(Input),header=TRUE,row.names=1)
 
                 <task>
                 <p>
-                  If we had a level of significance <m>\alpha=0.05</m> do we accept or reject the null hypothesis?</p>
+                  If we had a level of significance <m>\alpha=0.05</m> do we  reject the null hypothesis?</p>
                 </task>
 
                 <task>
@@ -500,7 +500,7 @@ chisq.test(datamatrix, correct=FALSE)
 
                 <task>
                 <p>
-                  If we had a level of significance <m>\alpha=0.05</m> do we accept or reject the null hypothesis?</p>
+                  If we had a level of significance <m>\alpha=0.05</m> do we  reject the null hypothesis?</p>
                 </task>
 
                 <task>
@@ -593,7 +593,7 @@ chisq.test(datamatrix, correct=FALSE)
 
                 <task>
                 <p>
-                  If we had a level of significance <m>\alpha=0.05</m> do we accept or reject the null hypothesis?</p>
+                  If we had a level of significance <m>\alpha=0.05</m> do we  reject the null hypothesis?</p>
                 </task>
 
                 <task>

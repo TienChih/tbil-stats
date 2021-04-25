@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-20T20:26:51-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Confidence Intervals and Hypothesis Testing for a single Numerical Variable</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-r' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
+                           linked: true,
+                           languages: ['r'],
+                           evalButtonText: 'Evaluate (R)'});
+});
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\Q}{\terminology{Question:\ }}
+\newcommand{\Sol}{\terminology{Solution:\ }}
+\newcommand{\Fisg}{\emph{Fisg}}
+\newcommand{\Iisg}{\emph{Iisg}}
+\newcommand{\Pisg}{\emph{Pisg}}
+\newcommand{\Tisg}{\emph{Tisg}}
+\newcommand{\Dom}{\emph{Dom}}
+\newcommand{\Img}{\emph{Im}}
+\DeclareMathOperator{\id}{id}
+\newcommand{\bcup}{\displaystyle\bigcup}
+\newcommand{\bcap}{\displaystyle\bigcap}
+\newcommand{\dsum}{\displaystyle\sum}
+\newcommand{\dint}{\displaystyle\int}
+\newcommand{\R}[1]{\mathbb{R}^{#1}}
+\newcommand{\C}[1]{\mathbb{C}^{#1}}
+\newcommand{\Z}[1]{\mathbb{Z}^{#1}}
+\newcommand{\K}[1]{\mathbb{K}^{#1}}
+\newcommand{\limit}[2]{\displaystyle{ \lim_{#1 \to #2}}}
+\newcommand{\TCB}[1]{\textcolor{blue}{#1}}
+\newcommand{\TCR}[1]{\textcolor{red}{#1}}
+\newcommand{\TCO}[1]{\textcolor{orange}{#1}}
+\newcommand{\TCG}[1]{\textcolor{ForestGreen}{#1}}
+\DeclareMathOperator{\Endo}{Endo}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Obj}{Obj}
+\DeclareMathOperator{\pleat}{\mathcal{P}\ell}
+\def\PX{\mathfrak{W}G}
+\def\Gph{\mathsf{Gph}}
+\def\HoGph{\mathsf{HoGph}}
+\def\into{\hookrightarrow}
+\def\con{\underline{}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Team Based Statistics</span></a></h1>
+<p class="byline">Tien Chih</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="Sec_tVariable.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="Chap_Numerical.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="Sec_PairedData.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="Sec_tVariable.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="Chap_Numerical.html" title="Up">Up</a><a class="next-button button toolbar-item" href="Sec_PairedData.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="author-bio-TC.html" data-scroll="author-bio-TC">Author Biography</a></li>
+<li><a href="dedication-1.html" data-scroll="dedication-1">Dedication</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Numerical.html" data-scroll="Chap_Numerical"><span class="codenumber">1</span> <span class="title">Inference for Categorical Variables</span></a><ul>
+<li><a href="Sec_tVariable.html" data-scroll="Sec_tVariable">The \(t\)-Variable and Sampling Distribution of Numerical Variables</a></li>
+<li><a href="Sec_OneNumVar.html" data-scroll="Sec_OneNumVar" class="active">Confidence Intervals and Hypothesis Testing for a single Numerical Variable</a></li>
+<li><a href="Sec_PairedData.html" data-scroll="Sec_PairedData">Paired Numerical Data</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="Sec_OneNumVar"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.2</span> <span class="title">Confidence Intervals and Hypothesis Testing for a single Numerical Variable</span>
+</h2>
+<section class="introduction" id="introduction-9"><p id="p-56">In this section, we apply the concepts of confidence intervals and hypothesis testing to <em class="emphasis">numerical</em> rather than categorical variables.</p></section><section class="subsection" id="subsection-3"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.2.1</span> <span class="title">Confidence Intervals</span>
+</h3>
+<article class="remark remark-like" id="remark-numCI"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.2.1</span><span class="period">.</span>
+</h6>
+<p id="p-57">Recall <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "definition-CIprop" missing]</code>.  For a <em class="emphasis">numerical</em> variable in particular, a C% confidence interval is an interval \([L, U]\) so that the true mean of the variable, \(\mu\text{,}\) has a C% chance of lying within the interval.</p>
+<p id="p-58">For a numerical sample of size \(n\) with sample mean \(\bar{x}\) and sample standard deviation \(s\text{,}\) we recall that the standard error is \(SE=\frac{s}{\sqrt{n}}\text{.}\)  Thus, we can compute a C% confidence interval via</p>
+<div class="displaymath">
+\begin{equation*}
+[\bar{x}-t^*SE, \bar{x}+t^*SE]=[\bar{x}-t^*\frac{s}{\sqrt{n}}, \bar{x}+t^*\frac{s}{\sqrt{n}}]
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(t^*\) is the \(t\) value so that \(P(-t^*\lt t \lt t^*)=C\%\) for a \(t\)-distribution with \(n-1\) degrees of freedom. <figure class="figure figure-like" id="figure-1"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-2.svg" role="img" style="width: 100%; height: auto;" alt="A C% confidence interval for \(\mu\text{.}\)"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.2.2<span class="period">.</span></span><span class="space"> </span>A C% confidence interval for \(\mu\text{.}\)  There is a C% chance the population mean \(\mu\) lies in this interval.</figcaption></figure></p></article><article class="activity project-like" id="activity-CreditCardDebt"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Credit Card Debt.</span>
+</h6>
+<div class="introduction" id="introduction-10"><p id="p-59">Suppose we wanted to find a 95% confidence interval for the average credit card debt of a student.  In a sample of 25 college students, the sample average debt was \(\$375\) with sample standard deviation \(\$85\text{.}\)</p></div>
+<article class="task exercise-like" id="task-28"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-60">Which of the following are given to us:</p>
+<ul class="disc">
+<li id="li-3">\(n\) the sample size.</li>
+<li id="li-4">\(\bar{x}\) the sample mean.</li>
+<li id="li-5">\(s\) the sample standard deviation.</li>
+<li id="li-6">\(\mu\) the population mean.</li>
+<li id="li-7">\(\sigma\) the population standard deviation.</li>
+</ul></article><article class="task exercise-like" id="task-29"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-61">Which of the following is the parameter of interest:</p>
+<ul class="disc">
+<li id="li-8">\(n\) the sample size.</li>
+<li id="li-9">\(\bar{x}\) the sample mean.</li>
+<li id="li-10">\(s\) the sample standard deviation.</li>
+<li id="li-11">\(\mu\) the population mean.</li>
+<li id="li-12">\(\sigma\) the population standard deviation.</li>
+</ul></article><article class="task exercise-like" id="task-30"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-62">Compute the standard error \(SE\)</p></article><article class="task exercise-like" id="task-31"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-63">Compute the degrees of freedom.</p></article><article class="task exercise-like" id="task-32"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-64">Find \(t^*\) such that for a \(t\)-distribution with the appropriate degrees of freedom, \(P(-t^*\lt t\lt t^*)=0.95\text{.}\) <div class="sagecell-r" id="sage-13"><script type="text/x-sage">
+</script></div> <a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1" id="hint-1"><span class="type">Hint</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1"><div class="hint solution-like"><p id="p-65"><iframe src="https://www.desmos.com/calculator/qrru08kps1" id="interactive-4" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/odp3hiqj8r" id="interactive-5" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-33"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-66">Use <a class="xref" data-knowl="./knowl/remark-numCI.html" title="Remark 1.2.1">Remark 1.2.1</a> to compute a 95% confidence interval for \(\mu\text{.}\)</p></article><article class="task exercise-like" id="task-34"><h6 class="heading"><span class="codenumber">(g)</span></h6>
+<p id="p-67">Which one of the following describe this interval?</p>
+<ol class="decimal">
+<li id="li-13">95% of student's credit card debt fall within this interval.</li>
+<li id="li-14">There is a 95% chance the average student credit card debt falls within this window.</li>
+<li id="li-15">95% of students have credit card debt.</li>
+</ol></article></article><article class="activity project-like" id="activity-amesCI"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Average Housing Price in Ames, IA.</span>
+</h6>
+<div class="introduction" id="introduction-11">
+<p id="p-68">We examine confidence intervals for the average housing price in Ames, IA.</p>
+<p id="p-69">Run the following code to download  the <code class="code-inline tex2jax_ignore">ames.csv</code> data set which contains information of houses in Ames, Iowa, and to see it's variable names: <div class="sagecell-r" id="sage-14"><script type="text/x-sage">ames = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/ames.csv")
+
+names(ames)
+</script></div></p>
+</div>
+<article class="task exercise-like" id="task-35"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-70">Suppose we wanted to take samples of <code class="code-inline tex2jax_ignore">n=50</code> houses to determine a confidence interval.  Find \(t^*\)so that for a \(t\)-distribution with 49 degrees of freedom, we have: \(P(-t^*\lt t\lt t^*)=0.95\text{.}\) <div class="sagecell-r" id="sage-15"><script type="text/x-sage">
+</script></div> <a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-2" id="hint-2"><span class="type">Hint</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-2"><div class="hint solution-like"><p id="p-71"><iframe src="https://www.desmos.com/calculator/qrru08kps1" id="interactive-6" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/odp3hiqj8r" id="interactive-7" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-36"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-72">Run the following code to take a sample of size <code class="code-inline tex2jax_ignore">n=50</code> houses from <code class="code-inline tex2jax_ignore">ames</code> and display their price. <div class="sagecell-r" id="sage-16"><script type="text/x-sage">n=50
+index = sample(1:nrow(ames), n)
+samp=ames[index,]
+samp$price
+</script></div></p></article><article class="task exercise-like" id="task-37"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-73">Run the following code to display the sample mean and standard deviation for this sample. <div class="sagecell-r" id="sage-17"><script type="text/x-sage">print(mean(samp$price))
+print(sd(samp$price))
+</script></div></p></article><article class="task exercise-like" id="task-38"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-74">Use the sample mean \(\bar{x}\text{,}\) sample standard deviation \(s\text{,}\) sample size \(n\) and \(t^*\) to compute a 95% confidence interval for the average housing price of Ames, IA.</p></article><article class="task exercise-like" id="task-39"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-75">Use the sample mean \(\bar{x}\text{,}\) sample standard deviation \(s\text{,}\) sample size \(n\) and \(t^*\) to compute a 95% confidence interval for the average housing price of Ames, IA.</p></article><article class="task exercise-like" id="task-40"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-76">Explain the meaning of your confidence interval in a complete sentence within the context of this problem.</p></article><article class="task exercise-like" id="task-41"><h6 class="heading"><span class="codenumber">(g)</span></h6>
+<p id="p-77">Run the following code, to compute a 95% confidence interval for the average housing price of Ames, IA.  How does it compare to what you found in (d)? <div class="sagecell-r" id="sage-18"><script type="text/x-sage">t.test(samp$price, conf.level=0.95)$conf.int
+</script></div></p></article><article class="task exercise-like" id="task-42"><h6 class="heading"><span class="codenumber">(h)</span></h6>
+<p id="p-78">Run the following code, to compute the actual average housing price of Ames, IA.  Does it fall within your interval? <div class="sagecell-r" id="sage-19"><script type="text/x-sage">mean(ames$price)
+</script></div></p></article><article class="task exercise-like" id="task-43"><h6 class="heading"><span class="codenumber">(i)</span></h6>
+<p id="p-79">Fix and run the following code to, for 100 times, sample 50 homes and construct a 95% confidence interval based on the results.  Let <code class="code-inline tex2jax_ignore">tstar</code>=\(t^*\text{.}\) <div class="sagecell-r" id="sage-20"><script type="text/x-sage">  numsamp=100
+  mu=mean(ames$price)
+  tstar=FIXME
+
+  samp_mean = rep(NA, numsamp)
+  samp_SE = rep(NA, numsamp)
+  color_vec=rep(NA, numsamp)
+
+for(i in 1:numsamp){
+samp = sample(ames$price, n) # obtain a sample of size n  from the population
+samp_mean[i] = mean(samp)    # Find the mean for this sample
+samp_SE[i] = sd(samp)/sqrt(n) # Find the standard error
+}
+lower_vector = samp_mean - tstar * samp_SE
+upper_vector = samp_mean + tstar * samp_SE
+
+for (j in 1:numsamp){
+  color_vec[j]="red"
+  if(mu>=lower_vector[j] & upper_vector[j]>=mu){color_vec[j]="blue"}
+}
+plot(c(min(lower_vector),max(upper_vector)), c(0, 1 + numsamp), type = "n")
+for (i in 1:numsamp) lines( c(lower_vector[i], upper_vector[i]),c(i, i), lwd = 2, col=color_vec[i], add=TRUE)
+abline(v = mu, lwd = 2, lty = 2)
+</script></div></p>
+<p id="p-80">How many of these intervals do <em class="emphasis">not</em> contain the average housing price?  Is this suprising?</p></article></article></section><section class="subsection" id="subsection-4"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.2.2</span> <span class="title">Hypothesis Testing with a Single Numerical Variable</span>
+</h3>
+<article class="exploration project-like" id="exploration-runningtime"><h6 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">1.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Running Times.</span>
+</h6>
+<div class="introduction" id="introduction-12">
+<p id="p-81">In 2020, the average finishing time of a race was 95 minutes.  The race organizer believes that in 2021, the average finishing time will be less.  They sample 20 random runners from the 2021 race and their finishing times in minutes were:</p>
+<div class="displaymath">
+\begin{equation*}
+88,  99,  9,  72,  77,  64,  93,  87,  72,  93,
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+80, 117, 101, 106,  87,  60,  90,  85,  61, 111.
+\end{equation*}
+</div>
+</div>
+<article class="task exercise-like" id="task-44"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-82">What is the sample size \(n\text{,}\) mean \(\bar{x}\text{,}\) and standard deviation \(s\) of this distribution?</p></article><article class="task exercise-like" id="task-45"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-83">What is the standard error \(SE\) for this distribution?  (Recall <a class="xref" data-knowl="./knowl/theorem-CLTnum.html" title="Theorem 1.1.2: The Central Limit Theorem (Numerical)">Theorem 1.1.2</a>)</p></article><article class="task exercise-like" id="task-46"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-84">Suppose hypothetically that the average finishing time had <em class="emphasis">not</em> changed, so \(\mu=95\text{.}\)  Find \(t_{\bar{x}}\text{,}\) the \(t\)-score for \(\bar{x}\text{.}\)  (Recall <a class="xref" data-knowl="./knowl/activity-tscore.html" title="Activity 1.1.5: \(t\)-score for Sampling Distribution Variables">Activity 1.1.5</a>)</p></article><article class="task exercise-like" id="task-47"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-85">Find the probability that, if the average finishing time had <em class="emphasis">not</em> changed, that you could sample 20 runners and have an average running speed of \(\bar{x}\) or lower by computing \(P(t\lt t_{\bar{x}})\) for a \(t\)-distribution with the appropriate degrees of freedom. <div class="sagecell-r" id="sage-21"><script type="text/x-sage">
+</script></div> <a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-3" id="hint-3"><span class="type">Hint</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-3"><div class="hint solution-like"><p id="p-86"><iframe src="https://www.desmos.com/calculator/qrru08kps1" id="interactive-8" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/odp3hiqj8r" id="interactive-9" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-48"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-87">Is it plausible that the average finishing time could still be 95 minutes?</p></article></article><article class="remark remark-like" id="remark-numericalHT"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Numerical Hypothesis Testing.</span>
+</h6>
+<p id="p-88">Hypothesis Testing for a numerical variable follows similarly from how it does for categorical variables as seen in <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "Sec_HypothesisTesing" missing]</code>.  There is a random numerical variable with unknown true mean \(\mu\text{,}\) that we want to say something about, and we gather data to reject or fail to reject a null hypothesis.</p>
+<p id="p-89">When doing numerical hypothesis testing, there are three types of Alternative Hypothesis:</p>
+<ul class="disc">
+<li id="li-16">\(\displaystyle H_A: \mu\neq \mu_0\)</li>
+<li id="li-17">\(\displaystyle H_A: \mu&gt;\mu_0\)</li>
+<li id="li-18">\(\displaystyle H_A: \mu\lt \mu_0\)</li>
+</ul>
+<p data-braille="continuation">Corresponding to “the true mean is (not equal to/greater than/less than) \(\mu_0\)” for some value \(\mu_0\text{.}\)</p>
+<p id="p-90">In all of these cases, the Null Hypothesis will be: \(H_A: \mu=\mu_0\text{,}\) that is, the true mean could be \(\mu_0\text{.}\)</p>
+<p id="p-91">Then as before, we're given a sample from which we can compute a sample mean, \(\bar{x}\text{,}\) standard deviation \(s\) and sample size \(n\text{.}\)  We then compute a \(p\)-value for the alternative hypothesis.  <em class="alert">The \(p\)-value still represent: “The probability that if we were to assume the null hypothesis, that we could observe values as or more extremal than the sample.”</em></p>
+<p id="p-92">The way \(p\)-values are computed depends on the form of the alternative hypothesis:</p>
+<ul class="disc">
+<li id="li-19">
+<em class="alert">If \(H_A\) is of the form \(\mu&gt;\mu_0\)</em> then allowing \(X\) to be the \(t\)-variable with mean \(\mu_0\text{,}\) standard deviation \(SE=\frac{s}{\sqrt{n}}\) and \(n-1\) degrees of fredom, the \(p\)-value is<div class="displaymath">
+\begin{equation*}
+p\text{-value}=P(X&gt;\mu_0).
+\end{equation*}
+</div>
+<figure class="figure figure-like" id="figure-2"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-3.svg" role="img" style="width: 100%; height: auto;" alt="\(p\)-value for \(H_A:\mu&gt;\mu_0\text{.}\)"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.2.4<span class="period">.</span></span><span class="space"> </span>\(p\)-value for \(H_A:\mu&gt;\mu_0\text{.}\)</figcaption></figure> We do this by finding the corresponding \(t\)-score of \(\bar{x}\) and find the probability that \(P(t&gt;z_{\bar{x}})\) for the standard \(t\) variable with \(n-1\) degrees of freedom: <figure class="figure figure-like" id="figure-3"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-4.svg" role="img" style="width: 100%; height: auto;" alt="\(p\)-value for \(H_A:\mu&gt;\mu_0\text{.}\)"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.2.5<span class="period">.</span></span><span class="space"> </span>\(p\)-value for \(H_A:\mu&gt;\mu_0\) using \(t\)-scores.</figcaption></figure>
+</li>
+<li id="li-20">
+<em class="alert">If \(H_A\) is of the form \(\mu\lt \mu_0\)</em> then allowing \(X\) to be the \(t\)-variable with mean \(\mu_0\text{,}\) standard deviation \(SE=\frac{s}{\sqrt{n}}\) and \(n-1\) degrees of fredom, the \(p\)-value is<div class="displaymath">
+\begin{equation*}
+p\text{-value}=P(X\lt \mu_0).
+\end{equation*}
+</div>
+<figure class="figure figure-like" id="figure-4"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-5.svg" role="img" style="width: 100%; height: auto;" alt="\(p\)-value for \(H_A:\mu\lt \mu_0\text{.}\)"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.2.6<span class="period">.</span></span><span class="space"> </span>\(p\)-value for \(H_A:\mu\lt \mu_0\text{.}\)</figcaption></figure> We do this by finding the corresponding \(t\)-score of \(\bar{x}\) and find the probability that \(P(t\lt t_{\bar{x}})\) for the standard \(t\)-variable with \(n-1\) degrees of freedom: <figure class="figure figure-like" id="figure-5"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-6.svg" role="img" style="width: 100%; height: auto;" alt="\(p\)-value for \(H_A:\mu\lt \mu_0\text{.}\)"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.2.7<span class="period">.</span></span><span class="space"> </span>\(p\)-value for \(H_A:\mu\lt \mu_0\) using \(t\)-scores.</figcaption></figure>
+</li>
+<li id="li-21">
+<em class="alert">If \(H_A\) is of the form \(\mu\neq \mu_0\)</em> then things are more complicated.  We still let \(X\)  be the \(t\)-variable with mean \(\mu_0\text{,}\) standard deviation \(SE=\frac{s}{\sqrt{n}}\) and \(n-1\) degrees of freedom.   But in this case, extremal means at least as far to the left <em class="emphasis">or</em> the right of \(\mu_0\text{.}\) So we can compute the \(p\)-value via<div class="displaymath">
+\begin{equation*}
+p\text{-value}=P(|X-\mu_0|&gt; |\bar{x}-\mu_0|)=P(X&gt;\mu_0+|\mu_0-\bar{x}|)+P(X\lt \mu_0-|\mu_0-\bar{x}|). 
+\end{equation*}
+</div>
+<figure class="figure figure-like" id="figure-6"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-7.svg" role="img" style="width: 100%; height: auto;" alt="\(p\)-value for \(H_A:\mu\neq \mu_0\text{.}\)"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.2.8<span class="period">.</span></span><span class="space"> </span>\(p\)-value for \(H_A:\mu\neq \mu_0\text{.}\)</figcaption></figure> We do this by finding the corresponding \(t\)-score of \(\bar{x}\) and find the probability that \(P(|t|&gt; |t_{\bar{x}}|)=P(t&gt; |t_{\bar{x}}|)+P(t\lt -|t_{\bar{x}}|)\) for the standard \(t\)-variable with \(n-1\) degrees of freedom: <figure class="figure figure-like" id="figure-7"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-8.svg" role="img" style="width: 100%; height: auto;" alt="\(p\)-value for \(H_A:\mu\neq \mu_0\text{.}\)"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.2.9<span class="period">.</span></span><span class="space"> </span>\(p\)-value for \(H_A:\mu\neq \mu_0\) using \(t\)-scores.</figcaption></figure> It's also worth noting that for either of these tails, \(P(X&gt;\mu_0+|\bar{x}-\mu_0|)=P(X\lt \mu_0-|\bar{x}-\mu_0|)\)   and \(P(t&gt; |t_{\bar{x}}|)=P(t\lt -|t_{\bar{x}}|)\text{.}\)  So if you find one of these tails, you can double it to find the sum of both tails.</li>
+</ul></article><article class="example example-like" id="example-finishingtime"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-finishingtime"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.10</span><span class="period">.</span><span class="space"> </span><span class="title">Running Times.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-finishingtime"><article class="example example-like"><p id="p-93">In <a class="xref" data-knowl="./knowl/exploration-runningtime.html" title="Exploration 1.2.3: Running Times">Exploration 1.2.3</a>, we had an alternative hypothesis that the average running time was less than 95 minutes.  This gives us:</p>
+<ul class="disc">
+<li id="li-22">\(H_A:\mu\lt 95\text{.}\)</li>
+<li id="li-23">\(H_0:\mu= 95\text{.}\)</li>
+</ul>
+<p data-braille="continuation">We were able to compute \(\bar{x}=82.6\text{,}\) \(s\approx 23.50006\text{.}\)  Given that \(n=20\) we are able top find \(SE\approx 5.25477\text{.}\)</p>
+<p id="p-94">In (c), we assumed \(\mu=95\text{,}\) the null hypothesis, then found that the \(t_{\bar{x}}\) value was</p>
+<div class="displaymath">
+\begin{equation*}
+t_{\bar{x}}=\frac{82.6-95}{5.25477}\approx −2.35976\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">In (d), we computed the \(p\)-value by finding \(P(t\lt −2.35976)\approx 0.01457\) in a \(t\)-distribution with 19 degrees of freedom.</p></article></div>
+<article class="activity project-like" id="activity-timeonsocialmedia"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Time on Social Media.</span>
+</h6>
+<div class="introduction" id="introduction-13"><p id="p-95">A researcher believes adults spend on average 2 hours and 20 minutes a day on social media.  Their colleague disagrees.  They survey 100 adults, and found a sample mean of 2 hours and 17 minutes, with standard deviation 23.5 minutes.   Suppose we had a level of significance \(\alpha=0.1\text{.}\)</p></div>
+<article class="task exercise-like" id="task-49"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-96">Which of the following best describes the null hypothesis \(H_0\text{?}\)</p>
+<ul class="disc">
+<li id="li-24">\(\mu\lt 140\) minutes.</li>
+<li id="li-25">\(\mu&gt; 140\) minutes.</li>
+<li id="li-26">\(\mu\neq 140\) minutes.</li>
+<li id="li-27">\(\mu= 140\) minutes.</li>
+</ul></article><article class="task exercise-like" id="task-50"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-97">Which of the following best describes the alternative hypothesis \(H_A\text{?}\)</p>
+<ul class="disc">
+<li id="li-28">\(\mu\lt 140\) minutes.</li>
+<li id="li-29">\(\mu&gt; 140\) minutes.</li>
+<li id="li-30">\(\mu\neq 140\) minutes.</li>
+<li id="li-31">\(\mu= 140\) minutes.</li>
+</ul></article><article class="task exercise-like" id="task-51"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-98">Find the standard error \(SE\text{.}\)</p></article><article class="task exercise-like" id="task-52"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-99">Find \(t\)-score for \(\bar{x}\text{.}\)</p></article><article class="task exercise-like" id="task-53"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-100">Compute a \(p\)-value (be sure to use the appropriate level of significance). <div class="sagecell-r" id="sage-22"><script type="text/x-sage">
+</script></div> <a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-4" id="hint-4"><span class="type">Hint</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-4"><div class="hint solution-like"><p id="p-101"><iframe src="https://www.desmos.com/calculator/qrru08kps1" id="interactive-10" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/odp3hiqj8r" id="interactive-11" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-54"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-102">State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-55"><h6 class="heading"><span class="codenumber">(g)</span></h6>
+<p id="p-103">Do we accept or reject the null hypothesis?</p></article><article class="task exercise-like" id="task-56"><h6 class="heading"><span class="codenumber">(h)</span></h6>
+<p id="p-104">What sort of error could have been made? (Type 1 or Type 2)</p></article></article><article class="activity project-like" id="activity-averagebill"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Restaurant Bill.</span>
+</h6>
+<div class="introduction" id="introduction-14"><p id="p-105">Our recurring restaurateur believes that the average amount spent by customers is over $12.  She plans on polling 50 customers to test this.  Suppose we had a level of significance \(\alpha=0.05\text{.}\)</p></div>
+<article class="task exercise-like" id="task-57"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-106">Which of the following best describes the null hypothesis \(H_0\text{?}\)</p>
+<ul class="disc">
+<li id="li-32">\(\mu\lt \$12\text{.}\)</li>
+<li id="li-33">\(\mu&gt; \$12\text{.}\)</li>
+<li id="li-34">\(\mu\neq \$12\text{.}\)</li>
+<li id="li-35">\(\mu= \$12\text{.}\)</li>
+</ul></article><article class="task exercise-like" id="task-58"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-107">Which of the following best describes the alternative hypothesis \(H_A\text{?}\)</p>
+<ul class="disc">
+<li id="li-36">\(\mu\lt \$12\text{.}\)</li>
+<li id="li-37">\(\mu&gt; \$12\text{.}\)</li>
+<li id="li-38">\(\mu\neq \$12\text{.}\)</li>
+<li id="li-39">\(\mu= \$12\text{.}\)</li>
+</ul></article><article class="task exercise-like" id="task-59"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-108">Let's poll some customers!  Run the following code to poll 50 customers and how much money they spent. <div class="sagecell-r" id="sage-23"><script type="text/x-sage">n=50
+mu=runif(1, 10, 15)
+samp=round(rnorm(n, mu, 4), digits=2)
+</script></div></p></article><article class="task exercise-like" id="task-60"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-109">Run the following code to find the sample mean and sample standard deviation. <div class="sagecell-r" id="sage-24"><script type="text/x-sage">print(mean(samp))
+print(sd(samp))
+</script></div></p></article><article class="task exercise-like" id="task-61"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-110">Find the standard error \(SE\text{.}\)</p></article><article class="task exercise-like" id="task-62"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-111">Find \(t\)-score for \(\bar{x}\text{.}\)</p></article><article class="task exercise-like" id="task-63"><h6 class="heading"><span class="codenumber">(g)</span></h6>
+<p id="p-112">Compute a \(p\)-value (be sure to use the appropriate level of significance). <div class="sagecell-r" id="sage-25"><script type="text/x-sage">
+</script></div> <a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-5" id="hint-5"><span class="type">Hint</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-5"><div class="hint solution-like"><p id="p-113"><iframe src="https://www.desmos.com/calculator/qrru08kps1" id="interactive-12" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/odp3hiqj8r" id="interactive-13" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-64"><h6 class="heading"><span class="codenumber">(h)</span></h6>
+<p id="p-114">State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-65"><h6 class="heading"><span class="codenumber">(i)</span></h6>
+<p id="p-115">Do we accept or reject the null hypothesis?</p></article><article class="task exercise-like" id="task-66"><h6 class="heading"><span class="codenumber">(j)</span></h6>
+<p id="p-116">What sort of error could have been made? (Type 1 or Type 2)</p></article><article class="task exercise-like" id="task-67"><h6 class="heading"><span class="codenumber">(k)</span></h6>
+<p id="p-117">Run the following to see what the true mean was: <div class="sagecell-r" id="sage-26"><script type="text/x-sage">print(mu)
+</script></div></p></article><article class="task exercise-like" id="task-68"><h6 class="heading"><span class="codenumber">(l)</span></h6>
+<p id="p-118">Run the following to compute the \(p\)-value another way, how does this compare to what you did in (f)? <div class="sagecell-r" id="sage-27"><script type="text/x-sage">t.test(samp, mu=12, alternative="greater")
+</script></div></p></article></article><article class="activity project-like" id="activity-ttestR"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">Using <code class="code-inline tex2jax_ignore">R</code> to Hypothesis Test.</span>
+</h6>
+<div class="introduction" id="introduction-15"><p id="p-119">As in <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "activity-proptestR" missing]</code>, we can use <code class="code-inline tex2jax_ignore">R</code> to Hypothesis Test Directly.  The structure of the command is <code class="code-inline tex2jax_ignore">t.test(data, mu=mu_0, alternative="greater, less, two.sided" depending on H_A)</code></p></div>
+<article class="task exercise-like" id="task-69"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-120">Suppose we wanted to know if the average number of chocolate donuts sold by a shop per day is more than 55 chocolate donuts  \((H_A:\mu&gt;55)\text{.}\)  We sample 12 random days and the number of chocolate donuts sold were</p>
+<div class="displaymath">
+\begin{equation*}
+55, 59, 59, 56, 55, 58, 53, 59, 50, 51, 60, 51.
+\end{equation*}
+</div>
+<p data-braille="continuation">Run the following code to obtain the \(p\)-value: <div class="sagecell-r" id="sage-28"><script type="text/x-sage">t.test(c(55, 59, 59, 56, 55, 58, 53, 59, 50, 51, 60, 51), mu=55, alternative="greater")
+</script></div></p></article><article class="task exercise-like" id="task-70"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-121">Suppose we wanted to know if the average number of  donuts with filling sold by a shop per day is less than 100  donuts  \((H_A:\mu\lt 100)\text{.}\)  We sample 10 random days and the number of  donuts with filling sold were</p>
+<div class="displaymath">
+\begin{equation*}
+55, 59, 59, 56, 55, 58, 53, 59, 50, 51, 60, 51.
+\end{equation*}
+</div>
+<p data-braille="continuation">Run the following code to obtain the \(p\)-value: <div class="sagecell-r" id="sage-29"><script type="text/x-sage">t.test(c(83, 83, 112, 108, 99, 104, 107, 113, 101, 107), mu=100, alternative="less")
+</script></div></p></article><article class="task exercise-like" id="task-71"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-122">Suppose we wanted to know if the average number of sprinkled donuts sold per day was or wasn't 120 \((H_A:\mu\neq120)\text{.}\)  We sample 16 random days and the number of sprinkled donuts sold were</p>
+<div class="displaymath">
+\begin{equation*}
+139, 101, 131, 122, 136, 123, 129, 127, 106, 109, 101, 117, 120, 136, 109, 124.
+\end{equation*}
+</div>
+<p data-braille="continuation">Run the following code to obtain the \(p\)-value: <div class="sagecell-r" id="sage-30"><script type="text/x-sage">t.test(c(139, 101, 131, 122, 136, 123, 129, 127, 106, 109, 101, 117, 120, 136, 109, 124), mu=120, alternative="two.sided")
+</script></div></p></article></article><article class="activity project-like" id="activity-mpgprius"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.7</span><span class="period">.</span><span class="space"> </span><span class="title">Miles per Gallon of a Prius.</span>
+</h6>
+<div class="introduction" id="introduction-16">
+<p id="p-123">According to Business Insider, the average gas mileage of a car sold in America is 25 miles per gallon.  One would hope that a hybrid car such a Prius would get better gas mileage.  In fact it's plausible a hybrid car could get over 100 miles per gallon.  Data is collected on 19 Prius drivers to see if Prius's have better than 100 mpg gas mileage on average.</p>
+<p id="p-124">Run the following code to download  the <code class="code-inline tex2jax_ignore">prius_mpg.csv</code> data set which contains information about 19 Prius drivers, and display the variables: <div class="sagecell-r" id="sage-31"><script type="text/x-sage">prius = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/prius_mpg.csv")
+
+names(prius)
+</script></div></p>
+</div>
+<article class="task exercise-like" id="task-72"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-125">Which of the following best describes the null hypothesis \(H_0\text{?}\)</p>
+<ul class="disc">
+<li id="li-40">\(\mu\lt 100\) mpg.</li>
+<li id="li-41">\(\mu&gt; 100\) mpg.</li>
+<li id="li-42">\(\mu\neq 100\) mpg.</li>
+<li id="li-43">\(\mu= 100\) mpg.</li>
+</ul></article><article class="task exercise-like" id="task-73"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-126">Which of the following best describes the alternative hypothesis \(H_A\text{?}\)</p>
+<ul class="disc">
+<li id="li-44">\(\mu\lt 100\) mpg.</li>
+<li id="li-45">\(\mu&gt; 100\) mpg.</li>
+<li id="li-46">\(\mu\neq 100\) mpg.</li>
+<li id="li-47">\(\mu= 100\) mpg.</li>
+</ul></article><article class="task exercise-like" id="task-74"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-127">Run the following code to display a histogram of the mpg of the 19 drivers, including a line indicating 100 mpg: <div class="sagecell-r" id="sage-32"><script type="text/x-sage">hist(prius$average_mpg)
+abline(v = 100, col="red", lwd=3, lty=2)
+</script></div> Based on this graphic, do we think the null hypothesis is plausible?</p></article><article class="task exercise-like" id="task-75"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-128">Run the following code to find the sample mean and sample standard deviation. <div class="sagecell-r" id="sage-33"><script type="text/x-sage">print(mean(prius$average_mpg))
+print(sd(prius$average_mpg))
+</script></div></p></article><article class="task exercise-like" id="task-76"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-129">Find the standard error \(SE\text{.}\)</p></article><article class="task exercise-like" id="task-77"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-130">Find \(t\)-score for \(\bar{x}\text{.}\)</p></article><article class="task exercise-like" id="task-78"><h6 class="heading"><span class="codenumber">(g)</span></h6>
+<p id="p-131">Compute a \(p\)-value (be sure to use the appropriate level of significance). <div class="sagecell-r" id="sage-34"><script type="text/x-sage">
+</script></div> <a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-6" id="hint-6"><span class="type">Hint</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-6"><div class="hint solution-like"><p id="p-132"><iframe src="https://www.desmos.com/calculator/qrru08kps1" id="interactive-14" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/odp3hiqj8r" id="interactive-15" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-79"><h6 class="heading"><span class="codenumber">(h)</span></h6>
+<p id="p-133">State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-80"><h6 class="heading"><span class="codenumber">(i)</span></h6>
+<p id="p-134">Do we accept or reject the null hypothesis?</p></article><article class="task exercise-like" id="task-81"><h6 class="heading"><span class="codenumber">(j)</span></h6>
+<p id="p-135">What sort of error could have been made? (Type 1 or Type 2)</p></article><article class="task exercise-like" id="task-82"><h6 class="heading"><span class="codenumber">(k)</span></h6>
+<p id="p-136">Run the following to compute the \(p\)-value another way, how does this compare to what you did in (f)? <div class="sagecell-r" id="sage-35"><script type="text/x-sage">t.test(prius$average_mpg, mu=100, alternative="greater")
+</script></div></p></article></article></section></section></div></main>
+</div>
+</body>
+</html>

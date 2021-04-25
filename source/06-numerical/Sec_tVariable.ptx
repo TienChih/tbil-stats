@@ -34,7 +34,7 @@
 
       <task>
         <p>
-          Let <m>A_2</m> be the average of two die rolls: <m>A_2=\frac{1}{2}(X_1+X_2).</m>  Using <xref ref="linofEandV"/>, find <m>E(A_2), Var(A_2), \sigma_{A_2}.</m>
+          Let <m>A_2</m> be the average of two die rolls: <m>A_2=\frac{1}{2}(X_1+X_2).</m>  Using <xref ref="remark-linofEandV"/>, find <m>E(A_2), Var(A_2), \sigma_{A_2}.</m>
         </p>
       </task>
 
@@ -63,7 +63,7 @@
 
       <task>
         <p>
-          Let <m>A_3</m> be the average of two die rolls: <m>A_2=\frac{1}{3}(X_1+X_2+X_3).</m>  Using <xref ref="linofEandV"/>, find <m>E(A_3), Var(A_3), \sigma_{A_3}.</m>
+          Let <m>A_3</m> be the average of two die rolls: <m>A_2=\frac{1}{3}(X_1+X_2+X_3).</m>  Using <xref ref="remark-linofEandV"/>, find <m>E(A_3), Var(A_3), \sigma_{A_3}.</m>
         </p>
       </task>
 

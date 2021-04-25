@@ -62,7 +62,7 @@
           </exploration>
 
 
-          <definition xref="definition-CIprop">
+          <definition xml:id="definition-CIprop">
             <p>
               Given a parameter of interest, a C% confidence interval is an interval <m>[L, U]</m> such that there is a C% chance the parameter lies in this interval.
             </p>

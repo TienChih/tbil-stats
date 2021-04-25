@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-15T17:43:49-06:00       *-->
+<!--*       on 2021-04-25T00:17:21-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -172,6 +172,16 @@ MathJax.Hub.Config({
 <li><a href="Sec_ChiIndependence.html" data-scroll="Sec_ChiIndependence">Chi-Squared Test and Independence</a></li>
 </ul>
 </li>
+<li class="link">
+<a href="Chap_Numerical.html" data-scroll="Chap_Numerical"><span class="codenumber">6</span> <span class="title">Inference for Numerical Variables</span></a><ul>
+<li><a href="Sec_tVariable.html" data-scroll="Sec_tVariable">The \(t\)-Variable and Sampling Distribution of Numerical Variables</a></li>
+<li><a href="Sec_OneVarNum.html" data-scroll="Sec_OneVarNum">Confidence Intervals and Hypothesis Testing for a single Numerical Variable</a></li>
+<li><a href="Sec_PairedData.html" data-scroll="Sec_PairedData">Paired Numerical Data</a></li>
+<li><a href="Sec_TwoVarNum.html" data-scroll="Sec_TwoVarNum">Comparing Two Numerical Variables</a></li>
+<li><a href="Sec_SizeofSampleNum.html" data-scroll="Sec_SizeofSampleNum">Size of Samples of Numerical Variables</a></li>
+<li><a href="Sec_ANOVA.html" data-scroll="Sec_ANOVA">ANOVA: Analysis of Variation</a></li>
+</ul>
+</li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="Sec_TwoVarCat"><h2 class="heading hide-type">
@@ -240,8 +250,8 @@ Var_{\hat{p}}=\frac{p(1-p)}{n}.
 <p id="p-977">Use <a class="xref" data-knowl="./knowl/remark-varprop.html" title="Remark 5.2.2">Remark 5.2.2</a> to find the variance of \(\hat{p_1}\text{:}\) \(Var_{\hat{p_1}}\text{.}\)</p></article><article class="task exercise-like" id="task-542"><h6 class="heading"><span class="codenumber">(c)</span></h6>
 <p id="p-978">Suppose we sampled 1000 babies from mothers who do not  smoke (\(n_2=1000\)).  We are given the probability a given baby is underweight is \(p_2=0.029\text{.}\)  Following <a class="xref" data-knowl="./knowl/theorem-CLTprop.html" title="Theorem 4.1.4: The Central Limit Theorem (Proportion)">Theorem 4.1.4</a> what is the expected proportion of this sample to be underweight: \(\hat{p_2}\text{?}\)</p></article><article class="task exercise-like" id="task-543"><h6 class="heading"><span class="codenumber">(d)</span></h6>
 <p id="p-979">Use <a class="xref" data-knowl="./knowl/remark-varprop.html" title="Remark 5.2.2">Remark 5.2.2</a> to find the variance of \(\hat{p_2}\text{:}\) \(Var_{\hat{p_2}}\text{.}\)</p></article><article class="task exercise-like" id="task-544"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-980">Let \(D\) denote the difference between the sampling distributions.  Use <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "remark-linofEV" missing]</code> to find \(\mu_D=p_1-p_2\text{.}\)</p></article><article class="task exercise-like" id="task-545"><h6 class="heading"><span class="codenumber">(f)</span></h6>
-<p id="p-981">Use <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "remark-linofEV" missing]</code> to find the variance of \(D\text{:}\) \(Var_D=p_1-p_2\text{.}\)</p></article><article class="task exercise-like" id="task-546"><h6 class="heading"><span class="codenumber">(g)</span></h6>
+<p id="p-980">Let \(D\) denote the difference between the sampling distributions.  Use <a class="xref" data-knowl="./knowl/remark-linofEandV.html" title="Remark 2.4.6">Remark 2.4.6</a> to find \(\mu_D\text{.}\)</p></article><article class="task exercise-like" id="task-545"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-981">Use <a class="xref" data-knowl="./knowl/remark-linofEandV.html" title="Remark 2.4.6">Remark 2.4.6</a> to find the variance of \(D\text{:}\) \(Var_D\text{.}\)</p></article><article class="task exercise-like" id="task-546"><h6 class="heading"><span class="codenumber">(g)</span></h6>
 <p id="p-982">Find the standard deviation of \(D\text{:}\) \(SE_D=\sqrt{SE_D}\text{.}\)</p></article><article class="task exercise-like" id="task-547"><h6 class="heading"><span class="codenumber">(h)</span></h6>
 <p id="p-983">Run the following code to simulate 1000 trials of sampling 500 babies from mothers who smoke, 1000 babies from mothers who do not smoke, taking the difference in proportions of babies who are underweight, and plotting a histogram of the results. <div class="sagecell-r" id="sage-172"><script type="text/x-sage">smoke_n=500
 nosmoke_n=1000
@@ -266,7 +276,7 @@ curve(dnorm(x, mean=mu_D, sd=SE_D), col="darkblue", lwd=2, add=TRUE, yaxt="n")
 </script></div> How well does the normal distribution approximate the histogram?</p></article></article><article class="remark remark-like" id="remark-diffofprop"><h6 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Difference of Proportions.</span>
 </h6>
-<p id="p-985">Let there be two random categorical variables, with population proportions \(, p_1, p_2\text{.}\)  Then let \(X_D\) be the random variable generated by taking random samples of size \(n_1, n_2\) of the two variables and taking the difference in their proportions.  Then \(X_D\) is approximated by a normal variable with mean and standard deviation:</p>
+<p id="p-985">Let there be two random categorical variables, with population proportions \(, p_1, p_2\text{.}\)  Then let \(D\) be the random variable generated by taking random samples of size \(n_1, n_2\) of the two variables and taking the difference in their proportions.  Then \(D\) is approximated by a normal variable with mean and standard deviation:</p>
 <div class="displaymath">
 \begin{equation*}
 \mu_D=p_1-p_2, SE_D=\sqrt{\frac{p_1(1-p_1)}{n_1}+\frac{p_2(1-p_2)}{n_2}}.
@@ -418,7 +428,7 @@ print(paste0("Lower Bound: ", LB , ", Upper Bound:", UB))
 \hat{p}_{pool}=\frac{x_1+x_2}{n_1+n_2}.
 \end{equation*}
 </div>
-<p data-braille="continuation">We then use this pooled proportion as both \(\hat{p_1}\) and \(\hat{p_2}\) for the purpose of computing the sampling error.</p>
+<p data-braille="continuation">We then use this pooled proportion as both \(\hat{p_1}\) and \(\hat{p_2}\) for the purpose of computing the standard error.</p>
 <p id="p-1009">So we would use</p>
 <div class="displaymath">
 \begin{equation*}
@@ -456,7 +466,7 @@ SE_D=\sqrt{\frac{\hat{p}_{pool}(1-\hat{p}_{pool})}{n_1}+\frac{\hat{p}_{pool}(1-\
 <p id="p-1021">Let \(Z\) denote the standard normal variable.  Compute \(P(Z&gt;|z_{\hat{p}}|)\) and \(P(Z\lt -|z_{\hat{p}}|)\text{.}\)  How does these values compare to what you found in (f) and (g)?</p></article><article class="task exercise-like" id="task-571"><h6 class="heading"><span class="codenumber">(j)</span></h6>
 <p id="p-1022">Compute the \(p\)-value.</p></article><article class="task exercise-like" id="task-572"><h6 class="heading"><span class="codenumber">(k)</span></h6>
 <p id="p-1023">State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-573"><h6 class="heading"><span class="codenumber">(l)</span></h6>
-<p id="p-1024">Do we accept or reject the null hypothesis?</p></article><article class="task exercise-like" id="task-574"><h6 class="heading"><span class="codenumber">(m)</span></h6>
+<p id="p-1024">Do we  reject the null hypothesis?</p></article><article class="task exercise-like" id="task-574"><h6 class="heading"><span class="codenumber">(m)</span></h6>
 <p id="p-1025">What sort of error could have been made? (Type 1 or Type 2)</p></article><article class="task exercise-like" id="task-575"><h6 class="heading"><span class="codenumber">(n)</span></h6>
 <p id="p-1026">Run the following code to sample <code class="code-inline tex2jax_ignore">num_men=312</code> men where \(men_raise=72\) get raises, then samples <code class="code-inline tex2jax_ignore">num_women=216</code> men where \(women_raise=30\) get raises.  It does this <code class="code-inline tex2jax_ignore">trials=1000</code> times and plots a histogram of the differences. <div class="sagecell-r" id="sage-184"><script type="text/x-sage">trials=1000
 num_men=312
@@ -521,7 +531,7 @@ abline(v = observed_diff, col="red", lwd=3, lty=2)
 <p id="p-1039">Compute \(d=\hat{p_1}-\hat{p_2}\) the difference in proportions of men and women who got raises.</p></article><article class="task exercise-like" id="task-583"><h6 class="heading"><span class="codenumber">(f)</span></h6>
 <p id="p-1040">Let \(X\) be the normal variable mean \(\mu_{D}\) and standard deviation \(SE_{D}\text{.}\) Compute the \(p\)-value \(P(X&gt; d)\text{.}\)</p></article><article class="task exercise-like" id="task-584"><h6 class="heading"><span class="codenumber">(g)</span></h6>
 <p id="p-1041">State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-585"><h6 class="heading"><span class="codenumber">(h)</span></h6>
-<p id="p-1042">Do we accept or reject the null hypothesis?</p></article><article class="task exercise-like" id="task-586"><h6 class="heading"><span class="codenumber">(i)</span></h6>
+<p id="p-1042">Do we  reject the null hypothesis?</p></article><article class="task exercise-like" id="task-586"><h6 class="heading"><span class="codenumber">(i)</span></h6>
 <p id="p-1043">What sort of error could have been made? (Type 1 or Type 2)</p></article><article class="task exercise-like" id="task-587"><h6 class="heading"><span class="codenumber">(j)</span></h6>
 <p id="p-1044">Is a 10% increase in scores plausible?</p></article></article><article class="activity project-like" id="activity-dogcancer"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.7</span><span class="period">.</span><span class="space"> </span><span class="title">Cancer in Dogs.</span>
@@ -557,7 +567,7 @@ names(cancer)
 		p=NULL, alternative="greater", correct=FALSE)
 </script></div></p></article><article class="task exercise-like" id="task-594"><h6 class="heading"><span class="codenumber">(g)</span></h6>
 <p id="p-1054">State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-595"><h6 class="heading"><span class="codenumber">(h)</span></h6>
-<p id="p-1055">Do we accept or reject the null hypothesis?</p></article><article class="task exercise-like" id="task-596"><h6 class="heading"><span class="codenumber">(i)</span></h6>
+<p id="p-1055">Do we  reject the null hypothesis?</p></article><article class="task exercise-like" id="task-596"><h6 class="heading"><span class="codenumber">(i)</span></h6>
 <p id="p-1056">What sort of error could have been made? (Type 1 or Type 2)</p></article><article class="task exercise-like" id="task-597"><h6 class="heading"><span class="codenumber">(j)</span></h6>
 <p id="p-1057">Is it plausible to say that being exposed to 2,4-D do <em class="emphasis">not</em> have an increased risk of cancer?</p></article></article></section></section></div></main>
 </div>

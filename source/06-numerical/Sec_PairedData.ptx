@@ -158,7 +158,7 @@
                 </task>
 
                 <task>
-                        <p>Do we accept or reject the null hypothesis?</p>
+                        <p>Do we  reject the null hypothesis?</p>
                       </task>
 
                       <task>
@@ -248,7 +248,7 @@
         </me>
       </p>
       <p>
-        The difference between these variables is <em>itself</em> a random variable, with a population mean <m>\mu_{d}</m> and population standard deviation <m>\sigma_{d}</m>.  We can then perform any one variable numerical inference exactly as in we were in <xref ref="Sec_OneNumVar"/>.  We just have to properly interpret what statements about the difference mean:
+        The difference between these variables is <em>itself</em> a random variable, with a population mean <m>\mu_{d}</m> and population standard deviation <m>\sigma_{d}</m>.  We can then perform any one variable numerical inference exactly as in we were in <xref ref="Sec_OneVarNum"/>.  We just have to properly interpret what statements about the difference mean:
         <ul>
           <li>A C% <em>confidence interval</em> for <m>\mu_d</m> is an interval that has a C% chance of containing the average difference between our two populations.</li>
           <li> The null hypothesis <m>\mu_d=\mu_0</m> is the assumption that the average difference between the two populations could be <m>\mu_0</m>.</li>
@@ -350,7 +350,7 @@
                 </task>
 
                 <task>
-                        <p>Do we accept or reject the null hypothesis?</p>
+                        <p>Do we  reject the null hypothesis?</p>
                       </task>
 
                       <task>
@@ -409,10 +409,243 @@
 
     <activity xml:id="activity-studentscores">
         <title>Online Tutoring and Changes in Test Scores</title>
-        <introduction xml:id="introduction-">
-            <title></title>
+        <introduction>
+            <p>
+              The <c>studentscleaned.csv</c> data set consists of a sample of 4892 students who have taken a statistics course.  It records information such as their gender, major, whether or not they've participated in online statistics tutoring and their scores on the two exams in the course.
+            </p>
+
+            <p>
+            Run the following code to download <c>studentscleaned.csv</c> and display it's variables.
+             <sage language="r">
+                      <input>
+                      students = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/studentscleaned.csv")
+                      names(students)
+                      </input>
+                      </sage>
+          
+          </p>
+
+
             
         </introduction>
+
+        <task>
+          <p>
+            We are curious to see for students who have done the online tutoring, whether or not on average they will improve from test 1 to test 2.  Let <m>d</m> denote the score from the first test, subtracted from the score from the second test.
+            Which of the following best describes the null hypothesis <m>H_0</m>?
+                          <ul>
+                            <li><m>\mu_d\lt 0</m>.</li>
+                            <li><m>\mu_d> 0</m>.</li>
+                            <li><m>\mu_d\neq 0</m>.</li>
+                            <li><m>\mu_d= 0</m>.</li>
+                          </ul>
+                        </p>
+                      </task>
+
+                      <task>
+                         <p>
+                          Which of the following best describes the alternative hypothesis <m>H_A</m>?
+                          <ul>
+                            <li><m>\mu_d\lt 0</m>.</li>
+                            <li><m>\mu_d> 0</m>.</li>
+                            <li><m>\mu_d\neq 0</m>.</li>
+                            <li><m>\mu_d= 0</m>.</li>
+                          </ul>
+                        </p>
+                      </task>
+          <task>
+                <p>
+                  We first subset out the students who took online tutoring.  Run the following to define <c>studentstutor</c>, the subset of students who took online tutoring, and summarize the findings:
+                  <sage language="r">
+                      <input>
+                      studentstutor=subset(students, students$online.tutorial==1)
+                      summary(studentstutor)
+          
+                      </input>
+                      </sage>
+                </p>
+              </task>
+
+          <task>
+                      <p>
+                Run the following code to define the difference of the scores between exams <c>changeinscore</c> and display a histogram of the changes, including a line indicating 0 change, and a line indicating the sample average change:
+
+                <sage language="r">
+                <input>
+                changeinscore=studentstutor$score2-studentstutor$score1
+                hist(changeinscore)
+                abline(v = 0, col="red", lwd=3, lty=2)
+                abline(v = mean(changeinscore), col="blue", lwd=3, lty=2)
+                </input>
+                </sage>
+                Based on this graphic, do we think the null hypothesis is plausible?
+
+              </p>
+              <p>
+                Fix and run the following code to perform the appropriate hypothesis test and compute a <m>p</m>-value:
+
+                <sage language="r">
+                <input>
+                t.test(changeinscore, mu=FIXME, alternative="FIXME")
+                </input>
+                </sage>
+
+              </p>   
+              </task>    
+
+              <task>
+                  <p>
+                  State the meaning of the <m>p</m>-value within the context of this problem in a complete sentence.
+                </p>
+                </task>
+
+                <task>
+                        <p>Do we  reject the null hypothesis?</p>
+                      </task>
+
+                      <task>
+                        <p>What sort of error could have been made? (Type 1 or Type 2)</p>
+                      </task>
+
+            <task>
+              <p>
+              Fix and run the following to compute a  95% confidence interval for  <m>\mu_d</m>.
+              <sage language="r">
+                      <input>
+                      t.test(changeinscore, conf.level=FIXME)$conf.int
+        
+                      </input>
+                      </sage>
+                  
+            </p>
+          </task> 
+
+          <task>
+            <p>
+              State what this confidence interval means in the context of this problem using complete sentences.</p>
+            </task> 
+
+           <task>
+           <p>
+           Repeat the above for students who did not do the online tutoring.
+           </p>
+           </task>          
+    </activity>
+
+
+
+    <activity xml:id="activity-climatechage">
+        <title>Days of Extreme Temperature</title>
+        <introduction>
+            <p>
+              The National Oceanic and Atmospheric Administration (NOAA) collects data on daily temperatures all across the globe.  We are interested in the number of days of extreme temperature at a sample of these locations, and how they may have changed over time.
+            </p>
+
+            <p>
+            Run the following code to download <c>climate70.csv</c> and display it's variables.
+             <sage language="r">
+                      <input>
+                      climate = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/climate70.csv")
+                      names(climate)
+                      </input>
+                      </sage>
+          We record the Station ID, latitude and logitude of the NOAA stations, the number of days over 70 degrees in 1948 and 2018 at each of these locations, and the number of days over 90 degrees in both years at each of these locations.
+          </p>
+
+
+            
+        </introduction>
+
+        <task>
+          <p>
+            Let <m>d</m> denote the number of days over 70 degrees in 1948 subtracted from the number of days over 70 degrees in 2008. We are curious to see if there is any change in the average number of days over 70 degrees from 1948 to 2018.
+            Which of the following best describes the null hypothesis <m>H_0</m>?
+                          <ul>
+                            <li><m>\mu_d\lt 0</m>.</li>
+                            <li><m>\mu_d> 0</m>.</li>
+                            <li><m>\mu_d\neq 0</m>.</li>
+                            <li><m>\mu_d= 0</m>.</li>
+                          </ul>
+                        </p>
+                      </task>
+
+                      <task>
+                         <p>
+                          Which of the following best describes the alternative hypothesis <m>H_A</m>?
+                          <ul>
+                            <li><m>\mu_d\lt 0</m>.</li>
+                            <li><m>\mu_d> 0</m>.</li>
+                            <li><m>\mu_d\neq 0</m>.</li>
+                            <li><m>\mu_d= 0</m>.</li>
+                          </ul>
+                        </p>
+                      </task>
+          
+
+          <task>
+                      <p>
+                Run the following code to define the difference in number of days over 70 degrees <c>changeindays70</c> and display a histogram of the changes, including a line indicating 0 change, and a line indicating the sample average change:
+
+                <sage language="r">
+                <input>
+                changeindays70=climate$dx70_2018-climate$dx70_1948
+                hist(changeindays70)
+                abline(v = 0, col="red", lwd=3, lty=2)
+                abline(v = mean(changeindays70), col="blue", lwd=3, lty=2)
+                </input>
+                </sage>
+                Based on this graphic, do we think the null hypothesis is plausible?
+
+              </p>
+              <p>
+                Fix and run the following code to perform the appropriate hypothesis test and compute a <m>p</m>-value:
+
+                <sage language="r">
+                <input>
+                t.test(changeindays70, mu=FIXME, alternative="FIXME")
+                </input>
+                </sage>
+
+              </p>   
+              </task>    
+
+              <task>
+                  <p>
+                  State the meaning of the <m>p</m>-value within the context of this problem in a complete sentence.
+                </p>
+                </task>
+
+                <task>
+                        <p>Do we  reject the null hypothesis?</p>
+                      </task>
+
+                      <task>
+                        <p>What sort of error could have been made? (Type 1 or Type 2)</p>
+                      </task>
+
+            <task>
+              <p>
+              Fix and run the following to compute a  95% confidence interval for  <m>\mu_d</m>.
+              <sage language="r">
+                      <input>
+                      t.test(changeindays70, conf.level=FIXME)$conf.int
+        
+                      </input>
+                      </sage>
+                  
+            </p>
+          </task> 
+
+          <task>
+            <p>
+              State what this confidence interval means in the context of this problem using complete sentences.</p>
+            </task> 
+
+            <task>
+           <p>
+           Repeat the above for days over 90.
+           </p>
+           </task>         
     </activity>
 
 
