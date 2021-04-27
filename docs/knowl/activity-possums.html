@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-27T13:18:50-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-r' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
+                           linked: true,
+                           languages: ['r'],
+                           evalButtonText: 'Evaluate (R)'});
+});
+</script>
+</head>
+<body>
+<article class="activity project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">Possum Regression.</span>
+</h6>
+<div class="introduction"><p xmlns:svg="http://www.w3.org/2000/svg">We now return to the question from <a class="xref" data-knowl="./knowl/exploration-possums.html" title="Exploration 7.1.1: Dimensions of Possums">Exploration 7.1.1</a> and see if we can give a more precise answer.</p></div>
+<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to create a linear model for <code class="code-inline tex2jax_ignore">head_l</code>, as a function of <code class="code-inline tex2jax_ignore">skull_w</code> and save it as <code class="code-inline tex2jax_ignore">possummod</code>. <div class="sagecell-r" id="sage-338"><script type="text/x-sage">possummod=lm(head_l~skull_w, data=possum)
+</script></div> What is the slope and \(y\) intercept for the liner model?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to show the correlation for this model. <div class="sagecell-r" id="sage-339"><script type="text/x-sage">cor(possum$skull_w, possum$head_l)
+</script></div></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(c)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to plot the scatterplot and the least squares line. <div class="sagecell-r" id="sage-340"><script type="text/x-sage">plot(possum$skull_w, possum$head_l,  pch=19)
+abline(possummod, col="red")
+</script></div></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(d)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to show a summary of <code class="code-inline tex2jax_ignore">possummod</code>. <div class="sagecell-r" id="sage-341"><script type="text/x-sage">summary(possummod)
+</script></div></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(e)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to show a summary of <code class="code-inline tex2jax_ignore">possum</code>. <div class="sagecell-r" id="sage-342"><script type="text/x-sage">summary(possum)
+</script></div> Pick two other numerical variables from <code class="code-inline tex2jax_ignore">possum</code> and repeat the above.</p></article></article><span class="incontext"><a href="Sec_Correlation.html#activity-possums">in-context</a></span>
+</body>
+</html>

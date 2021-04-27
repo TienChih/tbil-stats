@@ -568,6 +568,76 @@
 
 
 
+     <activity xml:id="activity-starbucksfoodtype">
+      <title>Starbucks Nutrition and Item Type: <c>R</c></title>
+      <introduction>
+          <p>
+            Is there any impact on the type of item Starbucks serves, <c>bakery</c>, <c>bistro box</c>, <c>hot breakfast</c>, <c>parfait</c>, <c>petite</c>, <c>salad</c>,  <c>sandwich</c> ,and nutrition?
+          </p>
+
+           <p>
+            Run the following code to download <c>starbucks.csv</c> a data set comtaining information about 77 Starbucks menu items their nutritional value and show it's variable names.
+
+             <sage language="r">
+                <input>
+                starbucks = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/starbucks.csv")
+                
+                names(starbucks)
+                </input>
+                </sage>
+          </p>
+          
+      </introduction>
+    <task>
+          <p>
+            Run the following code to rplot a boxplot for <c>fiber</c> fiber in g, seperated by food type <c>type</c>.
+            <sage language="r">
+                <input>
+                boxplot(fiber ~ type, data=starbucks)
+                </input>
+                </sage>
+          </p>
+        </task>
+
+       <task>
+        <p>
+          Run the following code to create an <c>aov</c> model of <c>starbucks</c> and summarize it.
+            <sage language="r">
+                <input>
+                starbucksaov=aov(fiber ~ type, data=starbucks)
+                summary(starbucksaov)
+
+                </input>
+                </sage>
+        </p>
+      </task>
+
+       <task>
+                  <p>
+                  State the meaning of the <m>p</m>-value within the context of this problem in a complete sentence.
+                </p>
+                </task>
+
+                <task>
+                        <p>Do we  reject the null hypothesis?</p>
+                      </task>
+
+                      <task>
+                        <p>What sort of error could have been made? (Type 1 or Type 2)</p>
+                      </task>
+
+                      <task>
+                        <p>
+                          Re-run the above comparing another nutrtional variable across food type.
+                        </p>
+                      </task>
+
+
+
+  </activity> 
+
+
+
 
 
 

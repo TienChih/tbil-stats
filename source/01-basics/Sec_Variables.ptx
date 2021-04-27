@@ -176,7 +176,7 @@ The dot plot for this data would be as follows:
 </subsection>  
 
 
-<subsection>
+<subsection xml:id="subsection-relationship">
 <title>Relationships Between Variables</title>
   <p>
     Much of data analysis is centered on not one, but two or more variables at the same time, to observe any relationships (or lack thereof) between variables.
@@ -283,7 +283,7 @@ rate of 31.3%. </caption>
   </activity>
 
 
-  <definition>
+  <definition xml:id="definition-explanatoryresponse">
   <statement>
   <p>
     When we suspect one variable might causally affect another, we label the first variable the
@@ -299,7 +299,7 @@ rate of 31.3%. </caption>
   </statement>
   </definition>
 
-  <remark>
+  <remark xml:id="remark-corrcause">
   <statement>
   <p>
     Note that if two variables have a positive or negative relationship, even a strong one, that there does <em>not</em> neccesarily exist any casual link between them!

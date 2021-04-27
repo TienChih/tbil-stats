@@ -166,6 +166,7 @@
     <xi:include href="./04-foundations/main.ptx" />
     <xi:include href="./05-categorical/main.ptx" />
     <xi:include href="./06-numerical/main.ptx" />
+    <xi:include href="./07-linearregression/main.ptx" />
 
     <!--<backmatter>
       <xi:include href="./bibliography.ptx"/>
