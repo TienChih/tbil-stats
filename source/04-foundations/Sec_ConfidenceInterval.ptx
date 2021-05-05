@@ -1,12 +1,16 @@
 <section xml:id="Sec_ConfidenceInterval">
 
-    <title>Confidence Intervals</title>
+    <title>Introduction to Confidence Intervals (F2)</title>
 
    <introduction>
         <p> We saw in <xref ref="Sec_PointEstimates"/> that the point estimates can be a very accurate predictor of the parameter of interest.  However, it is rarely exactly the same, and of course there is always some cases where it deviates significantly.  </p>
 
         <p>
           The odds that your point estimate matches the parameter of interest may be very unlikely, but we can perhaps use the point estimate to find a range of probable values for the parameter of interest.
+        </p>
+
+        <p>
+          In this section we compute and interpret confidence intervals for population proportions.
         </p>
     </introduction>
 

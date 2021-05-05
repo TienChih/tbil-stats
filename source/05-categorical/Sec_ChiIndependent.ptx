@@ -1,5 +1,5 @@
 <section xml:id="Sec_ChiIndependence">
-    <title>Chi-Squared Test and Independence</title>
+    <title>Chi-Squared Test and Independence (C4)</title>
 
    <introduction>
         <p> In this section, we compare samples from two different populations, to see if the populations may have the same distribution.  In other words, are the outcomes equally likely, no matter which population I draw from?
@@ -436,7 +436,7 @@ chisq.test(datamatrix, correct=FALSE)
               </p>
 
               <p>
-                Run the following code to download <c>pew_energy_2018.csv</c> data set and to display it's variables.
+                Run the following code to download <c>pew_energy_2018.csv</c> data set and to display it's variables.  To learn more about this data click here: <url href="https://www.openintro.org/data/index.php?data=pew_energy_2018"/>
 
                 <sage language="r">
                       <input>

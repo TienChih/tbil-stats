@@ -1,9 +1,13 @@
 <section xml:id="Sec_PointEstimates">
 
-    <title>Point Estimates</title>
+    <title>Point Estimates (F1)</title>
 
    <introduction>
         <p> We now begin combining the concepts learned in previous chapters to get to the real heart of statistics.  <em>Variables</em> that occur in the world that we care about are <em>Random Variables</em> that we discuss in <xref ref="Chap_Probability"/>.  But we almost never can work with the variable directly, just a sample of data from that variable as in <xref ref="Chap_DataBasics"/>.  We will use what we learned about <xref ref="Chap_Distributions"/> to make predictions about the original random variable.  </p>
+
+        <p>
+          In this section, we identify point estimates for true parameters.
+        </p>
     </introduction>
 
 

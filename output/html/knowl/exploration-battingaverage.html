@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-05-04T22:00:55-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-r' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
+                           linked: true,
+                           languages: ['r'],
+                           evalButtonText: 'Evaluate (R)'});
+});
+</script>
+</head>
+<body>
+<article class="exploration project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">6.6.1</span><span class="period">.</span><span class="space"> </span><span class="title">Batting Average and Position.</span>
+</h6>
+<div class="introduction">
+<p xmlns:svg="http://www.w3.org/2000/svg">Is there any difference in batting average between different positions?  We examine 1270 players from the 2018 MLB season, and observe their batting average and position:  <code class="code-inline tex2jax_ignore">1B</code> = first base, <code class="code-inline tex2jax_ignore">2B</code> = second base, <code class="code-inline tex2jax_ignore">3B</code> = third base, <code class="code-inline tex2jax_ignore">C</code> = catcher, <code class="code-inline tex2jax_ignore">CF</code> = center field (outfield), <code class="code-inline tex2jax_ignore">DH</code> = designated hitter, <code class="code-inline tex2jax_ignore">LF</code> = left field (outfield), <code class="code-inline tex2jax_ignore">P</code> = pitcher, <code class="code-inline tex2jax_ignore">RF</code> = right field (outfield), <code class="code-inline tex2jax_ignore">SS</code> = shortstop.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to download  the <code class="code-inline tex2jax_ignore">mlb_players_18.csv</code> the data set which contains information about 1270 players from the 2018 MLB season and display it's variables: <div class="sagecell-r" id="sage-315"><script type="text/x-sage">mlb18 = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/mlb_players_18.csv")
+
+names(mlb18)
+</script></div> Click here to learn more about this data set: <a class="external" href="https://www.openintro.org/data/index.php?data=mlb_players_18" target="_blank"><code class="code-inline tex2jax_ignore">https://www.openintro.org/data/index.php?data=mlb_players_18</code></a>.</p>
+</div>
+<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Since they are special players, let's consider a subset of the players without pitchers or designated hitters.  Run the following code to produce <code class="code-inline tex2jax_ignore">batters</code> a subset of <code class="code-inline tex2jax_ignore">mlb18</code> with no pitchers or designated hitters. <div class="sagecell-r" id="sage-316"><script type="text/x-sage">batters=subset(mlb18, mlb18$position!="P" & mlb18$position!="DH")
+summary(batters)
+</script></div></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to plot a boxplot for the batting averages of <code class="code-inline tex2jax_ignore">batters</code> seperated by position. <div class="sagecell-r" id="sage-317"><script type="text/x-sage">boxplot(batters$AVG~batters$position)
+</script></div> Is it obvious that these values come from different distributions?  Is it obvious they couldn't have?</p></article></article><span class="incontext"><a href="Sec_ANOVA.html#exploration-battingaverage">in-context</a></span>
+</body>
+</html>

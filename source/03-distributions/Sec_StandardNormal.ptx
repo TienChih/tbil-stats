@@ -1,10 +1,14 @@
 <section xml:id="Sec_StandardNormal">
 
-    <title>Standard Normal Distribution</title>
+    <title>Standard Normal Distribution (D1)</title>
 <introduction>
     <statement>
       <p>
         In this section, we study one of the most ubiquitous and fundamental probability distributions in nature and mathematics: the <term>normal distribution</term>.  We may know this as the standard <q>bell curve</q>.
+      </p>
+
+      <p>
+        In this section, we will compute probabilities of the standard normal random variable given bounds, and bounds given probabilities.
       </p>
     </statement>
 

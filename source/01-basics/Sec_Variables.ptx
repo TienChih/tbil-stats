@@ -1,19 +1,30 @@
 <section xml:id="Sec_Variables">
-  <title>Variables</title>
+  <title>Types of Variables and their Relationships (B1)</title>
   <introduction>
+    <p>
+      When one does statistics, what is it exactly that we are observing and measuring?  What are we computing?
+    </p>
   <p>
-    Place Holder
+    In this section, we recognize different types of variables and classify them, and describe potential relationships between variables in a data set.
   </p>
 
 
-  <activity xml:id="activity-sleep">
-      <title>An Introductory Activity</title>
-      <statement>
+  <exploration xml:id="exploration-sleep">
+      <title>Hours of sleep</title>
+      <introduction>
       <p>
-        <ol>
-        <li>As a class write down the average time (in hours, to the nearest half-hour) they sleep per night. </li>
-        <li> Then create a simple graph (called a dot plot) of the data.  </li>
-      </ol>
+        In this introductory activity, we ask ourselves some natural questions that one would ask when collecting and analyzing data.
+      </p>
+    </introduction>
+
+        <task>
+          <p>
+          As a class write down the average time (in hours, to the nearest half-hour) they sleep per night. </p>
+        </task>
+
+        <task>
+          <p>
+            Then create a simple graph (called a dot plot) of the data. 
       For example, consider the following data:
 
 <me>5, 5.5, 6, 6, 6, 6.5, 6.5, 6.5, 6.5, 7, 7, 8, 8, 9</me>
@@ -28,24 +39,37 @@ The dot plot for this data would be as follows:
 <caption> Frequency of Average Time (in Hours) Spent Sleeping per Night.</caption>
 </figure>
 </p>
+</task>
+
+<task>
 <p>
+Does your dot plot look the same as or different from the example? Why?
+</p>
+</task>
 
-     Then, discuss the following questions:
+<task>
+<p>
+ If you did the same exercise in an English class with the same number of students, do you think the results would be the same? Why or why not?
+</p>
+</task>
 
-     <ol>
-      <li>Does your dot plot look the same as or different from the example? Why? </li>
-      <li> If you did the same exercise in an English class with the same number of students, do you think the results would be the same? Why or why not? </li>
+      <task>
+<p>
+  Where do your data appear to cluster? How could you interpret the clustering?
+</p>
+</task>
+      <task>
+<p>
+  What could we say about the Average Sleeping time of other students at your school?  Would it matter if they were taking Statistics?  Why or why not?
+</p>
+</task>
+      <task>
+<p> What are some reasons one may doubt the conclusions you've reached?
+</p>
+</task>
 
-      <li>Where do your data appear to cluster? How could you interpret the clustering?</li>
-      <li> What could we say about the Average Sleeping time of other students at your school?  Would it matter if they were taking Statistics?  Why or why not?</li>
-      <li> What are some reasons one may doubt the conclusions you've reached?</li>
-     </ol>
 
-       </p> 
-     </statement>
-
-
-  </activity>
+  </exploration>
 
 
   <p>
@@ -68,7 +92,8 @@ The dot plot for this data would be as follows:
 
 
 <subsection>
-  <title>Types of Variables</title>\<p>
+  <title>Types of Variables</title>
+  <p>
   When we do either descriptive or inferential statistics, we are describing or infering properties of <em>variables</em>.  Variables come in two types, each with two subcategories.</p>
 
 <definition>
@@ -99,9 +124,11 @@ The dot plot for this data would be as follows:
 
   <activity xml:id="activity-variables">
       <title>Classifying Variables</title>
-      <statement>
+      <task>
         <p>
           For each of the following, classify the variable type and subcategory.
+        </p>
+        <p>
           <ol>
             <li>The colors of crayons in a 24-crayon box.</li>
             <li>Student ID Numbers.</li>
@@ -112,16 +139,21 @@ The dot plot for this data would be as follows:
             <li>Annual income in dollars.</li>
             <li>A satisfaction survey of a social website by number: 1 = very satisfied, 2 = somewhat satisfied, 3 = not satisfied.</li>
           </ol>
+        </p>
+      </task>
+      <task>
+        <p>
           Then, for each of the four subcategories, come up with two additional examples.
         </p>
-      </statement>
+      </task>
   </activity>
 
   <activity xml:id="activity-variablesR">
       <title>Classifying Variables from a Data Set</title>
-      <p>
-        <ol>
-          <li>
+      <introduction>
+            <p>
+              In this activity, we look at an actual sample of data.
+            </p>
             <p>
               Run the following code to download the <c>heart_transplant.csv</c> data and to display it.
         <sage language="r">
@@ -130,11 +162,12 @@ The dot plot for this data would be as follows:
             heart_transplant
           </input>
         </sage>
+        This data is from a Stanford University study to see if an experimental heart transplant procedure increased lifespan.
         </p>
-        </li>
-
-        <li>
-        <p>  Run <c>names(heart_transplant)</c> to see just the variable names.
+      </introduction>
+        <task>
+        <p>  
+          Run <c>names(heart_transplant)</c> to see just the variable names.
 
         <sage language="r">
           <input>
@@ -154,18 +187,17 @@ The dot plot for this data would be as follows:
         <li>wait - Waiting Time for Transplant</li>
 
         </ul>
-
-
-        </p>
-        </li>
-        
-        <li>
-        For each variable in this data set, which type and subcategory is it?
-        </li>
-        </ol>
-
-
       </p>
+    </task>
+
+
+        <task>
+        <p>  
+          
+        For each variable in this data set, which type and subcategory is it?
+        </p>
+        </task> 
+          
 
       
   </activity>
@@ -189,8 +221,9 @@ The dot plot for this data would be as follows:
 
   </p>
 
-  <activity>
-  <statement>
+  <activity xml:id="activity-popchangeincome">
+    <title>Population Change vs Per Capita Income</title>
+  <introduction>
   <p>
   Consider the following figure comparing change in County's population compared to their median household income.
   
@@ -203,19 +236,26 @@ The dot plot for this data would be as follows:
 County of Kentucky, is highlighted, which lost 3.63% of its population from 2010
 to 2017 and had median household income of $22,736. </caption>
 </figure>
+</p>
+</introduction>
 
-  <ol>
-    <li> Does there seem to be a positive, negative, or no relationship between the change in population and the median household income? </li>
+  <task>
+        <p>  
+           Does there seem to be a positive, negative, or no relationship between the change in population and the median household income?
+         </p>
+       </task>
 
-    <li> Is this relationship (if any) strong or weak? </li>
+    <task>
+        <p>  
+          Is this relationship (if any) strong or weak? 
+        </p>
+      </task>
 
-    <li> What might account for this relationship, or lack of relationship? </li>
-
-   </ol> 
-
-
-  </p>
-  </statement>
+    <task>
+        <p>  
+          What might account for this relationship, or lack of relationship? 
+        </p>
+      </task>
   </activity>
 
   <p>
@@ -224,8 +264,9 @@ to 2017 and had median household income of $22,736. </caption>
 
 
 
-  <activity>
-  <statement>
+  <activity xml:id="activity-multiunitsVsOwnership">
+    <title>Multi-unit Housing Vs. Home Ownership</title>
+  <introduction>
   <p>
   Consider the following figure comparing the percentage of housing in a County that is multi-unit compared to home ownership rates in those Counties.
   <figure>
@@ -237,23 +278,31 @@ to 2017 and had median household income of $22,736. </caption>
 County, Georgia, which has a multi-unit rate of 39.4% and a homeownership
 rate of 31.3%. </caption>
 </figure>
+</p>
+</introduction>
 
-  <ol>
-    <li> Does there seem to be a positive, negative, or no relationship between the percentage of housing that is multi-unit and the home ownership rate? </li>
+  <task>
+        <p>  
+           Does there seem to be a positive, negative, or no relationship between the percentage of housing that is multi-unit and the home ownership rate? 
+         </p>
+       </task>
 
-    <li> Is this relationship (if any) strong or weak? </li>
+    <task>
+        <p>  
+          Is this relationship (if any) strong or weak?
+        </p>
+      </task>
 
-    <li> What might account for this relationship, or lack of relationship? </li>
-
-   </ol> 
-
-
-  </p>
-  </statement>
+    <task>
+        <p>  
+          What might account for this relationship, or lack of relationship? 
+        </p>
+      </task>
   </activity>
 
-  <activity>
-  <statement>
+  <activity xml:id="activity-ageofpatientvssurvival">
+    <title>Age of Patients vs. Days Survived</title>
+  <introduction>
   <p>
   Recall the Heart Transplant Data from <xref ref="activity-variablesR"/> Run the following code to plot the age of a patient at the start of the study compared to number of days the patient survived over the course of the study.
   
@@ -266,20 +315,28 @@ rate of 31.3%. </caption>
 
           </input>
         </sage>
+      </p>
+    </introduction>
 
 
-  <ol>
-    <li> Does there seem to be a positive, negative, or no relationship between the age of a patient and the number of days they survived? </li>
+  <task>
+        <p>  
+          
+          Does there seem to be a positive, negative, or no relationship between the age of a patient and the number of days they survived?
+        </p>
+      </task>
 
-    <li> Is this relationship (if any) strong or weak? </li>
+    <task>
+        <p>  
+           Is this relationship (if any) strong or weak?
+         </p>
+       </task>
 
-    <li> What might account for this relationship, or lack of relationship? </li>
-
-   </ol> 
-
-
-  </p>
-  </statement>
+    <task>
+        <p>  
+          What might account for this relationship, or lack of relationship? 
+        </p>
+      </task>
   </activity>
 
 
@@ -315,9 +372,12 @@ rate of 31.3%. </caption>
 
   <activity xml:id="activity-corrcause">
       <title>Correlation and Causation</title>
-      <p>
+      <task>
+        <p>  
+          
         Come up with a pair of variables who may be strongly correlated (positively or negatively) but have no casual relationship.
       </p>
+    </task>
   </activity>
 
 <p>

@@ -1,6 +1,6 @@
 <section xml:id="Sec_Conditionalprob">
 
-    <title>Conditional Probability</title>
+    <title>Conditional Probability (P2)</title>
 <introduction>
 <p>
   Let's say you know the probability you get into a car accident while driving.  Then it starts snowing, would that change what we think the likelihood of accidents are?  Lung cancer occurs at a certain rate, but if you knew someone smoked, would that affect how you feel about the likelihood of lung cancer?
@@ -8,6 +8,10 @@
 
 <p>
   We define <em>conditional probability</em> to be the likelihood of some event <m>A</m> <em>given</em> (or <em>conditioned</em>, <em>assuming</em> etc.) some other event <m>B</m>.  Sometimes, this information can raise, lower, or leave unchanged our understanding of the likelihood of <m>A</m>.
+  </p>
+
+  <p>
+    In this section we compute and interpret probability of events involving conditional probabilities.
   </p>
 
 

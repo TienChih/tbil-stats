@@ -1,5 +1,5 @@
 <section xml:id="Sec_tVariable">
-    <title>The <m>t</m>-Variable and Sampling Distribution of Numerical Variables</title>
+    <title>The <m>t</m>-Variable and Sampling Distribution of Numerical Variables (N1)</title>
 
    <introduction>
         <p> In this section, we transition away from categorical variables and begin looking at the sampling distributions of <em>numerical</em> variables.
@@ -152,6 +152,8 @@
                 names(ames)
                 </input>
                 </sage>
+
+                Click here to learn more about this data set: <url href="https://www.openintro.org/data/index.php?data=ames"/>.
 
               </p>
 

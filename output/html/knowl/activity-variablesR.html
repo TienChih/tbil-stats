@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-05-04T21:59:43-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-r' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
+                           linked: true,
+                           languages: ['r'],
+                           evalButtonText: 'Evaluate (R)'});
+});
+</script>
+</head>
+<body>
+<article class="activity project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Classifying Variables from a Data Set.</span>
+</h6>
+<div class="introduction">
+<p xmlns:svg="http://www.w3.org/2000/svg">In this activity, we look at an actual sample of data.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to download the <code class="code-inline tex2jax_ignore">heart_transplant.csv</code> data and to display it. <div class="sagecell-r" id="sage-1"><script type="text/x-sage">heart_transplant = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/heart_transplant.csv")
+heart_transplant
+</script></div> This data is from a Stanford University study to see if an experimental heart transplant procedure increased lifespan.</p>
+</div>
+<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
+<p>Run <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">names(heart_transplant)</code> to see just the variable names. <div class="sagecell-r" id="sage-2"><script type="text/x-sage">names(heart_transplant)
+</script></div> The meaning of these variables are:</p>
+<ul class="disc">
+<li>id - ID number of the patient.</li>
+<li>acceptyear - Year of acceptance as a heart transplant candidate.</li>
+<li>age - Age of the patient at the beginning of the study.</li>
+<li>survived - Survival status with levels alive and dead.</li>
+<li>survtime - Number of days patients were alive after the date they were determined to be a candidate for a heart transplant until the termination date of the study</li>
+<li>prior - Whether or not the patient had prior surgery with levels yes and no.</li>
+<li>transplant - Transplant status with levels control (did not receive a transplant) and treatment (received a transplant).</li>
+<li>wait - Waiting Time for Transplant</li>
+</ul></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">For each variable in this data set, which type and subcategory is it?</p></article></article><span class="incontext"><a href="Sec_Variables.html#activity-variablesR">in-context</a></span>
+</body>
+</html>

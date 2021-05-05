@@ -1,12 +1,12 @@
 <section xml:id="Sec_Correlation">
-    <title>Linear Correlation of Variables</title>
+    <title>Linear Correlation of Variables (R1)</title>
 
    <introduction>
         <p> In other math courses, we likely have seen  relationships between variables where one can directly compute the value of one variable based on another.  For example if we knew the length of a side of a square, we can exactly compute the area of the square.
         </p>
 
         <p>
-          Things in statistics are rarely so exact.  Nevertheless, we can often identify relationships between variables, and make <em>predictions</em> of one variable based on the values of the other.
+          Things in statistics are rarely so exact.  Nevertheless, we can often identify relationships between variables, and make <em>predictions</em> of one variable based on the values of the other.  In this section, we introduce the notion of correlation of variables.
           
 
 
@@ -31,6 +31,8 @@
                 names(possum)
                 </input>
                 </sage>
+
+                Click here to learn more about this data set: <url href="https://www.openintro.org/data/index.php?data=possum"/>.
 
               </p>
             
@@ -491,6 +493,13 @@
                   </p>
                 </task>
 
+               <task>
+                  <p>
+                    What is  <m>R^2</m>?  What does this tell us about the relationship between <m>y</m> and <m>x</m> according to <xref ref="remark-rsquared"/>.
+                  </p>
+                </task>
+
+
                 <task>
                   <p>
                     Let's use <c>R</c> to do the same.   Run the following code to produce a dataframe <c>dummydata</c> with variables <c>x1</c> and <c>y1</c>.
@@ -584,6 +593,13 @@
                 </sage>
               </p>
             </task>
+
+            <task>
+                  <p>
+                    What is  <m>R^2</m>?  What proportion of the head length is determined by the skull width.  (See <xref ref="remark-rsquared"/>.)
+                  </p>
+                </task>
+
 
 
             <task>

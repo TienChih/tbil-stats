@@ -1,5 +1,5 @@
 <section xml:id="Sec_ChiSquare">
-    <title>Chi-Squared Test and Goodness of Fit</title>
+    <title>Chi-Squared Test and Goodness of Fit (C3)</title>
 
    <introduction>
         <p> In previous sections, we discuss the proportion of a categorical variable which takes on a certain value.  In this section, we look at the distribution of a sample of a categorical variable across all it's values.  In particular, we see if a sample can plausibly come from a given distribution for the variable.

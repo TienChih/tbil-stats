@@ -1,10 +1,10 @@
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="Chap_LinearRegression">
-  <title>Linear Regression</title>
-  <introduction>
-    <p>
-      In <xref ref="Chap_Categorical"/> and <xref ref="Chap_Numerical"/> we saw numerous examples of variables who are dependent or interrelated.  In this chapter, we explore how we can use the values of one variable to predict another, how accurate these predictions can be, and when such analysis is appropriate.
-    </p>
-  </introduction>
+  <title>Linear Regression (R)</title>
+  <objectives>
+        <ul>
+            <xi:include href="outcomes.ptx"/>
+        </ul>
+    </objectives>
   <xi:include  href="Sec_Correlation.ptx"/>
   <xi:include  href="Sec_InterpretingRegression.ptx"/>
   <xi:include  href="Sec_InferenceRegression.ptx"/>

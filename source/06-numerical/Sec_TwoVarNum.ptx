@@ -1,5 +1,5 @@
 <section xml:id="Sec_TwoVarNum">
-    <title>Comparing Two Numerical Variables</title>
+    <title>Comparing Two Numerical Variables (N4)</title>
 
    <introduction>
         <p> In <xref ref="Sec_TwoVarCat"/> we compared two categorical variables to each other. In this section, we compare two numerical variables.
@@ -22,6 +22,8 @@
                 names(ncbirths)
                 </input>
                 </sage>
+
+                Click here to learn more about this data set: <url href="https://www.openintro.org/data/index.php?data=ncbirths"/>.
 
               </p>
                

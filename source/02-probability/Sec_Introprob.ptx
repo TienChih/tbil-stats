@@ -1,6 +1,6 @@
 <section xml:id="Sec_Introprob">
 
-    <title>Introduction to Probability</title>
+    <title>Introduction to Probability (P1)</title>
 <introduction>
 <p>
   We use probability to build tools to describe and understand apparent randomness. We often
@@ -10,6 +10,10 @@ frame probability in terms of a random process giving rise to an outcome.
 <mrow>\text{Flip a coin} \amp\to H\ \text{or}\ T</mrow>
 </md>
 Rolling a die or flipping a coin is a seemingly random process and each gives rise to an outcome.
+</p>
+
+<p>
+  In this section, we introduce the language of probability: events, probability of events, and operations of events.
 </p>
 
 
@@ -154,7 +158,7 @@ Run the following code to show a plot of 10 die rolls, and the proportion of die
       <p>
         Given events <m>A</m>, <m>B</m>, we let <m>A\ \text{or}\ B</m> denote the event <q>either <m>A</m> occurs or <m>B</m> occurs or both.</q>
         <figure>
-<caption><m>A\cup B</m> </caption>      
+<caption><m>A\ \text{or}\  B</m> </caption>      
       <image>
  <description>Test Venn Diagram.</description>     
 <latex-image>
@@ -237,13 +241,13 @@ Run the following code to show a plot of 10 die rolls, and the proportion of die
 
      <task>
       <p>
-        Consider the event  <m>A\cup B</m>. Give a verbal description of this event.
+        Consider the event  <m>A\ \text{or}\  B</m>. Give a verbal description of this event.
       </p>
     </task>
 
     <task>
       <p>
-         What outcomes belong to <m>A\cup B</m>?
+         What outcomes belong to <m>A\ \text{or}\  B</m>?
       </p>
     </task>
 
@@ -328,7 +332,7 @@ Run the following code to show a plot of 10 die rolls, and the proportion of die
 
     <task>
       <p>
-         What is <m>P(A\cup B)</m>?
+         What is <m>P(A\ \text{or}\  B)</m>?
       </p>
     </task>
 
@@ -356,7 +360,7 @@ Run the following code to show a plot of 10 die rolls, and the proportion of die
       </p>
     </task><task>
       <p>
-         Is <m>P(A\cup B)=P(A)+P(B)</m>?  If they're not equal, how might we adjust the sum so that they are?
+         Is <m>P(A\ \text{or}\  B)=P(A)+P(B)</m>?  If they're not equal, how might we adjust the sum so that they are?
       </p>
     </task>
 
@@ -374,7 +378,7 @@ Run the following code to show a plot of 10 die rolls, and the proportion of die
 
 <remark xml:id="remarkIE">
   <statement>
-    <p>  Given events <m>A, B</m>, we have that: <me>P(A\cup B)=P(A)+P(B)-P(A\ \text{and} B).</me>
+    <p>  Given events <m>A, B</m>, we have that: <me>P(A\ \text{or}\  B)=P(A)+P(B)-P(A\ \text{and} B).</me>
       This  corresponds to the outcomes of <m>A</m> plus the outcomes of <m>B</m>, then removing the  overlap.
     </p>
     <p>Given event <m>A</m>, we have that <m>P(A^c)=1-P(A)</m>.  This corresponds to all outcomes, removing the ones belonging to <m>A</m>.</p>
@@ -424,7 +428,7 @@ Run the following code to show a plot of 10 die rolls, and the proportion of die
      </task> 
 
      <task>
-         <p>Suppose we pick a loan at random.  Let <m>J</m> denote the event <q>joint application</q> and <m>M</m> denote <q>applicant(s) with a mortage</q>.  Find <m>P(J), P(M), P(M\ \text{and} J), P(M\cup J)</m> </p>
+         <p>Suppose we pick a loan at random.  Let <m>J</m> denote the event <q>joint application</q> and <m>M</m> denote <q>applicant(s) with a mortage</q>.  Find <m>P(J), P(M), P(M\ \text{and} J), P(M\ \text{or}\  J)</m> </p>
      </task>
 
     <task>
@@ -465,7 +469,7 @@ Run the following code to show a plot of 10 die rolls, and the proportion of die
 <activity xml:id="activity-loansprob2">
     <title>Probability of your chosen variables</title>
     <task><p>
-      Follow this link and identify two categorical vairables and a value for each whose probability you wish to find. <url>https://www.openintro.org/data/index.php?data=loans_full_schema</url>.
+      Follow this link and identify two categorical vairables and a value for each whose probability you wish to find.  <url href="https://www.openintro.org/data/index.php?data=loans_full_schema"/>.
     </p></task>
     <task>
       <p>

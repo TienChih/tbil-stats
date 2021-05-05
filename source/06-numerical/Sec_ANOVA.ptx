@@ -1,5 +1,5 @@
 <section xml:id="Sec_ANOVA">
-    <title>ANOVA: Analysis of Variation</title>
+    <title>ANOVA: Analysis of Variation (N6)</title>
 
    <introduction>
         <p> In <xref ref="Sec_TwoVarNum"/>, we compared populations seperated into two groups to see if some variable differed on average between the groups.  In this section, we will look at comparing across more than two groups.
@@ -44,6 +44,8 @@
                 names(mlb18)
                 </input>
                 </sage>
+
+                Click here to learn more about this data set: <url href="https://www.openintro.org/data/index.php?data=mlb_players_18"/>.
 
               </p>
             
@@ -506,6 +508,8 @@
                 </input>
                 </sage>
 
+                Click here to learn more about this data set: <url href="https://www.openintro.org/data/index.php?data=gss2010"/>.
+
 
 
               </p>
@@ -585,6 +589,8 @@
                 names(starbucks)
                 </input>
                 </sage>
+
+                Click here to learn more about this data set: <url href="https://www.openintro.org/data/index.php?data=starbucks"/>.
           </p>
           
       </introduction>

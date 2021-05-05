@@ -1,5 +1,5 @@
 <section xml:id="Sec_OneVarNum">
-    <title>Confidence Intervals and Hypothesis Testing for a single Numerical Variable</title>
+    <title>Confidence Intervals and Hypothesis Testing for a single Numerical Variable (N2)</title>
 
    <introduction>
         <p> In this section, we apply the concepts of confidence intervals and hypothesis testing to <em>numerical</em> rather than categorical variables.
@@ -178,6 +178,8 @@
                 names(ames)
                 </input>
                 </sage>
+
+                Click here to learn more about this data set: <url href="https://www.openintro.org/data/index.php?data=ames"/>.
 
               </p>
                 
@@ -973,6 +975,8 @@
                 names(prius)
                 </input>
                 </sage>
+
+                Click here to learn more about this data set: <url href="https://www.openintro.org/data/index.php?data=prius_mpg"/>.
 
               </p>
             </introduction>

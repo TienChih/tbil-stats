@@ -1,10 +1,15 @@
 <section xml:id="Sec_Variation">
 
-    <title>Variation of Data</title>
+    <title>Variation of Data (B5)</title>
 <introduction>
   <p>
     Knowing averages or center of data sets only tells part of the story.  We also should know how the data <em>varies</em> or <em>spread</em>.  As in the idea of averages,  there are different ways to approach this. 
 
+  </p>
+
+
+  <p>
+    In this section, we will show how to identify and compute different notions of variations.
   </p>
 
     <p>
@@ -51,7 +56,23 @@ Show that the mean, median, and mode for the data in the first list are the same
             <p>
 Draw a dot plot or histogram visualizing the data in each list.
 
-  <interactive desmos="gwpku3krgv"/>
+<sage language="r">
+          <input>
+           
+
+          </input>
+        </sage>
+
+        <hint>
+          <title>Desmos</title>
+          <p>
+            <interactive desmos="gwpku3krgv"/>
+          </p>
+        </hint>
+
+
+
+  
             </p>
         </task>
         <task>
@@ -200,12 +221,23 @@ relate (or not relate) to the majority of the data?
 
         <task>
             <p>
-              Compute the population and sample deviations for <c>L=[1,1,1,1,1,2,2,2,2,2,3,3,3,3,3,4,4,4,4,4,5,5,5,5,5]</c>.</p>
+              Compute the population and sample deviations for <c>L=[1,1,1,1,1,2,2,2,2,2,3,3,3,3,3,4,4,4,4,4,5,5,5,5,5]</c>.
+
+              <sage language="r">
+          <input>
+           
+
+          </input>
+        </sage>
+              <hint>
+                <title>Desmos</title>
               <p>
 
               <interactive desmos="kzztoxadul"/>
 
 
+            </p>
+          </hint>
             </p>
         </task>
 
@@ -296,7 +328,7 @@ relate (or not relate) to the majority of the data?
 <activity xml:id="activity-ncbirthsdeviation2">
     <title>Standard Deviation of Variable of Choice</title>
     <task><p>
-      Follow this link and identify a numerical vairable whose standard deviation you wish to find. <url>https://www.openintro.org/data/index.php?data=ncbirths</url>.
+      Follow this link and identify a numerical vairable whose standard deviation you wish to find. <url href="https://www.openintro.org/data/index.php?data=ncbirths"/>.
     </p></task>
     <task>
       <p>
@@ -418,7 +450,7 @@ relate (or not relate) to the majority of the data?
 </task>
 
 <task>
-    <p> We define <em>right outliers</em> to be any data points in the set greater than <m>Q_3+1.5\cdot IQR+</m>.</p>
+    <p> We define <em>right outliers</em> to be any data points in the set greater than <m>Q_3+1.5\cdot IQR</m>.</p>
     <p> We define <em>left outliers</em> to be any data points in the set less than <m>Q_1-1.5\cdot IQR</m>.</p>
     <p>Does this set have any outliers?  What (if any) are they?</p>
 </task>

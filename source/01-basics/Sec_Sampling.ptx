@@ -1,8 +1,12 @@
 <section xml:id="Sec_Sampling">
-  <title>Sampling</title>
+  <title>Sampling Techniques (B2)</title>
   <introduction>
   <p>
     It's rare that we ever have the oppurtunity to observe all possible instances of a random variable.  In practice we're generally not able to do so.  Thus, we take a <em>sample</em>  and attempt to infer properties of the <em>population</em>.
+  </p>
+
+  <p>
+    In this section, we discuss different methods of sampling data from a population.
   </p>
 
 <definition>
@@ -15,7 +19,7 @@
 
 <activity xml:id="activity-StealClass">
     <title>Stealing and Class</title>
-    <statement>
+    <introduction>
     <p>
       In a study of the relationship between socio-economic class and unethical
 behavior, 129 University of California undergraduates at Berkeley were asked to identify themselves as
@@ -24,20 +28,25 @@ education, and most (least) respected jobs. They were also presented with a jar 
 candies and informed that the candies were for children in a nearby laboratory, but that they could take
 some if they wanted. After completing some unrelated tasks, participants reported the number of candies
 they had taken.
+</p>
+</introduction>
 
-    <ol>
-      <li> Identify the population in this study.</li>
-      <li> Identify the sample in this study.</li>
-    </ol>  
-
-    </p>  
-</statement>
+    <task>
+        <p>  
+          Identify the population in this study.
+        </p>
+      </task>
+      <task>
+        <p>  
+           Identify the sample in this study.
+         </p>
+       </task>
 </activity>
 
 
 <activity xml:id="activity-PolPreTerm">
     <title>Pollution and Pre-Term Births</title>
-    <statement>
+    <introduction>
     <p>
       Researchers collected data to examine the
 relationship between air pollutants and preterm births in Southern California. During the study air pollution
@@ -47,14 +56,19 @@ in parts per million, nitrogen dioxide and ozone in parts per hundred million, a
 1993, and air pollution exposure during gestation was calculated for each birth. The analysis suggested that
 increased ambient PM10 and, to a lesser degree, CO concentrations may be associated with the occurrence
 of preterm births
+</p>
+</introduction>
 
-    <ol>
-      <li> Identify the population in this study.</li>
-      <li> Identify the sample in this study.</li>
-    </ol>  
-
-    </p>  
-</statement>
+    <task>
+        <p>  
+           Identify the population in this study.
+         </p>
+       </task>
+       <task>
+        <p>  
+           Identify the sample in this study.
+         </p>
+       </task>
 </activity>
 
 

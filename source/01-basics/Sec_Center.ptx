@@ -1,8 +1,14 @@
 <section xml:id="Sec_Center">
 
-    <title>Centers of Data</title>
+    <title>Centers of Data (B4)</title>
 <introduction>
+  <p>
     When using data to make predictions about random variables, it is useful to be able to discuss the notion of central or <q>average</q> values of that data.  There are different ways to approach this. 
+  </p>
+  
+  <p>
+    In this section, we will show how to identify and compute different notions of centrality.
+  </p>
 
 
 
@@ -145,7 +151,7 @@ If so, give an example of such a dataset. If not, explain why.
 <activity xml:id="activity-ncbirthsmean2">
     <title>Mean of Variable of Choice</title>
     <task><p>
-      Follow this link and identify a numerical vairable whose mean you wish to find. <url>https://www.openintro.org/data/index.php?data=ncbirths</url>.
+      Follow this link and identify a numerical vairable whose mean you wish to find. <url href="https://www.openintro.org/data/index.php?data=ncbirths"/>.
     </p></task>
     <task>
       <p>
@@ -270,7 +276,7 @@ Make up a collection of six numbers such that its median is <m>5.5</m>.
 <activity xml:id="activity-ncbirthsmedian2">
     <title>Median of Variable of Choice</title>
     <task><p>
-      Follow this link and identify a numerical vairable whose median you wish to find. <url>https://www.openintro.org/data/index.php?data=ncbirths</url>.
+      Follow this link and identify a numerical vairable whose median you wish to find. <url href="https://www.openintro.org/data/index.php?data=ncbirths"/>.
     </p></task>
     <task>
       <p>

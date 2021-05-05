@@ -1,8 +1,8 @@
 <section xml:id="Sec_InferenceRegression">
-    <title>Inference and Linear Regression</title>
+    <title>Inference and Linear Regression (R3)</title>
 
    <introduction>
-        <p> The slope and vertical intercept, <m>\beta_1, \beta_0</m> we computed in <xref ref="Sec_InterpretingRegression"/> are determined by a sample of (pairs of) random variables, and as such, are merely <em>point estimates</em> of these paramters.  As usual, there is some chance we chose non-representative data from the sample.
+        <p> The slope and vertical intercept, <m>\beta_1, \beta_0</m> we computed in <xref ref="Sec_InterpretingRegression"/> are determined by a sample of (pairs of) random variables, and as such, are merely <em>point estimates</em> of these paramters.  As usual, there is some chance we chose non-representative data from the sample.  
           
 
 
@@ -10,7 +10,7 @@
 
         <p>
 
-          Thus, as before, we use our sample data to make inferences on the true parameters.
+          In this section, we use our sample data to make inferences on the true parameters.
         </p>
 
 
@@ -271,6 +271,7 @@
                 names(sp500)
                 </input>
                 </sage>
+                Click here to learn more about this data set: <url href="https://www.openintro.org/data/index.php?data=sp500"/>.
           </p>
           
         </introduction>
@@ -361,6 +362,7 @@
                 names(starbucks)
                 </input>
                 </sage>
+                Click here to learn more about this data set: <url href="https://www.openintro.org/data/index.php?data=starbucks"/>.
           </p>
           
         </introduction>

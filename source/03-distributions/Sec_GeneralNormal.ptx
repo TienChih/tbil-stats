@@ -1,9 +1,13 @@
 <section xml:id="Sec_GeneralNormal">
 
-    <title>General Normal Distribution</title>
+    <title>General Normal Distribution (D2)</title>
 
    <introduction>
         <p>We begin our discussion with the standard normal distribution to build intuition about normal distributions, but most naturally occuring normally distributed things do not have mean 0 and standard deviation 1. Things that are generally normally distributed may have any mean and standard deviation, but what makes them normally distributed is that they have the <em>same fundamental shape</em> as the standard normal, a bell curved symmetric shape.  In the standard normal curve, the standard deviation is 1, so the units of <m>z</m> are standard deviations.  We can translate values from any <m>X</m> normally distributed random variable to the standard distribution through <term><m>z</m>-scores</term>.</p>
+
+        <p>
+        In this section, we will compute probabilities of general normal random variables given bounds, and bounds given probabilities.
+      </p>
         
     </introduction>
 

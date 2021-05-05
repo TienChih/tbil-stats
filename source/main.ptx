@@ -56,6 +56,8 @@
   \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
 }
 </latex-image-preamble>
+    <rename element="objectives" xml:lang="en-US">Learning Outcomes</rename>
+
   </docinfo>
 
   <book>
@@ -67,6 +69,9 @@
           <email>tien.chih.math@gmail.com</email>
         </author>
       </titlepage>
+
+      <xi:include href="./meta/learning-outcomes.ptx"/>
+
 
       <colophon>
 
@@ -142,22 +147,11 @@
           Consequently, the author is grateful to the companies who have embraced the 21st century, and whose products have made learning for students more accessible and more equitable.
         </p>  
 
-    </acknowledgement>
+    </acknowledgement>-->
 
-    <preface>
-      <p>
-        This is a <q>book</q> for a Finite Mathematics, Business Mathematics or similar course.  It is a work in progress, and any feedback is appreciated.  The content listed is beyond is what is likely possible to cover in one semester.  However, these subjects are all covered by some Finite Math courses somewhere.
-      </p>  
+    
 
-      <p>
-        Finite Mathematics in general is an odd course.  The purpose of such courses is to give a broad background of useful and relevant mathematics within a single course.  This book does not assume any prerequisite in any collegiate level mathematics.  Since such courses tend to move through many subjects in a short amount of time, it is a challenege to see how best to present ideas and content in a concise manner.  This led to the choice to embrace technology to simplify much of the drudgery and tedium of computation.  Thus Sage, R and Desmos interactives are liberally used to automate certain computational details, leaving students and instructors free to focus on ideas and concepts.
-      </p>  
-
-      <p>
-        The purpose of these interactives go beyond simplifying the course.  Mathematics is best learned, not through passive absorption, but active engagement.  Thus, the author encourages the reader to modify, play with and <em>interact</em> with the interactives.  The readers and encouraged to modify the interactives to suit other problems encountered in the text, or to save the interactives themselves so they can be <q>messed with</q> by the reader at their leisure.  This is the best way to use this text.
-      </p>  
-
-    </preface>  -->
+    
 
     </frontmatter>
     <xi:include href="./01-basics/main.ptx" />

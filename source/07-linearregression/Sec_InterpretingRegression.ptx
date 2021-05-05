@@ -1,8 +1,8 @@
 <section xml:id="Sec_InterpretingRegression">
-    <title>Interpreting Linear Regression</title>
+    <title>Interpreting Linear Regression (R2)</title>
 
    <introduction>
-        <p> Having shown how to perform linear regression in <xref ref="Sec_Correlation"/>, we now look at what the regression is telling us, what information we can draw from this analysis, and what we <em>can't</em> draw.
+        <p> We've shown how to perform linear regression in <xref ref="Sec_Correlation"/>. In this section, we look at what the regression is telling us, what information we can draw from this analysis, and what we <em>can't</em> draw.
           
 
 
@@ -53,6 +53,7 @@
                 abline(possummod, col="red")
                 </input>
                 </sage>
+                Click here to learn more about this data set: <url href="https://www.openintro.org/data/index.php?data=possum"/>
               </p>
         </introduction>
 
@@ -209,6 +210,8 @@
                 names(mtl)
                 </input>
                 </sage>
+
+                Click here to learn more about this data set: <url href="https://www.openintro.org/data/index.php?data=mtl"/>
 
               </p>
                 

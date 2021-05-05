@@ -1,5 +1,5 @@
 <section xml:id="Sec_SizeofSampleNum">
-    <title>Size of Samples of Numerical Variables</title>
+    <title>Size of Samples of Numerical Variables (N5)</title>
 
    <introduction>
         <p> In often, gathering data, conducting experiments or studies, and performing statistical analysis can be time consuming, arduous or expensive.  If we wish to achieve a certain level of precision in our results, we need samples of sufficient size.  We've done this for categorical variables in <xref ref="Sec_SizeofSampleCat"/>  In this section, we estimate the minimum size of a sample which will provide the precision of our choice for <em>numerical</em> variables.

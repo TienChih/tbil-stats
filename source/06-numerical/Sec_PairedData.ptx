@@ -1,5 +1,5 @@
 <section xml:id="Sec_PairedData">
-    <title>Paired Numerical Data</title>
+    <title>Paired Numerical Data (N3)</title>
 
    <introduction>
         <p> In this section, we consider differences in numerical data between populations where there is a natural pairing between the populations.
@@ -26,6 +26,8 @@
                 names(textbooks)
                 </input>
                 </sage>
+
+                Click here to learn more about this data set: <url href="https://www.openintro.org/data/index.php?data=textbooks"/>.
 
               </p>
           
@@ -549,7 +551,11 @@
                       names(climate)
                       </input>
                       </sage>
-          We record the Station ID, latitude and logitude of the NOAA stations, the number of days over 70 degrees in 1948 and 2018 at each of these locations, and the number of days over 90 degrees in both years at each of these locations.
+          We record the Station ID, latitude and logitude of the NOAA stations, the number of days over 70 degrees in 1948 and 2018 at each of these locations, and the number of days over 90 degrees in both years at each of these locations. 
+          </p>
+
+          <p>
+            Click here to learn more about this data set: <url href="https://www.openintro.org/data/index.php?data=climate70"/>.
           </p>
 
 

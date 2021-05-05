@@ -4,7 +4,9 @@
    <introduction>
         <p> We saw in <xref ref="remark-otherCI"/> that we can increase the likelihood the true proportion falls within our intervals, so long as we sacrifice precision and widen our intervals.  But what if we demand both dependability <em>and</em> precision?</p>
 
-        
+        <p>
+          In this section, we identify the sample sizes neccesary to achieve confidence intervals with a given margin of error.
+        </p>
     </introduction>
 
 
