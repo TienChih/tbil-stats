@@ -98,7 +98,7 @@
       </p>
 
       <p>
-        Then we compute <me>\chi^2=Z_1^2+\cdots Z_k^2=\frac{(n_1-E_1)^2}{n_1}+\cdots+\frac{(n_k-E_k)^2}{n_k}.</me>  This removes the distinction between over and undershooting the expectations, and sums the adjusted error for all the values, which gives a measure for the <q>total</q> deviation from the theoritical expectation.  (Think <xref ref="activity-derivingvariation"/>, <xref ref="definition-popvariance"/>.)
+        Then we compute <me>\chi^2=Z_1^2+\cdots Z_k^2=\frac{(n_1-E_1)^2}{E_1}+\cdots+\frac{(n_k-E_k)^2}{E_k}.</me>  This removes the distinction between over and undershooting the expectations, and sums the adjusted error for all the values, which gives a measure for the <q>total</q> deviation from the theoritical expectation.  (Think <xref ref="activity-derivingvariation"/>, <xref ref="definition-popvariance"/>.)
       </p>
     </remark>
 
