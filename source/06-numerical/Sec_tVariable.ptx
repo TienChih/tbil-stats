@@ -99,7 +99,7 @@
       <theorem xml:id="theorem-CLTnum">
               <title>The Central Limit Theorem (Numerical)</title>
               <p>
-                Let <m>X</m> be a numerical variable with true mean <m>\mu</m> and standard deviation <m>\sigma</m>.  Then for a sufficiently large sample (typically <m>\geq 30</m>) the sampling distribution of<m>\bar{m}</m> is approximately <em>normally distributed</em> with pararmeters <me>\mu_{\bar{x}}=\mu,\ \ \  SE_{\bar{m}}=\frac{\sigma}{\sqrt{n}}.</me>
+                Let <m>X</m> be a numerical variable with true mean <m>\mu</m> and standard deviation <m>\sigma</m>.  Then for a sufficiently large sample (typically <m>\geq 30</m>) the sampling distribution of <m>\bar{m}</m> is approximately <em>normally distributed</em> with pararmeters <me>\mu_{\bar{x}}=\mu,\ \ \  SE_{\bar{m}}=\frac{\sigma}{\sqrt{n}}.</me>
               </p>
 
             </theorem>

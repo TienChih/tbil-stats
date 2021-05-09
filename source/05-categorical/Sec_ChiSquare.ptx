@@ -94,7 +94,7 @@
 \text{Expected Frequency:} \amp E_1 \amp E_2 \amp \cdots \amp E_k \\
 \hline
 \end{array}
-</me> We then compute the test statistic for the <m>i</m>th value is <me>Z_i=\frac{n_i-E_i}{\sqrt{n_i}}.</me>  This essentially measures how much above or below the sample value is compared to the expected value, adjusted for sample size.
+</me> We then compute the test statistic for the <m>i</m>th value is <me>Z_i=\frac{n_i-E_i}{\sqrt{E_i}}.</me>  
       </p>
 
       <p>

@@ -141,9 +141,9 @@ P_\ell \amp E_{\ell,1} \amp E_{\ell,2} \amp \cdots \amp E_{\ell,k} \\
             </p>
 
             <p>
-              Then, much like <xref ref="remark-chiteststat"/>, <m>Z_{i,j}</m> computes the test statistic for <m>P_i\cap O_j</m> and is computed in a similar way: <me>Z_{i,j}=\frac{n_{i,j}-E_{i,j}}{\sqrt{n_{i,j}}}.
+              Then, much like <xref ref="remark-chiteststat"/>, <m>Z_{i,j}</m> computes the test statistic for <m>P_i\cap O_j</m> and is computed in a similar way: <me>Z_{i,j}=\frac{n_{i,j}-E_{i,j}}{\sqrt{E_{i,j}}}.
             </me>
-            Then once again <m>\chi^2</m> is the sum of the squares of the <m>Z_{i,j}</m>:<me>\chi^2=\sum Z_{i,j}.</me>
+            Then once again <m>\chi^2</m> is the sum of the squares of the <m>Z_{i,j}</m>:<me>\chi^2=\sum Z_{i,j}^2.</me>
           </p>
 
 
