@@ -193,7 +193,7 @@
 
       <task>
       <p>
-        Find the standard deviation of <m>D</m>: <m>SE_D=\sqrt{SE_D}</m>.
+        Find the standard deviation of <m>D</m>: <m>SE_D=\sqrt{Var_D}</m>.
       </p></task>
 
       <task>
