@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-05-09T17:45:03-06:00       *-->
+<!--*       on 2021-05-16T14:43:52-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,10 +12,34 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-r' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
+                           linked: true,
+                           languages: ['r'],
+                           evalButtonText: 'Evaluate (R)'});
+});
+</script>
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">According to Business Insider, the average gas mileage of a car sold in America is 25 miles per gallon.  One would hope that a hybrid car such a Prius would get better gas mileage.  In fact it's plausible a hybrid car could get over 100 miles per gallon.  Data is collected on 19 Prius drivers to see if Prius's have better than 100 mpg gas mileage on average.</p>
+<p>Suppose we wanted to know if the average number of chocolate donuts sold by a shop per day is more than 55 chocolate donuts  \((H_A:\mu&gt;55)\text{.}\)  We sample 12 random days and the number of chocolate donuts sold were</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+55, 59, 59, 56, 55, 58, 53, 59, 50, 51, 60, 51.
+\end{equation*}
+</div>
+<p data-braille="continuation">Run the following code to obtain the \(p\)-value: <div class="sagecell-r" id="sage-251"><script type="text/x-sage">t.test(c(55, 59, 59, 56, 55, 58, 53, 59, 50, 51, 60, 51), mu=55, alternative="greater")
+</script></div></p>
 <span class="incontext"><a href="Sec_OneVarNum.html#p-1432">in-context</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-05-09T17:45:18-06:00       *-->
+<!--*       on 2021-05-16T14:44:10-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,11 +15,7 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>The details of the \(F\) distribution are extremely technical.  This is what you should take away:  \(F=\frac{MSG}{MSE}\text{,}\) where \(MSG\) measure the variability between groups and \(MSE\) measure the variability within groups.</p>
-<ul class="disc">
-<li>If  \(MSE\) is big compared to \(MSG\) then there is a lot of variability within groups.  This variability easily explains the variability between the groups.  Thus \(F\) is small,  and the tail, and thus \(p\)-value, is big.  We fail to reject the null because the variability within groups plausibly explains our data.</li>
-<li>On the other hand, if \(MSG\) is big compared to \(MSE\text{,}\) then there is a lot of variability between groups.  More than the natural variation can explain.  There is likely some <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">actual</em> differences between the groups.  In these cases, \(F\) is big, the tails are small and so are the \(p\)-values.  We reject the null (when \(p\)-value \(\lt 0.05\)) when it's no longer plausible that natural variation within groups can explain our data.</li>
-</ul>
+<p xmlns:svg="http://www.w3.org/2000/svg">The \(F\)-distribution is a random variable who has two parameters, <code class="code-inline tex2jax_ignore">d_f1</code> and <code class="code-inline tex2jax_ignore">d_f2</code> two sets of degrees of freedom.  We compute the proportion of the distribution greater than \(F\) where <code class="code-inline tex2jax_ignore">d_f1</code>\(=df_G\text{,}\) <code class="code-inline tex2jax_ignore">d_f2</code>\(=df_E\text{.}\)</p>
 <span class="incontext"><a href="Sec_ANOVA.html#p-1698">in-context</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-05-09T17:45:06-06:00       *-->
+<!--*       on 2021-05-16T14:43:57-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,31 +12,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script><script>$(function () {
-    // Make *any* div with class 'sagecell-r' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
-                           linked: true,
-                           languages: ['r'],
-                           evalButtonText: 'Evaluate (R)'});
-});
-</script>
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to define the difference of the scores between exams <code class="code-inline tex2jax_ignore">changeinscore</code> and display a histogram of the changes, including a line indicating 0 change, and a line indicating the sample average change: <div class="sagecell-r" id="sage-269"><script type="text/x-sage">changeinscore=studentstutor$score2-studentstutor$score1
-hist(changeinscore)
-abline(v = 0, col="red", lwd=3, lty=2)
-abline(v = mean(changeinscore), col="blue", lwd=3, lty=2)
-</script></div> Based on this graphic, do we think the null hypothesis is plausible?</p>
+<p>We are curious to see for students who have done the online tutoring, whether or not on average they will improve from test 1 to test 2.  Let \(d\) denote the score from the first test, subtracted from the score from the second test. Which of the following best describes the null hypothesis \(H_0\text{?}\)</p>
+<ul class="disc">
+<li>\(\mu_d\lt 0\text{.}\)</li>
+<li>\(\mu_d&gt; 0\text{.}\)</li>
+<li>\(\mu_d\neq 0\text{.}\)</li>
+<li>\(\mu_d= 0\text{.}\)</li>
+</ul>
 <span class="incontext"><a href="Sec_PairedData.html#p-1491">in-context</a></span>
 </body>
 </html>

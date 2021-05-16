@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-05-09T17:44:58-06:00       *-->
+<!--*       on 2021-05-16T14:43:47-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,10 +12,39 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-r' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
+                           linked: true,
+                           languages: ['r'],
+                           evalButtonText: 'Evaluate (R)'});
+});
+</script>
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Probabilities of \(t\) variables are computed in a manner similar to that of normal variables, via areas as in <a class="xref" data-knowl="./knowl/activity-standardnormprob.html" title="Activity 3.1.2: Computing Probabilities on the Normal Curve">Activity 3.1.2</a>.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to, for <code class="code-inline tex2jax_ignore">trials=1000</code> times, sample now <code class="code-inline tex2jax_ignore">n=500</code> new random houses from Ames, Iowa and record the standard deviation of their housing prices, and display a histogram of the standard deviations: <div class="sagecell-r" id="sage-233"><script type="text/x-sage">n=500
+trials=1000
+sdvec500=rep(NA, trials)
+
+for(i in 1:trials){
+  index = sample(1:nrow(ames), n)
+  samp=ames[index,]
+  sdvec500[i]=sd(samp$price)  
+}
+
+hist(sdvec500, breaks=25)
+abline(v = sd(ames$price), col="red", lwd=3, lty=2)
+</script></div> What do we notice about the possible variation in sample standard deviations compared to what we saw in (d)?</p>
 <span class="incontext"><a href="Sec_tVariable.html#p-1342">in-context</a></span>
 </body>
 </html>

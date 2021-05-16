@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-05-09T17:44:47-06:00       *-->
+<!--*       on 2021-05-16T14:43:34-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -32,13 +32,12 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to sample the ice cream eaters, see how many got toppings, and see what proportion of them got toppings. <div class="sagecell-r" id="sage-176"><script type="text/x-sage">icecream_n=80
-icecream_p=0.6
+<p xmlns:svg="http://www.w3.org/2000/svg">Fix and run the following code so that <code class="code-inline tex2jax_ignore">mu_D=</code>\(\mu_D\) and <code class="code-inline tex2jax_ignore">SE_D=</code>\(\sigma_D\) and plot a normal curve on top of our histogram. <div class="sagecell-r" id="sage-178"><script type="text/x-sage">mu_D=FIXME
+SE_D=FIXME
 
-icecream_samp=sample(c("TOPPINGS", "NO"), icecream_n, replace=TRUE, prob=c(icecream_p, 1-icecream_p))
-length(which(icecream_samp=="TOPPINGS"))
-icecream_prop=length(which(icecream_samp=="TOPPINGS"))/icecream_n
-</script></div></p>
+hist(diff_underweight, breaks=25, prob=TRUE)
+curve(dnorm(x, mean=mu_D, sd=SE_D), col="darkblue", lwd=2, add=TRUE, yaxt="n")
+</script></div> How well does the normal distribution approximate the histogram?</p>
 <span class="incontext"><a href="Sec_TwoVarCat.html#p-1109">in-context</a></span>
 </body>
 </html>

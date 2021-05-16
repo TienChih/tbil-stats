@@ -111,7 +111,7 @@ Run the following code to find the mean and variance of these dierolls.
 
 <remark xml:id="remark-linofEandV">
   <p>
-    Given random vriables <m>X, Y</m> and a constant <m>c</m>, the random variable <m>X+Y</m> has: <me>E(X+Y)=E(X), +E(Y), Var(X+Y)=Var(X)+Var(Y)</me> and the random variable <m>cX</m> has <me>E(cX)=cE(X), Var(cX)=c^2Var(X).</me>
+    Given <em>independent</em> random variables <m>X, Y</m> and a constant <m>c</m>, the random variable <m>X+Y</m> has: <me>E(X+Y)=E(X), +E(Y), Var(X+Y)=Var(X)+Var(Y)</me> and the random variable <m>cX</m> has <me>E(cX)=cE(X), Var(cX)=c^2Var(X).</me>
   </p>
 </remark>
 
@@ -203,7 +203,7 @@ Run the following code to find the mean and variance of these dierolls.
 <activity xml:id="activity-fastfoodgroup">
     <title>Fast Food Group Order</title>
     <introduction>
-        <p>Recall the fast food orders of <xref ref="activity-fastfood"/>. Suppose a group of ten friends order together, and let the cost of their order be <m>G=X_1+\ldots X_{10}</m> where each <m>X_i</m> is the cost of an individual order as in <xref ref="activity-fastfood"/>.</p>
+        <p>Recall the fast food orders of <xref ref="activity-fastfood"/>. Suppose a group of ten friends order together, and let the cost of their order be <m>G=X_1+\ldots X_{10}</m> where each <m>X_i</m> is the cost of an individual order as in <xref ref="activity-fastfood"/>.  Also suppose these orders will be independent of each other.</p>
         
     </introduction>
 

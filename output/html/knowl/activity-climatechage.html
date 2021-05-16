@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-05-09T17:45:07-06:00       *-->
+<!--*       on 2021-05-16T14:43:57-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -36,7 +36,7 @@
 </h6>
 <div class="introduction">
 <p xmlns:svg="http://www.w3.org/2000/svg">The National Oceanic and Atmospheric Administration (NOAA) collects data on daily temperatures all across the globe.  We are interested in the number of days of extreme temperature at a sample of these locations, and how they may have changed over time.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to download <code class="code-inline tex2jax_ignore">climate70.csv</code> and display it's variables. <div class="sagecell-r" id="sage-272"><script type="text/x-sage">climate = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/climate70.csv")
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to download <code class="code-inline tex2jax_ignore">climate70.csv</code> and display it's variables. <div class="sagecell-r" id="sage-275"><script type="text/x-sage">climate = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/climate70.csv")
 names(climate)
 </script></div> We record the Station ID, latitude and logitude of the NOAA stations, the number of days over 70 degrees in 1948 and 2018 at each of these locations, and the number of days over 90 degrees in both years at each of these locations.</p>
 <p xmlns:svg="http://www.w3.org/2000/svg">Click here to learn more about this data set: <a class="external" href="https://www.openintro.org/data/index.php?data=climate70" target="_blank"><code class="code-inline tex2jax_ignore">https://www.openintro.org/data/index.php?data=climate70</code></a>.</p>
@@ -56,17 +56,17 @@ names(climate)
 <li>\(\mu_d\neq 0\text{.}\)</li>
 <li>\(\mu_d= 0\text{.}\)</li>
 </ul></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(c)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to define the difference in number of days over 70 degrees <code class="code-inline tex2jax_ignore">changeindays70</code> and display a histogram of the changes, including a line indicating 0 change, and a line indicating the sample average change: <div class="sagecell-r" id="sage-273"><script type="text/x-sage">changeindays70=climate$dx70_2018-climate$dx70_1948
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to define the difference in number of days over 70 degrees <code class="code-inline tex2jax_ignore">changeindays70</code> and display a histogram of the changes, including a line indicating 0 change, and a line indicating the sample average change: <div class="sagecell-r" id="sage-276"><script type="text/x-sage">changeindays70=climate$dx70_2018-climate$dx70_1948
 hist(changeindays70)
 abline(v = 0, col="red", lwd=3, lty=2)
 abline(v = mean(changeindays70), col="blue", lwd=3, lty=2)
 </script></div> Based on this graphic, do we think the null hypothesis is plausible?</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Fix and run the following code to perform the appropriate hypothesis test and compute a \(p\)-value: <div class="sagecell-r" id="sage-274"><script type="text/x-sage">t.test(changeindays70, mu=FIXME, alternative="FIXME")
+<p xmlns:svg="http://www.w3.org/2000/svg">Fix and run the following code to perform the appropriate hypothesis test and compute a \(p\)-value: <div class="sagecell-r" id="sage-277"><script type="text/x-sage">t.test(changeindays70, mu=FIXME, alternative="FIXME")
 </script></div></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(d)</span></h6>
 <p xmlns:svg="http://www.w3.org/2000/svg">State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(e)</span></h6>
 <p xmlns:svg="http://www.w3.org/2000/svg">Do we  reject the null hypothesis?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(f)</span></h6>
 <p xmlns:svg="http://www.w3.org/2000/svg">What sort of error could have been made? (Type 1 or Type 2)</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(g)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Fix and run the following to compute a  95% confidence interval for  \(\mu_d\text{.}\) <div class="sagecell-r" id="sage-275"><script type="text/x-sage">t.test(changeindays70, conf.level=FIXME)$conf.int
+<p xmlns:svg="http://www.w3.org/2000/svg">Fix and run the following to compute a  95% confidence interval for  \(\mu_d\text{.}\) <div class="sagecell-r" id="sage-278"><script type="text/x-sage">t.test(changeindays70, conf.level=FIXME)$conf.int
 </script></div></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(h)</span></h6>
 <p xmlns:svg="http://www.w3.org/2000/svg">State what this confidence interval means in the context of this problem using complete sentences.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(i)</span></h6>
 <p xmlns:svg="http://www.w3.org/2000/svg">Repeat the above for days over 90.</p></article></article><span class="incontext"><a href="Sec_PairedData.html#activity-climatechage">in-context</a></span>

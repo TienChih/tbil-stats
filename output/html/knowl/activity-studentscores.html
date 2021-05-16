@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-05-09T17:45:06-06:00       *-->
+<!--*       on 2021-05-16T14:43:56-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -36,7 +36,7 @@
 </h6>
 <div class="introduction">
 <p xmlns:svg="http://www.w3.org/2000/svg">The <code class="code-inline tex2jax_ignore">studentscleaned.csv</code> data set consists of a sample of 4892 students who have taken a statistics course.  It records information such as their gender, major, whether or not they've participated in online statistics tutoring and their scores on the two exams in the course.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to download <code class="code-inline tex2jax_ignore">studentscleaned.csv</code> and display it's variables. <div class="sagecell-r" id="sage-267"><script type="text/x-sage">students = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/studentscleaned.csv")
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to download <code class="code-inline tex2jax_ignore">studentscleaned.csv</code> and display it's variables. <div class="sagecell-r" id="sage-270"><script type="text/x-sage">students = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/studentscleaned.csv")
 names(students)
 </script></div></p>
 </div>
@@ -55,20 +55,20 @@ names(students)
 <li>\(\mu_d\neq 0\text{.}\)</li>
 <li>\(\mu_d= 0\text{.}\)</li>
 </ul></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(c)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">We first subset out the students who took online tutoring.  Run the following to define <code class="code-inline tex2jax_ignore">studentstutor</code>, the subset of students who took online tutoring, and summarize the findings: <div class="sagecell-r" id="sage-268"><script type="text/x-sage">studentstutor=subset(students, students$online.tutorial==1)
+<p xmlns:svg="http://www.w3.org/2000/svg">We first subset out the students who took online tutoring.  Run the following to define <code class="code-inline tex2jax_ignore">studentstutor</code>, the subset of students who took online tutoring, and summarize the findings: <div class="sagecell-r" id="sage-271"><script type="text/x-sage">studentstutor=subset(students, students$online.tutorial==1)
 summary(studentstutor)
 </script></div></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(d)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to define the difference of the scores between exams <code class="code-inline tex2jax_ignore">changeinscore</code> and display a histogram of the changes, including a line indicating 0 change, and a line indicating the sample average change: <div class="sagecell-r" id="sage-269"><script type="text/x-sage">changeinscore=studentstutor$score2-studentstutor$score1
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to define the difference of the scores between exams <code class="code-inline tex2jax_ignore">changeinscore</code> and display a histogram of the changes, including a line indicating 0 change, and a line indicating the sample average change: <div class="sagecell-r" id="sage-272"><script type="text/x-sage">changeinscore=studentstutor$score2-studentstutor$score1
 hist(changeinscore)
 abline(v = 0, col="red", lwd=3, lty=2)
 abline(v = mean(changeinscore), col="blue", lwd=3, lty=2)
 </script></div> Based on this graphic, do we think the null hypothesis is plausible?</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Fix and run the following code to perform the appropriate hypothesis test and compute a \(p\)-value: <div class="sagecell-r" id="sage-270"><script type="text/x-sage">t.test(changeinscore, mu=FIXME, alternative="FIXME")
+<p xmlns:svg="http://www.w3.org/2000/svg">Fix and run the following code to perform the appropriate hypothesis test and compute a \(p\)-value: <div class="sagecell-r" id="sage-273"><script type="text/x-sage">t.test(changeinscore, mu=FIXME, alternative="FIXME")
 </script></div></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(e)</span></h6>
 <p xmlns:svg="http://www.w3.org/2000/svg">State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(f)</span></h6>
 <p xmlns:svg="http://www.w3.org/2000/svg">Do we  reject the null hypothesis?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(g)</span></h6>
 <p xmlns:svg="http://www.w3.org/2000/svg">What sort of error could have been made? (Type 1 or Type 2)</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(h)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Fix and run the following to compute a  95% confidence interval for  \(\mu_d\text{.}\) <div class="sagecell-r" id="sage-271"><script type="text/x-sage">t.test(changeinscore, conf.level=FIXME)$conf.int
+<p xmlns:svg="http://www.w3.org/2000/svg">Fix and run the following to compute a  95% confidence interval for  \(\mu_d\text{.}\) <div class="sagecell-r" id="sage-274"><script type="text/x-sage">t.test(changeinscore, conf.level=FIXME)$conf.int
 </script></div></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(i)</span></h6>
 <p xmlns:svg="http://www.w3.org/2000/svg">State what this confidence interval means in the context of this problem using complete sentences.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(j)</span></h6>
 <p xmlns:svg="http://www.w3.org/2000/svg">Repeat the above for students who did not do the online tutoring.</p></article></article><span class="incontext"><a href="Sec_PairedData.html#activity-studentscores">in-context</a></span>

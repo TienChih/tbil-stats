@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-05-09T17:45:22-06:00       *-->
+<!--*       on 2021-05-16T14:44:15-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -32,9 +32,8 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to plot the scatterplot and the least squares line. <div class="sagecell-r" id="sage-342"><script type="text/x-sage">plot(possum$skull_w, possum$head_l,  pch=19)
-abline(possummod, col="red")
-</script></div></p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to create a linear model for <code class="code-inline tex2jax_ignore">head_l</code>, as a function of <code class="code-inline tex2jax_ignore">skull_w</code> and save it as <code class="code-inline tex2jax_ignore">possummod</code>. <div class="sagecell-r" id="sage-343"><script type="text/x-sage">possummod=lm(head_l~skull_w, data=possum)
+</script></div> What is the slope and \(y\) intercept for the liner model?</p>
 <span class="incontext"><a href="Sec_Correlation.html#p-1778">in-context</a></span>
 </body>
 </html>

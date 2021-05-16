@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-05-09T17:44:57-06:00       *-->
+<!--*       on 2021-05-16T14:43:47-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -32,19 +32,18 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to, for <code class="code-inline tex2jax_ignore">trials=1000</code> times, sample now <code class="code-inline tex2jax_ignore">n=500</code> new random houses from Ames, Iowa and record the standard deviation of their housing prices, and display a histogram of the standard deviations: <div class="sagecell-r" id="sage-230"><script type="text/x-sage">n=500
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to, for <code class="code-inline tex2jax_ignore">trials=1000</code> times, sample 30 new random houses from Ames, Iowa and record the standard deviation of their housing prices, and display a histogram of the standard deviations: <div class="sagecell-r" id="sage-230"><script type="text/x-sage">n=30
 trials=1000
-sdvec500=rep(NA, trials)
+sdvec=rep(NA, trials)
 
 for(i in 1:trials){
   index = sample(1:nrow(ames), n)
   samp=ames[index,]
-  sdvec500[i]=sd(samp$price)  
+  sdvec[i]=sd(samp$price)  
 }
 
-hist(sdvec500, breaks=25)
-abline(v = sd(ames$price), col="red", lwd=3, lty=2)
-</script></div> What do we notice about the possible variation in sample standard deviations compared to what we saw in (d)?</p>
+hist(sdvec, breaks=25)
+</script></div> What do we notice about the possible variation in sample standard deviations?</p>
 <span class="incontext"><a href="Sec_tVariable.html#p-1339">in-context</a></span>
 </body>
 </html>

@@ -326,6 +326,8 @@
         <p> Suppose Marathon running times are normally distributed with mean 4.5 hours and standard deviation 1 hour.   Let <m>X</m> denote the time in hours for a random runner to finish.
         </p>
 
+        <hint>
+
         <p>
           <interactive desmos="npukubqd60"/>
           <interactive desmos="mbwwtysjw3"/>
@@ -336,6 +338,8 @@
           </input>
           </sage>
         </p>
+
+        </hint>
     </introduction>
 
     <task>

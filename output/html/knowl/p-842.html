@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-05-09T17:44:35-06:00       *-->
+<!--*       on 2021-05-16T14:43:20-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,10 +12,40 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-r' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
+                           linked: true,
+                           languages: ['r'],
+                           evalButtonText: 'Evaluate (R)'});
+});
+</script>
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">F2: I can find a confidence interval for the true proportion of a categorical variable, given a sample, and interpret the meaning of this interval.</p>
-<span class="incontext"><a href="Chap_Foundations.html#p-842">in-context</a></span>
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to simulate 10000 events where you send  <code class="code-inline tex2jax_ignore">surveys=1000</code> surveys, and record the number of resulting responses, as well as display a normal curve over the histogram: <div class="sagecell-r" id="sage-140"><script type="text/x-sage">responses = rep(0, 10000)
+surveys=1000
+p=0.2
+
+m=surveys*p
+std=sqrt(surveys*p*(1-p))
+
+for(i in 1:surveys){
+  responses=responses+sample(c(1, 0), 10000, replace = TRUE, prob = c(p, 1-p)) 
+}
+hist(responses, breaks=25, prob=TRUE)
+curve(dnorm(x, mean=m, sd=std), col="darkblue", lwd=2, add=TRUE, yaxt="n")
+print(surveys)
+</script></div> Do your results make sense when looking at the histogram and curve?</p>
+<span class="incontext"><a href="Sec_NormalApprox.html#p-842">in-context</a></span>
 </body>
 </html>

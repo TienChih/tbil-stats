@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-05-09T17:44:47-06:00       *-->
+<!--*       on 2021-05-16T14:43:34-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,10 +12,33 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-r' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
+                           linked: true,
+                           languages: ['r'],
+                           evalButtonText: 'Evaluate (R)'});
+});
+</script>
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Given that \(p_1=0.6, n_1=80, p_2=0.45, n_2=110\text{,}\) use <a class="xref" data-knowl="./knowl/remark-diffofprop.html" title="Remark 5.2.3: Difference of Proportions">Remark 5.2.3</a> to compute \(\mu_D\) the mean of the distribution of differences, and \(SE_D\text{,}\) the standard deviation of the distribution of differences.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to sample the frozen yogurt eaters, see how many got toppings, and see what proportion of them got toppings. <div class="sagecell-r" id="sage-180"><script type="text/x-sage">frozen_n=110
+frozen_p=0.45
+
+frozen_samp=sample(c("TOPPINGS", "NO"), frozen_n, replace=TRUE, prob=c(frozen_p, 1-frozen_p))
+length(which(frozen_samp=="TOPPINGS"))
+frozen_prop=length(which(frozen_samp=="TOPPINGS"))/frozen_n
+</script></div></p>
 <span class="incontext"><a href="Sec_TwoVarCat.html#p-1113">in-context</a></span>
 </body>
 </html>

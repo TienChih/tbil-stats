@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-05-09T17:43:29-06:00       *-->
+<!--*       on 2021-05-16T14:42:16-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -197,28 +197,28 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="Sec_ConfidenceInterval"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.2</span> <span class="title">Introduction to Confidence Intervals (F2)</span>
 </h2>
-<section class="introduction" id="introduction-99"><p id="p-890">We saw in <a href="Sec_PointEstimates.html" class="internal" title="Section 4.1: Point Estimates (F1)">Section 4.1</a> that the point estimates can be a very accurate predictor of the parameter of interest.  However, it is rarely exactly the same, and of course there is always some cases where it deviates significantly.</p>
-<p id="p-891">The odds that your point estimate matches the parameter of interest may be very unlikely, but we can perhaps use the point estimate to find a range of probable values for the parameter of interest.</p>
-<p id="p-892">In this section we compute and interpret confidence intervals for population proportions.</p></section><section class="subsection" id="subsection-22"><h3 class="heading hide-type">
+<section class="introduction" id="introduction-99"><p id="p-893">We saw in <a href="Sec_PointEstimates.html" class="internal" title="Section 4.1: Point Estimates (F1)">Section 4.1</a> that the point estimates can be a very accurate predictor of the parameter of interest.  However, it is rarely exactly the same, and of course there is always some cases where it deviates significantly.</p>
+<p id="p-894">The odds that your point estimate matches the parameter of interest may be very unlikely, but we can perhaps use the point estimate to find a range of probable values for the parameter of interest.</p>
+<p id="p-895">In this section we compute and interpret confidence intervals for population proportions.</p></section><section class="subsection" id="subsection-22"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.2.1</span> <span class="title">Defining the Confidence Interval</span>
 </h3>
 <article class="exploration project-like" id="exploration-CI"><h6 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">4.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Finding an Interval.</span>
 </h6>
 <div class="introduction" id="introduction-100">
-<p id="p-893">Recall from <a class="xref" data-knowl="./knowl/theorem-CLTprop.html" title="Theorem 4.1.4: The Central Limit Theorem (Proportion)">Theorem 4.1.4</a> that \(\hat{p}\) can be approximated by a normal variable with parameters \(\mu_{\hat{p}}=p,  SE_{\hat{p}}=\sqrt{\frac{p(1-p)}{n}}.\)</p>
-<p id="p-894"><div class="sagecell-r" id="sage-147"><script type="text/x-sage">
-</script></div> <a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-3" id="hint-3"><span class="type">Hint</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-3"><div class="hint solution-like"><p id="p-895"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-27" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-28" width="600" height="600"></iframe></p></div></div></p>
+<p id="p-896">Recall from <a class="xref" data-knowl="./knowl/theorem-CLTprop.html" title="Theorem 4.1.4: The Central Limit Theorem (Proportion)">Theorem 4.1.4</a> that \(\hat{p}\) can be approximated by a normal variable with parameters \(\mu_{\hat{p}}=p,  SE_{\hat{p}}=\sqrt{\frac{p(1-p)}{n}}.\)</p>
+<p id="p-897"><div class="sagecell-r" id="sage-150"><script type="text/x-sage">
+</script></div> <a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-7" id="hint-7"><span class="type">Hint</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-7"><div class="hint solution-like"><p id="p-898"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-33" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-34" width="600" height="600"></iframe></p></div></div></p>
 </div>
 <article class="task exercise-like" id="task-495"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-896">For the standard normal variable \(Z\) (<a href="Sec_StandardNormal.html" class="internal" title="Section 3.1: Standard Normal Distribution (D1)">Section 3.1</a>) verify that \(P(-1.96\lt Z\lt 1.96)\approx 0.95\text{.}\)</p></article><article class="task exercise-like" id="task-496"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-897">Use the \(z\)-score \(1.96\) from (a) and <a class="xref" data-knowl="./knowl/definition-zscore.html" title="Definition 3.2.1">Definition 3.2.1</a> to find the corresponding \(x\) value for a normal variable with mean \(\mu_{\hat{p}}=p\)  and standard deviation \(SE_{\hat{p}}=\sqrt{\frac{p(1-p)}{n}}.\text{.}\)</p></article></article><article class="definition definition-like" id="definition-CIprop"><h6 class="heading">
+<p id="p-899">For the standard normal variable \(Z\) (<a href="Sec_StandardNormal.html" class="internal" title="Section 3.1: Standard Normal Distribution (D1)">Section 3.1</a>) verify that \(P(-1.96\lt Z\lt 1.96)\approx 0.95\text{.}\)</p></article><article class="task exercise-like" id="task-496"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-900">Use the \(z\)-score \(1.96\) from (a) and <a class="xref" data-knowl="./knowl/definition-zscore.html" title="Definition 3.2.1">Definition 3.2.1</a> to find the corresponding \(x\) value for a normal variable with mean \(\mu_{\hat{p}}=p\)  and standard deviation \(SE_{\hat{p}}=\sqrt{\frac{p(1-p)}{n}}.\text{.}\)</p></article></article><article class="definition definition-like" id="definition-CIprop"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.2.1</span><span class="period">.</span>
 </h6>
-<p id="p-898">Given a parameter of interest, a C% confidence interval is an interval \([L, U]\) such that there is a C% chance the parameter lies in this interval.</p></article><article class="remark remark-like" id="remark-95prop"><h6 class="heading">
+<p id="p-901">Given a parameter of interest, a C% confidence interval is an interval \([L, U]\) such that there is a C% chance the parameter lies in this interval.</p></article><article class="remark remark-like" id="remark-95prop"><h6 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.2.2</span><span class="period">.</span>
 </h6>
-<p id="p-899">Suppose you had a sample of size \(n\) and a sample proportion of \(\hat{p}\text{.}\)  Following <a class="xref" data-knowl="./knowl/exploration-CI.html" title="Exploration 4.2.1: Finding an Interval">Exploration 4.2.1</a>, we have that</p>
+<p id="p-902">Suppose you had a sample of size \(n\) and a sample proportion of \(\hat{p}\text{.}\)  Following <a class="xref" data-knowl="./knowl/exploration-CI.html" title="Exploration 4.2.1: Finding an Interval">Exploration 4.2.1</a>, we have that</p>
 <div class="displaymath">
 \begin{equation*}
 [\hat{p}-1.96SE_{\hat{p}}, \hat{p}+1.96SE_{\hat{p}}]
@@ -227,10 +227,10 @@ MathJax.Hub.Config({
 <p data-braille="continuation">is a 95% Confidence Interval for \(\hat{p}\text{.}\)  In other words, there is a 95% chance that \(p\) lies in this interval. <figure class="figure figure-like" id="figure-22"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-22.svg" role="img" style="width: 100%; height: auto;" alt="A 95% confidence interval for \(p\text{.}\)"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.3<span class="period">.</span></span><span class="space"> </span>A 95% confidence interval for \(p\text{.}\)  There is a 95% chance the population proportion \(p\) lies in this interval, and a 5% chance it does not.</figcaption></figure></p></article><article class="example example-like" id="example-cordcut"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-cordcut"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Cord Cutting.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-cordcut"><article class="example example-like"><p id="p-900">In a survey of 150 Adult Americans, 33 of them said they were “cord-cutters”, people who only consume television through internet streaming.  Find a 95% Confidence Interval for the proportion of American Adults who are cord cutters.</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-cordcut"><article class="example example-like"><p id="p-903">In a survey of 150 Adult Americans, 33 of them said they were “cord-cutters”, people who only consume television through internet streaming.  Find a 95% Confidence Interval for the proportion of American Adults who are cord cutters.</p>
 <div class="solutions">
 <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1" id="solution-1"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1"><div class="solution solution-like">
-<p id="p-901">We note that the the sample size is \(n=150\) and the sample proportion is</p>
+<p id="p-904">We note that the the sample size is \(n=150\) and the sample proportion is</p>
 <div class="displaymath">
 \begin{equation*}
 \hat{p}=\frac{33}{150}=0.22
@@ -242,7 +242,7 @@ MathJax.Hub.Config({
 SE_{\hat{p}}=\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}=\sqrt{\frac{0.22\cdot0.78}{150}}\approx 0.03382306.
 \end{equation*}
 </div>
-<p id="p-902">So following <a class="xref" data-knowl="./knowl/remark-95prop.html" title="Remark 4.2.2">Remark 4.2.2</a>, we have that the lower bound for our Confidence Interval is</p>
+<p id="p-905">So following <a class="xref" data-knowl="./knowl/remark-95prop.html" title="Remark 4.2.2">Remark 4.2.2</a>, we have that the lower bound for our Confidence Interval is</p>
 <div class="displaymath">
 \begin{equation*}
 \hat{p}-1.96SE_{\hat{p}}\approx 0.22-1.96\cdot0.03382306\approx 0.1537 
@@ -255,31 +255,31 @@ SE_{\hat{p}}=\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}=\sqrt{\frac{0.22\cdot0.78}{150}
 \end{equation*}
 </div>
 <p data-braille="continuation">or 28.63%.</p>
-<p id="p-903">So the 95% Confidence Interval is \([0.1537, 0.2863]\text{,}\) that is, there is a 95% chance the population proportion lies in this interval.  In other words: <em class="emphasis">“There is a 95% chance that the proportion of American Adults who are cord-cutters is between 15.37% and 28.63%”.</em></p>
-<p id="p-904">Note this means that there is a 5% chance that the proportion of American Adults who are cord-cutters is higher than 28.63% or lower than 15.37%.</p>
+<p id="p-906">So the 95% Confidence Interval is \([0.1537, 0.2863]\text{,}\) that is, there is a 95% chance the population proportion lies in this interval.  In other words: <em class="emphasis">“There is a 95% chance that the proportion of American Adults who are cord-cutters is between 15.37% and 28.63%”.</em></p>
+<p id="p-907">Note this means that there is a 5% chance that the proportion of American Adults who are cord-cutters is higher than 28.63% or lower than 15.37%.</p>
 </div></div>
 </div></article></div>
 <article class="activity project-like" id="activity-Steak"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Medium Rare Steak.</span>
 </h6>
-<div class="introduction" id="introduction-101"><p id="p-905">Suppose 23% of of Americans prefer their steak medium-rare.  A researcher, not knowing this, polls 50 Americans for their doneness preference.</p></div>
+<div class="introduction" id="introduction-101"><p id="p-908">Suppose 23% of of Americans prefer their steak medium-rare.  A researcher, not knowing this, polls 50 Americans for their doneness preference.</p></div>
 <article class="task exercise-like" id="task-497"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-906">If the researcher produces a 95% confidence interval, which of the following best describe this confidence interval?</p>
+<p id="p-909">If the researcher produces a 95% confidence interval, which of the following best describe this confidence interval?</p>
 <ol class="decimal">
 <li id="li-159">95% of adult Americans lie in this interval</li>
 <li id="li-160">There is a 23% chance that 95% of Americans prefer their steaks medium-rare.</li>
 <li id="li-161">There is a 95% chance that 23% of Americans perfer their steak medium-rare.</li>
 <li id="li-162">There is a 95% chance that the population mean lies in this interval?</li>
 </ol></article><article class="task exercise-like" id="task-498"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-907">If 10 respondents to the survey say they prefer medium-rare, use <a class="xref" data-knowl="./knowl/theorem-CLTprop.html" title="Theorem 4.1.4: The Central Limit Theorem (Proportion)">Theorem 4.1.4</a> find \(\hat{p}\) and \(SE_{\hat{p}}\text{.}\)</p></article><article class="task exercise-like" id="task-499"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-908">Use <a class="xref" data-knowl="./knowl/remark-95prop.html" title="Remark 4.2.2">Remark 4.2.2</a> to compute a 95% confidence interval for \(p\text{:}\) the proportion of Americams who prefer their steaks medium-rare.  Is 23% in this interval? <div class="sagecell-r" id="sage-148"><script type="text/x-sage">
-</script></div> <a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-4" id="hint-4"><span class="type">Hint</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-4"><div class="hint solution-like"><p id="p-909"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-29" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-30" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-500"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-910">Run the following code to conduct your own survey of 50 Americans, and see how many of them like their steak medium-rare. <div class="sagecell-r" id="sage-149"><script type="text/x-sage">steak_survey=sample(c("YES", "NO"), 50, replace = TRUE, prob = c(0.23, 0.77))
+<p id="p-910">If 10 respondents to the survey say they prefer medium-rare, use <a class="xref" data-knowl="./knowl/theorem-CLTprop.html" title="Theorem 4.1.4: The Central Limit Theorem (Proportion)">Theorem 4.1.4</a> find \(\hat{p}\) and \(SE_{\hat{p}}\text{.}\)</p></article><article class="task exercise-like" id="task-499"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-911">Use <a class="xref" data-knowl="./knowl/remark-95prop.html" title="Remark 4.2.2">Remark 4.2.2</a> to compute a 95% confidence interval for \(p\text{:}\) the proportion of Americams who prefer their steaks medium-rare.  Is 23% in this interval? <div class="sagecell-r" id="sage-151"><script type="text/x-sage">
+</script></div> <a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-8" id="hint-8"><span class="type">Hint</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-8"><div class="hint solution-like"><p id="p-912"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-35" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-36" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-500"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-913">Run the following code to conduct your own survey of 50 Americans, and see how many of them like their steak medium-rare. <div class="sagecell-r" id="sage-152"><script type="text/x-sage">steak_survey=sample(c("YES", "NO"), 50, replace = TRUE, prob = c(0.23, 0.77))
 print(length(which(steak_survey=="YES")))
 </script></div></p></article><article class="task exercise-like" id="task-501"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-911">Use this new result to comput \(\hat{p}, SE_{\hat{p}}\) and a new 95% Confidence Interval.  Does THIS new interval contain 23%?</p></article><article class="task exercise-like" id="task-502"><h6 class="heading"><span class="codenumber">(f)</span></h6>
-<p id="p-912">State what this confidence interval means in the context of this problem using complete sentences.</p></article><article class="task exercise-like" id="task-503"><h6 class="heading"><span class="codenumber">(g)</span></h6>
-<p id="p-913">Run the following code to, for 100 times, sample 50 Americans and construct a 95% confidence interval based on the results. <div class="sagecell-r" id="sage-150"><script type="text/x-sage">  numsamp=100
+<p id="p-914">Use this new result to comput \(\hat{p}, SE_{\hat{p}}\) and a new 95% Confidence Interval.  Does THIS new interval contain 23%?</p></article><article class="task exercise-like" id="task-502"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-915">State what this confidence interval means in the context of this problem using complete sentences.</p></article><article class="task exercise-like" id="task-503"><h6 class="heading"><span class="codenumber">(g)</span></h6>
+<p id="p-916">Run the following code to, for 100 times, sample 50 Americans and construct a 95% confidence interval based on the results. <div class="sagecell-r" id="sage-153"><script type="text/x-sage">  numsamp=100
 n=50
 p=0.23
 
@@ -303,26 +303,26 @@ plot(c(min(lower_vector),max(upper_vector)), c(0, 1 + numsamp), type = "n")
 for (i in 1:numsamp) lines( c(lower_vector[i], upper_vector[i]),c(i, i), lwd = 2, col=color_vec[i], add=TRUE)
 abline(v = p, lwd = 2, lty = 2)
 </script></div></p>
-<p id="p-914">How many of these intervals do <em class="emphasis">not</em> contain 23%?  Is this suprising?</p></article></article></section><section class="subsection" id="subsection-23"><h3 class="heading hide-type">
+<p id="p-917">How many of these intervals do <em class="emphasis">not</em> contain 23%?  Is this suprising?</p></article></article></section><section class="subsection" id="subsection-23"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.2.2</span> <span class="title">Other Confidences</span>
 </h3>
 <article class="exploration project-like" id="exploration-otherCI"><h6 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">4.2.3</span><span class="period">.</span>
 </h6>
-<div class="introduction" id="introduction-102"><p id="p-915">Recall from <a class="xref" data-knowl="./knowl/example-cordcut.html" title="Example 4.2.4: Cord Cutting">Example 4.2.4</a> that the 95% confidence interval for the proportion of American Adult cord cutters was \([0.1537, 0.2863]\text{.}\)</p></div>
+<div class="introduction" id="introduction-102"><p id="p-918">Recall from <a class="xref" data-knowl="./knowl/example-cordcut.html" title="Example 4.2.4: Cord Cutting">Example 4.2.4</a> that the 95% confidence interval for the proportion of American Adult cord cutters was \([0.1537, 0.2863]\text{.}\)</p></div>
 <article class="task exercise-like" id="task-504"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-916">If you needed an interval that had a 99% chance to contain the population proportion, should it be wider or narrower?</p></article><article class="task exercise-like" id="task-505"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-917">If you only needed an interval that had a 90% chance to contain the population proportion, should it be wider or narrower?</p></article></article><article class="remark remark-like" id="remark-otherCI"><h6 class="heading">
+<p id="p-919">If you needed an interval that had a 99% chance to contain the population proportion, should it be wider or narrower?</p></article><article class="task exercise-like" id="task-505"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-920">If you only needed an interval that had a 90% chance to contain the population proportion, should it be wider or narrower?</p></article></article><article class="remark remark-like" id="remark-otherCI"><h6 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.2.5</span><span class="period">.</span>
 </h6>
-<p id="p-918">In general, if we wanted to find a \(C\%\) confidence interval given \(\hat{p}, SE_{\hat{p}}\) we would find this via:</p>
+<p id="p-921">In general, if we wanted to find a \(C\%\) confidence interval given \(\hat{p}, SE_{\hat{p}}\) we would find this via:</p>
 <div class="displaymath">
 \begin{equation*}
 [\hat{p}-z^*SE_{\hat{p}}, \hat{p}+z^*SE_{\hat{p}}]
 \end{equation*}
 </div>
 <p data-braille="continuation">where \(s^*\) is a standard normal value such that given the standard normal random variable \(Z\text{,}\) \(P(-z^*\lt Z\lt z^*)=C%\text{.}\)</p>
-<p id="p-919">One can check that the following \(z^*\) values correspond to the following commonly used confidence levels:</p>
+<p id="p-922">One can check that the following \(z^*\) values correspond to the following commonly used confidence levels:</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{|c|c|}
@@ -336,41 +336,41 @@ C\% \amp z^*\\
 \end{array}
 \end{equation*}
 </div>
-<p data-braille="continuation"><div class="sagecell-r" id="sage-151"><script type="text/x-sage">
-</script></div> <a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-5" id="hint-5"><span class="type">Hint</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-5"><div class="hint solution-like"><p id="p-920"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-31" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-32" width="600" height="600"></iframe></p></div></div></p>
+<p data-braille="continuation"><div class="sagecell-r" id="sage-154"><script type="text/x-sage">
+</script></div> <a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-9" id="hint-9"><span class="type">Hint</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-9"><div class="hint solution-like"><p id="p-923"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-37" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-38" width="600" height="600"></iframe></p></div></div></p>
 <figure class="figure figure-like" id="figure-23"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-23.svg" role="img" style="width: 100%; height: auto;" alt="A 95% confidence interval for \(p\text{.}\)"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.6<span class="period">.</span></span><span class="space"> </span>Confidence intervals \([\hat{p}-z^*SE_{\hat{p}}, \hat{p}+z^*SE_{\hat{p}}]\) where\(z^*\) corresponds to different levels of confidence.</figcaption></figure></article><article class="activity project-like" id="activity-productreviews"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Product Reviews.</span>
 </h6>
-<div class="introduction" id="introduction-103"><p id="p-921">In a random survey of 250 customers who purchased a product, 33 of them gave the product a negative review.</p></div>
+<div class="introduction" id="introduction-103"><p id="p-924">In a random survey of 250 customers who purchased a product, 33 of them gave the product a negative review.</p></div>
 <article class="task exercise-like" id="task-506"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-922">Find \(\hat{p}\text{,}\) the sample proportion of customers who gave the product a negative review, as well as \(SE_{\hat{p}}\text{.}\)</p></article><article class="task exercise-like" id="task-507"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-923">Use <a class="xref" data-knowl="./knowl/remark-otherCI.html" title="Remark 4.2.5">Remark 4.2.5</a> to find 90%, 95%, and 99% confidence intervals for the proportion of all customers who thought negatively of the product.  What do we notice as the confidence level increases?</p></article><article class="task exercise-like" id="task-508"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-924">State what this confidence interval means in the context of this problem using complete sentences.</p></article><article class="task exercise-like" id="task-509"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-925">Find a value \(z^*\) so that given the standard normal random variable \(Z\text{,}\) \(P(-z^*\lt Z\lt z^*)=0.85\text{.}\) <div class="sagecell-r" id="sage-152"><script type="text/x-sage">
-</script></div> <a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-6" id="hint-6"><span class="type">Hint</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-6"><div class="hint solution-like"><p id="p-926"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-33" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-34" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-510"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-927">Use \(z^*\) to find an 85% confidence intervals for the proportion of all customers who thought negatively of the product.  How does this value compare to what we found in (b)?</p></article><article class="task exercise-like" id="task-511"><h6 class="heading"><span class="codenumber">(f)</span></h6>
-<p id="p-928">State what this confidence interval means in the context of this problem using complete sentences.</p></article></article><article class="activity project-like" id="activity-military"><h6 class="heading">
+<p id="p-925">Find \(\hat{p}\text{,}\) the sample proportion of customers who gave the product a negative review, as well as \(SE_{\hat{p}}\text{.}\)</p></article><article class="task exercise-like" id="task-507"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-926">Use <a class="xref" data-knowl="./knowl/remark-otherCI.html" title="Remark 4.2.5">Remark 4.2.5</a> to find 90%, 95%, and 99% confidence intervals for the proportion of all customers who thought negatively of the product.  What do we notice as the confidence level increases?</p></article><article class="task exercise-like" id="task-508"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-927">State what this confidence interval means in the context of this problem using complete sentences.</p></article><article class="task exercise-like" id="task-509"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-928">Find a value \(z^*\) so that given the standard normal random variable \(Z\text{,}\) \(P(-z^*\lt Z\lt z^*)=0.85\text{.}\) <div class="sagecell-r" id="sage-155"><script type="text/x-sage">
+</script></div> <a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-10" id="hint-10"><span class="type">Hint</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-10"><div class="hint solution-like"><p id="p-929"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-39" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-40" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-510"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-930">Use \(z^*\) to find an 85% confidence intervals for the proportion of all customers who thought negatively of the product.  How does this value compare to what we found in (b)?</p></article><article class="task exercise-like" id="task-511"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-931">State what this confidence interval means in the context of this problem using complete sentences.</p></article></article><article class="activity project-like" id="activity-military"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Branches of the US Military.</span>
 </h6>
 <div class="introduction" id="introduction-104">
-<p id="p-929">We consider what proportion of the Military belongs to which branch of service.</p>
-<p id="p-930">Run the following code to download <code class="code-inline tex2jax_ignore">military.csv</code> and display it's variables. <div class="sagecell-r" id="sage-153"><script type="text/x-sage">military = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/military.csv")
+<p id="p-932">We consider what proportion of the Military belongs to which branch of service.</p>
+<p id="p-933">Run the following code to download <code class="code-inline tex2jax_ignore">military.csv</code> and display it's variables. <div class="sagecell-r" id="sage-156"><script type="text/x-sage">military = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/military.csv")
 names(military)
 </script></div> This dataset contains demographic information on every member of the US armed forces including gender, race, and rank.</p>
-<p id="p-931">Let \(p\) denote the proportion of military members who are in the Army.</p>
+<p id="p-934">Let \(p\) denote the proportion of military members who are in the Army.</p>
 </div>
 <article class="task exercise-like" id="task-512"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-932">Run the following to sample <code class="code-inline tex2jax_ignore">n=50</code> random members of the military: <div class="sagecell-r" id="sage-154"><script type="text/x-sage">n=50
+<p id="p-935">Run the following to sample <code class="code-inline tex2jax_ignore">n=50</code> random members of the military: <div class="sagecell-r" id="sage-157"><script type="text/x-sage">n=50
 index = sample(1:nrow(military), n)
 samp=military[index,]
 </script></div></p></article><article class="task exercise-like" id="task-513"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-933">Run the following to see how many members of our sample are in the Army: <div class="sagecell-r" id="sage-155"><script type="text/x-sage">length(which(samp$branch=="army"))
+<p id="p-936">Run the following to see how many members of our sample are in the Army: <div class="sagecell-r" id="sage-158"><script type="text/x-sage">length(which(samp$branch=="army"))
 </script></div> Let \(\hat{p}\) denote the proportion of the sample that's in the army.</p></article><article class="task exercise-like" id="task-514"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-934">Use \(\hat{p}\) above and \(n=50\text{.}\) to compute a 95% confidence interval for the proportion of miliary members in the Army. <div class="sagecell-r" id="sage-156"><script type="text/x-sage">
-</script></div> <a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-7" id="hint-7"><span class="type">Hint</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-7"><div class="hint solution-like"><p id="p-935"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-35" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-36" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-515"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-936">State what this confidence interval means in the context of this problem using complete sentences.</p></article><article class="task exercise-like" id="task-516"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-937">Run the following to see the actual proportion of military members in the Army: <div class="sagecell-r" id="sage-157"><script type="text/x-sage">length(which(military$branch=="army"))/nrow(military)
+<p id="p-937">Use \(\hat{p}\) above and \(n=50\text{.}\) to compute a 95% confidence interval for the proportion of miliary members in the Army. <div class="sagecell-r" id="sage-159"><script type="text/x-sage">
+</script></div> <a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-11" id="hint-11"><span class="type">Hint</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-11"><div class="hint solution-like"><p id="p-938"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-41" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-42" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-515"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-939">State what this confidence interval means in the context of this problem using complete sentences.</p></article><article class="task exercise-like" id="task-516"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-940">Run the following to see the actual proportion of military members in the Army: <div class="sagecell-r" id="sage-160"><script type="text/x-sage">length(which(military$branch=="army"))/nrow(military)
 </script></div> Is this in your condidence interval?</p></article></article></section></section></div></main>
 </div>
 </body>

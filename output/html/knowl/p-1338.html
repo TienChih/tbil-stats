@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-05-09T17:44:57-06:00       *-->
+<!--*       on 2021-05-16T14:43:47-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -32,14 +32,11 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">To see how much variation there could be in sampling distributions, run the following code to plot a normal curve for each sample standard deviation we found, each curve has mean 0, but standard deviation equal to one we found in our above simulation: <div class="sagecell-r" id="sage-229"><script type="text/x-sage">values = seq(-300000, 300000, length=100)
-
-plot(values, dnorm(values, mean=0, sd=sdvec[1]), type="l", lty=2)
-
-for (i in 2:trials){
-  lines(values, dnorm(values, mean=0, sd=sdvec[i])) 
-}
-</script></div> How much variation is there between curves, even with the same means?</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to sample 30 new random houses from Ames, Iowa and display the standard deviation of their housing prices: <div class="sagecell-r" id="sage-229"><script type="text/x-sage">n=30
+index = sample(1:nrow(ames), n)
+samp=ames[index,]
+sd(samp$price)
+</script></div> How does this outcome compare to what you found in (a)?</p>
 <span class="incontext"><a href="Sec_tVariable.html#p-1338">in-context</a></span>
 </body>
 </html>

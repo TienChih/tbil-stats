@@ -50,7 +50,7 @@
 
           <introduction>
             <p>
-             Suppose we flip 100 coins and let <m>X</m> denote the number of heads, as in <xref ref="exploration-flipmanycoins"/>.  Let <m>N_X</m> denote the normal randfom variable which approximates <m>X</m> as in <xref ref="remark-normalapproximation"/>.
+             Suppose we flip 100 coins and let <m>X</m> denote the number of heads, as in <xref ref="exploration-flipmanycoins"/>.  Let <m>N_X</m> denote the normal random variable which approximates <m>X</m> as in <xref ref="remark-normalapproximation"/>.
             </p>
             
           </introduction>
@@ -152,18 +152,64 @@
           <task>
             <p>
               Use <xref ref="remark-normalapproximation"/> to determine the probability that between 175 and 200 employees respond to the survey.
+
+                      <sage language="r">
+                      <input>
+        
+                      </input>
+                      </sage>
+                  <hint>
+                    <title>Desmos</title>
+                    <p>
+
+                      <interactive desmos="84dbdr69to"/>
+                      <interactive desmos="ca5xk6sbyl"/>
+
+                    </p>
+
+                  </hint>
             </p>
           </task>
 
           <task>
             <p>
               Use <xref ref="remark-normalapproximation"/> to determine the probability that more than 250 employees respond to the survey.
+              <sage language="r">
+                      <input>
+        
+                      </input>
+                      </sage>
+                  <hint>
+                    <title>Desmos</title>
+                    <p>
+
+                      <interactive desmos="84dbdr69to"/>
+                      <interactive desmos="ca5xk6sbyl"/>
+
+                    </p>
+
+                  </hint>
             </p>
           </task>
 
           <task>
             <p>
               Use <xref ref="remark-normalapproximation"/> to determine a value <m>k</m> so that there is a 95% chance between <m>200-k</m> and <m>200+k</m> employees respond to the survey.
+              <sage language="r">
+                      <input>
+        
+                      </input>
+                      </sage>
+                  <hint>
+                    <title>Desmos</title>
+                    <p>
+
+                      <interactive desmos="84dbdr69to"/>
+                      <interactive desmos="ca5xk6sbyl"/>
+
+                    </p>
+
+                  </hint>
             </p>
           </task>
 

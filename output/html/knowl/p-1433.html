@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-05-09T17:45:03-06:00       *-->
+<!--*       on 2021-05-16T14:43:52-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -32,10 +32,14 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to download  the <code class="code-inline tex2jax_ignore">prius_mpg.csv</code> data set which contains information about 19 Prius drivers, and display the variables: <div class="sagecell-r" id="sage-251"><script type="text/x-sage">prius = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/prius_mpg.csv")
-
-names(prius)
-</script></div> Click here to learn more about this data set: <a class="external" href="https://www.openintro.org/data/index.php?data=prius_mpg" target="_blank"><code class="code-inline tex2jax_ignore">https://www.openintro.org/data/index.php?data=prius_mpg</code></a>.</p>
+<p>Suppose we wanted to know if the average number of  donuts with filling sold by a shop per day is less than 100  donuts  \((H_A:\mu\lt 100)\text{.}\)  We sample 10 random days and the number of  donuts with filling sold were</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+55, 59, 59, 56, 55, 58, 53, 59, 50, 51, 60, 51.
+\end{equation*}
+</div>
+<p data-braille="continuation">Run the following code to obtain the \(p\)-value: <div class="sagecell-r" id="sage-252"><script type="text/x-sage">t.test(c(83, 83, 112, 108, 99, 104, 107, 113, 101, 107), mu=100, alternative="less")
+</script></div></p>
 <span class="incontext"><a href="Sec_OneVarNum.html#p-1433">in-context</a></span>
 </body>
 </html>

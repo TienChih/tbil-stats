@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-05-09T17:44:47-06:00       *-->
+<!--*       on 2021-05-16T14:43:34-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -32,16 +32,12 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to simulate 1000 trials of random samplings, and plot a histogram of their differences. <div class="sagecell-r" id="sage-179"><script type="text/x-sage">prop_diff=rep(NA,1000)
+<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to sample the ice cream eaters, see how many got toppings, and see what proportion of them got toppings. <div class="sagecell-r" id="sage-179"><script type="text/x-sage">icecream_n=80
+icecream_p=0.6
 
-for(i in 1:1000){
-	icecream_samp=sample(c("TOPPINGS", "NO"), icecream_n, replace=TRUE, prob=c(icecream_p, 1-icecream_p))
-	icecream_prop=length(which(icecream_samp=="TOPPINGS"))/icecream_n
-	frozen_samp=sample(c("TOPPINGS", "NO"), frozen_n, replace=TRUE, prob=c(frozen_p, 1-frozen_p))
-	frozen_prop=length(which(frozen_samp=="TOPPINGS"))/frozen_n
-	prop_diff[i]=icecream_prop-frozen_prop
-}
-hist(prop_diff, breaks=25, prob=TRUE)
+icecream_samp=sample(c("TOPPINGS", "NO"), icecream_n, replace=TRUE, prob=c(icecream_p, 1-icecream_p))
+length(which(icecream_samp=="TOPPINGS"))
+icecream_prop=length(which(icecream_samp=="TOPPINGS"))/icecream_n
 </script></div></p>
 <span class="incontext"><a href="Sec_TwoVarCat.html#p-1112">in-context</a></span>
 </body>
