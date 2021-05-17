@@ -230,6 +230,7 @@ We discuss four <em>sampling techniques</em>.
 <li> 
   <p>
   <em>Stratified Random Sampling</em> takes the population breaks into into groups called <em>strata</em>.  We choose the cases within each strata to be very similar to each other.  We then randomly sample from each strata.
+  </p>
   <p>
     <figure>
 <caption>A Stratified Random Sample </caption>      
@@ -321,7 +322,7 @@ We discuss four <em>sampling techniques</em>.
 
 
 
-  </p>
+  
 </p>
 </li>
 
@@ -330,6 +331,7 @@ We discuss four <em>sampling techniques</em>.
 <li> 
   <p>
   <em>Cluster Sampling</em> takes the population breaks into into groups called <em>clusters</em>.  We then randomly select some number of clusters and sample everone within them.
+   </p>
   <p>
     <figure>
 <caption>A Cluster Sample </caption>      
@@ -423,7 +425,7 @@ We discuss four <em>sampling techniques</em>.
 
 
 
-  </p>
+ 
 </p>
 </li>
 
@@ -432,6 +434,7 @@ We discuss four <em>sampling techniques</em>.
 <li> 
   <p>
   <em>Multi-stage Sampling</em> takes the population breaks into into groups called <em>clusters</em>.  We then randomly sample within each cluster.
+  </p>
   <p>
     <figure>
 <caption>A Multi-Stage Sample </caption>      
@@ -530,7 +533,7 @@ We discuss four <em>sampling techniques</em>.
 
 
 
-  </p>
+  
 </p>
 </li>
 
