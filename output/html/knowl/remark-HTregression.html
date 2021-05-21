@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-05-16T16:00:11-06:00       *-->
+<!--*       on 2021-05-20T14:06:05-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -22,6 +22,12 @@
 <li>\(H_0: \beta_1=0\) or the slope is zero.  So changes in the explanatory variable do not result in average change in response variable.</li>
 <li>\(H_0: \beta_1\neq 0\) or the slope is <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">not</em> zero.  So changes in the explanatory variable do  result in average change in response variable.</li>
 </ul>
-<p data-braille="continuation">This is a numerical hypothesis test similar to what we have done before.  However we're not just given a list of slopes to find a sample standard deviation.  The computation here is tedious, so we utilize technology to perform them.</p></article><span class="incontext"><a href="Sec_InferenceRegression.html#remark-HTregression">in-context</a></span>
+<p>This is a numerical hypothesis test similar to what we have done before.  However we're not just given a list of slopes to find a sample standard deviation.  The computation here is tedious, so we utilize technology to perform them.  If one wished to compute the standard error for \(\beta_1\) by hand, we do so via:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+SE_1=\sqrt{\frac{1}{n-2}\cdot \frac{\sum (y_i-\hat{y}_i)^2}{\sum(x_i-\bar{x})^2}} 
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(\hat{y}_i=\beta_1\cdot x_i+\beta_0\text{,}\) or the value of \(y\) predicted by the linear model.</p></article><span class="incontext"><a href="Sec_InferenceRegression.html#remark-HTregression">in-context</a></span>
 </body>
 </html>

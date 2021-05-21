@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-05-16T16:00:11-06:00       *-->
+<!--*       on 2021-05-20T14:06:05-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,30 +12,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script><script>$(function () {
-    // Make *any* div with class 'sagecell-r' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
-                           linked: true,
-                           languages: ['r'],
-                           evalButtonText: 'Evaluate (R)'});
-});
-</script>
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to download <code class="code-inline tex2jax_ignore">possum.csv</code> as seen in <a class="xref" data-knowl="./knowl/exploration-possums.html" title="Exploration 7.1.1: Dimensions of Possums">Exploration 7.1.1</a>, <a class="xref" data-knowl="./knowl/activity-possums.html" title="Activity 7.1.7: Possum Regression">Activity 7.1.7</a>, and <a class="xref" data-knowl="./knowl/exploration-possum2.html" title="Exploration 7.2.1: Possums Again">Exploration 7.2.1</a>, and create a linear model for <code class="code-inline tex2jax_ignore">head_l~skull_w</code> and summarize it. <div class="sagecell-r" id="sage-357"><script type="text/x-sage">possum = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/possum.csv")
-possummod=lm(head_l~skull_w, data=possum)
-summary(possummod)
-</script></div> We're focused on the <code class="code-inline tex2jax_ignore">Coefficients</code>, in particular the second row.</p>
+<p>This is a numerical hypothesis test similar to what we have done before.  However we're not just given a list of slopes to find a sample standard deviation.  The computation here is tedious, so we utilize technology to perform them.  If one wished to compute the standard error for \(\beta_1\) by hand, we do so via:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+SE_1=\sqrt{\frac{1}{n-2}\cdot \frac{\sum (y_i-\hat{y}_i)^2}{\sum(x_i-\bar{x})^2}} 
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(\hat{y}_i=\beta_1\cdot x_i+\beta_0\text{,}\) or the value of \(y\) predicted by the linear model.</p>
 <span class="incontext"><a href="Sec_InferenceRegression.html#p-1840">in-context</a></span>
 </body>
 </html>

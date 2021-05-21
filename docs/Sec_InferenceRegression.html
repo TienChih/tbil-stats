@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-05-16T15:58:40-06:00       *-->
+<!--*       on 2021-05-20T14:04:45-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -224,56 +224,61 @@ abline(5, 0.8, col="blue", lty=2)
 <li id="li-438">\(H_0: \beta_1=0\) or the slope is zero.  So changes in the explanatory variable do not result in average change in response variable.</li>
 <li id="li-439">\(H_0: \beta_1\neq 0\) or the slope is <em class="emphasis">not</em> zero.  So changes in the explanatory variable do  result in average change in response variable.</li>
 </ul>
-<p data-braille="continuation">This is a numerical hypothesis test similar to what we have done before.  However we're not just given a list of slopes to find a sample standard deviation.  The computation here is tedious, so we utilize technology to perform them.</p></article><article class="exploration project-like" id="exploration-summaryoflmpossum"><h6 class="heading">
+<p id="p-1840">This is a numerical hypothesis test similar to what we have done before.  However we're not just given a list of slopes to find a sample standard deviation.  The computation here is tedious, so we utilize technology to perform them.  If one wished to compute the standard error for \(\beta_1\) by hand, we do so via:</p>
+<div class="displaymath">
+\begin{equation*}
+SE_1=\sqrt{\frac{1}{n-2}\cdot \frac{\sum (y_i-\hat{y}_i)^2}{\sum(x_i-\bar{x})^2}} 
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(\hat{y}_i=\beta_1\cdot x_i+\beta_0\text{,}\) or the value of \(y\) predicted by the linear model.</p></article><article class="exploration project-like" id="exploration-summaryoflmpossum"><h6 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">7.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Hypothesis Testing: Slope - Possums.</span>
 </h6>
 <div class="introduction" id="introduction-209">
-<p id="p-1840">Run the following code to download <code class="code-inline tex2jax_ignore">possum.csv</code> as seen in <a class="xref" data-knowl="./knowl/exploration-possums.html" title="Exploration 7.1.1: Dimensions of Possums">Exploration 7.1.1</a>, <a class="xref" data-knowl="./knowl/activity-possums.html" title="Activity 7.1.7: Possum Regression">Activity 7.1.7</a>, and <a class="xref" data-knowl="./knowl/exploration-possum2.html" title="Exploration 7.2.1: Possums Again">Exploration 7.2.1</a>, and create a linear model for <code class="code-inline tex2jax_ignore">head_l~skull_w</code> and summarize it. <div class="sagecell-r" id="sage-357"><script type="text/x-sage">possum = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/possum.csv")
+<p id="p-1841">Run the following code to download <code class="code-inline tex2jax_ignore">possum.csv</code> as seen in <a class="xref" data-knowl="./knowl/exploration-possums.html" title="Exploration 7.1.1: Dimensions of Possums">Exploration 7.1.1</a>, <a class="xref" data-knowl="./knowl/activity-possums.html" title="Activity 7.1.7: Possum Regression">Activity 7.1.7</a>, and <a class="xref" data-knowl="./knowl/exploration-possum2.html" title="Exploration 7.2.1: Possums Again">Exploration 7.2.1</a>, and create a linear model for <code class="code-inline tex2jax_ignore">head_l~skull_w</code> and summarize it. <div class="sagecell-r" id="sage-357"><script type="text/x-sage">possum = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/possum.csv")
 possummod=lm(head_l~skull_w, data=possum)
 summary(possummod)
 </script></div> We're focused on the <code class="code-inline tex2jax_ignore">Coefficients</code>, in particular the second row.</p>
-<p id="p-1841">The first row starting with <code class="code-inline tex2jax_ignore">(Intercept)</code> gives the point estimate, standard error, test statistic and \(p\)-value for the altnerative hypothesis \(H_A:\beta_0\neq 0\text{.}\)</p>
-<p id="p-1842">The second row  starting with <code class="code-inline tex2jax_ignore">skull_w</code> gives the point estimate, standard error, test statistic and \(p\)-value for the altnerative hypothesis \(H_A:\beta_1\neq 1\text{.}\)  This is the row about slopes.</p>
+<p id="p-1842">The first row starting with <code class="code-inline tex2jax_ignore">(Intercept)</code> gives the point estimate, standard error, test statistic and \(p\)-value for the altnerative hypothesis \(H_A:\beta_0\neq 0\text{.}\)</p>
+<p id="p-1843">The second row  starting with <code class="code-inline tex2jax_ignore">skull_w</code> gives the point estimate, standard error, test statistic and \(p\)-value for the altnerative hypothesis \(H_A:\beta_1\neq 1\text{.}\)  This is the row about slopes.</p>
 </div>
 <article class="task exercise-like" id="task-1043"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-1843">The first entry of this row gives us the point estimate for the slope.  How does this conpare to slope found by running: <div class="sagecell-r" id="sage-358"><script type="text/x-sage">possummod
+<p id="p-1844">The first entry of this row gives us the point estimate for the slope.  How does this compare to slope found by running: <div class="sagecell-r" id="sage-358"><script type="text/x-sage">possummod
 </script></div> We call this value \(\beta_1\text{.}\)</p></article><article class="task exercise-like" id="task-1044"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-1844">The second entry of this row gives us the standard  error for the slope.  Call this value \(SE_1\text{.}\)  Find the \(t\)-value for \(\beta_1\) by computing</p>
+<p id="p-1845">The second entry of this row gives us the standard  error for the slope.  Call this value \(SE_1\text{.}\)  Find the \(t\)-value for \(\beta_1\) by computing</p>
 <div class="displaymath">
 \begin{equation*}
 t_1=\frac{\beta_1-0}{SE_1}.
 \end{equation*}
 </div>
 <p data-braille="continuation">How does this value compare to the third entry?</p></article><article class="task exercise-like" id="task-1045"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-1845">According to the summary, how many degrees of freedom are there?</p></article><article class="task exercise-like" id="task-1046"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-1846">Compute \(P(t&gt;t_1)\) on the standard \(t\)-distribution with the appropriate degrees of  freedom.  Then double it to obtain the \(p\)-value for the alternative hypothesis \(H_A: \beta_1\neq 0\text{.}\) <div class="sagecell-r" id="sage-359"><script type="text/x-sage">
-</script></div> <a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-50" id="hint-50"><span class="type">Hint</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-50"><div class="hint solution-like"><p id="p-1847"><iframe src="https://www.desmos.com/calculator/qrru08kps1" id="interactive-130" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/odp3hiqj8r" id="interactive-131" width="600" height="600"></iframe></p></div></div></p>
-<p id="p-1848">How does this value compare to the 4th entry?</p></article><article class="task exercise-like" id="task-1047"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-1849">Do we accept or reject the null hypothesis that \(H_0: \beta_1=0\text{?}\)</p></article></article><article class="remark remark-like" id="remark-regressionpvalue"><h6 class="heading">
+<p id="p-1846">According to the summary, how many degrees of freedom are there?</p></article><article class="task exercise-like" id="task-1046"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-1847">Compute \(P(t&gt;t_1)\) on the standard \(t\)-distribution with the appropriate degrees of  freedom.  Then double it to obtain the \(p\)-value for the alternative hypothesis \(H_A: \beta_1\neq 0\text{.}\) <div class="sagecell-r" id="sage-359"><script type="text/x-sage">
+</script></div> <a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-50" id="hint-50"><span class="type">Hint</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-50"><div class="hint solution-like"><p id="p-1848"><iframe src="https://www.desmos.com/calculator/qrru08kps1" id="interactive-130" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/odp3hiqj8r" id="interactive-131" width="600" height="600"></iframe></p></div></div></p>
+<p id="p-1849">How does this value compare to the 4th entry?</p></article><article class="task exercise-like" id="task-1047"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-1850">Do we accept or reject the null hypothesis that \(H_0: \beta_1=0\text{?}\)</p></article></article><article class="remark remark-like" id="remark-regressionpvalue"><h6 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.3.2</span><span class="period">.</span>
 </h6>
-<p id="p-1850">The fourth entry of the second <code class="code-inline tex2jax_ignore">Coefficients:</code>  row gives the probability that, if the slope was 0, that we would obtain a slope as steep or steeper.</p>
-<p id="p-1851">The fourth entry of the first <code class="code-inline tex2jax_ignore">Coefficients:</code>  row gives the probability that, if the intercept was 0, that we would obtain an as or more extreme.</p></article></section><section class="subsection" id="subsection-50"><h3 class="heading hide-type">
+<p id="p-1851">The fourth entry of the second <code class="code-inline tex2jax_ignore">Coefficients:</code>  row gives the probability that, if the slope was 0, that we would obtain a slope as steep or steeper.</p>
+<p id="p-1852">The fourth entry of the first <code class="code-inline tex2jax_ignore">Coefficients:</code>  row gives the probability that, if the intercept was 0, that we would obtain an as or more extreme.</p></article></section><section class="subsection" id="subsection-50"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">7.3.2</span> <span class="title">Confidence Intervals</span>
 </h3>
 <article class="remark remark-like" id="remark-CIregression"><h6 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.3.3</span><span class="period">.</span>
 </h6>
-<p id="p-1852">For either \(\beta_0, \beta_1\text{,}\) we compute the C% confidence interval for that parameter as follows:</p>
+<p id="p-1853">For either \(\beta_1\text{,}\) we compute the C% confidence interval  as follows:</p>
 <div class="displaymath">
 \begin{equation*}
-[\text{point estimate}_i - SE_it^*, \text{point estimate}_i + SE_it^*]
+[\text{point estimate for }\beta_1 - SE_it^*, \text{point estimate for }\beta_1 + SE_it^*]
 \end{equation*}
 </div>
 <p data-braille="continuation">where \(t^*\) is the \(t\)-value such that \(P(-t^*\lt t\lt t^*)=C\%\) for the standard \(t\)-variable with the appropriate degrees of freedom.</p></article><article class="exploration project-like" id="exploration-summaryoflmpossum2"><h6 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">7.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Confidence: Intervals:\(\beta_i\) - Possums.</span>
 </h6>
-<div class="introduction" id="introduction-210"><p id="p-1853">We continue from <a class="xref" data-knowl="./knowl/exploration-summaryoflmpossum.html" title="Exploration 7.3.2: Hypothesis Testing: Slope - Possums">Exploration 7.3.2</a>.</p></div>
+<div class="introduction" id="introduction-210"><p id="p-1854">We continue from <a class="xref" data-knowl="./knowl/exploration-summaryoflmpossum.html" title="Exploration 7.3.2: Hypothesis Testing: Slope - Possums">Exploration 7.3.2</a>.</p></div>
 <article class="task exercise-like" id="task-1048"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-1854">Find a \(t^*\) so that \(P(-t^*\lt t\lt t^*)=C\%\) for the appropriate degrees of freedom.</p></article><article class="task exercise-like" id="task-1049"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-1855">Use the point estimate and standard error for \(\beta_0\text{,}\) \(t^*\) and <a class="xref" data-knowl="./knowl/remark-CIregression.html" title="Remark 7.3.3">Remark 7.3.3</a> to compute a 95% confidence interval for \(\beta_0\text{.}\)</p></article><article class="task exercise-like" id="task-1050"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-1856">Use the point estimate and standard error for \(\beta_1\text{,}\) \(t^*\) and <a class="xref" data-knowl="./knowl/remark-CIregression.html" title="Remark 7.3.3">Remark 7.3.3</a> to compute a 95% confidence interval for \(\beta_1\text{.}\)</p></article><article class="task exercise-like" id="task-1051"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-1857">Explain what these confidence intervals mean within the context of the problem.</p></article></article></section><section class="subsection" id="subsection-51"><h3 class="heading hide-type">
+<p id="p-1855">Find a \(t^*\) so that \(P(-t^*\lt t\lt t^*)=C\%\) for the appropriate degrees of freedom.</p></article><article class="task exercise-like" id="task-1049"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-1856">Use the point estimate and standard error for \(\beta_1\text{,}\) \(t^*\) and <a class="xref" data-knowl="./knowl/remark-CIregression.html" title="Remark 7.3.3">Remark 7.3.3</a> to compute a 95% confidence interval for \(\beta_1\text{.}\)</p></article><article class="task exercise-like" id="task-1050"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-1857">Explain what this confidence interval means within the context of the problem.</p></article></article></section><section class="subsection" id="subsection-51"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">7.3.3</span> <span class="title">Putting it together</span>
 </h3>
 <article class="activity project-like" id="activity-summaryoflmsp500"><h6 class="heading">
@@ -283,18 +288,18 @@ t_1=\frac{\beta_1-0}{SE_1}.
 
 names(sp500)
 </script></div> Click here to learn more about this data set: <a class="external" href="https://www.openintro.org/data/index.php?data=sp500" target="_blank"><code class="code-inline tex2jax_ignore">https://www.openintro.org/data/index.php?data=sp500</code></a>.</p></div>
-<article class="task exercise-like" id="task-1052"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<article class="task exercise-like" id="task-1051"><h6 class="heading"><span class="codenumber">(a)</span></h6>
 <p id="p-1859">Run the following to create and summarize a linear model with <code class="code-inline tex2jax_ignore">debt</code> the debt in millions of dollars as the explanatory variable and <code class="code-inline tex2jax_ignore">profit_margin</code> the percent of earnings that is profit as the response variable: <div class="sagecell-r" id="sage-361"><script type="text/x-sage">sp500mod=lm(profit_margin~debt, data=sp500)
 summary(sp500mod)
-</script></div></p></article><article class="task exercise-like" id="task-1053"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+</script></div></p></article><article class="task exercise-like" id="task-1052"><h6 class="heading"><span class="codenumber">(b)</span></h6>
 <p id="p-1860">Run the following to plot <code class="code-inline tex2jax_ignore">profit_margin</code> of these companies against the <code class="code-inline tex2jax_ignore">debt</code> and draw a regression line: <div class="sagecell-r" id="sage-362"><script type="text/x-sage">plot(sp500$debt, sp500$profit_margin)
 abline(sp500mod, col="red")
-</script></div></p></article><article class="task exercise-like" id="task-1054"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-1861">State what the slope \(\beta_1\) means in the context of this problem.</p></article><article class="task exercise-like" id="task-1055"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-1862">Interpret the \(p\)-value for the altermative hypothesis \(H_A:\beta_1\neq 0\) in the context of this problem.</p></article><article class="task exercise-like" id="task-1056"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-1863">Do we reject the null hypothesis that \(H_0:\beta_1=0\text{?}\)  What does that say about the relationship between profit margin and debt?</p></article><article class="task exercise-like" id="task-1057"><h6 class="heading"><span class="codenumber">(f)</span></h6>
-<p id="p-1864">Find a \(t^*\) so that \(P(-t^*\lt t\lt t^*)=C\%\) for the appropriate degrees of freedom.</p></article><article class="task exercise-like" id="task-1058"><h6 class="heading"><span class="codenumber">(g)</span></h6>
-<p id="p-1865">Use the point estimate and standard error for \(\beta_1\text{,}\) \(t^*\) and <a class="xref" data-knowl="./knowl/remark-CIregression.html" title="Remark 7.3.3">Remark 7.3.3</a> to compute a 95% confidence interval for \(\beta_1\text{.}\)</p></article><article class="task exercise-like" id="task-1059"><h6 class="heading"><span class="codenumber">(h)</span></h6>
+</script></div></p></article><article class="task exercise-like" id="task-1053"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-1861">State what the slope \(\beta_1\) means in the context of this problem.</p></article><article class="task exercise-like" id="task-1054"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-1862">Interpret the \(p\)-value for the alternative hypothesis \(H_A:\beta_1\neq 0\) in the context of this problem.</p></article><article class="task exercise-like" id="task-1055"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-1863">Do we reject the null hypothesis that \(H_0:\beta_1=0\text{?}\)  What does that say about the relationship between profit margin and debt?</p></article><article class="task exercise-like" id="task-1056"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-1864">Find a \(t^*\) so that \(P(-t^*\lt t\lt t^*)=C\%\) for the appropriate degrees of freedom.</p></article><article class="task exercise-like" id="task-1057"><h6 class="heading"><span class="codenumber">(g)</span></h6>
+<p id="p-1865">Use the point estimate and standard error for \(\beta_1\text{,}\) \(t^*\) and <a class="xref" data-knowl="./knowl/remark-CIregression.html" title="Remark 7.3.3">Remark 7.3.3</a> to compute a 95% confidence interval for \(\beta_1\text{.}\)</p></article><article class="task exercise-like" id="task-1058"><h6 class="heading"><span class="codenumber">(h)</span></h6>
 <p id="p-1866">Explain what this confidence interval means within the context of the problem.</p></article></article><article class="activity project-like" id="activity-summaryoflmstarbucks"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">Inference for Nutrition and Starbucks.</span>
 </h6>
@@ -302,19 +307,19 @@ abline(sp500mod, col="red")
 
 names(starbucks)
 </script></div> Click here to learn more about this data set: <a class="external" href="https://www.openintro.org/data/index.php?data=starbucks" target="_blank"><code class="code-inline tex2jax_ignore">https://www.openintro.org/data/index.php?data=starbucks</code></a>.</p></div>
-<article class="task exercise-like" id="task-1060"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<article class="task exercise-like" id="task-1059"><h6 class="heading"><span class="codenumber">(a)</span></h6>
 <p id="p-1868">Run the following to create and summarize a linear model with <code class="code-inline tex2jax_ignore">protein</code> the protein content of an item in g as the explanatory variable and <code class="code-inline tex2jax_ignore">calories</code> the calories of each item measure in, well calories, as the response variable: <div class="sagecell-r" id="sage-364"><script type="text/x-sage">starbucksmod=lm(calories~protein, data=starbucks)
 summary(starbucksmod)
-</script></div></p></article><article class="task exercise-like" id="task-1061"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+</script></div></p></article><article class="task exercise-like" id="task-1060"><h6 class="heading"><span class="codenumber">(b)</span></h6>
 <p id="p-1869">Run the following to plot <code class="code-inline tex2jax_ignore">calories</code> of these items against the <code class="code-inline tex2jax_ignore">protein</code> and draw a regression line: <div class="sagecell-r" id="sage-365"><script type="text/x-sage">plot(starbucks$protein, starbucks$calories)
 abline(starbucksmod, col="red")
-</script></div></p></article><article class="task exercise-like" id="task-1062"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-1870">State what the slope \(\beta_1\) means in the context of this problem.</p></article><article class="task exercise-like" id="task-1063"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-1871">Interpret the \(p\)-value for the altermative hypothesis \(H_A:\beta_1\neq 0\) in the context of this problem.</p></article><article class="task exercise-like" id="task-1064"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-1872">Do we reject the null hypothesis that \(H_0:\beta_1=0\text{?}\)  What does that say about the relationship between calories and protein?</p></article><article class="task exercise-like" id="task-1065"><h6 class="heading"><span class="codenumber">(f)</span></h6>
-<p id="p-1873">Find a \(t^*\) so that \(P(-t^*\lt t\lt t^*)=C\%\) for the appropriate degrees of freedom.</p></article><article class="task exercise-like" id="task-1066"><h6 class="heading"><span class="codenumber">(g)</span></h6>
-<p id="p-1874">Use the point estimate and standard error for \(\beta_1\text{,}\) \(t^*\) and <a class="xref" data-knowl="./knowl/remark-CIregression.html" title="Remark 7.3.3">Remark 7.3.3</a> to compute a 95% confidence interval for \(\beta_1\text{.}\)</p></article><article class="task exercise-like" id="task-1067"><h6 class="heading"><span class="codenumber">(h)</span></h6>
-<p id="p-1875">Explain what this confidence interval means within the context of the problem.</p></article><article class="task exercise-like" id="task-1068"><h6 class="heading"><span class="codenumber">(i)</span></h6>
+</script></div></p></article><article class="task exercise-like" id="task-1061"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-1870">State what the slope \(\beta_1\) means in the context of this problem.</p></article><article class="task exercise-like" id="task-1062"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-1871">Interpret the \(p\)-value for the alternative hypothesis \(H_A:\beta_1\neq 0\) in the context of this problem.</p></article><article class="task exercise-like" id="task-1063"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-1872">Do we reject the null hypothesis that \(H_0:\beta_1=0\text{?}\)  What does that say about the relationship between calories and protein?</p></article><article class="task exercise-like" id="task-1064"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-1873">Find a \(t^*\) so that \(P(-t^*\lt t\lt t^*)=C\%\) for the appropriate degrees of freedom.</p></article><article class="task exercise-like" id="task-1065"><h6 class="heading"><span class="codenumber">(g)</span></h6>
+<p id="p-1874">Use the point estimate and standard error for \(\beta_1\text{,}\) \(t^*\) and <a class="xref" data-knowl="./knowl/remark-CIregression.html" title="Remark 7.3.3">Remark 7.3.3</a> to compute a 95% confidence interval for \(\beta_1\text{.}\)</p></article><article class="task exercise-like" id="task-1066"><h6 class="heading"><span class="codenumber">(h)</span></h6>
+<p id="p-1875">Explain what this confidence interval means within the context of the problem.</p></article><article class="task exercise-like" id="task-1067"><h6 class="heading"><span class="codenumber">(i)</span></h6>
 <p id="p-1876">Repeat this for any other pair of numerical variables.</p></article></article></section></section></div></main>
 </div>
 </body>

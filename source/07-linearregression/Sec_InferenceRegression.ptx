@@ -78,7 +78,17 @@
               <li><m>H_0: \beta_1\neq 0</m> or the slope is <em>not</em> zero.  So changes in the explanatory variable do  result in average change in response variable.</li>
             </ul>
 
-            This is a numerical hypothesis test similar to what we have done before.  However we're not just given a list of slopes to find a sample standard deviation.  The computation here is tedious, so we utilize technology to perform them.
+          </p>
+
+          
+
+          <p>
+
+            This is a numerical hypothesis test similar to what we have done before.  However we're not just given a list of slopes to find a sample standard deviation.  The computation here is tedious, so we utilize technology to perform them.  If one wished to compute the standard error for <m>\beta_1</m> by hand, we do so via:  
+
+            <me>SE_1=\sqrt{\frac{1}{n-2}\cdot \frac{\sum (y_i-\hat{y}_i)^2}{\sum(x_i-\bar{x})^2}} </me>
+
+            where <m>\hat{y}_i=\beta_1\cdot x_i+\beta_0</m>, or the value of <m>y</m> predicted by the linear model.
           </p>
         </remark>
 
@@ -109,7 +119,7 @@
 
         <task>
           <p>
-            The first entry of this row gives us the point estimate for the slope.  How does this conpare to slope found by running:
+            The first entry of this row gives us the point estimate for the slope.  How does this compare to slope found by running:
             <sage language="r">
                 <input>
                 possummod
@@ -169,6 +179,8 @@
 
         </exploration>
 
+        
+
 
         <remark xml:id="remark-regressionpvalue">
           <p>
@@ -188,8 +200,8 @@
 
         <remark xml:id="remark-CIregression">
           <p>
-            For either <m>\beta_0, \beta_1</m>, we compute the C% confidence interval for that parameter as follows:
-            <me>[\text{point estimate}_i - SE_it^*, \text{point estimate}_i + SE_it^*]</me> where <m>t^*</m> is the <m>t</m>-value such that <m>P(-t^*\lt t\lt t^*)=C\%</m> for the standard <m>t</m>-variable with the appropriate degrees of freedom.
+            For either <m>\beta_1</m>, we compute the C% confidence interval  as follows:
+            <me>[\text{point estimate for }\beta_1 - SE_it^*, \text{point estimate for }\beta_1 + SE_it^*]</me> where <m>t^*</m> is the <m>t</m>-value such that <m>P(-t^*\lt t\lt t^*)=C\%</m> for the standard <m>t</m>-variable with the appropriate degrees of freedom.
           </p>
          
         </remark>
@@ -215,11 +227,7 @@
           
         </task>
 
-        <task>
-           <p>
-            Use the point estimate and standard error for <m>\beta_0</m>, <m>t^*</m> and <xref ref="remark-CIregression"/> to compute a 95% confidence interval for <m>\beta_0</m>.
-          </p>
-        </task>
+        
 
          <task>
            <p>
@@ -228,8 +236,8 @@
         </task>
 
         <task>
-          <p>
-            Explain what these confidence intervals mean within the context of the problem.
+          <p>            
+            Explain what this confidence interval means within the context of the problem.
           </p>
         </task>
 
@@ -310,7 +318,7 @@
 
         <task>
           <p>
-            Interpret the <m>p</m>-value for the altermative hypothesis <m>H_A:\beta_1\neq 0</m> in the context of this problem.
+            Interpret the <m>p</m>-value for the alternative hypothesis <m>H_A:\beta_1\neq 0</m> in the context of this problem.
           </p>
         </task>
 
@@ -401,7 +409,7 @@
 
         <task>
           <p>
-            Interpret the <m>p</m>-value for the altermative hypothesis <m>H_A:\beta_1\neq 0</m> in the context of this problem.
+            Interpret the <m>p</m>-value for the alternative hypothesis <m>H_A:\beta_1\neq 0</m> in the context of this problem.
           </p>
         </task>
 
