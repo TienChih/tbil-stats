@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-05-20T14:05:36-06:00       *-->
+<!--*       on 2022-02-01T19:41:14-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -31,20 +31,20 @@
 </script>
 </head>
 <body>
-<article class="activity project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.4.4</span><span class="period">.</span><span class="space"> </span><span class="title">\(\chi^2\) independence testing with R.</span>
-</h6>
-<div class="introduction"><p xmlns:svg="http://www.w3.org/2000/svg">We can use <code class="code-inline tex2jax_ignore">R</code> to enter the data and compute the \(\chi^2\) statistic and \(p\)-value.</p></div>
-<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to input the sample data from <a class="xref" data-knowl="./knowl/exploration-predatory.html" title="Exploration 5.4.1: OER vs Predatory Publishers and Student Access">Exploration 5.4.1</a> as a matrix. <div class="sagecell-r" id="sage-211"><script type="text/x-sage">                      Input =("
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span xmlns:svg="http://www.w3.org/2000/svg" class="space"> </span><span class="codenumber">5.4.4</span><span xmlns:svg="http://www.w3.org/2000/svg" class="period">.</span><span xmlns:svg="http://www.w3.org/2000/svg" class="space"> </span><span class="title">\(\chi^2\) independence testing with R.</span>
+</h4>
+<div class="introduction"><p>We can use <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">R</code> to enter the data and compute the \(\chi^2\) statistic and \(p\)-value.</p></div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>Run the following code to input the sample data from <a href="" class="xref" data-knowl="./knowl/exploration-predatory.html" title="Exploration 5.4.1: OER vs Predatory Publishers and Student Access">Exploration 5.4.1</a> as a matrix. <div class="sagecell-r" id="sage-211"><script type="text/x-sage">                      Input =("
 MaterialType   DoneReading    NoReading
 OER             66              14
 Predatory       112             58
 ")
 
 datamatrix = as.matrix(read.table(textConnection(Input),header=TRUE,row.names=1))
-</script></div> If you use this method <em class="emphasis">be sure to not use spaces in your names</em>.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to compute a \(\chi^2\) statistic, \(p\)-value and degrees of freedom. <div class="sagecell-r" id="sage-212"><script type="text/x-sage">chisq.test(datamatrix, correct=FALSE)
-</script></div> How do these values compare to what you found in <a class="xref" data-knowl="./knowl/activity-predatorypvalue.html" title="Activity 5.4.3: OER vs Predatory Publishers and Student Access: test statistics">Activity 5.4.3</a>?</p></article></article><span class="incontext"><a href="Sec_ChiIndependence.html#activity-chiindwithR">in-context</a></span>
+</script></div> If you use this method <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">be sure to not use spaces in your names</em>.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>Run the following code to compute a \(\chi^2\) statistic, \(p\)-value and degrees of freedom. <div class="sagecell-r" id="sage-212"><script type="text/x-sage">chisq.test(datamatrix, correct=FALSE)
+</script></div> How do these values compare to what you found in <a href="" class="xref" data-knowl="./knowl/activity-predatorypvalue.html" title="Activity 5.4.3: OER vs Predatory Publishers and Student Access: test statistics">Activity 5.4.3</a>?</p></article></article><span class="incontext"><a href="Sec_ChiIndependence.html#activity-chiindwithR">in-context</a></span>
 </body>
 </html>

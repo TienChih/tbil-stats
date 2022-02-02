@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-02-01T19:40:41-07:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>General Normal Distribution (D2)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-r' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
+                           linked: true,
+                           languages: ['r'],
+                           evalButtonText: 'Evaluate (R)'});
+});
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg">miniversion=0.6</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\Q}{\terminology{Question:\ }}
+\newcommand{\Sol}{\terminology{Solution:\ }}
+\newcommand{\Fisg}{\emph{Fisg}}
+\newcommand{\Iisg}{\emph{Iisg}}
+\newcommand{\Pisg}{\emph{Pisg}}
+\newcommand{\Tisg}{\emph{Tisg}}
+\newcommand{\Dom}{\emph{Dom}}
+\newcommand{\Img}{\emph{Im}}
+\DeclareMathOperator{\id}{id}
+\newcommand{\bcup}{\displaystyle\bigcup}
+\newcommand{\bcap}{\displaystyle\bigcap}
+\newcommand{\dsum}{\displaystyle\sum}
+\newcommand{\dint}{\displaystyle\int}
+\newcommand{\R}[1]{\mathbb{R}^{#1}}
+\newcommand{\C}[1]{\mathbb{C}^{#1}}
+\newcommand{\Z}[1]{\mathbb{Z}^{#1}}
+\newcommand{\K}[1]{\mathbb{K}^{#1}}
+\newcommand{\limit}[2]{\displaystyle{ \lim_{#1 \to #2}}}
+\newcommand{\TCB}[1]{\textcolor{blue}{#1}}
+\newcommand{\TCR}[1]{\textcolor{red}{#1}}
+\newcommand{\TCO}[1]{\textcolor{orange}{#1}}
+\newcommand{\TCG}[1]{\textcolor{ForestGreen}{#1}}
+\DeclareMathOperator{\Endo}{Endo}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Obj}{Obj}
+\DeclareMathOperator{\pleat}{\mathcal{P}\ell}
+\def\PX{\mathfrak{W}G}
+\def\Gph{\mathsf{Gph}}
+\def\HoGph{\mathsf{HoGph}}
+\def\into{\hookrightarrow}
+\def\con{\underline{}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Team Based Statistics</span></a></h1>
+<p class="byline">Tien Chih</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="Sec_StandardNormal.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="Chap_Distributions.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="Sec_Counting.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="Sec_StandardNormal.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="Chap_Distributions.html" title="Up">Up</a><a class="next-button button toolbar-item" href="Sec_Counting.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul>
+<li><a href="learning-outcomes.html" data-scroll="learning-outcomes">Learning Outcomes and Usage</a></li>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="author-bio-TC.html" data-scroll="author-bio-TC">Author Biography</a></li>
+<li><a href="dedication-1.html" data-scroll="dedication-1">Dedication</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_DataBasics.html" data-scroll="Chap_DataBasics"><span class="codenumber">1</span> <span class="title">Data Basics (B)</span></a><ul>
+<li><a href="Sec_Variables.html" data-scroll="Sec_Variables">Types of Variables and their Relationships (B1)</a></li>
+<li><a href="Sec_Sampling.html" data-scroll="Sec_Sampling">Sampling Techniques (B2)</a></li>
+<li><a href="Sec_Visualization.html" data-scroll="Sec_Visualization">Visualizing Data (B3)</a></li>
+<li><a href="Sec_Center.html" data-scroll="Sec_Center">Centers of Data (B4)</a></li>
+<li><a href="Sec_Variation.html" data-scroll="Sec_Variation">Variation of Data (B5)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Probability.html" data-scroll="Chap_Probability"><span class="codenumber">2</span> <span class="title">Probability (P)</span></a><ul>
+<li><a href="Sec_Introprob.html" data-scroll="Sec_Introprob">Introduction to Probability (P1)</a></li>
+<li><a href="Sec_Conditionalprob.html" data-scroll="Sec_Conditionalprob">Conditional Probability (P2)</a></li>
+<li><a href="Sec_Bayes.html" data-scroll="Sec_Bayes">Bayes Theorem (P3)</a></li>
+<li><a href="Sec_RandomVariables.html" data-scroll="Sec_RandomVariables">Random Variables (P4)</a></li>
+<li><a href="Sec_LinearCombofVariables.html" data-scroll="Sec_LinearCombofVariables">Linear Combinations of Random Variables (P5)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Distributions.html" data-scroll="Chap_Distributions"><span class="codenumber">3</span> <span class="title">Distributions (D)</span></a><ul>
+<li><a href="Sec_StandardNormal.html" data-scroll="Sec_StandardNormal">Standard Normal Distribution (D1)</a></li>
+<li><a href="Sec_GeneralNormal.html" data-scroll="Sec_GeneralNormal" class="active">General Normal Distribution (D2)</a></li>
+<li><a href="Sec_Counting.html" data-scroll="Sec_Counting">Counting Principles (D3)</a></li>
+<li><a href="Sec_Binomial.html" data-scroll="Sec_Binomial">Binomial Distribution (D4)</a></li>
+<li><a href="Sec_NormalApprox.html" data-scroll="Sec_NormalApprox">Normal Approximation (D5)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Foundations.html" data-scroll="Chap_Foundations"><span class="codenumber">4</span> <span class="title">Foundations for Inference (F)</span></a><ul>
+<li><a href="Sec_PointEstimates.html" data-scroll="Sec_PointEstimates">Point Estimates (F1)</a></li>
+<li><a href="Sec_ConfidenceInterval.html" data-scroll="Sec_ConfidenceInterval">Introduction to Confidence Intervals (F2)</a></li>
+<li><a href="Sec_HypothesisTesing.html" data-scroll="Sec_HypothesisTesing">Introduction to Hypothesis Testing (F3)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Categorical.html" data-scroll="Chap_Categorical"><span class="codenumber">5</span> <span class="title">Inference for Categorical Variables (C)</span></a><ul>
+<li><a href="Sec_SizeofSampleCat.html" data-scroll="Sec_SizeofSampleCat">Size of Samples (Categorical)</a></li>
+<li><a href="Sec_TwoVarCat.html" data-scroll="Sec_TwoVarCat">Comparing Two Categorical Variables (C2)</a></li>
+<li><a href="Sec_ChiSquare.html" data-scroll="Sec_ChiSquare">Chi-Squared Test and Goodness of Fit (C3)</a></li>
+<li><a href="Sec_ChiIndependence.html" data-scroll="Sec_ChiIndependence">Chi-Squared Test and Independence (C4)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Numerical.html" data-scroll="Chap_Numerical"><span class="codenumber">6</span> <span class="title">Inference for Numerical Variables (N)</span></a><ul>
+<li><a href="Sec_tVariable.html" data-scroll="Sec_tVariable">The \(t\)-Variable and Sampling Distribution of Numerical Variables (N1)</a></li>
+<li><a href="Sec_OneVarNum.html" data-scroll="Sec_OneVarNum">Confidence Intervals and Hypothesis Testing for a single Numerical Variable (N2)</a></li>
+<li><a href="Sec_PairedData.html" data-scroll="Sec_PairedData">Paired Numerical Data (N3)</a></li>
+<li><a href="Sec_TwoVarNum.html" data-scroll="Sec_TwoVarNum">Comparing Two Numerical Variables (N4)</a></li>
+<li><a href="Sec_SizeofSampleNum.html" data-scroll="Sec_SizeofSampleNum">Size of Samples of Numerical Variables (N5)</a></li>
+<li><a href="Sec_ANOVA.html" data-scroll="Sec_ANOVA">ANOVA: Analysis of Variation (N6)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_LinearRegression.html" data-scroll="Chap_LinearRegression"><span class="codenumber">7</span> <span class="title">Linear Regression (R)</span></a><ul>
+<li><a href="Sec_Correlation.html" data-scroll="Sec_Correlation">Linear Correlation of Variables (R1)</a></li>
+<li><a href="Sec_InterpretingRegression.html" data-scroll="Sec_InterpretingRegression">Interpreting Linear Regression (R2)</a></li>
+<li><a href="Sec_InferenceRegression.html" data-scroll="Sec_InferenceRegression">Inference and Linear Regression (R3)</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="Sec_GeneralNormal"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.2</span> <span class="title">General Normal Distribution (D2)</span>
+</h2>
+<section class="introduction" id="introduction-70"><p id="p-686">We begin our discussion with the standard normal distribution to build intuition about normal distributions, but most naturally occuring normally distributed things do not have mean 0 and standard deviation 1. Things that are generally normally distributed may have any mean and standard deviation, but what makes them normally distributed is that they have the <em class="emphasis">same fundamental shape</em> as the standard normal, a bell curved symmetric shape.  In the standard normal curve, the standard deviation is 1, so the units of \(z\) are standard deviations.  We can translate values from any \(X\) normally distributed random variable to the standard distribution through <dfn class="terminology">\(z\)-scores</dfn>.</p>
+<p id="p-687">In this section, we will compute probabilities of general normal random variables given bounds, and bounds given probabilities.</p></section><article class="exploration project-like" id="exploration-10"><h3 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">3.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Pine Trees.</span>
+</h3>
+<div class="introduction" id="introduction-71"><p id="p-688">Suppose the height of Pine Trees is <em class="emphasis">normally distributed</em> with mean 33 m and standard deviation 3 m.</p></div>
+<article class="task exercise-like" id="task-361"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-689">How many points above or below the mean is a height of 39 m?</p></article><article class="task exercise-like" id="task-362"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-690">How many <em class="emphasis">standard deviations</em> above or below the mean is a height of 39 m? (A standard deviation is 3 m.)</p></article><article class="task exercise-like" id="task-363"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-691">How many points above or below the mean is a height of 30 m?</p></article><article class="task exercise-like" id="task-364"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-692">How many <em class="emphasis">standard deviations</em> above or below the mean is a height of 30 m?</p></article><article class="task exercise-like" id="task-365"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<p id="p-693">How many points above or below the mean is a height of 38 m?</p></article><article class="task exercise-like" id="task-366"><h4 class="heading"><span class="codenumber">(f)</span></h4>
+<p id="p-694">How many <em class="emphasis">standard deviations</em> above or below the mean is a height of 38 m?</p></article></article><article class="definition definition-like" id="definition-zscore"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.2.1</span><span class="period">.</span>
+</h3>
+<p id="p-695">Given a random variable \(X\) with mean \(\mu\) and standard deviation \(\sigma\text{,}\) the <dfn class="terminology">\(z\)-score</dfn> of a value \(x\) of \(X\) is the number of standard deviations \(x\) is above or below the mean.  This is computed</p>
+<div class="displaymath">
+\begin{equation*}
+z=\frac{x-\mu}{\sigma}.
+\end{equation*}
+</div></article><article class="remark remark-like" id="remark-18"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.2.2</span><span class="period">.</span>
+</h3>
+<p id="p-696">Consider a normal distribution with mean \(\mu\) and standard deviation \(\sigma\text{,}\) often denoted \(N(\mu, \sigma)\text{.}\)  every value \(x\) in \(N(\mu, \sigma)\) has a corresponding \(z\)-score in \(N(0,1)\text{.}\)  So for a random variable \(X\) which has distribution \(N(\mu, \sigma)\text{,}\) we can find \(P(a\lt X\lt b)\) by finding \(P(z_a\lt Z\lt z_b)\) in \(N(0,1)\) where \(z_a, z_b&gt;\) are the \(z\)-scores of \(a, b\text{.}\) <iframe src="https://www.desmos.com/calculator/0znk7lhy30" id="interactive-20" width="600" height="600"></iframe></p>
+<p id="p-697">This is because all normal curves are transformations of the same curve, so every point on one curve corresponds to a point on the other, as do regions and their areas.</p></article><article class="activity project-like" id="activity-tuna"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Ahi Tuna: Computing Probabilities.</span>
+</h3>
+<div class="introduction" id="introduction-72"><p id="p-698">Suppose Ahi tuna weights are normally distributed with mean 120 lbs and standard deviation 25 lb's.  Suppose a fisherman goes out fishing.  Let \(X\) denote the weight of a random fish. <iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-21" width="600" height="600"></iframe></p></div>
+<article class="task exercise-like" id="task-367"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-699">Consider a tuna fish weighing 150 lbs.  What is \(z\)-score of 150 lbs?  Call this value \(z_0\text{.}\)</p></article><article class="task exercise-like" id="task-368"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-700">Consider a tuna fish weighing 150 lbs.  What is \(z\)-score of 150 lbs?  Call this value \(z_0\text{.}\)</p></article><article class="task exercise-like" id="task-369"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-701">Find the probability that a random tuna fish weighs more than 150 lbs by computing \(P(Z&gt;z_0)\text{.}\)</p></article><article class="task exercise-like" id="task-370"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-702">Set <code class="code-inline tex2jax_ignore">m=120</code>, <code class="code-inline tex2jax_ignore">s=25</code>, <code class="code-inline tex2jax_ignore">a=150</code>, <code class="code-inline tex2jax_ignore">b=infinity</code> to compute \(P(X&gt;150)\) directly.</p></article><article class="task exercise-like" id="task-371"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<p id="p-703">What is the probability that a tuna he catches weighs between 50 and 100 lbs?</p></article></article><article class="activity project-like" id="activity-tuna2"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Ahi Tuna part 2: Computing Weights.</span>
+</h3>
+<div class="introduction" id="introduction-73"><p id="p-704">Suppose Ahi tuna weights are normally distributed with mean 120 lbs and standard deviation 25 lb's as in <a href="" class="xref" data-knowl="./knowl/activity-tuna.html" title="Activity 3.2.2: Ahi Tuna: Computing Probabilities">Activity 3.2.2</a>.    Let \(X\) denote the weight of a random fish. <iframe src="https://www.desmos.com/calculator/t9afcecsoi" id="interactive-22" width="600" height="600"></iframe></p></div>
+<article class="task exercise-like" id="task-372"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-705">Suppose our fisherman wants to know whether or not a fish they catch weighs in the top 25% of Ahi tuna.  For what value \(z_0\) is \(P(Z&gt;z_0)=0.25\) in the standard distribution.</p></article><article class="task exercise-like" id="task-373"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-706">What is the \(X\) value (\(x_0\)) corresponding to this \(z\)-score?  This is the cutoff-weight for the top 25%.</p></article><article class="task exercise-like" id="task-374"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-707">Set <code class="code-inline tex2jax_ignore">m=120</code>, <code class="code-inline tex2jax_ignore">s=25</code>, <code class="code-inline tex2jax_ignore">P=0.25</code>, and select <code class="code-inline tex2jax_ignore">From the right</code> to compute \(x_0\) directly.</p></article><article class="task exercise-like" id="task-375"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-708">Find a value \(k\) so that \(P(120-k\lt X\lt 120+k)=0.8\text{.}\)  (Remember <a href="" class="xref" data-knowl="./knowl/remark-always.html" title="Remark 3.1.3">Remark 3.1.3</a>)</p></article></article><article class="activity project-like" id="activity-tuna3"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Ahi Tuna part 3: R.</span>
+</h3>
+<div class="introduction" id="introduction-74"><p id="p-709">Suppose Ahi tuna weights are normally distributed with mean 120 lbs and standard deviation 25 lb's as in <a href="" class="xref" data-knowl="./knowl/activity-tuna.html" title="Activity 3.2.2: Ahi Tuna: Computing Probabilities">Activity 3.2.2</a>.    Let \(X\) denote the weight of a random fish.</p></div>
+<article class="task exercise-like" id="task-376"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-710">Fix and run the following code to compute the probability that a tuna weighs less than 130 lb's: \(P(X\lt 130)\text{:}\) <div class="sagecell-r" id="sage-112"><script type="text/x-sage">pnorm(130, mean=FIXME, sd=FIXME)
+</script></div></p></article><article class="task exercise-like" id="task-377"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-711">Use (a) to compute \(P(X\geq 130)\text{.}\)</p></article><article class="task exercise-like" id="task-378"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-712">Adjust and run the code in (a) to compute \(P(X\lt 100)\text{.}\)</p></article><article class="task exercise-like" id="task-379"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-713">Use (a) and (c) to compute \(P(100\lt X\lt 130)\text{.}\)</p></article><article class="task exercise-like" id="task-380"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<p id="p-714">Fix and run the following code to compute the value \(x_0\) such that \(P(X\lt x_0)=0.1\text{:}\) <div class="sagecell-r" id="sage-113"><script type="text/x-sage">qnorm(0.1, mean=FIXME, sd=FIXME)
+</script></div></p></article><article class="task exercise-like" id="task-381"><h4 class="heading"><span class="codenumber">(f)</span></h4>
+<p id="p-715">Suppose I want to find a \(k\) such that \(P(120-k\lt X\lt 120+k)=0.90\text{.}\)  What is the area of each tail?  What is \(P(Z\lt 120+k)\text{?}\)  (Remember <a href="" class="xref" data-knowl="./knowl/remark-always.html" title="Remark 3.1.3">Remark 3.1.3</a>)</p></article><article class="task exercise-like" id="task-382"><h4 class="heading"><span class="codenumber">(g)</span></h4>
+<p id="p-716">Adjust and run the above code to compute \(120+k\text{,}\) and then find \(k\text{.}\)</p></article></article><article class="activity project-like" id="activity-tuna4"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Ahi Tuna part 4: Simulation.</span>
+</h3>
+<div class="introduction" id="introduction-75"><p id="p-717">Suppose Ahi tuna weights are normally distributed with mean 120 lbs and standard deviation 25 lb's as in <a href="" class="xref" data-knowl="./knowl/activity-tuna.html" title="Activity 3.2.2: Ahi Tuna: Computing Probabilities">Activity 3.2.2</a>.    Let \(X\) denote the weight of a random fish.</p></div>
+<article class="task exercise-like" id="task-383"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-718">Run the following code to simulate the weights of 1000 random Ahi Tuna: <div class="sagecell-r" id="sage-114"><script type="text/x-sage">n=1000
+ahiweight=rnorm(n,mean=120, sd=25)
+hist(ahiweight)
+</script></div></p></article><article class="task exercise-like" id="task-384"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-719">Run the following code to see what proportion of tuna weighing over 150 lbs: <div class="sagecell-r" id="sage-115"><script type="text/x-sage">length(which(ahiweight>150))/n
+</script></div> How does this value compare to what you found in <a href="" class="xref" data-knowl="./knowl/activity-tuna.html" title="Activity 3.2.2: Ahi Tuna: Computing Probabilities">Activity 3.2.2</a> (c)?</p></article><article class="task exercise-like" id="task-385"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-720">Run the following code setting <code class="code-inline tex2jax_ignore">X0</code> to be the \(x_0\) found in <a href="" class="xref" data-knowl="./knowl/activity-tuna2.html" title="Activity 3.2.3: Ahi Tuna part 2: Computing Weights">Activity 3.2.3</a> (b). <div class="sagecell-r" id="sage-116"><script type="text/x-sage">X0=FIXME
+length(which(ahiweight>X0))/n
+</script></div> How does this compare to what you observed in  <a href="" class="xref" data-knowl="./knowl/activity-tuna2.html" title="Activity 3.2.3: Ahi Tuna part 2: Computing Weights">Activity 3.2.3</a> (b)?</p></article><article class="task exercise-like" id="task-386"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-721">Run the following code to see what proportion of tuna weigh between 50 and 100 pounds: <div class="sagecell-r" id="sage-117"><script type="text/x-sage">length(which(100>ahiweight & ahiweight>50))/n
+</script></div> How does this value compare to what you found in <a href="" class="xref" data-knowl="./knowl/activity-tuna.html" title="Activity 3.2.2: Ahi Tuna: Computing Probabilities">Activity 3.2.2</a> (e)?</p></article><article class="task exercise-like" id="task-387"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<p id="p-722">Run the following code setting <code class="code-inline tex2jax_ignore">k</code> to be the \(k\) found in <a href="" class="xref" data-knowl="./knowl/activity-tuna2.html" title="Activity 3.2.3: Ahi Tuna part 2: Computing Weights">Activity 3.2.3</a> (d). <div class="sagecell-r" id="sage-118"><script type="text/x-sage">k=FIXME
+length(which(120+k>ahiweight & ahiweight>120-k))/n
+</script></div> How does this compare to what you observed in <a href="" class="xref" data-knowl="./knowl/activity-tuna2.html" title="Activity 3.2.3: Ahi Tuna part 2: Computing Weights">Activity 3.2.3</a> (d)?</p></article></article><article class="remark remark-like" id="remark-proborvalue"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.2.3</span><span class="period">.</span>
+</h3>
+<p id="p-723">It's always important to bear in mind when doing a computation, whether or not one is given bounds and finding an area/probability, or given an area/probability and trying to find bounds. <figure class="figure figure-like" id="figure-21"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/image-21.svg" role="img" class="contained" alt="Arrows from values to Probabilities and vice versa."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.4<span class="period">.</span></span><span class="space"> </span>Which direction are you going?</figcaption></figure></p></article><article class="activity project-like" id="activity-marathon"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">Marathon.</span>
+</h3>
+<div class="introduction" id="introduction-76">
+<p id="p-724">Suppose Marathon running times are normally distributed with mean 4.5 hours and standard deviation 1 hour.   Let \(X\) denote the time in hours for a random runner to finish.</p>
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-3" id="hint-3"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-3"><div class="hint solution-like"><p id="p-725"><iframe src="https://www.desmos.com/calculator/npukubqd60" id="interactive-23" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/mbwwtysjw3" id="interactive-24" width="600" height="600"></iframe> <div class="sagecell-r" id="sage-119"><script type="text/x-sage">
+</script></div></p></div></div>
+</div>
+<article class="task exercise-like" id="task-388"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-726">What proportion of runners would take over 6 hours?</p></article><article class="task exercise-like" id="task-389"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-727">Suppose a special award is given to the top 5% fastest runners.  What would be the predicted cutoff for this time?</p></article><article class="task exercise-like" id="task-390"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-728">What is the probability a random runner finishes between 3 and 4 hours?</p></article><article class="task exercise-like" id="task-391"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-729">Find \(k\) so that 90% of runners finish betwee \(4.5-k, 4.5+k\) hours.</p></article></article></section></div></main>
+</div>
+</body>
+</html>

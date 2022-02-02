@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-05-20T14:05:43-06:00       *-->
+<!--*       on 2022-02-01T19:41:17-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -31,42 +31,42 @@
 </script>
 </head>
 <body>
-<article class="activity project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Restaurant Bill.</span>
-</h6>
-<div class="introduction"><p xmlns:svg="http://www.w3.org/2000/svg">Our recurring restaurateur believes that the average amount spent by customers is over $12.  She plans on polling 50 customers to test this.  Suppose we had a level of significance \(\alpha=0.05\text{.}\)</p></div>
-<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span xmlns:svg="http://www.w3.org/2000/svg" class="space"> </span><span class="codenumber">6.2.5</span><span xmlns:svg="http://www.w3.org/2000/svg" class="period">.</span><span xmlns:svg="http://www.w3.org/2000/svg" class="space"> </span><span class="title">Restaurant Bill.</span>
+</h4>
+<div class="introduction"><p>Our recurring restaurateur believes that the average amount spent by customers is over $12.  She plans on polling 50 customers to test this.  Suppose we had a level of significance \(\alpha=0.05\text{.}\)</p></div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <p>Which of the following best describes the null hypothesis \(H_0\text{?}\)</p>
 <ul class="disc">
-<li>\(\mu\lt \$12\text{.}\)</li>
-<li>\(\mu&gt; \$12\text{.}\)</li>
-<li>\(\mu\neq \$12\text{.}\)</li>
-<li>\(\mu= \$12\text{.}\)</li>
-</ul></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
+<li><p>\(\mu\lt \$12\text{.}\)</p></li>
+<li><p>\(\mu&gt; \$12\text{.}\)</p></li>
+<li><p>\(\mu\neq \$12\text{.}\)</p></li>
+<li><p>\(\mu= \$12\text{.}\)</p></li>
+</ul></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <p>Which of the following best describes the alternative hypothesis \(H_A\text{?}\)</p>
 <ul class="disc">
-<li>\(\mu\lt \$12\text{.}\)</li>
-<li>\(\mu&gt; \$12\text{.}\)</li>
-<li>\(\mu\neq \$12\text{.}\)</li>
-<li>\(\mu= \$12\text{.}\)</li>
-</ul></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(c)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Let's poll some customers!  Run the following code to poll 50 customers and how much money they spent. <div class="sagecell-r" id="sage-246"><script type="text/x-sage">n=50
+<li><p>\(\mu\lt \$12\text{.}\)</p></li>
+<li><p>\(\mu&gt; \$12\text{.}\)</p></li>
+<li><p>\(\mu\neq \$12\text{.}\)</p></li>
+<li><p>\(\mu= \$12\text{.}\)</p></li>
+</ul></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>Let's poll some customers!  Run the following code to poll 50 customers and how much money they spent. <div class="sagecell-r" id="sage-246"><script type="text/x-sage">n=50
 mu=runif(1, 10, 15)
 samp=round(rnorm(n, mu, 4), digits=2)
-</script></div></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(d)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to find the sample mean and sample standard deviation. <div class="sagecell-r" id="sage-247"><script type="text/x-sage">print(mean(samp))
+</script></div></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>Run the following code to find the sample mean and sample standard deviation. <div class="sagecell-r" id="sage-247"><script type="text/x-sage">print(mean(samp))
 print(sd(samp))
-</script></div></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(e)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Find the standard error \(SE\text{.}\)</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(f)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Find \(t\)-score for \(\bar{x}\text{.}\)</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(g)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Compute a \(p\)-value (be sure to use the appropriate level of significance). <div class="sagecell-r" id="sage-248"><script type="text/x-sage">
-</script></div> <a class="hint-knowl original" data-knowl="./knowl/hint-29-hidden.html" title="Hint 1: Desmos"><span class="type">Hint</span><span class="space"> </span><span class="title">Desmos</span></a></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(h)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(i)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Do we  reject the null hypothesis?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(j)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">What sort of error could have been made? (Type 1 or Type 2)</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(k)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following to see what the true mean was: <div class="sagecell-r" id="sage-249"><script type="text/x-sage">print(mu)
-</script></div></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(l)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following to compute the \(p\)-value another way, how does this compare to what you did in (f)? <div class="sagecell-r" id="sage-250"><script type="text/x-sage">t.test(samp, mu=12, alternative="greater")
+</script></div></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p>Find the standard error \(SE\text{.}\)</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p>Find \(t\)-score for \(\bar{x}\text{.}\)</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p>Compute a \(p\)-value (be sure to use the appropriate level of significance). <div class="sagecell-r" id="sage-248"><script type="text/x-sage">
+</script></div> <a href="" class="hint-knowl original" data-knowl="./knowl/hint-29-hidden.html" title="Hint 1: Desmos"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Hint</span><span xmlns:svg="http://www.w3.org/2000/svg" class="period">.</span><span xmlns:svg="http://www.w3.org/2000/svg" class="space"> </span><span class="title">Desmos</span></a></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(h)</span></h5>
+<p>State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(i)</span></h5>
+<p>Do we  reject the null hypothesis?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(j)</span></h5>
+<p>What sort of error could have been made? (Type 1 or Type 2)</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(k)</span></h5>
+<p>Run the following to see what the true mean was: <div class="sagecell-r" id="sage-249"><script type="text/x-sage">print(mu)
+</script></div></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(l)</span></h5>
+<p>Run the following to compute the \(p\)-value another way, how does this compare to what you did in (f)? <div class="sagecell-r" id="sage-250"><script type="text/x-sage">t.test(samp, mu=12, alternative="greater")
 </script></div></p></article></article><span class="incontext"><a href="Sec_OneVarNum.html#activity-averagebill">in-context</a></span>
 </body>
 </html>

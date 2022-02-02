@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-05-20T14:04:11-06:00       *-->
+<!--*       on 2022-02-01T19:32:19-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,36 +14,42 @@
 <title>Conditional Probability (P2)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
     },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>$(function () {
     // Make *any* div with class 'sagecell-sage' an executable Sage cell
     // Their results will be linked, only within language type
     sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
@@ -59,7 +65,7 @@ MathJax.Hub.Config({
                            languages: ['r'],
                            evalButtonText: 'Evaluate (R)'});
 });
-</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg">miniversion=0.6</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -72,8 +78,8 @@ MathJax.Hub.Config({
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
 <!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
-<body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\Q}{\terminology{Question:\ }}
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\Q}{\terminology{Question:\ }}
 \newcommand{\Sol}{\terminology{Solution:\ }}
 \newcommand{\Fisg}{\emph{Fisg}}
 \newcommand{\Iisg}{\emph{Iisg}}
@@ -192,7 +198,7 @@ MathJax.Hub.Config({
 <li><a href="Sec_InferenceRegression.html" data-scroll="Sec_InferenceRegression">Inference and Linear Regression (R3)</a></li>
 </ul>
 </li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="Sec_Conditionalprob"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.2</span> <span class="title">Conditional Probability (P2)</span>
@@ -207,104 +213,104 @@ names(loans)
 <p id="p-363">This data set represents thousands of loans made through the Lending Club platform, which is a platform that allows individuals to lend to other individuals.</p></section><section class="subsection" id="subsection-10"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.2.1</span> <span class="title">Defining Conditional Probability</span>
 </h3>
-<article class="exploration project-like" id="rolling-die-conditional"><h6 class="heading">
+<article class="exploration project-like" id="rolling-die-conditional"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.2.1</span><span class="period">.</span>
-</h6>
+</h4>
 <div class="introduction" id="introduction-35"><p id="p-364">Consider the experiment rolling a dice.  Let \(A\) denote the event “the outcome is even”, and let \(B\) denote “the outcome is greater than 3”.</p></div>
-<article class="task exercise-like" id="task-183"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<article class="task exercise-like" id="task-183"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <p id="p-365">Run the following code to show the results of 20 die rolls.</p>
 <p id="p-366"><div class="sagecell-r" id="sage-55"><script type="text/x-sage">roll=sample(1:6,20,replace=TRUE)
 
 roll
-</script></div></p></article><article class="task exercise-like" id="task-184"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-367">Out of the 20 die rolls, how many satisfy \(A\text{?}\)  List them:</p></article><article class="task exercise-like" id="task-185"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-368">Out of the die rolls which satisfy \(A\text{,}\) how many also satisfy \(B\text{?}\) List them:</p></article><article class="task exercise-like" id="task-186"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-369">Out of the 20 die rolls, how many satisfy \(B\text{?}\)  List them:</p></article><article class="task exercise-like" id="task-187"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-370">Out of the die rolls which satisfy \(B\text{,}\) how many also satisfy \(A\text{?}\)  List them:</p></article><article class="task exercise-like" id="task-188"><h6 class="heading"><span class="codenumber">(f)</span></h6>
-<p id="p-371">Out of the 20 die rolls, what <em class="emphasis">proportion</em> of them satisfy \(A\text{?}\)</p></article><article class="task exercise-like" id="task-189"><h6 class="heading"><span class="codenumber">(g)</span></h6>
-<p id="p-372">Out of the  die rolls that satisfy \(B\text{,}\) what <em class="emphasis">proportion</em> of them satisfy \(A\text{?}\)</p></article><article class="task exercise-like" id="task-190"><h6 class="heading"><span class="codenumber">(h)</span></h6>
-<p id="p-373">Out of the 20 die rolls, what <em class="emphasis">proportion</em> of them satisfy \(B\text{?}\)</p></article><article class="task exercise-like" id="task-191"><h6 class="heading"><span class="codenumber">(i)</span></h6>
-<p id="p-374">Out of the  die rolls that satisfy \(A\text{,}\) what <em class="emphasis">proportion</em> of them satisfy \(B\text{?}\)</p></article><article class="task exercise-like" id="task-192"><h6 class="heading"><span class="codenumber">(j)</span></h6>
-<p id="p-375">Out of the 20 die rolls, how many satisfy both \(A\) and \(B\text{?}\)  List them:</p></article></article><article class="activity project-like" id="activity-conditional-on-die"><h6 class="heading">
+</script></div></p></article><article class="task exercise-like" id="task-184"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-367">Out of the 20 die rolls, how many satisfy \(A\text{?}\)  List them:</p></article><article class="task exercise-like" id="task-185"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-368">Out of the die rolls which satisfy \(A\text{,}\) how many also satisfy \(B\text{?}\) List them:</p></article><article class="task exercise-like" id="task-186"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-369">Out of the 20 die rolls, how many satisfy \(B\text{?}\)  List them:</p></article><article class="task exercise-like" id="task-187"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-370">Out of the die rolls which satisfy \(B\text{,}\) how many also satisfy \(A\text{?}\)  List them:</p></article><article class="task exercise-like" id="task-188"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p id="p-371">Out of the 20 die rolls, what <em class="emphasis">proportion</em> of them satisfy \(A\text{?}\)</p></article><article class="task exercise-like" id="task-189"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p id="p-372">Out of the  die rolls that satisfy \(B\text{,}\) what <em class="emphasis">proportion</em> of them satisfy \(A\text{?}\)</p></article><article class="task exercise-like" id="task-190"><h5 class="heading"><span class="codenumber">(h)</span></h5>
+<p id="p-373">Out of the 20 die rolls, what <em class="emphasis">proportion</em> of them satisfy \(B\text{?}\)</p></article><article class="task exercise-like" id="task-191"><h5 class="heading"><span class="codenumber">(i)</span></h5>
+<p id="p-374">Out of the  die rolls that satisfy \(A\text{,}\) what <em class="emphasis">proportion</em> of them satisfy \(B\text{?}\)</p></article><article class="task exercise-like" id="task-192"><h5 class="heading"><span class="codenumber">(j)</span></h5>
+<p id="p-375">Out of the 20 die rolls, how many satisfy both \(A\) and \(B\text{?}\)  List them:</p></article></article><article class="activity project-like" id="activity-conditional-on-die"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Conditional Probability and Dice.</span>
-</h6>
-<div class="introduction" id="introduction-36"><p id="p-376">Consider rolling a die, and let \(A\) denote the event “the outcome is even”, and let \(B\) denote “the outcome is greater than 3” as in <a class="xref" data-knowl="./knowl/rolling-die-conditional.html" title="Exploration 2.2.1">Exploration 2.2.1</a></p></div>
-<article class="task exercise-like" id="task-193"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-377">Out of the possible outcomes 1 though 6, which satisfy \(B\text{?}\)</p></article><article class="task exercise-like" id="task-194"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-378">Out of the outcomes which satisfy \(B\text{,}\) how many also satisfy \(A\text{?}\)  What are they?</p></article><article class="task exercise-like" id="task-195"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-379">If you picked an outcome at random which satisfied \(B\text{,}\) what is the <em class="emphasis">probability</em> that it satisfies \(A\) as well?</p></article><article class="task exercise-like" id="task-196"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-380">How does this compare to \(P(A)\text{,}\) the probability that \(A\) occurs in general?</p></article></article><article class="definition definition-like" id="DefinitionConditional"><h6 class="heading">
+</h4>
+<div class="introduction" id="introduction-36"><p id="p-376">Consider rolling a die, and let \(A\) denote the event “the outcome is even”, and let \(B\) denote “the outcome is greater than 3” as in <a href="" class="xref" data-knowl="./knowl/rolling-die-conditional.html" title="Exploration 2.2.1">Exploration 2.2.1</a></p></div>
+<article class="task exercise-like" id="task-193"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-377">Out of the possible outcomes 1 though 6, which satisfy \(B\text{?}\)</p></article><article class="task exercise-like" id="task-194"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-378">Out of the outcomes which satisfy \(B\text{,}\) how many also satisfy \(A\text{?}\)  What are they?</p></article><article class="task exercise-like" id="task-195"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-379">If you picked an outcome at random which satisfied \(B\text{,}\) what is the <em class="emphasis">probability</em> that it satisfies \(A\) as well?</p></article><article class="task exercise-like" id="task-196"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-380">How does this compare to \(P(A)\text{,}\) the probability that \(A\) occurs in general?</p></article></article><article class="definition definition-like" id="DefinitionConditional"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.2.1</span><span class="period">.</span>
-</h6>
+</h4>
 <p id="p-381">We say the probability of \(A\) <dfn class="terminology">given</dfn> \(B\) is the probability \(A\)occurs assuming that \(B\) occurs, denoted \(P(A|B)\text{.}\)</p>
-<p id="p-382">We can imagine this by taking the proportion of sample space that is \(B\) i.e. \(P(B)\) and inside of that, finding the proportion that  <em class="emphasis">also</em> satisfies A i.e. \(P(A\  \text{and}\ B)\) <figure class="figure figure-like" id="figure-16"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-16.svg" role="img" style="width: 100%; height: auto;" alt="Test Venn Diagram."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.2<span class="period">.</span></span><span class="space"> </span>\(B\text{,}\) the new sample space.</figcaption></figure> <figure class="figure figure-like" id="figure-17"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-17.svg" role="img" style="width: 100%; height: auto;" alt="Test Venn Diagram."></div>
+<p id="p-382">We can imagine this by taking the proportion of sample space that is \(B\) i.e. \(P(B)\) and inside of that, finding the proportion that  <em class="emphasis">also</em> satisfies A i.e. \(P(A\  \text{and}\ B)\) <figure class="figure figure-like" id="figure-16"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/image-16.svg" role="img" class="contained" alt="Test Venn Diagram."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.2<span class="period">.</span></span><span class="space"> </span>\(B\text{,}\) the new sample space.</figcaption></figure> <figure class="figure figure-like" id="figure-17"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/image-17.svg" role="img" class="contained" alt="Test Venn Diagram."></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.3<span class="period">.</span></span><span class="space"> </span>\(A\) when restricted to \(B\text{.}\)</figcaption></figure></p>
 <p id="p-383">Since we now treat \(B\) as the entire sample space, we take this proportion out of \(P(B)\) so</p>
 <div class="displaymath">
 \begin{equation*}
 P(A|B)=\frac{P(A\ \text{and}\ B)}{P(B)}.
 \end{equation*}
-</div></article><article class="activity project-like" id="activity-conditional-on-die-def"><h6 class="heading">
+</div></article><article class="activity project-like" id="activity-conditional-on-die-def"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Conditional Probability and Dice using the Definition.</span>
-</h6>
-<div class="introduction" id="introduction-37"><p id="p-384">Consider rolling a die, and let \(A\) denote the event “the outcome is even”, and let \(B\) denote “the outcome is greater than 3” as in <a class="xref" data-knowl="./knowl/rolling-die-conditional.html" title="Exploration 2.2.1">Exploration 2.2.1</a>, <a class="xref" data-knowl="./knowl/activity-conditional-on-die.html" title="Activity 2.2.2: Conditional Probability and Dice">Activity 2.2.2</a>.</p></div>
-<article class="task exercise-like" id="task-197"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-385">Find \(P(A), P(B), P(A\ \text{and}\ B )\text{.}\)</p></article><article class="task exercise-like" id="task-198"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-386">Use <a class="xref" data-knowl="./knowl/DefinitionConditional.html" title="Definition 2.2.1">Definition 2.2.1</a> to find \(P(A|B)\text{.}\)</p></article><article class="task exercise-like" id="task-199"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-387">How does this value compare to what you in in <a class="xref" data-knowl="./knowl/activity-conditional-on-die.html" title="Activity 2.2.2: Conditional Probability and Dice">Activity 2.2.2</a> (c)?</p></article></article><article class="activity project-like" id="activity-conditional-on-die-sim"><h6 class="heading">
+</h4>
+<div class="introduction" id="introduction-37"><p id="p-384">Consider rolling a die, and let \(A\) denote the event “the outcome is even”, and let \(B\) denote “the outcome is greater than 3” as in <a href="" class="xref" data-knowl="./knowl/rolling-die-conditional.html" title="Exploration 2.2.1">Exploration 2.2.1</a>, <a href="" class="xref" data-knowl="./knowl/activity-conditional-on-die.html" title="Activity 2.2.2: Conditional Probability and Dice">Activity 2.2.2</a>.</p></div>
+<article class="task exercise-like" id="task-197"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-385">Find \(P(A), P(B), P(A\ \text{and}\ B )\text{.}\)</p></article><article class="task exercise-like" id="task-198"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-386">Use <a href="" class="xref" data-knowl="./knowl/DefinitionConditional.html" title="Definition 2.2.1">Definition 2.2.1</a> to find \(P(A|B)\text{.}\)</p></article><article class="task exercise-like" id="task-199"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-387">How does this value compare to what you in in <a href="" class="xref" data-knowl="./knowl/activity-conditional-on-die.html" title="Activity 2.2.2: Conditional Probability and Dice">Activity 2.2.2</a> (c)?</p></article></article><article class="activity project-like" id="activity-conditional-on-die-sim"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Conditional Probability and Dice Simulation.</span>
-</h6>
-<div class="introduction" id="introduction-38"><p id="p-388">Consider rolling a die, and let \(A\) denote the event “the outcome is even”, and let \(B\) denote “the outcome is greater than 3” as in <a class="xref" data-knowl="./knowl/rolling-die-conditional.html" title="Exploration 2.2.1">Exploration 2.2.1</a>, <a class="xref" data-knowl="./knowl/activity-conditional-on-die.html" title="Activity 2.2.2: Conditional Probability and Dice">Activity 2.2.2</a>, <a class="xref" data-knowl="./knowl/activity-conditional-on-die-def.html" title="Activity 2.2.3: Conditional Probability and Dice using the Definition">Activity 2.2.3</a>.  We will simulate 1000 die rolls and observe the results.</p></div>
-<article class="task exercise-like" id="task-200"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+</h4>
+<div class="introduction" id="introduction-38"><p id="p-388">Consider rolling a die, and let \(A\) denote the event “the outcome is even”, and let \(B\) denote “the outcome is greater than 3” as in <a href="" class="xref" data-knowl="./knowl/rolling-die-conditional.html" title="Exploration 2.2.1">Exploration 2.2.1</a>, <a href="" class="xref" data-knowl="./knowl/activity-conditional-on-die.html" title="Activity 2.2.2: Conditional Probability and Dice">Activity 2.2.2</a>, <a href="" class="xref" data-knowl="./knowl/activity-conditional-on-die-def.html" title="Activity 2.2.3: Conditional Probability and Dice using the Definition">Activity 2.2.3</a>.  We will simulate 1000 die rolls and observe the results.</p></div>
+<article class="task exercise-like" id="task-200"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <p id="p-389">Run the following code to show the results of 1000 die rolls as a histogram.</p>
 <p id="p-390"><div class="sagecell-r" id="sage-56"><script type="text/x-sage">roll=sample(1:6,1000,replace=TRUE)
 
 hist(roll)
-</script></div></p></article><article class="task exercise-like" id="task-201"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+</script></div></p></article><article class="task exercise-like" id="task-201"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <p id="p-391">Run the following code to seperate out the die rolls which are greater than 3 as it's own vector <code class="code-inline tex2jax_ignore">B</code>.</p>
 <p id="p-392"><div class="sagecell-r" id="sage-57"><script type="text/x-sage">B=subset(roll, roll>3)
 
 hist(B)
-</script></div></p></article><article class="task exercise-like" id="task-202"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+</script></div></p></article><article class="task exercise-like" id="task-202"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <p id="p-393">Run the following code to count the length of <code class="code-inline tex2jax_ignore">B</code>.</p>
 <p id="p-394"><div class="sagecell-r" id="sage-58"><script type="text/x-sage">length(B)
-</script></div></p></article><article class="task exercise-like" id="task-203"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+</script></div></p></article><article class="task exercise-like" id="task-203"><h5 class="heading"><span class="codenumber">(d)</span></h5>
 <p id="p-395">Run the following code to count the elements of <code class="code-inline tex2jax_ignore">B</code> that are even (i.e. satisfy \(A\)).</p>
 <p id="p-396"><div class="sagecell-r" id="sage-59"><script type="text/x-sage">length(which(B%%2==0))
-</script></div></p></article><article class="task exercise-like" id="task-204"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-397">What proportion the  die rolls who satisfy \(B\)  also satisfy \(A\text{?}\)</p></article><article class="task exercise-like" id="task-205"><h6 class="heading"><span class="codenumber">(f)</span></h6>
-<p id="p-398">How does this value compare to what you found in <a class="xref" data-knowl="./knowl/activity-conditional-on-die-def.html" title="Activity 2.2.3: Conditional Probability and Dice using the Definition">Activity 2.2.3</a>(b)?</p></article></article><article class="activity project-like" id="activity-conditionalprobstudents"><h6 class="heading">
+</script></div></p></article><article class="task exercise-like" id="task-204"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-397">What proportion the  die rolls who satisfy \(B\)  also satisfy \(A\text{?}\)</p></article><article class="task exercise-like" id="task-205"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p id="p-398">How does this value compare to what you found in <a href="" class="xref" data-knowl="./knowl/activity-conditional-on-die-def.html" title="Activity 2.2.3: Conditional Probability and Dice using the Definition">Activity 2.2.3</a>(b)?</p></article></article><article class="activity project-like" id="activity-conditionalprobstudents"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Conditional Probability Students.</span>
-</h6>
+</h4>
 <div class="introduction" id="introduction-">
 <p id="p-399">Suppose that in a Mathematics department, 20% of the students have done undergraduate research, 25% have gone to conferences.  We also have that 30% have done either one or the other.</p>
 <p id="p-400">Let \(R\) denote the event “has done undergraduate research” and \(C\) denote “has gone to a conference.”.</p>
 </div>
-<article class="task exercise-like" id="task-206"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-401">Fill out the proportion of students that fit in each piece of this Venn Diagram: <figure class="figure figure-like" id="figure-18"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-18.svg" role="img" style="width: 100%; height: auto;" alt="Test Venn Diagram."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.4<span class="period">.</span></span><span class="space"> </span>\(R\) research, \(C\) conferences.</figcaption></figure></p></article><article class="task exercise-like" id="task-207"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-402">If a student doesn't do undergraduate research, whats the probability that they go to a conference?</p></article><article class="task exercise-like" id="task-208"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-403">If a student goes to a conference, what is the probability that they did undergrad research?</p></article></article><article class="activity project-like" id="activity-loan-conditional"><h6 class="heading">
+<article class="task exercise-like" id="task-206"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-401">Fill out the proportion of students that fit in each piece of this Venn Diagram: <figure class="figure figure-like" id="figure-18"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/image-18.svg" role="img" class="contained" alt="Test Venn Diagram."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.4<span class="period">.</span></span><span class="space"> </span>\(R\) research, \(C\) conferences.</figcaption></figure></p></article><article class="task exercise-like" id="task-207"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-402">If a student doesn't do undergraduate research, whats the probability that they go to a conference?</p></article><article class="task exercise-like" id="task-208"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-403">If a student goes to a conference, what is the probability that they did undergrad research?</p></article></article><article class="activity project-like" id="activity-loan-conditional"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">Conditional Probability and Loan Data.</span>
-</h6>
+</h4>
 <div class="introduction" id="introduction-40">
 <p id="p-404">We show how conditioning by one variable affects (if at all) another variable.</p>
 <p id="p-405">Recall that there are 10000 loans in the <code class="code-inline tex2jax_ignore">loans</code> data set.</p>
 </div>
-<article class="task exercise-like" id="task-209"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<article class="task exercise-like" id="task-209"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <p id="p-406">Run the following code to show how many loans were from applicants who owned their homes.</p>
 <p id="p-407"><div class="sagecell-r" id="sage-60"><script type="text/x-sage">length(which(loans$homeownership=="OWN"))
-</script></div></p></article><article class="task exercise-like" id="task-210"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-408">What proportion of the loans went to home owners?</p></article><article class="task exercise-like" id="task-211"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+</script></div></p></article><article class="task exercise-like" id="task-210"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-408">What proportion of the loans went to home owners?</p></article><article class="task exercise-like" id="task-211"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <p id="p-409">Run the following code to subset the loans with grade “A”, and show how many loans this is.</p>
 <p id="p-410"><div class="sagecell-r" id="sage-61"><script type="text/x-sage">gradeAloans=subset(loans, loans$grade=="A")
 nrow(gradeAloans)
-</script></div></p></article><article class="task exercise-like" id="task-212"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+</script></div></p></article><article class="task exercise-like" id="task-212"><h5 class="heading"><span class="codenumber">(d)</span></h5>
 <p id="p-411">Run the following code to show how many  grade “A” loans  were from applicants who were home owners.</p>
 <p id="p-412"><div class="sagecell-r" id="sage-62"><script type="text/x-sage">length(which(gradeAloans$homeownership=="OWN"))
-</script></div></p></article><article class="task exercise-like" id="task-213"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-413">What proportion of grade “A” loans went to home owners?  How does this answer compare to what you found in (b)</p></article><article class="task exercise-like" id="task-214"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+</script></div></p></article><article class="task exercise-like" id="task-213"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-413">What proportion of grade “A” loans went to home owners?  How does this answer compare to what you found in (b)</p></article><article class="task exercise-like" id="task-214"><h5 class="heading"><span class="codenumber">(f)</span></h5>
 <p id="p-414">Run the following code to take a sample of 1000 loans and display a contingency table comparing loan grades to home-ownership from this sample.  What proportion of the homeowners got grade “A” loans? <div class="sagecell-r" id="sage-63"><script type="text/x-sage">index = sample(1:nrow(loans), 1000)
 samp=loans[index,]
 
@@ -312,9 +318,9 @@ table(samp$grade,samp$homeownership)
 </script></div></p></article></article></section><section class="subsection" id="subsection-11"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.2.2</span> <span class="title">Independence</span>
 </h3>
-<article class="activity project-like" id="activity-doubledie"><h6 class="heading">
+<article class="activity project-like" id="activity-doubledie"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.7</span><span class="period">.</span>
-</h6>
+</h4>
 <div class="introduction" id="introduction-41">
 <p id="p-415">Suppose you roll a pair of dice, a blue dice and a green dice.  Consider the possible blue-green outcomes:</p>
 <div class="displaymath">
@@ -329,20 +335,20 @@ table(samp$grade,samp$homeownership)
 \end{array}
 \end{equation*}
 </div>
-<p data-braille="continuation">Let \(A\) denote the outcome “The blue die comes up a 5”, and \(B\) denote the outcome “The green comes up even”.</p>
+<p class="continuation">Let \(A\) denote the outcome “The blue die comes up a 5”, and \(B\) denote the outcome “The green comes up even”.</p>
 </div>
-<article class="task exercise-like" id="task-215"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-416">Which of these outcomes correspond to \(A\text{?}\)</p></article><article class="task exercise-like" id="task-216"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-417">What is \(P(A)\text{?}\)</p></article><article class="task exercise-like" id="task-217"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-418">Which of these outcomes correspond to \(B\text{?}\)</p></article><article class="task exercise-like" id="task-218"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-419">What is \(P(B)\text{?}\)</p></article><article class="task exercise-like" id="task-219"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-420">Out of the outcomes which correspond to \(B\text{,}\) which of them correspond to \(A\text{?}\)</p></article><article class="task exercise-like" id="task-220"><h6 class="heading"><span class="codenumber">(f)</span></h6>
-<p id="p-421">What is \(P(A|B)\text{?}\)</p></article><article class="task exercise-like" id="task-221"><h6 class="heading"><span class="codenumber">(g)</span></h6>
-<p id="p-422">What do you notice about \(P(A)\) compared to \(P(A|B)\text{?}\)   How does restricting to even green outcomes change (if at all) the likelihood of blue coming up a 5?</p></article></article><article class="activity project-like" id="activity-doubledie-simulate"><h6 class="heading">
+<article class="task exercise-like" id="task-215"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-416">Which of these outcomes correspond to \(A\text{?}\)</p></article><article class="task exercise-like" id="task-216"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-417">What is \(P(A)\text{?}\)</p></article><article class="task exercise-like" id="task-217"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-418">Which of these outcomes correspond to \(B\text{?}\)</p></article><article class="task exercise-like" id="task-218"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-419">What is \(P(B)\text{?}\)</p></article><article class="task exercise-like" id="task-219"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-420">Out of the outcomes which correspond to \(B\text{,}\) which of them correspond to \(A\text{?}\)</p></article><article class="task exercise-like" id="task-220"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p id="p-421">What is \(P(A|B)\text{?}\)</p></article><article class="task exercise-like" id="task-221"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p id="p-422">What do you notice about \(P(A)\) compared to \(P(A|B)\text{?}\)   How does restricting to even green outcomes change (if at all) the likelihood of blue coming up a 5?</p></article></article><article class="activity project-like" id="activity-doubledie-simulate"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.8</span><span class="period">.</span><span class="space"> </span><span class="title">Simulating the double die.</span>
-</h6>
+</h4>
 <div class="introduction" id="introduction-42"><p id="p-423">We simulate 100 rolls of a pair of dice.</p></div>
-<article class="task exercise-like" id="task-222"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<article class="task exercise-like" id="task-222"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <p id="p-424">Run the following code to simulate 1000 blue die rolls and 1000 green die rolls, and show the first 10 pairs.</p>
 <p id="p-425"><div class="sagecell-r" id="sage-64"><script type="text/x-sage">bluedie = sample(1:6, 1000, replace = TRUE)
 greendie = sample(1:6, 1000, replace = TRUE)
@@ -350,31 +356,31 @@ greendie = sample(1:6, 1000, replace = TRUE)
 doubledie=data.frame(bluedie, greendie)
 
 head(doubledie, n=10)
-</script></div></p></article><article class="task exercise-like" id="task-223"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+</script></div></p></article><article class="task exercise-like" id="task-223"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <p id="p-426">Run the following code to see how many of these rolls satisfied \(A\text{:}\) “the blue die comes up a 5”.</p>
 <p id="p-427"><div class="sagecell-r" id="sage-65"><script type="text/x-sage">length(which(doubledie$bluedie==5))
-</script></div> What proportion of the die rolls was \(A\) satisfied?</p></article><article class="task exercise-like" id="task-224"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+</script></div> What proportion of the die rolls was \(A\) satisfied?</p></article><article class="task exercise-like" id="task-224"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <p id="p-428">Run the following code to see how many of these rolls satisfied \(B\text{:}\) “the green die comes up even”.</p>
 <p id="p-429"><div class="sagecell-r" id="sage-66"><script type="text/x-sage">length(which(doubledie$greendie%%2==0))
-</script></div> What proportion of the die rolls was \(B\) satisfied?</p></article><article class="task exercise-like" id="task-225"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+</script></div> What proportion of the die rolls was \(B\) satisfied?</p></article><article class="task exercise-like" id="task-225"><h5 class="heading"><span class="codenumber">(d)</span></h5>
 <p id="p-430">Run the following code to subset out the pairs satisfying \(B\) i.e. where the green die was even, and display the first 10 rows.</p>
 <p id="p-431"><div class="sagecell-r" id="sage-67"><script type="text/x-sage">greendieeven=subset(doubledie, doubledie$greendie%%2==0)
 
 head(greendieeven, n=10)
-</script></div></p></article><article class="task exercise-like" id="task-226"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+</script></div></p></article><article class="task exercise-like" id="task-226"><h5 class="heading"><span class="codenumber">(e)</span></h5>
 <p id="p-432">Run the following code to see how many of the rolls satisfying \(B\) also satisfied \(A\text{.}\)</p>
 <p id="p-433"><div class="sagecell-r" id="sage-68"><script type="text/x-sage">length(which(greendieeven$bluedie==5))
-</script></div> What proportion of the die rolls satisfying \(B\) was \(A\) also satisfied?</p></article></article><article class="definition definition-like" id="DefinitionIndependence"><h6 class="heading">
+</script></div> What proportion of the die rolls satisfying \(B\) was \(A\) also satisfied?</p></article></article><article class="definition definition-like" id="DefinitionIndependence"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.2.5</span><span class="period">.</span>
-</h6>
+</h4>
 <p id="p-434">Events \(A, B\) are <dfn class="terminology">independent</dfn> of each other if the outcome of one event does not change the probability of the other occuring.  That is</p>
 <div class="displaymath">
 \begin{equation*}
 P(A|B)=P(A).
 \end{equation*}
-</div></article><article class="remark remark-like" id="remark-proddefofind"><h6 class="heading">
+</div></article><article class="remark remark-like" id="remark-proddefofind"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.2.6</span><span class="period">.</span>
-</h6>
+</h4>
 <p id="p-435">Events \(A, B\) are <dfn class="terminology">independent</dfn> if and only if:</p>
 <div class="displaymath">
 \begin{align*}
@@ -382,37 +388,37 @@ P(A|B)\amp= P(A)\\
 \frac{P(A\ \text{and}\ B)}{P(B)}\amp= P(A)\\
 P(A\ \text{and}\  B)\amp= P(A)P(B).
 \end{align*}
-</div></article><article class="remark remark-like" id="remark-6"><h6 class="heading">
+</div></article><article class="remark remark-like" id="remark-6"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.2.7</span><span class="period">.</span>
-</h6>
+</h4>
 <p id="p-436">We think of two events as “independent” if knowing the outcome of one event will not change how we think of the outcome of another event.</p>
 <p id="p-437">For example, “It rains today” and “I flip a coin and get a heads”.  The chance of getting that heads remains unchanged whether or not it rains!</p>
-<p id="p-438">In general, it's hard to know if two events are independent or not!  Things may seem unrelated, but share hidden connections and causes.  The world is a complicated place!</p></article><article class="activity project-like" id="activity-which-are-independent"><h6 class="heading">
+<p id="p-438">In general, it's hard to know if two events are independent or not!  Things may seem unrelated, but share hidden connections and causes.  The world is a complicated place!</p></article><article class="activity project-like" id="activity-which-are-independent"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.9</span><span class="period">.</span><span class="space"> </span><span class="title">Which are Independent?</span>
-</h6>
-<article class="task exercise-like" id="task-227"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-439">In <a class="xref" data-knowl="./knowl/rolling-die-conditional.html" title="Exploration 2.2.1">Exploration 2.2.1</a> are \(A\) and \(B\) independent?  Why or why not?</p></article><article class="task exercise-like" id="task-228"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-440">In <a class="xref" data-knowl="./knowl/activity-conditionalprobstudents.html" title="Activity 2.2.5: Conditional Probability Students">Activity 2.2.5</a> are \(R\) and \(C\) independent?  Why or why not?</p></article><article class="task exercise-like" id="task-229"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-441">In <a class="xref" data-knowl="./knowl/activity-loan-conditional.html" title="Activity 2.2.6: Conditional Probability and Loan Data">Activity 2.2.6</a> are “applicant owns a home” and “applicant recieves grade “A” loan” independent?  Why or why not?</p></article><article class="task exercise-like" id="task-230"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-442">In <a class="xref" data-knowl="./knowl/activity-doubledie.html" title="Activity 2.2.7">Activity 2.2.7</a> are \(A\) and \(B\) independent?  Why or why not?</p></article></article><article class="activity project-like" id="activity-cards1"><h6 class="heading">
+</h4>
+<article class="task exercise-like" id="task-227"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-439">In <a href="" class="xref" data-knowl="./knowl/rolling-die-conditional.html" title="Exploration 2.2.1">Exploration 2.2.1</a> are \(A\) and \(B\) independent?  Why or why not?</p></article><article class="task exercise-like" id="task-228"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-440">In <a href="" class="xref" data-knowl="./knowl/activity-conditionalprobstudents.html" title="Activity 2.2.5: Conditional Probability Students">Activity 2.2.5</a> are \(R\) and \(C\) independent?  Why or why not?</p></article><article class="task exercise-like" id="task-229"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-441">In <a href="" class="xref" data-knowl="./knowl/activity-loan-conditional.html" title="Activity 2.2.6: Conditional Probability and Loan Data">Activity 2.2.6</a> are “applicant owns a home” and “applicant recieves grade “A” loan” independent?  Why or why not?</p></article><article class="task exercise-like" id="task-230"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-442">In <a href="" class="xref" data-knowl="./knowl/activity-doubledie.html" title="Activity 2.2.7">Activity 2.2.7</a> are \(A\) and \(B\) independent?  Why or why not?</p></article></article><article class="activity project-like" id="activity-cards1"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.10</span><span class="period">.</span><span class="space"> </span><span class="title">Cards and Independence.</span>
-</h6>
+</h4>
 <div class="introduction" id="introduction-43"><p id="p-443">Consider the standard 52 card deck, with 4 suits (Diamonds, Clubs, Hearts, Spades) and 13 values (2-10, Jack, Queen, King, Ace).  Suppose we draw one card from this deck.</p></div>
-<article class="task exercise-like" id="task-231"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-444">Suppose</p></article><article class="task exercise-like" id="task-232"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-445">What is the probability that you draw a Spade?</p></article><article class="task exercise-like" id="task-233"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-446">What is the probability that you draw an Ace?</p></article><article class="task exercise-like" id="task-234"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-447">What is the probability that you draw an Ace of Spades?</p></article><article class="task exercise-like" id="task-235"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-448">Are drawing an Ace and a Spade Independent?  Why or why not?</p></article><article class="task exercise-like" id="task-236"><h6 class="heading"><span class="codenumber">(f)</span></h6>
-<p id="p-449">Suppose I draw a second card without replacement.  Is the event that this second card an Ace independent of the event that the original card were an Ace?  (Hint: Does the outcome that the first card is or is not an ace effect the outcome that the second card would be?)</p></article></article><article class="activity project-like" id="activity-cards2"><h6 class="heading">
+<article class="task exercise-like" id="task-231"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-444">Suppose</p></article><article class="task exercise-like" id="task-232"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-445">What is the probability that you draw a Spade?</p></article><article class="task exercise-like" id="task-233"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-446">What is the probability that you draw an Ace?</p></article><article class="task exercise-like" id="task-234"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-447">What is the probability that you draw an Ace of Spades?</p></article><article class="task exercise-like" id="task-235"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-448">Are drawing an Ace and a Spade Independent?  Why or why not?</p></article><article class="task exercise-like" id="task-236"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p id="p-449">Suppose I draw a second card without replacement.  Is the event that this second card an Ace independent of the event that the original card were an Ace?  (Hint: Does the outcome that the first card is or is not an ace effect the outcome that the second card would be?)</p></article></article><article class="activity project-like" id="activity-cards2"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.11</span><span class="period">.</span><span class="space"> </span><span class="title">Cards and Independence part 2.</span>
-</h6>
+</h4>
 <div class="introduction" id="introduction-44"><p id="p-450">Consider the standard 52 card deck, with 4 suits (Diamonds, Clubs, Hearts, Spades) and 13 values (2-10, Jack, Queen, King, Ace).  Suppose we draw a card from this deck, record the value, put it back, reshuffle, and draw again.</p></div>
-<article class="task exercise-like" id="task-237"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-451">Explain using the meaning of independence (without using arithmetic) to explain why the outcomes of these draws are independent.</p></article><article class="task exercise-like" id="task-238"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-452">What is the probability the first card is a Heart?</p></article><article class="task exercise-like" id="task-239"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-453">What is the probability the second card is a Heart?</p></article><article class="task exercise-like" id="task-240"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-454">Using the fact that the draws are independent, what is the probability the cards are both Hearts?</p></article><article class="task exercise-like" id="task-241"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<article class="task exercise-like" id="task-237"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-451">Explain using the meaning of independence (without using arithmetic) to explain why the outcomes of these draws are independent.</p></article><article class="task exercise-like" id="task-238"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-452">What is the probability the first card is a Heart?</p></article><article class="task exercise-like" id="task-239"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-453">What is the probability the second card is a Heart?</p></article><article class="task exercise-like" id="task-240"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-454">Using the fact that the draws are independent, what is the probability the cards are both Hearts?</p></article><article class="task exercise-like" id="task-241"><h5 class="heading"><span class="codenumber">(e)</span></h5>
 <p id="p-455">What is the probability that the first card is a Queen and the second note a Queen?</p></article></article></section></section></div></main>
 </div>
 </body>

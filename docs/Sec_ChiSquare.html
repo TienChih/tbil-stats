@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-05-20T14:04:28-06:00       *-->
+<!--*       on 2022-02-01T19:32:26-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,36 +14,42 @@
 <title>Chi-Squared Test and Goodness of Fit (C3)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
     },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>$(function () {
     // Make *any* div with class 'sagecell-sage' an executable Sage cell
     // Their results will be linked, only within language type
     sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
@@ -59,7 +65,7 @@ MathJax.Hub.Config({
                            languages: ['r'],
                            evalButtonText: 'Evaluate (R)'});
 });
-</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg">miniversion=0.6</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -72,8 +78,8 @@ MathJax.Hub.Config({
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
 <!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
-<body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\Q}{\terminology{Question:\ }}
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\Q}{\terminology{Question:\ }}
 \newcommand{\Sol}{\terminology{Solution:\ }}
 \newcommand{\Fisg}{\emph{Fisg}}
 \newcommand{\Iisg}{\emph{Iisg}}
@@ -192,36 +198,36 @@ MathJax.Hub.Config({
 <li><a href="Sec_InferenceRegression.html" data-scroll="Sec_InferenceRegression">Inference and Linear Regression (R3)</a></li>
 </ul>
 </li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="Sec_ChiSquare"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">5.3</span> <span class="title">Chi-Squared Test and Goodness of Fit (C3)</span>
 </h2>
 <section class="introduction" id="introduction-130"><p id="p-1183">In previous sections, we discuss the proportion of a categorical variable which takes on a certain value.  In this section, we look at the distribution of a sample of a categorical variable across all it's values.  In particular, we see if a sample can plausibly come from a given distribution for the variable.</p>
-<article class="exploration project-like" id="exploration-jurydemo"><h6 class="heading">
+<article class="exploration project-like" id="exploration-jurydemo"><h3 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">5.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Racial Demographics and Jurors.</span>
-</h6>
+</h3>
 <div class="introduction" id="introduction-131"><p id="p-1184">A small town is 70% White, 15% Black, 10% Hispanic and 5% Asian.  In a random sample of 300 jurors from the town, we say that 237 were White, 26 were Black, 24 were Hispanic and 13 were Asian.</p></div>
-<article class="task exercise-like" id="task-654"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-1185">If you randomly selected 300 people from a town that is 70% White, 15% Black, 10% Hispanic and 5% Asian, what are the <em class="emphasis">expected values</em> for the number of White, Black, Hispanic and Asian people to be selected?</p></article><article class="task exercise-like" id="task-655"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-1186">How do these numbers compare to the juror sample?</p></article><article class="task exercise-like" id="task-656"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<article class="task exercise-like" id="task-654"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-1185">If you randomly selected 300 people from a town that is 70% White, 15% Black, 10% Hispanic and 5% Asian, what are the <em class="emphasis">expected values</em> for the number of White, Black, Hispanic and Asian people to be selected?</p></article><article class="task exercise-like" id="task-655"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-1186">How do these numbers compare to the juror sample?</p></article><article class="task exercise-like" id="task-656"><h4 class="heading"><span class="codenumber">(c)</span></h4>
 <p id="p-1187">Run the following code to simulate selecting 300 random people from the town, and plotting a barchart of the racial demographics. <div class="sagecell-r" id="sage-197"><script type="text/x-sage">n=300
 
 town_samp=sample(c("WHITE", "BLACK", "HISPANIC", "ASIAN"), n, replace=TRUE, prob=c(0.7,0.15, 0.1, 0.05))
 barplot(table(town_samp))
-</script></div></p></article><article class="task exercise-like" id="task-657"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+</script></div></p></article><article class="task exercise-like" id="task-657"><h4 class="heading"><span class="codenumber">(d)</span></h4>
 <p id="p-1188">Run the following code to summarize the racial demographics of your simulated sample. <div class="sagecell-r" id="sage-198"><script type="text/x-sage">table(town_samp)
 </script></div> How does these values compare to what you found in (a)?   To the juror sample?</p></article></article><p id="p-1189">There is a clear follow-up question to be asked here.  “Does the jury pool match the demographics of the town?” Certainly, a random sample of 300 people need not match the expected demographics exactly.  But the more it deviates from the town demographics, the less likely we are to be inclined to think that these demographics match.</p>
 <p id="p-1190">In the language of Hypothesis Testing, this section is focused on  null and alternative hypothesis of the following form:  Given a proposed distribution for a categorical variable...</p>
 <ul class="disc">
-<li id="li-269">\(H_0\text{:}\)“The sample comes from the proposed distribution.”</li>
-<li id="li-270">\(H_A\text{:}\)“The sample <em class="emphasis">does not</em> come from the proposed distribution.”</li>
+<li id="li-269"><p id="p-derived-li-269">\(H_0\text{:}\)“The sample comes from the proposed distribution.”</p></li>
+<li id="li-270"><p id="p-derived-li-270">\(H_A\text{:}\)“The sample <em class="emphasis">does not</em> come from the proposed distribution.”</p></li>
 </ul></section><section class="subsection" id="subsection-30"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">5.3.1</span> <span class="title">The chi-square distribution</span>
 </h3>
-<article class="remark remark-like" id="remark-chiteststat"><h6 class="heading">
+<article class="remark remark-like" id="remark-chiteststat"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.3.1</span><span class="period">.</span>
-</h6>
+</h4>
 <p id="p-1191">So suppose we did assume the null hypothesis that a sample comes from a certain distribution.  We essentially want to develop a measure of how far this sample deviates from the proposed distribution.  If it's a little, it's plausible it may come from the null distribution.  If it's a significant deviation, we reject the idea that this is the distribution from where the sample comes.</p>
 <p id="p-1192">Suppose that we did have a random variable with \(k\) possible outcomes: \(O_1, \ldots O_k\text{,}\) and a sample with \(n_1, n_2, \ldots, n_k\) data points corresponding to each outcome.  Note that the total size of the sample is \(n=n_1+\cdots n_k\text{.}\)  Let \(E_1, \ldots, E_k\) denote the <em class="emphasis">expected</em> number of outcomes for each value, if a sample of size \(n\) were taken from the proposed distribution.</p>
 <div class="displaymath">
@@ -237,7 +243,7 @@ barplot(table(town_samp))
 \end{array}
 \end{equation*}
 </div>
-<p data-braille="continuation">We then compute the test statistic for the \(i\)th value is</p>
+<p class="continuation">We then compute the test statistic for the \(i\)th value is</p>
 <div class="displaymath">
 \begin{equation*}
 Z_i=\frac{n_i-E_i}{\sqrt{E_i}}.
@@ -249,73 +255,73 @@ Z_i=\frac{n_i-E_i}{\sqrt{E_i}}.
 \chi^2=Z_1^2+\cdots Z_k^2=\frac{(n_1-E_1)^2}{E_1}+\cdots+\frac{(n_k-E_k)^2}{E_k}.
 \end{equation*}
 </div>
-<p data-braille="continuation">This removes the distinction between over and undershooting the expectations, and sums the adjusted error for all the values, which gives a measure for the “total” deviation from the theoritical expectation.  (Think <a class="xref" data-knowl="./knowl/activity-derivingvariation.html" title="Activity 1.5.3: Measuring the Spread of Data">Activity 1.5.3</a>, <a class="xref" data-knowl="./knowl/definition-popvariance.html" title="Definition 1.5.1">Definition 1.5.1</a>.)</p></article><article class="activity project-like" id="activity-jurydemostats"><h6 class="heading">
+<p class="continuation">This removes the distinction between over and undershooting the expectations, and sums the adjusted error for all the values, which gives a measure for the “total” deviation from the theoritical expectation.  (Think <a href="" class="xref" data-knowl="./knowl/activity-derivingvariation.html" title="Activity 1.5.3: Measuring the Spread of Data">Activity 1.5.3</a>, <a href="" class="xref" data-knowl="./knowl/definition-popvariance.html" title="Definition 1.5.1">Definition 1.5.1</a>.)</p></article><article class="activity project-like" id="activity-jurydemostats"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Racial Demographics and Jurors: \(Z\) and \(\chi^2\) Statistics.</span>
-</h6>
-<div class="introduction" id="introduction-132"><p id="p-1194">Recall from <a class="xref" data-knowl="./knowl/exploration-jurydemo.html" title="Exploration 5.3.1: Racial Demographics and Jurors">Exploration 5.3.1</a> that we have a sample of size \(n=300\) where 237 are White, 26 are Black, 24 are Hispanic and 13 are Asian.  We also have a proposed distribution: 70% White, 15% Black, 10% Hispanic and 5% Asian.</p></div>
-<article class="task exercise-like" id="task-658"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-1195">Recall that \(n_1=237\) White jurors in the sample, let \(E_1\) denote the expected number of White jurors found in <a class="xref" data-knowl="./knowl/exploration-jurydemo.html" title="Exploration 5.3.1: Racial Demographics and Jurors">Exploration 5.3.1</a> (a).  Use <a class="xref" data-knowl="./knowl/remark-chiteststat.html" title="Remark 5.3.1">Remark 5.3.1</a> to compute \(Z_1\text{.}\)</p></article><article class="task exercise-like" id="task-659"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-1196">Recall that \(n_2=26\) Black jurors in the sample, let \(E_2\) denote the expected number of Black jurors found in <a class="xref" data-knowl="./knowl/exploration-jurydemo.html" title="Exploration 5.3.1: Racial Demographics and Jurors">Exploration 5.3.1</a> (a).  Use <a class="xref" data-knowl="./knowl/remark-chiteststat.html" title="Remark 5.3.1">Remark 5.3.1</a> to compute \(Z_2\text{.}\)</p></article><article class="task exercise-like" id="task-660"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-1197">Recall that \(n_3=24\) Hispanic jurors in the sample, let \(E_3\) denote the expected number of Hispanic jurors found in <a class="xref" data-knowl="./knowl/exploration-jurydemo.html" title="Exploration 5.3.1: Racial Demographics and Jurors">Exploration 5.3.1</a> (a).  Use <a class="xref" data-knowl="./knowl/remark-chiteststat.html" title="Remark 5.3.1">Remark 5.3.1</a> to compute \(Z_3\text{.}\)</p></article><article class="task exercise-like" id="task-661"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-1198">Recall that \(n_4=13\) Asian jurors in the sample, let \(E_4\) denote the expected number of Asian jurors found in <a class="xref" data-knowl="./knowl/exploration-jurydemo.html" title="Exploration 5.3.1: Racial Demographics and Jurors">Exploration 5.3.1</a> (a).  Use <a class="xref" data-knowl="./knowl/remark-chiteststat.html" title="Remark 5.3.1">Remark 5.3.1</a> to compute \(Z_4\text{.}\)</p></article><article class="task exercise-like" id="task-662"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-1199">Use <a class="xref" data-knowl="./knowl/remark-chiteststat.html" title="Remark 5.3.1">Remark 5.3.1</a> to compute \(\chi^2\text{.}\)</p></article></article><article class="activity project-like" id="activity-chisquare"><h6 class="heading">
+</h4>
+<div class="introduction" id="introduction-132"><p id="p-1194">Recall from <a href="" class="xref" data-knowl="./knowl/exploration-jurydemo.html" title="Exploration 5.3.1: Racial Demographics and Jurors">Exploration 5.3.1</a> that we have a sample of size \(n=300\) where 237 are White, 26 are Black, 24 are Hispanic and 13 are Asian.  We also have a proposed distribution: 70% White, 15% Black, 10% Hispanic and 5% Asian.</p></div>
+<article class="task exercise-like" id="task-658"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1195">Recall that \(n_1=237\) White jurors in the sample, let \(E_1\) denote the expected number of White jurors found in <a href="" class="xref" data-knowl="./knowl/exploration-jurydemo.html" title="Exploration 5.3.1: Racial Demographics and Jurors">Exploration 5.3.1</a> (a).  Use <a href="" class="xref" data-knowl="./knowl/remark-chiteststat.html" title="Remark 5.3.1">Remark 5.3.1</a> to compute \(Z_1\text{.}\)</p></article><article class="task exercise-like" id="task-659"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-1196">Recall that \(n_2=26\) Black jurors in the sample, let \(E_2\) denote the expected number of Black jurors found in <a href="" class="xref" data-knowl="./knowl/exploration-jurydemo.html" title="Exploration 5.3.1: Racial Demographics and Jurors">Exploration 5.3.1</a> (a).  Use <a href="" class="xref" data-knowl="./knowl/remark-chiteststat.html" title="Remark 5.3.1">Remark 5.3.1</a> to compute \(Z_2\text{.}\)</p></article><article class="task exercise-like" id="task-660"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-1197">Recall that \(n_3=24\) Hispanic jurors in the sample, let \(E_3\) denote the expected number of Hispanic jurors found in <a href="" class="xref" data-knowl="./knowl/exploration-jurydemo.html" title="Exploration 5.3.1: Racial Demographics and Jurors">Exploration 5.3.1</a> (a).  Use <a href="" class="xref" data-knowl="./knowl/remark-chiteststat.html" title="Remark 5.3.1">Remark 5.3.1</a> to compute \(Z_3\text{.}\)</p></article><article class="task exercise-like" id="task-661"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-1198">Recall that \(n_4=13\) Asian jurors in the sample, let \(E_4\) denote the expected number of Asian jurors found in <a href="" class="xref" data-knowl="./knowl/exploration-jurydemo.html" title="Exploration 5.3.1: Racial Demographics and Jurors">Exploration 5.3.1</a> (a).  Use <a href="" class="xref" data-knowl="./knowl/remark-chiteststat.html" title="Remark 5.3.1">Remark 5.3.1</a> to compute \(Z_4\text{.}\)</p></article><article class="task exercise-like" id="task-662"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-1199">Use <a href="" class="xref" data-knowl="./knowl/remark-chiteststat.html" title="Remark 5.3.1">Remark 5.3.1</a> to compute \(\chi^2\text{.}\)</p></article></article><article class="activity project-like" id="activity-chisquare"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">The \(\chi^2\) Distribution.</span>
-</h6>
+</h4>
 <div class="introduction" id="introduction-133"><p id="p-1200">As in other hypothesis tests, we are concerned with computing a \(p\)-value: a probability we see results as extremal  as ours or more if we assume the null.  We do this by computing areas under the <em class="emphasis">\(\chi^2\)-distribution</em>.  The \(\chi^2\)-distribution has but one parameter: the <em class="emphasis">degrees of freedom</em>.</p></div>
-<article class="task exercise-like" id="task-663"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-1201">Adjust the degrees of freedom <code class="code-inline tex2jax_ignore">d_f</code> from 1 through 20.  What do we notice about the distribution of the curve as we make these asdjustments? <iframe src="https://www.desmos.com/calculator/uurok5eur4" id="interactive-61" width="600" height="600"></iframe></p></article><article class="task exercise-like" id="task-664"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<article class="task exercise-like" id="task-663"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1201">Adjust the degrees of freedom <code class="code-inline tex2jax_ignore">d_f</code> from 1 through 20.  What do we notice about the distribution of the curve as we make these asdjustments? <iframe src="https://www.desmos.com/calculator/uurok5eur4" id="interactive-61" width="600" height="600"></iframe></p></article><article class="task exercise-like" id="task-664"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <p id="p-1202">The following graph computes the area of a tail where \(\chi^2=1, d_f=1\text{:}\) <iframe src="https://www.desmos.com/calculator/gtwsvcggpo" id="interactive-62" width="600" height="600"></iframe></p>
-<p id="p-1203">Compute the area of the tail where \(\chi^2=8, d_f=5\) by adjusting <code class="code-inline tex2jax_ignore">C_hisquared</code> and <code class="code-inline tex2jax_ignore">d_f</code>.</p></article><article class="task exercise-like" id="task-665"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-1203">Compute the area of the tail where \(\chi^2=8, d_f=5\) by adjusting <code class="code-inline tex2jax_ignore">C_hisquared</code> and <code class="code-inline tex2jax_ignore">d_f</code>.</p></article><article class="task exercise-like" id="task-665"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <p id="p-1204">Run the following to compute the area of the tail where \(\chi^2=8, d_f=5\text{.}\) <div class="sagecell-r" id="sage-199"><script type="text/x-sage">pchisq(8, 5, ncp = 0, lower.tail = FALSE)
-</script></div></p></article><article class="task exercise-like" id="task-666"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+</script></div></p></article><article class="task exercise-like" id="task-666"><h5 class="heading"><span class="codenumber">(d)</span></h5>
 <p id="p-1205">Use any method   to compute the area of the tail where \(\chi^2=4, d_f=4\)</p></article></article></section><section class="subsection" id="subsection-31"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">5.3.2</span> <span class="title">Hypothesis Testing and \(\chi^2\)</span>
 </h3>
-<article class="remark remark-like" id="remark-hypothesistestingchisquare"><h6 class="heading">
+<article class="remark remark-like" id="remark-hypothesistestingchisquare"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Steps to \(\chi^2\) Hypothesis Testing: Goodness of Fit.</span>
-</h6>
+</h4>
 <p id="p-1206">Given the set of hypothesis:</p>
 <ul class="disc">
-<li id="li-271">\(H_0\text{:}\)“The sample comes from the proposed distribution.”</li>
-<li id="li-272">\(H_A\text{:}\)“The sample <em class="emphasis">does not</em> come from the proposed distribution.”</li>
+<li id="li-271"><p id="p-derived-li-271">\(H_0\text{:}\)“The sample comes from the proposed distribution.”</p></li>
+<li id="li-272"><p id="p-derived-li-272">\(H_A\text{:}\)“The sample <em class="emphasis">does not</em> come from the proposed distribution.”</p></li>
 </ul>
-<p data-braille="continuation">We compute the \(p\)-value to be the area of the tail on the \(\chi^2\) distribution corresponding to the \(\chi^2\) value computed via <a class="xref" data-knowl="./knowl/remark-chiteststat.html" title="Remark 5.3.1">Remark 5.3.1</a> and with \(k-1\) degrees of freedom (recall that \(k\) is the number of possible values of the categorical variable.)</p>
+<p class="continuation">We compute the \(p\)-value to be the area of the tail on the \(\chi^2\) distribution corresponding to the \(\chi^2\) value computed via <a href="" class="xref" data-knowl="./knowl/remark-chiteststat.html" title="Remark 5.3.1">Remark 5.3.1</a> and with \(k-1\) degrees of freedom (recall that \(k\) is the number of possible values of the categorical variable.)</p>
 <p id="p-1207">As in other hypothesis testing scenarios, the \(p\)-value measures the probability that, if we assume the null hypothesis, that we see values as or more extreme than what was observed.</p>
-<p id="p-1208">We then reject or accept the null based on the level of significance \(\alpha\) which is as before usually 0.05 or 5%.  If the \(p\)-value is less than \(\alpha\text{,}\) we reject the null hypothesis, otherwise we accept it.  In this context, accepting the null is to say the sample could plausibly come from the proposed distribution.  If we reject that then we say it is implausible that it does.</p></article><article class="activity project-like" id="activity-jurydemotest"><h6 class="heading">
+<p id="p-1208">We then reject or accept the null based on the level of significance \(\alpha\) which is as before usually 0.05 or 5%.  If the \(p\)-value is less than \(\alpha\text{,}\) we reject the null hypothesis, otherwise we accept it.  In this context, accepting the null is to say the sample could plausibly come from the proposed distribution.  If we reject that then we say it is implausible that it does.</p></article><article class="activity project-like" id="activity-jurydemotest"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Racial Demographics and Jurors.</span>
-</h6>
+</h4>
 <div class="introduction" id="introduction-134">
-<p id="p-1209">Recall from <a class="xref" data-knowl="./knowl/activity-jurydemostats.html" title="Activity 5.3.2: Racial Demographics and Jurors: \(Z\) and \(\chi^2\) Statistics">Activity 5.3.2</a> that we have a sample of size \(n=300\) where 237 are White, 26 are Black, 24 are Hispanic and 13 are Asian.  We also have a proposed distribution: 70% White, 15% Black, 10% Hispanic and 5% Asian.</p>
+<p id="p-1209">Recall from <a href="" class="xref" data-knowl="./knowl/activity-jurydemostats.html" title="Activity 5.3.2: Racial Demographics and Jurors: \(Z\) and \(\chi^2\) Statistics">Activity 5.3.2</a> that we have a sample of size \(n=300\) where 237 are White, 26 are Black, 24 are Hispanic and 13 are Asian.  We also have a proposed distribution: 70% White, 15% Black, 10% Hispanic and 5% Asian.</p>
 <p id="p-1210">We also note that since each juror could be one of 4 races, that \(k=4\text{.}\)</p>
 <p id="p-1211"><div class="sagecell-r" id="sage-200"><script type="text/x-sage">pchisq(FIXME, FIXME, ncp = 0, lower.tail = FALSE)
 </script></div> <iframe src="https://www.desmos.com/calculator/gtwsvcggpo" id="interactive-63" width="600" height="600"></iframe></p>
 </div>
-<article class="task exercise-like" id="task-667"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-1212">Compute the number of degrees of freedom.</p></article><article class="task exercise-like" id="task-668"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-1213">Using the \(\chi^2\) value found in <a class="xref" data-knowl="./knowl/activity-jurydemostats.html" title="Activity 5.3.2: Racial Demographics and Jurors: \(Z\) and \(\chi^2\) Statistics">Activity 5.3.2</a> and the degrees of freedom, compute the \(p\)-value.</p></article><article class="task exercise-like" id="task-669"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-1214">State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-670"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-1215">If we had a level of significance \(\alpha=0.05\text{,}\) do we  reject the null hypothesis?</p></article><article class="task exercise-like" id="task-671"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-1216">Is it plausible that the juror racial demographics is identical to that of the town?</p></article></article><article class="activity project-like" id="activity-techchisquare"><h6 class="heading">
+<article class="task exercise-like" id="task-667"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1212">Compute the number of degrees of freedom.</p></article><article class="task exercise-like" id="task-668"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-1213">Using the \(\chi^2\) value found in <a href="" class="xref" data-knowl="./knowl/activity-jurydemostats.html" title="Activity 5.3.2: Racial Demographics and Jurors: \(Z\) and \(\chi^2\) Statistics">Activity 5.3.2</a> and the degrees of freedom, compute the \(p\)-value.</p></article><article class="task exercise-like" id="task-669"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-1214">State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-670"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-1215">If we had a level of significance \(\alpha=0.05\text{,}\) do we  reject the null hypothesis?</p></article><article class="task exercise-like" id="task-671"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-1216">Is it plausible that the juror racial demographics is identical to that of the town?</p></article></article><article class="activity project-like" id="activity-techchisquare"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">\(\chi^2\)-testing with Technology.</span>
-</h6>
+</h4>
 <div class="introduction" id="introduction-135"><p id="p-1217">Your main task as a statistics practioner is to understand and interpret the results of computation.  We prefer to let machines do the actual computations as much as possible.  Here we will use technology to simplify the process of computing \(p\)-values.</p></div>
-<article class="task exercise-like" id="task-672"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-1218">In <code class="code-inline tex2jax_ignore">O_bs=[]</code>, enter in the observed racial demographics from <a class="xref" data-knowl="./knowl/exploration-jurydemo.html" title="Exploration 5.3.1: Racial Demographics and Jurors">Exploration 5.3.1</a>: <code class="code-inline tex2jax_ignore">237, 26, 24, 13</code>.  Then in <code class="code-inline tex2jax_ignore">E_xpectedproportions=[]</code>, enter in the proposed distribution from <a class="xref" data-knowl="./knowl/exploration-jurydemo.html" title="Exploration 5.3.1: Racial Demographics and Jurors">Exploration 5.3.1</a>: <code class="code-inline tex2jax_ignore">0.7, 0.15, 0.1, 0.05</code>. <iframe src="https://www.desmos.com/calculator/n7im2nvrmb" id="interactive-64" width="600" height="600"></iframe></p>
-<p id="p-1219">What is the \(p\)-value?  How does it compare to what you found in <a class="xref" data-knowl="./knowl/activity-jurydemotest.html" title="Activity 5.3.4: Racial Demographics and Jurors">Activity 5.3.4</a>?</p></article><article class="task exercise-like" id="task-673"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<article class="task exercise-like" id="task-672"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1218">In <code class="code-inline tex2jax_ignore">O_bs=[]</code>, enter in the observed racial demographics from <a href="" class="xref" data-knowl="./knowl/exploration-jurydemo.html" title="Exploration 5.3.1: Racial Demographics and Jurors">Exploration 5.3.1</a>: <code class="code-inline tex2jax_ignore">237, 26, 24, 13</code>.  Then in <code class="code-inline tex2jax_ignore">E_xpectedproportions=[]</code>, enter in the proposed distribution from <a href="" class="xref" data-knowl="./knowl/exploration-jurydemo.html" title="Exploration 5.3.1: Racial Demographics and Jurors">Exploration 5.3.1</a>: <code class="code-inline tex2jax_ignore">0.7, 0.15, 0.1, 0.05</code>. <iframe src="https://www.desmos.com/calculator/n7im2nvrmb" id="interactive-64" width="600" height="600"></iframe></p>
+<p id="p-1219">What is the \(p\)-value?  How does it compare to what you found in <a href="" class="xref" data-knowl="./knowl/activity-jurydemotest.html" title="Activity 5.3.4: Racial Demographics and Jurors">Activity 5.3.4</a>?</p></article><article class="task exercise-like" id="task-673"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <p id="p-1220">Run the following code, noting the first vector is the vector of racial demographics, and the second vector is the proposed distribution, to compute a \(p\)-value. <div class="sagecell-r" id="sage-201"><script type="text/x-sage">chisq.test(c(237,26,24,13), p = c(0.7, 0.15, 0.1, 0.05), correct=FALSE)
 </script></div></p>
-<p id="p-1221">What is the \(p\)-value?  How does it compare to what you found in <a class="xref" data-knowl="./knowl/activity-jurydemotest.html" title="Activity 5.3.4: Racial Demographics and Jurors">Activity 5.3.4</a>?</p></article></article><article class="activity project-like" id="activity-skittles"><h6 class="heading">
+<p id="p-1221">What is the \(p\)-value?  How does it compare to what you found in <a href="" class="xref" data-knowl="./knowl/activity-jurydemotest.html" title="Activity 5.3.4: Racial Demographics and Jurors">Activity 5.3.4</a>?</p></article></article><article class="activity project-like" id="activity-skittles"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">Skittle Color Distributions.</span>
-</h6>
+</h4>
 <div class="introduction" id="introduction-136">
 <p id="p-1222">Skittles come in 5 colors.  Red, Green, Orange, Purple and Yellow.  Are the Skittle colors evenly distributed?  One of your friends says yes, another disagrees.</p>
 <p id="p-1223"><div class="sagecell-r" id="sage-202"><script type="text/x-sage">
-</script></div> <a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-21" id="hint-21"><span class="type">Hint</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-21"><div class="hint solution-like"><p id="p-1224"><iframe src="https://www.desmos.com/calculator/gtwsvcggpo" id="interactive-65" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/n7im2nvrmb" id="interactive-66" width="600" height="600"></iframe></p></div></div></p>
+</script></div> <a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-21" id="hint-21"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-21"><div class="hint solution-like"><p id="p-1224"><iframe src="https://www.desmos.com/calculator/gtwsvcggpo" id="interactive-65" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/n7im2nvrmb" id="interactive-66" width="600" height="600"></iframe></p></div></div></p>
 </div>
-<article class="task exercise-like" id="task-674"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-1225">State a null hypothesis for this \(\chi^2\) test.</p></article><article class="task exercise-like" id="task-675"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-1226">State an alternative hypothesis for this \(\chi^2\) test.</p></article><article class="task exercise-like" id="task-676"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-1227">Suppose that you then buy a bag of Skittles, dump it out and count the contents. <figure class="figure figure-like" id="figure-32"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="images/skittles.jpeg" style="width: 100%; height: auto;" alt="A bag of Skittles."></div>
+<article class="task exercise-like" id="task-674"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1225">State a null hypothesis for this \(\chi^2\) test.</p></article><article class="task exercise-like" id="task-675"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-1226">State an alternative hypothesis for this \(\chi^2\) test.</p></article><article class="task exercise-like" id="task-676"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-1227">Suppose that you then buy a bag of Skittles, dump it out and count the contents. <figure class="figure figure-like" id="figure-32"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="external/images/skittles.jpeg" class="contained" alt="A bag of Skittles."></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.3<span class="period">.</span></span><span class="space"> </span>A content of a bag of Skittles, 18 Red, 13 Green, 9 Yellow, 11 Purple and 9 Orange.</figcaption></figure></p>
 <div class="displaymath">
 \begin{equation*}
@@ -328,27 +334,27 @@ Z_i=\frac{n_i-E_i}{\sqrt{E_i}}.
 \end{array}
 \end{equation*}
 </div>
-<p data-braille="continuation">How many Skittles \(n\) are in the bag?  How many colors \(k\text{?}\)  How many degrees of freedom are there?</p></article><article class="task exercise-like" id="task-677"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-1228">If the null hypothesis were true, what is the expected number of skittles of each color in a sample of size \(n\text{?}\)</p></article><article class="task exercise-like" id="task-678"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-1229">Use any method to compute a \(\chi^2\) statistic.</p></article><article class="task exercise-like" id="task-679"><h6 class="heading"><span class="codenumber">(f)</span></h6>
-<p id="p-1230">Use any method to compute a \(p\)-value.</p></article><article class="task exercise-like" id="task-680"><h6 class="heading"><span class="codenumber">(g)</span></h6>
-<p id="p-1231">State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-681"><h6 class="heading"><span class="codenumber">(h)</span></h6>
-<p id="p-1232">If we had a level of significance \(\alpha=0.05\) do we  reject the null hypothesis?</p></article><article class="task exercise-like" id="task-682"><h6 class="heading"><span class="codenumber">(i)</span></h6>
-<p id="p-1233">Is it plausible for Skittle colors to be evenly distributed?</p></article></article><article class="activity project-like" id="activity-maleheight"><h6 class="heading">
+<p class="continuation">How many Skittles \(n\) are in the bag?  How many colors \(k\text{?}\)  How many degrees of freedom are there?</p></article><article class="task exercise-like" id="task-677"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-1228">If the null hypothesis were true, what is the expected number of skittles of each color in a sample of size \(n\text{?}\)</p></article><article class="task exercise-like" id="task-678"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-1229">Use any method to compute a \(\chi^2\) statistic.</p></article><article class="task exercise-like" id="task-679"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p id="p-1230">Use any method to compute a \(p\)-value.</p></article><article class="task exercise-like" id="task-680"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p id="p-1231">State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-681"><h5 class="heading"><span class="codenumber">(h)</span></h5>
+<p id="p-1232">If we had a level of significance \(\alpha=0.05\) do we  reject the null hypothesis?</p></article><article class="task exercise-like" id="task-682"><h5 class="heading"><span class="codenumber">(i)</span></h5>
+<p id="p-1233">Is it plausible for Skittle colors to be evenly distributed?</p></article></article><article class="activity project-like" id="activity-maleheight"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.3.7</span><span class="period">.</span><span class="space"> </span><span class="title">Male Heights and Normal Distribution.</span>
-</h6>
+</h4>
 <div class="introduction" id="introduction-137">
 <p id="p-1234">We examine data from a random selection of adult males to see if their heights are possibly normally distributed.</p>
 <p id="p-1235">Run the following code to download the <code class="code-inline tex2jax_ignore">male_heights.csv</code> data set and to display it's variables. <div class="sagecell-r" id="sage-203"><script type="text/x-sage">male_heights = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/male_heights.csv")
 names(male_heights)
 </script></div></p>
 </div>
-<article class="task exercise-like" id="task-683"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<article class="task exercise-like" id="task-683"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <p id="p-1236">We begin by examining the heights of adult males in inches.  Run the following code to see the sample mean and standard deviation for the heights of adult males in inches, and set them to be <code class="code-inline tex2jax_ignore">m</code> and <code class="code-inline tex2jax_ignore">std</code> respectively. <div class="sagecell-r" id="sage-204"><script type="text/x-sage">m=mean(male_heights$heights)
 std=sd(male_heights$heights)
 print(m)
 print(std)
-</script></div></p></article><article class="task exercise-like" id="task-684"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+</script></div></p></article><article class="task exercise-like" id="task-684"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <p id="p-1237"><em class="alert">IF</em> adult male heights were normally distributed, we would expect it to be approximated by a normal random variable \(X\) with mean \(\mu=m\) and standard deviation \(\sigma=std\text{.}\)  Confirm that if we subdivide a normal distribution into intervals of length \(std\text{,}\) we would have:</p>
 <div class="displaymath">
 \begin{align*}
@@ -362,21 +368,21 @@ P(m+2std\leq X\lt m+3std)\amp \approx 0.0214\\
 P(X\geq m+3std)\amp \approx 0.0014
 \end{align*}
 </div>
-<p data-braille="continuation"><figure class="figure figure-like" id="figure-33"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-33.svg" role="img" style="width: 100%; height: auto;" alt="A normal curve segemented into lengths of one standard deviation."></div>
+<p class="continuation"><figure class="figure figure-like" id="figure-33"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/image-33.svg" role="img" class="contained" alt="A normal curve segemented into lengths of one standard deviation."></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.4<span class="period">.</span></span><span class="space"> </span>A normal curve segemented into lengths of one standard deviation.</figcaption></figure> <div class="sagecell-r" id="sage-205"><script type="text/x-sage">
-</script></div> <a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-22" id="hint-22"><span class="type">Hint</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-22"><div class="hint solution-like"><p id="p-1238"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-67" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-68" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-685"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+</script></div> <a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-22" id="hint-22"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-22"><div class="hint solution-like"><p id="p-1238"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-67" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-68" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-685"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <p id="p-1239">Run the following code to compute the actual number of adult males were less than \(m-3std\) inches. <div class="sagecell-r" id="sage-206"><script type="text/x-sage">length(which(m-3*std>male_heights$heights))
-</script></div></p></article><article class="task exercise-like" id="task-686"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+</script></div></p></article><article class="task exercise-like" id="task-686"><h5 class="heading"><span class="codenumber">(d)</span></h5>
 <p id="p-1240">Run the following code to compute the actual number of adult males whose heights were between \(m-3std, m-2std\) inches. <div class="sagecell-r" id="sage-207"><script type="text/x-sage">length(which(male_heights$heights>=m-3*std & m-2*std>male_heights$heights))
-</script></div></p></article><article class="task exercise-like" id="task-687"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-1241">Edit and run the above code for the remaining intervals, and record the number of adult males within them.</p></article><article class="task exercise-like" id="task-688"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+</script></div></p></article><article class="task exercise-like" id="task-687"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-1241">Edit and run the above code for the remaining intervals, and record the number of adult males within them.</p></article><article class="task exercise-like" id="task-688"><h5 class="heading"><span class="codenumber">(f)</span></h5>
 <p id="p-1242">Edit and run the following code to run the \(\chi^2\) goodness of fit test to see if the number of occurences in each interval corresponds to the theoritical value. <div class="sagecell-r" id="sage-208"><script type="text/x-sage">chisq.test(c(FIXME, FIXME, FIXME, FIXME, FIXME, FIXME, FIXME, FIXME), p=c(0.0014, 0.0214, 0.1359, 0.3413, 0.3413, 0.1359, 0.0214, 0.0014), correct=FALSE)
-</script></div></p></article><article class="task exercise-like" id="task-689"><h6 class="heading"><span class="codenumber">(g)</span></h6>
-<p id="p-1243">State a null hypothesis for this \(\chi^2\) test.</p></article><article class="task exercise-like" id="task-690"><h6 class="heading"><span class="codenumber">(h)</span></h6>
-<p id="p-1244">State an alternative hypothesis for this \(\chi^2\) test.</p></article><article class="task exercise-like" id="task-691"><h6 class="heading"><span class="codenumber">(i)</span></h6>
-<p id="p-1245">State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-692"><h6 class="heading"><span class="codenumber">(j)</span></h6>
-<p id="p-1246">If we had a level of significance \(\alpha=0.05\) do we  reject the null hypothesis?</p></article><article class="task exercise-like" id="task-693"><h6 class="heading"><span class="codenumber">(k)</span></h6>
-<p id="p-1247">Is it plausible for adult male heights to be normally distributed?</p></article><article class="task exercise-like" id="task-694"><h6 class="heading"><span class="codenumber">(l)</span></h6>
+</script></div></p></article><article class="task exercise-like" id="task-689"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p id="p-1243">State a null hypothesis for this \(\chi^2\) test.</p></article><article class="task exercise-like" id="task-690"><h5 class="heading"><span class="codenumber">(h)</span></h5>
+<p id="p-1244">State an alternative hypothesis for this \(\chi^2\) test.</p></article><article class="task exercise-like" id="task-691"><h5 class="heading"><span class="codenumber">(i)</span></h5>
+<p id="p-1245">State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-692"><h5 class="heading"><span class="codenumber">(j)</span></h5>
+<p id="p-1246">If we had a level of significance \(\alpha=0.05\) do we  reject the null hypothesis?</p></article><article class="task exercise-like" id="task-693"><h5 class="heading"><span class="codenumber">(k)</span></h5>
+<p id="p-1247">Is it plausible for adult male heights to be normally distributed?</p></article><article class="task exercise-like" id="task-694"><h5 class="heading"><span class="codenumber">(l)</span></h5>
 <p id="p-1248">Run the following code to plot a histogram of the adult male heights in inches and see how well a normal distribution matches this distribution. <div class="sagecell-r" id="sage-209"><script type="text/x-sage">hist(male_heights$heights, prob=TRUE, breaks=15)
 curve(dnorm(x, mean=m, sd=std), col="darkblue", lwd=2, add=TRUE, yaxt="n")
 </script></div></p></article></article></section></section></div></main>

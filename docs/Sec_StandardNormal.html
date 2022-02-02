@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-05-20T14:04:16-06:00       *-->
+<!--*       on 2022-02-01T19:32:20-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,36 +14,42 @@
 <title>Standard Normal Distribution (D1)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
     },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>$(function () {
     // Make *any* div with class 'sagecell-sage' an executable Sage cell
     // Their results will be linked, only within language type
     sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
@@ -59,7 +65,7 @@ MathJax.Hub.Config({
                            languages: ['r'],
                            evalButtonText: 'Evaluate (R)'});
 });
-</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg">miniversion=0.6</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -72,8 +78,8 @@ MathJax.Hub.Config({
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
 <!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
-<body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\Q}{\terminology{Question:\ }}
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\Q}{\terminology{Question:\ }}
 \newcommand{\Sol}{\terminology{Solution:\ }}
 \newcommand{\Fisg}{\emph{Fisg}}
 \newcommand{\Iisg}{\emph{Iisg}}
@@ -192,103 +198,103 @@ MathJax.Hub.Config({
 <li><a href="Sec_InferenceRegression.html" data-scroll="Sec_InferenceRegression">Inference and Linear Regression (R3)</a></li>
 </ul>
 </li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="Sec_StandardNormal"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.1</span> <span class="title">Standard Normal Distribution (D1)</span>
 </h2>
 <section class="introduction" id="introduction-64"><p id="p-638">In this section, we study one of the most ubiquitous and fundamental probability distributions in nature and mathematics: the <dfn class="terminology">normal distribution</dfn>.  We may know this as the standard “bell curve”.</p>
-<p id="p-639">In this section, we will compute probabilities of the standard normal random variable given bounds, and bounds given probabilities.</p></section><article class="definition definition-like" id="definition-23"><h6 class="heading">
+<p id="p-639">In this section, we will compute probabilities of the standard normal random variable given bounds, and bounds given probabilities.</p></section><article class="definition definition-like" id="definition-23"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="period">.</span>
-</h6>
+</h3>
 <p id="p-640">The <dfn class="terminology">standard normal curve</dfn> is the curve generated by</p>
 <div class="displaymath">
 \begin{equation*}
 y=\frac{e^{-x^2/2}}{\sqrt{2\pi}}.
 \end{equation*}
 </div>
-<p data-braille="continuation">This may be seen below.  It is a probability distribution with mean of 0 and standard deviation of 1. <iframe src="https://www.desmos.com/calculator/5glqmgffkg" id="interactive-14" width="600" height="600"></iframe></p></article><article class="exploration project-like" id="exploration-shapenormal"><h6 class="heading">
+<p class="continuation">This may be seen below.  It is a probability distribution with mean of 0 and standard deviation of 1. <iframe src="https://www.desmos.com/calculator/5glqmgffkg" id="interactive-14" width="600" height="600"></iframe></p></article><article class="exploration project-like" id="exploration-shapenormal"><h3 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Shape of the Normal Curve.</span>
-</h6>
+</h3>
 <div class="introduction" id="introduction-65"><p id="p-641">We observe some things about the shape of the normal curve.</p></div>
-<article class="task exercise-like" id="task-329"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-642">Where is the peak of this curve?</p></article><article class="task exercise-like" id="task-330"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-643">How would you compare the behavior of the curve as \(x\) is positive, compared to negative?</p></article><article class="task exercise-like" id="task-331"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-644">What happens to the hight of the curve as \(x\) moves away from 0?</p></article><article class="task exercise-like" id="task-332"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-645">Where is the bulk of the area under the curve?</p></article><article class="task exercise-like" id="task-333"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<article class="task exercise-like" id="task-329"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-642">Where is the peak of this curve?</p></article><article class="task exercise-like" id="task-330"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-643">How would you compare the behavior of the curve as \(x\) is positive, compared to negative?</p></article><article class="task exercise-like" id="task-331"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-644">What happens to the hight of the curve as \(x\) moves away from 0?</p></article><article class="task exercise-like" id="task-332"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-645">Where is the bulk of the area under the curve?</p></article><article class="task exercise-like" id="task-333"><h4 class="heading"><span class="codenumber">(e)</span></h4>
 <p id="p-646">Run the following code to simulate 10,000 standard normal variables and plot a proportion histogram of the outcomes.</p>
 <p id="p-647"><div class="sagecell-r" id="sage-109"><script type="text/x-sage">standarnorm=rnorm(10000, mean = 0, sd = 1)
 
 hist(standarnorm, breaks = 50, density = TRUE)
 </script></div></p>
-<p id="p-648">How does the shape of this histogram compare to the standard normal curve?</p></article></article><article class="remark remark-like" id="remark-14"><h6 class="heading">
+<p id="p-648">How does the shape of this histogram compare to the standard normal curve?</p></article></article><article class="remark remark-like" id="remark-14"><h3 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="period">.</span>
-</h6>
-<p id="p-649">Given the standard normal curve, the probability that a normal variable \(Z\) falls between \(a\) and \(b\) is \(P(a\lt Z\lt b)\) and is computed by the area under the curve between \(a\) and \(b\text{.}\)</p></article><article class="remark remark-like" id="remark-always"><h6 class="heading">
+</h3>
+<p id="p-649">Given the standard normal curve, the probability that a normal variable \(Z\) falls between \(a\) and \(b\) is \(P(a\lt Z\lt b)\) and is computed by the area under the curve between \(a\) and \(b\text{.}\)</p></article><article class="remark remark-like" id="remark-always"><h3 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.1.3</span><span class="period">.</span>
-</h6>
-<p id="p-650"><em class="emphasis">ALWAYS ALWAYS ALWAYS</em> sketch a curve and label any values/areas that you can before doing any computations when working with normal curves.</p></article><article class="remark remark-like" id="remark-16"><h6 class="heading">
+</h3>
+<p id="p-650"><em class="emphasis">ALWAYS ALWAYS ALWAYS</em> sketch a curve and label any values/areas that you can before doing any computations when working with normal curves.</p></article><article class="remark remark-like" id="remark-16"><h3 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.1.4</span><span class="period">.</span>
-</h6>
-<p id="p-651">Seriously, always sketch a curve first, the geometric intuition will tell you so much more than just doing arithmetic blindly.</p></article><article class="activity project-like" id="activity-standardnormprob"><h6 class="heading">
+</h3>
+<p id="p-651">Seriously, always sketch a curve first, the geometric intuition will tell you so much more than just doing arithmetic blindly.</p></article><article class="activity project-like" id="activity-standardnormprob"><h3 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Computing Probabilities on the Normal Curve.</span>
-</h6>
+</h3>
 <div class="introduction" id="introduction-66">
 <p id="p-652">Areas under this curve are difficult to compute directly, so generally, technology of some sort is employed to find these values.  Some texts use “\(z\)-score tables” for this purpose, which has lists of pre-computed values.  Here, we will show and visualize the areas more directly.</p>
 <p id="p-653">In the following <code class="code-inline tex2jax_ignore">Desmos</code> interactive, by setting <code class="code-inline tex2jax_ignore">a=-1.2</code> and <code class="code-inline tex2jax_ignore">b=2</code> we can see that \(P(-1.2\lt Z \lt 2)\approx 0.8622\text{.}\) <iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-15" width="600" height="600"></iframe></p>
 </div>
-<article class="task exercise-like" id="task-334"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-654">Adjust <code class="code-inline tex2jax_ignore">a</code> and <code class="code-inline tex2jax_ignore">b</code> to find \(P(0\lt Z\lt 1)\text{.}\)</p></article><article class="task exercise-like" id="task-335"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-655">Adjust <code class="code-inline tex2jax_ignore">a</code> and <code class="code-inline tex2jax_ignore">b</code> to find \(P(-1\lt Z\lt 0)\text{.}\)  How does this compare to what you found in (a)?</p></article><article class="task exercise-like" id="task-336"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-656">Adjust <code class="code-inline tex2jax_ignore">a</code> and set <code class="code-inline tex2jax_ignore">b=infinity</code> to find \(P(0\lt Z)\text{.}\)  How does this reflect what we saw in <a class="xref" data-knowl="./knowl/exploration-shapenormal.html" title="Exploration 3.1.1: Shape of the Normal Curve">Exploration 3.1.1</a>?</p></article><article class="task exercise-like" id="task-337"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-657">Adjust <code class="code-inline tex2jax_ignore">a</code> and set <code class="code-inline tex2jax_ignore">b=infinity</code> to find \(P(-1\lt Z)\text{.}\)  How does this value compare to what we found in (b) and (c)?</p></article><article class="task exercise-like" id="task-338"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-658">Without using technology, use (a) and (c) to find \(P(1\lt Z)\text{.}\)</p></article><article class="task exercise-like" id="task-339"><h6 class="heading"><span class="codenumber">(f)</span></h6>
-<p id="p-659">Adjust <code class="code-inline tex2jax_ignore">a</code> and set <code class="code-inline tex2jax_ignore">b=infinity</code> to find \(P(1\lt Z)\text{.}\)  How does this value compare to what we found in (e)?</p></article><article class="task exercise-like" id="task-340"><h6 class="heading"><span class="codenumber">(g)</span></h6>
-<p id="p-660">Adjust <code class="code-inline tex2jax_ignore">a</code> and <code class="code-inline tex2jax_ignore">b</code> to find \(P(Z\lt 1)\text{.}\)  How does this value compare to what we found in (d)?</p></article></article><article class="activity project-like" id="activity-standardnormprobinv"><h6 class="heading">
+<article class="task exercise-like" id="task-334"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-654">Adjust <code class="code-inline tex2jax_ignore">a</code> and <code class="code-inline tex2jax_ignore">b</code> to find \(P(0\lt Z\lt 1)\text{.}\)</p></article><article class="task exercise-like" id="task-335"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-655">Adjust <code class="code-inline tex2jax_ignore">a</code> and <code class="code-inline tex2jax_ignore">b</code> to find \(P(-1\lt Z\lt 0)\text{.}\)  How does this compare to what you found in (a)?</p></article><article class="task exercise-like" id="task-336"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-656">Adjust <code class="code-inline tex2jax_ignore">a</code> and set <code class="code-inline tex2jax_ignore">b=infinity</code> to find \(P(0\lt Z)\text{.}\)  How does this reflect what we saw in <a href="" class="xref" data-knowl="./knowl/exploration-shapenormal.html" title="Exploration 3.1.1: Shape of the Normal Curve">Exploration 3.1.1</a>?</p></article><article class="task exercise-like" id="task-337"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-657">Adjust <code class="code-inline tex2jax_ignore">a</code> and set <code class="code-inline tex2jax_ignore">b=infinity</code> to find \(P(-1\lt Z)\text{.}\)  How does this value compare to what we found in (b) and (c)?</p></article><article class="task exercise-like" id="task-338"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<p id="p-658">Without using technology, use (a) and (c) to find \(P(1\lt Z)\text{.}\)</p></article><article class="task exercise-like" id="task-339"><h4 class="heading"><span class="codenumber">(f)</span></h4>
+<p id="p-659">Adjust <code class="code-inline tex2jax_ignore">a</code> and set <code class="code-inline tex2jax_ignore">b=infinity</code> to find \(P(1\lt Z)\text{.}\)  How does this value compare to what we found in (e)?</p></article><article class="task exercise-like" id="task-340"><h4 class="heading"><span class="codenumber">(g)</span></h4>
+<p id="p-660">Adjust <code class="code-inline tex2jax_ignore">a</code> and <code class="code-inline tex2jax_ignore">b</code> to find \(P(Z\lt 1)\text{.}\)  How does this value compare to what we found in (d)?</p></article></article><article class="activity project-like" id="activity-standardnormprobinv"><h3 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Finding bounds for Areas/Probabilities.</span>
-</h6>
+</h3>
 <div class="introduction" id="introduction-67"><p id="p-661">It stands to reason that if one can be given bounds of a region and find an area, then if one is given an area, then one should be able to find the bounds for a region with that area. <iframe src="https://www.desmos.com/calculator/m6dzt5oyq2" id="interactive-16" width="600" height="600"></iframe></p></div>
-<article class="task exercise-like" id="task-341"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-662">For what  value of <code class="code-inline tex2jax_ignore">b=Z_0</code> is \(P(Z\lt Z_0)=0.7\text{?}\)  Get \(Z_0\) as close as you can.</p></article><article class="task exercise-like" id="task-342"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-663">In the interactive below, let <code class="code-inline tex2jax_ignore">P=0.7</code> and click <code class="code-inline tex2jax_ignore">From the left</code>.  How close is the value you found? <iframe src="https://www.desmos.com/calculator/vkfijbxyrv" id="interactive-17" width="600" height="600"></iframe></p></article><article class="task exercise-like" id="task-343"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-664">Without using technology, what is \(P(Z&gt;Z_0)\text{?}\)  (Remember <a class="xref" data-knowl="./knowl/remark-always.html" title="Remark 3.1.3">Remark 3.1.3</a> )</p></article></article><article class="activity project-like" id="activity-standardnormprobinv2"><h6 class="heading">
+<article class="task exercise-like" id="task-341"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-662">For what  value of <code class="code-inline tex2jax_ignore">b=Z_0</code> is \(P(Z\lt Z_0)=0.7\text{?}\)  Get \(Z_0\) as close as you can.</p></article><article class="task exercise-like" id="task-342"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-663">In the interactive below, let <code class="code-inline tex2jax_ignore">P=0.7</code> and click <code class="code-inline tex2jax_ignore">From the left</code>.  How close is the value you found? <iframe src="https://www.desmos.com/calculator/vkfijbxyrv" id="interactive-17" width="600" height="600"></iframe></p></article><article class="task exercise-like" id="task-343"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-664">Without using technology, what is \(P(Z&gt;Z_0)\text{?}\)  (Remember <a href="" class="xref" data-knowl="./knowl/remark-always.html" title="Remark 3.1.3">Remark 3.1.3</a> )</p></article></article><article class="activity project-like" id="activity-standardnormprobinv2"><h3 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Finding bounds for Areas/Probabilities.</span>
-</h6>
+</h3>
 <div class="introduction" id="introduction-68"><p id="p-665">Sketch a normal curve with a shaded region from \(-k\) to \(k\text{.}\)</p></div>
-<article class="task exercise-like" id="task-344"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-666">Consider the tail regions \(Z&gt;k\) and \(Z\lt k\text{.}\)  How do we know these regions have the same area without knowing \(k\text{?}\)</p></article><article class="task exercise-like" id="task-345"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-667">Suppose this region \(-k\lt Z\lt k\) has an area of 0.8.  How much is the area of each tail?  Label the areas on your sketch.</p></article><article class="task exercise-like" id="task-346"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-668">Using just the sketch, what is \(P(Z&gt;-k)\text{?}\)</p></article><article class="task exercise-like" id="task-347"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-669">In the interactive below, let <code class="code-inline tex2jax_ignore">P</code> to be the area of the left tail and click <code class="code-inline tex2jax_ignore">From the left</code>.  What does this tell you about \(-k\text{?}\) <iframe src="https://www.desmos.com/calculator/txvx6fvjut" id="interactive-18" width="600" height="600"></iframe></p></article><article class="task exercise-like" id="task-348"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-670">In the interactive above, let <code class="code-inline tex2jax_ignore">P</code> to be the area of the right tail and click <code class="code-inline tex2jax_ignore">From the right</code>.  What does this tell you about \(k\text{?}\)</p></article><article class="task exercise-like" id="task-349"><h6 class="heading"><span class="codenumber">(f)</span></h6>
-<p id="p-671">In the interactive above, let <code class="code-inline tex2jax_ignore">P=0.8</code>  and click <code class="code-inline tex2jax_ignore">From the center</code>.  What does this tell you about \(k\) and \(-k\text{?}\)</p></article><article class="task exercise-like" id="task-350"><h6 class="heading"><span class="codenumber">(g)</span></h6>
-<p id="p-672">In the interactive below, let <code class="code-inline tex2jax_ignore">a=-k</code>, <code class="code-inline tex2jax_ignore">b=k</code>  where \(k\) is the value you found above.  What do we notice about this area? <iframe src="https://www.desmos.com/calculator/bsvrhb65nr" id="interactive-19" width="600" height="600"></iframe></p></article></article><article class="activity project-like" id="activity-standardnormprobR"><h6 class="heading">
+<article class="task exercise-like" id="task-344"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-666">Consider the tail regions \(Z&gt;k\) and \(Z\lt k\text{.}\)  How do we know these regions have the same area without knowing \(k\text{?}\)</p></article><article class="task exercise-like" id="task-345"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-667">Suppose this region \(-k\lt Z\lt k\) has an area of 0.8.  How much is the area of each tail?  Label the areas on your sketch.</p></article><article class="task exercise-like" id="task-346"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-668">Using just the sketch, what is \(P(Z&gt;-k)\text{?}\)</p></article><article class="task exercise-like" id="task-347"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-669">In the interactive below, let <code class="code-inline tex2jax_ignore">P</code> to be the area of the left tail and click <code class="code-inline tex2jax_ignore">From the left</code>.  What does this tell you about \(-k\text{?}\) <iframe src="https://www.desmos.com/calculator/txvx6fvjut" id="interactive-18" width="600" height="600"></iframe></p></article><article class="task exercise-like" id="task-348"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<p id="p-670">In the interactive above, let <code class="code-inline tex2jax_ignore">P</code> to be the area of the right tail and click <code class="code-inline tex2jax_ignore">From the right</code>.  What does this tell you about \(k\text{?}\)</p></article><article class="task exercise-like" id="task-349"><h4 class="heading"><span class="codenumber">(f)</span></h4>
+<p id="p-671">In the interactive above, let <code class="code-inline tex2jax_ignore">P=0.8</code>  and click <code class="code-inline tex2jax_ignore">From the center</code>.  What does this tell you about \(k\) and \(-k\text{?}\)</p></article><article class="task exercise-like" id="task-350"><h4 class="heading"><span class="codenumber">(g)</span></h4>
+<p id="p-672">In the interactive below, let <code class="code-inline tex2jax_ignore">a=-k</code>, <code class="code-inline tex2jax_ignore">b=k</code>  where \(k\) is the value you found above.  What do we notice about this area? <iframe src="https://www.desmos.com/calculator/bsvrhb65nr" id="interactive-19" width="600" height="600"></iframe></p></article></article><article class="activity project-like" id="activity-standardnormprobR"><h3 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">Computing standard normal values using R.</span>
-</h6>
+</h3>
 <div class="introduction" id="introduction-69">
-<p id="p-673">We can also use <code class="code-inline tex2jax_ignore">R</code> to both probabilities and \(z\)-values.  Remember <a class="xref" data-knowl="./knowl/remark-always.html" title="Remark 3.1.3">Remark 3.1.3</a>.</p>
+<p id="p-673">We can also use <code class="code-inline tex2jax_ignore">R</code> to both probabilities and \(z\)-values.  Remember <a href="" class="xref" data-knowl="./knowl/remark-always.html" title="Remark 3.1.3">Remark 3.1.3</a>.</p>
 <p id="p-674">The command <code class="code-inline tex2jax_ignore">pnorm</code> takes a value as an input and computes the area to the left of said value as an output.  The command <code class="code-inline tex2jax_ignore">qnorm</code> takes an area as an input, and finds the right endpoint of that area as a output.</p>
 </div>
-<article class="task exercise-like" id="task-351"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<article class="task exercise-like" id="task-351"><h4 class="heading"><span class="codenumber">(a)</span></h4>
 <p id="p-675">Run the following code to compute \(P(Z\lt 2)\text{:}\) <div class="sagecell-r" id="sage-110"><script type="text/x-sage">pnorm(2, mean=0, sd=1)
-</script></div></p></article><article class="task exercise-like" id="task-352"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-676">Adjust and run the above code to find \(P(Z\lt 0.5)\text{.}\)</p></article><article class="task exercise-like" id="task-353"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-677">Use (a) and (b) to find \(P(0.5\lt Z\lt 2)\text{.}\)</p></article><article class="task exercise-like" id="task-354"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-678">Adjust and run the above code to find \(P(Z\lt 1.5)\text{.}\)</p></article><article class="task exercise-like" id="task-355"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-679">Use (d) to find \(P(Z&gt;1.5)\text{.}\)</p></article><article class="task exercise-like" id="task-356"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+</script></div></p></article><article class="task exercise-like" id="task-352"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-676">Adjust and run the above code to find \(P(Z\lt 0.5)\text{.}\)</p></article><article class="task exercise-like" id="task-353"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-677">Use (a) and (b) to find \(P(0.5\lt Z\lt 2)\text{.}\)</p></article><article class="task exercise-like" id="task-354"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-678">Adjust and run the above code to find \(P(Z\lt 1.5)\text{.}\)</p></article><article class="task exercise-like" id="task-355"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<p id="p-679">Use (d) to find \(P(Z&gt;1.5)\text{.}\)</p></article><article class="task exercise-like" id="task-356"><h4 class="heading"><span class="codenumber">(f)</span></h4>
 <p id="p-680">Run the following code to compute a \(z_0\) such that \(P(Z\lt z_0)=0.35\text{:}\) <div class="sagecell-r" id="sage-111"><script type="text/x-sage">qnorm(0.35, mean=0, sd=1)
-</script></div></p></article><article class="task exercise-like" id="task-357"><h6 class="heading"><span class="codenumber">(g)</span></h6>
-<p id="p-681">Suppose I want to find a \(z_1\) such that \(P(Z&gt;z_1)=0.12\text{.}\)  What is \(P(Z\lt z_1)\text{?}\)  (Remember <a class="xref" data-knowl="./knowl/remark-always.html" title="Remark 3.1.3">Remark 3.1.3</a>)</p></article><article class="task exercise-like" id="task-358"><h6 class="heading"><span class="codenumber">(h)</span></h6>
-<p id="p-682">Adjust and run the above code to compute \(z_1\text{.}\)</p></article><article class="task exercise-like" id="task-359"><h6 class="heading"><span class="codenumber">(i)</span></h6>
-<p id="p-683">Suppose I want to find a \(z_2\) such that \(P(-z_2\lt Z\lt z_2)=0.6\text{.}\)  What is the area of each tail?  What is \(P(Z\lt z_2)\text{?}\)  (Remember <a class="xref" data-knowl="./knowl/remark-always.html" title="Remark 3.1.3">Remark 3.1.3</a>)</p></article><article class="task exercise-like" id="task-360"><h6 class="heading"><span class="codenumber">(j)</span></h6>
-<p id="p-684">Adjust and run the above code to compute \(z_2\text{.}\)</p></article></article><article class="remark remark-like" id="remark-17"><h6 class="heading">
+</script></div></p></article><article class="task exercise-like" id="task-357"><h4 class="heading"><span class="codenumber">(g)</span></h4>
+<p id="p-681">Suppose I want to find a \(z_1\) such that \(P(Z&gt;z_1)=0.12\text{.}\)  What is \(P(Z\lt z_1)\text{?}\)  (Remember <a href="" class="xref" data-knowl="./knowl/remark-always.html" title="Remark 3.1.3">Remark 3.1.3</a>)</p></article><article class="task exercise-like" id="task-358"><h4 class="heading"><span class="codenumber">(h)</span></h4>
+<p id="p-682">Adjust and run the above code to compute \(z_1\text{.}\)</p></article><article class="task exercise-like" id="task-359"><h4 class="heading"><span class="codenumber">(i)</span></h4>
+<p id="p-683">Suppose I want to find a \(z_2\) such that \(P(-z_2\lt Z\lt z_2)=0.6\text{.}\)  What is the area of each tail?  What is \(P(Z\lt z_2)\text{?}\)  (Remember <a href="" class="xref" data-knowl="./knowl/remark-always.html" title="Remark 3.1.3">Remark 3.1.3</a>)</p></article><article class="task exercise-like" id="task-360"><h4 class="heading"><span class="codenumber">(j)</span></h4>
+<p id="p-684">Adjust and run the above code to compute \(z_2\text{.}\)</p></article></article><article class="remark remark-like" id="remark-17"><h3 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">Some things to keep in mind.</span>
-</h6>
+</h3>
 <p id="p-685">Here are some quick facts and heuristics about the normal curve to give you an intuitive sense on how it behaves.</p>
 <ul class="disc">
-<li id="li-123">Each half is 50% of the curve, so have greater than the mean, half less than the mean.</li>
-<li id="li-124">For any tail of the distribution, the corresponding tail on the other side has the same area.</li>
-<li id="li-125">Roughly 67% of the curve lies within \(\pm 1\) standard deviations from the mean,  95% within \(\pm 2\) standard deviations from the mean, and 99.7% within \(\pm 3\) standard deviations from the mean.</li>
+<li id="li-123"><p id="p-derived-li-123">Each half is 50% of the curve, so have greater than the mean, half less than the mean.</p></li>
+<li id="li-124"><p id="p-derived-li-124">For any tail of the distribution, the corresponding tail on the other side has the same area.</p></li>
+<li id="li-125"><p id="p-derived-li-125">Roughly 67% of the curve lies within \(\pm 1\) standard deviations from the mean,  95% within \(\pm 2\) standard deviations from the mean, and 99.7% within \(\pm 3\) standard deviations from the mean.</p></li>
 </ul></article></section></div></main>
 </div>
 </body>

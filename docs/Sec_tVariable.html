@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-05-20T14:04:31-06:00       *-->
+<!--*       on 2022-02-01T19:32:27-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,36 +14,42 @@
 <title>The \(t\)-Variable and Sampling Distribution of Numerical Variables (N1)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
     },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>$(function () {
     // Make *any* div with class 'sagecell-sage' an executable Sage cell
     // Their results will be linked, only within language type
     sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
@@ -59,7 +65,7 @@ MathJax.Hub.Config({
                            languages: ['r'],
                            evalButtonText: 'Evaluate (R)'});
 });
-</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg">miniversion=0.6</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -72,8 +78,8 @@ MathJax.Hub.Config({
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
 <!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
-<body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\Q}{\terminology{Question:\ }}
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\Q}{\terminology{Question:\ }}
 \newcommand{\Sol}{\terminology{Solution:\ }}
 \newcommand{\Fisg}{\emph{Fisg}}
 \newcommand{\Iisg}{\emph{Iisg}}
@@ -192,23 +198,23 @@ MathJax.Hub.Config({
 <li><a href="Sec_InferenceRegression.html" data-scroll="Sec_InferenceRegression">Inference and Linear Regression (R3)</a></li>
 </ul>
 </li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="Sec_tVariable"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">6.1</span> <span class="title">The \(t\)-Variable and Sampling Distribution of Numerical Variables (N1)</span>
 </h2>
 <section class="introduction" id="introduction-146"><p id="p-1320">In this section, we transition away from categorical variables and begin looking at the sampling distributions of <em class="emphasis">numerical</em> variables.</p>
-<article class="remark remark-like" id="remark-48"><h6 class="heading">
+<article class="remark remark-like" id="remark-48"><h3 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">6.1.1</span><span class="period">.</span>
-</h6>
+</h3>
 <p id="p-1321">Recall from <a href="Sec_Center.html" class="internal" title="Section 1.4: Centers of Data (B4)">Section 1.4</a> that given a numerical variable \(X\) and a sample from \(X\) of size \(n\text{,}\) we can obtain a sample mean \(\bar{x}\text{.}\)</p>
-<p id="p-1322">As we know, each time we sample \(X\text{,}\) we obtain potentially a different \(\bar{x}\text{,}\) so \(\bar{x}\) is a random variable from a <em class="emphasis">sampling distribution</em>.  The random variable \(\bar{x}\) will play the role similar to that of \(\hat{p}\) in <a href="Chap_Categorical.html" class="internal" title="Chapter 5: Inference for Categorical Variables (C)">Chapter 5</a>.  We recognize \(\bar{x}\) as a point setimate for the true mean of \(X\text{:}\) \(\mu_X\text{.}\)</p></article><article class="exploration project-like" id="exploration-AverageDieRolls"><h6 class="heading">
+<p id="p-1322">As we know, each time we sample \(X\text{,}\) we obtain potentially a different \(\bar{x}\text{,}\) so \(\bar{x}\) is a random variable from a <em class="emphasis">sampling distribution</em>.  The random variable \(\bar{x}\) will play the role similar to that of \(\hat{p}\) in <a href="Chap_Categorical.html" class="internal" title="Chapter 5: Inference for Categorical Variables (C)">Chapter 5</a>.  We recognize \(\bar{x}\) as a point setimate for the true mean of \(X\text{:}\) \(\mu_X\text{.}\)</p></article><article class="exploration project-like" id="exploration-AverageDieRolls"><h3 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">6.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Rolling Dice and Averaging the results..</span>
-</h6>
+</h3>
 <div class="introduction" id="introduction-147"><p id="p-1323">Suppose I roll <code class="code-inline tex2jax_ignore">dice_num</code> dice and take the average result.  Let \(X\) be the random variable indicating the outcome of a six-sided die.</p></div>
-<article class="task exercise-like" id="task-737"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-1324">Following <a href="Sec_RandomVariables.html" class="internal" title="Section 2.4: Random Variables (P4)">Section 2.4</a>,find \(E(X), Var(X), \sigma_X\text{.}\)</p></article><article class="task exercise-like" id="task-738"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-1325">Let \(A_2\) be the average of two die rolls: \(A_2=\frac{1}{2}(X_1+X_2).\)  Using <a class="xref" data-knowl="./knowl/remark-linofEandV.html" title="Remark 2.5.1">Remark 2.5.1</a>, find \(E(A_2), Var(A_2), \sigma_{A_2}.\)</p></article><article class="task exercise-like" id="task-739"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<article class="task exercise-like" id="task-737"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-1324">Following <a href="Sec_RandomVariables.html" class="internal" title="Section 2.4: Random Variables (P4)">Section 2.4</a>,find \(E(X), Var(X), \sigma_X\text{.}\)</p></article><article class="task exercise-like" id="task-738"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-1325">Let \(A_2\) be the average of two die rolls: \(A_2=\frac{1}{2}(X_1+X_2).\)  Using <a href="" class="xref" data-knowl="./knowl/remark-linofEandV.html" title="Remark 2.5.1">Remark 2.5.1</a>, find \(E(A_2), Var(A_2), \sigma_{A_2}.\)</p></article><article class="task exercise-like" id="task-739"><h4 class="heading"><span class="codenumber">(c)</span></h4>
 <p id="p-1326">Run the following code to simulate <code class="code-inline tex2jax_ignore">trials=1000</code> trials where one rolls <code class="code-inline tex2jax_ignore">num_dice=2</code> dice and takes the average, and display the mean and standard deviation of these outcomes: <div class="sagecell-r" id="sage-224"><script type="text/x-sage">trials=1000
 num_dice=2
 
@@ -220,25 +226,25 @@ for(i in 1:trials){
 hist(averageroll, breaks=25, prob=TRUE)
 print(mean(averageroll))
 print(sd(averageroll))
-</script></div> How do these values compare to what you found in (b)?</p></article><article class="task exercise-like" id="task-740"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-1327">Let \(A_3\) be the average of two die rolls: \(A_2=\frac{1}{3}(X_1+X_2+X_3).\)  Using <a class="xref" data-knowl="./knowl/remark-linofEandV.html" title="Remark 2.5.1">Remark 2.5.1</a>, find \(E(A_3), Var(A_3), \sigma_{A_3}.\)</p></article><article class="task exercise-like" id="task-741"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-1328">Re-run the code in (c) with <code class="code-inline tex2jax_ignore">num_dice=3</code>, how do those values compare to what you found in (d)?</p></article><article class="task exercise-like" id="task-742"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+</script></div> How do these values compare to what you found in (b)?</p></article><article class="task exercise-like" id="task-740"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-1327">Let \(A_3\) be the average of two die rolls: \(A_2=\frac{1}{3}(X_1+X_2+X_3).\)  Using <a href="" class="xref" data-knowl="./knowl/remark-linofEandV.html" title="Remark 2.5.1">Remark 2.5.1</a>, find \(E(A_3), Var(A_3), \sigma_{A_3}.\)</p></article><article class="task exercise-like" id="task-741"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<p id="p-1328">Re-run the code in (c) with <code class="code-inline tex2jax_ignore">num_dice=3</code>, how do those values compare to what you found in (d)?</p></article><article class="task exercise-like" id="task-742"><h4 class="heading"><span class="codenumber">(f)</span></h4>
 <p id="p-1329">Re-run the code in (c) with <code class="code-inline tex2jax_ignore">num_dice=30</code>, <code class="code-inline tex2jax_ignore">num_dice=50</code>, <code class="code-inline tex2jax_ignore">num_dice=100</code> What do we notice about the <code class="code-inline tex2jax_ignore">mean</code> and <code class="code-inline tex2jax_ignore">sd</code> as <code class="code-inline tex2jax_ignore">num_dice</code> increases?  How does the shape of the graph change?</p></article></article></section><section class="subsection" id="subsection-33"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">6.1.1</span> <span class="title">\(t\)-Variables</span>
 </h3>
-<p id="p-1330">As we saw in <a class="xref" data-knowl="./knowl/exploration-AverageDieRolls.html" title="Exploration 6.1.1: Rolling Dice and Averaging the results.">Exploration 6.1.1</a>, we saw a phonomena very similar to what we saw in <a class="xref" data-knowl="./knowl/theorem-CLTprop.html" title="Theorem 4.1.4: The Central Limit Theorem (Proportion)">Theorem 4.1.4</a>.  In <a class="xref" data-knowl="./knowl/theorem-CLTprop.html" title="Theorem 4.1.4: The Central Limit Theorem (Proportion)">Theorem 4.1.4</a>, the sampling distribution for \(\hat{p}\) was approximately normal.  We have a similar result for the sampling distribution for \(\bar{x}\text{.}\)</p>
-<article class="theorem theorem-like" id="theorem-CLTnum"><h6 class="heading">
+<p id="p-1330">As we saw in <a href="" class="xref" data-knowl="./knowl/exploration-AverageDieRolls.html" title="Exploration 6.1.1: Rolling Dice and Averaging the results.">Exploration 6.1.1</a>, we saw a phonomena very similar to what we saw in <a href="" class="xref" data-knowl="./knowl/theorem-CLTprop.html" title="Theorem 4.1.4: The Central Limit Theorem (Proportion)">Theorem 4.1.4</a>.  In <a href="" class="xref" data-knowl="./knowl/theorem-CLTprop.html" title="Theorem 4.1.4: The Central Limit Theorem (Proportion)">Theorem 4.1.4</a>, the sampling distribution for \(\hat{p}\) was approximately normal.  We have a similar result for the sampling distribution for \(\bar{x}\text{.}\)</p>
+<article class="theorem theorem-like" id="theorem-CLTnum"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">The Central Limit Theorem (Numerical).</span>
-</h6>
+</h4>
 <p id="p-1331">Let \(X\) be a numerical variable with true mean \(\mu\) and standard deviation \(\sigma\text{.}\)  Then for a sufficiently large sample (typically \(\geq 30\)) the sampling distribution of \(\bar{m}\) is approximately <em class="emphasis">normally distributed</em> with pararmeters</p>
 <div class="displaymath">
 \begin{equation*}
 \mu_{\bar{x}}=\mu,\ \ \  SE_{\bar{m}}=\frac{\sigma}{\sqrt{n}}.
 \end{equation*}
-</div></article><article class="remark remark-like" id="remark-49"><h6 class="heading">
+</div></article><article class="remark remark-like" id="remark-49"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">6.1.3</span><span class="period">.</span>
-</h6>
-<p id="p-1332">We can see how the average die rolls of <a class="xref" data-knowl="./knowl/exploration-AverageDieRolls.html" title="Exploration 6.1.1: Rolling Dice and Averaging the results.">Exploration 6.1.1</a> follow this.  Run the following code to plot the histogram from <a class="xref" data-knowl="./knowl/exploration-AverageDieRolls.html" title="Exploration 6.1.1: Rolling Dice and Averaging the results.">Exploration 6.1.1</a>, along with a normal curve with parameters mean <code class="code-inline tex2jax_ignore">mu=3.5</code> and standard deviation <code class="code-inline tex2jax_ignore">SE=sqrt(35/12)/sqrt(num_dice)</code>: <div class="sagecell-r" id="sage-225"><script type="text/x-sage">trials=1000
+</h4>
+<p id="p-1332">We can see how the average die rolls of <a href="" class="xref" data-knowl="./knowl/exploration-AverageDieRolls.html" title="Exploration 6.1.1: Rolling Dice and Averaging the results.">Exploration 6.1.1</a> follow this.  Run the following code to plot the histogram from <a href="" class="xref" data-knowl="./knowl/exploration-AverageDieRolls.html" title="Exploration 6.1.1: Rolling Dice and Averaging the results.">Exploration 6.1.1</a>, along with a normal curve with parameters mean <code class="code-inline tex2jax_ignore">mu=3.5</code> and standard deviation <code class="code-inline tex2jax_ignore">SE=sqrt(35/12)/sqrt(num_dice)</code>: <div class="sagecell-r" id="sage-225"><script type="text/x-sage">trials=1000
 num_dice=30
 
 mu=3.5
@@ -253,30 +259,30 @@ hist(averageroll, breaks=25, prob=TRUE)
 curve(dnorm(x, mean=mu, sd=SE), col="darkblue", lwd=2, add=TRUE, yaxt="n")
 print(mean(averageroll))
 print(sd(averageroll))
-</script></div> Edit <code class="code-inline tex2jax_ignore">num_dice</code> and see how the curve matches the histogram.</p></article><article class="activity project-like" id="activity-stdisRV"><h6 class="heading">
+</script></div> Edit <code class="code-inline tex2jax_ignore">num_dice</code> and see how the curve matches the histogram.</p></article><article class="activity project-like" id="activity-stdisRV"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Variation in Parameters.</span>
-</h6>
+</h4>
 <div class="introduction" id="introduction-148">
-<p id="p-1333">With categorical variables, the mean and standard deviation of the sampling distribution is totally determined by one parameter: \(p\text{.}\)  We can see this in the statement of <a class="xref" data-knowl="./knowl/theorem-CLTprop.html" title="Theorem 4.1.4: The Central Limit Theorem (Proportion)">Theorem 4.1.4</a>.  So when we assume a null hypothesis and set \(p=p_0\text{,}\) this strictly determines the hypothetical sampling distribution.</p>
-<p id="p-1334">As we see in <a class="xref" data-knowl="./knowl/theorem-CLTnum.html" title="Theorem 6.1.2: The Central Limit Theorem (Numerical)">Theorem 6.1.2</a>, the sampling distribution for \(\bar{x}\) is determined by both \(\mu\) <em class="emphasis">and</em> \(\sigma\text{.}\)  So if one were to conduct a hypothesis test and set \(\mu=\mu_0\text{,}\) there's still the question of what \(\sigma\) is.  The general practice is to assume it's the same as the sample standard deviation, but how good of an estimate is this?</p>
+<p id="p-1333">With categorical variables, the mean and standard deviation of the sampling distribution is totally determined by one parameter: \(p\text{.}\)  We can see this in the statement of <a href="" class="xref" data-knowl="./knowl/theorem-CLTprop.html" title="Theorem 4.1.4: The Central Limit Theorem (Proportion)">Theorem 4.1.4</a>.  So when we assume a null hypothesis and set \(p=p_0\text{,}\) this strictly determines the hypothetical sampling distribution.</p>
+<p id="p-1334">As we see in <a href="" class="xref" data-knowl="./knowl/theorem-CLTnum.html" title="Theorem 6.1.2: The Central Limit Theorem (Numerical)">Theorem 6.1.2</a>, the sampling distribution for \(\bar{x}\) is determined by both \(\mu\) <em class="emphasis">and</em> \(\sigma\text{.}\)  So if one were to conduct a hypothesis test and set \(\mu=\mu_0\text{,}\) there's still the question of what \(\sigma\) is.  The general practice is to assume it's the same as the sample standard deviation, but how good of an estimate is this?</p>
 <p id="p-1335">Run the following code to download and the <code class="code-inline tex2jax_ignore">ames.csv</code> data set which contains information of houses in Ames, Iowa, and to see it's variable names: <div class="sagecell-r" id="sage-226"><script type="text/x-sage">ames = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/ames.csv")
 
 names(ames)
 </script></div> Click here to learn more about this data set: <a class="external" href="https://www.openintro.org/data/index.php?data=ames" target="_blank"><code class="code-inline tex2jax_ignore">https://www.openintro.org/data/index.php?data=ames</code></a>.</p>
 </div>
-<article class="task exercise-like" id="task-743"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<article class="task exercise-like" id="task-743"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <p id="p-1336">Run the following code to sample 30 random houses from Ames, Iowa and display their housing prices: <div class="sagecell-r" id="sage-227"><script type="text/x-sage">n=30
 index = sample(1:nrow(ames), n)
 samp=ames[index,]
 samp$price
-</script></div></p></article><article class="task exercise-like" id="task-744"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+</script></div></p></article><article class="task exercise-like" id="task-744"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <p id="p-1337">Run the following code to show the standard deviation of  housing prices in this sample: <div class="sagecell-r" id="sage-228"><script type="text/x-sage">sd(samp$price)
-</script></div></p></article><article class="task exercise-like" id="task-745"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+</script></div></p></article><article class="task exercise-like" id="task-745"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <p id="p-1338">Run the following code to sample 30 new random houses from Ames, Iowa and display the standard deviation of their housing prices: <div class="sagecell-r" id="sage-229"><script type="text/x-sage">n=30
 index = sample(1:nrow(ames), n)
 samp=ames[index,]
 sd(samp$price)
-</script></div> How does this outcome compare to what you found in (a)?</p></article><article class="task exercise-like" id="task-746"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+</script></div> How does this outcome compare to what you found in (a)?</p></article><article class="task exercise-like" id="task-746"><h5 class="heading"><span class="codenumber">(d)</span></h5>
 <p id="p-1339">Run the following code to, for <code class="code-inline tex2jax_ignore">trials=1000</code> times, sample 30 new random houses from Ames, Iowa and record the standard deviation of their housing prices, and display a histogram of the standard deviations: <div class="sagecell-r" id="sage-230"><script type="text/x-sage">n=30
 trials=1000
 sdvec=rep(NA, trials)
@@ -288,10 +294,10 @@ for(i in 1:trials){
 }
 
 hist(sdvec, breaks=25)
-</script></div> What do we notice about the possible variation in sample standard deviations?</p></article><article class="task exercise-like" id="task-747"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+</script></div> What do we notice about the possible variation in sample standard deviations?</p></article><article class="task exercise-like" id="task-747"><h5 class="heading"><span class="codenumber">(e)</span></h5>
 <p id="p-1340">Run the following code to redisplay the above histogram, along with the actual standard deviation of housing prices in Ames, Iowa: <div class="sagecell-r" id="sage-231"><script type="text/x-sage">hist(sdvec, breaks=25)
 abline(v = sd(ames$price), col="red", lwd=3, lty=2)
-</script></div> What do we notice about the possible variation in sample standard deviations?</p></article><article class="task exercise-like" id="task-748"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+</script></div> What do we notice about the possible variation in sample standard deviations?</p></article><article class="task exercise-like" id="task-748"><h5 class="heading"><span class="codenumber">(f)</span></h5>
 <p id="p-1341">To see how much variation there could be in sampling distributions, run the following code to plot a normal curve for each sample standard deviation we found, each curve has mean 0, but standard deviation equal to one we found in our above simulation: <div class="sagecell-r" id="sage-232"><script type="text/x-sage">values = seq(-300000, 300000, length=100)
 
 plot(values, dnorm(values, mean=0, sd=sdvec[1]), type="l", lty=2)
@@ -299,7 +305,7 @@ plot(values, dnorm(values, mean=0, sd=sdvec[1]), type="l", lty=2)
 for (i in 2:trials){
   lines(values, dnorm(values, mean=0, sd=sdvec[i])) 
 }
-</script></div> How much variation is there between curves, even with the same means?</p></article><article class="task exercise-like" id="task-749"><h6 class="heading"><span class="codenumber">(g)</span></h6>
+</script></div> How much variation is there between curves, even with the same means?</p></article><article class="task exercise-like" id="task-749"><h5 class="heading"><span class="codenumber">(g)</span></h5>
 <p id="p-1342">Run the following code to, for <code class="code-inline tex2jax_ignore">trials=1000</code> times, sample now <code class="code-inline tex2jax_ignore">n=500</code> new random houses from Ames, Iowa and record the standard deviation of their housing prices, and display a histogram of the standard deviations: <div class="sagecell-r" id="sage-233"><script type="text/x-sage">n=500
 trials=1000
 sdvec500=rep(NA, trials)
@@ -315,43 +321,43 @@ abline(v = sd(ames$price), col="red", lwd=3, lty=2)
 </script></div> What do we notice about the possible variation in sample standard deviations compared to what we saw in (d)?</p></article></article></section><section class="subsection" id="subsection-34"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">6.1.2</span> <span class="title">The \(t\)-distribution</span>
 </h3>
-<article class="definition definition-like" id="definition-tcurve"><h6 class="heading">
+<article class="definition definition-like" id="definition-tcurve"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">\(t\)-Random Variable.</span>
-</h6>
-<p id="p-1343">Looking at <a class="xref" data-knowl="./knowl/activity-stdisRV.html" title="Activity 6.1.2: Variation in Parameters">Activity 6.1.2</a>, we notice:</p>
+</h4>
+<p id="p-1343">Looking at <a href="" class="xref" data-knowl="./knowl/activity-stdisRV.html" title="Activity 6.1.2: Variation in Parameters">Activity 6.1.2</a>, we notice:</p>
 <ul class="disc">
-<li id="li-282">A normal curve where we use a sample standard deviation \(s\) in lieu of \(\sigma\) may be highly inaccurate, since there is a lot of variation of what \(s\) is in comparison to \(\sigma\text{.}\)</li>
-<li id="li-283">This variation decreases as we increase \(n\) the size of the sample.</li>
+<li id="li-282"><p id="p-derived-li-282">A normal curve where we use a sample standard deviation \(s\) in lieu of \(\sigma\) may be highly inaccurate, since there is a lot of variation of what \(s\) is in comparison to \(\sigma\text{.}\)</p></li>
+<li id="li-283"><p id="p-derived-li-283">This variation decreases as we increase \(n\) the size of the sample.</p></li>
 </ul>
-<p data-braille="continuation">To account for this, we introduce what we call the standard \(t\)-distribution (mean 0, standard deviation 1).  The technical formula for a \(t\)-distribution is uninteresting and tedious.    The main thing we want to understand about the standard \(t\)-distribution with mean \(0\) and standard deviation 1, is that it has an additional parameter: <em class="emphasis">degrees of freedom</em>: \(d_f\text{.}\)   For a \(t\)-distribution, the number of degrees of freedom is \(d_f=n-1\) where \(n\) is the sample size.</p>
-<p id="p-1344">We notice that when \(d_f\) is small, the \(t\)-distribution resembles a much widened normal distribution to account for the variability in the sample standard deviation.  As \(d_f\) increases, the \(t\)-distribution grows to resemble a normal distribution. <iframe src="https://www.desmos.com/calculator/mb9tb158tl" id="interactive-71" width="600" height="600"></iframe></p></article><article class="activity project-like" id="activity-tprobabilities"><h6 class="heading">
+<p class="continuation">To account for this, we introduce what we call the standard \(t\)-distribution (mean 0, standard deviation 1).  The technical formula for a \(t\)-distribution is uninteresting and tedious.    The main thing we want to understand about the standard \(t\)-distribution with mean \(0\) and standard deviation 1, is that it has an additional parameter: <em class="emphasis">degrees of freedom</em>: \(d_f\text{.}\)   For a \(t\)-distribution, the number of degrees of freedom is \(d_f=n-1\) where \(n\) is the sample size.</p>
+<p id="p-1344">We notice that when \(d_f\) is small, the \(t\)-distribution resembles a much widened normal distribution to account for the variability in the sample standard deviation.  As \(d_f\) increases, the \(t\)-distribution grows to resemble a normal distribution. <iframe src="https://www.desmos.com/calculator/mb9tb158tl" id="interactive-71" width="600" height="600"></iframe></p></article><article class="activity project-like" id="activity-tprobabilities"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Probabilities and the \(t\)-Distribution.</span>
-</h6>
+</h4>
 <div class="introduction" id="introduction-149">
-<p id="p-1345">Probabilities of \(t\) variables are computed in a manner similar to that of normal variables, via areas as in <a class="xref" data-knowl="./knowl/activity-standardnormprob.html" title="Activity 3.1.2: Computing Probabilities on the Normal Curve">Activity 3.1.2</a>.</p>
+<p id="p-1345">Probabilities of \(t\) variables are computed in a manner similar to that of normal variables, via areas as in <a href="" class="xref" data-knowl="./knowl/activity-standardnormprob.html" title="Activity 3.1.2: Computing Probabilities on the Normal Curve">Activity 3.1.2</a>.</p>
 <p id="p-1346">Below, we can see that for a \(t\) variable with 8 degrees of freedom, the probability that \(t\) is less than \(-0.7\) is \(P(t_8\lt -0.7)\approx 0.2519.\) <iframe src="https://www.desmos.com/calculator/7q6z4qkfmu" id="interactive-72" width="600" height="600"></iframe></p>
 <p id="p-1347">We can also confirm this by running the following: <div class="sagecell-r" id="sage-234"><script type="text/x-sage">pt(-.7, df=8, lower.tail=TRUE)
 </script></div></p>
 </div>
-<article class="task exercise-like" id="task-750"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-1348">For a \(t\)-variable with 19 degrees of freedom, compute the probability \(t\) is greater than 1.1: \(P(t_{19}&gt;1.1)\text{.}\)</p></article><article class="task exercise-like" id="task-751"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-1349">For a \(t\)-variable with 100 degrees of freedom, compute the probability \(t\) is between -2 and 1.5: \(P(-2\lt t_{100}\lt1.5)\text{.}\)</p></article><article class="task exercise-like" id="task-752"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-1350">For \(t\) variables with degrees of freedom 5, 20 and 200, compute \(P(-1\lt t\lt1)\text{.}\)  What do we notice as the degrees of freedom increase?</p></article><article class="task exercise-like" id="task-753"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-1351">For \(t\) variables with degrees of freedom 5, 20 and 200, compute \(P(t&gt;2)\text{.}\)  What do we notice as the degrees of freedom increase?</p></article></article><article class="activity project-like" id="activity-tprobabilitiesinverses"><h6 class="heading">
+<article class="task exercise-like" id="task-750"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1348">For a \(t\)-variable with 19 degrees of freedom, compute the probability \(t\) is greater than 1.1: \(P(t_{19}&gt;1.1)\text{.}\)</p></article><article class="task exercise-like" id="task-751"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-1349">For a \(t\)-variable with 100 degrees of freedom, compute the probability \(t\) is between -2 and 1.5: \(P(-2\lt t_{100}\lt1.5)\text{.}\)</p></article><article class="task exercise-like" id="task-752"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-1350">For \(t\) variables with degrees of freedom 5, 20 and 200, compute \(P(-1\lt t\lt1)\text{.}\)  What do we notice as the degrees of freedom increase?</p></article><article class="task exercise-like" id="task-753"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-1351">For \(t\) variables with degrees of freedom 5, 20 and 200, compute \(P(t&gt;2)\text{.}\)  What do we notice as the degrees of freedom increase?</p></article></article><article class="activity project-like" id="activity-tprobabilitiesinverses"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Probabilities and the \(t\)-Distribution: Inverses.</span>
-</h6>
+</h4>
 <div class="introduction" id="introduction-150">
-<p id="p-1352">Just as for normal variables (see: <a class="xref" data-knowl="./knowl/activity-standardnormprobinv.html" title="Activity 3.1.3: Finding bounds for Areas/Probabilities">Activity 3.1.3</a>), given an area or probability, we should be able to recover bounds for it.</p>
+<p id="p-1352">Just as for normal variables (see: <a href="" class="xref" data-knowl="./knowl/activity-standardnormprobinv.html" title="Activity 3.1.3: Finding bounds for Areas/Probabilities">Activity 3.1.3</a>), given an area or probability, we should be able to recover bounds for it.</p>
 <p id="p-1353">Below, we can see that for a \(t\) variable with 13 degrees of freedom, if we wanted to find a vlaue \(t_{13}^*\) so the probability that \(t\) is less than \(t_{13}^*\) is 70%, or \(P(t_{13}\lt t_{13}^*)=0.7\text{,}\) we can see that the value is about \(t_{13}^*\approx 0.5375\text{.}\) <iframe src="https://www.desmos.com/calculator/9yd3vbkaar" id="interactive-73" width="600" height="600"></iframe></p>
 <p id="p-1354">We can also confirm this by running the following: <div class="sagecell-r" id="sage-235"><script type="text/x-sage">qt(0.7, df=13, lower.tail=TRUE)
 </script></div></p>
 </div>
-<article class="task exercise-like" id="task-754"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-1355">For a \(t\)-variable with 13 degrees of freedom, find \(t_{13}^*\) such that \(P(t_{13}&gt;t_{13}^*)=0.45\text{.}\)</p></article><article class="task exercise-like" id="task-755"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-1356">For a \(t\)-variable with 45 degrees of freedom, find \(t_{45}^*\) such that \(P(t_{45}\lt t_{45}^*)=0.55\text{.}\)</p></article><article class="task exercise-like" id="task-756"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-1357">For \(t\) variables with degrees of freedom 5, 20 and 200, find find \(t^*\) such that \(P(-t^*\lt t\lt t^*)=0.85\text{.}\)  What do we notice as the degrees of freedom increase?</p></article></article><article class="activity project-like" id="activity-tscore"><h6 class="heading">
+<article class="task exercise-like" id="task-754"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1355">For a \(t\)-variable with 13 degrees of freedom, find \(t_{13}^*\) such that \(P(t_{13}&gt;t_{13}^*)=0.45\text{.}\)</p></article><article class="task exercise-like" id="task-755"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-1356">For a \(t\)-variable with 45 degrees of freedom, find \(t_{45}^*\) such that \(P(t_{45}\lt t_{45}^*)=0.55\text{.}\)</p></article><article class="task exercise-like" id="task-756"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-1357">For \(t\) variables with degrees of freedom 5, 20 and 200, find find \(t^*\) such that \(P(-t^*\lt t\lt t^*)=0.85\text{.}\)  What do we notice as the degrees of freedom increase?</p></article></article><article class="activity project-like" id="activity-tscore"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">\(t\)-score for Sampling Distribution Variables.</span>
-</h6>
+</h4>
 <div class="introduction" id="introduction-151">
 <p id="p-1358">Just as for general normal variables, most sampling distributions do not have mean 0 and standard deviation 1. Just as with general normal variables, we each value of the sampling distribution has a corresponding <em class="emphasis">\(t\)-score</em> on our general \(t\)-distribution .</p>
 <p id="p-1359">Consider a sampling distribution with mean \(\mu\) and standard deviation \(SE\text{.}\)  For each value \(X\) from this distribution, we can compute the \(t\)-score for \(X\) via:</p>
@@ -360,13 +366,13 @@ abline(v = sd(ames$price), col="red", lwd=3, lty=2)
 t=\frac{X-\mu}{SE}
 \end{equation*}
 </div>
-<p data-braille="continuation">as in <a class="xref" data-knowl="./knowl/definition-zscore.html" title="Definition 3.2.1">Definition 3.2.1</a>.</p>
+<p class="continuation">as in <a href="" class="xref" data-knowl="./knowl/definition-zscore.html" title="Definition 3.2.1">Definition 3.2.1</a>.</p>
 </div>
-<article class="task exercise-like" id="task-757"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-1360">For a sampling distribution with mean \(\mu=45\text{,}\) standard error \(SE=12\)  find the \(t\)-score of \(X=60\text{.}\)</p></article><article class="task exercise-like" id="task-758"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-1361">For a sampling distribution with mean \(\mu=120\text{,}\) standard error \(SE=26\)  find the \(X\) values for the \(t\)-scores: -1.97, 1.97.</p></article></article><article class="activity project-like" id="activity-tcomp"><h6 class="heading">
+<article class="task exercise-like" id="task-757"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1360">For a sampling distribution with mean \(\mu=45\text{,}\) standard error \(SE=12\)  find the \(t\)-score of \(X=60\text{.}\)</p></article><article class="task exercise-like" id="task-758"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-1361">For a sampling distribution with mean \(\mu=120\text{,}\) standard error \(SE=26\)  find the \(X\) values for the \(t\)-scores: -1.97, 1.97.</p></article></article><article class="activity project-like" id="activity-tcomp"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">Putting it Together.</span>
-</h6>
+</h4>
 <div class="introduction" id="introduction-152">
 <p id="p-1362">Suppose you sampled a numerical variable 20 times, and obtained the following values:</p>
 <div class="displaymath">
@@ -380,11 +386,11 @@ t=\frac{X-\mu}{SE}
 \end{equation*}
 </div>
 </div>
-<article class="task exercise-like" id="task-759"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-1363">Compute the sample mean \(\bar{x}\text{,}\) and the standard deviation \(s\text{,}\) for the above sample.</p></article><article class="task exercise-like" id="task-760"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-1364">What is \(n\) the size of the sample?  Use <a class="xref" data-knowl="./knowl/theorem-CLTnum.html" title="Theorem 6.1.2: The Central Limit Theorem (Numerical)">Theorem 6.1.2</a> to compute the standard error for the sampling distribution: \(SE\text{.}\)</p></article><article class="task exercise-like" id="task-761"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-1365">Use <a class="xref" data-knowl="./knowl/definition-tcurve.html" title="Definition 6.1.4: \(t\)-Random Variable">Definition 6.1.4</a> to compute the degrees of freedom of the sampling distribution.</p></article><article class="task exercise-like" id="task-762"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-1366">If we assume the sampling distribution has mean \(\mu=30\text{,}\) use this mean and \(SE\) to compute a \(t\)-score for \(\bar{x}\text{,}\) \(t_{\bar{x}}\text{.}\)</p></article><article class="task exercise-like" id="task-763"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<article class="task exercise-like" id="task-759"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1363">Compute the sample mean \(\bar{x}\text{,}\) and the standard deviation \(s\text{,}\) for the above sample.</p></article><article class="task exercise-like" id="task-760"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-1364">What is \(n\) the size of the sample?  Use <a href="" class="xref" data-knowl="./knowl/theorem-CLTnum.html" title="Theorem 6.1.2: The Central Limit Theorem (Numerical)">Theorem 6.1.2</a> to compute the standard error for the sampling distribution: \(SE\text{.}\)</p></article><article class="task exercise-like" id="task-761"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-1365">Use <a href="" class="xref" data-knowl="./knowl/definition-tcurve.html" title="Definition 6.1.4: \(t\)-Random Variable">Definition 6.1.4</a> to compute the degrees of freedom of the sampling distribution.</p></article><article class="task exercise-like" id="task-762"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-1366">If we assume the sampling distribution has mean \(\mu=30\text{,}\) use this mean and \(SE\) to compute a \(t\)-score for \(\bar{x}\text{,}\) \(t_{\bar{x}}\text{.}\)</p></article><article class="task exercise-like" id="task-763"><h5 class="heading"><span class="codenumber">(e)</span></h5>
 <p id="p-1367">Compute \(P(t&gt;t_{\bar{x}})\text{.}\)</p></article></article></section></section></div></main>
 </div>
 </body>

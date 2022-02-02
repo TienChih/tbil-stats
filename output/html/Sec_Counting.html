@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-02-01T19:40:41-07:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Counting Principles (D3)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg">miniversion=0.6</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\Q}{\terminology{Question:\ }}
+\newcommand{\Sol}{\terminology{Solution:\ }}
+\newcommand{\Fisg}{\emph{Fisg}}
+\newcommand{\Iisg}{\emph{Iisg}}
+\newcommand{\Pisg}{\emph{Pisg}}
+\newcommand{\Tisg}{\emph{Tisg}}
+\newcommand{\Dom}{\emph{Dom}}
+\newcommand{\Img}{\emph{Im}}
+\DeclareMathOperator{\id}{id}
+\newcommand{\bcup}{\displaystyle\bigcup}
+\newcommand{\bcap}{\displaystyle\bigcap}
+\newcommand{\dsum}{\displaystyle\sum}
+\newcommand{\dint}{\displaystyle\int}
+\newcommand{\R}[1]{\mathbb{R}^{#1}}
+\newcommand{\C}[1]{\mathbb{C}^{#1}}
+\newcommand{\Z}[1]{\mathbb{Z}^{#1}}
+\newcommand{\K}[1]{\mathbb{K}^{#1}}
+\newcommand{\limit}[2]{\displaystyle{ \lim_{#1 \to #2}}}
+\newcommand{\TCB}[1]{\textcolor{blue}{#1}}
+\newcommand{\TCR}[1]{\textcolor{red}{#1}}
+\newcommand{\TCO}[1]{\textcolor{orange}{#1}}
+\newcommand{\TCG}[1]{\textcolor{ForestGreen}{#1}}
+\DeclareMathOperator{\Endo}{Endo}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Obj}{Obj}
+\DeclareMathOperator{\pleat}{\mathcal{P}\ell}
+\def\PX{\mathfrak{W}G}
+\def\Gph{\mathsf{Gph}}
+\def\HoGph{\mathsf{HoGph}}
+\def\into{\hookrightarrow}
+\def\con{\underline{}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Team Based Statistics</span></a></h1>
+<p class="byline">Tien Chih</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="Sec_GeneralNormal.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="Chap_Distributions.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="Sec_Binomial.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="Sec_GeneralNormal.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="Chap_Distributions.html" title="Up">Up</a><a class="next-button button toolbar-item" href="Sec_Binomial.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul>
+<li><a href="learning-outcomes.html" data-scroll="learning-outcomes">Learning Outcomes and Usage</a></li>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="author-bio-TC.html" data-scroll="author-bio-TC">Author Biography</a></li>
+<li><a href="dedication-1.html" data-scroll="dedication-1">Dedication</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_DataBasics.html" data-scroll="Chap_DataBasics"><span class="codenumber">1</span> <span class="title">Data Basics (B)</span></a><ul>
+<li><a href="Sec_Variables.html" data-scroll="Sec_Variables">Types of Variables and their Relationships (B1)</a></li>
+<li><a href="Sec_Sampling.html" data-scroll="Sec_Sampling">Sampling Techniques (B2)</a></li>
+<li><a href="Sec_Visualization.html" data-scroll="Sec_Visualization">Visualizing Data (B3)</a></li>
+<li><a href="Sec_Center.html" data-scroll="Sec_Center">Centers of Data (B4)</a></li>
+<li><a href="Sec_Variation.html" data-scroll="Sec_Variation">Variation of Data (B5)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Probability.html" data-scroll="Chap_Probability"><span class="codenumber">2</span> <span class="title">Probability (P)</span></a><ul>
+<li><a href="Sec_Introprob.html" data-scroll="Sec_Introprob">Introduction to Probability (P1)</a></li>
+<li><a href="Sec_Conditionalprob.html" data-scroll="Sec_Conditionalprob">Conditional Probability (P2)</a></li>
+<li><a href="Sec_Bayes.html" data-scroll="Sec_Bayes">Bayes Theorem (P3)</a></li>
+<li><a href="Sec_RandomVariables.html" data-scroll="Sec_RandomVariables">Random Variables (P4)</a></li>
+<li><a href="Sec_LinearCombofVariables.html" data-scroll="Sec_LinearCombofVariables">Linear Combinations of Random Variables (P5)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Distributions.html" data-scroll="Chap_Distributions"><span class="codenumber">3</span> <span class="title">Distributions (D)</span></a><ul>
+<li><a href="Sec_StandardNormal.html" data-scroll="Sec_StandardNormal">Standard Normal Distribution (D1)</a></li>
+<li><a href="Sec_GeneralNormal.html" data-scroll="Sec_GeneralNormal">General Normal Distribution (D2)</a></li>
+<li><a href="Sec_Counting.html" data-scroll="Sec_Counting" class="active">Counting Principles (D3)</a></li>
+<li><a href="Sec_Binomial.html" data-scroll="Sec_Binomial">Binomial Distribution (D4)</a></li>
+<li><a href="Sec_NormalApprox.html" data-scroll="Sec_NormalApprox">Normal Approximation (D5)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Foundations.html" data-scroll="Chap_Foundations"><span class="codenumber">4</span> <span class="title">Foundations for Inference (F)</span></a><ul>
+<li><a href="Sec_PointEstimates.html" data-scroll="Sec_PointEstimates">Point Estimates (F1)</a></li>
+<li><a href="Sec_ConfidenceInterval.html" data-scroll="Sec_ConfidenceInterval">Introduction to Confidence Intervals (F2)</a></li>
+<li><a href="Sec_HypothesisTesing.html" data-scroll="Sec_HypothesisTesing">Introduction to Hypothesis Testing (F3)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Categorical.html" data-scroll="Chap_Categorical"><span class="codenumber">5</span> <span class="title">Inference for Categorical Variables (C)</span></a><ul>
+<li><a href="Sec_SizeofSampleCat.html" data-scroll="Sec_SizeofSampleCat">Size of Samples (Categorical)</a></li>
+<li><a href="Sec_TwoVarCat.html" data-scroll="Sec_TwoVarCat">Comparing Two Categorical Variables (C2)</a></li>
+<li><a href="Sec_ChiSquare.html" data-scroll="Sec_ChiSquare">Chi-Squared Test and Goodness of Fit (C3)</a></li>
+<li><a href="Sec_ChiIndependence.html" data-scroll="Sec_ChiIndependence">Chi-Squared Test and Independence (C4)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Numerical.html" data-scroll="Chap_Numerical"><span class="codenumber">6</span> <span class="title">Inference for Numerical Variables (N)</span></a><ul>
+<li><a href="Sec_tVariable.html" data-scroll="Sec_tVariable">The \(t\)-Variable and Sampling Distribution of Numerical Variables (N1)</a></li>
+<li><a href="Sec_OneVarNum.html" data-scroll="Sec_OneVarNum">Confidence Intervals and Hypothesis Testing for a single Numerical Variable (N2)</a></li>
+<li><a href="Sec_PairedData.html" data-scroll="Sec_PairedData">Paired Numerical Data (N3)</a></li>
+<li><a href="Sec_TwoVarNum.html" data-scroll="Sec_TwoVarNum">Comparing Two Numerical Variables (N4)</a></li>
+<li><a href="Sec_SizeofSampleNum.html" data-scroll="Sec_SizeofSampleNum">Size of Samples of Numerical Variables (N5)</a></li>
+<li><a href="Sec_ANOVA.html" data-scroll="Sec_ANOVA">ANOVA: Analysis of Variation (N6)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_LinearRegression.html" data-scroll="Chap_LinearRegression"><span class="codenumber">7</span> <span class="title">Linear Regression (R)</span></a><ul>
+<li><a href="Sec_Correlation.html" data-scroll="Sec_Correlation">Linear Correlation of Variables (R1)</a></li>
+<li><a href="Sec_InterpretingRegression.html" data-scroll="Sec_InterpretingRegression">Interpreting Linear Regression (R2)</a></li>
+<li><a href="Sec_InferenceRegression.html" data-scroll="Sec_InferenceRegression">Inference and Linear Regression (R3)</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="Sec_Counting"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.3</span> <span class="title">Counting Principles (D3)</span>
+</h2>
+<section class="introduction" id="introduction-77"><p id="p-730">In this section, we explore counting principles for ordered and unordered selection.</p></section><section class="subsection" id="subsection-16"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.3.1</span> <span class="title">Ordered Counting</span>
+</h3>
+<article class="exploration project-like" id="exploration-breakfast"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">3.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Breakfast Choices.</span>
+</h4>
+<div class="introduction" id="introduction-78"><p id="p-731">Suppose you were eating breakfast, and you could choose from eggs, sausage or pancakes to eat, and coffee and juice to drink.</p></div>
+<article class="task exercise-like" id="task-392"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-732">List all of the possible food-beverage choices you could make.  (Assume you can't skip either, and can only have one food idea and one beverage.)</p></article><article class="task exercise-like" id="task-393"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-733">How many different choices could you make?</p></article></article><article class="activity project-like" id="activity-80"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.2</span><span class="period">.</span>
+</h4>
+<div class="introduction" id="introduction-79">
+<p id="p-734">One of the most useful counting tools in mathematics is the <dfn class="terminology">multiplication principle</dfn>. This principle is used when all the items to be counted come from a sequence of choices. If each item is made by making a choice from \(a\) things, then a choice from \(b\) things, then a choice from \(c\) things, and so on, then the total number of items is given by the product:</p>
+<div class="displaymath">
+\begin{equation*}
+a\cdot b\cdot c\cdot \cdots
+\end{equation*}
+</div>
+</div>
+<article class="task exercise-like" id="task-394"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-735">Suppose for a fancy dinner you are given four options as an appetizer, six options as an entree, three options as a beverage, and two options as a dessert. How many different dinners are possible?</p></article><article class="task exercise-like" id="task-395"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-736">Suppose you could choose an appetizer or a dessert, but not both. How many different dinners are possible in that scenario?</p></article><article class="task exercise-like" id="task-396"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-737">What if instead you consider the choice to skip any part of the meal, holding the appetizer, entree, beverage, and/or dessert. How many dinners are possible in that case?</p></article><article class="task exercise-like" id="task-397"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-738">What is the size of the sample space for the experiment of rolling a six sided die, then flipping a coin, then drawing a card from a shuffled 52-card deck?</p></article></article><article class="activity project-like" id="activity-letterrrangemnts"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Letter Arrangements.</span>
+</h4>
+<div class="introduction" id="introduction-80"><p id="p-739">Suppose you had the five tiles with A, B, C, D, E written on them.</p></div>
+<article class="task exercise-like" id="task-398"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-740">How many ways can you select two tiles and put them in a row? (Use the multiplication principle, how many choices do you have for the first tile?  The second?)</p></article><article class="task exercise-like" id="task-399"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-741">How many ways can you select three tiles and put them in a row?</p></article><article class="task exercise-like" id="task-400"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-742">How many ways can you select four tiles and put them in a row?</p></article><article class="task exercise-like" id="task-401"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-743">How many ways can you select all five tiles and put them in a row?</p></article><article class="task exercise-like" id="task-402"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-744">Run the following code to display all the possible ways to select <code class="code-inline tex2jax_ignore">k=2</code> tiles out of <code class="code-inline tex2jax_ignore">A, B, C, D, E</code> and arrange them: <div class="sagecell-sage" id="sage-120"><script type="text/x-sage">S=['A', 'B', 'C', 'D', 'E']
+k=2
+A=Arrangements(S,k)
+
+print(A.list())            
+print(A.cardinality() )
+</script></div></p>
+<p id="p-745">How does this compare to what you found in (a)?</p></article><article class="task exercise-like" id="task-403"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p id="p-746">Adjust the above code to let <code class="code-inline tex2jax_ignore">k</code> be 3, 4 and 5.  How does the outputs compare to what you found in (b), (c), and (d)?</p></article></article><article class="definition definition-like" id="definition-permutation"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.3.1</span><span class="period">.</span>
+</h4>
+<p id="p-747">A <dfn class="terminology">permutation</dfn> is an ordered arrangement of objects.  In partcular, a \(r\) permutation on an \(n\) element set is a selection of \(r \) objects from this set and arranged.</p>
+<p id="p-748">The number of \(r\) permutations on an \(n\) element set would be computed</p>
+<div class="displaymath">
+\begin{equation*}
+P(n,r)=\overbrace{n\cdot (n-1)\cdots(n-r+1)}^r.
+\end{equation*}
+</div></article><article class="remark remark-like" id="remark-20"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.3.2</span><span class="period">.</span>
+</h4>
+<p id="p-749">We note that \(n!\) denotes \(n!=\overbrace{n\cdot (n-1)\cdots 1}^{n}\) where we let \(0!=1\text{.}\)</p>
+<p id="p-750">Notice that</p>
+<div class="displaymath">
+\begin{equation*}
+P(n,n)=\overbrace{n\cdot (n-1)\cdots 1}^{n}=n!.
+\end{equation*}
+</div>
+<p id="p-751">Also notice that more generally</p>
+<div class="displaymath">
+\begin{equation*}
+P(n,r)=\overbrace{n\cdot (n-1)\cdots (n-r+1)}^{r}=\frac{n\cdot (n-1)\cdots (n-r+1)\cdot \color{blue}{(n-r)\cdots 1}}{\color{blue}{(n-r)\cdots 1}}=\frac{n!}{(n-r)!}.
+\end{equation*}
+</div></article><article class="activity project-like" id="activity-permutations"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Permutations.</span>
+</h4>
+<article class="task exercise-like" id="task-404"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-752">If a driver had to make 6 deliveries, how many ways could they pick an order to do so?</p></article><article class="task exercise-like" id="task-405"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-753">If a class of 30 had to select 4 students to be class president, vice president, secretary and treasurer, how many ways could you do this?</p></article><article class="task exercise-like" id="task-406"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-754">If you have 10 books, how many ways can you select 6 of them to arrange on a shelf?</p></article></article></section><section class="subsection" id="subsection-17"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.3.2</span> <span class="title">Unordered Counting</span>
+</h3>
+<article class="exploration project-like" id="exploration-combinations"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">3.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">Combinations.</span>
+</h4>
+<div class="introduction" id="introduction-81"><p id="p-755">Suppose you had 4 tiles with letters W, X Y and Z written on them.  We know from <a href="" class="xref" data-knowl="./knowl/definition-permutation.html" title="Definition 3.3.1">Definition 3.3.1</a> that there the number of ways to select 3 out of these 4 tiles and arrange them is \(P(4,3)=\frac{4!}{(4-3)!}=24\text{.}\)</p></div>
+<article class="task exercise-like" id="task-407"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-756">Write out all 24 arrangements, grouping together the arrangemnets that use the same letters.  For example WXY and WYX would be in the same group along with other possible arrangements of the same letters.</p></article><article class="task exercise-like" id="task-408"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-757">How many different groups do you have?</p></article><article class="task exercise-like" id="task-409"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-758">How many arrangements are in each group?</p></article><article class="task exercise-like" id="task-410"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-759">How many ways could we select 3 out of 4 tiles if we were <em class="emphasis">unconcerned</em> about the order in which we selected them?</p></article><article class="task exercise-like" id="task-411"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-760">Run the following code to display all the possible ways to select <code class="code-inline tex2jax_ignore">k=3</code> tiles out of <code class="code-inline tex2jax_ignore">W, X, Y, Z</code> without arranging them: <div class="sagecell-sage" id="sage-121"><script type="text/x-sage">S=['W', 'X', 'Y', 'Z']
+k=3
+C=Subsets(S,k)
+
+print(C.list())            
+print(C.cardinality() )
+</script></div></p>
+<p id="p-761">How does this compare to what you've done above?</p></article></article><article class="definition definition-like" id="definition-combination"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Combination.</span>
+</h4>
+<p id="p-762">Given \(n\) objects, the number of ways to select \(k\) of them <em class="emphasis">without order</em>, also called a <dfn class="terminology">combination</dfn> is:</p>
+<div class="displaymath">
+\begin{equation*}
+C(n,k)=\frac{P(n,k)}{k!}=\frac{n!}{k!(n-k)!}.
+\end{equation*}
+</div>
+<p class="continuation">This is also commonly denoted \({n\choose k}\text{,}\) which we will avoid to prevent confusion with fractions.</p></article><article class="activity project-like" id="activity-combinations"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">Combinations.</span>
+</h4>
+<article class="task exercise-like" id="task-412"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-763">If a class of 30 had to select 4 students to be class representatives, how many ways could you do this?</p></article><article class="task exercise-like" id="task-413"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-764">If you have 10 books, how many ways can you select 6 of them to give away?</p></article><article class="task exercise-like" id="task-414"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-765">If you have 10 books, how many ways can you select 4 of them to keep?</p></article><article class="task exercise-like" id="task-415"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-766">How do the questions (b) and (c), and their answers compare?</p></article></article><article class="remark remark-like" id="remark-21"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.3.4</span><span class="period">.</span>
+</h4>
+<p id="p-767">Here are some useful facts about combinations.</p>
+<ul class="disc">
+<li id="li-126"><p id="p-derived-li-126">\(C(n,n)=1\text{.}\)  There is only one way to pick \(n\) of \(n\) objects.  Pick them all.</p></li>
+<li id="li-127"><p id="p-derived-li-127">\(C(n,r)=C(n,n-r)\text{.}\)  Picking \(r\) objects is the same as selecting \(n-r\) objects to <em class="emphasis">not</em> pick.</p></li>
+<li id="li-128"><p id="p-derived-li-128">\(C(n,0)=1\text{.}\)  Combine the above facts.  Alternatively, the only selection of no objects is the empty selection.</p></li>
+</ul></article><article class="activity project-like" id="activity-permutationorcombinations"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.7</span><span class="period">.</span><span class="space"> </span><span class="title">Permutation or Combination.</span>
+</h4>
+<div class="introduction" id="introduction-82"><p id="p-768">For each of the following determine if the problem describes a permutation (order matters) or a combination (order doesn't matter) and find the answer.</p></div>
+<article class="task exercise-like" id="task-416"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-769">Out of 20 shirts, how many can I pick to wear for each day of the week Sunday through Saturday?</p></article><article class="task exercise-like" id="task-417"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-770">How many ways can I pick 3 out of 25 ice cream flavors to buy?</p></article><article class="task exercise-like" id="task-418"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-771">How many 5 card hands out of a 52 card deck are there?</p></article><article class="task exercise-like" id="task-419"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-772">If I deal 5 cards from a 52 card deck, one to each of 5 people, how many ways could this happen?</p></article></article></section></section></div></main>
+</div>
+</body>
+</html>

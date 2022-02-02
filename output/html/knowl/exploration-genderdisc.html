@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-05-20T14:05:27-06:00       *-->
+<!--*       on 2022-02-01T19:41:11-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -31,15 +31,15 @@
 </script>
 </head>
 <body>
-<article class="exploration project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">5.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Gender and Raises.</span>
-</h6>
-<div class="introduction"><p xmlns:svg="http://www.w3.org/2000/svg">A watchdog group concerned about gender discrimination at a company randomly polls 528 of the company's employees, 312  men and 216  women.  At the end of last year of those surveyed, 102 employees recieved raises: 72 men and 30 women.  The watchdog group points out that the proportion of men who got raises is significantly greater than the proportion of women who got raises and suggests this is due to inequitable practices within the company.  The company claims that any difference between the rates and men and women getting raises is purely by random chance.</p></div>
-<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Find \(\hat{p}\) the proportion of the sampled employees of the company who got a raise.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">How many more men than women in this sample got raises this year?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(c)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">The company claims that rates of raises are equal across gender and any deviation in a given year is by chance. If this were true, we would expect more men than women to get raises since there are more men in the sample.  But by how much?</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Let's put the companies claim to the test.  Run the following code to simulate a <code class="code-inline tex2jax_ignore">raise_rate</code> of \(\hat{p}\) found in (a).  We then simulate how many <code class="code-inline tex2jax_ignore">num_men=312</code> and <code class="code-inline tex2jax_ignore">num_women=216</code> got raises and calculate their difference <code class="code-inline tex2jax_ignore">d</code>. <div class="sagecell-r" id="sage-174"><script type="text/x-sage">raise_rate=FIXME
+<article class="exploration project-like"><h3 class="heading">
+<span class="type">Exploration</span><span xmlns:svg="http://www.w3.org/2000/svg" class="space"> </span><span class="codenumber">5.2.1</span><span xmlns:svg="http://www.w3.org/2000/svg" class="period">.</span><span xmlns:svg="http://www.w3.org/2000/svg" class="space"> </span><span class="title">Gender and Raises.</span>
+</h3>
+<div class="introduction"><p>A watchdog group concerned about gender discrimination at a company randomly polls 528 of the company's employees, 312  men and 216  women.  At the end of last year of those surveyed, 102 employees recieved raises: 72 men and 30 women.  The watchdog group points out that the proportion of men who got raises is significantly greater than the proportion of women who got raises and suggests this is due to inequitable practices within the company.  The company claims that any difference between the rates and men and women getting raises is purely by random chance.</p></div>
+<article class="task exercise-like"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p>Find \(\hat{p}\) the proportion of the sampled employees of the company who got a raise.</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p>How many more men than women in this sample got raises this year?</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p>The company claims that rates of raises are equal across gender and any deviation in a given year is by chance. If this were true, we would expect more men than women to get raises since there are more men in the sample.  But by how much?</p>
+<p>Let's put the companies claim to the test.  Run the following code to simulate a <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">raise_rate</code> of \(\hat{p}\) found in (a).  We then simulate how many <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">num_men=312</code> and <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">num_women=216</code> got raises and calculate their difference <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">d</code>. <div class="sagecell-r" id="sage-174"><script type="text/x-sage">raise_rate=FIXME
 num_men=312
 num_women=216
 
@@ -48,8 +48,8 @@ womenraise=sample(c("RAISE", "NO"), num_women, replace=TRUE, prob=c(raise_rate, 
 
 d=length(which(menraise=="RAISE"))-length(which(womenraise=="RAISE"))
 print(d)
-</script></div> How does this value compare to what you found in (b)?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(d)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Let's take it a step further.  Fix and run the following code to simulate a 1000 random promotion schedules, and plot a distribution of the differences between men and women promoted.  Enter in <code class="code-inline tex2jax_ignore">observed_diff</code> to be the value found in (b) <div class="sagecell-r" id="sage-175"><script type="text/x-sage">observed_diff=FIXME
+</script></div> How does this value compare to what you found in (b)?</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p>Let's take it a step further.  Fix and run the following code to simulate a 1000 random promotion schedules, and plot a distribution of the differences between men and women promoted.  Enter in <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">observed_diff</code> to be the value found in (b) <div class="sagecell-r" id="sage-175"><script type="text/x-sage">observed_diff=FIXME
 
 diff_vec=rep(NA,1000)
 
@@ -62,9 +62,9 @@ for(i in 1:1000){
 hist(diff_vec)
 abline(v = observed_diff, col="red", lwd=3, lty=2)
 print(observed_diff)
-</script></div> How likely is the difference you observed in (b)?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(e)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to see the proportion of trials where the difference in promotions was as big or greater as found in (b). <div class="sagecell-r" id="sage-176"><script type="text/x-sage">length(which(diff_vec>=observed_diff))/1000
-</script></div></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(f)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">How plausible is the companies claim that this differences in promotion rates is purely due to chance?</p></article></article><span class="incontext"><a href="Sec_TwoVarCat.html#exploration-genderdisc">in-context</a></span>
+</script></div> How likely is the difference you observed in (b)?</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<p>Run the following code to see the proportion of trials where the difference in promotions was as big or greater as found in (b). <div class="sagecell-r" id="sage-176"><script type="text/x-sage">length(which(diff_vec>=observed_diff))/1000
+</script></div></p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(f)</span></h4>
+<p>How plausible is the companies claim that this differences in promotion rates is purely due to chance?</p></article></article><span class="incontext"><a href="Sec_TwoVarCat.html#exploration-genderdisc">in-context</a></span>
 </body>
 </html>

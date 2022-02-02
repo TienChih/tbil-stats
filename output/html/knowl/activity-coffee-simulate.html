@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-05-20T14:05:01-06:00       *-->
+<!--*       on 2022-02-01T19:40:59-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -31,16 +31,16 @@
 </script>
 </head>
 <body>
-<article class="activity project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Simulating Coffee Drinkers.</span>
-</h6>
-<div class="introduction"><p xmlns:svg="http://www.w3.org/2000/svg">Suppose that  a coffee drinkers has a 70% chance to use cream (\(P(C)\)), out of coffee drinkers who use cream, they have an 80% chance to use sugar (\(P(S|C)\)), and out of those who do not use cream, they have a 40% chance to use sugar (\(P(S|C^c)\)).</p></div>
-<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to simulate 100 random coffee drinkers and whether or not they use cream.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg"><div class="sagecell-r" id="sage-70"><script type="text/x-sage">cream = sample(c("cream", "no cream"), 100, replace = TRUE, prob = c(0.7, 0.3))
-</script></div></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to simulate the coffee drinker's sugar preference, based on if they use cream.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg"><div class="sagecell-r" id="sage-71"><script type="text/x-sage">sugar = rep(NA, 100)
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span xmlns:svg="http://www.w3.org/2000/svg" class="space"> </span><span class="codenumber">2.3.2</span><span xmlns:svg="http://www.w3.org/2000/svg" class="period">.</span><span xmlns:svg="http://www.w3.org/2000/svg" class="space"> </span><span class="title">Simulating Coffee Drinkers.</span>
+</h4>
+<div class="introduction"><p>Suppose that  a coffee drinkers has a 70% chance to use cream (\(P(C)\)), out of coffee drinkers who use cream, they have an 80% chance to use sugar (\(P(S|C)\)), and out of those who do not use cream, they have a 40% chance to use sugar (\(P(S|C^c)\)).</p></div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>Run the following code to simulate 100 random coffee drinkers and whether or not they use cream.</p>
+<p><div class="sagecell-r" id="sage-70"><script type="text/x-sage">cream = sample(c("cream", "no cream"), 100, replace = TRUE, prob = c(0.7, 0.3))
+</script></div></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>Run the following code to simulate the coffee drinker's sugar preference, based on if they use cream.</p>
+<p><div class="sagecell-r" id="sage-71"><script type="text/x-sage">sugar = rep(NA, 100)
 
 for(i in 1:100){
   if(cream[i]=="cream"){
@@ -52,10 +52,10 @@ for(i in 1:100){
 }
 
 sugar
-</script></div></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(c)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to show coffee drinkers preferences for cream and sugar.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg"><div class="sagecell-r" id="sage-72"><script type="text/x-sage">table(cream,sugar)
-</script></div></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(d)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">How do these values compare to what you found in <a class="xref" data-knowl="./knowl/activity-conditional-on-coffee.html" title="Activity 2.3.1: Conditional Probability and Coffee">Activity 2.3.1</a>?</p></article></article><span class="incontext"><a href="Sec_Bayes.html#activity-coffee-simulate">in-context</a></span>
+</script></div></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>Run the following code to show coffee drinkers preferences for cream and sugar.</p>
+<p><div class="sagecell-r" id="sage-72"><script type="text/x-sage">table(cream,sugar)
+</script></div></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>How do these values compare to what you found in <a href="" class="xref" data-knowl="./knowl/activity-conditional-on-coffee.html" title="Activity 2.3.1: Conditional Probability and Coffee">Activity 2.3.1</a>?</p></article></article><span class="incontext"><a href="Sec_Bayes.html#activity-coffee-simulate">in-context</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-05-20T14:05:07-06:00       *-->
+<!--*       on 2022-02-01T19:41:02-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -31,29 +31,29 @@
 </script>
 </head>
 <body>
-<article class="activity project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.3</span><span class="period">.</span><span class="space"> </span><span class="title">Fast Food Group Order.</span>
-</h6>
-<div class="introduction"><p xmlns:svg="http://www.w3.org/2000/svg">Recall the fast food orders of <a class="xref" data-knowl="./knowl/activity-fastfood.html" title="Activity 2.4.6: Fast Food Order">Activity 2.4.6</a>. Suppose a group of ten friends order together, and let the cost of their order be \(G=X_1+\ldots X_{10}\) where each \(X_i\) is the cost of an individual order as in <a class="xref" data-knowl="./knowl/activity-fastfood.html" title="Activity 2.4.6: Fast Food Order">Activity 2.4.6</a>.  Also suppose these orders will be independent of each other.</p></div>
-<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
-<p>Use <a class="xref" data-knowl="./knowl/remark-linofEandV.html" title="Remark 2.5.1">Remark 2.5.1</a> and the fact that</p>
+<article class="activity project-like"><h3 class="heading">
+<span class="type">Activity</span><span xmlns:svg="http://www.w3.org/2000/svg" class="space"> </span><span class="codenumber">2.5.3</span><span xmlns:svg="http://www.w3.org/2000/svg" class="period">.</span><span xmlns:svg="http://www.w3.org/2000/svg" class="space"> </span><span class="title">Fast Food Group Order.</span>
+</h3>
+<div class="introduction"><p>Recall the fast food orders of <a href="" class="xref" data-knowl="./knowl/activity-fastfood.html" title="Activity 2.4.6: Fast Food Order">Activity 2.4.6</a>. Suppose a group of ten friends order together, and let the cost of their order be \(G=X_1+\ldots X_{10}\) where each \(X_i\) is the cost of an individual order as in <a href="" class="xref" data-knowl="./knowl/activity-fastfood.html" title="Activity 2.4.6: Fast Food Order">Activity 2.4.6</a>.  Also suppose these orders will be independent of each other.</p></div>
+<article class="task exercise-like"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p>Use <a href="" class="xref" data-knowl="./knowl/remark-linofEandV.html" title="Remark 2.5.1">Remark 2.5.1</a> and the fact that</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 G=X_1+X_2+X_3+X_4+X_5+X_6+X_7+X_8+X_9+X_{10}
 \end{equation*}
 </div>
-<p data-braille="continuation">to find \(E(G), Var(G)\text{.}\)</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to simulate 200 groups of ten and plot a histogram of their purchase amounts.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg"><div class="sagecell-r" id="sage-103"><script type="text/x-sage">  groupcost=rep(0, 200)
+<p class="continuation">to find \(E(G), Var(G)\text{.}\)</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p>Run the following code to simulate 200 groups of ten and plot a histogram of their purchase amounts.</p>
+<p><div class="sagecell-r" id="sage-103"><script type="text/x-sage">  groupcost=rep(0, 200)
   for(i in 1:10){
    groupcost = groupcost+sample(c(5, 7.5, 12), 200, replace = TRUE, prob = c(0.4, 0.25, 0.35))
 }
   hist(groupcost)
-</script></div></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(c)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to find the mean and variance of the purchase amounts.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg"><div class="sagecell-r" id="sage-104"><script type="text/x-sage">mean(groupcost)
+</script></div></p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p>Run the following code to find the mean and variance of the purchase amounts.</p>
+<p><div class="sagecell-r" id="sage-104"><script type="text/x-sage">mean(groupcost)
 </script></div> <div class="sagecell-r" id="sage-105"><script type="text/x-sage">var(groupcost)
 </script></div></p>
-<p xmlns:svg="http://www.w3.org/2000/svg">How do these values compare to the what you found in (a)?</p></article></article><span class="incontext"><a href="Sec_LinearCombofVariables.html#activity-fastfoodgroup">in-context</a></span>
+<p>How do these values compare to the what you found in (a)?</p></article></article><span class="incontext"><a href="Sec_LinearCombofVariables.html#activity-fastfoodgroup">in-context</a></span>
 </body>
 </html>

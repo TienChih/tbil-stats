@@ -125,7 +125,7 @@ relate (or not relate) to the majority of the data?
 </introduction>
 
 <task>
-    <p>Consider the data set <c>S=[1,2,3,4,5]</c>.  Compute the mean of <m>S</m>, <m>\bar{x}=S</m>.</p>
+    <p>Consider the data set <c>S=[1,2,3,4,5]</c>.  Compute the mean of <m>S</m>, <m>\bar{x}</m>.</p>
 </task>
 
 <task>
@@ -197,9 +197,9 @@ relate (or not relate) to the majority of the data?
 <definition>
   <p>
     <ol>
-      <li> The <em> sample variance</em>  is  denoted by <me>V_S:=\frac{\sum (x_i-\mu)^2}{n-1} </me></li>
+      <li> The <em> sample variance</em>  is  denoted by <me>V_S:=\frac{\sum (x_i-\bar{x})^2}{n-1} </me></li>
 
-      <li> The <em>sample standard deviation</em> is denoted by  <me>s:=\sqrt{V_S}=\sqrt{\frac{\sum (x_i-\mu)^2}{n-1}} </me></li>
+      <li> The <em>sample standard deviation</em> is denoted by  <me>s:=\sqrt{V_S}=\sqrt{\frac{\sum (x_i-\bar{x})^2}{n-1}} </me></li>
 
      </ol> 
 
@@ -575,7 +575,7 @@ relate (or not relate) to the majority of the data?
 </activity>
 
 
-<activity xml:id="activity-subgroups">
+<activity xml:id="activity-subgroups2">
     <title>Comparing Subgroups of Chosen Variable</title>
      <task><p>
       Follow this link and identify a numerical vairable whose box plots you wish to find, and a categorical variable you wish to seperate the data by. <url>https://www.openintro.org/data/index.php?data=ncbirths</url>.

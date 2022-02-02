@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-05-20T14:04:19-06:00       *-->
+<!--*       on 2022-02-01T19:32:22-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,36 +14,42 @@
 <title>Binomial Distribution (D4)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
     },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>$(function () {
     // Make *any* div with class 'sagecell-sage' an executable Sage cell
     // Their results will be linked, only within language type
     sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
@@ -59,7 +65,7 @@ MathJax.Hub.Config({
                            languages: ['r'],
                            evalButtonText: 'Evaluate (R)'});
 });
-</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg">miniversion=0.6</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -72,8 +78,8 @@ MathJax.Hub.Config({
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
 <!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
-<body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\Q}{\terminology{Question:\ }}
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\Q}{\terminology{Question:\ }}
 \newcommand{\Sol}{\terminology{Solution:\ }}
 \newcommand{\Fisg}{\emph{Fisg}}
 \newcommand{\Iisg}{\emph{Iisg}}
@@ -192,15 +198,15 @@ MathJax.Hub.Config({
 <li><a href="Sec_InferenceRegression.html" data-scroll="Sec_InferenceRegression">Inference and Linear Regression (R3)</a></li>
 </ul>
 </li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="Sec_Binomial"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.4</span> <span class="title">Binomial Distribution (D4)</span>
 </h2>
 <section class="introduction" id="introduction-83"><p id="p-773">In this section, we explore the <em class="emphasis">binomial probability distribution</em> .</p>
-<article class="exploration project-like" id="exploration-freethrow"><h6 class="heading">
+<article class="exploration project-like" id="exploration-freethrow"><h3 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">3.4.1</span><span class="period">.</span><span class="space"> </span><span class="title">Free Throws.</span>
-</h6>
+</h3>
 <div class="introduction" id="introduction-84">
 <p id="p-774">Suppose a basketball player has a 90% chance shot of making a free-throw, and suppose that the success of each free-throw was <em class="emphasis">independent</em> of each other.  If she took 4 shots, the probability that she makes the first two and misses the last two would be:</p>
 <div class="displaymath">
@@ -208,33 +214,33 @@ MathJax.Hub.Config({
 P(F_1=\text{score})P(F_2=\text{score})P(F_3=\text{miss})P(F_4=\text{miss})=(0.9)(0.9)(0.1)(0.1)=0.0081
 \end{equation*}
 </div>
-<p data-braille="continuation">where \(F_i\) denotes the outcome of the \(i\)th free throw.</p>
+<p class="continuation">where \(F_i\) denotes the outcome of the \(i\)th free throw.</p>
 </div>
-<article class="task exercise-like" id="task-420"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-775">What is the probability that she takes 4 free throws, makes the last two shots, but misses the first two?</p></article><article class="task exercise-like" id="task-421"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-776">What is the probability that she takes 4 free throws, makes the first and third shots, but misses the other two?</p></article><article class="task exercise-like" id="task-422"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-777">What do we notice about the probabilities found in (a) and (b)?</p></article><article class="task exercise-like" id="task-423"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-778">Using <a class="xref" data-knowl="./knowl/definition-combination.html" title="Definition 3.3.3: Combination">Definition 3.3.3</a>, how many ways can we select 2 our of 4 free-throws for her to make?</p></article></article></section><section class="subsection" id="subsection-18"><h3 class="heading hide-type">
+<article class="task exercise-like" id="task-420"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-775">What is the probability that she takes 4 free throws, makes the last two shots, but misses the first two?</p></article><article class="task exercise-like" id="task-421"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-776">What is the probability that she takes 4 free throws, makes the first and third shots, but misses the other two?</p></article><article class="task exercise-like" id="task-422"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-777">What do we notice about the probabilities found in (a) and (b)?</p></article><article class="task exercise-like" id="task-423"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-778">Using <a href="" class="xref" data-knowl="./knowl/definition-combination.html" title="Definition 3.3.3: Combination">Definition 3.3.3</a>, how many ways can we select 2 our of 4 free-throws for her to make?</p></article></article></section><section class="subsection" id="subsection-18"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.4.1</span> <span class="title">Binomial Probabilities</span>
 </h3>
-<article class="definition definition-like" id="DefinitionBinomial"><h6 class="heading">
+<article class="definition definition-like" id="DefinitionBinomial"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.4.1</span><span class="period">.</span>
-</h6>
+</h4>
 <p id="p-779">Given \(n\) <em class="emphasis">independent</em> trials, each of which has \(p\) probability of success, let \(X\) denote the number of successes attained.  We call \(X\) a <dfn class="terminology">binomial random variable</dfn>.  The probability that exactly \(k\) successes are attained is:</p>
 <div class="displaymath">
 \begin{equation*}
 P(X=k)=C(n,k) p^k (1-p)^{n-k}.
 \end{equation*}
-</div></article><article class="remark remark-like" id="remark-22"><h6 class="heading">
+</div></article><article class="remark remark-like" id="remark-22"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.4.2</span><span class="period">.</span>
-</h6>
+</h4>
 <ul id="p-780" class="disc">
-<li id="li-129">The \(C(n,k)\) stems from the number of ways to select \(k\) out of \(n\) trials to be succesful.</li>
-<li id="li-130">The \(p^k\) comes from the probability that the \(k\) selected trials are succesful.</li>
-<li id="li-131">The \((1-p)^{n-k}\) comes from the probability that the remaining \(n-k\) not-selected trials are unsuccesful.</li>
-</ul></article><article class="activity project-like" id="activity-snowwhite"><h6 class="heading">
+<li id="li-129"><p id="p-derived-li-129">The \(C(n,k)\) stems from the number of ways to select \(k\) out of \(n\) trials to be succesful.</p></li>
+<li id="li-130"><p id="p-derived-li-130">The \(p^k\) comes from the probability that the \(k\) selected trials are succesful.</p></li>
+<li id="li-131"><p id="p-derived-li-131">The \((1-p)^{n-k}\) comes from the probability that the remaining \(n-k\) not-selected trials are unsuccesful.</p></li>
+</ul></article><article class="activity project-like" id="activity-snowwhite"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.2</span><span class="period">.</span><span class="space"> </span><span class="title">Snow White.</span>
-</h6>
+</h4>
 <div class="introduction" id="introduction-85">
 <p id="p-781">A <em class="emphasis">binomial</em> random variable must:</p>
 <ul class="disc">
@@ -242,17 +248,17 @@ P(X=k)=C(n,k) p^k (1-p)^{n-k}.
 <li id="li-133"><p id="p-783">Have a fixed probability of success per trial.</p></li>
 <li id="li-134"><p id="p-784">Have trials that are independent of each other.</p></li>
 </ul>
-<p data-braille="continuation">For the following, identify which of the above fail.</p>
+<p class="continuation">For the following, identify which of the above fail.</p>
 </div>
-<article class="task exercise-like" id="task-424"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-785">There are 10 apples, 4 are poisoned, Snow White picks 3 at random and eats them, let \(X\) denote the number of poisoned apples she eats.</p></article><article class="task exercise-like" id="task-425"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-786">There are 10 apples, they are all either poisoned or all not poisoned with a 50/50 chance each.  Snow White eats 3 apples and let \(X\) denote the number of poisoned apples she eats.</p></article><article class="task exercise-like" id="task-426"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-787">There are 10 apples, each has a 10% chance of being poisoned, independently of the others.  Snow White eats  apples until she has a poisoned apple, let \(X\) denote the number of total apples she eats.</p></article></article><article class="activity project-like" id="activity-freethrow"><h6 class="heading">
+<article class="task exercise-like" id="task-424"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-785">There are 10 apples, 4 are poisoned, Snow White picks 3 at random and eats them, let \(X\) denote the number of poisoned apples she eats.</p></article><article class="task exercise-like" id="task-425"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-786">There are 10 apples, they are all either poisoned or all not poisoned with a 50/50 chance each.  Snow White eats 3 apples and let \(X\) denote the number of poisoned apples she eats.</p></article><article class="task exercise-like" id="task-426"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-787">There are 10 apples, each has a 10% chance of being poisoned, independently of the others.  Snow White eats  apples until she has a poisoned apple, let \(X\) denote the number of total apples she eats.</p></article></article><article class="activity project-like" id="activity-freethrow"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">Free Throws.</span>
-</h6>
-<div class="introduction" id="introduction-86"><p id="p-788">Consider the basketball player from <a class="xref" data-knowl="./knowl/exploration-freethrow.html" title="Exploration 3.4.1: Free Throws">Exploration 3.4.1</a>, taking \(n=4\) free throws with a \(p=0.9\) probability of each free-throw being a success.  Let \(X\) denote the number of succesful free throws.</p></div>
-<article class="task exercise-like" id="task-427"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-789">What is the probability that she makes exactly 2 free throws, that is, \(P(X=2)\text{?}\)</p></article><article class="task exercise-like" id="task-428"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+</h4>
+<div class="introduction" id="introduction-86"><p id="p-788">Consider the basketball player from <a href="" class="xref" data-knowl="./knowl/exploration-freethrow.html" title="Exploration 3.4.1: Free Throws">Exploration 3.4.1</a>, taking \(n=4\) free throws with a \(p=0.9\) probability of each free-throw being a success.  Let \(X\) denote the number of succesful free throws.</p></div>
+<article class="task exercise-like" id="task-427"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-789">What is the probability that she makes exactly 2 free throws, that is, \(P(X=2)\text{?}\)</p></article><article class="task exercise-like" id="task-428"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <p id="p-790">Run the following code to simulate 1000 trials of <code class="code-inline tex2jax_ignore">freethrows=4</code> free throws taken with <code class="code-inline tex2jax_ignore">p=0.9</code> probability of success each, and plot a histogram of the number of succesful free throws: <div class="sagecell-r" id="sage-122"><script type="text/x-sage">numbaskets = rep(0, 1000)
 
 freethrows=4
@@ -263,10 +269,10 @@ for(i in 1:freethrows){
 }
 hist(numbaskets)
 print(freethrows)
-</script></div></p></article><article class="task exercise-like" id="task-429"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+</script></div></p></article><article class="task exercise-like" id="task-429"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <p id="p-791">Run the following code to see how many of these trials resulted in two succesful free throws: <div class="sagecell-r" id="sage-123"><script type="text/x-sage">length(which(numbaskets==2))
-</script></div> How does this compare to what you found in (a)?</p></article><article class="task exercise-like" id="task-430"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-792">Suppose her less experienced teammate only has a \(p=0.65\) chance of making a shot.  If she takes 5 free throws, what are the chances she makes exactly \(k=3\) free throws?</p></article><article class="task exercise-like" id="task-431"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+</script></div> How does this compare to what you found in (a)?</p></article><article class="task exercise-like" id="task-430"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-792">Suppose her less experienced teammate only has a \(p=0.65\) chance of making a shot.  If she takes 5 free throws, what are the chances she makes exactly \(k=3\) free throws?</p></article><article class="task exercise-like" id="task-431"><h5 class="heading"><span class="codenumber">(e)</span></h5>
 <p id="p-793">Modify and run the following code to simulate 1000 trials of  free throws for the teammate and plot a histogram of the number of succesful free throws: <div class="sagecell-r" id="sage-124"><script type="text/x-sage">numbasketsTM = rep(0, 1000)
 
 freethrows=FIXME
@@ -277,54 +283,54 @@ for(i in 1:freethrows){
 }
 hist(numbasketsTM)
 print(freethrows)
-</script></div></p></article><article class="task exercise-like" id="task-432"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+</script></div></p></article><article class="task exercise-like" id="task-432"><h5 class="heading"><span class="codenumber">(f)</span></h5>
 <p id="p-794">Modify and run the following code to see how many of these trials resulted in three succesful free throws: <div class="sagecell-r" id="sage-125"><script type="text/x-sage">length(which(numbasketsTM==FIXME))
-</script></div> How does this compare to what you found in (a)?</p></article></article><article class="remark remark-like" id="remark-23"><h6 class="heading">
+</script></div> How does this compare to what you found in (a)?</p></article></article><article class="remark remark-like" id="remark-23"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.4.3</span><span class="period">.</span>
-</h6>
+</h4>
 <p id="p-795">One can use <code class="code-inline tex2jax_ignore">Desmos</code> or <code class="code-inline tex2jax_ignore">R</code> to directly compute binomial probabilities.  The following compute the probability that a binomial random vairable \(X\) with \(n=5\) trials, each with probability \(p=0.65\) probability of success, has \(k=4\) successes</p>. <p id="p-796"><iframe src="https://www.desmos.com/calculator/wylreozgmh" id="interactive-25" width="600" height="600"></iframe> <div class="sagecell-r" id="sage-126"><script type="text/x-sage">dbinom(4, 5, 0.65)
-</script></div></p></article><article class="activity project-like" id="activity-meeting"><h6 class="heading">
+</script></div></p></article><article class="activity project-like" id="activity-meeting"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.4</span><span class="period">.</span><span class="space"> </span><span class="title">Meeting Time.</span>
-</h6>
+</h4>
 <div class="introduction" id="introduction-87">
 <p id="p-797">A department chair calls for a meeting at a certain time.  The ten faculty in the department each have a 60% chance of making the meeting.  Assume whether or not a professor can make the meeting is independent of the other faculty.  Let \(X\) denote the number of professors who can make the meeting.</p>
 <p id="p-798"><iframe src="https://www.desmos.com/calculator/7xuuzqjkdm" id="interactive-26" width="600" height="600"></iframe> <div class="sagecell-r" id="sage-127"><script type="text/x-sage">dbinom(FIXME, FIXME, FIXME)
 </script></div></p>
 </div>
-<article class="task exercise-like" id="task-433"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-799">Compute \(P(X=k)\) for \(k=8, 9\) and \(10\text{.}\)</p></article><article class="task exercise-like" id="task-434"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-800">Sum the values you found in (a) to find the probability that at least 8 professors make the meeting (\(P(X\geq 8)\)).</p></article><article class="task exercise-like" id="task-435"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-801">If less than 4 professors make the meeting, how many professors could have made the meeting?</p></article><article class="task exercise-like" id="task-436"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-802">Find the probability that less than 4 professors make the meeting.</p></article><article class="task exercise-like" id="task-437"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-803">In the <code class="code-inline tex2jax_ignore">Desmos</code> above, set <code class="code-inline tex2jax_ignore">Min:8</code>, <code class="code-inline tex2jax_ignore">Max:10</code> and compare the output to what you found in (a).</p></article><article class="task exercise-like" id="task-438"><h6 class="heading"><span class="codenumber">(f)</span></h6>
-<p id="p-804">In the <code class="code-inline tex2jax_ignore">Desmos</code> above, set <code class="code-inline tex2jax_ignore">Min:</code> and <code class="code-inline tex2jax_ignore">Max:</code> to values which correspond to “less than 4”.  (Less than 4 would mean 4 is not included.)  Compare the output to what you found in (d).</p></article><article class="task exercise-like" id="task-439"><h6 class="heading"><span class="codenumber">(g)</span></h6>
+<article class="task exercise-like" id="task-433"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-799">Compute \(P(X=k)\) for \(k=8, 9\) and \(10\text{.}\)</p></article><article class="task exercise-like" id="task-434"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-800">Sum the values you found in (a) to find the probability that at least 8 professors make the meeting (\(P(X\geq 8)\)).</p></article><article class="task exercise-like" id="task-435"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-801">If less than 4 professors make the meeting, how many professors could have made the meeting?</p></article><article class="task exercise-like" id="task-436"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-802">Find the probability that less than 4 professors make the meeting.</p></article><article class="task exercise-like" id="task-437"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-803">In the <code class="code-inline tex2jax_ignore">Desmos</code> above, set <code class="code-inline tex2jax_ignore">Min:8</code>, <code class="code-inline tex2jax_ignore">Max:10</code> and compare the output to what you found in (a).</p></article><article class="task exercise-like" id="task-438"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p id="p-804">In the <code class="code-inline tex2jax_ignore">Desmos</code> above, set <code class="code-inline tex2jax_ignore">Min:</code> and <code class="code-inline tex2jax_ignore">Max:</code> to values which correspond to “less than 4”.  (Less than 4 would mean 4 is not included.)  Compare the output to what you found in (d).</p></article><article class="task exercise-like" id="task-439"><h5 class="heading"><span class="codenumber">(g)</span></h5>
 <p id="p-805">Run the following to compute the probability that 3 or fewer professors would make the meeting: <div class="sagecell-r" id="sage-128"><script type="text/x-sage">pbinom(3, 10, 0.6, lower.tail = TRUE)
-</script></div></p></article><article class="task exercise-like" id="task-440"><h6 class="heading"><span class="codenumber">(h)</span></h6>
+</script></div></p></article><article class="task exercise-like" id="task-440"><h5 class="heading"><span class="codenumber">(h)</span></h5>
 <p id="p-806">Run the following to compute the probability that more than 7 professors would make the meeting: <div class="sagecell-r" id="sage-129"><script type="text/x-sage">pbinom(7, 10, 0.6, lower.tail = FALSE)
-</script></div></p></article><article class="task exercise-like" id="task-441"><h6 class="heading"><span class="codenumber">(i)</span></h6>
+</script></div></p></article><article class="task exercise-like" id="task-441"><h5 class="heading"><span class="codenumber">(i)</span></h5>
 <p id="p-807">What is the probability that at least 4 and at most 7 professors make the meeting?</p></article></article></section><section class="subsection" id="subsection-19"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.4.2</span> <span class="title">Expectation and Variance</span>
 </h3>
-<article class="activity project-like" id="activity-freethrowexpvar"><h6 class="heading">
+<article class="activity project-like" id="activity-freethrowexpvar"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.5</span><span class="period">.</span><span class="space"> </span><span class="title">Free Throws Revisited..</span>
-</h6>
-<div class="introduction" id="introduction-88"><p id="p-808">Recall the basketball player from <a class="xref" data-knowl="./knowl/activity-freethrow.html" title="Activity 3.4.3: Free Throws">Activity 3.4.3</a> with a \(p=0.9\) chance of making a free throw.  Suppose she takes 4 shots and let \(X\) denote the number of succesful shots.</p></div>
-<article class="task exercise-like" id="task-442"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-809">Since she makes 90% of her free throws, how many baskets on average would she make with 4 shots?</p></article><article class="task exercise-like" id="task-443"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-810">Compute \(P(X=0)\text{,}\) \(P(X=1)\text{,}\) \(P(X=2)\text{,}\) \(P(X=3)\text{,}\) \(P(X=4)\text{.}\)</p></article><article class="task exercise-like" id="task-444"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-811">Use <a class="xref" data-knowl="./knowl/remark-expectedvalue.html" title="Remark 2.4.4">Remark 2.4.4</a> to compute \(E(X)\text{.}\)  How does this value compare to (a)?</p></article><article class="task exercise-like" id="task-445"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-812">Use <a class="xref" data-knowl="./knowl/remark-varianceRV.html" title="Remark 2.4.5">Remark 2.4.5</a> to compute \(Var(X)\text{.}\)</p></article><article class="task exercise-like" id="task-446"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-813">Run the following to compute the average number of baskets made in the simulation from <a class="xref" data-knowl="./knowl/activity-freethrow.html" title="Activity 3.4.3: Free Throws">Activity 3.4.3</a>: <div class="sagecell-r" id="sage-130"><script type="text/x-sage">mean(numbaskets)
-</script></div> How does this value compare to what you found in (c)?</p></article><article class="task exercise-like" id="task-447"><h6 class="heading"><span class="codenumber">(f)</span></h6>
-<p id="p-814">Run the following to compute the variance of baskets made in the simulation from <a class="xref" data-knowl="./knowl/activity-freethrow.html" title="Activity 3.4.3: Free Throws">Activity 3.4.3</a>: <div class="sagecell-r" id="sage-131"><script type="text/x-sage">var(numbaskets)
-</script></div> How does this value compare to what you found in (d)?</p></article></article><article class="remark remark-like" id="remark-24"><h6 class="heading">
+</h4>
+<div class="introduction" id="introduction-88"><p id="p-808">Recall the basketball player from <a href="" class="xref" data-knowl="./knowl/activity-freethrow.html" title="Activity 3.4.3: Free Throws">Activity 3.4.3</a> with a \(p=0.9\) chance of making a free throw.  Suppose she takes 4 shots and let \(X\) denote the number of succesful shots.</p></div>
+<article class="task exercise-like" id="task-442"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-809">Since she makes 90% of her free throws, how many baskets on average would she make with 4 shots?</p></article><article class="task exercise-like" id="task-443"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-810">Compute \(P(X=0)\text{,}\) \(P(X=1)\text{,}\) \(P(X=2)\text{,}\) \(P(X=3)\text{,}\) \(P(X=4)\text{.}\)</p></article><article class="task exercise-like" id="task-444"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-811">Use <a href="" class="xref" data-knowl="./knowl/remark-expectedvalue.html" title="Remark 2.4.4">Remark 2.4.4</a> to compute \(E(X)\text{.}\)  How does this value compare to (a)?</p></article><article class="task exercise-like" id="task-445"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-812">Use <a href="" class="xref" data-knowl="./knowl/remark-varianceRV.html" title="Remark 2.4.5">Remark 2.4.5</a> to compute \(Var(X)\text{.}\)</p></article><article class="task exercise-like" id="task-446"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-813">Run the following to compute the average number of baskets made in the simulation from <a href="" class="xref" data-knowl="./knowl/activity-freethrow.html" title="Activity 3.4.3: Free Throws">Activity 3.4.3</a>: <div class="sagecell-r" id="sage-130"><script type="text/x-sage">mean(numbaskets)
+</script></div> How does this value compare to what you found in (c)?</p></article><article class="task exercise-like" id="task-447"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p id="p-814">Run the following to compute the variance of baskets made in the simulation from <a href="" class="xref" data-knowl="./knowl/activity-freethrow.html" title="Activity 3.4.3: Free Throws">Activity 3.4.3</a>: <div class="sagecell-r" id="sage-131"><script type="text/x-sage">var(numbaskets)
+</script></div> How does this value compare to what you found in (d)?</p></article></article><article class="remark remark-like" id="remark-24"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.4.4</span><span class="period">.</span>
-</h6>
-<p id="p-815">Because of the regularity of binomial random variables, there is a special way to compute mean and variance of <em class="emphasis">binomial</em> random variables.</p></article><article class="activity project-like" id="activity-freethrowexpvar2"><h6 class="heading">
+</h4>
+<p id="p-815">Because of the regularity of binomial random variables, there is a special way to compute mean and variance of <em class="emphasis">binomial</em> random variables.</p></article><article class="activity project-like" id="activity-freethrowexpvar2"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.6</span><span class="period">.</span><span class="space"> </span><span class="title">Free Throws Revisited Again..</span>
-</h6>
+</h4>
 <div class="introduction" id="introduction-89">
-<p id="p-816">Recall the basketball player from <a class="xref" data-knowl="./knowl/activity-freethrow.html" title="Activity 3.4.3: Free Throws">Activity 3.4.3</a> with a \(p=0.9\) chance of making a free throw.  Suppose she takes 4 shots and let \(X\) denote the number of succesful shots.</p>
+<p id="p-816">Recall the basketball player from <a href="" class="xref" data-knowl="./knowl/activity-freethrow.html" title="Activity 3.4.3: Free Throws">Activity 3.4.3</a> with a \(p=0.9\) chance of making a free throw.  Suppose she takes 4 shots and let \(X\) denote the number of succesful shots.</p>
 <p id="p-817">Let \(X_i\) denote the number of baskets made by shot \(i\text{.}\)  Note that the probability distribution of each \(X_i\) would be:</p>
 <div class="displaymath">
 \begin{equation*}
@@ -337,28 +343,28 @@ P(X_i=k) \amp 0.1 \amp 0.9  \\
 \end{array}
 \end{equation*}
 </div>
-<p data-braille="continuation">and that</p>
+<p class="continuation">and that</p>
 <div class="displaymath">
 \begin{equation*}
 X=X_1+X_2+X_3+X_4
 \end{equation*}
 </div>
-<p data-braille="continuation">that is, her total number of baskets is equal to the sum of the baskets scored per shot.</p>
+<p class="continuation">that is, her total number of baskets is equal to the sum of the baskets scored per shot.</p>
 </div>
-<article class="task exercise-like" id="task-448"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-818">Use <a class="xref" data-knowl="./knowl/remark-expectedvalue.html" title="Remark 2.4.4">Remark 2.4.4</a> to compute \(E(X_i)\text{.}\)</p></article><article class="task exercise-like" id="task-449"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-819">Use <a class="xref" data-knowl="./knowl/remark-linofEandV.html" title="Remark 2.5.1">Remark 2.5.1</a> to compute \(E(X)\text{.}\)  How does this value compare to what you found in <a class="xref" data-knowl="./knowl/activity-freethrowexpvar.html" title="Activity 3.4.5: Free Throws Revisited.">Activity 3.4.5</a> (c)?</p></article><article class="task exercise-like" id="task-450"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-820">Use <a class="xref" data-knowl="./knowl/remark-varianceRV.html" title="Remark 2.4.5">Remark 2.4.5</a> to compute \(Var(X_i)\text{.}\)</p></article><article class="task exercise-like" id="task-451"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-821">Use <a class="xref" data-knowl="./knowl/remark-linofEandV.html" title="Remark 2.5.1">Remark 2.5.1</a> to compute \(VarE(X)\text{.}\)  How does this value compare to what you found in <a class="xref" data-knowl="./knowl/activity-freethrowexpvar.html" title="Activity 3.4.5: Free Throws Revisited.">Activity 3.4.5</a> (d)?</p></article></article><article class="remark remark-like" id="remark-normalapproximation"><h6 class="heading">
+<article class="task exercise-like" id="task-448"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-818">Use <a href="" class="xref" data-knowl="./knowl/remark-expectedvalue.html" title="Remark 2.4.4">Remark 2.4.4</a> to compute \(E(X_i)\text{.}\)</p></article><article class="task exercise-like" id="task-449"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-819">Use <a href="" class="xref" data-knowl="./knowl/remark-linofEandV.html" title="Remark 2.5.1">Remark 2.5.1</a> to compute \(E(X)\text{.}\)  How does this value compare to what you found in <a href="" class="xref" data-knowl="./knowl/activity-freethrowexpvar.html" title="Activity 3.4.5: Free Throws Revisited.">Activity 3.4.5</a> (c)?</p></article><article class="task exercise-like" id="task-450"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-820">Use <a href="" class="xref" data-knowl="./knowl/remark-varianceRV.html" title="Remark 2.4.5">Remark 2.4.5</a> to compute \(Var(X_i)\text{.}\)</p></article><article class="task exercise-like" id="task-451"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-821">Use <a href="" class="xref" data-knowl="./knowl/remark-linofEandV.html" title="Remark 2.5.1">Remark 2.5.1</a> to compute \(VarE(X)\text{.}\)  How does this value compare to what you found in <a href="" class="xref" data-knowl="./knowl/activity-freethrowexpvar.html" title="Activity 3.4.5: Free Throws Revisited.">Activity 3.4.5</a> (d)?</p></article></article><article class="remark remark-like" id="remark-normalapproximation"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.4.5</span><span class="period">.</span>
-</h6>
+</h4>
 <p id="p-822">Given a <em class="emphasis">binomial</em> random variable \(X\) with \(n\) trials and \(p\) probability of success per trial, we have:</p>
 <div class="displaymath">
 \begin{equation*}
 E(X)=np, Var(X)=np(1-p), \sigma_X=\sqrt{np(1-p)}.
 \end{equation*}
 </div>
-<p data-braille="continuation"><em class="emphasis">This only applies to binomial random variables.</em></p></article></section></section></div></main>
+<p class="continuation"><em class="emphasis">This only applies to binomial random variables.</em></p></article></section></section></div></main>
 </div>
 </body>
 </html>
