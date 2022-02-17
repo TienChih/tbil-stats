@@ -234,7 +234,7 @@ Run the following code to find the mean and variance of these dierolls.
 
   <remark xml:id="remark-varianceRV">
     <p>
-      For a random variable <m>X</m> with a finite number of ouctomes <m>X_1, \ldots, X_n</m> the <em>variance</em> of <m>X</m>, denoted <m>Var(X)</m>,  is computed <me>Var(X)=\sum P(X=X_i)\cdot (X_i-E(X)).</me>
+      For a random variable <m>X</m> with a finite number of ouctomes <m>X_1, \ldots, X_n</m> the <em>variance</em> of <m>X</m>, denoted <m>Var(X)</m>,  is computed <me>Var(X)=\sum P(X=X_i)\cdot (X_i-E(X))^2.</me>
     </p>
 
     <p>
