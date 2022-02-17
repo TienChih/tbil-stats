@@ -238,7 +238,7 @@ Run the following code to find the mean and variance of these dierolls.
     </p>
 
     <p>
-      Then the <em>standard deviation</em> of <m>X</m> is computed <me>\sigma_X=\sqrt{Var(X)}=\sqrt{\sum P(X=X_i)\cdot (X_i-E(X))}.</me>
+      Then the <em>standard deviation</em> of <m>X</m> is computed <me>\sigma_X=\sqrt{Var(X)}=\sqrt{\sum P(X=X_i)\cdot (X_i-E(X))^2}.</me>
     </p>
   </remark>
 

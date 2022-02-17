@@ -332,7 +332,7 @@ Run the following code to show coffee drinkers preferences for cream and sugar.
               <ul>
                 <li><m>P(Z|S)</m></li>
                 <li><m>P(Z|S^c)</m></li>
-                <li><m>P(Z\ \text{or}\ )</m></li>
+                <li><m>P(Z\ \text{or}\ S)</m></li>
                 <li><m>P(Z)</m></li>
               </ul>
             </p>
