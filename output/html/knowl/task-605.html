@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-17T09:59:19-07:00       *-->
+<!--*       on 2022-02-22T18:35:20-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -32,14 +32,13 @@
 </head>
 <body>
 <article class="task exercise-like"><h5 class="heading">
-<span class="type">Task</span><span xmlns:svg="http://www.w3.org/2000/svg" class="space"> </span><span class="codenumber">5.2.3.a</span><span xmlns:svg="http://www.w3.org/2000/svg" class="period">.</span>
+<span class="type">Task</span><span xmlns:svg="http://www.w3.org/2000/svg" class="space"> </span><span class="codenumber">5.2.2.i</span><span xmlns:svg="http://www.w3.org/2000/svg" class="period">.</span>
 </h5>
-<p>Run the following code to sample the ice cream eaters, see how many got toppings, and see what proportion of them got toppings. <div class="sagecell-r" id="sage-179"><script type="text/x-sage">icecream_n=80
-icecream_p=0.6
+<p>Fix and run the following code so that <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">mu_D=</code>\(\mu_D\) and <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">SE_D=</code>\(\sigma_D\) and plot a normal curve on top of our histogram. <div class="sagecell-r" id="sage-179"><script type="text/x-sage">mu_D=FIXME
+SE_D=FIXME
 
-icecream_samp=sample(c("TOPPINGS", "NO"), icecream_n, replace=TRUE, prob=c(icecream_p, 1-icecream_p))
-length(which(icecream_samp=="TOPPINGS"))
-icecream_prop=length(which(icecream_samp=="TOPPINGS"))/icecream_n
-</script></div></p></article><span class="incontext"><a href="Sec_TwoVarCat.html#task-605">in-context</a></span>
+hist(diff_underweight, breaks=25, prob=TRUE)
+curve(dnorm(x, mean=mu_D, sd=SE_D), col="darkblue", lwd=2, add=TRUE, yaxt="n")
+</script></div> How well does the normal distribution approximate the histogram?</p></article><span class="incontext"><a href="Sec_TwoVarCat.html#task-605">in-context</a></span>
 </body>
 </html>

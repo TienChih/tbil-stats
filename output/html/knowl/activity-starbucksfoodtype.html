@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-17T09:59:30-07:00       *-->
+<!--*       on 2022-02-22T18:35:33-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -36,15 +36,15 @@
 </h4>
 <div class="introduction">
 <p>Is there any impact on the type of item Starbucks serves, <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">bakery</code>, <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">bistro box</code>, <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">hot breakfast</code>, <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">parfait</code>, <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">petite</code>, <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">salad</code>,  <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">sandwich</code> ,and nutrition?</p>
-<p>Run the following code to download <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">starbucks.csv</code> a data set comtaining information about 77 Starbucks menu items their nutritional value and show it's variable names. <div class="sagecell-r" id="sage-334"><script type="text/x-sage">starbucks = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/starbucks.csv")
+<p>Run the following code to download <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">starbucks.csv</code> a data set comtaining information about 77 Starbucks menu items their nutritional value and show it's variable names. <div class="sagecell-r" id="sage-335"><script type="text/x-sage">starbucks = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/starbucks.csv")
 
 names(starbucks)
 </script></div> Click here to learn more about this data set: <a class="external" href="https://www.openintro.org/data/index.php?data=starbucks" target="_blank"><code class="code-inline tex2jax_ignore">https://www.openintro.org/data/index.php?data=starbucks</code></a>.</p>
 </div>
 <article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<p>Run the following code to rplot a boxplot for <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">fiber</code> fiber in g, seperated by food type <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">type</code>. <div class="sagecell-r" id="sage-335"><script type="text/x-sage">boxplot(fiber ~ type, data=starbucks)
+<p>Run the following code to rplot a boxplot for <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">fiber</code> fiber in g, seperated by food type <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">type</code>. <div class="sagecell-r" id="sage-336"><script type="text/x-sage">boxplot(fiber ~ type, data=starbucks)
 </script></div></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<p>Run the following code to create an <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">aov</code> model of <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">starbucks</code> and summarize it. <div class="sagecell-r" id="sage-336"><script type="text/x-sage">starbucksaov=aov(fiber ~ type, data=starbucks)
+<p>Run the following code to create an <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">aov</code> model of <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">starbucks</code> and summarize it. <div class="sagecell-r" id="sage-337"><script type="text/x-sage">starbucksaov=aov(fiber ~ type, data=starbucks)
 summary(starbucksaov)
 </script></div></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <p>State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>

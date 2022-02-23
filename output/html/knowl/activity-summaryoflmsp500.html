@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-17T09:59:32-07:00       *-->
+<!--*       on 2022-02-22T18:35:35-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -34,15 +34,15 @@
 <article class="activity project-like"><h4 class="heading">
 <span class="type">Activity</span><span xmlns:svg="http://www.w3.org/2000/svg" class="space"> </span><span class="codenumber">7.3.4</span><span xmlns:svg="http://www.w3.org/2000/svg" class="period">.</span><span xmlns:svg="http://www.w3.org/2000/svg" class="space"> </span><span class="title">Inference for SP500 companies.</span>
 </h4>
-<div class="introduction"><p>Run the following code to download <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">sp500.csv</code> a data set comtaining information on a sample of 50 fortune 500 companies and show it's variable names. <div class="sagecell-r" id="sage-360"><script type="text/x-sage">sp500 = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/sp500.csv")
+<div class="introduction"><p>Run the following code to download <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">sp500.csv</code> a data set comtaining information on a sample of 50 fortune 500 companies and show it's variable names. <div class="sagecell-r" id="sage-361"><script type="text/x-sage">sp500 = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/sp500.csv")
 
 names(sp500)
 </script></div> Click here to learn more about this data set: <a class="external" href="https://www.openintro.org/data/index.php?data=sp500" target="_blank"><code class="code-inline tex2jax_ignore">https://www.openintro.org/data/index.php?data=sp500</code></a>.</p></div>
 <article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<p>Run the following to create and summarize a linear model with <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">debt</code> the debt in millions of dollars as the explanatory variable and <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">profit_margin</code> the percent of earnings that is profit as the response variable: <div class="sagecell-r" id="sage-361"><script type="text/x-sage">sp500mod=lm(profit_margin~debt, data=sp500)
+<p>Run the following to create and summarize a linear model with <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">debt</code> the debt in millions of dollars as the explanatory variable and <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">profit_margin</code> the percent of earnings that is profit as the response variable: <div class="sagecell-r" id="sage-362"><script type="text/x-sage">sp500mod=lm(profit_margin~debt, data=sp500)
 summary(sp500mod)
 </script></div></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<p>Run the following to plot <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">profit_margin</code> of these companies against the <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">debt</code> and draw a regression line: <div class="sagecell-r" id="sage-362"><script type="text/x-sage">plot(sp500$debt, sp500$profit_margin)
+<p>Run the following to plot <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">profit_margin</code> of these companies against the <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">debt</code> and draw a regression line: <div class="sagecell-r" id="sage-363"><script type="text/x-sage">plot(sp500$debt, sp500$profit_margin)
 abline(sp500mod, col="red")
 </script></div></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <p>State what the slope \(\beta_1\) means in the context of this problem.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>

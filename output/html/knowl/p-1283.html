@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-17T09:59:22-07:00       *-->
+<!--*       on 2022-02-22T18:35:23-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,23 +12,28 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-r' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
+                           linked: true,
+                           languages: ['r'],
+                           evalButtonText: 'Evaluate (R)'});
+});
+</script>
 </head>
 <body>
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>A restaurateur wonders if there's any difference in  the type of meat her customers order and their gender.  She surveys 500 customers, 218 men and 282 women.  The choices for meat are Beef, Chicken and Pork.  The results are as follows:</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\begin{array}{|c|c|c|c|}
-\hline
-\textbf{Sample Frequency} \amp \text{Beef} \amp \text{Chicken} \amp \text{Pork} \\
-\hline
-\text{Men} \amp 65 \amp 108 \amp 45 \\
-\hline
-\text{Women} \amp 84 \amp 136 \amp 62 \\
-\hline
-\end{array}
-\end{equation*}
-</div>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Run the following code to compute a \(\chi^2\) statistic, \(p\)-value and degrees of freedom. <div class="sagecell-r" id="sage-213"><script type="text/x-sage">chisq.test(datamatrix, correct=FALSE)
+</script></div> How do these values compare to what you found in <a href="" class="xref" data-knowl="./knowl/activity-predatorypvalue.html" title="Activity 5.4.3: OER vs Predatory Publishers and Student Access: test statistics">Activity 5.4.3</a>?</p>
 <span class="incontext"><a href="Sec_ChiIndependence.html#p-1283">in-context</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-17T09:59:23-07:00       *-->
+<!--*       on 2022-02-22T18:35:24-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -32,15 +32,10 @@
 </head>
 <body>
 <article class="task exercise-like"><h5 class="heading">
-<span class="type">Task</span><span xmlns:svg="http://www.w3.org/2000/svg" class="space"> </span><span class="codenumber">6.1.2.f</span><span xmlns:svg="http://www.w3.org/2000/svg" class="period">.</span>
+<span class="type">Task</span><span xmlns:svg="http://www.w3.org/2000/svg" class="space"> </span><span class="codenumber">6.1.2.e</span><span xmlns:svg="http://www.w3.org/2000/svg" class="period">.</span>
 </h5>
-<p>To see how much variation there could be in sampling distributions, run the following code to plot a normal curve for each sample standard deviation we found, each curve has mean 0, but standard deviation equal to one we found in our above simulation: <div class="sagecell-r" id="sage-232"><script type="text/x-sage">values = seq(-300000, 300000, length=100)
-
-plot(values, dnorm(values, mean=0, sd=sdvec[1]), type="l", lty=2)
-
-for (i in 2:trials){
-  lines(values, dnorm(values, mean=0, sd=sdvec[i])) 
-}
-</script></div> How much variation is there between curves, even with the same means?</p></article><span class="incontext"><a href="Sec_tVariable.html#task-748">in-context</a></span>
+<p>Run the following code to redisplay the above histogram, along with the actual standard deviation of housing prices in Ames, Iowa: <div class="sagecell-r" id="sage-232"><script type="text/x-sage">hist(sdvec, breaks=25)
+abline(v = sd(ames$price), col="red", lwd=3, lty=2)
+</script></div> What do we notice about the possible variation in sample standard deviations?</p></article><span class="incontext"><a href="Sec_tVariable.html#task-748">in-context</a></span>
 </body>
 </html>

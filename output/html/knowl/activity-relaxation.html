@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-17T09:59:30-07:00       *-->
+<!--*       on 2022-02-22T18:35:33-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -36,15 +36,15 @@
 </h4>
 <div class="introduction">
 <p>Is there any impact on degree attainment and the amount of time spent relaxing?</p>
-<p>Run the following code to download  the <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">gss2010.csv</code>  data set which contains information from the 2010 social survey and display it's variables: <div class="sagecell-r" id="sage-331"><script type="text/x-sage">gss2010 = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/gss2010.csv")
+<p>Run the following code to download  the <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">gss2010.csv</code>  data set which contains information from the 2010 social survey and display it's variables: <div class="sagecell-r" id="sage-332"><script type="text/x-sage">gss2010 = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/gss2010.csv")
 
 names(gss2010)
 </script></div> Click here to learn more about this data set: <a class="external" href="https://www.openintro.org/data/index.php?data=gss2010" target="_blank"><code class="code-inline tex2jax_ignore">https://www.openintro.org/data/index.php?data=gss2010</code></a>.</p>
 </div>
 <article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<p>Run the following code to rplot a boxplot for the hours of relaxation in a day seperated by degree attainment. <div class="sagecell-r" id="sage-332"><script type="text/x-sage">boxplot(hrsrelax ~ degree, data=gss2010)
+<p>Run the following code to rplot a boxplot for the hours of relaxation in a day seperated by degree attainment. <div class="sagecell-r" id="sage-333"><script type="text/x-sage">boxplot(hrsrelax ~ degree, data=gss2010)
 </script></div></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<p>Run the following code to create an <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">aov</code> model of <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">gss2010</code> and summarize it. <div class="sagecell-r" id="sage-333"><script type="text/x-sage">relaxaov=aov(hrsrelax ~ degree, data=gss2010)
+<p>Run the following code to create an <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">aov</code> model of <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">gss2010</code> and summarize it. <div class="sagecell-r" id="sage-334"><script type="text/x-sage">relaxaov=aov(hrsrelax ~ degree, data=gss2010)
 summary(relaxaov)
 </script></div></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <p>State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>

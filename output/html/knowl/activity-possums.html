@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-17T09:59:31-07:00       *-->
+<!--*       on 2022-02-22T18:35:34-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -36,17 +36,17 @@
 </h4>
 <div class="introduction"><p>We now return to the question from <a href="" class="xref" data-knowl="./knowl/exploration-possums.html" title="Exploration 7.1.1: Dimensions of Possums">Exploration 7.1.1</a> and see if we can give a more precise answer.</p></div>
 <article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<p>Run the following code to create a linear model for <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">head_l</code>, as a function of <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">skull_w</code> and save it as <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">possummod</code>. <div class="sagecell-r" id="sage-343"><script type="text/x-sage">possummod=lm(head_l~skull_w, data=possum)
+<p>Run the following code to create a linear model for <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">head_l</code>, as a function of <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">skull_w</code> and save it as <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">possummod</code>. <div class="sagecell-r" id="sage-344"><script type="text/x-sage">possummod=lm(head_l~skull_w, data=possum)
 </script></div> What is the slope and \(y\) intercept for the liner model?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<p>Run the following code to show the correlation for this model. <div class="sagecell-r" id="sage-344"><script type="text/x-sage">cor(possum$skull_w, possum$head_l)
+<p>Run the following code to show the correlation for this model. <div class="sagecell-r" id="sage-345"><script type="text/x-sage">cor(possum$skull_w, possum$head_l)
 </script></div></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <p>What is  \(R^2\text{?}\)  What proportion of the head length is determined by the skull width.  (See <a href="" class="xref" data-knowl="./knowl/remark-rsquared.html" title="Remark 7.1.20">Remark 7.1.20</a>.)</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
-<p>Run the following code to plot the scatterplot and the least squares line. <div class="sagecell-r" id="sage-345"><script type="text/x-sage">plot(possum$skull_w, possum$head_l,  pch=19)
+<p>Run the following code to plot the scatterplot and the least squares line. <div class="sagecell-r" id="sage-346"><script type="text/x-sage">plot(possum$skull_w, possum$head_l,  pch=19)
 abline(possummod, col="red")
 </script></div></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(e)</span></h5>
-<p>Run the following code to show a summary of <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">possummod</code>. <div class="sagecell-r" id="sage-346"><script type="text/x-sage">summary(possummod)
+<p>Run the following code to show a summary of <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">possummod</code>. <div class="sagecell-r" id="sage-347"><script type="text/x-sage">summary(possummod)
 </script></div></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(f)</span></h5>
-<p>Run the following code to show a summary of <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">possum</code>. <div class="sagecell-r" id="sage-347"><script type="text/x-sage">summary(possum)
+<p>Run the following code to show a summary of <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">possum</code>. <div class="sagecell-r" id="sage-348"><script type="text/x-sage">summary(possum)
 </script></div> Pick two other numerical variables from <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">possum</code> and repeat the above.</p></article></article><span class="incontext"><a href="Sec_Correlation.html#activity-possums">in-context</a></span>
 </body>
 </html>

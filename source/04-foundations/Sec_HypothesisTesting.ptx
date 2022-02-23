@@ -124,6 +124,34 @@
               </task>
 
 
+              <task>
+                <p>
+                  Your friend insists the coin is fair.  We test their claim through a simulation.  Run the following code to simulate flipping  <c>n=50</c> fair coins <c>numsamp=1000</c> times, and plot a distribution of the proportion of heads from each flip of 50 coins.  How likely is it to get 14% (or fewer) heads when flipping 50 coins?  How plausible are your friends claims?
+
+                  <sage language="r">
+                      <input>
+                      numsamp=1000
+                      n=50
+                      p=0.5
+
+                      samp_phat = rep(NA, numsamp)
+
+                      for(i in 1:numsamp){
+                      samp = rbinom(1,n,p) # obtain a sample of size n  from the population
+                      samp_phat[i] = samp/n    # Find the proportion for this sample
+                    }
+                    
+                    hist(samp_phat, xlim = c(0,1))
+                    abline(v = 0.14, lwd = 2, lty = 2, col = "red")
+                     </input>
+                   </sage>
+
+
+                </p>
+
+               </task> 
+
+
 
 
           </exploration>

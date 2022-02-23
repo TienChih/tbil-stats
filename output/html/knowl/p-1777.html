@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-17T09:59:31-07:00       *-->
+<!--*       on 2022-02-22T18:35:34-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,10 +12,29 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-r' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
+                           linked: true,
+                           languages: ['r'],
+                           evalButtonText: 'Evaluate (R)'});
+});
+</script>
 </head>
 <body>
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>We now return to the question from <a href="" class="xref" data-knowl="./knowl/exploration-possums.html" title="Exploration 7.1.1: Dimensions of Possums">Exploration 7.1.1</a> and see if we can give a more precise answer.</p>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Run the following code to plot the scatterplot and the least squares line. <div class="sagecell-r" id="sage-343"><script type="text/x-sage">plot(dummydata$x1, dummydata$y1,  pch=19)
+abline(dummymod, col="red")
+</script></div></p>
 <span class="incontext"><a href="Sec_Correlation.html#p-1777">in-context</a></span>
 </body>
 </html>

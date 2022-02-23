@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-17T09:59:23-07:00       *-->
+<!--*       on 2022-02-22T18:35:24-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,11 +12,40 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-r' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
+                           linked: true,
+                           languages: ['r'],
+                           evalButtonText: 'Evaluate (R)'});
+});
+</script>
 </head>
 <body>
 <article class="task exercise-like"><h5 class="heading">
-<span class="type">Task</span><span xmlns:svg="http://www.w3.org/2000/svg" class="space"> </span><span class="codenumber">6.1.3.a</span><span xmlns:svg="http://www.w3.org/2000/svg" class="period">.</span>
+<span class="type">Task</span><span xmlns:svg="http://www.w3.org/2000/svg" class="space"> </span><span class="codenumber">6.1.2.g</span><span xmlns:svg="http://www.w3.org/2000/svg" class="period">.</span>
 </h5>
-<p>For a \(t\)-variable with 19 degrees of freedom, compute the probability \(t\) is greater than 1.1: \(P(t_{19}&gt;1.1)\text{.}\)</p></article><span class="incontext"><a href="Sec_tVariable.html#task-750">in-context</a></span>
+<p>Run the following code to, for <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">trials=1000</code> times, sample now <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">n=500</code> new random houses from Ames, Iowa and record the standard deviation of their housing prices, and display a histogram of the standard deviations: <div class="sagecell-r" id="sage-234"><script type="text/x-sage">n=500
+trials=1000
+sdvec500=rep(NA, trials)
+
+for(i in 1:trials){
+  index = sample(1:nrow(ames), n)
+  samp=ames[index,]
+  sdvec500[i]=sd(samp$price)  
+}
+
+hist(sdvec500, breaks=25)
+abline(v = sd(ames$price), col="red", lwd=3, lty=2)
+</script></div> What do we notice about the possible variation in sample standard deviations compared to what we saw in (d)?</p></article><span class="incontext"><a href="Sec_tVariable.html#task-750">in-context</a></span>
 </body>
 </html>

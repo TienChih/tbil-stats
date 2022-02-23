@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-17T09:59:28-07:00       *-->
+<!--*       on 2022-02-22T18:35:31-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -32,23 +32,15 @@
 </head>
 <body>
 <article class="task exercise-like"><h5 class="heading">
-<span class="type">Task</span><span xmlns:svg="http://www.w3.org/2000/svg" class="space"> </span><span class="codenumber">6.5.4.e</span><span xmlns:svg="http://www.w3.org/2000/svg" class="period">.</span>
+<span class="type">Task</span><span xmlns:svg="http://www.w3.org/2000/svg" class="space"> </span><span class="codenumber">6.5.4.d</span><span xmlns:svg="http://www.w3.org/2000/svg" class="period">.</span>
 </h5>
-<p>Run the following code to simiulate 1000 trials of this medication with 100 subjects in each group, and record the <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">p.value</code> from each trial, and display a histogram of the results. <div class="sagecell-r" id="sage-310"><script type="text/x-sage">n1=100
+<p>To see what an actual study would look like, run the following code to sample <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">n1=100</code>, <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">n2=100</code> people from two distributions where the mean is different by 3, and see if we can reject the null hypothesis. <div class="sagecell-r" id="sage-310"><script type="text/x-sage">n1=100
 n2=100
-trials=1000
 
-pvec=rep(NA, trials)
-
-for(i in 1:trials){
-  sampA=rnorm(n1, 135,12)
-  sampB=rnorm(n2, 132, 12)
-  pvec[i]=t.test(sampA, sampB, alternative="two.sided")$p.value
-}
-
-hist(pvec, breaks=25)
-abline(v = 0.05, col="red", lwd=3, lty=2)
-</script></div> Then run the following to see what proportion of the time we reject the null: <div class="sagecell-r" id="sage-311"><script type="text/x-sage">length(which(pvec < 0.05))/trials
-</script></div> How does this value compare to the power of the test which you computed in (c)?</p></article><span class="incontext"><a href="Sec_SizeofSampleNum.html#task-938">in-context</a></span>
+sampA=rnorm(n1, 135, 12)
+sampB=rnorm(n2, 132, 12)
+boxplot(sampA, sampB)
+t.test(sampA, sampB, alternative="two.sided")
+</script></div></p></article><span class="incontext"><a href="Sec_SizeofSampleNum.html#task-938">in-context</a></span>
 </body>
 </html>

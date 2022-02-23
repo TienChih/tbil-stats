@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-17T09:59:27-07:00       *-->
+<!--*       on 2022-02-22T18:35:29-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,10 +12,33 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-r' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
+                           linked: true,
+                           languages: ['r'],
+                           evalButtonText: 'Evaluate (R)'});
+});
+</script>
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Compute the  the difference in sample means \(\bar{x}_1-\bar{x}_2\text{.}\)</p>
+<p>Run the following code to display the two histograms side by side, scaled for sample size, and with the means displayed, as well as side by side boxplots. <div class="sagecell-r" id="sage-292"><script type="text/x-sage">hist(east_samp, col=rgb(1,0,0,0.5), prob=TRUE)
+hist(west_samp, col=rgb(0,0,1,0.5), prob=TRUE, add=TRUE)
+abline(v = mean(east_samp), col="red", lwd=3, lty=2)
+abline(v = mean(west_samp), col="blue", lwd=3, lty=2)
+
+boxplot(east_samp, west_samp)
+</script></div></p>
 <span class="incontext"><a href="Sec_TwoVarNum.html#p-1554">in-context</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-17T09:59:27-07:00       *-->
+<!--*       on 2022-02-22T18:35:29-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -32,13 +32,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Run the following code to sample 45 lunch rushes in the 34st location, display a histogram of the results, and show the mean and standard deviation. <div class="sagecell-r" id="sage-290"><script type="text/x-sage">westlunch=45
-west_mu=runif(1,30,50)
+<p>Run the following code to sample 30 lunch rushes in the east location, display a histogram of the results, and show the mean and standard deviation. <div class="sagecell-r" id="sage-290"><script type="text/x-sage">eastlunch=30
+east_mu=runif(1,30,50)
 
-west_samp=round(rnorm(westlunch, west_mu, 8))
-hist(west_samp, col="blue")
-print(mean(west_samp))
-print(sd(west_samp))
+east_samp=round(rnorm(eastlunch, east_mu, 8))
+hist(east_samp, col="red")
+print(mean(east_samp))
+print(sd(east_samp))
 </script></div></p>
 <span class="incontext"><a href="Sec_TwoVarNum.html#p-1552">in-context</a></span>
 </body>

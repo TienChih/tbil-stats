@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-17T09:59:22-07:00       *-->
+<!--*       on 2022-02-22T18:35:23-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -32,8 +32,14 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Run the following code to compute a \(\chi^2\) statistic, \(p\)-value and degrees of freedom. <div class="sagecell-r" id="sage-212"><script type="text/x-sage">chisq.test(datamatrix, correct=FALSE)
-</script></div> How do these values compare to what you found in <a href="" class="xref" data-knowl="./knowl/activity-predatorypvalue.html" title="Activity 5.4.3: OER vs Predatory Publishers and Student Access: test statistics">Activity 5.4.3</a>?</p>
+<p>Run the following code to input the sample data from <a href="" class="xref" data-knowl="./knowl/exploration-predatory.html" title="Exploration 5.4.1: OER vs Predatory Publishers and Student Access">Exploration 5.4.1</a> as a matrix. <div class="sagecell-r" id="sage-212"><script type="text/x-sage">                      Input =("
+MaterialType   DoneReading    NoReading
+OER             66              14
+Predatory       112             58
+")
+
+datamatrix = as.matrix(read.table(textConnection(Input),header=TRUE,row.names=1))
+</script></div> If you use this method <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">be sure to not use spaces in your names</em>.</p>
 <span class="incontext"><a href="Sec_ChiIndependence.html#p-1282">in-context</a></span>
 </body>
 </html>

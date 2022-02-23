@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-17T09:59:19-07:00       *-->
+<!--*       on 2022-02-22T18:35:21-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -32,14 +32,22 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Fix and run the following code to plot a normal curve with mean <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">mu_D=</code>\(p_0\) and standard deviation <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">SE_D=</code>\(SE_D\text{,}\) and plot a line for the observed difference <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">observed_diff=</code>\(d\) <div class="sagecell-r" id="sage-190"><script type="text/x-sage">mu_D=FIXME
-SE_D=FIXME
-observed_diff=FIXME
+<p>Run the following code to sample <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">num_men=312</code> men where \(men_raise=72\) get raises, then samples <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">num_women=216</code> men where \(women_raise=30\) get raises.  It does this <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">trials=1000</code> times and plots a histogram of the differences. <div class="sagecell-r" id="sage-190"><script type="text/x-sage">trials=1000
+num_men=312
+num_women=216
+m_raise=72
+w_raise=30
 
+raise_rate=(m_raise+w_raise)/(num_men+num_women)
+diffraise=rep(NA, trials)
+
+for(i in 1:trials){
+	menraise=sample(c("RAISE", "NO"), num_men, replace=TRUE, prob=c(raise_rate, 1-raise_rate))
+	womenraise=sample(c("RAISE", "NO"), num_women, replace=TRUE, prob=c(raise_rate, 1-raise_rate))
+	diffraise[i]=length(which(menraise=="RAISE"))/num_men-length(which(womenraise=="RAISE"))/num_women
+}
 hist(diffraise, breaks=25, prob=TRUE)
-curve(dnorm(x, mean=mu_D, sd=SE_D), col="darkblue", lwd=2, add=TRUE, yaxt="n")
-abline(v = observed_diff, col="red", lwd=3, lty=2)
-</script></div> How well does this curve match the histogram?</p>
+</script></div></p>
 <span class="incontext"><a href="Sec_TwoVarCat.html#p-1152">in-context</a></span>
 </body>
 </html>

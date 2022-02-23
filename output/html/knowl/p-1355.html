@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-17T09:59:23-07:00       *-->
+<!--*       on 2022-02-22T18:35:24-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,10 +12,28 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-r' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
+                           linked: true,
+                           languages: ['r'],
+                           evalButtonText: 'Evaluate (R)'});
+});
+</script>
 </head>
 <body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>For a \(t\)-variable with 13 degrees of freedom, find \(t_{13}^*\) such that \(P(t_{13}&gt;t_{13}^*)=0.45\text{.}\)</p>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>We can also confirm this by running the following: <div class="sagecell-r" id="sage-236"><script type="text/x-sage">qt(0.7, df=13, lower.tail=TRUE)
+</script></div></p>
 <span class="incontext"><a href="Sec_tVariable.html#p-1355">in-context</a></span>
 </body>
 </html>

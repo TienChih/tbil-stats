@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-17T09:59:20-07:00       *-->
+<!--*       on 2022-02-22T18:35:21-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -32,8 +32,11 @@
 </head>
 <body>
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>Run the following code to summarize the racial demographics of your simulated sample. <div class="sagecell-r" id="sage-198"><script type="text/x-sage">table(town_samp)
-</script></div> How does these values compare to what you found in (a)?   To the juror sample?</p>
+<p>Run the following code to simulate selecting 300 random people from the town, and plotting a barchart of the racial demographics. <div class="sagecell-r" id="sage-198"><script type="text/x-sage">n=300
+
+town_samp=sample(c("WHITE", "BLACK", "HISPANIC", "ASIAN"), n, replace=TRUE, prob=c(0.7,0.15, 0.1, 0.05))
+barplot(table(town_samp))
+</script></div></p>
 <span class="incontext"><a href="Sec_ChiSquare.html#p-1188">in-context</a></span>
 </body>
 </html>

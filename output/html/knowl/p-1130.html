@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-17T09:59:19-07:00       *-->
+<!--*       on 2022-02-22T18:35:20-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -32,8 +32,16 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Run the following code to print the actual differnce between the ordering rates.  Is it in your interval? (10% of the time it won't be!). <div class="sagecell-r" id="sage-187"><script type="text/x-sage">east_p-west_p
-</script></div> We know that \(n_2=100\text{,}\) compute \(\hat{p_2}\text{,}\) the proportion of the West location sample who orders Spicy Wings.</p>
+<p>Run the following code to print the lower and upperbound of the confidence interval to check your answer. <div class="sagecell-r" id="sage-187"><script type="text/x-sage">east_phat=east_x/eastpoll
+west_phat=west_x/westpoll
+
+d=east_phat-west_phat
+
+SE_D=sqrt(east_phat*(1-east_phat)/eastpoll + west_phat*(1-west_phat)/westpoll)
+LB=d-1.645*SE_D
+UB=d+1.645*SE_D
+print(paste0("Lower Bound: ", LB , ", Upper Bound:", UB))
+</script></div></p>
 <span class="incontext"><a href="Sec_TwoVarCat.html#p-1130">in-context</a></span>
 </body>
 </html>

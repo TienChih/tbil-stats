@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-17T09:59:18-07:00       *-->
+<!--*       on 2022-02-22T18:35:19-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,17 +12,30 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script>$(function () {
+    // Make *any* div with class 'sagecell-r' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
+                           linked: true,
+                           languages: ['r'],
+                           evalButtonText: 'Evaluate (R)'});
+});
+</script>
 </head>
 <body>
 <article class="task exercise-like"><h5 class="heading">
-<span class="type">Task</span><span xmlns:svg="http://www.w3.org/2000/svg" class="space"> </span><span class="codenumber">5.1.1.a</span><span xmlns:svg="http://www.w3.org/2000/svg" class="period">.</span>
+<span class="type">Task</span><span xmlns:svg="http://www.w3.org/2000/svg" class="space"> </span><span class="codenumber">4.3.10.c</span><span xmlns:svg="http://www.w3.org/2000/svg" class="period">.</span>
 </h5>
-<p>Which one of the follwing factors is <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">directly</em> under the professors control?</p>
-<ol class="decimal">
-<li><p>\(\hat{p}\text{.}\)</p></li>
-<li><p>\(n\text{.}\)</p></li>
-<li><p>\(SE_{\hat{p}}\text{.}\)</p></li>
-<li><p>\(z^*\text{.}\)</p></li>
-</ol></article><span class="incontext"><a href="Sec_SizeofSampleCat.html#task-578">in-context</a></span>
+<p>Suppose we wanted to know if customer satisfaction was or wasn't 50% \((H_A:p\neq0.5)\text{.}\)  We sample 100 customers and and found 88 were satisfied.  Run the following code to obtain the \(p\)-value: <div class="sagecell-r" id="sage-173"><script type="text/x-sage">prop.test(88, 100, 
+    p=0.5, alternative="two.sided", correct=FALSE)
+</script></div></p></article><span class="incontext"><a href="Sec_HypothesisTesing.html#task-578">in-context</a></span>
 </body>
 </html>

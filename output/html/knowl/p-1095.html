@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-17T09:59:18-07:00       *-->
+<!--*       on 2022-02-22T18:35:19-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -32,20 +32,16 @@
 </head>
 <body>
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>Let's take it a step further.  Fix and run the following code to simulate a 1000 random promotion schedules, and plot a distribution of the differences between men and women promoted.  Enter in <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">observed_diff</code> to be the value found in (b) <div class="sagecell-r" id="sage-175"><script type="text/x-sage">observed_diff=FIXME
+<p>Let's put the companies claim to the test.  Run the following code to simulate a <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">raise_rate</code> of \(\hat{p}\) found in (a).  We then simulate how many <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">num_men=312</code> and <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">num_women=216</code> got raises and calculate their difference <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">d</code>. <div class="sagecell-r" id="sage-175"><script type="text/x-sage">raise_rate=FIXME
+num_men=312
+num_women=216
 
-diff_vec=rep(NA,1000)
+menraise=sample(c("RAISE", "NO"), num_men, replace=TRUE, prob=c(raise_rate, 1-raise_rate))
+womenraise=sample(c("RAISE", "NO"), num_women, replace=TRUE, prob=c(raise_rate, 1-raise_rate))
 
-for(i in 1:1000){
-	menraise=sample(c("RAISE", "NO"), num_men, replace=TRUE, prob=c(raise_rate, 1-raise_rate))
-	womenraise=sample(c("RAISE", "NO"), num_women, replace=TRUE, prob=c(raise_rate, 1-raise_rate))
-	d=length(which(menraise=="RAISE"))-length(which(womenraise=="RAISE"))
-	diff_vec[i]=d
-}	
-hist(diff_vec)
-abline(v = observed_diff, col="red", lwd=3, lty=2)
-print(observed_diff)
-</script></div> How likely is the difference you observed in (b)?</p>
+d=length(which(menraise=="RAISE"))-length(which(womenraise=="RAISE"))
+print(d)
+</script></div> How does this value compare to what you found in (b)?</p>
 <span class="incontext"><a href="Sec_TwoVarCat.html#p-1095">in-context</a></span>
 </body>
 </html>

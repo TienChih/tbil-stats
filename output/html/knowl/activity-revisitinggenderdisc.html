@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-17T09:59:19-07:00       *-->
+<!--*       on 2022-02-22T18:35:20-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -36,7 +36,7 @@
 </h4>
 <div class="introduction">
 <p>Recall that from <a href="" class="xref" data-knowl="./knowl/exploration-genderdisc.html" title="Exploration 5.2.1: Gender and Raises">Exploration 5.2.1</a> that we have \(n_1=312\)  men and \(n_2=216\)  women, of whom \(x_1=72\) men and \(x_2=30\) women got raises. The company claims that men and women have equal raise rates.  The watchdog group claims that mean get more raises than women.  Suppose we use a \(\alpha=0.05\) level of significance.</p>
-<p><div class="sagecell-r" id="sage-188"><script type="text/x-sage">
+<p><div class="sagecell-r" id="sage-189"><script type="text/x-sage">
 </script></div> <a href="" class="hint-knowl original" data-knowl="./knowl/hint-19-hidden.html" title="Hint 1: Desmos"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Hint</span><span xmlns:svg="http://www.w3.org/2000/svg" class="period">.</span><span xmlns:svg="http://www.w3.org/2000/svg" class="space"> </span><span class="title">Desmos</span></a></p>
 </div>
 <article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
@@ -65,7 +65,7 @@
 <p>State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(l)</span></h5>
 <p>Do we  reject the null hypothesis?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(m)</span></h5>
 <p>What sort of error could have been made? (Type 1 or Type 2)</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(n)</span></h5>
-<p>Run the following code to sample <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">num_men=312</code> men where \(men_raise=72\) get raises, then samples <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">num_women=216</code> men where \(women_raise=30\) get raises.  It does this <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">trials=1000</code> times and plots a histogram of the differences. <div class="sagecell-r" id="sage-189"><script type="text/x-sage">trials=1000
+<p>Run the following code to sample <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">num_men=312</code> men where \(men_raise=72\) get raises, then samples <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">num_women=216</code> men where \(women_raise=30\) get raises.  It does this <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">trials=1000</code> times and plots a histogram of the differences. <div class="sagecell-r" id="sage-190"><script type="text/x-sage">trials=1000
 num_men=312
 num_women=216
 m_raise=72
@@ -81,7 +81,7 @@ for(i in 1:trials){
 }
 hist(diffraise, breaks=25, prob=TRUE)
 </script></div></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(o)</span></h5>
-<p>Fix and run the following code to plot a normal curve with mean <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">mu_D=</code>\(p_0\) and standard deviation <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">SE_D=</code>\(SE_D\text{,}\) and plot a line for the observed difference <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">observed_diff=</code>\(d\) <div class="sagecell-r" id="sage-190"><script type="text/x-sage">mu_D=FIXME
+<p>Fix and run the following code to plot a normal curve with mean <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">mu_D=</code>\(p_0\) and standard deviation <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">SE_D=</code>\(SE_D\text{,}\) and plot a line for the observed difference <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">observed_diff=</code>\(d\) <div class="sagecell-r" id="sage-191"><script type="text/x-sage">mu_D=FIXME
 SE_D=FIXME
 observed_diff=FIXME
 
@@ -89,7 +89,7 @@ hist(diffraise, breaks=25, prob=TRUE)
 curve(dnorm(x, mean=mu_D, sd=SE_D), col="darkblue", lwd=2, add=TRUE, yaxt="n")
 abline(v = observed_diff, col="red", lwd=3, lty=2)
 </script></div> How well does this curve match the histogram?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(p)</span></h5>
-<p>Run the following code to see what proportion of these differences are greater than or equal to the <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">observed_diff</code>.  How does this compare to the \(p\)-value? <div class="sagecell-r" id="sage-191"><script type="text/x-sage">length(which(diffraise>=observed_diff))/trials
+<p>Run the following code to see what proportion of these differences are greater than or equal to the <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">observed_diff</code>.  How does this compare to the \(p\)-value? <div class="sagecell-r" id="sage-192"><script type="text/x-sage">length(which(diffraise>=observed_diff))/trials
 </script></div></p></article></article><span class="incontext"><a href="Sec_TwoVarCat.html#activity-revisitinggenderdisc">in-context</a></span>
 </body>
 </html>

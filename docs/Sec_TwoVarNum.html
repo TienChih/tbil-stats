@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-17T09:58:59-07:00       *-->
+<!--*       on 2022-02-22T18:34:56-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -203,72 +203,72 @@
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="Sec_TwoVarNum"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">6.4</span> <span class="title">Comparing Two Numerical Variables (N4)</span>
 </h2>
-<section class="introduction" id="introduction-167"><p id="p-1515">In <a href="Sec_TwoVarCat.html" class="internal" title="Section 5.2: Comparing Two Categorical Variables (C2)">Section 5.2</a> we compared two categorical variables to each other. In this section, we compare two numerical variables.</p>
+<section class="introduction" id="introduction-167"><p id="p-1516">In <a href="Sec_TwoVarCat.html" class="internal" title="Section 5.2: Comparing Two Categorical Variables (C2)">Section 5.2</a> we compared two categorical variables to each other. In this section, we compare two numerical variables.</p>
 <article class="exploration project-like" id="exploration-ncbirthssmoke"><h3 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">6.4.1</span><span class="period">.</span><span class="space"> </span><span class="title">Birth Weight and Smoking.</span>
 </h3>
 <div class="introduction" id="introduction-168">
-<p id="p-1516">We are interested in seeing whether or not there is any difference in the average birth of weight of babies whose mothers smoked versus those that do not.</p>
-<p id="p-1517">Run the following code to download  the <code class="code-inline tex2jax_ignore">ncbirths.csv</code> data set which contains information about 1000 births recorded in North Carolina, and display the variables: <div class="sagecell-r" id="sage-279"><script type="text/x-sage">ncbirths = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/ncbirths.csv")
+<p id="p-1517">We are interested in seeing whether or not there is any difference in the average birth of weight of babies whose mothers smoked versus those that do not.</p>
+<p id="p-1518">Run the following code to download  the <code class="code-inline tex2jax_ignore">ncbirths.csv</code> data set which contains information about 1000 births recorded in North Carolina, and display the variables: <div class="sagecell-r" id="sage-280"><script type="text/x-sage">ncbirths = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/ncbirths.csv")
 
 names(ncbirths)
 </script></div> Click here to learn more about this data set: <a class="external" href="https://www.openintro.org/data/index.php?data=ncbirths" target="_blank"><code class="code-inline tex2jax_ignore">https://www.openintro.org/data/index.php?data=ncbirths</code></a>.</p>
 </div>
-<article class="task exercise-like" id="task-865"><h4 class="heading"><span class="codenumber">(a)</span></h4>
-<p id="p-1518">Run the following code to subset out the babies whose mothers smoked and summarize the data: <div class="sagecell-r" id="sage-280"><script type="text/x-sage">babysmoke=subset(ncbirths, ncbirths$habit=="smoker")
+<article class="task exercise-like" id="task-866"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-1519">Run the following code to subset out the babies whose mothers smoked and summarize the data: <div class="sagecell-r" id="sage-281"><script type="text/x-sage">babysmoke=subset(ncbirths, ncbirths$habit=="smoker")
 summary(babysmoke)
-</script></div></p></article><article class="task exercise-like" id="task-866"><h4 class="heading"><span class="codenumber">(b)</span></h4>
-<p id="p-1519">Run the following code to subset out the babies whose mothers did not smoke and summarize the data: <div class="sagecell-r" id="sage-281"><script type="text/x-sage">babynosmoke=subset(ncbirths, ncbirths$habit=="nonsmoker")
+</script></div></p></article><article class="task exercise-like" id="task-867"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-1520">Run the following code to subset out the babies whose mothers did not smoke and summarize the data: <div class="sagecell-r" id="sage-282"><script type="text/x-sage">babynosmoke=subset(ncbirths, ncbirths$habit=="nonsmoker")
 summary(babynosmoke)
-</script></div></p></article><article class="task exercise-like" id="task-867"><h4 class="heading"><span class="codenumber">(c)</span></h4>
-<p id="p-1520">Run the following code to display overlapping histograms of the birth weights of babies whose mothers smoked and didn't, and the average of each sample: <div class="sagecell-r" id="sage-282"><script type="text/x-sage">hist(babynosmoke$weight, col=rgb(0,0,1,0.5))
+</script></div></p></article><article class="task exercise-like" id="task-868"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-1521">Run the following code to display overlapping histograms of the birth weights of babies whose mothers smoked and didn't, and the average of each sample: <div class="sagecell-r" id="sage-283"><script type="text/x-sage">hist(babynosmoke$weight, col=rgb(0,0,1,0.5))
 hist(babysmoke$weight, col=rgb(1,0,0,0.5), add=TRUE)
 abline(v = mean(babysmoke$weight), col="red", lwd=3, lty=2)
 abline(v = mean(babynosmoke$weight), col="blue", lwd=3, lty=2)
-</script></div></p></article><article class="task exercise-like" id="task-868"><h4 class="heading"><span class="codenumber">(d)</span></h4>
-<p id="p-1521">Run the following code to display overlapping histograms scaled by the size of the samples: <div class="sagecell-r" id="sage-283"><script type="text/x-sage">hist(babynosmoke$weight, col=rgb(0,0,1,0.5), prob=TRUE)
+</script></div></p></article><article class="task exercise-like" id="task-869"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-1522">Run the following code to display overlapping histograms scaled by the size of the samples: <div class="sagecell-r" id="sage-284"><script type="text/x-sage">hist(babynosmoke$weight, col=rgb(0,0,1,0.5), prob=TRUE)
 hist(babysmoke$weight, col=rgb(1,0,0,0.5), add=TRUE, prob=TRUE)
 abline(v = mean(babysmoke$weight), col="red", lwd=3, lty=2)
 abline(v = mean(babynosmoke$weight), col="blue", lwd=3, lty=2)
 </script></div></p></article></article><article class="exploration project-like" id="exploration-fooledbyrandom"><h3 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">6.4.2</span><span class="period">.</span><span class="space"> </span><span class="title">Differences in Samples.</span>
 </h3>
-<div class="introduction" id="introduction-169"><p id="p-1522">In <a href="" class="xref" data-knowl="./knowl/exploration-ncbirthssmoke.html" title="Exploration 6.4.1: Birth Weight and Smoking">Exploration 6.4.1</a>, we saw that there was an observable difference in the average baby weights of the samples.  We also saw a wide variety of baby weights and quite a bit of overlap.  The question is are the distributions from which the samples come identical or not?</p></div>
-<article class="task exercise-like" id="task-869"><h4 class="heading"><span class="codenumber">(a)</span></h4>
-<p id="p-1523">If two distributions have different means, we'd expect differences in the observed samples.  Run the following code to generate histograms for two samples of size 30, one from a normal distribution with mean 10, one from a normal distribution with mean 12, and draw lines indicating their means. <div class="sagecell-r" id="sage-284"><script type="text/x-sage">samp1=rnorm(30, 10, 3)
+<div class="introduction" id="introduction-169"><p id="p-1523">In <a href="" class="xref" data-knowl="./knowl/exploration-ncbirthssmoke.html" title="Exploration 6.4.1: Birth Weight and Smoking">Exploration 6.4.1</a>, we saw that there was an observable difference in the average baby weights of the samples.  We also saw a wide variety of baby weights and quite a bit of overlap.  The question is are the distributions from which the samples come identical or not?</p></div>
+<article class="task exercise-like" id="task-870"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-1524">If two distributions have different means, we'd expect differences in the observed samples.  Run the following code to generate histograms for two samples of size 30, one from a normal distribution with mean 10, one from a normal distribution with mean 12, and draw lines indicating their means. <div class="sagecell-r" id="sage-285"><script type="text/x-sage">samp1=rnorm(30, 10, 3)
 samp2=rnorm(30, 12, 3)
 
 hist(samp1, col=rgb(1,0,0,0.5), prob=TRUE)
 hist(samp2, col=rgb(0,0,1,0.5), add=TRUE, prob=TRUE)
 abline(v = mean(samp1), col="red", lwd=3, lty=2)
 abline(v = mean(samp2), col="blue", lwd=3, lty=2)
-</script></div> Run it a few times to see different samples.</p></article><article class="task exercise-like" id="task-870"><h4 class="heading"><span class="codenumber">(b)</span></h4>
-<p id="p-1524">If two distributions have the same mean, we'd <em class="emphasis">still</em> expect differences in the observed samples!  Run the following code to generate histograms for two samples of size 30, both from a normal distribution with mean 10 and draw lines indicating their means. <div class="sagecell-r" id="sage-285"><script type="text/x-sage">samp1=rnorm(30, 10, 3)
+</script></div> Run it a few times to see different samples.</p></article><article class="task exercise-like" id="task-871"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-1525">If two distributions have the same mean, we'd <em class="emphasis">still</em> expect differences in the observed samples!  Run the following code to generate histograms for two samples of size 30, both from a normal distribution with mean 10 and draw lines indicating their means. <div class="sagecell-r" id="sage-286"><script type="text/x-sage">samp1=rnorm(30, 10, 3)
 samp2=rnorm(30, 10, 3)
 
 hist(samp1, col=rgb(1,0,0,0.5), prob=TRUE)
 hist(samp2, col=rgb(0,0,1,0.5), add=TRUE, prob=TRUE)
 abline(v = mean(samp1), col="red", lwd=3, lty=2)
 abline(v = mean(samp2), col="blue", lwd=3, lty=2)
-</script></div> Run it a few times to see different samples.</p></article></article><p id="p-1525">So, if we're given two samples as in <a href="" class="xref" data-knowl="./knowl/exploration-ncbirthssmoke.html" title="Exploration 6.4.1: Birth Weight and Smoking">Exploration 6.4.1</a>, how are we to tell if this indicates an actual difference in population means?  \(p\)-values of course!</p></section><section class="subsection" id="subsection-38"><h3 class="heading hide-type">
+</script></div> Run it a few times to see different samples.</p></article></article><p id="p-1526">So, if we're given two samples as in <a href="" class="xref" data-knowl="./knowl/exploration-ncbirthssmoke.html" title="Exploration 6.4.1: Birth Weight and Smoking">Exploration 6.4.1</a>, how are we to tell if this indicates an actual difference in population means?  \(p\)-values of course!</p></section><section class="subsection" id="subsection-38"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">6.4.1</span> <span class="title">Differences in Numerical Variables</span>
 </h3>
 <article class="activity project-like" id="activity-spending"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">Shopping and Spending.</span>
 </h4>
 <div class="introduction" id="introduction-170">
-<p id="p-1526">Suppose that customers at department store A spend on average \(\mu_A=\$350\)  in a trip with standard deviation \(\sigma_A=\$75\text{.}\)  Customers who shopt at department store B spend on average \(\mu_B=\$200\)  in a trip with standard deviation \(\sigma_B=\$40\text{.}\)</p>
-<p id="p-1527">Consider the random variable \(X\) we get by taking a sample of 50 customers from store A, 30 customers from store B, taking the average spending by the A customers, and from that subtract the average spending from the B customers.</p>
+<p id="p-1527">Suppose that customers at department store A spend on average \(\mu_A=\$350\)  in a trip with standard deviation \(\sigma_A=\$75\text{.}\)  Customers who shopt at department store B spend on average \(\mu_B=\$200\)  in a trip with standard deviation \(\sigma_B=\$40\text{.}\)</p>
+<p id="p-1528">Consider the random variable \(X\) we get by taking a sample of 50 customers from store A, 30 customers from store B, taking the average spending by the A customers, and from that subtract the average spending from the B customers.</p>
 </div>
-<article class="task exercise-like" id="task-871"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<p id="p-1528">The average amount spent by 50 A customers is a random variable.  Use <a href="" class="xref" data-knowl="./knowl/theorem-CLTnum.html" title="Theorem 6.1.2: The Central Limit Theorem (Numerical)">Theorem 6.1.2</a> to find the mean \(\mu_{\bar{a}}\) and standard error \(SE_{\bar{a}}\) for this variable.</p></article><article class="task exercise-like" id="task-872"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<p id="p-1529">The average amount spent by 30 B customers is a random variable.  Use <a href="" class="xref" data-knowl="./knowl/theorem-CLTnum.html" title="Theorem 6.1.2: The Central Limit Theorem (Numerical)">Theorem 6.1.2</a> to find the mean \(\mu_{\bar{b}}\) and standard error \(SE_{\bar{b}}\) for this variable.</p></article><article class="task exercise-like" id="task-873"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<p id="p-1530">Recall that the variance of a random variable is the square of it's standard deviations.  Find the variance for each of the two sampling variables.</p></article><article class="task exercise-like" id="task-874"><h5 class="heading"><span class="codenumber">(d)</span></h5>
-<p id="p-1531">Recall that the variance of a random variable is the square of it's standard deviations.  Find the variance for each of the two sampling variables.</p></article><article class="task exercise-like" id="task-875"><h5 class="heading"><span class="codenumber">(e)</span></h5>
-<p id="p-1532">Let \(D\) denote the difference between the sampling distributions.  Use <a href="" class="xref" data-knowl="./knowl/remark-linofEandV.html" title="Remark 2.5.1">Remark 2.5.1</a> to find \(\mu_D\text{.}\)</p></article><article class="task exercise-like" id="task-876"><h5 class="heading"><span class="codenumber">(f)</span></h5>
-<p id="p-1533">Use <a href="" class="xref" data-knowl="./knowl/remark-linofEandV.html" title="Remark 2.5.1">Remark 2.5.1</a> to find the variance of \(D\text{:}\) \(Var_D\text{.}\)</p></article><article class="task exercise-like" id="task-877"><h5 class="heading"><span class="codenumber">(g)</span></h5>
-<p id="p-1534">Find the standard deviation of \(D\text{:}\) \(SE_D=\sqrt{Var_D}\text{.}\)</p></article><article class="task exercise-like" id="task-878"><h5 class="heading"><span class="codenumber">(h)</span></h5>
-<p id="p-1535">Run the following code to simulate 1000 trials of sampling 50 customers from store A, 30 customers of store B, taking the difference in their average spending, and plotting a histogram of the results. <div class="sagecell-r" id="sage-286"><script type="text/x-sage">storeA=50
+<article class="task exercise-like" id="task-872"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1529">The average amount spent by 50 A customers is a random variable.  Use <a href="" class="xref" data-knowl="./knowl/theorem-CLTnum.html" title="Theorem 6.1.2: The Central Limit Theorem (Numerical)">Theorem 6.1.2</a> to find the mean \(\mu_{\bar{a}}\) and standard error \(SE_{\bar{a}}\) for this variable.</p></article><article class="task exercise-like" id="task-873"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-1530">The average amount spent by 30 B customers is a random variable.  Use <a href="" class="xref" data-knowl="./knowl/theorem-CLTnum.html" title="Theorem 6.1.2: The Central Limit Theorem (Numerical)">Theorem 6.1.2</a> to find the mean \(\mu_{\bar{b}}\) and standard error \(SE_{\bar{b}}\) for this variable.</p></article><article class="task exercise-like" id="task-874"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-1531">Recall that the variance of a random variable is the square of it's standard deviations.  Find the variance for each of the two sampling variables.</p></article><article class="task exercise-like" id="task-875"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-1532">Recall that the variance of a random variable is the square of it's standard deviations.  Find the variance for each of the two sampling variables.</p></article><article class="task exercise-like" id="task-876"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-1533">Let \(D\) denote the difference between the sampling distributions.  Use <a href="" class="xref" data-knowl="./knowl/remark-linofEandV.html" title="Remark 2.5.1">Remark 2.5.1</a> to find \(\mu_D\text{.}\)</p></article><article class="task exercise-like" id="task-877"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p id="p-1534">Use <a href="" class="xref" data-knowl="./knowl/remark-linofEandV.html" title="Remark 2.5.1">Remark 2.5.1</a> to find the variance of \(D\text{:}\) \(Var_D\text{.}\)</p></article><article class="task exercise-like" id="task-878"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p id="p-1535">Find the standard deviation of \(D\text{:}\) \(SE_D=\sqrt{Var_D}\text{.}\)</p></article><article class="task exercise-like" id="task-879"><h5 class="heading"><span class="codenumber">(h)</span></h5>
+<p id="p-1536">Run the following code to simulate 1000 trials of sampling 50 customers from store A, 30 customers of store B, taking the difference in their average spending, and plotting a histogram of the results. <div class="sagecell-r" id="sage-287"><script type="text/x-sage">storeA=50
 storeB=30
 Amean=350
 Asd=75
@@ -284,8 +284,8 @@ for(i in 1:trials){
   diff_spending[i]=mean(A_samp)-mean(B_samp)
 }
 hist(diff_spending, breaks=25, prob=TRUE)
-</script></div></p></article><article class="task exercise-like" id="task-879"><h5 class="heading"><span class="codenumber">(i)</span></h5>
-<p id="p-1536">Fix and run the following code so that <code class="code-inline tex2jax_ignore">mu_D=</code>\(\mu_D\) and <code class="code-inline tex2jax_ignore">SE_D=</code>\(\sigma_D\) and plot a normal curve on top of our histogram. <div class="sagecell-r" id="sage-287"><script type="text/x-sage">mu_D=FIXME
+</script></div></p></article><article class="task exercise-like" id="task-880"><h5 class="heading"><span class="codenumber">(i)</span></h5>
+<p id="p-1537">Fix and run the following code so that <code class="code-inline tex2jax_ignore">mu_D=</code>\(\mu_D\) and <code class="code-inline tex2jax_ignore">SE_D=</code>\(\sigma_D\) and plot a normal curve on top of our histogram. <div class="sagecell-r" id="sage-288"><script type="text/x-sage">mu_D=FIXME
 SE_D=FIXME
 
 hist(diff_spending, breaks=25, prob=TRUE)
@@ -293,102 +293,102 @@ curve(dnorm(x, mean=mu_D, sd=SE_D), col="darkblue", lwd=2, add=TRUE, yaxt="n")
 </script></div> How well does the normal distribution approximate the histogram?</p></article></article><article class="remark remark-like" id="remark-diffofmeans"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">6.4.1</span><span class="period">.</span><span class="space"> </span><span class="title">Difference of Means.</span>
 </h4>
-<p id="p-1537">Let there be two random numerical variables, with population means \(, \mu_1, \mu_2\) and standard deviations \(\sigma_1. \sigma_2\text{.}\)  Then let \(D\) be the random variable generated by taking random samples of size \(n_1, n_2\) of the two variables and taking the difference in their proportions.  Then \(D\) is approximated by a normal variable with mean and standard deviation:</p>
+<p id="p-1538">Let there be two random numerical variables, with population means \(, \mu_1, \mu_2\) and standard deviations \(\sigma_1. \sigma_2\text{.}\)  Then let \(D\) be the random variable generated by taking random samples of size \(n_1, n_2\) of the two variables and taking the difference in their proportions.  Then \(D\) is approximated by a normal variable with mean and standard deviation:</p>
 <div class="displaymath">
 \begin{equation*}
 \mu_D=\mu_1-\mu_2, SE_D=\sqrt{\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}}.
 \end{equation*}
 </div>
-<p id="p-1538">When using sample standard deviations \(s_1, s_2\) to estimate \(\sigma_1, \sigma_2\) we use a \(t\)-distribution with degrees of freedom: \(\min(n_1, n_2)-1\text{.}\)</p></article></section><section class="subsection" id="subsection-39"><h3 class="heading hide-type">
+<p id="p-1539">When using sample standard deviations \(s_1, s_2\) to estimate \(\sigma_1, \sigma_2\) we use a \(t\)-distribution with degrees of freedom: \(\min(n_1, n_2)-1\text{.}\)</p></article></section><section class="subsection" id="subsection-39"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">6.4.2</span> <span class="title">Confidence Intervals</span>
 </h3>
 <article class="remark remark-like" id="remark-numCItwo"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">6.4.2</span><span class="period">.</span>
 </h4>
-<p id="p-1539">As in <a href="" class="xref" data-knowl="./knowl/remark-numCI.html" title="Remark 6.2.1">Remark 6.2.1</a>, given samples of two numerical variables, of sizes \(n_1, n_2\) with sample means \(\bar{x}_1, \bar{x}_2\) and standard deviations \(s_1, s_2\text{,}\) we can find a C% confidence interval for the difference of population means \(\mu_1-\mu_2\) by</p>
+<p id="p-1540">As in <a href="" class="xref" data-knowl="./knowl/remark-numCI.html" title="Remark 6.2.1">Remark 6.2.1</a>, given samples of two numerical variables, of sizes \(n_1, n_2\) with sample means \(\bar{x}_1, \bar{x}_2\) and standard deviations \(s_1, s_2\text{,}\) we can find a C% confidence interval for the difference of population means \(\mu_1-\mu_2\) by</p>
 <div class="displaymath">
 \begin{equation*}
 [(\bar{x}_1-\bar{x}_2)-t^*SE_D, (\bar{x}_1-\bar{x}_2)+t^*SE_D]
 \end{equation*}
 </div>
 <p class="continuation">where \(SE_D=\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}\) as in <a href="" class="xref" data-knowl="./knowl/remark-diffofmeans.html" title="Remark 6.4.1: Difference of Means">Remark 6.4.1</a>, and \(t^*\) is the \(t\) value so that \(P(-t^*\lt t \lt t^*)=C\%\) for a \(t\)-distribution with \(\min(n_1, n_2)-1\) degrees of freedom.</p>
-<p id="p-1540">Note that other techniques to do compute confidence intervals utilize a more complicated method to determine degrees of freedom.  We use this method for hand computations as it's straightforward and still a good approximation.</p></article><article class="activity project-like" id="activity-brakes"><h4 class="heading">
+<p id="p-1541">Note that other techniques to do compute confidence intervals utilize a more complicated method to determine degrees of freedom.  We use this method for hand computations as it's straightforward and still a good approximation.</p></article><article class="activity project-like" id="activity-brakes"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.4.4</span><span class="period">.</span><span class="space"> </span><span class="title">Stopping Distance.</span>
 </h4>
 <div class="introduction" id="introduction-171">
-<p id="p-1541">A automotive manufacturer tests two types of brakes for it's mid-sized SUV's.  In a sample of 30 SUV's with type A breaks, the stopping distance  when breaks are applied at 60 mph was found to be 127.43 ft with standard deviation 5.24 feet.  In a seperate sample of 30 SUV's using type B breaks, the average stopping distance was 120.45 feet with standard deviation 4.37 feet.</p>
-<p id="p-1542">We want to find a 95% confidence interval for the difference in stopping distance between the breaks.</p>
+<p id="p-1542">A automotive manufacturer tests two types of brakes for it's mid-sized SUV's.  In a sample of 30 SUV's with type A breaks, the stopping distance  when breaks are applied at 60 mph was found to be 127.43 ft with standard deviation 5.24 feet.  In a seperate sample of 30 SUV's using type B breaks, the average stopping distance was 120.45 feet with standard deviation 4.37 feet.</p>
+<p id="p-1543">We want to find a 95% confidence interval for the difference in stopping distance between the breaks.</p>
 </div>
-<article class="task exercise-like" id="task-880"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<p id="p-1543">Compute the  the difference in sample means \(\bar{x}_1-\bar{x}_2\text{.}\)</p></article><article class="task exercise-like" id="task-881"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<p id="p-1544">Compute the standard error \(SE_D\) for the difference in means using <a href="" class="xref" data-knowl="./knowl/remark-diffofmeans.html" title="Remark 6.4.1: Difference of Means">Remark 6.4.1</a>.</p></article><article class="task exercise-like" id="task-882"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<p id="p-1545">Compute the degrees of freedom.</p></article><article class="task exercise-like" id="task-883"><h5 class="heading"><span class="codenumber">(d)</span></h5>
-<p id="p-1546">Find \(t^*\) such that for a \(t\)-distribution with the appropriate degrees of freedom, \(P(-t^*\lt t\lt t^*)=0.95\text{.}\) <div class="sagecell-r" id="sage-288"><script type="text/x-sage">
-</script></div> <a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-35" id="hint-35"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-35"><div class="hint solution-like"><p id="p-1547"><iframe src="https://www.desmos.com/calculator/qrru08kps1" id="interactive-94" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/odp3hiqj8r" id="interactive-95" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-884"><h5 class="heading"><span class="codenumber">(e)</span></h5>
-<p id="p-1548">Use <a href="" class="xref" data-knowl="./knowl/remark-numCItwo.html" title="Remark 6.4.2">Remark 6.4.2</a> to compute a 95% confidence interval for \(\mu\text{.}\)</p></article><article class="task exercise-like" id="task-885"><h5 class="heading"><span class="codenumber">(f)</span></h5>
-<p id="p-1549">State what this confidence interval means in the context of this problem using complete sentences. X</p></article></article><article class="activity project-like" id="activity-beefsandwich"><h4 class="heading">
+<article class="task exercise-like" id="task-881"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1544">Compute the  the difference in sample means \(\bar{x}_1-\bar{x}_2\text{.}\)</p></article><article class="task exercise-like" id="task-882"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-1545">Compute the standard error \(SE_D\) for the difference in means using <a href="" class="xref" data-knowl="./knowl/remark-diffofmeans.html" title="Remark 6.4.1: Difference of Means">Remark 6.4.1</a>.</p></article><article class="task exercise-like" id="task-883"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-1546">Compute the degrees of freedom.</p></article><article class="task exercise-like" id="task-884"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-1547">Find \(t^*\) such that for a \(t\)-distribution with the appropriate degrees of freedom, \(P(-t^*\lt t\lt t^*)=0.95\text{.}\) <div class="sagecell-r" id="sage-289"><script type="text/x-sage">
+</script></div> <a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-35" id="hint-35"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-35"><div class="hint solution-like"><p id="p-1548"><iframe src="https://www.desmos.com/calculator/qrru08kps1" id="interactive-94" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/odp3hiqj8r" id="interactive-95" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-885"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-1549">Use <a href="" class="xref" data-knowl="./knowl/remark-numCItwo.html" title="Remark 6.4.2">Remark 6.4.2</a> to compute a 95% confidence interval for \(\mu\text{.}\)</p></article><article class="task exercise-like" id="task-886"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p id="p-1550">State what this confidence interval means in the context of this problem using complete sentences. X</p></article></article><article class="activity project-like" id="activity-beefsandwich"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.4.5</span><span class="period">.</span><span class="space"> </span><span class="title">Beef Sandwiches.</span>
 </h4>
-<div class="introduction" id="introduction-172"><p id="p-1550">Our reoccuring restaurateur is back and wants to know what the difference is, if any, in the amount of Roast Beef Sandwiches sold each lunch rush in her East and West locations.  She takes a sample of 30 lunch rushes in the East Location and 45 in the West.</p></div>
-<article class="task exercise-like" id="task-886"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<p id="p-1551">Run the following code to sample 30 lunch rushes in the east location, display a histogram of the results, and show the mean and standard deviation. <div class="sagecell-r" id="sage-289"><script type="text/x-sage">eastlunch=30
+<div class="introduction" id="introduction-172"><p id="p-1551">Our reoccuring restaurateur is back and wants to know what the difference is, if any, in the amount of Roast Beef Sandwiches sold each lunch rush in her East and West locations.  She takes a sample of 30 lunch rushes in the East Location and 45 in the West.</p></div>
+<article class="task exercise-like" id="task-887"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1552">Run the following code to sample 30 lunch rushes in the east location, display a histogram of the results, and show the mean and standard deviation. <div class="sagecell-r" id="sage-290"><script type="text/x-sage">eastlunch=30
 east_mu=runif(1,30,50)
 
 east_samp=round(rnorm(eastlunch, east_mu, 8))
 hist(east_samp, col="red")
 print(mean(east_samp))
 print(sd(east_samp))
-</script></div></p></article><article class="task exercise-like" id="task-887"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<p id="p-1552">Run the following code to sample 45 lunch rushes in the 34st location, display a histogram of the results, and show the mean and standard deviation. <div class="sagecell-r" id="sage-290"><script type="text/x-sage">westlunch=45
+</script></div></p></article><article class="task exercise-like" id="task-888"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-1553">Run the following code to sample 45 lunch rushes in the 34st location, display a histogram of the results, and show the mean and standard deviation. <div class="sagecell-r" id="sage-291"><script type="text/x-sage">westlunch=45
 west_mu=runif(1,30,50)
 
 west_samp=round(rnorm(westlunch, west_mu, 8))
 hist(west_samp, col="blue")
 print(mean(west_samp))
 print(sd(west_samp))
-</script></div></p></article><article class="task exercise-like" id="task-888"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<p id="p-1553">Run the following code to display the two histograms side by side, scaled for sample size, and with the means displayed, as well as side by side boxplots. <div class="sagecell-r" id="sage-291"><script type="text/x-sage">hist(east_samp, col=rgb(1,0,0,0.5), prob=TRUE)
+</script></div></p></article><article class="task exercise-like" id="task-889"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-1554">Run the following code to display the two histograms side by side, scaled for sample size, and with the means displayed, as well as side by side boxplots. <div class="sagecell-r" id="sage-292"><script type="text/x-sage">hist(east_samp, col=rgb(1,0,0,0.5), prob=TRUE)
 hist(west_samp, col=rgb(0,0,1,0.5), prob=TRUE, add=TRUE)
 abline(v = mean(east_samp), col="red", lwd=3, lty=2)
 abline(v = mean(west_samp), col="blue", lwd=3, lty=2)
 
 boxplot(east_samp, west_samp)
-</script></div></p></article><article class="task exercise-like" id="task-889"><h5 class="heading"><span class="codenumber">(d)</span></h5>
-<p id="p-1554">Compute the  the difference in sample means \(\bar{x}_1-\bar{x}_2\text{.}\)</p></article><article class="task exercise-like" id="task-890"><h5 class="heading"><span class="codenumber">(e)</span></h5>
-<p id="p-1555">Compute the standard error \(SE_D\) for the difference in means using <a href="" class="xref" data-knowl="./knowl/remark-diffofmeans.html" title="Remark 6.4.1: Difference of Means">Remark 6.4.1</a>.</p></article><article class="task exercise-like" id="task-891"><h5 class="heading"><span class="codenumber">(f)</span></h5>
-<p id="p-1556">Compute the degrees of freedom.</p></article><article class="task exercise-like" id="task-892"><h5 class="heading"><span class="codenumber">(g)</span></h5>
-<p id="p-1557">Find \(t^*\) such that for a \(t\)-distribution with the appropriate degrees of freedom, \(P(-t^*\lt t\lt t^*)=0.95\text{.}\) <div class="sagecell-r" id="sage-292"><script type="text/x-sage">
-</script></div> <a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-36" id="hint-36"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-36"><div class="hint solution-like"><p id="p-1558"><iframe src="https://www.desmos.com/calculator/qrru08kps1" id="interactive-96" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/odp3hiqj8r" id="interactive-97" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-893"><h5 class="heading"><span class="codenumber">(h)</span></h5>
-<p id="p-1559">Use <a href="" class="xref" data-knowl="./knowl/remark-numCItwo.html" title="Remark 6.4.2">Remark 6.4.2</a> to compute a 95% confidence interval for \(\mu\text{.}\)</p></article><article class="task exercise-like" id="task-894"><h5 class="heading"><span class="codenumber">(i)</span></h5>
-<p id="p-1560">State what this confidence interval means in the context of this problem using complete sentences. X</p></article><article class="task exercise-like" id="task-895"><h5 class="heading"><span class="codenumber">(j)</span></h5>
-<p id="p-1561">Run the following code to display the actual differences of means. <div class="sagecell-r" id="sage-293"><script type="text/x-sage">east_mu-west_mu
-</script></div></p></article><article class="task exercise-like" id="task-896"><h5 class="heading"><span class="codenumber">(k)</span></h5>
-<p id="p-1562">Run the following code to compute a 95% confidence interval through <code class="code-inline tex2jax_ignore">R</code>.  Note this should give you a different interval than what you found in (h) if you did it by hand. <div class="sagecell-r" id="sage-294"><script type="text/x-sage">t.test(east_samp, west_samp, conf.level=0.95)$conf.int
+</script></div></p></article><article class="task exercise-like" id="task-890"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-1555">Compute the  the difference in sample means \(\bar{x}_1-\bar{x}_2\text{.}\)</p></article><article class="task exercise-like" id="task-891"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-1556">Compute the standard error \(SE_D\) for the difference in means using <a href="" class="xref" data-knowl="./knowl/remark-diffofmeans.html" title="Remark 6.4.1: Difference of Means">Remark 6.4.1</a>.</p></article><article class="task exercise-like" id="task-892"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p id="p-1557">Compute the degrees of freedom.</p></article><article class="task exercise-like" id="task-893"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p id="p-1558">Find \(t^*\) such that for a \(t\)-distribution with the appropriate degrees of freedom, \(P(-t^*\lt t\lt t^*)=0.95\text{.}\) <div class="sagecell-r" id="sage-293"><script type="text/x-sage">
+</script></div> <a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-36" id="hint-36"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-36"><div class="hint solution-like"><p id="p-1559"><iframe src="https://www.desmos.com/calculator/qrru08kps1" id="interactive-96" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/odp3hiqj8r" id="interactive-97" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-894"><h5 class="heading"><span class="codenumber">(h)</span></h5>
+<p id="p-1560">Use <a href="" class="xref" data-knowl="./knowl/remark-numCItwo.html" title="Remark 6.4.2">Remark 6.4.2</a> to compute a 95% confidence interval for \(\mu\text{.}\)</p></article><article class="task exercise-like" id="task-895"><h5 class="heading"><span class="codenumber">(i)</span></h5>
+<p id="p-1561">State what this confidence interval means in the context of this problem using complete sentences. X</p></article><article class="task exercise-like" id="task-896"><h5 class="heading"><span class="codenumber">(j)</span></h5>
+<p id="p-1562">Run the following code to display the actual differences of means. <div class="sagecell-r" id="sage-294"><script type="text/x-sage">east_mu-west_mu
+</script></div></p></article><article class="task exercise-like" id="task-897"><h5 class="heading"><span class="codenumber">(k)</span></h5>
+<p id="p-1563">Run the following code to compute a 95% confidence interval through <code class="code-inline tex2jax_ignore">R</code>.  Note this should give you a different interval than what you found in (h) if you did it by hand. <div class="sagecell-r" id="sage-295"><script type="text/x-sage">t.test(east_samp, west_samp, conf.level=0.95)$conf.int
 </script></div></p></article></article></section><section class="subsection" id="subsection-40"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">6.4.3</span> <span class="title">Hypothesis Testing</span>
 </h3>
 <article class="remark remark-like" id="remark-numHTtwo"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">6.4.3</span><span class="period">.</span>
 </h4>
-<p id="p-1563">We can test the <em class="emphasis">difference</em> between means of numerical variables, similar to how we tested difference of proportions in <a href="" class="xref" data-knowl="./knowl/remark-hypothesistestdiffofprop.html" title="Remark 5.2.6">Remark 5.2.6</a>.  Given two numerical variables with population means \(\mu_1, \mu_2\) we have alternative Hypothesis  in the forms:</p>
+<p id="p-1564">We can test the <em class="emphasis">difference</em> between means of numerical variables, similar to how we tested difference of proportions in <a href="" class="xref" data-knowl="./knowl/remark-hypothesistestdiffofprop.html" title="Remark 5.2.6">Remark 5.2.6</a>.  Given two numerical variables with population means \(\mu_1, \mu_2\) we have alternative Hypothesis  in the forms:</p>
 <ul class="disc">
 <li id="li-370"><p id="p-derived-li-370">\(\displaystyle H_A: \mu_1-\mu_2&gt;\mu_0.\)</p></li>
 <li id="li-371"><p id="p-derived-li-371">\(\displaystyle H_A: \mu_1-\mu_2\lt\mu_0.\)</p></li>
 <li id="li-372"><p id="p-derived-li-372">\(\displaystyle H_A: \mu_1-\mu_2\neq\mu_0.\)</p></li>
 </ul>
 <p class="continuation">The null hypothesis for these is H_0: \mu_1-\mu_2=\mu_0.</p>
-<p id="p-1564">We find \(p\)-values in much the same way as in <a href="" class="xref" data-knowl="./knowl/remark-numericalHT.html" title="Remark 6.2.3: Numerical Hypothesis Testing">Remark 6.2.3</a>.  We assume the null hypothesis, and let \(D\) be the sampling distribution of the differences of the means of two samples, sizes \(n_1, n_2\text{.}\)  Then \(D\) would have mean \(\mu_1-\mu_2\) and standard deviation</p>
+<p id="p-1565">We find \(p\)-values in much the same way as in <a href="" class="xref" data-knowl="./knowl/remark-numericalHT.html" title="Remark 6.2.3: Numerical Hypothesis Testing">Remark 6.2.3</a>.  We assume the null hypothesis, and let \(D\) be the sampling distribution of the differences of the means of two samples, sizes \(n_1, n_2\text{.}\)  Then \(D\) would have mean \(\mu_1-\mu_2\) and standard deviation</p>
 <div class="displaymath">
 \begin{equation*}
 SE_D=\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}
 \end{equation*}
 </div>
 <p class="continuation">as in <a href="" class="xref" data-knowl="./knowl/remark-diffofmeans.html" title="Remark 6.4.1: Difference of Means">Remark 6.4.1</a>, and \(t^*\) is the \(t\) value so that \(P(-t^*\lt t \lt t^*)=C\%\) for a \(t\)-distribution with \(\min(n_1, n_2)-1\) degrees of freedom (again a simplified heurisitic).</p>
-<p id="p-1565">Then based on the alternative hypothesis, we compute the tail area(s) exactly as we would in <a href="" class="xref" data-knowl="./knowl/remark-hypothesistestdiffofprop.html" title="Remark 5.2.6">Remark 5.2.6</a>.</p></article><article class="activity project-like" id="activity-milkyield"><h4 class="heading">
+<p id="p-1566">Then based on the alternative hypothesis, we compute the tail area(s) exactly as we would in <a href="" class="xref" data-knowl="./knowl/remark-hypothesistestdiffofprop.html" title="Remark 5.2.6">Remark 5.2.6</a>.</p></article><article class="activity project-like" id="activity-milkyield"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.4.6</span><span class="period">.</span><span class="space"> </span><span class="title">Chicken Feed.</span>
 </h4>
 <div class="introduction" id="introduction-173">
-<p id="p-1566">Dairy farmers wish to test a new type of diets for dairy cows, with the hope that the new diet will increase milk yields.  20 cows are fed the traiditional diet and 15 the experimental diet.  The cows are observed over a 4 week period, and the average daily milk yield and sample standard deviations for both groups are recorded in Liters.</p>
+<p id="p-1567">Dairy farmers wish to test a new type of diets for dairy cows, with the hope that the new diet will increase milk yields.  20 cows are fed the traiditional diet and 15 the experimental diet.  The cows are observed over a 4 week period, and the average daily milk yield and sample standard deviations for both groups are recorded in Liters.</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{|c|c|c|c|}
@@ -401,68 +401,68 @@ SE_D=\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}
 \end{array}
 \end{equation*}
 </div>
-<p id="p-1567">Let \(\mu_1\) denote the true mean of milk production for cows on the standard diet, and \(\mu_2\) denote the true mean of milk production for cows on the experimental diet.</p>
+<p id="p-1568">Let \(\mu_1\) denote the true mean of milk production for cows on the standard diet, and \(\mu_2\) denote the true mean of milk production for cows on the experimental diet.</p>
 </div>
-<article class="task exercise-like" id="task-897"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<p id="p-1568">Which of the following best describes the null hypothesis \(H_0\text{?}\)</p>
+<article class="task exercise-like" id="task-898"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1569">Which of the following best describes the null hypothesis \(H_0\text{?}\)</p>
 <ul class="disc">
 <li id="li-374"><p id="p-derived-li-374">\(\mu_1-\mu_2\lt 0\) liters.</p></li>
 <li id="li-375"><p id="p-derived-li-375">\(\mu_1-\mu_2&gt; 0\) liters.</p></li>
 <li id="li-376"><p id="p-derived-li-376">\(\mu_1-\mu_2\neq 0\) liters.</p></li>
 <li id="li-377"><p id="p-derived-li-377">\(\mu_1-\mu_2= 0\) liters.</p></li>
-</ul></article><article class="task exercise-like" id="task-898"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<p id="p-1569">Which of the following best describes the alternative hypothesis \(H_A\text{?}\)</p>
+</ul></article><article class="task exercise-like" id="task-899"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-1570">Which of the following best describes the alternative hypothesis \(H_A\text{?}\)</p>
 <ul class="disc">
 <li id="li-378"><p id="p-derived-li-378">\(\mu_1-\mu_2\lt 0\) liters.</p></li>
 <li id="li-379"><p id="p-derived-li-379">\(\mu_1-\mu_2&gt; 0\) liters.</p></li>
 <li id="li-380"><p id="p-derived-li-380">\(\mu_1-\mu_2\neq 0\) liters.</p></li>
 <li id="li-381"><p id="p-derived-li-381">\(\mu_1-\mu_2= 0\) liters.</p></li>
-</ul></article><article class="task exercise-like" id="task-899"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<p id="p-1570">Find the standard error \(SE\text{.}\)</p></article><article class="task exercise-like" id="task-900"><h5 class="heading"><span class="codenumber">(d)</span></h5>
-<p id="p-1571">Find \(t\)-score for \(\bar{x_1}-\bar{x_2}\text{.}\)</p></article><article class="task exercise-like" id="task-901"><h5 class="heading"><span class="codenumber">(e)</span></h5>
-<p id="p-1572">Compute a \(p\)-value (be sure to use the appropriate level of significance). <div class="sagecell-r" id="sage-295"><script type="text/x-sage">
-</script></div> <a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-37" id="hint-37"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-37"><div class="hint solution-like"><p id="p-1573"><iframe src="https://www.desmos.com/calculator/qrru08kps1" id="interactive-98" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/odp3hiqj8r" id="interactive-99" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-902"><h5 class="heading"><span class="codenumber">(f)</span></h5>
-<p id="p-1574">State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-903"><h5 class="heading"><span class="codenumber">(g)</span></h5>
-<p id="p-1575">Do we  reject the null hypothesis?</p></article><article class="task exercise-like" id="task-904"><h5 class="heading"><span class="codenumber">(h)</span></h5>
-<p id="p-1576">What sort of error could have been made? (Type 1 or Type 2)</p></article></article><article class="activity project-like" id="activity-ncbirthssmokeweight"><h4 class="heading">
+</ul></article><article class="task exercise-like" id="task-900"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-1571">Find the standard error \(SE\text{.}\)</p></article><article class="task exercise-like" id="task-901"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-1572">Find \(t\)-score for \(\bar{x_1}-\bar{x_2}\text{.}\)</p></article><article class="task exercise-like" id="task-902"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-1573">Compute a \(p\)-value (be sure to use the appropriate level of significance). <div class="sagecell-r" id="sage-296"><script type="text/x-sage">
+</script></div> <a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-37" id="hint-37"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-37"><div class="hint solution-like"><p id="p-1574"><iframe src="https://www.desmos.com/calculator/qrru08kps1" id="interactive-98" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/odp3hiqj8r" id="interactive-99" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-903"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p id="p-1575">State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-904"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p id="p-1576">Do we  reject the null hypothesis?</p></article><article class="task exercise-like" id="task-905"><h5 class="heading"><span class="codenumber">(h)</span></h5>
+<p id="p-1577">What sort of error could have been made? (Type 1 or Type 2)</p></article></article><article class="activity project-like" id="activity-ncbirthssmokeweight"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.4.7</span><span class="period">.</span><span class="space"> </span><span class="title">Birth Weight and Smoking revisted.</span>
 </h4>
 <div class="introduction" id="introduction-174">
-<p id="p-1577">Recall that in <a href="" class="xref" data-knowl="./knowl/exploration-ncbirthssmoke.html" title="Exploration 6.4.1: Birth Weight and Smoking">Exploration 6.4.1</a> we seperated the sampling of births in Noth Carolina into <code class="code-inline tex2jax_ignore">babysmoke</code> and <code class="code-inline tex2jax_ignore">babynosmoke</code>.  We were curious as to whether or not there was any difference in average birth weights between babies born to mothers who smoked compared to those who did not.</p>
-<p id="p-1578">Run the following code to plot side by side boxplots of the birth weights of baies born to mothers who smoked versus didn't smoke: <div class="sagecell-r" id="sage-296"><script type="text/x-sage">boxplot(ncbirths$weight~ncbirths$habit)
+<p id="p-1578">Recall that in <a href="" class="xref" data-knowl="./knowl/exploration-ncbirthssmoke.html" title="Exploration 6.4.1: Birth Weight and Smoking">Exploration 6.4.1</a> we seperated the sampling of births in Noth Carolina into <code class="code-inline tex2jax_ignore">babysmoke</code> and <code class="code-inline tex2jax_ignore">babynosmoke</code>.  We were curious as to whether or not there was any difference in average birth weights between babies born to mothers who smoked compared to those who did not.</p>
+<p id="p-1579">Run the following code to plot side by side boxplots of the birth weights of baies born to mothers who smoked versus didn't smoke: <div class="sagecell-r" id="sage-297"><script type="text/x-sage">boxplot(ncbirths$weight~ncbirths$habit)
 </script></div></p>
 </div>
-<article class="task exercise-like" id="task-905"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<p id="p-1579">Which of the following best describes the null hypothesis \(H_0\text{?}\)</p>
+<article class="task exercise-like" id="task-906"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1580">Which of the following best describes the null hypothesis \(H_0\text{?}\)</p>
 <ul class="disc">
 <li id="li-382"><p id="p-derived-li-382">\(\mu_1-\mu_2\lt 0\) pounds.</p></li>
 <li id="li-383"><p id="p-derived-li-383">\(\mu_1-\mu_2&gt; 0\) pounds.</p></li>
 <li id="li-384"><p id="p-derived-li-384">\(\mu_1-\mu_2\neq 0\) pounds.</p></li>
 <li id="li-385"><p id="p-derived-li-385">\(\mu_1-\mu_2= 0\) pounds.</p></li>
-</ul></article><article class="task exercise-like" id="task-906"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<p id="p-1580">Which of the following best describes the alternative hypothesis \(H_A\text{?}\)</p>
+</ul></article><article class="task exercise-like" id="task-907"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-1581">Which of the following best describes the alternative hypothesis \(H_A\text{?}\)</p>
 <ul class="disc">
 <li id="li-386"><p id="p-derived-li-386">\(\mu_1-\mu_2\lt 0\) pounds.</p></li>
 <li id="li-387"><p id="p-derived-li-387">\(\mu_1-\mu_2&gt; 0\) pounds.</p></li>
 <li id="li-388"><p id="p-derived-li-388">\(\mu_1-\mu_2\neq 0\) pounds.</p></li>
 <li id="li-389"><p id="p-derived-li-389">\(\mu_1-\mu_2= 0\) pounds.</p></li>
-</ul></article><article class="task exercise-like" id="task-907"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<p id="p-1581">Run the following code to show the sample size, sample mean and sample standard deviation of baby weights of mothers who smoked: <div class="sagecell-r" id="sage-297"><script type="text/x-sage">print(length(babysmoke$weight))
+</ul></article><article class="task exercise-like" id="task-908"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-1582">Run the following code to show the sample size, sample mean and sample standard deviation of baby weights of mothers who smoked: <div class="sagecell-r" id="sage-298"><script type="text/x-sage">print(length(babysmoke$weight))
 print(mean(babysmoke$weight))
 print(sd(babysmoke$weight))
-</script></div></p></article><article class="task exercise-like" id="task-908"><h5 class="heading"><span class="codenumber">(d)</span></h5>
-<p id="p-1582">Run the following code to show the sample size, sample mean and sample standard deviation of baby weights of mothers who did not smoke: <div class="sagecell-r" id="sage-298"><script type="text/x-sage">print(length(babynosmoke$weight))
+</script></div></p></article><article class="task exercise-like" id="task-909"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-1583">Run the following code to show the sample size, sample mean and sample standard deviation of baby weights of mothers who did not smoke: <div class="sagecell-r" id="sage-299"><script type="text/x-sage">print(length(babynosmoke$weight))
 print(mean(babynosmoke$weight))
 print(sd(babynosmoke$weight))
-</script></div></p></article><article class="task exercise-like" id="task-909"><h5 class="heading"><span class="codenumber">(e)</span></h5>
-<p id="p-1583">Find the standard error \(SE\text{.}\)</p></article><article class="task exercise-like" id="task-910"><h5 class="heading"><span class="codenumber">(f)</span></h5>
-<p id="p-1584">Find \(t\)-score for \(\bar{x_1}-\bar{x_2}\text{.}\)</p></article><article class="task exercise-like" id="task-911"><h5 class="heading"><span class="codenumber">(g)</span></h5>
-<p id="p-1585">Compute a \(p\)-value (be sure to use the appropriate level of significance). <div class="sagecell-r" id="sage-299"><script type="text/x-sage">
-</script></div> <a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-38" id="hint-38"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-38"><div class="hint solution-like"><p id="p-1586"><iframe src="https://www.desmos.com/calculator/qrru08kps1" id="interactive-100" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/odp3hiqj8r" id="interactive-101" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-912"><h5 class="heading"><span class="codenumber">(h)</span></h5>
-<p id="p-1587">State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-913"><h5 class="heading"><span class="codenumber">(i)</span></h5>
-<p id="p-1588">Do we  reject the null hypothesis?</p></article><article class="task exercise-like" id="task-914"><h5 class="heading"><span class="codenumber">(j)</span></h5>
-<p id="p-1589">What sort of error could have been made? (Type 1 or Type 2)</p></article><article class="task exercise-like" id="task-915"><h5 class="heading"><span class="codenumber">(k)</span></h5>
-<p id="p-1590">Run the following code to compute the \(p\)-value direcrly with <code class="code-inline tex2jax_ignore">R</code>: <div class="sagecell-r" id="sage-300"><script type="text/x-sage">t.test(babysmoke, babynosmoke, alternative="two.sided", mu=0)
+</script></div></p></article><article class="task exercise-like" id="task-910"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-1584">Find the standard error \(SE\text{.}\)</p></article><article class="task exercise-like" id="task-911"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p id="p-1585">Find \(t\)-score for \(\bar{x_1}-\bar{x_2}\text{.}\)</p></article><article class="task exercise-like" id="task-912"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p id="p-1586">Compute a \(p\)-value (be sure to use the appropriate level of significance). <div class="sagecell-r" id="sage-300"><script type="text/x-sage">
+</script></div> <a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-38" id="hint-38"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-38"><div class="hint solution-like"><p id="p-1587"><iframe src="https://www.desmos.com/calculator/qrru08kps1" id="interactive-100" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/odp3hiqj8r" id="interactive-101" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-913"><h5 class="heading"><span class="codenumber">(h)</span></h5>
+<p id="p-1588">State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-914"><h5 class="heading"><span class="codenumber">(i)</span></h5>
+<p id="p-1589">Do we  reject the null hypothesis?</p></article><article class="task exercise-like" id="task-915"><h5 class="heading"><span class="codenumber">(j)</span></h5>
+<p id="p-1590">What sort of error could have been made? (Type 1 or Type 2)</p></article><article class="task exercise-like" id="task-916"><h5 class="heading"><span class="codenumber">(k)</span></h5>
+<p id="p-1591">Run the following code to compute the \(p\)-value direcrly with <code class="code-inline tex2jax_ignore">R</code>: <div class="sagecell-r" id="sage-301"><script type="text/x-sage">t.test(babysmoke, babynosmoke, alternative="two.sided", mu=0)
 </script></div> Note that the computation should produce a slightly different but very close value.</p></article></article></section></section></div></main>
 </div>
 </body>

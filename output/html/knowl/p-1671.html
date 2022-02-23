@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-17T09:59:29-07:00       *-->
+<!--*       on 2022-02-22T18:35:32-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -32,8 +32,9 @@
 </head>
 <body>
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>Run the following code to plot a boxplot for the batting averages of <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">batters</code> seperated by position. <div class="sagecell-r" id="sage-320"><script type="text/x-sage">boxplot(batters$AVG~batters$position)
-</script></div> Is it obvious that these values come from different distributions?  Is it obvious they couldn't have?</p>
+<p>Since they are special players, let's consider a subset of the players without pitchers or designated hitters.  Run the following code to produce <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">batters</code> a subset of <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">mlb18</code> with no pitchers or designated hitters. <div class="sagecell-r" id="sage-320"><script type="text/x-sage">batters=subset(mlb18, mlb18$position!="P" & mlb18$position!="DH")
+summary(batters)
+</script></div></p>
 <span class="incontext"><a href="Sec_ANOVA.html#p-1671">in-context</a></span>
 </body>
 </html>

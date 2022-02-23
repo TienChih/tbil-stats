@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-17T09:59:32-07:00       *-->
+<!--*       on 2022-02-22T18:35:35-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -32,8 +32,8 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Run the following to plot <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">profit_margin</code> of these companies against the <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">debt</code> and draw a regression line: <div class="sagecell-r" id="sage-362"><script type="text/x-sage">plot(sp500$debt, sp500$profit_margin)
-abline(sp500mod, col="red")
+<p>Run the following to create and summarize a linear model with <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">debt</code> the debt in millions of dollars as the explanatory variable and <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">profit_margin</code> the percent of earnings that is profit as the response variable: <div class="sagecell-r" id="sage-362"><script type="text/x-sage">sp500mod=lm(profit_margin~debt, data=sp500)
+summary(sp500mod)
 </script></div></p>
 <span class="incontext"><a href="Sec_InferenceRegression.html#p-1860">in-context</a></span>
 </body>

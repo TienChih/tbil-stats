@@ -77,7 +77,7 @@ from this class of 100 students?
     </p>
 
     <p>
-      Note that <m>E(x)</m> need not be an outcome of <m>X</m>.
+      Note that <m>E(X)</m> need not be an outcome of <m>X</m>.
     </p>
 
   </definition>

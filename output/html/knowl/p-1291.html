@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-17T09:59:22-07:00       *-->
+<!--*       on 2022-02-22T18:35:23-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,35 +12,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script><script>$(function () {
-    // Make *any* div with class 'sagecell-r' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
-                           linked: true,
-                           languages: ['r'],
-                           evalButtonText: 'Evaluate (R)'});
-});
-</script>
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Fix and run the following code to input the sample data and perform a \(\chi^2\) independence test. <div class="sagecell-r" id="sage-214"><script type="text/x-sage">                      Input =("
-ProteinType   Beef    Chicken    Pork
-Men           FIXME   FIXME      FIXME
-Women         FIXME   FIXME      FIXME
-")
-
-datamatrix = as.matrix(read.table(textConnection(Input),header=TRUE,row.names=1))
-chisq.test(datamatrix, correct=FALSE)
-</script></div> How does the \(\chi^2\) value and the \(p\)-value compare to what you found in (b)?</p>
+<p>Is it plausible for the gender and meat choice to be independent?</p>
 <span class="incontext"><a href="Sec_ChiIndependence.html#p-1291">in-context</a></span>
 </body>
 </html>

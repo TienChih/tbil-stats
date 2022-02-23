@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-17T09:59:30-07:00       *-->
+<!--*       on 2022-02-22T18:35:32-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -32,9 +32,12 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Run the following code to create an <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">aov</code> model of <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">crop</code> and summarize it. <div class="sagecell-r" id="sage-328"><script type="text/x-sage">cropsaov=aov(yield~fertilizer, data=crops)
-summary(cropsaov)
-</script></div> How do these values compare to what we found before?</p>
+<p>Run the following code to produce a dataframe <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">crops</code> with variables <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">yield</code> and <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">fertilizer</code>. <div class="sagecell-r" id="sage-328"><script type="text/x-sage">fertilizer=c("A", "A", "A", "A", "B", "B", "B", 
+  "C","C","C","C","C")
+yield=c(176, 173, 175, 179, 168, 171, 172, 177, 179, 173, 176, 181)
+
+crops = data.frame(yield, fertilizer)
+</script></div></p>
 <span class="incontext"><a href="Sec_ANOVA.html#p-1707">in-context</a></span>
 </body>
 </html>

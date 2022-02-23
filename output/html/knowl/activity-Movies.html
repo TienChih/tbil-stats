@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-17T09:59:22-07:00       *-->
+<!--*       on 2022-02-22T18:35:23-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -36,23 +36,23 @@
 </h4>
 <div class="introduction">
 <p>We examine data  obtained from IMDB and Rotten Tomatoes. The data represent 456 randomly sampled movies released between 1972 to 2014 in the Unites States.</p>
-<p>Run the following code to download <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">movies.Rdata</code> data set and to display it's variables. <div class="sagecell-r" id="sage-219"><script type="text/x-sage">load(url("https://github.com/TienChih/tbil-stats/raw/main/data/movies.Rdata"))
+<p>Run the following code to download <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">movies.Rdata</code> data set and to display it's variables. <div class="sagecell-r" id="sage-220"><script type="text/x-sage">load(url("https://github.com/TienChih/tbil-stats/raw/main/data/movies.Rdata"))
 names(movies)
 </script></div></p>
 </div>
 <article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <p>We're curious to see if genre of a movie, and how Rotten Tomatoes rates it, are independent.  State a null and alternative for the \(\chi^2\) independence test.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<p>Run the following code to display a sample frequency table comparing the genre of a movie and their Rotten Tomatoes score. <div class="sagecell-r" id="sage-220"><script type="text/x-sage">table(movies$genre, movies$critics_rating)
+<p>Run the following code to display a sample frequency table comparing the genre of a movie and their Rotten Tomatoes score. <div class="sagecell-r" id="sage-221"><script type="text/x-sage">table(movies$genre, movies$critics_rating)
 </script></div></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<p>Run the following code to show a mosaic plots comparing the genre of a movie and their Rotten Tomatoes score.  What can you tell from this plot? <div class="sagecell-r" id="sage-221"><script type="text/x-sage">counts=table(movies$genre, movies$critics_rating)
+<p>Run the following code to show a mosaic plots comparing the genre of a movie and their Rotten Tomatoes score.  What can you tell from this plot? <div class="sagecell-r" id="sage-222"><script type="text/x-sage">counts=table(movies$genre, movies$critics_rating)
 mosaicplot(counts)
 </script></div></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
-<p>Run the following code to run the \(\chi^2\) independence test on <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">movies$genre</code> and <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">movies$critics_rating</code>. <div class="sagecell-r" id="sage-222"><script type="text/x-sage">chisq.test(movies$genre, movies$critics_rating, correct=FALSE)
+<p>Run the following code to run the \(\chi^2\) independence test on <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">movies$genre</code> and <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">movies$critics_rating</code>. <div class="sagecell-r" id="sage-223"><script type="text/x-sage">chisq.test(movies$genre, movies$critics_rating, correct=FALSE)
 </script></div></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(e)</span></h5>
 <p>State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(f)</span></h5>
 <p>If we had a level of significance \(\alpha=0.05\) do we  reject the null hypothesis?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(g)</span></h5>
 <p>Is it plausible for support for the genre of a movie and the Rotten Tomatoes rating to be independent?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(h)</span></h5>
-<p>Run the following code to obtain summaries of the variables.  Which are categorical? <div class="sagecell-r" id="sage-223"><script type="text/x-sage">summary(movies)
+<p>Run the following code to obtain summaries of the variables.  Which are categorical? <div class="sagecell-r" id="sage-224"><script type="text/x-sage">summary(movies)
 </script></div></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(i)</span></h5>
 <p>Repeat the above steps comparing any two categorical variables of your choice.</p></article></article><span class="incontext"><a href="Sec_ChiIndependence.html#activity-Movies">in-context</a></span>
 </body>
