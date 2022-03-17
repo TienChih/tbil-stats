@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-02-22T18:34:50-07:00       *-->
+<!--*       on 2022-03-17T11:55:41-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -275,7 +275,7 @@ SE_{\hat{p}}=\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}=\sqrt{\frac{0.22\cdot0.78}{150}
 <li id="li-159"><p id="p-derived-li-159">95% of adult Americans lie in this interval</p></li>
 <li id="li-160"><p id="p-derived-li-160">There is a 23% chance that 95% of Americans prefer their steaks medium-rare.</p></li>
 <li id="li-161"><p id="p-derived-li-161">There is a 95% chance that 23% of Americans perfer their steak medium-rare.</p></li>
-<li id="li-162"><p id="p-derived-li-162">There is a 95% chance that the population mean lies in this interval?</p></li>
+<li id="li-162"><p id="p-derived-li-162">There is a 95% chance that the population proportion lies in this interval?</p></li>
 </ol></article><article class="task exercise-like" id="task-498"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <p id="p-910">If 10 respondents to the survey say they prefer medium-rare, use <a href="" class="xref" data-knowl="./knowl/theorem-CLTprop.html" title="Theorem 4.1.4: The Central Limit Theorem (Proportion)">Theorem 4.1.4</a> find \(\hat{p}\) and \(SE_{\hat{p}}\text{.}\)</p></article><article class="task exercise-like" id="task-499"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <p id="p-911">Use <a href="" class="xref" data-knowl="./knowl/remark-95prop.html" title="Remark 4.2.2">Remark 4.2.2</a> to compute a 95% confidence interval for \(p\text{:}\) the proportion of Americams who prefer their steaks medium-rare.  Is 23% in this interval? <div class="sagecell-r" id="sage-151"><script type="text/x-sage">
@@ -283,7 +283,7 @@ SE_{\hat{p}}=\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}=\sqrt{\frac{0.22\cdot0.78}{150}
 <p id="p-913">Run the following code to conduct your own survey of 50 Americans, and see how many of them like their steak medium-rare. <div class="sagecell-r" id="sage-152"><script type="text/x-sage">steak_survey=sample(c("YES", "NO"), 50, replace = TRUE, prob = c(0.23, 0.77))
 print(length(which(steak_survey=="YES")))
 </script></div></p></article><article class="task exercise-like" id="task-501"><h5 class="heading"><span class="codenumber">(e)</span></h5>
-<p id="p-914">Use this new result to comput \(\hat{p}, SE_{\hat{p}}\) and a new 95% Confidence Interval.  Does THIS new interval contain 23%?</p></article><article class="task exercise-like" id="task-502"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p id="p-914">Use this new result to compute \(\hat{p}, SE_{\hat{p}}\) and a new 95% Confidence Interval.  Does THIS new interval contain 23%?</p></article><article class="task exercise-like" id="task-502"><h5 class="heading"><span class="codenumber">(f)</span></h5>
 <p id="p-915">State what this confidence interval means in the context of this problem using complete sentences.</p></article><article class="task exercise-like" id="task-503"><h5 class="heading"><span class="codenumber">(g)</span></h5>
 <p id="p-916">Run the following code to, for 100 times, sample 50 Americans and construct a 95% confidence interval based on the results. <div class="sagecell-r" id="sage-153"><script type="text/x-sage">  numsamp=100
 n=50
