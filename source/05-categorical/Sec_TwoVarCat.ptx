@@ -625,7 +625,7 @@
 
                       <task>
                       	<p>
-                      		Run the following code to sample <c>num_men=312</c> men where <m>men_raise=72</m> get raises, then samples <c>num_women=216</c> men where <m>women_raise=30</m> get raises.  It does this <c>trials=1000</c> times and plots a histogram of the differences.
+                      		Run the following code to sample <c>num_men=312</c> men where <m>men_{raise}=72</m> get raises, then samples <c>num_women=216</c> men where <m>women_{raise}=30</m> get raises.  It does this <c>trials=1000</c> times and plots a histogram of the differences.
 
                       <sage language="r">
                       <input>
