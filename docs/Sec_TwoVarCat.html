@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-03-17T11:55:43-06:00       *-->
+<!--*       on 2022-03-23T15:51:54-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -346,7 +346,7 @@ curve(dnorm(x, mean=mu_D, sd=SE_D), col="darkblue", lwd=2, add=TRUE, yaxt="n")
 <p id="p-1120">We can compute this interval to be</p>
 <div class="displaymath">
 \begin{equation*}
-[(p_1-p_2)-z^*SE_D, (p_1-p_2)+z^*SE+D]
+[(p_1-p_2)-z^*SE_D, (p_1-p_2)+z^*SE_D]
 \end{equation*}
 </div>
 <p class="continuation">where \(SE_D=\sqrt{\frac{p_1(1-p_1)}{n_1}+\frac{p_2(1-p_2)}{n_2}}\) as in <a href="" class="xref" data-knowl="./knowl/remark-diffofprop.html" title="Remark 5.2.3: Difference of Proportions">Remark 5.2.3</a> and \(z^*\) is found as in <a href="" class="xref" data-knowl="./knowl/remark-otherCI.html" title="Remark 4.2.5">Remark 4.2.5</a>:</p>
@@ -379,7 +379,7 @@ d=\frac{72}{312}-\frac{30}{216}\approx 0.09188.
 <p id="p-1123">So we could compute a 95% confidence interval for the differences of proportions by</p>
 <div class="displaymath">
 \begin{align*}
-\amp[(p_1-p_2)-z^*SE_D, (p_1-p_2)+z^*SE+D]\\
+\amp[(p_1-p_2)-z^*SE_D, (p_1-p_2)+z^*SE_D]\\
 \amp \approx [0.09188-1.96\cdot 0.033506, 0.09188+1.96\cdot 0.033506]\\
 \amp \approx[0.0262, 0.1576].
 \end{align*}
@@ -428,7 +428,7 @@ print(paste0("Lower Bound: ", LB , ", Upper Bound:", UB))
 <li id="li-240"><p id="p-derived-li-240">\(\displaystyle H_A:p_1-p_2&gt; p_0\)</p></li>
 <li id="li-241"><p id="p-derived-li-241">\(\displaystyle H_A:p_1-p_2\neq p_0\)</p></li>
 </ol>
-<p class="continuation">We note here \(p_1-p_2=\mu_D\text{.}\)  The null hypothesis for all of these is \(H_0: p_1-p_2=0\text{.}\)</p>
+<p class="continuation">We note here \(p_1-p_2=\mu_D\text{.}\)  The null hypothesis for all of these is \(H_0: p_1-p_2=p_0\text{.}\)</p>
 <p id="p-1133">Then, given an observed differnce in proportions: \(d=\hat{p_1}-\hat{p_2}\) we compute the \(p\)-values by <em class="emphasis">assuming the null hypothesis \(p_1-p_2=p_0\)</em> and then computing:</p>
 <ol class="decimal">
 <li id="li-242"><p id="p-derived-li-242">\(\displaystyle P(D\lt d)\)</p></li>
@@ -454,7 +454,7 @@ SE_D=\sqrt{\frac{\hat{p}_{pool}(1-\hat{p}_{pool})}{n_1}+\frac{\hat{p}_{pool}(1-\
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Gender and Raises: Hypothesis Test.</span>
 </h4>
 <div class="introduction" id="introduction-127">
-<p id="p-1136">Recall that from <a href="" class="xref" data-knowl="./knowl/exploration-genderdisc.html" title="Exploration 5.2.1: Gender and Raises">Exploration 5.2.1</a> that we have \(n_1=312\)  men and \(n_2=216\)  women, of whom \(x_1=72\) men and \(x_2=30\) women got raises. The company claims that men and women have equal raise rates.  The watchdog group claims that mean get more raises than women.  Suppose we use a \(\alpha=0.05\) level of significance.</p>
+<p id="p-1136">Recall that from <a href="" class="xref" data-knowl="./knowl/exploration-genderdisc.html" title="Exploration 5.2.1: Gender and Raises">Exploration 5.2.1</a> that we have \(n_1=312\)  men and \(n_2=216\)  women, of whom \(x_1=72\) men and \(x_2=30\) women got raises. The company claims that men and women have equal raise rates.  The watchdog group claims that men get more raises than women.  Suppose we use a \(\alpha=0.05\) level of significance.</p>
 <p id="p-1137"><div class="sagecell-r" id="sage-189"><script type="text/x-sage">
 </script></div> <a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-19" id="hint-19"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-19"><div class="hint solution-like"><p id="p-1138"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-57" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-58" width="600" height="600"></iframe></p></div></div></p>
 </div>
@@ -577,8 +577,8 @@ names(cancer)
 </ul></article><article class="task exercise-like" id="task-647"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <p id="p-1176">Run the following to show a two-way table of how many dogs were/weren't expose to 2,4-D and who got/didn't get cancer: <div class="sagecell-r" id="sage-196"><script type="text/x-sage">table(cancer$order, cancer$response)
 </script></div></p></article><article class="task exercise-like" id="task-648"><h5 class="heading"><span class="codenumber">(d)</span></h5>
-<p id="p-1177">How many dogs from the sample were exposed to 2,4-D?  Out of those dogs, how many got cancer?  Let these be \(x_1, n_1\) respectively.</p></article><article class="task exercise-like" id="task-649"><h5 class="heading"><span class="codenumber">(e)</span></h5>
-<p id="p-1178">How many dogs from the sample were <em class="emphasis">not</em> exposed to 2,4-D?  Out of those dogs, how many got cancer?  Let these be \(x_2, n_2\) respectively.</p></article><article class="task exercise-like" id="task-650"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p id="p-1177">How many dogs from the sample were exposed to 2,4-D?  Out of those dogs, how many got cancer?  Let these be \(n_1, x_1\) respectively.</p></article><article class="task exercise-like" id="task-649"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-1178">How many dogs from the sample were <em class="emphasis">not</em> exposed to 2,4-D?  Out of those dogs, how many got cancer?  Let these be \(n_2, x_2\) respectively.</p></article><article class="task exercise-like" id="task-650"><h5 class="heading"><span class="codenumber">(f)</span></h5>
 <p id="p-1179">Fix and run the following to perform the appropriate proportion hypothesis test.  Enter in how many dogs were exposed to 2,4-D and got Cancer, were not exposed to 2,4-D and got Cancer, were exposed to 2,4-D, and wern't exposed to 2,4-D respectively. <div class="sagecell-r" id="sage-197"><script type="text/x-sage">prop.test(c(FIXMEx1, FIXMEx2), c(FIXMEn1, FIXMEn2), 
 		p=NULL, alternative="greater", correct=FALSE)
 </script></div></p></article><article class="task exercise-like" id="task-651"><h5 class="heading"><span class="codenumber">(g)</span></h5>

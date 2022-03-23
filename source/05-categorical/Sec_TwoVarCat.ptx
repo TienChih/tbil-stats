@@ -331,7 +331,7 @@
 		</p>
 
 		<p>
-			We can compute this interval to be <me>[(p_1-p_2)-z^*SE_D, (p_1-p_2)+z^*SE+D]</me> where <m>SE_D=\sqrt{\frac{p_1(1-p_1)}{n_1}+\frac{p_2(1-p_2)}{n_2}}</m> as in <xref ref="remark-diffofprop"/> and <m>z^*</m> is found as in <xref ref="remark-otherCI"/>:
+			We can compute this interval to be <me>[(p_1-p_2)-z^*SE_D, (p_1-p_2)+z^*SE_D]</me> where <m>SE_D=\sqrt{\frac{p_1(1-p_1)}{n_1}+\frac{p_2(1-p_2)}{n_2}}</m> as in <xref ref="remark-diffofprop"/> and <m>z^*</m> is found as in <xref ref="remark-otherCI"/>:
 
 			<me>
               \begin{array}{|c|c|}
@@ -360,7 +360,7 @@
 	<p>
 		So we could compute a 95% confidence interval for the differences of proportions by 
 		<md>
-		<mrow>\amp[(p_1-p_2)-z^*SE_D, (p_1-p_2)+z^*SE+D]</mrow>
+		<mrow>\amp[(p_1-p_2)-z^*SE_D, (p_1-p_2)+z^*SE_D]</mrow>
 		<mrow>\amp \approx [0.09188-1.96\cdot 0.033506, 0.09188+1.96\cdot 0.033506]</mrow>
 		<mrow>\amp \approx[0.0262, 0.1576].</mrow>
 		</md>
@@ -496,7 +496,7 @@
 				<li><m>H_A:p_1-p_2\neq p_0</m></li>
 			</ol>
 
-			We note here <m>p_1-p_2=\mu_D</m>.  The null hypothesis for all of these is <m>H_0: p_1-p_2=0</m>.  
+			We note here <m>p_1-p_2=\mu_D</m>.  The null hypothesis for all of these is <m>H_0: p_1-p_2=p_0</m>.  
 		</p>
 
 		<p>Then, given an observed differnce in proportions: <m>d=\hat{p_1}-\hat{p_2}</m> we compute the <m>p</m>-values by <em>assuming the null hypothesis <m>p_1-p_2=p_0</m></em> and then computing:
@@ -526,7 +526,7 @@
 	<activity xml:id="activity-revisitinggenderdisc">
 	    <title>Gender and Raises: Hypothesis Test</title>
 	    <introduction>
-	        <p>Recall that from <xref ref="exploration-genderdisc"/> that we have <m>n_1=312</m>  men and <m>n_2=216</m>  women, of whom <m>x_1=72</m> men and <m>x_2=30</m> women got raises. The company claims that men and women have equal raise rates.  The watchdog group claims that mean get more raises than women.  Suppose we use a <m>\alpha=0.05</m> level of significance.</p>
+	        <p>Recall that from <xref ref="exploration-genderdisc"/> that we have <m>n_1=312</m>  men and <m>n_2=216</m>  women, of whom <m>x_1=72</m> men and <m>x_2=30</m> women got raises. The company claims that men and women have equal raise rates.  The watchdog group claims that men get more raises than women.  Suppose we use a <m>\alpha=0.05</m> level of significance.</p>
 
 	        <p>
                     <sage language="r">
@@ -860,13 +860,13 @@
 
               <task>
               	<p>
-              	How many dogs from the sample were exposed to 2,4-D?  Out of those dogs, how many got cancer?  Let these be <m>x_1, n_1</m> respectively.
+              	How many dogs from the sample were exposed to 2,4-D?  Out of those dogs, how many got cancer?  Let these be <m>n_1, x_1</m> respectively.
               </p>
           </task>
 
           <task>
               	<p>
-              	How many dogs from the sample were <em>not</em> exposed to 2,4-D?  Out of those dogs, how many got cancer?  Let these be <m>x_2, n_2</m> respectively.
+              	How many dogs from the sample were <em>not</em> exposed to 2,4-D?  Out of those dogs, how many got cancer?  Let these be <m>n_2, x_2</m> respectively.
               </p>
           </task>
 
