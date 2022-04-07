@@ -24,4 +24,6 @@ this and follow instructions to publish to GitHub Pages:
 
 ```
 pretext publish
+
+GOTTA DO: python3 -m pretext build
 ```
