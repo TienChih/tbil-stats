@@ -203,7 +203,7 @@
             <theorem xml:id="theorem-CLTprop">
               <title>The Central Limit Theorem (Proportion)</title>
               <p>
-                For a sufficiently large sample (typically <m>pn, p(1-n)\geq 10</m> or at least 10 <q>successes</q> and <q>failures</q>) the sampling distribution of<m>\hat{p}</m> is approximately <em>normally distributed</em> with pararmeters <me>\mu_{\hat{p}}=p,\ \ \  SE_{\hat{p}}=\sqrt{\frac{p(1-p)}{n}}.</me>
+                For a sufficiently large sample (typically <m>pn, (1-p)n\geq 10</m> or at least 10 <q>successes</q> and <q>failures</q>) the sampling distribution of<m>\hat{p}</m> is approximately <em>normally distributed</em> with pararmeters <me>\mu_{\hat{p}}=p,\ \ \  SE_{\hat{p}}=\sqrt{\frac{p(1-p)}{n}}.</me>
               </p>
 
               <p>This is very similar to <xref ref="remark-normalapproximation"/></p>

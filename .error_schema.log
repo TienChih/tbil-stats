@@ -1,3 +1,3 @@
-/Users/c34w614/Documents/tbil-stats/source/main.ptx:73:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMNAME: Expecting element biography, got include
-/Users/c34w614/Documents/tbil-stats/source/main.ptx:65:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMWRONG: Did not expect element frontmatter there
-/Users/c34w614/Documents/tbil-stats/source/main.ptx:65:0:ERROR:RELAXNGV:RELAXNG_ERR_CONTENTVALID: Element book failed to validate content
+/Users/tienchih/Documents/GitHub/tbil-stats/source/main.ptx:73:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMNAME: Expecting element biography, got include
+/Users/tienchih/Documents/GitHub/tbil-stats/source/main.ptx:65:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMWRONG: Did not expect element frontmatter there
+/Users/tienchih/Documents/GitHub/tbil-stats/source/main.ptx:65:0:ERROR:RELAXNGV:RELAXNG_ERR_CONTENTVALID: Element book failed to validate content
