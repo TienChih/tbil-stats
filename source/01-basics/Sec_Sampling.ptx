@@ -143,79 +143,9 @@ We discuss four <em>sampling techniques</em>.
   <p>
     <figure>
 <caption>A Simple Random Sample </caption>      
-      <image>
- <description>Random Sample.</description>     
-<latex-image>
-<![CDATA[\begin{tikzpicture}[line width=1pt,>=latex, scale=0.8]
-\sffamily
-\node[circle, red, fill] (a1) {};
-\node[circle, blue, fill, right=of a1] (a2) {};
-\node[circle, blue, fill, right=of a2] (a3) {};
-
-\node[circle, blue, fill, below=of a1] (a4) {};
-\node[circle, blue, fill, left=of a4] (a5) {};
-\node[circle, red, fill, right=of a4] (a6) {};
-\node[circle, red, fill, right=of a6] (a7) {};
-\node[circle, blue, fill, right=of a7] (a8) {};
-
-\node[circle, red, fill, below=of a5] (a9) {};
-\node[circle, blue, fill, right=of a9] (a10) {};
-\node[circle, blue, fill, right=of a10] (a11) {};
-\node[circle, blue, fill, right=of a11] (a12) {};
-\node[circle, blue, fill, right=of a12] (a13) {};
-
-\node[circle, blue, fill, below=of a9] (a14) {};
-\node[circle, red, fill, right=of a14] (a15) {};
-\node[circle, blue, fill, right=of a15] (a16) {};
-\node[circle, blue, fill, right=of a16] (a17) {};
-\node[circle, red, fill, right=of a17] (a18) {};
-
-\node[circle, blue, fill, below=of a14] (a19) {};
-\node[circle, blue, fill, right=of a19] (a20) {};
-\node[circle, blue, fill, right=of a20] (a21) {};
-\node[circle, blue, fill, right=of a21] (a22) {};
-\node[circle, blue, fill, right=of a22] (a23) {};
-
-\node[circle, blue, fill, below=of a19] (a24) {};
-\node[circle, blue, fill, right=of a24] (a25) {};
-\node[circle, blue, fill, right=of a25] (a26) {};
-\node[circle, red, fill, right=of a26] (a27) {};
-\node[circle, blue, fill, right=of a27] (a28) {};
-
-\node[circle, blue, fill, below=of a25] (a29) {};
-\node[circle, blue, fill, right=of a29] (a30) {};
-\node[circle, blue, fill, right=of a30] (a31) {};
-
-
-
-
-
-
-\node[right=7cm of a3, circle, red, fill] (b1) {};
-\node[below=of b1, circle, red, fill] (b2) {};
-\node[below=of b2, circle, red, fill] (b3) {};
-\node[below=of b3, circle, red, fill] (b4) {};
-\node[below=of b4, circle, red, fill] (b5) {};
-\node[below=of b5, circle, red, fill] (b6) {};
-\node[below=of b6, circle, red, fill] (b7) {};
-
-\node[shape=ellipse,draw=myblue,minimum size=3cm,fit={(a1) (a5) (a3) (a8) (a29) (a30) (a31)}] {};
-\node[shape=ellipse,draw=myblue,minimum size=3cm,fit={(b1) (b7)}] {};
-
-\node[below=2.5cm of a30,font=\color{myblue}\Large\bfseries] {Population};
-\node[below=2.5cm of b7,font=\color{myblue}\Large\bfseries] {Sample};
-
-
-\draw[->,myblue, dashed] (a1) -- (b1);
-\draw[->,myblue, dashed] (a6) -- (b2);
-\draw[->,myblue, dashed] (a7) -- (b3);
-\draw[->,myblue, dashed] (a9) -- (b4);
-\draw[->,myblue, dashed] (a15) -- (b5);
-\draw[->,myblue, dashed] (a18) -- (b6);
-\draw[->,myblue, dashed] (a27) -- (b7);
-\end{tikzpicture}]]>
-</latex-image>
-      </image>
+ 
+<image source="images/image-5.svg" width="75%" ></image>
+      
       </figure>
 
 
@@ -234,88 +164,9 @@ We discuss four <em>sampling techniques</em>.
   <p>
     <figure>
 <caption>A Stratified Random Sample </caption>      
-      <image>
- <description>Stratified Sample.</description>     
-<latex-image>
-<![CDATA[\begin{tikzpicture}[line width=1pt,>=latex, scale=0.8]
-\sffamily
-\node[circle, blue, fill] (a1) {};
-\node[circle, red, fill, right=of a1] (a2) {};
-\node[circle, blue, fill, right=of a2] (a3) {};
 
-\node[circle, blue, fill, below=of a1] (a4) {};
-\node[circle, blue, fill, left=of a4] (a5) {};
-\node[circle, blue, fill, right=of a4] (a6) {};
-\node[circle, red, fill, right=of a6] (a7) {};
-\node[circle, blue, fill, right=of a7] (a8) {};
-
-\node[circle, red, fill, below=of a5] (a9) {};
-\node[circle, blue, fill, right=of a9] (a10) {};
-\node[circle, blue, fill, right=of a10] (a11) {};
-\node[circle, blue, fill, right=of a11] (a12) {};
-\node[circle, blue, fill, right=of a12] (a13) {};
-
-\node[circle, blue, fill, below=of a9] (a14) {};
-\node[circle, blue, fill, right=of a14] (a15) {};
-\node[circle, blue, fill, right=of a15] (a16) {};
-\node[circle, blue, fill, right=of a16] (a17) {};
-\node[circle, red, fill, right=of a17] (a18) {};
-
-\node[circle, blue, fill, below=of a14] (a19) {};
-\node[circle, red, fill, right=of a19] (a20) {};
-\node[circle, blue, fill, right=of a20] (a21) {};
-\node[circle, blue, fill, right=of a21] (a22) {};
-\node[circle, blue, fill, right=of a22] (a23) {};
-
-\node[circle, blue, fill, below=of a19] (a24) {};
-\node[circle, blue, fill, right=of a24] (a25) {};
-\node[circle, blue, fill, right=of a25] (a26) {};
-\node[circle, red, fill, right=of a26] (a27) {};
-\node[circle, blue, fill, right=of a27] (a28) {};
-
-\node[circle, blue, fill, below=of a25] (a29) {};
-\node[circle, blue, fill, right=of a29] (a30) {};
-\node[circle, red, fill, right=of a30] (a31) {};
-
-
-
-
-
-
-\node[right=7cm of a3, circle, red, fill] (b1) {};
-\node[below=of b1, circle, red, fill] (b2) {};
-\node[below=of b2, circle, red, fill] (b3) {};
-\node[below=of b3, circle, red, fill] (b4) {};
-\node[below=of b4, circle, red, fill] (b5) {};
-\node[below=of b5, circle, red, fill] (b6) {};
-\node[below=of b6, circle, red, fill] (b7) {};
-
-\node[shape=ellipse,draw=myblue,minimum size=3cm,fit={(a1) (a5) (a3) (a8) (a29) (a30) (a31)}] {};
-\node[shape=ellipse,draw=myblue,minimum size=3cm,fit={(b1) (b7)}] {};
-
-\node[below=2.5cm of a30,font=\color{myblue}\Large\bfseries] {Population};
-\node[below=2.5cm of b7,font=\color{myblue}\Large\bfseries] {Sample};
-
-
-\node[shape=rectanngle,draw=myblue,minimum size=1cm,fit={(a1) (a3)}] {};
-\node[shape=rectanngle,draw=myblue,minimum size=1cm,fit={(a4) (a5) (a8)}] {};
-\node[shape=rectanngle,draw=myblue,minimum size=1cm,fit={(a9) (a13)}] {};
-\node[shape=rectanngle,draw=myblue,minimum size=1cm,fit={(a14) (a18)}] {};]
-\node[shape=rectanngle,draw=myblue,minimum size=1cm,fit={(a19) (a23)}] {};
-\node[shape=rectanngle,draw=myblue,minimum size=1cm,fit={(a24) (a28)}] {};
-\node[shape=rectanngle,draw=myblue,minimum size=1cm,fit={(a29) (a31)}] {};
-
-
-\draw[->,myblue, dashed] (a2) -- (b1);
-\draw[->,myblue, dashed] (a7) -- (b2);
-\draw[->,myblue, dashed] (a9) -- (b3);
-\draw[->,myblue, dashed] (a18) -- (b4);
-\draw[->,myblue, dashed] (a20) -- (b5);
-\draw[->,myblue, dashed] (a27) -- (b6);
-\draw[->,myblue, dashed] (a31) -- (b7);
-\end{tikzpicture}]]>
-</latex-image>
-      </image>
+<image source="images/image-6.svg" width="75%" ></image>
+      
       </figure>
 
 
@@ -335,90 +186,9 @@ We discuss four <em>sampling techniques</em>.
   <p>
     <figure>
 <caption>A Cluster Sample </caption>      
-      <image>
- <description>Cluster Sample.</description>     
-<latex-image>
-<![CDATA[\begin{tikzpicture}[line width=1pt,>=latex, scale=0.8]
-\sffamily
-\node[circle, red, fill] (a1) {};
-\node[circle, blue, fill, right=of a1] (a2) {};
-\node[circle, blue, fill, right=of a2] (a3) {};
-
-\node[circle, red, fill, below=of a1] (a4) {};
-\node[circle, red, fill, left=of a4] (a5) {};
-\node[circle, blue, fill, right=of a4] (a6) {};
-\node[circle, blue, fill, right=of a6] (a7) {};
-\node[circle, blue, fill, right=of a7] (a8) {};
-
-\node[circle, blue, fill, below=of a5] (a9) {};
-\node[circle, blue, fill, right=of a9] (a10) {};
-\node[circle, blue, fill, right=of a10] (a11) {};
-\node[circle, blue, fill, right=of a11] (a12) {};
-\node[circle, blue, fill, right=of a12] (a13) {};
-
-\node[circle, blue, fill, below=of a9] (a14) {};
-\node[circle, blue, fill, right=of a14] (a15) {};
-\node[circle, blue, fill, right=of a15] (a16) {};
-\node[circle, blue, fill, right=of a16] (a17) {};
-\node[circle, blue, fill, right=of a17] (a18) {};
-
-\node[circle, blue, fill, below=of a14] (a19) {};
-\node[circle, blue, fill, right=of a19] (a20) {};
-\node[circle, blue, fill, right=of a20] (a21) {};
-\node[circle, red, fill, right=of a21] (a22) {};
-\node[circle, red, fill, right=of a22] (a23) {};
-
-\node[circle, blue, fill, below=of a19] (a24) {};
-\node[circle, blue, fill, right=of a24] (a25) {};
-\node[circle, blue, fill, right=of a25] (a26) {};
-\node[circle, red, fill, right=of a26] (a27) {};
-\node[circle, red, fill, right=of a27] (a28) {};
-
-\node[circle, blue, fill, below=of a25] (a29) {};
-\node[circle, blue, fill, right=of a29] (a30) {};
-\node[circle, blue, fill, right=of a30] (a31) {};
-
-
-
-
-
-
-\node[right=7cm of a3, circle, red, fill] (b1) {};
-\node[below=of b1, circle, red, fill] (b2) {};
-\node[below=of b2, circle, red, fill] (b3) {};
-\node[below=of b3, circle, red, fill] (b4) {};
-\node[below=of b4, circle, red, fill] (b5) {};
-\node[below=of b5, circle, red, fill] (b6) {};
-\node[below=of b6, circle, red, fill] (b7) {};
-
-\node[shape=ellipse,draw=myblue,minimum size=3cm,fit={(a1) (a5) (a3) (a8) (a29) (a30) (a31)}] {};
-\node[shape=ellipse,draw=myblue,minimum size=3cm,fit={(b1) (b7)}] {};
-
-\node[below=2.5cm of a30,font=\color{myblue}\Large\bfseries] {Population};
-\node[below=2.5cm of b7,font=\color{myblue}\Large\bfseries] {Sample};
-
-
-\node[shape=rectanngle,draw=myblue,minimum size=1cm,fit={(a1) (a4) (a5)}] {};
-\node[shape=rectanngle,draw=myblue,minimum size=1cm,fit={(a2) (a7) (a8)}] {};
-\node[shape=rectanngle,draw=myblue,minimum size=1cm,fit={(a9) (a24) }] {};
-\node[shape=rectanngle,draw=myblue,minimum size=1cm,fit={(a29) (a31) }] {};
-
-\node[shape=rectanngle,draw=myblue,minimum size=1cm,fit={(a10) (a16) }] {};
-\node[shape=rectanngle,draw=myblue,minimum size=1cm,fit={(a12) (a18) }] {};
-\node[shape=rectanngle,draw=myblue,minimum size=1cm,fit={(a20) (a26) }] {};
-\node[shape=rectanngle,draw=myblue,minimum size=1cm,fit={(a22) (a28) }] {};
-
-
-\draw[->,myblue, dashed] (a1) -- (b1);
-\draw[->,myblue, dashed] (a4) -- (b2);
-\draw[->,myblue, dashed] (a5) -- (b3);
-\draw[->,myblue, dashed] (a22) -- (b4);
-\draw[->,myblue, dashed] (a23) -- (b5);
-\draw[->,myblue, dashed] (a27) -- (b6);
-\draw[->,myblue, dashed] (a28) -- (b7);
-\end{tikzpicture}]]>
-</latex-image>
-      </image>
+ 
+<image source="images/image-7.svg" width="75%" > </image>
+      
       </figure>
 
 
@@ -433,101 +203,10 @@ We discuss four <em>sampling techniques</em>.
 
 <li> 
   <p>
-  <em>Multi-stage Sampling</em> takes the population breaks into into groups called <em>clusters</em>.  We then randomly sample within each cluster.
+  <em>Multi-stage Sampling</em> takes the population breaks into into groups called <em>clusters</em>.  We randomly select some clusters.  We then randomly sample within each of the selected clusters.
   </p>
   <p>
-    <figure>
-<caption>A Multi-Stage Sample </caption>      
-      <image>
- <description>Multi-Stage Sample.</description>     
-<latex-image>
-<![CDATA[\begin{tikzpicture}[line width=1pt,>=latex, scale=0.8]
-\sffamily
-\node[circle, red, fill] (a1) {};
-\node[circle, blue, fill, right=of a1] (a2) {};
-\node[circle, blue, fill, right=of a2] (a3) {};
-
-\node[circle, blue, fill, below=of a1] (a4) {};
-\node[circle, red, fill, left=of a4] (a5) {};
-\node[circle, blue, fill, right=of a4] (a6) {};
-\node[circle, red, fill, right=of a6] (a7) {};
-\node[circle, blue, fill, right=of a7] (a8) {};
-
-\node[circle, blue, fill, below=of a5] (a9) {};
-\node[circle, red, fill, right=of a9] (a10) {};
-\node[circle, blue, fill, right=of a10] (a11) {};
-\node[circle, blue, fill, right=of a11] (a12) {};
-\node[circle, blue, fill, right=of a12] (a13) {};
-
-\node[circle, blue, fill, below=of a9] (a14) {};
-\node[circle, blue, fill, right=of a14] (a15) {};
-\node[circle, blue, fill, right=of a15] (a16) {};
-\node[circle, blue, fill, right=of a16] (a17) {};
-\node[circle, red, fill, right=of a17] (a18) {};
-
-\node[circle, red, fill, below=of a14] (a19) {};
-\node[circle, blue, fill, right=of a19] (a20) {};
-\node[circle, red, fill, right=of a20] (a21) {};
-\node[circle, blue, fill, right=of a21] (a22) {};
-\node[circle, blue, fill, right=of a22] (a23) {};
-
-\node[circle, blue, fill, below=of a19] (a24) {};
-\node[circle, blue, fill, right=of a24] (a25) {};
-\node[circle, blue, fill, right=of a25] (a26) {};
-\node[circle, red, fill, right=of a26] (a27) {};
-\node[circle, blue, fill, right=of a27] (a28) {};
-
-\node[circle, blue, fill, below=of a25] (a29) {};
-\node[circle, red, fill, right=of a29] (a30) {};
-\node[circle, blue, fill, right=of a30] (a31) {};
-
-
-
-
-
-
-\node[right=7cm of a3] (aux) {};
-\node[above=0.25cm of aux, circle, red, fill] (b1) {};
-\node[below=of b1, circle, red, fill] (b2) {};
-\node[below=of b2, circle, red, fill] (b3) {};
-\node[below=of b3, circle, red, fill] (b4) {};
-\node[below=of b4, circle, red, fill] (b5) {};
-\node[below=of b5, circle, red, fill] (b6) {};
-\node[below=of b6, circle, red, fill] (b7) {};
-\node[below=of b7, circle, red, fill] (b8) {};
-
-
-\node[shape=ellipse,draw=myblue,minimum size=3cm,fit={(a1) (a5) (a3) (a8) (a29) (a30) (a31)}] {};
-\node[shape=ellipse,draw=myblue,minimum size=2cm,fit={(b1) (b8)}] {};
-
-\node[below=2.5cm of a30,font=\color{myblue}\Large\bfseries] {Population};
-\node[below=2.5cm of b8,font=\color{myblue}\Large\bfseries] {Sample};
-
-
-\node[shape=rectanngle,draw=myblue,minimum size=1cm,fit={(a1) (a4) (a5)}] {};
-\node[shape=rectanngle,draw=myblue,minimum size=1cm,fit={(a2) (a7) (a8)}] {};
-\node[shape=rectanngle,draw=myblue,minimum size=1cm,fit={(a9) (a24) }] {};
-\node[shape=rectanngle,draw=myblue,minimum size=1cm,fit={(a29) (a31) }] {};
-
-\node[shape=rectanngle,draw=myblue,minimum size=1cm,fit={(a10) (a16) }] {};
-\node[shape=rectanngle,draw=myblue,minimum size=1cm,fit={(a12) (a18) }] {};
-\node[shape=rectanngle,draw=myblue,minimum size=1cm,fit={(a20) (a26) }] {};
-\node[shape=rectanngle,draw=myblue,minimum size=1cm,fit={(a22) (a28) }] {};
-
-
-\draw[->,myblue, dashed] (a1) -- (b1);
-\draw[->,myblue, dashed] (a7) -- (b2);
-\draw[->,myblue, dashed] (a10) -- (b3);
-\draw[->,myblue, dashed] (a18) -- (b4);
-\draw[->,myblue, dashed] (a19) -- (b5);
-\draw[->,myblue, dashed] (a21) -- (b6);
-\draw[->,myblue, dashed] (a27) -- (b7);
-\draw[->,myblue, dashed] (a30) -- (b8);
-
-\end{tikzpicture}]]>
-</latex-image>
-      </image>
-      </figure>
+    
 
 
 
@@ -558,7 +237,7 @@ We discuss four <em>sampling techniques</em>.
 <li>A soccer coach selects 6 players from a group of boys aged 8 to 10, 7 players from a group of boys aged 11 to 12, and 3 players from a group of boys aged 13 to 14 to form a recreational soccer team.</li>
 <li>A pollster interviews all human resource personnel in five different high tech companies.</li>
 <li>A high school educational researcher interviews 50 high school female teachers and 50 high school male teachers.</li>
-<li>A medical researcher selects divides the list of cancer patients by starting letter of their last name and selects 5 patients for each letter.</li>
+<li>A medical researcher selects divides the list of cancer patients by starting letter of their last name, randomly selects 10 letters,  then randomly selects 10 patients for each letter.</li>
 <li>A high school counselor uses a computer to generate 50 random numbers and then picks students whose names correspond to the numbers.</li>
 <li>A student interviews classmates in his algebra class to determine how many pairs of jeans a student owns, on the average.</li>
 

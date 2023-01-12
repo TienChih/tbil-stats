@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-27T13:18:05-06:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -12,37 +9,33 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script><script>$(function () {
-    // Make *any* div with class 'sagecell-r' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
-                           linked: true,
-                           languages: ['r'],
-                           evalButtonText: 'Evaluate (R)'});
-});
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
 </script>
 </head>
-<body>
-<article class="activity project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.5</span><span class="period">.</span><span class="space"> </span><span class="title">Free Throws Revisited..</span>
-</h6>
-<div class="introduction"><p xmlns:svg="http://www.w3.org/2000/svg">Recall the basketball player from <a class="xref" data-knowl="./knowl/activity-freethrow.html" title="Activity 3.4.3: Free Throws">Activity 3.4.3</a> with a \(p=0.9\) chance of making a free throw.  Suppose she takes 4 shots and let \(X\) denote the number of succesful shots.</p></div>
-<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Since she makes 90% of her free throws, how many baskets on average would she make with 4 shots?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Compute \(P(X=0)\text{,}\) \(P(X=1)\text{,}\) \(P(X=2)\text{,}\) \(P(X=3)\text{,}\) \(P(X=4)\text{.}\)</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(c)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Use <a class="xref" data-knowl="./knowl/remark-expectedvalue.html" title="Remark 2.4.4">Remark 2.4.4</a> to compute \(E(X)\text{.}\)  How does this value compare to (a)?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(d)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Use <a class="xref" data-knowl="./knowl/remark-varianceRV.html" title="Remark 2.4.5">Remark 2.4.5</a> to compute \(Var(X)\text{.}\)</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(e)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following to compute the average number of baskets made in the simulation from <a class="xref" data-knowl="./knowl/activity-freethrow.html" title="Activity 3.4.3: Free Throws">Activity 3.4.3</a>: <div class="sagecell-r" id="sage-128"><script type="text/x-sage">mean(numbaskets)
-</script></div> How does this value compare to what you found in (c)?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(f)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following to compute the variance of baskets made in the simulation from <a class="xref" data-knowl="./knowl/activity-freethrow.html" title="Activity 3.4.3: Free Throws">Activity 3.4.3</a>: <div class="sagecell-r" id="sage-129"><script type="text/x-sage">var(numbaskets)
-</script></div> How does this value compare to what you found in (d)?</p></article></article><span class="incontext"><a href="Sec_Binomial.html#activity-freethrowexpvar">in-context</a></span>
+</h4>
+<div class="introduction"><p>Recall the basketball player from <a href="" class="xref" data-knowl="./knowl/activity-freethrow.html" title="Activity 3.4.3: Free Throws">Activity 3.4.3</a> with a <span class="process-math">\(p=0.9\)</span> chance of making a free throw.  Suppose she takes 4 shots and let <span class="process-math">\(X\)</span> denote the number of succesful shots.</p></div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>Since she makes 90% of her free throws, how many baskets on average would she make with 4 shots?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>Compute <span class="process-math">\(P(X=0)\text{,}\)</span> <span class="process-math">\(P(X=1)\text{,}\)</span> <span class="process-math">\(P(X=2)\text{,}\)</span> <span class="process-math">\(P(X=3)\text{,}\)</span> <span class="process-math">\(P(X=4)\text{.}\)</span></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>Use <a href="" class="xref" data-knowl="./knowl/remark-expectedvalue.html" title="Remark 2.4.4">Remark 2.4.4</a> to compute <span class="process-math">\(E(X)\text{.}\)</span>  How does this value compare to (a)?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>Use <a href="" class="xref" data-knowl="./knowl/remark-varianceRV.html" title="Remark 2.4.5">Remark 2.4.5</a> to compute <span class="process-math">\(Var(X)\text{.}\)</span></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p>Run the following to compute the average number of baskets made in the simulation from <a href="" class="xref" data-knowl="./knowl/activity-freethrow.html" title="Activity 3.4.3: Free Throws">Activity 3.4.3</a>: <pre class="ptx-sagecell sagecell-r" id="sage-130"><script type="text/x-sage">mean(numbaskets)
+</script></pre> How does this value compare to what you found in (c)?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p>Run the following to compute the variance of baskets made in the simulation from <a href="" class="xref" data-knowl="./knowl/activity-freethrow.html" title="Activity 3.4.3: Free Throws">Activity 3.4.3</a>: <pre class="ptx-sagecell sagecell-r" id="sage-131"><script type="text/x-sage">var(numbaskets)
+</script></pre> How does this value compare to what you found in (d)?</p></article></article><span class="incontext"><a href="Sec_Binomial.html#activity-freethrowexpvar" class="internal">in-context</a></span>
 </body>
 </html>

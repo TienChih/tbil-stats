@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-27T13:17:48-06:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -12,28 +9,43 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script><script>$(function () {
-    // Make *any* div with class 'sagecell-r' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
-                           linked: true,
-                           languages: ['r'],
-                           evalButtonText: 'Evaluate (R)'});
-});
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
 </script>
 </head>
-<body>
-<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to display the number of loans out of 10,000 that were for applicants with mortages: <div class="sagecell-r" id="sage-45"><script type="text/x-sage">length(which(loans$homeownership=="MORTGAGE"))
-</script></div></p>
-<span class="incontext"><a href="Sec_Introprob.html#p-246">in-context</a></span>
+<body class="ignore-math">
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Run the following code to:</p>
+<ul class="disc">
+<li><p>Generates a sample of size 10 from <code class="code-inline tex2jax_ignore">L</code> above and computes the sample standard deviation.</p></li>
+<li><p>Repeats the above 1000 times.</p></li>
+<li><p>Plots the distribution of the above 1000 deviations, and computes the <em class="emphasis">average</em> deviation.</p></li>
+</ul>
+<p class="continuation"><pre class="ptx-sagecell sagecell-r" id="sage-33"><script type="text/x-sage">L=c(1,1,1,1,1,2,2,2,2,2,3,3,3,3,3,4,4,4,4,4,5,5,5,5,5)
+
+samp_sd = rep(NA, 1000)         #creates an empty vector of length 100
+
+
+for(i in 1:1000){
+  samp = sample(L, 10, replace=TRUE)         # obtain a sample of size 10 from the L
+  samp_sd[i] = sd(samp)        # save sample sd in ith element of samp_sd
+  }
+
+m=mean(samp_sd)  
+hist(samp_sd)                   #plots a histogram of the sample deviations
+abline(v = m, col = "red")
+print(m)
+</script></pre></p>
+<span class="incontext"><a href="Sec_Variation.html#p-246" class="internal">in-context</a></span>
 </body>
 </html>

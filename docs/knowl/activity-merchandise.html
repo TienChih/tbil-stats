@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-27T13:18:07-06:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -12,49 +9,45 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script><script>$(function () {
-    // Make *any* div with class 'sagecell-r' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
-                           linked: true,
-                           languages: ['r'],
-                           evalButtonText: 'Evaluate (R)'});
-});
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
 </script>
 </head>
-<body>
-<article class="activity project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Merchandise Purchasing.</span>
-</h6>
-<div class="introduction"><p xmlns:svg="http://www.w3.org/2000/svg">A recording artist wants to know what percentage of attendees of their shows purchase merchandise at the shows.  They randomly survey 100 attendees of their recent shows, and found that 22 of them purchased merchandise.</p></div>
-<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
-<p>What is the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">population</em> under consideration?</p>
+</h4>
+<div class="introduction"><p>A recording artist wants to know what percentage of attendees of their shows purchase merchandise at the shows.  They randomly survey 100 attendees of their recent shows, and found that 22 of them purchased merchandise.</p></div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>What is the <em class="emphasis">population</em> under consideration?</p>
 <ol class="decimal">
-<li>People who listen to music.</li>
-<li>100 attendees.</li>
-<li>People who attended the recording artist's shows.</li>
-<li>22 people who purchased merchandise.</li>
-</ol></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
+<li><p>People who listen to music.</p></li>
+<li><p>100 attendees.</p></li>
+<li><p>People who attended the recording artist's shows.</p></li>
+<li><p>22 people who purchased merchandise.</p></li>
+</ol></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <p>What is the parameter of interest?</p>
 <ol class="decimal">
-<li>The average number of shows fans attend a year.</li>
-<li>Proportion of show attendees who purchase merchandise.</li>
-<li>The average amount of money spent on merchandise.</li>
-<li>Proportion of people who bought the artist's album who attended shows.</li>
-</ol></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(c)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">What is the point estimate (\(\hat{p}\)) for the parameter?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(d)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Use <a class="xref" data-knowl="./knowl/theorem-CLTprop.html" title="Theorem 4.1.4: The Central Limit Theorem (Proportion)">Theorem 4.1.4</a> and the point estimate to compute the Sample Error for the point estimate.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(e)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Suppose that the actual percentage of show attendees who purchase merchandise is 25%.  Is this suprising?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(f)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Recompute the Sample Error using \(p=0.25\)  Is it much different than what you found in (d)?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(g)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Fix and run the following code to simulate the 1000 surveys of size <code class="code-inline tex2jax_ignore">n</code>=100, probability <code class="code-inline tex2jax_ignore">p</code>=0.25, and point estimate <code class="code-inline tex2jax_ignore">phat</code>\(=\hat{p}=22/100\text{,}\) as well as plot a histogram of the survey results, and the normal approximation: <div class="sagecell-r" id="sage-143"><script type="text/x-sage">trials=1000
+<li><p>The average number of shows fans attend a year.</p></li>
+<li><p>Proportion of show attendees who purchase merchandise.</p></li>
+<li><p>The average amount of money spent on merchandise.</p></li>
+<li><p>Proportion of people who bought the artist's album who attended shows.</p></li>
+</ol></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>What is the point estimate (<span class="process-math">\(\hat{p}\)</span>) for the parameter?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>Use <a href="" class="xref" data-knowl="./knowl/theorem-CLTprop.html" title="Theorem 4.1.4: The Central Limit Theorem (Proportion)">Theorem 4.1.4</a> and the point estimate to compute the Sample Error for the point estimate.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p>Suppose that the actual percentage of show attendees who purchase merchandise is 25%.  Is this suprising?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p>Recompute the Sample Error using <span class="process-math">\(p=0.25\)</span>  Is it much different than what you found in (d)?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p>Fix and run the following code to simulate the 1000 surveys of size <code class="code-inline tex2jax_ignore">n</code>=100, probability <code class="code-inline tex2jax_ignore">p</code>=0.25, and point estimate <code class="code-inline tex2jax_ignore">phat</code><span class="process-math">\(=\hat{p}=22/100\text{,}\)</span> as well as plot a histogram of the survey results, and the normal approximation: <pre class="ptx-sagecell sagecell-r" id="sage-148"><script type="text/x-sage">trials=1000
 
 n=FIXME
 p=FIXME
@@ -75,6 +68,6 @@ hist(proportion, prob=TRUE, breaks=25)
 curve(dnorm(x, mean=mu_p, sd=SE_p), col="darkblue", lwd=2, add=TRUE, yaxt="n")
 abline(v=phat, col="red",lwd=3, lty=2 )
 print(trials)
-</script></div> Would 22 respondents replying that they purchased merchandise be abnormal?</p></article></article><span class="incontext"><a href="Sec_PointEstimates.html#activity-merchandise">in-context</a></span>
+</script></pre> Would 22 respondents replying that they purchased merchandise be abnormal?</p></article></article><span class="incontext"><a href="Sec_PointEstimates.html#activity-merchandise" class="internal">in-context</a></span>
 </body>
 </html>

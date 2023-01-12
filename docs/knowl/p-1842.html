@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>Run the following code to download <code class="code-inline tex2jax_ignore">possum.csv</code> as seen in <a href="" class="xref" data-knowl="./knowl/exploration-possums.html" title="Exploration 7.1.1: Dimensions of Possums">Exploration 7.1.1</a>, <a href="" class="xref" data-knowl="./knowl/activity-possums.html" title="Activity 7.1.7: Possum Regression">Activity 7.1.7</a>, and <a href="" class="xref" data-knowl="./knowl/exploration-possum2.html" title="Exploration 7.2.1: Possums Again">Exploration 7.2.1</a>, and create a linear model for <code class="code-inline tex2jax_ignore">head_l~skull_w</code> and summarize it. <pre class="ptx-sagecell sagecell-r" id="sage-358"><script type="text/x-sage">possum = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/possum.csv")
+possummod=lm(head_l~skull_w, data=possum)
+summary(possummod)
+</script></pre> We're focused on the <code class="code-inline tex2jax_ignore">Coefficients</code>, in particular the second row.</p>
+<span class="incontext"><a href="Sec_InferenceRegression.html#p-1842" class="internal">in-context</a></span>
+</body>
+</html>

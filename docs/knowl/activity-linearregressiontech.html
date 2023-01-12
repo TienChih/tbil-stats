@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-27T13:18:49-06:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -12,31 +9,27 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script><script>$(function () {
-    // Make *any* div with class 'sagecell-r' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
-                           linked: true,
-                           languages: ['r'],
-                           evalButtonText: 'Evaluate (R)'});
-});
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
 </script>
 </head>
-<body>
-<article class="activity project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">Linear Regression and Technology.</span>
-</h6>
+</h4>
 <div class="introduction">
-<p>In practice, we use technology to perform linear regression.  Let's recall the data from <a class="xref" data-knowl="./knowl/activity-leastsquaresline.html" title="Activity 7.1.5: Least Squares Line">Activity 7.1.5</a>:</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<p>In practice, we use technology to perform linear regression.  Let's recall the data from <a href="" class="xref" data-knowl="./knowl/activity-leastsquaresline.html" title="Activity 7.1.5: Least Squares Line">Activity 7.1.5</a>:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/activity-leastsquaresline.html">
 \begin{equation*}
 \begin{array}{c|c}
 x \amp y\\
@@ -52,21 +45,22 @@ x \amp y\\
 \end{equation*}
 </div>
 </div>
-<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Enter this data into the columns <code class="code-inline tex2jax_ignore">x_1</code>, <code class="code-inline tex2jax_ignore">y_1</code>: <iframe src="https://www.desmos.com/calculator/fteh98brsf" id="interactive-120" width="600" height="600"></iframe></p>
-<p xmlns:svg="http://www.w3.org/2000/svg">How do <code class="code-inline tex2jax_ignore">B_1</code>, <code class="code-inline tex2jax_ignore">B_0</code> compare to the <code class="code-inline tex2jax_ignore">B_1</code>, <code class="code-inline tex2jax_ignore">B_0</code> from <a class="xref" data-knowl="./knowl/activity-leastsquaresline.html" title="Activity 7.1.5: Least Squares Line">Activity 7.1.5</a>?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">What is the correlation coefficient \(R\)=<code class="code-inline tex2jax_ignore">r</code>?  What does this tell us about the relationship between \(y\) and \(x\text{.}\)</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(c)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Let's use <code class="code-inline tex2jax_ignore">R</code> to do the same.   Run the following code to produce a dataframe <code class="code-inline tex2jax_ignore">dummydata</code> with variables <code class="code-inline tex2jax_ignore">x1</code> and <code class="code-inline tex2jax_ignore">y1</code>. <div class="sagecell-r" id="sage-334"><script type="text/x-sage">x1=c(1,2,3,4,4,5,6)
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>Enter this data into the columns <code class="code-inline tex2jax_ignore">x_1</code>, <code class="code-inline tex2jax_ignore">y_1</code>: <iframe src="https://www.desmos.com/calculator/fteh98brsf" id="interactive-126" width="600" height="600"></iframe></p>
+<p>How do <code class="code-inline tex2jax_ignore">B_1</code>, <code class="code-inline tex2jax_ignore">B_0</code> compare to the <code class="code-inline tex2jax_ignore">B_1</code>, <code class="code-inline tex2jax_ignore">B_0</code> from <a href="" class="xref" data-knowl="./knowl/activity-leastsquaresline.html" title="Activity 7.1.5: Least Squares Line">Activity 7.1.5</a>?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>What is the correlation coefficient <span class="process-math">\(R\)</span>=<code class="code-inline tex2jax_ignore">r</code>?  What does this tell us about the relationship between <span class="process-math">\(y\)</span> and <span class="process-math">\(x\text{.}\)</span></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>What is  <span class="process-math">\(R^2\text{?}\)</span>  What does this tell us about the relationship between <span class="process-math">\(y\)</span> and <span class="process-math">\(x\)</span> according to <a href="" class="xref" data-knowl="./knowl/remark-rsquared.html" title="Remark 7.1.20">Remark 7.1.20</a>.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>Let's use <code class="code-inline tex2jax_ignore">R</code> to do the same.   Run the following code to produce a dataframe <code class="code-inline tex2jax_ignore">dummydata</code> with variables <code class="code-inline tex2jax_ignore">x1</code> and <code class="code-inline tex2jax_ignore">y1</code>. <pre class="ptx-sagecell sagecell-r" id="sage-340"><script type="text/x-sage">x1=c(1,2,3,4,4,5,6)
 y1=c(1,3,2,4,5,4,7)
 
 dummydata = data.frame(x1, y1)
-</script></div></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(d)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to create a linear model for this data, and save it as <code class="code-inline tex2jax_ignore">dummymod</code>. <div class="sagecell-r" id="sage-335"><script type="text/x-sage">dummymod=lm(y1~x1, data=dummydata)
-</script></div> How do the intercept and slope displayed here compare to what you found in (a)?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(e)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to show the correlation for this model. <div class="sagecell-r" id="sage-336"><script type="text/x-sage">cor(dummydata$x1, dummydata$y1)
-</script></div> How does this value compare to what you found in (a)?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(f)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to plot the scatterplot and the least squares line. <div class="sagecell-r" id="sage-337"><script type="text/x-sage">plot(dummydata$x1, dummydata$y1,  pch=19)
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p>Run the following code to create a linear model for this data, and save it as <code class="code-inline tex2jax_ignore">dummymod</code>. <pre class="ptx-sagecell sagecell-r" id="sage-341"><script type="text/x-sage">dummymod=lm(y1~x1, data=dummydata)
+</script></pre> How do the intercept and slope displayed here compare to what you found in (a)?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p>Run the following code to show the correlation for this model. <pre class="ptx-sagecell sagecell-r" id="sage-342"><script type="text/x-sage">cor(dummydata$x1, dummydata$y1)
+</script></pre> How does this value compare to what you found in (a)?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p>Run the following code to plot the scatterplot and the least squares line. <pre class="ptx-sagecell sagecell-r" id="sage-343"><script type="text/x-sage">plot(dummydata$x1, dummydata$y1,  pch=19)
 abline(dummymod, col="red")
-</script></div></p></article></article><span class="incontext"><a href="Sec_Correlation.html#activity-linearregressiontech">in-context</a></span>
+</script></pre></p></article></article><span class="incontext"><a href="Sec_Correlation.html#activity-linearregressiontech" class="internal">in-context</a></span>
 </body>
 </html>

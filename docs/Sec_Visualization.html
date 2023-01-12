@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-04-07T17:01:07-06:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="en-US">
-<head>
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Visualizing Data (B3)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+<meta property="og:type" content="book">
+<meta property="book:title" content="Team Based Statistics">
+<meta property="book:author" content="Tien Chih">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
     tags: "none",
-    useLabelIds: true,
     tagSide: "right",
     tagIndent: ".8em",
     packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
   },
   options: {
-    ignoreHtmlClass: "tex2jax_ignore",
-    processHtmlClass: "has_am",
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
     renderActions: {
         findScript: [10, function (doc) {
             document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
@@ -48,38 +48,41 @@
     load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
     paths: {pretext: "https://pretextbook.org/js/lib"},
   },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script><script>$(function () {
-    // Make *any* div with class 'sagecell-r' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
-                           linked: true,
-                           languages: ['r'],
-                           evalButtonText: 'Evaluate (R)'});
-});
-</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg">miniversion=0.6</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
-</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
-<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
 </head>
-<body class="pretext-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\Q}{\terminology{Question:\ }}
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Q}{\terminology{Question:\ }}
 \newcommand{\Sol}{\terminology{Solution:\ }}
 \newcommand{\Fisg}{\emph{Fisg}}
 \newcommand{\Iisg}{\emph{Iisg}}
@@ -114,14 +117,16 @@
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
-\)</div>
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
 <h1 class="heading"><a href="book-1.html"><span class="title">Team Based Statistics</span></a></h1>
 <p class="byline">Tien Chih</p>
 </div>
 </div></div>
-<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="Sec_Sampling.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="Chap_DataBasics.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="Sec_Center.html" title="Next">Next</a></span></div>
 </div>
@@ -129,85 +134,85 @@
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="Sec_Sampling.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="Chap_DataBasics.html" title="Up">Up</a><a class="next-button button toolbar-item" href="Sec_Center.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
-<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
 <li class="link frontmatter">
-<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul>
-<li><a href="learning-outcomes.html" data-scroll="learning-outcomes">Learning Outcomes and Usage</a></li>
-<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
-<li><a href="author-bio-TC.html" data-scroll="author-bio-TC">Author Biography</a></li>
-<li><a href="dedication-1.html" data-scroll="dedication-1">Dedication</a></li>
+<a href="frontmatter-1.html" data-scroll="frontmatter-1" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="learning-outcomes.html" data-scroll="learning-outcomes" class="internal">Learning Outcomes and Usage</a></li>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="author-bio-TC.html" data-scroll="author-bio-TC" class="internal">Author Biography</a></li>
+<li><a href="dedication-1.html" data-scroll="dedication-1" class="internal">Dedication</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="Chap_DataBasics.html" data-scroll="Chap_DataBasics"><span class="codenumber">1</span> <span class="title">Data Basics (B)</span></a><ul>
-<li><a href="Sec_Variables.html" data-scroll="Sec_Variables">Types of Variables and their Relationships (B1)</a></li>
-<li><a href="Sec_Sampling.html" data-scroll="Sec_Sampling">Sampling Techniques (B2)</a></li>
+<a href="Chap_DataBasics.html" data-scroll="Chap_DataBasics" class="internal"><span class="codenumber">1</span> <span class="title">Data Basics (B)</span></a><ul>
+<li><a href="Sec_Variables.html" data-scroll="Sec_Variables" class="internal">Types of Variables and their Relationships (B1)</a></li>
+<li><a href="Sec_Sampling.html" data-scroll="Sec_Sampling" class="internal">Sampling Techniques (B2)</a></li>
 <li><a href="Sec_Visualization.html" data-scroll="Sec_Visualization" class="active">Visualizing Data (B3)</a></li>
-<li><a href="Sec_Center.html" data-scroll="Sec_Center">Centers of Data (B4)</a></li>
-<li><a href="Sec_Variation.html" data-scroll="Sec_Variation">Variation of Data (B5)</a></li>
+<li><a href="Sec_Center.html" data-scroll="Sec_Center" class="internal">Centers of Data (B4)</a></li>
+<li><a href="Sec_Variation.html" data-scroll="Sec_Variation" class="internal">Variation of Data (B5)</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="Chap_Probability.html" data-scroll="Chap_Probability"><span class="codenumber">2</span> <span class="title">Probability (P)</span></a><ul>
-<li><a href="Sec_Introprob.html" data-scroll="Sec_Introprob">Introduction to Probability (P1)</a></li>
-<li><a href="Sec_Conditionalprob.html" data-scroll="Sec_Conditionalprob">Conditional Probability (P2)</a></li>
-<li><a href="Sec_Bayes.html" data-scroll="Sec_Bayes">Bayes Theorem (P3)</a></li>
-<li><a href="Sec_RandomVariables.html" data-scroll="Sec_RandomVariables">Random Variables (P4)</a></li>
-<li><a href="Sec_LinearCombofVariables.html" data-scroll="Sec_LinearCombofVariables">Linear Combinations of Random Variables (P5)</a></li>
+<a href="Chap_Probability.html" data-scroll="Chap_Probability" class="internal"><span class="codenumber">2</span> <span class="title">Probability (P)</span></a><ul>
+<li><a href="Sec_Introprob.html" data-scroll="Sec_Introprob" class="internal">Introduction to Probability (P1)</a></li>
+<li><a href="Sec_Conditionalprob.html" data-scroll="Sec_Conditionalprob" class="internal">Conditional Probability (P2)</a></li>
+<li><a href="Sec_Bayes.html" data-scroll="Sec_Bayes" class="internal">Bayes Theorem (P3)</a></li>
+<li><a href="Sec_RandomVariables.html" data-scroll="Sec_RandomVariables" class="internal">Random Variables (P4)</a></li>
+<li><a href="Sec_LinearCombofVariables.html" data-scroll="Sec_LinearCombofVariables" class="internal">Linear Combinations of Random Variables (P5)</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="Chap_Distributions.html" data-scroll="Chap_Distributions"><span class="codenumber">3</span> <span class="title">Distributions (D)</span></a><ul>
-<li><a href="Sec_StandardNormal.html" data-scroll="Sec_StandardNormal">Standard Normal Distribution (D1)</a></li>
-<li><a href="Sec_GeneralNormal.html" data-scroll="Sec_GeneralNormal">General Normal Distribution (D2)</a></li>
-<li><a href="Sec_Counting.html" data-scroll="Sec_Counting">Counting Principles (D3)</a></li>
-<li><a href="Sec_Binomial.html" data-scroll="Sec_Binomial">Binomial Distribution (D4)</a></li>
-<li><a href="Sec_NormalApprox.html" data-scroll="Sec_NormalApprox">Normal Approximation (D5)</a></li>
+<a href="Chap_Distributions.html" data-scroll="Chap_Distributions" class="internal"><span class="codenumber">3</span> <span class="title">Distributions (D)</span></a><ul>
+<li><a href="Sec_StandardNormal.html" data-scroll="Sec_StandardNormal" class="internal">Standard Normal Distribution (D1)</a></li>
+<li><a href="Sec_GeneralNormal.html" data-scroll="Sec_GeneralNormal" class="internal">General Normal Distribution (D2)</a></li>
+<li><a href="Sec_Counting.html" data-scroll="Sec_Counting" class="internal">Counting Principles (D3)</a></li>
+<li><a href="Sec_Binomial.html" data-scroll="Sec_Binomial" class="internal">Binomial Distribution (D4)</a></li>
+<li><a href="Sec_NormalApprox.html" data-scroll="Sec_NormalApprox" class="internal">Normal Approximation (D5)</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="Chap_Foundations.html" data-scroll="Chap_Foundations"><span class="codenumber">4</span> <span class="title">Foundations for Inference (F)</span></a><ul>
-<li><a href="Sec_PointEstimates.html" data-scroll="Sec_PointEstimates">Point Estimates (F1)</a></li>
-<li><a href="Sec_ConfidenceInterval.html" data-scroll="Sec_ConfidenceInterval">Introduction to Confidence Intervals (F2)</a></li>
-<li><a href="Sec_HypothesisTesing.html" data-scroll="Sec_HypothesisTesing">Introduction to Hypothesis Testing (F3)</a></li>
+<a href="Chap_Foundations.html" data-scroll="Chap_Foundations" class="internal"><span class="codenumber">4</span> <span class="title">Foundations for Inference (F)</span></a><ul>
+<li><a href="Sec_PointEstimates.html" data-scroll="Sec_PointEstimates" class="internal">Point Estimates (F1)</a></li>
+<li><a href="Sec_ConfidenceInterval.html" data-scroll="Sec_ConfidenceInterval" class="internal">Introduction to Confidence Intervals (F2)</a></li>
+<li><a href="Sec_HypothesisTesing.html" data-scroll="Sec_HypothesisTesing" class="internal">Introduction to Hypothesis Testing (F3)</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="Chap_Categorical.html" data-scroll="Chap_Categorical"><span class="codenumber">5</span> <span class="title">Inference for Categorical Variables (C)</span></a><ul>
-<li><a href="Sec_SizeofSampleCat.html" data-scroll="Sec_SizeofSampleCat">Size of Samples (Categorical)</a></li>
-<li><a href="Sec_TwoVarCat.html" data-scroll="Sec_TwoVarCat">Comparing Two Categorical Variables (C2)</a></li>
-<li><a href="Sec_ChiSquare.html" data-scroll="Sec_ChiSquare">Chi-Squared Test and Goodness of Fit (C3)</a></li>
-<li><a href="Sec_ChiIndependence.html" data-scroll="Sec_ChiIndependence">Chi-Squared Test and Independence (C4)</a></li>
+<a href="Chap_Categorical.html" data-scroll="Chap_Categorical" class="internal"><span class="codenumber">5</span> <span class="title">Inference for Categorical Variables (C)</span></a><ul>
+<li><a href="Sec_SizeofSampleCat.html" data-scroll="Sec_SizeofSampleCat" class="internal">Size of Samples (Categorical)</a></li>
+<li><a href="Sec_TwoVarCat.html" data-scroll="Sec_TwoVarCat" class="internal">Comparing Two Categorical Variables (C2)</a></li>
+<li><a href="Sec_ChiSquare.html" data-scroll="Sec_ChiSquare" class="internal">Chi-Squared Test and Goodness of Fit (C3)</a></li>
+<li><a href="Sec_ChiIndependence.html" data-scroll="Sec_ChiIndependence" class="internal">Chi-Squared Test and Independence (C4)</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="Chap_Numerical.html" data-scroll="Chap_Numerical"><span class="codenumber">6</span> <span class="title">Inference for Numerical Variables (N)</span></a><ul>
-<li><a href="Sec_tVariable.html" data-scroll="Sec_tVariable">The \(t\)-Variable and Sampling Distribution of Numerical Variables (N1)</a></li>
-<li><a href="Sec_OneVarNum.html" data-scroll="Sec_OneVarNum">Confidence Intervals and Hypothesis Testing for a single Numerical Variable (N2)</a></li>
-<li><a href="Sec_PairedData.html" data-scroll="Sec_PairedData">Paired Numerical Data (N3)</a></li>
-<li><a href="Sec_TwoVarNum.html" data-scroll="Sec_TwoVarNum">Comparing Two Numerical Variables (N4)</a></li>
-<li><a href="Sec_SizeofSampleNum.html" data-scroll="Sec_SizeofSampleNum">Size of Samples of Numerical Variables (N5)</a></li>
-<li><a href="Sec_ANOVA.html" data-scroll="Sec_ANOVA">ANOVA: Analysis of Variation (N6)</a></li>
+<a href="Chap_Numerical.html" data-scroll="Chap_Numerical" class="internal"><span class="codenumber">6</span> <span class="title">Inference for Numerical Variables (N)</span></a><ul>
+<li><a href="Sec_tVariable.html" data-scroll="Sec_tVariable" class="internal">The <span class="process-math">\(t\)</span>-Variable and Sampling Distribution of Numerical Variables (N1)</a></li>
+<li><a href="Sec_OneVarNum.html" data-scroll="Sec_OneVarNum" class="internal">Confidence Intervals and Hypothesis Testing for a single Numerical Variable (N2)</a></li>
+<li><a href="Sec_PairedData.html" data-scroll="Sec_PairedData" class="internal">Paired Numerical Data (N3)</a></li>
+<li><a href="Sec_TwoVarNum.html" data-scroll="Sec_TwoVarNum" class="internal">Comparing Two Numerical Variables (N4)</a></li>
+<li><a href="Sec_SizeofSampleNum.html" data-scroll="Sec_SizeofSampleNum" class="internal">Size of Samples of Numerical Variables (N5)</a></li>
+<li><a href="Sec_ANOVA.html" data-scroll="Sec_ANOVA" class="internal">ANOVA: Analysis of Variation (N6)</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="Chap_LinearRegression.html" data-scroll="Chap_LinearRegression"><span class="codenumber">7</span> <span class="title">Linear Regression (R)</span></a><ul>
-<li><a href="Sec_Correlation.html" data-scroll="Sec_Correlation">Linear Correlation of Variables (R1)</a></li>
-<li><a href="Sec_InterpretingRegression.html" data-scroll="Sec_InterpretingRegression">Interpreting Linear Regression (R2)</a></li>
-<li><a href="Sec_InferenceRegression.html" data-scroll="Sec_InferenceRegression">Inference and Linear Regression (R3)</a></li>
+<a href="Chap_LinearRegression.html" data-scroll="Chap_LinearRegression" class="internal"><span class="codenumber">7</span> <span class="title">Linear Regression (R)</span></a><ul>
+<li><a href="Sec_Correlation.html" data-scroll="Sec_Correlation" class="internal">Linear Correlation of Variables (R1)</a></li>
+<li><a href="Sec_InterpretingRegression.html" data-scroll="Sec_InterpretingRegression" class="internal">Interpreting Linear Regression (R2)</a></li>
+<li><a href="Sec_InferenceRegression.html" data-scroll="Sec_InferenceRegression" class="internal">Inference and Linear Regression (R3)</a></li>
 </ul>
 </li>
 </ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="Sec_Visualization"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="Sec_Visualization"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.3</span> <span class="title">Visualizing Data (B3)</span>
 </h2>
 <section class="introduction" id="introduction-10"><p id="p-119">Visualizing data appropriately can let us apply visual intuition to our understanding, extending beyond computational prowess.</p>
 <p id="p-120">In this section, we cover several types of data visualizations and how to generate them.</p>
-<p id="p-121">Run the following code to download the <code class="code-inline tex2jax_ignore">hsb2.csv</code> data set: <div class="sagecell-r" id="sage-4"><script type="text/x-sage">hsb2 = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/hsb2.csv")
+<p id="p-121">Run the following code to download the <code class="code-inline tex2jax_ignore">hsb2.csv</code> data set: <pre class="ptx-sagecell sagecell-r" id="sage-4"><script type="text/x-sage">hsb2 = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/hsb2.csv")
 names(hsb2)
-</script></div></p>
+</script></pre></p>
 <p id="p-122">This data set represents two hundred observations who  were randomly sampled from the High School and Beyond survey, a survey conducted on high school seniors by the National Center of Education Statistics.</p></section><section class="subsection" id="subsection-4"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.3.1</span> <span class="title">Numerical Data</span>
 </h3>
@@ -217,16 +222,16 @@ names(hsb2)
 <p id="p-123">A <em class="emphasis">scatterplot</em> compares two numerical variables.  For each case in the sample, the values of two variables are plotted respectively on the cartesian plane.</p></article><article class="activity project-like" id="activity-schoolscatter"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">School Scatter Plot.</span>
 </h4>
-<div class="introduction" id="introduction-11"><p id="p-124">Run the following code to plot a scatter plot comparing student reading scores to their math scores. <div class="sagecell-r" id="sage-5"><script type="text/x-sage">         plot(hsb2$read, hsb2$math, 
+<div class="introduction" id="introduction-11"><p id="p-124">Run the following code to plot a scatter plot comparing student reading scores to their math scores. <pre class="ptx-sagecell sagecell-r" id="sage-5"><script type="text/x-sage">         plot(hsb2$read, hsb2$math, 
 xlab="Reading Score ", ylab="Math Score ", pch=19)
-</script></div></p></div>
+</script></pre></p></div>
 <article class="task exercise-like" id="task-26"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <p id="p-125">What does each dot represent?  What do it's coordinates represent?</p></article><article class="task exercise-like" id="task-27"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <p id="p-126">What sort of relationship between these variables do you notice?</p></article><article class="task exercise-like" id="task-28"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <p id="p-127">Follow this link and identify two numerical variables you would like to compare. <a class="external" href="https://www.openintro.org/data/index.php?data=hsb2" target="_blank"><code class="code-inline tex2jax_ignore">https://www.openintro.org/data/index.php?data=hsb2</code></a>.</p></article><article class="task exercise-like" id="task-29"><h5 class="heading"><span class="codenumber">(d)</span></h5>
-<p id="p-128">Fix the following code and run it to plot a scatter plot comparing your two choices. <div class="sagecell-r" id="sage-6"><script type="text/x-sage">         plot(hsb2$FIXME, hsb2$FIXME, 
+<p id="p-128">Fix the following code and run it to plot a scatter plot comparing your two choices. <pre class="ptx-sagecell sagecell-r" id="sage-6"><script type="text/x-sage">         plot(hsb2$FIXME, hsb2$FIXME, 
 xlab="FIXME ", ylab="FIXME ", pch=19)
-</script></div></p></article><article class="task exercise-like" id="task-30"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+</script></pre></p></article><article class="task exercise-like" id="task-30"><h5 class="heading"><span class="codenumber">(e)</span></h5>
 <p id="p-129">What does each dot represent?  What do it's coordinates represent?</p></article><article class="task exercise-like" id="task-31"><h5 class="heading"><span class="codenumber">(f)</span></h5>
 <p id="p-130">What sort of relationship between these variables do you notice?</p></article></article><article class="definition definition-like" id="definition-8"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.2</span><span class="period">.</span>
@@ -234,17 +239,17 @@ xlab="FIXME ", ylab="FIXME ", pch=19)
 <p id="p-131">A <em class="emphasis">histogram</em>   consists of contiguous boxes. It has both a horizontal axis and a vertical axis. The horizontal axis is labeled with what the data represents. The vertical axis is labeled either <em class="emphasis">frequency</em> (the number of time a value(s) occurs) or relative frequency  (the percentage or proportion of time(s) a value occurs).</p></article><article class="activity project-like" id="activity-schoolhistogram"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">School Histogram.</span>
 </h4>
-<div class="introduction" id="introduction-12"><p id="p-132">Run the following code to plot a histogram for student's science scores. <div class="sagecell-r" id="sage-7"><script type="text/x-sage">hist(hsb2$science, xlab="Science Scores", main="Distribution of Science Scores" )
-</script></div></p></div>
+<div class="introduction" id="introduction-12"><p id="p-132">Run the following code to plot a histogram for student's science scores. <pre class="ptx-sagecell sagecell-r" id="sage-7"><script type="text/x-sage">hist(hsb2$science, xlab="Science Scores", main="Distribution of Science Scores" )
+</script></pre></p></div>
 <article class="task exercise-like" id="task-32"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<p id="p-133">What do the \(x\) values represent?  What do the heights represent?</p></article><article class="task exercise-like" id="task-33"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-133">What do the <span class="process-math">\(x\)</span> values represent?  What do the heights represent?</p></article><article class="task exercise-like" id="task-33"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <p id="p-134">What do you notice about this graph?</p></article><article class="task exercise-like" id="task-34"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<p id="p-135">Add the following to plot a density distribution instead of a frequency distribution: <div class="sagecell-r" id="sage-8"><script type="text/x-sage">hist(hsb2$science, xlab="Science Scores", main="Distribution of Science Scores",freq=FALSE )
-</script></div></p></article><article class="task exercise-like" id="task-35"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-135">Add the following to plot a density distribution instead of a frequency distribution: <pre class="ptx-sagecell sagecell-r" id="sage-8"><script type="text/x-sage">hist(hsb2$science, xlab="Science Scores", main="Distribution of Science Scores",freq=FALSE )
+</script></pre></p></article><article class="task exercise-like" id="task-35"><h5 class="heading"><span class="codenumber">(d)</span></h5>
 <p id="p-136">Follow this link and identify a numerical variable you would like to plot a histogram for. <a class="external" href="https://www.openintro.org/data/index.php?data=hsb2" target="_blank"><code class="code-inline tex2jax_ignore">https://www.openintro.org/data/index.php?data=hsb2</code></a>.</p></article><article class="task exercise-like" id="task-36"><h5 class="heading"><span class="codenumber">(e)</span></h5>
-<p id="p-137">Fix the following code and run it to plot the histogram of your choice. <div class="sagecell-r" id="sage-9"><script type="text/x-sage">hist(hsb2$FIXME, xlab="FIXME", main="FIXME" )
-</script></div></p></article><article class="task exercise-like" id="task-37"><h5 class="heading"><span class="codenumber">(f)</span></h5>
-<p id="p-138">What do the \(x\) values represent?  What do the heights represent?</p></article><article class="task exercise-like" id="task-38"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p id="p-137">Fix the following code and run it to plot the histogram of your choice. <pre class="ptx-sagecell sagecell-r" id="sage-9"><script type="text/x-sage">hist(hsb2$FIXME, xlab="FIXME", main="FIXME" )
+</script></pre></p></article><article class="task exercise-like" id="task-37"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p id="p-138">What do the <span class="process-math">\(x\)</span> values represent?  What do the heights represent?</p></article><article class="task exercise-like" id="task-38"><h5 class="heading"><span class="codenumber">(g)</span></h5>
 <p id="p-139">What do you notice about this graph?</p></article><article class="task exercise-like" id="task-39"><h5 class="heading"><span class="codenumber">(h)</span></h5>
 <p id="p-140">Modify the code to turn it into a desnity distribution.</p></article></article><p id="p-141">Note that for smaller data sets, it can be more convenient to use <code class="code-inline tex2jax_ignore">Desmos</code> to produce a histogram. <iframe src="https://www.desmos.com/calculator/zrwccrpoan" id="interactive-1" width="600" height="600"></iframe> The data is placed within the list <code class="code-inline tex2jax_ignore">L</code>.</p></section><section class="subsection" id="subsection-5"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">1.3.2</span> <span class="title">Categorical Data</span>
@@ -256,32 +261,32 @@ xlab="FIXME ", ylab="FIXME ", pch=19)
 <p id="p-143">A <em class="emphasis">bar chart</em> similar to a histogram, plots the frequency of density of categorical variables.</p></article><article class="activity project-like" id="activity-schoolbarchart"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">School Bar Chart.</span>
 </h4>
-<div class="introduction" id="introduction-13"><p id="p-144">Run the following code to plot a bar chart for the racial demographics of students. <div class="sagecell-r" id="sage-10"><script type="text/x-sage">            counts = table(hsb2$race)
+<div class="introduction" id="introduction-13"><p id="p-144">Run the following code to plot a bar chart for the racial demographics of students. <pre class="ptx-sagecell sagecell-r" id="sage-10"><script type="text/x-sage">            counts = table(hsb2$race)
 barplot(counts, main="Racial Demographics",xlab="Race")
-</script></div></p></div>
+</script></pre></p></div>
 <article class="task exercise-like" id="task-40"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <p id="p-145">What does each bar represent?  What do the heights represent?</p></article><article class="task exercise-like" id="task-41"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <p id="p-146">Follow this link and identify a categorical variable you would like to plot a bar chart for. <a class="external" href="https://www.openintro.org/data/index.php?data=hsb2" target="_blank"><code class="code-inline tex2jax_ignore">https://www.openintro.org/data/index.php?data=hsb2</code></a>.</p></article><article class="task exercise-like" id="task-42"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<p id="p-147">Fix the following code and run it to plot the bar chart of your choice. <div class="sagecell-r" id="sage-11"><script type="text/x-sage">                        counts = table(hsb2$FIXME)
+<p id="p-147">Fix the following code and run it to plot the bar chart of your choice. <pre class="ptx-sagecell sagecell-r" id="sage-11"><script type="text/x-sage">                        counts = table(hsb2$FIXME)
 barplot(counts, main="FIXME",xlab="FIXME")
-</script></div></p></article><article class="task exercise-like" id="task-43"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+</script></pre></p></article><article class="task exercise-like" id="task-43"><h5 class="heading"><span class="codenumber">(d)</span></h5>
 <p id="p-148">What do you notice about this graph?</p></article><article class="task exercise-like" id="task-44"><h5 class="heading"><span class="codenumber">(e)</span></h5>
 <p id="p-149">What do the bars and heights represent?</p></article></article><p id="p-150">If we want to compare different groups to each other, it may make sense to utilize a <em class="emphasis">grouped bar chart</em>.</p>
 <article class="activity project-like" id="activity-schoolgroupedbarchart"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">School Grouped Bar Chart.</span>
 </h4>
-<div class="introduction" id="introduction-14"><p id="p-151">Run the following code to plot a grouped bar chart for the program type of schools, broken down by public vs private. <div class="sagecell-r" id="sage-12"><script type="text/x-sage">            counts = table(hsb2$prog, hsb2$schtyp)
+<div class="introduction" id="introduction-14"><p id="p-151">Run the following code to plot a grouped bar chart for the program type of schools, broken down by public vs private. <pre class="ptx-sagecell sagecell-r" id="sage-12"><script type="text/x-sage">            counts = table(hsb2$prog, hsb2$schtyp)
 barplot(counts, main="Program Type vs",xlab="School Type", 
   legend = rownames(counts), beside=TRUE)
-</script></div></p></div>
+</script></pre></p></div>
 <article class="task exercise-like" id="task-45"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <p id="p-152">What does each bar represent?  What do the heights represent?</p></article><article class="task exercise-like" id="task-46"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <p id="p-153">How do public and private schools differ?</p></article><article class="task exercise-like" id="task-47"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <p id="p-154">Follow this link and identify two categorical variables you would like to plot a group bar chart for. <a class="external" href="https://www.openintro.org/data/index.php?data=hsb2" target="_blank"><code class="code-inline tex2jax_ignore">https://www.openintro.org/data/index.php?data=hsb2</code></a>.</p></article><article class="task exercise-like" id="task-48"><h5 class="heading"><span class="codenumber">(d)</span></h5>
-<p id="p-155">Fix the following code and run it to plot the bar chart of your choice. <div class="sagecell-r" id="sage-13"><script type="text/x-sage">            counts = table(hsb2$FIXME, hsb2$FIXME)
+<p id="p-155">Fix the following code and run it to plot the bar chart of your choice. <pre class="ptx-sagecell sagecell-r" id="sage-13"><script type="text/x-sage">            counts = table(hsb2$FIXME, hsb2$FIXME)
 barplot(counts, main="FIXME",xlab="FIXME", 
   legend = rownames(counts), beside=TRUE)
-</script></div></p></article><article class="task exercise-like" id="task-49"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+</script></pre></p></article><article class="task exercise-like" id="task-49"><h5 class="heading"><span class="codenumber">(e)</span></h5>
 <p id="p-156">What do you notice about this graph?</p></article><article class="task exercise-like" id="task-50"><h5 class="heading"><span class="codenumber">(f)</span></h5>
 <p id="p-157">What do the bars and heights represent?</p></article></article><article class="definition definition-like" id="definition-10"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.3.4</span><span class="period">.</span>
@@ -289,16 +294,16 @@ barplot(counts, main="FIXME",xlab="FIXME",
 <p id="p-158">A <em class="emphasis">Mosaic</em> plot counts the relative frequency of cases with respect to two categorical variables and displays their relative frequency as areas.</p></article><article class="activity project-like" id="activity-schoolmosaic"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">School Mosaic Plot.</span>
 </h4>
-<div class="introduction" id="introduction-15"><p id="p-159">Run the following code to plot a mosaic plot for the program type of schools, broken down by public vs private. <div class="sagecell-r" id="sage-14"><script type="text/x-sage">counts = table(hsb2$prog, hsb2$schtyp)
+<div class="introduction" id="introduction-15"><p id="p-159">Run the following code to plot a mosaic plot for the program type of schools, broken down by public vs private. <pre class="ptx-sagecell sagecell-r" id="sage-14"><script type="text/x-sage">counts = table(hsb2$prog, hsb2$schtyp)
 mosaicplot(counts)
-</script></div></p></div>
+</script></pre></p></div>
 <article class="task exercise-like" id="task-51"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <p id="p-160">What does each rectangle represent?  What do the areas represent?</p></article><article class="task exercise-like" id="task-52"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <p id="p-161">How does this plot highlight the difference between academic, general and vocational schools?</p></article><article class="task exercise-like" id="task-53"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <p id="p-162">Follow this link and identify two categorical variables you would like to plot a mosaic plot for. <a class="external" href="https://www.openintro.org/data/index.php?data=hsb2" target="_blank"><code class="code-inline tex2jax_ignore">https://www.openintro.org/data/index.php?data=hsb2</code></a>.</p></article><article class="task exercise-like" id="task-54"><h5 class="heading"><span class="codenumber">(d)</span></h5>
-<p id="p-163">Fix the following code and run it to plot the bar chart of your choice. <div class="sagecell-r" id="sage-15"><script type="text/x-sage">counts = table(hsb2$FIXME, hsb2$FIXME)
+<p id="p-163">Fix the following code and run it to plot the bar chart of your choice. <pre class="ptx-sagecell sagecell-r" id="sage-15"><script type="text/x-sage">counts = table(hsb2$FIXME, hsb2$FIXME)
 mosaicplot(counts)
-</script></div></p></article><article class="task exercise-like" id="task-55"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+</script></pre></p></article><article class="task exercise-like" id="task-55"><h5 class="heading"><span class="codenumber">(e)</span></h5>
 <p id="p-164">What do you notice about this graph?</p></article><article class="task exercise-like" id="task-56"><h5 class="heading"><span class="codenumber">(f)</span></h5>
 <p id="p-165">What do the rectangles and areas represent?</p></article></article></section></section></div></main>
 </div>

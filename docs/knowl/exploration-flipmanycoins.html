@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-27T13:18:05-06:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -12,30 +9,26 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script><script>$(function () {
-    // Make *any* div with class 'sagecell-r' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
-                           linked: true,
-                           languages: ['r'],
-                           evalButtonText: 'Evaluate (R)'});
-});
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
 </script>
 </head>
-<body>
-<article class="exploration project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">3.4.7</span><span class="period">.</span><span class="space"> </span><span class="title">Flip Many Coins.</span>
-</h6>
-<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to simulate 1000 events where you flip <code class="code-inline tex2jax_ignore">coinflips=10</code> coins, and record the number of resulting heads: <div class="sagecell-r" id="sage-130"><script type="text/x-sage">numheads = rep(0, 1000)
+<body class="ignore-math">
+<article class="exploration project-like"><h3 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">3.5.1</span><span class="period">.</span><span class="space"> </span><span class="title">Flip Many Coins.</span>
+</h3>
+<article class="task exercise-like"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p>Run the following code to simulate 1000 events where you flip <code class="code-inline tex2jax_ignore">coinflips=10</code> coins, and record the number of resulting heads: <pre class="ptx-sagecell sagecell-r" id="sage-132"><script type="text/x-sage">numheads = rep(0, 1000)
 coinflips=10
 
 for(i in 1:coinflips){
@@ -43,7 +36,7 @@ for(i in 1:coinflips){
 }
 hist(numheads, breaks=25)
 print(coinflips)
-</script></div></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Repeat the above task but chance <code class="code-inline tex2jax_ignore">coinflips</code> to <code class="code-inline tex2jax_ignore">20, 30, 50, 100, 200</code>.  As you increase <code class="code-inline tex2jax_ignore">coinflips</code>, what do you notice about the shape of the histogram?</p></article></article><span class="incontext"><a href="Sec_Binomial.html#exploration-flipmanycoins">in-context</a></span>
+</script></pre></p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p>Repeat the above task but chance <code class="code-inline tex2jax_ignore">coinflips</code> to <code class="code-inline tex2jax_ignore">20, 30, 50, 100, 200</code>.  As you increase <code class="code-inline tex2jax_ignore">coinflips</code>, what do you notice about the shape of the histogram?</p></article></article><span class="incontext"><a href="Sec_NormalApprox.html#exploration-flipmanycoins" class="internal">in-context</a></span>
 </body>
 </html>

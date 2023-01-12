@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-27T13:18:41-06:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -12,29 +9,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script><script>$(function () {
-    // Make *any* div with class 'sagecell-r' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
-                           linked: true,
-                           languages: ['r'],
-                           evalButtonText: 'Evaluate (R)'});
-});
-</script>
 </head>
-<body>
-<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to download <code class="code-inline tex2jax_ignore">studentscleaned.csv</code> and display it's variables. <div class="sagecell-r" id="sage-297"><script type="text/x-sage">students = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/studentscleaned.csv")
-names(students)
-</script></div></p>
-<span class="incontext"><a href="Sec_SizeofSampleNum.html#p-1473">in-context</a></span>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>The difference between these variables is <em class="emphasis">itself</em> a random variable, with a population mean <span class="process-math">\(\mu_{d}\)</span> and population standard deviation <span class="process-math">\(\sigma_{d}\text{.}\)</span>  We can then perform any one variable numerical inference exactly as in we were in <a href="Sec_OneVarNum.html" class="internal" title="Section 6.2: Confidence Intervals and Hypothesis Testing for a single Numerical Variable (N2)">Section 6.2</a>.  We just have to properly interpret what statements about the difference mean:</p>
+<ul class="disc">
+<li><p>A C% <em class="emphasis">confidence interval</em> for <span class="process-math">\(\mu_d\)</span> is an interval that has a C% chance of containing the average difference between our two populations.</p></li>
+<li><p>The null hypothesis <span class="process-math">\(\mu_d=\mu_0\)</span> is the assumption that the average difference between the two populations could be <span class="process-math">\(\mu_0\text{.}\)</span></p></li>
+<li><p>The alternative hypothesis <span class="process-math">\(\mu_d\lt \mu_0\)</span> is the claim that the average difference between the two populations is less than <span class="process-math">\(\mu_0\text{.}\)</span></p></li>
+<li><p>The alternative hypothesis <span class="process-math">\(\mu_d&gt; \mu_0\)</span> is the claim that the average difference between the two populations is greater than <span class="process-math">\(\mu_0\text{.}\)</span></p></li>
+<li><p>The alternative hypothesis <span class="process-math">\(\mu_d\neq \mu_0\)</span> is the claim that the average difference between the two populations is different from <span class="process-math">\(\mu_0\text{.}\)</span></p></li>
+</ul>
+<span class="incontext"><a href="Sec_PairedData.html#p-1473" class="internal">in-context</a></span>
 </body>
 </html>

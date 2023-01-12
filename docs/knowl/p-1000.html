@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-27T13:18:17-06:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -12,32 +9,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script><script>$(function () {
-    // Make *any* div with class 'sagecell-r' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
-                           linked: true,
-                           languages: ['r'],
-                           evalButtonText: 'Evaluate (R)'});
-});
-</script>
 </head>
-<body>
-<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to poll 100 customers in the West location and see how many order spicy wings. <div class="sagecell-r" id="sage-180"><script type="text/x-sage">westpoll=100
-west_p=sample(c(0.3, 0.4, 0.5), 1, prob=c(0.25, 0.5, 0.25))
-
-west_samp=sample(c("SPICYWINGS", "NO"), westpoll, replace=TRUE, prob=c(west_p, 1-west_p))
-west_x=length(which(west_samp=="SPICYWINGS"))
-</script></div> We know that \(n_2=100\text{,}\) compute \(\hat{p_2}\text{,}\) the proportion of the West location sample who orders Spicy Wings.</p>
-<span class="incontext"><a href="Sec_TwoVarCat.html#p-1000">in-context</a></span>
+<body class="ignore-math">
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Let <span class="process-math">\(Z\)</span> denote the standard normal variable.  Compute <span class="process-math">\(P(Z&gt;|z_{\hat{p}}|)\)</span> and <span class="process-math">\(P(Z\lt -|z_{\hat{p}}|)\text{.}\)</span>  How does these values compare to what you found in (f) and (g)?</p>
+<span class="incontext"><a href="Sec_HypothesisTesing.html#p-1000" class="internal">in-context</a></span>
 </body>
 </html>

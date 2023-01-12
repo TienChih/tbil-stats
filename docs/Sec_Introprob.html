@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-04-07T17:01:09-06:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="en-US">
-<head>
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Introduction to Probability (P1)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+<meta property="og:type" content="book">
+<meta property="book:title" content="Team Based Statistics">
+<meta property="book:author" content="Tien Chih">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
     tags: "none",
-    useLabelIds: true,
     tagSide: "right",
     tagIndent: ".8em",
     packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
   },
   options: {
-    ignoreHtmlClass: "tex2jax_ignore",
-    processHtmlClass: "has_am",
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
     renderActions: {
         findScript: [10, function (doc) {
             document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
@@ -48,38 +48,41 @@
     load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
     paths: {pretext: "https://pretextbook.org/js/lib"},
   },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script><script>$(function () {
-    // Make *any* div with class 'sagecell-r' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
-                           linked: true,
-                           languages: ['r'],
-                           evalButtonText: 'Evaluate (R)'});
-});
-</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg">miniversion=0.6</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
-</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
-<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
 </head>
-<body class="pretext-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\Q}{\terminology{Question:\ }}
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Q}{\terminology{Question:\ }}
 \newcommand{\Sol}{\terminology{Solution:\ }}
 \newcommand{\Fisg}{\emph{Fisg}}
 \newcommand{\Iisg}{\emph{Iisg}}
@@ -114,14 +117,16 @@
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
-\)</div>
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
 <h1 class="heading"><a href="book-1.html"><span class="title">Team Based Statistics</span></a></h1>
 <p class="byline">Tien Chih</p>
 </div>
 </div></div>
-<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="Chap_Probability.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="Chap_Probability.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="Sec_Conditionalprob.html" title="Next">Next</a></span></div>
 </div>
@@ -129,82 +134,82 @@
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="Chap_Probability.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="Chap_Probability.html" title="Up">Up</a><a class="next-button button toolbar-item" href="Sec_Conditionalprob.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
-<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
 <li class="link frontmatter">
-<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul>
-<li><a href="learning-outcomes.html" data-scroll="learning-outcomes">Learning Outcomes and Usage</a></li>
-<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
-<li><a href="author-bio-TC.html" data-scroll="author-bio-TC">Author Biography</a></li>
-<li><a href="dedication-1.html" data-scroll="dedication-1">Dedication</a></li>
+<a href="frontmatter-1.html" data-scroll="frontmatter-1" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="learning-outcomes.html" data-scroll="learning-outcomes" class="internal">Learning Outcomes and Usage</a></li>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="author-bio-TC.html" data-scroll="author-bio-TC" class="internal">Author Biography</a></li>
+<li><a href="dedication-1.html" data-scroll="dedication-1" class="internal">Dedication</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="Chap_DataBasics.html" data-scroll="Chap_DataBasics"><span class="codenumber">1</span> <span class="title">Data Basics (B)</span></a><ul>
-<li><a href="Sec_Variables.html" data-scroll="Sec_Variables">Types of Variables and their Relationships (B1)</a></li>
-<li><a href="Sec_Sampling.html" data-scroll="Sec_Sampling">Sampling Techniques (B2)</a></li>
-<li><a href="Sec_Visualization.html" data-scroll="Sec_Visualization">Visualizing Data (B3)</a></li>
-<li><a href="Sec_Center.html" data-scroll="Sec_Center">Centers of Data (B4)</a></li>
-<li><a href="Sec_Variation.html" data-scroll="Sec_Variation">Variation of Data (B5)</a></li>
+<a href="Chap_DataBasics.html" data-scroll="Chap_DataBasics" class="internal"><span class="codenumber">1</span> <span class="title">Data Basics (B)</span></a><ul>
+<li><a href="Sec_Variables.html" data-scroll="Sec_Variables" class="internal">Types of Variables and their Relationships (B1)</a></li>
+<li><a href="Sec_Sampling.html" data-scroll="Sec_Sampling" class="internal">Sampling Techniques (B2)</a></li>
+<li><a href="Sec_Visualization.html" data-scroll="Sec_Visualization" class="internal">Visualizing Data (B3)</a></li>
+<li><a href="Sec_Center.html" data-scroll="Sec_Center" class="internal">Centers of Data (B4)</a></li>
+<li><a href="Sec_Variation.html" data-scroll="Sec_Variation" class="internal">Variation of Data (B5)</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="Chap_Probability.html" data-scroll="Chap_Probability"><span class="codenumber">2</span> <span class="title">Probability (P)</span></a><ul>
+<a href="Chap_Probability.html" data-scroll="Chap_Probability" class="internal"><span class="codenumber">2</span> <span class="title">Probability (P)</span></a><ul>
 <li><a href="Sec_Introprob.html" data-scroll="Sec_Introprob" class="active">Introduction to Probability (P1)</a></li>
-<li><a href="Sec_Conditionalprob.html" data-scroll="Sec_Conditionalprob">Conditional Probability (P2)</a></li>
-<li><a href="Sec_Bayes.html" data-scroll="Sec_Bayes">Bayes Theorem (P3)</a></li>
-<li><a href="Sec_RandomVariables.html" data-scroll="Sec_RandomVariables">Random Variables (P4)</a></li>
-<li><a href="Sec_LinearCombofVariables.html" data-scroll="Sec_LinearCombofVariables">Linear Combinations of Random Variables (P5)</a></li>
+<li><a href="Sec_Conditionalprob.html" data-scroll="Sec_Conditionalprob" class="internal">Conditional Probability (P2)</a></li>
+<li><a href="Sec_Bayes.html" data-scroll="Sec_Bayes" class="internal">Bayes Theorem (P3)</a></li>
+<li><a href="Sec_RandomVariables.html" data-scroll="Sec_RandomVariables" class="internal">Random Variables (P4)</a></li>
+<li><a href="Sec_LinearCombofVariables.html" data-scroll="Sec_LinearCombofVariables" class="internal">Linear Combinations of Random Variables (P5)</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="Chap_Distributions.html" data-scroll="Chap_Distributions"><span class="codenumber">3</span> <span class="title">Distributions (D)</span></a><ul>
-<li><a href="Sec_StandardNormal.html" data-scroll="Sec_StandardNormal">Standard Normal Distribution (D1)</a></li>
-<li><a href="Sec_GeneralNormal.html" data-scroll="Sec_GeneralNormal">General Normal Distribution (D2)</a></li>
-<li><a href="Sec_Counting.html" data-scroll="Sec_Counting">Counting Principles (D3)</a></li>
-<li><a href="Sec_Binomial.html" data-scroll="Sec_Binomial">Binomial Distribution (D4)</a></li>
-<li><a href="Sec_NormalApprox.html" data-scroll="Sec_NormalApprox">Normal Approximation (D5)</a></li>
+<a href="Chap_Distributions.html" data-scroll="Chap_Distributions" class="internal"><span class="codenumber">3</span> <span class="title">Distributions (D)</span></a><ul>
+<li><a href="Sec_StandardNormal.html" data-scroll="Sec_StandardNormal" class="internal">Standard Normal Distribution (D1)</a></li>
+<li><a href="Sec_GeneralNormal.html" data-scroll="Sec_GeneralNormal" class="internal">General Normal Distribution (D2)</a></li>
+<li><a href="Sec_Counting.html" data-scroll="Sec_Counting" class="internal">Counting Principles (D3)</a></li>
+<li><a href="Sec_Binomial.html" data-scroll="Sec_Binomial" class="internal">Binomial Distribution (D4)</a></li>
+<li><a href="Sec_NormalApprox.html" data-scroll="Sec_NormalApprox" class="internal">Normal Approximation (D5)</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="Chap_Foundations.html" data-scroll="Chap_Foundations"><span class="codenumber">4</span> <span class="title">Foundations for Inference (F)</span></a><ul>
-<li><a href="Sec_PointEstimates.html" data-scroll="Sec_PointEstimates">Point Estimates (F1)</a></li>
-<li><a href="Sec_ConfidenceInterval.html" data-scroll="Sec_ConfidenceInterval">Introduction to Confidence Intervals (F2)</a></li>
-<li><a href="Sec_HypothesisTesing.html" data-scroll="Sec_HypothesisTesing">Introduction to Hypothesis Testing (F3)</a></li>
+<a href="Chap_Foundations.html" data-scroll="Chap_Foundations" class="internal"><span class="codenumber">4</span> <span class="title">Foundations for Inference (F)</span></a><ul>
+<li><a href="Sec_PointEstimates.html" data-scroll="Sec_PointEstimates" class="internal">Point Estimates (F1)</a></li>
+<li><a href="Sec_ConfidenceInterval.html" data-scroll="Sec_ConfidenceInterval" class="internal">Introduction to Confidence Intervals (F2)</a></li>
+<li><a href="Sec_HypothesisTesing.html" data-scroll="Sec_HypothesisTesing" class="internal">Introduction to Hypothesis Testing (F3)</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="Chap_Categorical.html" data-scroll="Chap_Categorical"><span class="codenumber">5</span> <span class="title">Inference for Categorical Variables (C)</span></a><ul>
-<li><a href="Sec_SizeofSampleCat.html" data-scroll="Sec_SizeofSampleCat">Size of Samples (Categorical)</a></li>
-<li><a href="Sec_TwoVarCat.html" data-scroll="Sec_TwoVarCat">Comparing Two Categorical Variables (C2)</a></li>
-<li><a href="Sec_ChiSquare.html" data-scroll="Sec_ChiSquare">Chi-Squared Test and Goodness of Fit (C3)</a></li>
-<li><a href="Sec_ChiIndependence.html" data-scroll="Sec_ChiIndependence">Chi-Squared Test and Independence (C4)</a></li>
+<a href="Chap_Categorical.html" data-scroll="Chap_Categorical" class="internal"><span class="codenumber">5</span> <span class="title">Inference for Categorical Variables (C)</span></a><ul>
+<li><a href="Sec_SizeofSampleCat.html" data-scroll="Sec_SizeofSampleCat" class="internal">Size of Samples (Categorical)</a></li>
+<li><a href="Sec_TwoVarCat.html" data-scroll="Sec_TwoVarCat" class="internal">Comparing Two Categorical Variables (C2)</a></li>
+<li><a href="Sec_ChiSquare.html" data-scroll="Sec_ChiSquare" class="internal">Chi-Squared Test and Goodness of Fit (C3)</a></li>
+<li><a href="Sec_ChiIndependence.html" data-scroll="Sec_ChiIndependence" class="internal">Chi-Squared Test and Independence (C4)</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="Chap_Numerical.html" data-scroll="Chap_Numerical"><span class="codenumber">6</span> <span class="title">Inference for Numerical Variables (N)</span></a><ul>
-<li><a href="Sec_tVariable.html" data-scroll="Sec_tVariable">The \(t\)-Variable and Sampling Distribution of Numerical Variables (N1)</a></li>
-<li><a href="Sec_OneVarNum.html" data-scroll="Sec_OneVarNum">Confidence Intervals and Hypothesis Testing for a single Numerical Variable (N2)</a></li>
-<li><a href="Sec_PairedData.html" data-scroll="Sec_PairedData">Paired Numerical Data (N3)</a></li>
-<li><a href="Sec_TwoVarNum.html" data-scroll="Sec_TwoVarNum">Comparing Two Numerical Variables (N4)</a></li>
-<li><a href="Sec_SizeofSampleNum.html" data-scroll="Sec_SizeofSampleNum">Size of Samples of Numerical Variables (N5)</a></li>
-<li><a href="Sec_ANOVA.html" data-scroll="Sec_ANOVA">ANOVA: Analysis of Variation (N6)</a></li>
+<a href="Chap_Numerical.html" data-scroll="Chap_Numerical" class="internal"><span class="codenumber">6</span> <span class="title">Inference for Numerical Variables (N)</span></a><ul>
+<li><a href="Sec_tVariable.html" data-scroll="Sec_tVariable" class="internal">The <span class="process-math">\(t\)</span>-Variable and Sampling Distribution of Numerical Variables (N1)</a></li>
+<li><a href="Sec_OneVarNum.html" data-scroll="Sec_OneVarNum" class="internal">Confidence Intervals and Hypothesis Testing for a single Numerical Variable (N2)</a></li>
+<li><a href="Sec_PairedData.html" data-scroll="Sec_PairedData" class="internal">Paired Numerical Data (N3)</a></li>
+<li><a href="Sec_TwoVarNum.html" data-scroll="Sec_TwoVarNum" class="internal">Comparing Two Numerical Variables (N4)</a></li>
+<li><a href="Sec_SizeofSampleNum.html" data-scroll="Sec_SizeofSampleNum" class="internal">Size of Samples of Numerical Variables (N5)</a></li>
+<li><a href="Sec_ANOVA.html" data-scroll="Sec_ANOVA" class="internal">ANOVA: Analysis of Variation (N6)</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="Chap_LinearRegression.html" data-scroll="Chap_LinearRegression"><span class="codenumber">7</span> <span class="title">Linear Regression (R)</span></a><ul>
-<li><a href="Sec_Correlation.html" data-scroll="Sec_Correlation">Linear Correlation of Variables (R1)</a></li>
-<li><a href="Sec_InterpretingRegression.html" data-scroll="Sec_InterpretingRegression">Interpreting Linear Regression (R2)</a></li>
-<li><a href="Sec_InferenceRegression.html" data-scroll="Sec_InferenceRegression">Inference and Linear Regression (R3)</a></li>
+<a href="Chap_LinearRegression.html" data-scroll="Chap_LinearRegression" class="internal"><span class="codenumber">7</span> <span class="title">Linear Regression (R)</span></a><ul>
+<li><a href="Sec_Correlation.html" data-scroll="Sec_Correlation" class="internal">Linear Correlation of Variables (R1)</a></li>
+<li><a href="Sec_InterpretingRegression.html" data-scroll="Sec_InterpretingRegression" class="internal">Interpreting Linear Regression (R2)</a></li>
+<li><a href="Sec_InferenceRegression.html" data-scroll="Sec_InferenceRegression" class="internal">Inference and Linear Regression (R3)</a></li>
 </ul>
 </li>
 </ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="Sec_Introprob"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="Sec_Introprob"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.1</span> <span class="title">Introduction to Probability (P1)</span>
 </h2>
 <section class="introduction" id="introduction-30"><p id="p-299">We use probability to build tools to describe and understand apparent randomness. We often frame probability in terms of a random process giving rise to an outcome.</p>
-<div class="displaymath">
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-1">
 \begin{align*}
 \text{Roll a die} \amp\to 1, 2, 3, 4, 5, \text{or}\ 6\\
 \text{Flip a coin} \amp\to H\ \text{or}\ T
@@ -212,10 +217,10 @@
 </div>
 <p class="continuation">Rolling a die or flipping a coin is a seemingly random process and each gives rise to an outcome.</p>
 <p id="p-300">In this section, we introduce the language of probability: events, probability of events, and operations of events.</p>
-<p id="p-301">Run the following code to download the <code class="code-inline tex2jax_ignore">loans_full_schema</code> data set, and display the variables it records: <div class="sagecell-r" id="sage-44"><script type="text/x-sage">loans = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/loans_full_schema.csv")
+<p id="p-301">Run the following code to download the <code class="code-inline tex2jax_ignore">loans_full_schema</code> data set, and display the variables it records: <pre class="ptx-sagecell sagecell-r" id="sage-44"><script type="text/x-sage">loans = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/loans_full_schema.csv")
 
 names(loans)
-</script></div></p>
+</script></pre></p>
 <p id="p-302">This data set represents thousands of loans made through the Lending Club platform, which is a platform that allows individuals to lend to other individuals.</p></section><section class="subsection" id="subsection-8"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.1.1</span> <span class="title">Defining Probability</span>
 </h3>
@@ -234,8 +239,8 @@ names(loans)
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Rolling a Six.</span>
 </h4>
 <article class="task exercise-like" id="task-144"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<p id="p-309">Run the following code to show a plot of 10 die rolls, and the proportion of die rolls that are 6's after each roll.  The red dashed line represents \(\frac{1}{6}\text{.}\)</p>
-<p id="p-310"><div class="sagecell-r" id="sage-45"><script type="text/x-sage">n=10                #number of die rolls
+<p id="p-309">Run the following code to show a plot of 10 die rolls, and the proportion of die rolls that are 6's after each roll.  The red dashed line represents <span class="process-math">\(\frac{1}{6}\text{.}\)</span></p>
+<p id="p-310"><pre class="ptx-sagecell sagecell-r" id="sage-45"><script type="text/x-sage">n=10                #number of die rolls
 
 sixes=0             # of sixes rolled so far
 Sixvec=rep(NA, n) #proportion of sixes rolled
@@ -250,7 +255,7 @@ for (i in 1:n){
 
 plot(Sixvec, type="l", ylim=c(0,1)) #plots linegraph of proportion of sixes
 abline(h=1/6, col="red", lty=2)     #draw y=1/6 line
-</script></div></p></article><article class="task exercise-like" id="task-145"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+</script></pre></p></article><article class="task exercise-like" id="task-145"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <p id="p-311">Run it a few times.  What do you notice about the different simulations?</p></article><article class="task exercise-like" id="task-146"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <p id="p-312">Change <code class="code-inline tex2jax_ignore">n=100</code> run it a few times.  What do you notice about the different simulations?</p></article><article class="task exercise-like" id="task-147"><h5 class="heading"><span class="codenumber">(d)</span></h5>
 <p id="p-313">Change <code class="code-inline tex2jax_ignore">n=1000</code> run it a few times.  What do you notice about the different simulations?</p></article><article class="task exercise-like" id="task-148"><h5 class="heading"><span class="codenumber">(e)</span></h5>
@@ -262,30 +267,30 @@ abline(h=1/6, col="red", lty=2)     #draw y=1/6 line
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="period">.</span>
 </h4>
 <p id="p-316">A collection of outcomes is called an <em class="emphasis">event</em>.</p>
-<p id="p-317">Given events \(A\text{,}\) \(B\text{,}\) we let \(A\ \text{or}\ B\) denote the event “either \(A\) occurs or \(B\) occurs or both.” <figure class="figure figure-like" id="figure-12"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/image-12.svg" role="img" class="contained" alt="Test Venn Diagram."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.3<span class="period">.</span></span><span class="space"> </span>\(A\ \text{or}\  B\)</figcaption></figure></p>
-<p id="p-318">We let \(A\ \text{and}\ B\) denote the event “both \(A\) and \(B\) occur at the same time.” <figure class="figure figure-like" id="figure-13"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/image-13.svg" role="img" class="contained" alt="Test Venn Diagram."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.4<span class="period">.</span></span><span class="space"> </span>\(A\ \text{and} B\)</figcaption></figure></p>
-<p id="p-319">We let \(A^c\) pronounced “\(A\) complement” denote the event “\(A\) does <em class="emphasis">not</em> occur.” <figure class="figure figure-like" id="figure-14"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/image-14.svg" role="img" class="contained" alt="Test Venn Diagram."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.5<span class="period">.</span></span><span class="space"> </span>\(A^c\)</figcaption></figure></p></article><article class="activity project-like" id="activity-events"><h4 class="heading">
+<p id="p-317">Given events <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(B\text{,}\)</span> we let <span class="process-math">\(A\ \text{or}\ B\)</span> denote the event “either <span class="process-math">\(A\)</span> occurs or <span class="process-math">\(B\)</span> occurs or both.” <figure class="figure figure-like" id="figure-11"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/image-11.svg" role="img" class="contained" alt="Test Venn Diagram."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.3<span class="period">.</span></span><span class="space"> </span><span class="process-math">\(A\ \text{or}\  B\)</span></figcaption></figure></p>
+<p id="p-318">We let <span class="process-math">\(A\ \text{and}\ B\)</span> denote the event “both <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> occur at the same time.” <figure class="figure figure-like" id="figure-12"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/image-12.svg" role="img" class="contained" alt="Test Venn Diagram."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.4<span class="period">.</span></span><span class="space"> </span><span class="process-math">\(A\ \text{and} B\)</span></figcaption></figure></p>
+<p id="p-319">We let <span class="process-math">\(A^c\)</span> pronounced “<span class="process-math">\(A\)</span> complement” denote the event “<span class="process-math">\(A\)</span> does <em class="emphasis">not</em> occur.” <figure class="figure figure-like" id="figure-13"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/image-13.svg" role="img" class="contained" alt="Test Venn Diagram."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.5<span class="period">.</span></span><span class="space"> </span><span class="process-math">\(A^c\)</span></figcaption></figure></p></article><article class="activity project-like" id="activity-events"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Example Events.</span>
 </h4>
-<div class="introduction" id="introduction-32"><p id="p-320">Consider the set of numbers \(\{1,2,3,4,5,6,7,8,9,10\}\text{.}\)  Suppose one picks one of these numbers.</p></div>
+<div class="introduction" id="introduction-32"><p id="p-320">Consider the set of numbers <span class="process-math">\(\{1,2,3,4,5,6,7,8,9,10\}\text{.}\)</span>  Suppose one picks one of these numbers.</p></div>
 <article class="task exercise-like" id="task-150"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<p id="p-321">Let \(A\) denote the event “the chose number is greater than 5”.  What outcomes belong to \(A\text{?}\)</p></article><article class="task exercise-like" id="task-151"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<p id="p-322">Let \(B\) denote the event “the chose number is prime”.  What outcomes belong to \(B\text{?}\)</p></article><article class="task exercise-like" id="task-152"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<p id="p-323">Consider the event  \(A\ \text{and} B\text{.}\) Give a verbal description of this event.</p></article><article class="task exercise-like" id="task-153"><h5 class="heading"><span class="codenumber">(d)</span></h5>
-<p id="p-324">What outcomes belong to \(A\ \text{and} B\text{?}\)</p></article><article class="task exercise-like" id="task-154"><h5 class="heading"><span class="codenumber">(e)</span></h5>
-<p id="p-325">Consider the event  \(A\ \text{or}\  B\text{.}\) Give a verbal description of this event.</p></article><article class="task exercise-like" id="task-155"><h5 class="heading"><span class="codenumber">(f)</span></h5>
-<p id="p-326">What outcomes belong to \(A\ \text{or}\  B\text{?}\)</p></article><article class="task exercise-like" id="task-156"><h5 class="heading"><span class="codenumber">(g)</span></h5>
-<p id="p-327">Consider the event  \(B^c\text{.}\) Give a verbal description of this event.</p></article><article class="task exercise-like" id="task-157"><h5 class="heading"><span class="codenumber">(h)</span></h5>
-<p id="p-328">What outcomes belong to \(B^c\text{?}\)</p></article><article class="task exercise-like" id="task-158"><h5 class="heading"><span class="codenumber">(i)</span></h5>
-<p id="p-329">Consider the event  \(A^c\ \text{and} B\text{.}\) Give a verbal description of this event.</p></article><article class="task exercise-like" id="task-159"><h5 class="heading"><span class="codenumber">(j)</span></h5>
-<p id="p-330">What outcomes belong to \(A^c\ \text{and} B\text{?}\)</p></article></article><article class="remark remark-like" id="remark-3"><h4 class="heading">
+<p id="p-321">Let <span class="process-math">\(A\)</span> denote the event “the chose number is greater than 5”.  What outcomes belong to <span class="process-math">\(A\text{?}\)</span></p></article><article class="task exercise-like" id="task-151"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-322">Let <span class="process-math">\(B\)</span> denote the event “the chose number is prime”.  What outcomes belong to <span class="process-math">\(B\text{?}\)</span></p></article><article class="task exercise-like" id="task-152"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-323">Consider the event  <span class="process-math">\(A\ \text{and} B\text{.}\)</span> Give a verbal description of this event.</p></article><article class="task exercise-like" id="task-153"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-324">What outcomes belong to <span class="process-math">\(A\ \text{and} B\text{?}\)</span></p></article><article class="task exercise-like" id="task-154"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-325">Consider the event  <span class="process-math">\(A\ \text{or}\  B\text{.}\)</span> Give a verbal description of this event.</p></article><article class="task exercise-like" id="task-155"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p id="p-326">What outcomes belong to <span class="process-math">\(A\ \text{or}\  B\text{?}\)</span></p></article><article class="task exercise-like" id="task-156"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p id="p-327">Consider the event  <span class="process-math">\(B^c\text{.}\)</span> Give a verbal description of this event.</p></article><article class="task exercise-like" id="task-157"><h5 class="heading"><span class="codenumber">(h)</span></h5>
+<p id="p-328">What outcomes belong to <span class="process-math">\(B^c\text{?}\)</span></p></article><article class="task exercise-like" id="task-158"><h5 class="heading"><span class="codenumber">(i)</span></h5>
+<p id="p-329">Consider the event  <span class="process-math">\(A^c\ \text{and} B\text{.}\)</span> Give a verbal description of this event.</p></article><article class="task exercise-like" id="task-159"><h5 class="heading"><span class="codenumber">(j)</span></h5>
+<p id="p-330">What outcomes belong to <span class="process-math">\(A^c\ \text{and} B\text{?}\)</span></p></article></article><article class="remark remark-like" id="remark-3"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.1.6</span><span class="period">.</span>
 </h4>
-<p id="p-331">Given an experiment, the set of all possible outcomes is denoted the <em class="emphasis">sample space</em>.  For a finite sample space \(S\) where all outcomes are equally likely, the probability of an event \(A\) is the size of the event divided by the size of the sample space:</p>
-<div class="displaymath">
+<p id="p-331">Given an experiment, the set of all possible outcomes is denoted the <em class="emphasis">sample space</em>.  For a finite sample space <span class="process-math">\(S\)</span> where all outcomes are equally likely, the probability of an event <span class="process-math">\(A\)</span> is the size of the event divided by the size of the sample space:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 P(A)=\frac{|A|}{|S|}
 \end{equation*}
@@ -293,64 +298,64 @@ P(A)=\frac{|A|}{|S|}
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Extreme Scenarios.</span>
 </h4>
 <article class="task exercise-like" id="task-160"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<p id="p-332">If an event \(X\) has probability \(P(X)=0\text{,}\) what does that mean?</p></article><article class="task exercise-like" id="task-161"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<p id="p-333">If an event \(Y\) has probability \(P(Y)=1\text{,}\) what does that mean?</p></article><article class="task exercise-like" id="task-162"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<p id="p-334">Could an event \(Z\) have probability \(P(Z)\lt0\) or \(P(Z)&gt;1\text{?}\)  If it can, give an example, if it can't, explain why not.</p></article></article><article class="activity project-like" id="activity-prob"><h4 class="heading">
+<p id="p-332">If an event <span class="process-math">\(X\)</span> has probability <span class="process-math">\(P(X)=0\text{,}\)</span> what does that mean?</p></article><article class="task exercise-like" id="task-161"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-333">If an event <span class="process-math">\(Y\)</span> has probability <span class="process-math">\(P(Y)=1\text{,}\)</span> what does that mean?</p></article><article class="task exercise-like" id="task-162"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-334">Could an event <span class="process-math">\(Z\)</span> have probability <span class="process-math">\(P(Z)\lt0\)</span> or <span class="process-math">\(P(Z)&gt;1\text{?}\)</span>  If it can, give an example, if it can't, explain why not.</p></article></article><article class="activity project-like" id="activity-prob"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">Example Probability.</span>
 </h4>
-<div class="introduction" id="introduction-33"><p id="p-335">Recall from <a href="" class="xref" data-knowl="./knowl/activity-events.html" title="Activity 2.1.3: Example Events">Activity 2.1.3</a> the sample space \(S=\{1,2,3,4,5,6,7,8,9,10\}\text{,}\) the events \(A\)=“the chosen number is greater than 5” and \(B\)=“the chosen number is prime”.</p></div>
+<div class="introduction" id="introduction-33"><p id="p-335">Recall from <a href="" class="xref" data-knowl="./knowl/activity-events.html" title="Activity 2.1.3: Example Events">Activity 2.1.3</a> the sample space <span class="process-math">\(S=\{1,2,3,4,5,6,7,8,9,10\}\text{,}\)</span> the events <span class="process-math">\(A\)</span>=“the chosen number is greater than 5” and <span class="process-math">\(B\)</span>=“the chosen number is prime”.</p></div>
 <article class="task exercise-like" id="task-163"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<p id="p-336">What is \(P(A)\text{?}\)</p></article><article class="task exercise-like" id="task-164"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<p id="p-337">What is \(P(B)\text{?}\)</p></article><article class="task exercise-like" id="task-165"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<p id="p-338">What is \(P(A\ \text{and} B)\text{?}\)</p></article><article class="task exercise-like" id="task-166"><h5 class="heading"><span class="codenumber">(d)</span></h5>
-<p id="p-339">What is \(P(A\ \text{or}\  B)\text{?}\)</p></article><article class="task exercise-like" id="task-167"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-336">What is <span class="process-math">\(P(A)\text{?}\)</span></p></article><article class="task exercise-like" id="task-164"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-337">What is <span class="process-math">\(P(B)\text{?}\)</span></p></article><article class="task exercise-like" id="task-165"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-338">What is <span class="process-math">\(P(A\ \text{and} B)\text{?}\)</span></p></article><article class="task exercise-like" id="task-166"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-339">What is <span class="process-math">\(P(A\ \text{or}\  B)\text{?}\)</span></p></article><article class="task exercise-like" id="task-167"><h5 class="heading"><span class="codenumber">(e)</span></h5>
 <p id="p-340">Look at the probabilities you computed.  What is the relationship between them?</p></article><article class="task exercise-like" id="task-168"><h5 class="heading"><span class="codenumber">(f)</span></h5>
-<p id="p-341">In the following Venn Diagram take thw numbers 1-10, and place them in a Venn Diagram, depending on whether or not they belong to both \(A\) and \(B\text{,}\) just \(A\text{,}\) just \(B\) or neither.</p>
-<p id="p-342"><figure class="figure figure-like" id="figure-15"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/image-15.svg" role="img" class="contained" alt="Empty Venn Diagram."></div>
+<p id="p-341">In the following Venn Diagram take thw numbers 1-10, and place them in a Venn Diagram, depending on whether or not they belong to both <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{,}\)</span> just <span class="process-math">\(A\text{,}\)</span> just <span class="process-math">\(B\)</span> or neither.</p>
+<p id="p-342"><figure class="figure figure-like" id="figure-14"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/image-14.svg" role="img" class="contained" alt="Empty Venn Diagram."></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.7<span class="period">.</span></span><span class="space"> </span>Fill in the Venn Diagram with the numbers 1-10.</figcaption></figure></p></article><article class="task exercise-like" id="task-169"><h5 class="heading"><span class="codenumber">(g)</span></h5>
-<p id="p-343">Is \(P(A\ \text{or}\  B)=P(A)+P(B)\text{?}\)  If they're not equal, how might we adjust the sum so that they are?</p></article><article class="task exercise-like" id="task-170"><h5 class="heading"><span class="codenumber">(h)</span></h5>
-<p id="p-344">Compare \(P(A)\) to \(P(A^c)\) and \(P(B)\) to \(P(B^c)\text{.}\)  What is the relationship there?</p></article></article><article class="remark remark-like" id="remarkIE"><h4 class="heading">
+<p id="p-343">Is <span class="process-math">\(P(A\ \text{or}\  B)=P(A)+P(B)\text{?}\)</span>  If they're not equal, how might we adjust the sum so that they are?</p></article><article class="task exercise-like" id="task-170"><h5 class="heading"><span class="codenumber">(h)</span></h5>
+<p id="p-344">Compare <span class="process-math">\(P(A)\)</span> to <span class="process-math">\(P(A^c)\)</span> and <span class="process-math">\(P(B)\)</span> to <span class="process-math">\(P(B^c)\text{.}\)</span>  What is the relationship there?</p></article></article><article class="remark remark-like" id="remarkIE"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.1.8</span><span class="period">.</span>
 </h4>
-<p id="p-345">Given events \(A, B\text{,}\) we have that:</p>
-<div class="displaymath">
+<p id="p-345">Given events <span class="process-math">\(A, B\text{,}\)</span> we have that:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 P(A\ \text{or}\  B)=P(A)+P(B)-P(A\ \text{and} B).
 \end{equation*}
 </div>
-<p class="continuation">This  corresponds to the outcomes of \(A\) plus the outcomes of \(B\text{,}\) then removing the  overlap.</p>
-<p id="p-346">Given event \(A\text{,}\) we have that \(P(A^c)=1-P(A)\text{.}\)  This corresponds to all outcomes, removing the ones belonging to \(A\text{.}\)</p></article><article class="activity project-like" id="activity-loansprob"><h4 class="heading">
+<p class="continuation">This  corresponds to the outcomes of <span class="process-math">\(A\)</span> plus the outcomes of <span class="process-math">\(B\text{,}\)</span> then removing the  overlap.</p>
+<p id="p-346">Given event <span class="process-math">\(A\text{,}\)</span> we have that <span class="process-math">\(P(A^c)=1-P(A)\text{.}\)</span>  This corresponds to all outcomes, removing the ones belonging to <span class="process-math">\(A\text{.}\)</span></p></article><article class="activity project-like" id="activity-loansprob"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">Application Type and Homeownership.</span>
 </h4>
 <article class="task exercise-like" id="task-171"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<p id="p-347">Run the following code to display the number of loans out of 10,000 that were for joint applications: <div class="sagecell-r" id="sage-46"><script type="text/x-sage">length(which(loans$application_type=="joint"))
-</script></div></p></article><article class="task exercise-like" id="task-172"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<p id="p-348">Run the following code to display the number of loans out of 10,000 that were for applicants with mortages: <div class="sagecell-r" id="sage-47"><script type="text/x-sage">length(which(loans$homeownership=="MORTGAGE"))
-</script></div></p></article><article class="task exercise-like" id="task-173"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<p id="p-349">Run the following code to display the number of loans out of 10,000 that were for joint applicants with mortages: <div class="sagecell-r" id="sage-48"><script type="text/x-sage">length(which(loans$application_type=="joint" & loans$homeownership=="MORTGAGE"))
-</script></div></p></article><article class="task exercise-like" id="task-174"><h5 class="heading"><span class="codenumber">(d)</span></h5>
-<p id="p-350">Suppose we pick a loan at random.  Let \(J\) denote the event “joint application” and \(M\) denote “applicant(s) with a mortage”.  Find \(P(J), P(M), P(M\ \text{and} J), P(M\ \text{or}\  J)\)</p></article><article class="task exercise-like" id="task-175"><h5 class="heading"><span class="codenumber">(e)</span></h5>
-<p id="p-351">Run the following code to sample 1000 random loans from this list: <div class="sagecell-r" id="sage-49"><script type="text/x-sage">index = sample(1:nrow(loans), 1000)
+<p id="p-347">Run the following code to display the number of loans out of 10,000 that were for joint applications: <pre class="ptx-sagecell sagecell-r" id="sage-46"><script type="text/x-sage">length(which(loans$application_type=="joint"))
+</script></pre></p></article><article class="task exercise-like" id="task-172"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-348">Run the following code to display the number of loans out of 10,000 that were for applicants with mortages: <pre class="ptx-sagecell sagecell-r" id="sage-47"><script type="text/x-sage">length(which(loans$homeownership=="MORTGAGE"))
+</script></pre></p></article><article class="task exercise-like" id="task-173"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-349">Run the following code to display the number of loans out of 10,000 that were for joint applicants with mortages: <pre class="ptx-sagecell sagecell-r" id="sage-48"><script type="text/x-sage">length(which(loans$application_type=="joint" & loans$homeownership=="MORTGAGE"))
+</script></pre></p></article><article class="task exercise-like" id="task-174"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-350">Suppose we pick a loan at random.  Let <span class="process-math">\(J\)</span> denote the event “joint application” and <span class="process-math">\(M\)</span> denote “applicant(s) with a mortage”.  Find <span class="process-math">\(P(J), P(M), P(M\ \text{and} J), P(M\ \text{or}\  J)\)</span></p></article><article class="task exercise-like" id="task-175"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-351">Run the following code to sample 1000 random loans from this list: <pre class="ptx-sagecell sagecell-r" id="sage-49"><script type="text/x-sage">index = sample(1:nrow(loans), 1000)
 samp=loans[index,]
 
 names(samp)
-</script></div></p></article><article class="task exercise-like" id="task-176"><h5 class="heading"><span class="codenumber">(f)</span></h5>
-<p id="p-352">Run the following code to plot a contingency table for the above sample, comparing application type to homeownership: <div class="sagecell-r" id="sage-50"><script type="text/x-sage">table(samp$application_type,samp$homeownership)
-</script></div></p></article><article class="task exercise-like" id="task-177"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+</script></pre></p></article><article class="task exercise-like" id="task-176"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p id="p-352">Run the following code to plot a contingency table for the above sample, comparing application type to homeownership: <pre class="ptx-sagecell sagecell-r" id="sage-50"><script type="text/x-sage">table(samp$application_type,samp$homeownership)
+</script></pre></p></article><article class="task exercise-like" id="task-177"><h5 class="heading"><span class="codenumber">(g)</span></h5>
 <p id="p-353">What proportion of your sample were joint applications?  From homeowners?  From both? From either one or the other?  How does this compare to what you computed in (d)?</p></article></article><article class="activity project-like" id="activity-loansprob2"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">Probability of your chosen variables.</span>
 </h4>
 <article class="task exercise-like" id="task-178"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <p id="p-354">Follow this link and identify two categorical vairables and a value for each whose probability you wish to find.  <a class="external" href="https://www.openintro.org/data/index.php?data=loans_full_schema" target="_blank"><code class="code-inline tex2jax_ignore">https://www.openintro.org/data/index.php?data=loans_full_schema</code></a>.</p></article><article class="task exercise-like" id="task-179"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<p id="p-355">Modify the following code to display the number of loans out of 10,000 where the variable of your choice takes on the value of your choice: <div class="sagecell-r" id="sage-51"><script type="text/x-sage">length(which(loans$FIXME=="FIXME"))
-</script></div></p></article><article class="task exercise-like" id="task-180"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<p id="p-356">Modify the following code to display the number of loans out of 10,000 where both variables of your choice takes on the values of your choice: <div class="sagecell-r" id="sage-52"><script type="text/x-sage">length(which(loans$FIXME=="FIXME" & loans$FIXME=="FIXME"))
-</script></div></p></article><article class="task exercise-like" id="task-181"><h5 class="heading"><span class="codenumber">(d)</span></h5>
-<p id="p-357">Modify the following code to sample 1000 random loans from this list and display a contingency table for your two variables: <div class="sagecell-r" id="sage-53"><script type="text/x-sage">index = sample(1:nrow(loans), 1000)
+<p id="p-355">Modify the following code to display the number of loans out of 10,000 where the variable of your choice takes on the value of your choice: <pre class="ptx-sagecell sagecell-r" id="sage-51"><script type="text/x-sage">length(which(loans$FIXME=="FIXME"))
+</script></pre></p></article><article class="task exercise-like" id="task-180"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-356">Modify the following code to display the number of loans out of 10,000 where both variables of your choice takes on the values of your choice: <pre class="ptx-sagecell sagecell-r" id="sage-52"><script type="text/x-sage">length(which(loans$FIXME=="FIXME" & loans$FIXME=="FIXME"))
+</script></pre></p></article><article class="task exercise-like" id="task-181"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-357">Modify the following code to sample 1000 random loans from this list and display a contingency table for your two variables: <pre class="ptx-sagecell sagecell-r" id="sage-53"><script type="text/x-sage">index = sample(1:nrow(loans), 1000)
 samp=loans[index,]
 
 table(samp$FIXME,samp$FIXME)
-</script></div></p></article><article class="task exercise-like" id="task-182"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+</script></pre></p></article><article class="task exercise-like" id="task-182"><h5 class="heading"><span class="codenumber">(e)</span></h5>
 <p id="p-358">How do the results from your sample compare to the counts you computed earlier?</p></article></article></section></section></div></main>
 </div>
 </body>

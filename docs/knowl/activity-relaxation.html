@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-27T13:18:47-06:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -12,47 +9,43 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script><script>$(function () {
-    // Make *any* div with class 'sagecell-r' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
-                           linked: true,
-                           languages: ['r'],
-                           evalButtonText: 'Evaluate (R)'});
-});
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
 </script>
 </head>
-<body>
-<article class="activity project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.6.8</span><span class="period">.</span><span class="space"> </span><span class="title">Relaxation and Degree Attainment: <code class="code-inline tex2jax_ignore">R</code>.</span>
-</h6>
+</h4>
 <div class="introduction">
-<p xmlns:svg="http://www.w3.org/2000/svg">Is there any impact on degree attainment and the amount of time spent relaxing?</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to download  the <code class="code-inline tex2jax_ignore">gss2010.csv</code>  data set which contains information from the 2010 social survey and display it's variables: <div class="sagecell-r" id="sage-326"><script type="text/x-sage">gss2010 = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/gss2010.csv")
+<p>Is there any impact on degree attainment and the amount of time spent relaxing?</p>
+<p>Run the following code to download  the <code class="code-inline tex2jax_ignore">gss2010.csv</code>  data set which contains information from the 2010 social survey and display it's variables: <pre class="ptx-sagecell sagecell-r" id="sage-332"><script type="text/x-sage">gss2010 = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/gss2010.csv")
 
 names(gss2010)
-</script></div></p>
+</script></pre> Click here to learn more about this data set: <a class="external" href="https://www.openintro.org/data/index.php?data=gss2010" target="_blank"><code class="code-inline tex2jax_ignore">https://www.openintro.org/data/index.php?data=gss2010</code></a>.</p>
 </div>
-<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to rplot a boxplot for the hours of relaxation in a day seperated by degree attainment. <div class="sagecell-r" id="sage-327"><script type="text/x-sage">boxplot(hrsrelax ~ degree, data=gss2010)
-</script></div></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to create an <code class="code-inline tex2jax_ignore">aov</code> model of <code class="code-inline tex2jax_ignore">gss2010</code> and summarize it. <div class="sagecell-r" id="sage-328"><script type="text/x-sage">relaxaov=aov(hrsrelax ~ degree, data=gss2010)
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>Run the following code to rplot a boxplot for the hours of relaxation in a day seperated by degree attainment. <pre class="ptx-sagecell sagecell-r" id="sage-333"><script type="text/x-sage">boxplot(hrsrelax ~ degree, data=gss2010)
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>Run the following code to create an <code class="code-inline tex2jax_ignore">aov</code> model of <code class="code-inline tex2jax_ignore">gss2010</code> and summarize it. <pre class="ptx-sagecell sagecell-r" id="sage-334"><script type="text/x-sage">relaxaov=aov(hrsrelax ~ degree, data=gss2010)
 summary(relaxaov)
-</script></div></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(c)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(d)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Do we  reject the null hypothesis?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(e)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">What sort of error could have been made? (Type 1 or Type 2)</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(f)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg"><code class="code-inline tex2jax_ignore">mntlhlth</code> measures “For how many days during the past 30 days was your mental health, which includes stress, depression, and problems with emotions, not good?”</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Re-run the above comparing this variable across degree attainment.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(g)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg"><code class="code-inline tex2jax_ignore">hrs1</code> measures “Hours worked each week.”</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Re-run the above comparing this variable across degree attainment.</p></article></article><span class="incontext"><a href="Sec_ANOVA.html#activity-relaxation">in-context</a></span>
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>State the meaning of the <span class="process-math">\(p\)</span>-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>Do we  reject the null hypothesis?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p>What sort of error could have been made? (Type 1 or Type 2)</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p><code class="code-inline tex2jax_ignore">mntlhlth</code> measures “For how many days during the past 30 days was your mental health, which includes stress, depression, and problems with emotions, not good?”</p>
+<p>Re-run the above comparing this variable across degree attainment.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p><code class="code-inline tex2jax_ignore">hrs1</code> measures “Hours worked each week.”</p>
+<p>Re-run the above comparing this variable across degree attainment.</p></article></article><span class="incontext"><a href="Sec_ANOVA.html#activity-relaxation" class="internal">in-context</a></span>
 </body>
 </html>

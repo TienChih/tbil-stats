@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-27T13:18:34-06:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -12,17 +9,25 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
 </head>
-<body>
-<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>The difference between these variables is <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">itself</em> a random variable, with a population mean \(\mu_{d}\) and population standard deviation \(\sigma_{d}\text{.}\)  We can then perform any one variable numerical inference exactly as in we were in <a href="Sec_OneVarNum.html" class="internal" title="Section 6.2: Confidence Intervals and Hypothesis Testing for a single Numerical Variable">Section 6.2</a>.  We just have to properly interpret what statements about the difference mean:</p>
-<ul class="disc">
-<li>A C% <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">confidence interval</em> for \(\mu_d\) is an interval that has a C% chance of containing the average difference between our two populations.</li>
-<li>The null hypothesis \(\mu_d=\mu_0\) is the assumption that the average difference between the two populations could be \(\mu_0\text{.}\)</li>
-<li>The alternative hypothesis \(\mu_d\lt \mu_0\) is the claim that the average difference between the two populations is less than \(\mu_0\text{.}\)</li>
-<li>The alternative hypothesis \(\mu_d&gt; \mu_0\) is the claim that the average difference between the two populations is greater than \(\mu_0\text{.}\)</li>
-<li>The alternative hypothesis \(\mu_d\neq \mu_0\) is the claim that the average difference between the two populations is different from \(\mu_0\text{.}\)</li>
-</ul>
-<span class="incontext"><a href="Sec_PairedData.html#p-1341">in-context</a></span>
+<body class="ignore-math">
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Run the following code to redisplay the above histogram, along with the actual standard deviation of housing prices in Ames, Iowa: <pre class="ptx-sagecell sagecell-r" id="sage-232"><script type="text/x-sage">hist(sdvec, breaks=25)
+abline(v = sd(ames$price), col="red", lwd=3, lty=2)
+</script></pre> What do we notice about the possible variation in sample standard deviations?</p>
+<span class="incontext"><a href="Sec_tVariable.html#p-1341" class="internal">in-context</a></span>
 </body>
 </html>

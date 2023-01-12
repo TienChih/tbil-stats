@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-27T13:18:00-06:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -12,11 +9,29 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
 </head>
-<body>
-<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Task</span><span class="space"> </span><span class="codenumber">3.1.4.e</span><span class="period">.</span>
-</h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">In the interactive above, let <code class="code-inline tex2jax_ignore">P</code> to be the area of the right tail and click <code class="code-inline tex2jax_ignore">From the right</code>.  What does this tell you about \(k\text{?}\)</p></article><span class="incontext"><a href="Sec_StandardNormal.html#task-292">in-context</a></span>
+<body class="ignore-math">
+<article class="task exercise-like"><h5 class="heading">
+<span class="type">Task</span><span class="space"> </span><span class="codenumber">2.4.2.g</span><span class="period">.</span>
+</h5>
+<p>Modify the following code to simulate 10,000 students and their purchases, and display a histogram of their purchases, and the mean purchaseprice.</p>
+<p><pre class="ptx-sagecell sagecell-r" id="sage-87"><script type="text/x-sage">textbookpurchases = sample(c(0, 137, 170), FIXME, replace = TRUE, prob = c(0.2, 0.55, 0.25))
+hist(textbookpurchases)
+mean(textbookpurchases)
+</script></pre></p>
+<p>How does this value compare to what you found in (d)? In (f)?</p></article><span class="incontext"><a href="Sec_RandomVariables.html#task-292" class="internal">in-context</a></span>
 </body>
 </html>

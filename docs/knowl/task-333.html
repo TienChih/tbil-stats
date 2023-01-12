@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-27T13:18:02-06:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -12,11 +9,29 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
 </head>
-<body>
-<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Task</span><span class="space"> </span><span class="codenumber">3.2.6.b</span><span class="period">.</span>
-</h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Suppose a special award is given to the top 5% fastest runners.  What would be the predicted cutoff for this time?</p></article><span class="incontext"><a href="Sec_GeneralNormal.html#task-333">in-context</a></span>
+<body class="ignore-math">
+<article class="task exercise-like"><h4 class="heading">
+<span class="type">Task</span><span class="space"> </span><span class="codenumber">3.1.1.e</span><span class="period">.</span>
+</h4>
+<p>Run the following code to simulate 10,000 standard normal variables and plot a proportion histogram of the outcomes.</p>
+<p><pre class="ptx-sagecell sagecell-r" id="sage-109"><script type="text/x-sage">standarnorm=rnorm(10000, mean = 0, sd = 1)
+
+hist(standarnorm, breaks = 50, density = TRUE)
+</script></pre></p>
+<p>How does the shape of this histogram compare to the standard normal curve?</p></article><span class="incontext"><a href="Sec_StandardNormal.html#task-333" class="internal">in-context</a></span>
 </body>
 </html>

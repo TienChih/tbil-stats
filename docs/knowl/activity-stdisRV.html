@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-27T13:18:26-06:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -12,50 +9,46 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script><script>$(function () {
-    // Make *any* div with class 'sagecell-r' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
-                           linked: true,
-                           languages: ['r'],
-                           evalButtonText: 'Evaluate (R)'});
-});
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
 </script>
 </head>
-<body>
-<article class="activity project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Variation in Parameters.</span>
-</h6>
+</h4>
 <div class="introduction">
-<p xmlns:svg="http://www.w3.org/2000/svg">With categorical variables, the mean and standard deviation of the sampling distribution is totally determined by one parameter: \(p\text{.}\)  We can see this in the statement of <a class="xref" data-knowl="./knowl/theorem-CLTprop.html" title="Theorem 4.1.4: The Central Limit Theorem (Proportion)">Theorem 4.1.4</a>.  So when we assume a null hypothesis and set \(p=p_0\text{,}\) this strictly determines the hypothetical sampling distribution.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">As we see in <a class="xref" data-knowl="./knowl/theorem-CLTnum.html" title="Theorem 6.1.2: The Central Limit Theorem (Numerical)">Theorem 6.1.2</a>, the sampling distribution for \(\bar{x}\) is determined by both \(\mu\) <em class="emphasis">and</em> \(\sigma\text{.}\)  So if one were to conduct a hypothesis test and set \(\mu=\mu_0\text{,}\) there's still the question of what \(\sigma\) is.  The general practice is to assume it's the same as the sample standard deviation, but how good of an estimate is this?</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to download and the <code class="code-inline tex2jax_ignore">ames.csv</code> data set which contains information of houses in Ames, Iowa, and to see it's variable names: <div class="sagecell-r" id="sage-221"><script type="text/x-sage">ames = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/ames.csv")
+<p>With categorical variables, the mean and standard deviation of the sampling distribution is totally determined by one parameter: <span class="process-math">\(p\text{.}\)</span>  We can see this in the statement of <a href="" class="xref" data-knowl="./knowl/theorem-CLTprop.html" title="Theorem 4.1.4: The Central Limit Theorem (Proportion)">Theorem 4.1.4</a>.  So when we assume a null hypothesis and set <span class="process-math">\(p=p_0\text{,}\)</span> this strictly determines the hypothetical sampling distribution.</p>
+<p>As we see in <a href="" class="xref" data-knowl="./knowl/theorem-CLTnum.html" title="Theorem 6.1.2: The Central Limit Theorem (Numerical)">Theorem 6.1.2</a>, the sampling distribution for <span class="process-math">\(\bar{x}\)</span> is determined by both <span class="process-math">\(\mu\)</span> <em class="emphasis">and</em> <span class="process-math">\(\sigma\text{.}\)</span>  So if one were to conduct a hypothesis test and set <span class="process-math">\(\mu=\mu_0\text{,}\)</span> there's still the question of what <span class="process-math">\(\sigma\)</span> is.  The general practice is to assume it's the same as the sample standard deviation, but how good of an estimate is this?</p>
+<p>Run the following code to download and the <code class="code-inline tex2jax_ignore">ames.csv</code> data set which contains information of houses in Ames, Iowa, and to see it's variable names: <pre class="ptx-sagecell sagecell-r" id="sage-227"><script type="text/x-sage">ames = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/ames.csv")
 
 names(ames)
-</script></div></p>
+</script></pre> Click here to learn more about this data set: <a class="external" href="https://www.openintro.org/data/index.php?data=ames" target="_blank"><code class="code-inline tex2jax_ignore">https://www.openintro.org/data/index.php?data=ames</code></a>.</p>
 </div>
-<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to sample 30 random houses from Ames, Iowa and display their housing prices: <div class="sagecell-r" id="sage-222"><script type="text/x-sage">n=30
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>Run the following code to sample 30 random houses from Ames, Iowa and display their housing prices: <pre class="ptx-sagecell sagecell-r" id="sage-228"><script type="text/x-sage">n=30
 index = sample(1:nrow(ames), n)
 samp=ames[index,]
 samp$price
-</script></div></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to show the standard deviation of  housing prices in this sample: <div class="sagecell-r" id="sage-223"><script type="text/x-sage">sd(samp$price)
-</script></div></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(c)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to sample 30 new random houses from Ames, Iowa and display the standard deviation of their housing prices: <div class="sagecell-r" id="sage-224"><script type="text/x-sage">n=30
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>Run the following code to show the standard deviation of  housing prices in this sample: <pre class="ptx-sagecell sagecell-r" id="sage-229"><script type="text/x-sage">sd(samp$price)
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>Run the following code to sample 30 new random houses from Ames, Iowa and display the standard deviation of their housing prices: <pre class="ptx-sagecell sagecell-r" id="sage-230"><script type="text/x-sage">n=30
 index = sample(1:nrow(ames), n)
 samp=ames[index,]
 sd(samp$price)
-</script></div> How does this outcome compare to what you found in (a)?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(d)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to, for <code class="code-inline tex2jax_ignore">trials=1000</code> times, sample 30 new random houses from Ames, Iowa and record the standard deviation of their housing prices, and display a histogram of the standard deviations: <div class="sagecell-r" id="sage-225"><script type="text/x-sage">n=30
+</script></pre> How does this outcome compare to what you found in (a)?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>Run the following code to, for <code class="code-inline tex2jax_ignore">trials=1000</code> times, sample 30 new random houses from Ames, Iowa and record the standard deviation of their housing prices, and display a histogram of the standard deviations: <pre class="ptx-sagecell sagecell-r" id="sage-231"><script type="text/x-sage">n=30
 trials=1000
 sdvec=rep(NA, trials)
 
@@ -66,19 +59,19 @@ for(i in 1:trials){
 }
 
 hist(sdvec, breaks=25)
-</script></div> What do we notice about the possible variation in sample standard deviations?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(e)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to redisplay the above histogram, along with the actual standard deviation of housing prices in Ames, Iowa: <div class="sagecell-r" id="sage-226"><script type="text/x-sage">hist(sdvec, breaks=25)
+</script></pre> What do we notice about the possible variation in sample standard deviations?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p>Run the following code to redisplay the above histogram, along with the actual standard deviation of housing prices in Ames, Iowa: <pre class="ptx-sagecell sagecell-r" id="sage-232"><script type="text/x-sage">hist(sdvec, breaks=25)
 abline(v = sd(ames$price), col="red", lwd=3, lty=2)
-</script></div> What do we notice about the possible variation in sample standard deviations?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(f)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">To see how much variation there could be in sampling distributions, run the following code to plot a normal curve for each sample standard deviation we found, each curve has mean 0, but standard deviation equal to one we found in our above simulation: <div class="sagecell-r" id="sage-227"><script type="text/x-sage">values = seq(-300000, 300000, length=100)
+</script></pre> What do we notice about the possible variation in sample standard deviations?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p>To see how much variation there could be in sampling distributions, run the following code to plot a normal curve for each sample standard deviation we found, each curve has mean 0, but standard deviation equal to one we found in our above simulation: <pre class="ptx-sagecell sagecell-r" id="sage-233"><script type="text/x-sage">values = seq(-300000, 300000, length=100)
 
 plot(values, dnorm(values, mean=0, sd=sdvec[1]), type="l", lty=2)
 
 for (i in 2:trials){
   lines(values, dnorm(values, mean=0, sd=sdvec[i])) 
 }
-</script></div> How much variation is there between curves, even with the same means?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(g)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to, for <code class="code-inline tex2jax_ignore">trials=1000</code> times, sample now <code class="code-inline tex2jax_ignore">n=500</code> new random houses from Ames, Iowa and record the standard deviation of their housing prices, and display a histogram of the standard deviations: <div class="sagecell-r" id="sage-228"><script type="text/x-sage">n=500
+</script></pre> How much variation is there between curves, even with the same means?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p>Run the following code to, for <code class="code-inline tex2jax_ignore">trials=1000</code> times, sample now <code class="code-inline tex2jax_ignore">n=500</code> new random houses from Ames, Iowa and record the standard deviation of their housing prices, and display a histogram of the standard deviations: <pre class="ptx-sagecell sagecell-r" id="sage-234"><script type="text/x-sage">n=500
 trials=1000
 sdvec500=rep(NA, trials)
 
@@ -90,6 +83,6 @@ for(i in 1:trials){
 
 hist(sdvec500, breaks=25)
 abline(v = sd(ames$price), col="red", lwd=3, lty=2)
-</script></div> What do we notice about the possible variation in sample standard deviations compared to what we saw in (d)?</p></article></article><span class="incontext"><a href="Sec_tVariable.html#activity-stdisRV">in-context</a></span>
+</script></pre> What do we notice about the possible variation in sample standard deviations compared to what we saw in (d)?</p></article></article><span class="incontext"><a href="Sec_tVariable.html#activity-stdisRV" class="internal">in-context</a></span>
 </body>
 </html>

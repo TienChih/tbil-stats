@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-27T13:18:26-06:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -12,38 +9,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script><script>$(function () {
-    // Make *any* div with class 'sagecell-r' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
-                           linked: true,
-                           languages: ['r'],
-                           evalButtonText: 'Evaluate (R)'});
-});
-</script>
 </head>
-<body>
-<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to simulate <code class="code-inline tex2jax_ignore">trials=1000</code> trials where one rolls <code class="code-inline tex2jax_ignore">num_dice=2</code> dice and takes the average, and display the mean and standard deviation of these outcomes: <div class="sagecell-r" id="sage-219"><script type="text/x-sage">trials=1000
-num_dice=2
-
-averageroll=rep(NA, trials)
-
-for(i in 1:trials){
-  averageroll[i]=sum(sample(c(1,2,3,4,5,6), num_dice, replace=TRUE))/num_dice
-}
-hist(averageroll, breaks=25, prob=TRUE)
-print(mean(averageroll))
-print(sd(averageroll))
-</script></div> How do these values compare to what you found in (b)?</p>
-<span class="incontext"><a href="Sec_tVariable.html#p-1195">in-context</a></span>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>Recall from <a href="" class="xref" data-knowl="./knowl/exploration-jurydemo.html" title="Exploration 5.3.1: Racial Demographics and Jurors">Exploration 5.3.1</a> that we have a sample of size <span class="process-math">\(n=300\)</span> where 237 are White, 26 are Black, 24 are Hispanic and 13 are Asian.  We also have a proposed distribution: 70% White, 15% Black, 10% Hispanic and 5% Asian.</p>
+<span class="incontext"><a href="Sec_ChiSquare.html#p-1195" class="internal">in-context</a></span>
 </body>
 </html>

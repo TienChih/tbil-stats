@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-04-07T17:01:14-06:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="en-US">
-<head>
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Point Estimates (F1)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+<meta property="og:type" content="book">
+<meta property="book:title" content="Team Based Statistics">
+<meta property="book:author" content="Tien Chih">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
     tags: "none",
-    useLabelIds: true,
     tagSide: "right",
     tagIndent: ".8em",
     packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
   },
   options: {
-    ignoreHtmlClass: "tex2jax_ignore",
-    processHtmlClass: "has_am",
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
     renderActions: {
         findScript: [10, function (doc) {
             document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
@@ -48,38 +48,41 @@
     load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
     paths: {pretext: "https://pretextbook.org/js/lib"},
   },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script><script>$(function () {
-    // Make *any* div with class 'sagecell-r' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
-                           linked: true,
-                           languages: ['r'],
-                           evalButtonText: 'Evaluate (R)'});
-});
-</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg">miniversion=0.6</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
-</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
-<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
 </head>
-<body class="pretext-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\Q}{\terminology{Question:\ }}
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Q}{\terminology{Question:\ }}
 \newcommand{\Sol}{\terminology{Solution:\ }}
 \newcommand{\Fisg}{\emph{Fisg}}
 \newcommand{\Iisg}{\emph{Iisg}}
@@ -114,14 +117,16 @@
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
-\)</div>
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
 <h1 class="heading"><a href="book-1.html"><span class="title">Team Based Statistics</span></a></h1>
 <p class="byline">Tien Chih</p>
 </div>
 </div></div>
-<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="Chap_Foundations.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="Chap_Foundations.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="Sec_ConfidenceInterval.html" title="Next">Next</a></span></div>
 </div>
@@ -129,78 +134,78 @@
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="Chap_Foundations.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="Chap_Foundations.html" title="Up">Up</a><a class="next-button button toolbar-item" href="Sec_ConfidenceInterval.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
-<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
 <li class="link frontmatter">
-<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul>
-<li><a href="learning-outcomes.html" data-scroll="learning-outcomes">Learning Outcomes and Usage</a></li>
-<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
-<li><a href="author-bio-TC.html" data-scroll="author-bio-TC">Author Biography</a></li>
-<li><a href="dedication-1.html" data-scroll="dedication-1">Dedication</a></li>
+<a href="frontmatter-1.html" data-scroll="frontmatter-1" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="learning-outcomes.html" data-scroll="learning-outcomes" class="internal">Learning Outcomes and Usage</a></li>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="author-bio-TC.html" data-scroll="author-bio-TC" class="internal">Author Biography</a></li>
+<li><a href="dedication-1.html" data-scroll="dedication-1" class="internal">Dedication</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="Chap_DataBasics.html" data-scroll="Chap_DataBasics"><span class="codenumber">1</span> <span class="title">Data Basics (B)</span></a><ul>
-<li><a href="Sec_Variables.html" data-scroll="Sec_Variables">Types of Variables and their Relationships (B1)</a></li>
-<li><a href="Sec_Sampling.html" data-scroll="Sec_Sampling">Sampling Techniques (B2)</a></li>
-<li><a href="Sec_Visualization.html" data-scroll="Sec_Visualization">Visualizing Data (B3)</a></li>
-<li><a href="Sec_Center.html" data-scroll="Sec_Center">Centers of Data (B4)</a></li>
-<li><a href="Sec_Variation.html" data-scroll="Sec_Variation">Variation of Data (B5)</a></li>
+<a href="Chap_DataBasics.html" data-scroll="Chap_DataBasics" class="internal"><span class="codenumber">1</span> <span class="title">Data Basics (B)</span></a><ul>
+<li><a href="Sec_Variables.html" data-scroll="Sec_Variables" class="internal">Types of Variables and their Relationships (B1)</a></li>
+<li><a href="Sec_Sampling.html" data-scroll="Sec_Sampling" class="internal">Sampling Techniques (B2)</a></li>
+<li><a href="Sec_Visualization.html" data-scroll="Sec_Visualization" class="internal">Visualizing Data (B3)</a></li>
+<li><a href="Sec_Center.html" data-scroll="Sec_Center" class="internal">Centers of Data (B4)</a></li>
+<li><a href="Sec_Variation.html" data-scroll="Sec_Variation" class="internal">Variation of Data (B5)</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="Chap_Probability.html" data-scroll="Chap_Probability"><span class="codenumber">2</span> <span class="title">Probability (P)</span></a><ul>
-<li><a href="Sec_Introprob.html" data-scroll="Sec_Introprob">Introduction to Probability (P1)</a></li>
-<li><a href="Sec_Conditionalprob.html" data-scroll="Sec_Conditionalprob">Conditional Probability (P2)</a></li>
-<li><a href="Sec_Bayes.html" data-scroll="Sec_Bayes">Bayes Theorem (P3)</a></li>
-<li><a href="Sec_RandomVariables.html" data-scroll="Sec_RandomVariables">Random Variables (P4)</a></li>
-<li><a href="Sec_LinearCombofVariables.html" data-scroll="Sec_LinearCombofVariables">Linear Combinations of Random Variables (P5)</a></li>
+<a href="Chap_Probability.html" data-scroll="Chap_Probability" class="internal"><span class="codenumber">2</span> <span class="title">Probability (P)</span></a><ul>
+<li><a href="Sec_Introprob.html" data-scroll="Sec_Introprob" class="internal">Introduction to Probability (P1)</a></li>
+<li><a href="Sec_Conditionalprob.html" data-scroll="Sec_Conditionalprob" class="internal">Conditional Probability (P2)</a></li>
+<li><a href="Sec_Bayes.html" data-scroll="Sec_Bayes" class="internal">Bayes Theorem (P3)</a></li>
+<li><a href="Sec_RandomVariables.html" data-scroll="Sec_RandomVariables" class="internal">Random Variables (P4)</a></li>
+<li><a href="Sec_LinearCombofVariables.html" data-scroll="Sec_LinearCombofVariables" class="internal">Linear Combinations of Random Variables (P5)</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="Chap_Distributions.html" data-scroll="Chap_Distributions"><span class="codenumber">3</span> <span class="title">Distributions (D)</span></a><ul>
-<li><a href="Sec_StandardNormal.html" data-scroll="Sec_StandardNormal">Standard Normal Distribution (D1)</a></li>
-<li><a href="Sec_GeneralNormal.html" data-scroll="Sec_GeneralNormal">General Normal Distribution (D2)</a></li>
-<li><a href="Sec_Counting.html" data-scroll="Sec_Counting">Counting Principles (D3)</a></li>
-<li><a href="Sec_Binomial.html" data-scroll="Sec_Binomial">Binomial Distribution (D4)</a></li>
-<li><a href="Sec_NormalApprox.html" data-scroll="Sec_NormalApprox">Normal Approximation (D5)</a></li>
+<a href="Chap_Distributions.html" data-scroll="Chap_Distributions" class="internal"><span class="codenumber">3</span> <span class="title">Distributions (D)</span></a><ul>
+<li><a href="Sec_StandardNormal.html" data-scroll="Sec_StandardNormal" class="internal">Standard Normal Distribution (D1)</a></li>
+<li><a href="Sec_GeneralNormal.html" data-scroll="Sec_GeneralNormal" class="internal">General Normal Distribution (D2)</a></li>
+<li><a href="Sec_Counting.html" data-scroll="Sec_Counting" class="internal">Counting Principles (D3)</a></li>
+<li><a href="Sec_Binomial.html" data-scroll="Sec_Binomial" class="internal">Binomial Distribution (D4)</a></li>
+<li><a href="Sec_NormalApprox.html" data-scroll="Sec_NormalApprox" class="internal">Normal Approximation (D5)</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="Chap_Foundations.html" data-scroll="Chap_Foundations"><span class="codenumber">4</span> <span class="title">Foundations for Inference (F)</span></a><ul>
+<a href="Chap_Foundations.html" data-scroll="Chap_Foundations" class="internal"><span class="codenumber">4</span> <span class="title">Foundations for Inference (F)</span></a><ul>
 <li><a href="Sec_PointEstimates.html" data-scroll="Sec_PointEstimates" class="active">Point Estimates (F1)</a></li>
-<li><a href="Sec_ConfidenceInterval.html" data-scroll="Sec_ConfidenceInterval">Introduction to Confidence Intervals (F2)</a></li>
-<li><a href="Sec_HypothesisTesing.html" data-scroll="Sec_HypothesisTesing">Introduction to Hypothesis Testing (F3)</a></li>
+<li><a href="Sec_ConfidenceInterval.html" data-scroll="Sec_ConfidenceInterval" class="internal">Introduction to Confidence Intervals (F2)</a></li>
+<li><a href="Sec_HypothesisTesing.html" data-scroll="Sec_HypothesisTesing" class="internal">Introduction to Hypothesis Testing (F3)</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="Chap_Categorical.html" data-scroll="Chap_Categorical"><span class="codenumber">5</span> <span class="title">Inference for Categorical Variables (C)</span></a><ul>
-<li><a href="Sec_SizeofSampleCat.html" data-scroll="Sec_SizeofSampleCat">Size of Samples (Categorical)</a></li>
-<li><a href="Sec_TwoVarCat.html" data-scroll="Sec_TwoVarCat">Comparing Two Categorical Variables (C2)</a></li>
-<li><a href="Sec_ChiSquare.html" data-scroll="Sec_ChiSquare">Chi-Squared Test and Goodness of Fit (C3)</a></li>
-<li><a href="Sec_ChiIndependence.html" data-scroll="Sec_ChiIndependence">Chi-Squared Test and Independence (C4)</a></li>
+<a href="Chap_Categorical.html" data-scroll="Chap_Categorical" class="internal"><span class="codenumber">5</span> <span class="title">Inference for Categorical Variables (C)</span></a><ul>
+<li><a href="Sec_SizeofSampleCat.html" data-scroll="Sec_SizeofSampleCat" class="internal">Size of Samples (Categorical)</a></li>
+<li><a href="Sec_TwoVarCat.html" data-scroll="Sec_TwoVarCat" class="internal">Comparing Two Categorical Variables (C2)</a></li>
+<li><a href="Sec_ChiSquare.html" data-scroll="Sec_ChiSquare" class="internal">Chi-Squared Test and Goodness of Fit (C3)</a></li>
+<li><a href="Sec_ChiIndependence.html" data-scroll="Sec_ChiIndependence" class="internal">Chi-Squared Test and Independence (C4)</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="Chap_Numerical.html" data-scroll="Chap_Numerical"><span class="codenumber">6</span> <span class="title">Inference for Numerical Variables (N)</span></a><ul>
-<li><a href="Sec_tVariable.html" data-scroll="Sec_tVariable">The \(t\)-Variable and Sampling Distribution of Numerical Variables (N1)</a></li>
-<li><a href="Sec_OneVarNum.html" data-scroll="Sec_OneVarNum">Confidence Intervals and Hypothesis Testing for a single Numerical Variable (N2)</a></li>
-<li><a href="Sec_PairedData.html" data-scroll="Sec_PairedData">Paired Numerical Data (N3)</a></li>
-<li><a href="Sec_TwoVarNum.html" data-scroll="Sec_TwoVarNum">Comparing Two Numerical Variables (N4)</a></li>
-<li><a href="Sec_SizeofSampleNum.html" data-scroll="Sec_SizeofSampleNum">Size of Samples of Numerical Variables (N5)</a></li>
-<li><a href="Sec_ANOVA.html" data-scroll="Sec_ANOVA">ANOVA: Analysis of Variation (N6)</a></li>
+<a href="Chap_Numerical.html" data-scroll="Chap_Numerical" class="internal"><span class="codenumber">6</span> <span class="title">Inference for Numerical Variables (N)</span></a><ul>
+<li><a href="Sec_tVariable.html" data-scroll="Sec_tVariable" class="internal">The <span class="process-math">\(t\)</span>-Variable and Sampling Distribution of Numerical Variables (N1)</a></li>
+<li><a href="Sec_OneVarNum.html" data-scroll="Sec_OneVarNum" class="internal">Confidence Intervals and Hypothesis Testing for a single Numerical Variable (N2)</a></li>
+<li><a href="Sec_PairedData.html" data-scroll="Sec_PairedData" class="internal">Paired Numerical Data (N3)</a></li>
+<li><a href="Sec_TwoVarNum.html" data-scroll="Sec_TwoVarNum" class="internal">Comparing Two Numerical Variables (N4)</a></li>
+<li><a href="Sec_SizeofSampleNum.html" data-scroll="Sec_SizeofSampleNum" class="internal">Size of Samples of Numerical Variables (N5)</a></li>
+<li><a href="Sec_ANOVA.html" data-scroll="Sec_ANOVA" class="internal">ANOVA: Analysis of Variation (N6)</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="Chap_LinearRegression.html" data-scroll="Chap_LinearRegression"><span class="codenumber">7</span> <span class="title">Linear Regression (R)</span></a><ul>
-<li><a href="Sec_Correlation.html" data-scroll="Sec_Correlation">Linear Correlation of Variables (R1)</a></li>
-<li><a href="Sec_InterpretingRegression.html" data-scroll="Sec_InterpretingRegression">Interpreting Linear Regression (R2)</a></li>
-<li><a href="Sec_InferenceRegression.html" data-scroll="Sec_InferenceRegression">Inference and Linear Regression (R3)</a></li>
+<a href="Chap_LinearRegression.html" data-scroll="Chap_LinearRegression" class="internal"><span class="codenumber">7</span> <span class="title">Linear Regression (R)</span></a><ul>
+<li><a href="Sec_Correlation.html" data-scroll="Sec_Correlation" class="internal">Linear Correlation of Variables (R1)</a></li>
+<li><a href="Sec_InterpretingRegression.html" data-scroll="Sec_InterpretingRegression" class="internal">Interpreting Linear Regression (R2)</a></li>
+<li><a href="Sec_InferenceRegression.html" data-scroll="Sec_InferenceRegression" class="internal">Inference and Linear Regression (R3)</a></li>
 </ul>
 </li>
 </ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="Sec_PointEstimates"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="Sec_PointEstimates"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.1</span> <span class="title">Point Estimates (F1)</span>
 </h2>
 <section class="introduction" id="introduction-93"><p id="p-847">We now begin combining the concepts learned in previous chapters to get to the real heart of statistics.  <em class="emphasis">Variables</em> that occur in the world that we care about are <em class="emphasis">Random Variables</em> that we discuss in <a href="Chap_Probability.html" class="internal" title="Chapter 2: Probability (P)">Chapter 2</a>.  But we almost never can work with the variable directly, just a sample of data from that variable as in <a href="Chap_DataBasics.html" class="internal" title="Chapter 1: Data Basics (B)">Chapter 1</a>.  We will use what we learned about <a href="Chap_Distributions.html" class="internal" title="Chapter 3: Distributions (D)">Chapter 3</a> to make predictions about the original random variable.</p>
@@ -238,17 +243,17 @@
 </h4>
 <div class="introduction" id="introduction-95"><p id="p-860">Suppose that the proportion of American adults who support the expansion of solar energy were 88%.  If we sampled 1000 random American's, we wouldn't neccesarily expect exactly 88% of them to support Solar Energy would we?  Maybe we would get a group of 1000 that had more support for solar, or less.  How much variability can we expect?</p></div>
 <article class="task exercise-like" id="task-470"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<p id="p-861">Run the following code to create a vector of 250 million Americans, of whom 88% support solar energy and 12% do not: <div class="sagecell-r" id="sage-141"><script type="text/x-sage">pop_size = 250000000
+<p id="p-861">Run the following code to create a vector of 250 million Americans, of whom 88% support solar energy and 12% do not: <pre class="ptx-sagecell sagecell-r" id="sage-141"><script type="text/x-sage">pop_size = 250000000
 possible_entries = c(rep("support", 0.88 * pop_size), rep("not", 0.12 * pop_size))
 summary(possible_entries)
-</script></div></p></article><article class="task exercise-like" id="task-471"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<p id="p-862">Run the following code to sample 1000 Americans from this Population: <div class="sagecell-r" id="sage-142"><script type="text/x-sage">sample_group=sample(possible_entries, size=1000)
+</script></pre></p></article><article class="task exercise-like" id="task-471"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-862">Run the following code to sample 1000 Americans from this Population: <pre class="ptx-sagecell sagecell-r" id="sage-142"><script type="text/x-sage">sample_group=sample(possible_entries, size=1000)
 summary(sample_group)
-</script></div></p></article><article class="task exercise-like" id="task-472"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<p id="p-863">Run the following code to see what proportion of the sample group support solar energy: <div class="sagecell-r" id="sage-143"><script type="text/x-sage">length(which(sample_group=="support"))/1000
-</script></div> What is the error?</p></article><article class="task exercise-like" id="task-473"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+</script></pre></p></article><article class="task exercise-like" id="task-472"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-863">Run the following code to see what proportion of the sample group support solar energy: <pre class="ptx-sagecell sagecell-r" id="sage-143"><script type="text/x-sage">length(which(sample_group=="support"))/1000
+</script></pre> What is the error?</p></article><article class="task exercise-like" id="task-473"><h5 class="heading"><span class="codenumber">(d)</span></h5>
 <p id="p-864">Rerun (b) and (c), what do we notice about the error?</p></article><article class="task exercise-like" id="task-474"><h5 class="heading"><span class="codenumber">(e)</span></h5>
-<p id="p-865">Run the following code to simulate 10,000 possible surveys, and display a histogram of the proportion of respondents who support solar energy: <div class="sagecell-r" id="sage-144"><script type="text/x-sage">trials=10000       
+<p id="p-865">Run the following code to simulate 10,000 possible surveys, and display a histogram of the proportion of respondents who support solar energy: <pre class="ptx-sagecell sagecell-r" id="sage-144"><script type="text/x-sage">trials=10000       
 solar_support= rep(0, trials)
 
 sample_size=1000
@@ -260,15 +265,15 @@ for(i in 1:trials){
 }
 hist(solar_support, breaks=25)
 print(sample_size)
-</script></div> What do we notice about the shape of the histogram?</p></article></article><article class="remark remark-like" id="remark-27"><h4 class="heading">
+</script></pre> What do we notice about the shape of the histogram?</p></article></article><article class="remark remark-like" id="remark-27"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.1.3</span><span class="period">.</span>
 </h4>
-<p id="p-866">Notice that  every time we sampled, we get a potentially different proportion of respondents who support solar energy.  Thus, the proportion of respondents who support solar energy (\(\hat{p}\)) is a <em class="emphasis">random variable</em> and thus has a mean, and a standard deviation.  We will call this standard deviation the <em class="emphasis">standard error</em> as it measure the tendency of \(\hat{p}\) to deviate from it's mean.</p>
-<p id="p-867">In general, we call \(\hat{p}\) the <em class="emphasis">sample proportion</em> or the proportion of a sample which satisfies some condition, which is a point-estimate for \(p\) the population proportion (which satisfies the same condition). The distribution of \(\hat{p}\) is the <em class="emphasis">sampling distribution</em>.</p></article><article class="theorem theorem-like" id="theorem-CLTprop"><h4 class="heading">
+<p id="p-866">Notice that  every time we sampled, we get a potentially different proportion of respondents who support solar energy.  Thus, the proportion of respondents who support solar energy (<span class="process-math">\(\hat{p}\)</span>) is a <em class="emphasis">random variable</em> and thus has a mean, and a standard deviation.  We will call this standard deviation the <em class="emphasis">standard error</em> as it measure the tendency of <span class="process-math">\(\hat{p}\)</span> to deviate from it's mean.</p>
+<p id="p-867">In general, we call <span class="process-math">\(\hat{p}\)</span> the <em class="emphasis">sample proportion</em> or the proportion of a sample which satisfies some condition, which is a point-estimate for <span class="process-math">\(p\)</span> the population proportion (which satisfies the same condition). The distribution of <span class="process-math">\(\hat{p}\)</span> is the <em class="emphasis">sampling distribution</em>.</p></article><article class="theorem theorem-like" id="theorem-CLTprop"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">The Central Limit Theorem (Proportion).</span>
 </h4>
-<p id="p-868">For a sufficiently large sample (typically \(pn, p(1-n)\geq 10\) or at least 10 “successes” and “failures”) the sampling distribution of\(\hat{p}\) is approximately <em class="emphasis">normally distributed</em> with pararmeters</p>
-<div class="displaymath">
+<p id="p-868">For a sufficiently large sample (typically <span class="process-math">\(pn, (1-p)n\geq 10\)</span> or at least 10 “successes” and “failures”) the sampling distribution of<span class="process-math">\(\hat{p}\)</span> is approximately <em class="emphasis">normally distributed</em> with pararmeters</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \mu_{\hat{p}}=p,\ \ \  SE_{\hat{p}}=\sqrt{\frac{p(1-p)}{n}}.
 \end{equation*}
@@ -276,21 +281,21 @@ print(sample_size)
 <p id="p-869">This is very similar to <a href="" class="xref" data-knowl="./knowl/remark-normalapproximation.html" title="Remark 3.4.5">Remark 3.4.5</a></p></article><article class="activity project-like" id="activity-solar"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Normal Approximation for Solar Energy Support.</span>
 </h4>
-<div class="introduction" id="introduction-96"><p id="p-870">In <a href="" class="xref" data-knowl="./knowl/exploration-solarenergy.html" title="Exploration 4.1.2: American's Support for Solar Energy">Exploration 4.1.2</a> we have a population where the proportion of support for solar energy is \(p=0.88\text{.}\)  Moreover, we have a sample size of \(n=1000\text{.}\)</p></div>
+<div class="introduction" id="introduction-96"><p id="p-870">In <a href="" class="xref" data-knowl="./knowl/exploration-solarenergy.html" title="Exploration 4.1.2: American's Support for Solar Energy">Exploration 4.1.2</a> we have a population where the proportion of support for solar energy is <span class="process-math">\(p=0.88\text{.}\)</span>  Moreover, we have a sample size of <span class="process-math">\(n=1000\text{.}\)</span></p></div>
 <article class="task exercise-like" id="task-475"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<p id="p-871">Compute \(np, n(1-p)\) and ensure that both values are at least 10.</p></article><article class="task exercise-like" id="task-476"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<p id="p-872">Follow <a href="" class="xref" data-knowl="./knowl/theorem-CLTprop.html" title="Theorem 4.1.4: The Central Limit Theorem (Proportion)">Theorem 4.1.4</a> to compute \(\mu_{\hat{p}}\) and \(SE_{\hat{p}}\text{.}\)</p></article><article class="task exercise-like" id="task-477"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<p id="p-873">Fix and run un the following code to display the histogram from <a href="" class="xref" data-knowl="./knowl/exploration-solarenergy.html" title="Exploration 4.1.2: American's Support for Solar Energy">Exploration 4.1.2</a> (e), overlayed with a normal curve with mean <code class="code-inline tex2jax_ignore">mu_p</code>=\(\mu_{\hat{p}}\) and <code class="code-inline tex2jax_ignore">SE_p</code>=\(SE_{\hat{p}}\text{.}\) <div class="sagecell-r" id="sage-145"><script type="text/x-sage">mu_p=FIXME
+<p id="p-871">Compute <span class="process-math">\(np, n(1-p)\)</span> and ensure that both values are at least 10.</p></article><article class="task exercise-like" id="task-476"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-872">Follow <a href="" class="xref" data-knowl="./knowl/theorem-CLTprop.html" title="Theorem 4.1.4: The Central Limit Theorem (Proportion)">Theorem 4.1.4</a> to compute <span class="process-math">\(\mu_{\hat{p}}\)</span> and <span class="process-math">\(SE_{\hat{p}}\text{.}\)</span></p></article><article class="task exercise-like" id="task-477"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-873">Fix and run un the following code to display the histogram from <a href="" class="xref" data-knowl="./knowl/exploration-solarenergy.html" title="Exploration 4.1.2: American's Support for Solar Energy">Exploration 4.1.2</a> (e), overlayed with a normal curve with mean <code class="code-inline tex2jax_ignore">mu_p</code>=<span class="process-math">\(\mu_{\hat{p}}\)</span> and <code class="code-inline tex2jax_ignore">SE_p</code>=<span class="process-math">\(SE_{\hat{p}}\text{.}\)</span> <pre class="ptx-sagecell sagecell-r" id="sage-145"><script type="text/x-sage">mu_p=FIXME
 SE_p=FIXME
 
 hist(solar_support, prob=TRUE, breaks=25)
 curve(dnorm(x, mean=mu_p, sd=SE_p), col="darkblue", lwd=2, add=TRUE, yaxt="n")
 print(sample_size)
-</script></div> How well does the normal curve match the histogram?</p></article><article class="task exercise-like" id="task-478"><h5 class="heading"><span class="codenumber">(d)</span></h5>
-<p id="p-874">Use the normal approximation for \(\hat{p}\) with mean \(\mu_{\hat{p}}\) and standard deviation \(SE_{\hat{p}}\) to compute \(P(\hat{p}\lt0.85)\text{.}\) <div class="sagecell-r" id="sage-146"><script type="text/x-sage">
-</script></div></p></article><article class="task exercise-like" id="task-479"><h5 class="heading"><span class="codenumber">(e)</span></h5>
-<p id="p-875">Use the normal approximation for \(\hat{p}\) to find an interval \([0.88-k, 0.88+k]\) so that there is a 95% chance \(\hat{p}\) falls in this interval. <div class="sagecell-r" id="sage-147"><script type="text/x-sage">
-</script></div></p></article><article class="task exercise-like" id="task-480"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+</script></pre> How well does the normal curve match the histogram?</p></article><article class="task exercise-like" id="task-478"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-874">Use the normal approximation for <span class="process-math">\(\hat{p}\)</span> with mean <span class="process-math">\(\mu_{\hat{p}}\)</span> and standard deviation <span class="process-math">\(SE_{\hat{p}}\)</span> to compute <span class="process-math">\(P(\hat{p}\lt0.85)\text{.}\)</span> <pre class="ptx-sagecell sagecell-r" id="sage-146"><script type="text/x-sage">
+</script></pre></p></article><article class="task exercise-like" id="task-479"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-875">Use the normal approximation for <span class="process-math">\(\hat{p}\)</span> to find an interval <span class="process-math">\([0.88-k, 0.88+k]\)</span> so that there is a 95% chance <span class="process-math">\(\hat{p}\)</span> falls in this interval. <pre class="ptx-sagecell sagecell-r" id="sage-147"><script type="text/x-sage">
+</script></pre></p></article><article class="task exercise-like" id="task-480"><h5 class="heading"><span class="codenumber">(f)</span></h5>
 <p id="p-876">Take a moment and appreciate how closely the sample proportions model the population proportion, despite 1000 adults being a paltry percentage of 250 million adults.</p></article></article><article class="activity project-like" id="activity-merchandise"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Merchandise Purchasing.</span>
 </h4>
@@ -310,11 +315,11 @@ print(sample_size)
 <li id="li-149"><p id="p-derived-li-149">The average amount of money spent on merchandise.</p></li>
 <li id="li-150"><p id="p-derived-li-150">Proportion of people who bought the artist's album who attended shows.</p></li>
 </ol></article><article class="task exercise-like" id="task-483"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<p id="p-880">What is the point estimate (\(\hat{p}\)) for the parameter?</p></article><article class="task exercise-like" id="task-484"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-880">What is the point estimate (<span class="process-math">\(\hat{p}\)</span>) for the parameter?</p></article><article class="task exercise-like" id="task-484"><h5 class="heading"><span class="codenumber">(d)</span></h5>
 <p id="p-881">Use <a href="" class="xref" data-knowl="./knowl/theorem-CLTprop.html" title="Theorem 4.1.4: The Central Limit Theorem (Proportion)">Theorem 4.1.4</a> and the point estimate to compute the Sample Error for the point estimate.</p></article><article class="task exercise-like" id="task-485"><h5 class="heading"><span class="codenumber">(e)</span></h5>
 <p id="p-882">Suppose that the actual percentage of show attendees who purchase merchandise is 25%.  Is this suprising?</p></article><article class="task exercise-like" id="task-486"><h5 class="heading"><span class="codenumber">(f)</span></h5>
-<p id="p-883">Recompute the Sample Error using \(p=0.25\)  Is it much different than what you found in (d)?</p></article><article class="task exercise-like" id="task-487"><h5 class="heading"><span class="codenumber">(g)</span></h5>
-<p id="p-884">Fix and run the following code to simulate the 1000 surveys of size <code class="code-inline tex2jax_ignore">n</code>=100, probability <code class="code-inline tex2jax_ignore">p</code>=0.25, and point estimate <code class="code-inline tex2jax_ignore">phat</code>\(=\hat{p}=22/100\text{,}\) as well as plot a histogram of the survey results, and the normal approximation: <div class="sagecell-r" id="sage-148"><script type="text/x-sage">trials=1000
+<p id="p-883">Recompute the Sample Error using <span class="process-math">\(p=0.25\)</span>  Is it much different than what you found in (d)?</p></article><article class="task exercise-like" id="task-487"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p id="p-884">Fix and run the following code to simulate the 1000 surveys of size <code class="code-inline tex2jax_ignore">n</code>=100, probability <code class="code-inline tex2jax_ignore">p</code>=0.25, and point estimate <code class="code-inline tex2jax_ignore">phat</code><span class="process-math">\(=\hat{p}=22/100\text{,}\)</span> as well as plot a histogram of the survey results, and the normal approximation: <pre class="ptx-sagecell sagecell-r" id="sage-148"><script type="text/x-sage">trials=1000
 
 n=FIXME
 p=FIXME
@@ -335,7 +340,7 @@ hist(proportion, prob=TRUE, breaks=25)
 curve(dnorm(x, mean=mu_p, sd=SE_p), col="darkblue", lwd=2, add=TRUE, yaxt="n")
 abline(v=phat, col="red",lwd=3, lty=2 )
 print(trials)
-</script></div> Would 22 respondents replying that they purchased merchandise be abnormal?</p></article></article><article class="activity project-like" id="activity-smoking"><h4 class="heading">
+</script></pre> Would 22 respondents replying that they purchased merchandise be abnormal?</p></article></article><article class="activity project-like" id="activity-smoking"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">Adults who Smoke.</span>
 </h4>
 <div class="introduction" id="introduction-98"><p id="p-885">A research team wishes to decide what percentage of adults in a town smokes.  In an survey of 232 adults from the town, 48 of them smoke.</p></div>
@@ -357,8 +362,8 @@ print(trials)
 <p id="p-888">What is the point estimate for the parameter?</p></article><article class="task exercise-like" id="task-491"><h5 class="heading"><span class="codenumber">(d)</span></h5>
 <p id="p-889">Use <a href="" class="xref" data-knowl="./knowl/theorem-CLTprop.html" title="Theorem 4.1.4: The Central Limit Theorem (Proportion)">Theorem 4.1.4</a> and the point estimate to compute the Sample Error for the point estimate.</p></article><article class="task exercise-like" id="task-492"><h5 class="heading"><span class="codenumber">(e)</span></h5>
 <p id="p-890">Suppose that the actual percentage of adults who smoke in the town is 20%.  Is this suprising?</p></article><article class="task exercise-like" id="task-493"><h5 class="heading"><span class="codenumber">(f)</span></h5>
-<p id="p-891">Recompute the Sample Error using \(p=0.2\)  Is it much different than what you found in (d)?</p></article><article class="task exercise-like" id="task-494"><h5 class="heading"><span class="codenumber">(g)</span></h5>
-<p id="p-892">Fix and run the following code to simulate the 1000 surveys of size <code class="code-inline tex2jax_ignore">n</code>, probability <code class="code-inline tex2jax_ignore">p</code> and point estimate <code class="code-inline tex2jax_ignore">phat</code>, as well as plot a histogram of the survey results, and the normal approximation: <div class="sagecell-r" id="sage-149"><script type="text/x-sage">trials=1000
+<p id="p-891">Recompute the Sample Error using <span class="process-math">\(p=0.2\)</span>  Is it much different than what you found in (d)?</p></article><article class="task exercise-like" id="task-494"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p id="p-892">Fix and run the following code to simulate the 1000 surveys of size <code class="code-inline tex2jax_ignore">n</code>, probability <code class="code-inline tex2jax_ignore">p</code> and point estimate <code class="code-inline tex2jax_ignore">phat</code>, as well as plot a histogram of the survey results, and the normal approximation: <pre class="ptx-sagecell sagecell-r" id="sage-149"><script type="text/x-sage">trials=1000
 
 n=FIXME
 p=FIXME
@@ -379,7 +384,7 @@ hist(proportion, prob=TRUE, breaks=25)
 curve(dnorm(x, mean=mu_p, sd=SE_p), col="darkblue", lwd=2, add=TRUE, yaxt="n")
 abline(v=phat, col="red",lwd=3, lty=2 )
 print(trials)
-</script></div> Would 48 respondents replying that they smoke be abnormal?</p></article></article></section></section></div></main>
+</script></pre> Would 48 respondents replying that they smoke be abnormal?</p></article></article></section></section></div></main>
 </div>
 </body>
 </html>

@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-27T13:18:46-06:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -13,25 +10,25 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<article class="remark remark-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<body class="ignore-math">
+<article class="remark remark-like"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">6.6.3</span><span class="period">.</span><span class="space"> </span><span class="title">Recap of ANOVA.</span>
-</h6>
-<p>To recall the steps of ANOVA from <a class="xref" data-knowl="./knowl/activity-cropsvariationbetween.html" title="Activity 6.6.3: Fetilizer and Crop Yields: Variation between Groups">Activity 6.6.3</a>, <a class="xref" data-knowl="./knowl/activity-cropsvariationwithin.html" title="Activity 6.6.4: Fetilizer and Crop Yields: Variation within Groups">Activity 6.6.4</a> and <a class="xref" data-knowl="./knowl/activity-cropsFstat.html" title="Activity 6.6.5: Fetilizer and Crop Yields: \(F\)-statistic and \(p\)-value">Activity 6.6.5</a>: suppose that we have a \(n\) total observations from \(k\) different groups.  There are \(n_i\) observations from group \(i\text{.}\)  We then:</p>
+</h4>
+<p>To recall the steps of ANOVA from <a href="" class="xref" data-knowl="./knowl/activity-cropsvariationbetween.html" title="Activity 6.6.3: Fetilizer and Crop Yields: Variation between Groups">Activity 6.6.3</a>, <a href="" class="xref" data-knowl="./knowl/activity-cropsvariationwithin.html" title="Activity 6.6.4: Fetilizer and Crop Yields: Variation within Groups">Activity 6.6.4</a> and <a href="" class="xref" data-knowl="./knowl/activity-cropsFstat.html" title="Activity 6.6.5: Fetilizer and Crop Yields: F-statistic and p-value">Activity 6.6.5</a>: suppose that we have a <span class="process-math">\(n\)</span> total observations from <span class="process-math">\(k\)</span> different groups.  There are <span class="process-math">\(n_i\)</span> observations from group <span class="process-math">\(i\text{.}\)</span>  We then:</p>
 <ol class="decimal">
-<li>Compute \(\bar{x}\) the overall sample mean.</li>
-<li>Compute \(\bar{x}_i\) the sample mean for each group.</li>
-<li>Compute \(SSG=\sum n_i(\bar{x}_i-\bar{x})^2\) the sum of squares for groups.</li>
-<li>Compute \(df_G=k-1\) the degrees of freedom for groups.</li>
-<li>Compute \(MSG=\frac{SSG}{df_G}\) the mean squares for groups.</li>
-<li>Compute \(Var_i\) for each group.</li>
-<li>Compute \(SSE=\sum (n_i-1)Var_i\) the sum of squares for errors.</li>
-<li>Compute \(df_E=\sum (n_i-1)=n-k\) the degrees of freedom for errors.</li>
-<li>Compute \(MSE=\frac{SSE}{df_E}\) the mean squares for errors.</li>
-<li>Compute \(F=\frac{MSG}{MSE}\) the \(F\) statistic.</li>
-<li>Compute \(P(F\lt X)\) where \(X\) is a \(F\) distributed variable with parameters \(df_G, df_E\text{.}\)  This value is the \(p\)-value.</li>
-<li>Reject the  null hypothesis if \(p\)-value \(\lt 0.05\text{.}\)</li>
-<li>Marvel that even for statistics, this is a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">lot</em> of computation.</li>
-</ol></article><span class="incontext"><a href="Sec_ANOVA.html#remark-ANOVAsteps">in-context</a></span>
+<li><p>Compute <span class="process-math">\(\bar{x}\)</span> the overall sample mean.</p></li>
+<li><p>Compute <span class="process-math">\(\bar{x}_i\)</span> the sample mean for each group.</p></li>
+<li><p>Compute <span class="process-math">\(SSG=\sum n_i(\bar{x}_i-\bar{x})^2\)</span> the sum of squares for groups.</p></li>
+<li><p>Compute <span class="process-math">\(df_G=k-1\)</span> the degrees of freedom for groups.</p></li>
+<li><p>Compute <span class="process-math">\(MSG=\frac{SSG}{df_G}\)</span> the mean squares for groups.</p></li>
+<li><p>Compute <span class="process-math">\(Var_i\)</span> for each group.</p></li>
+<li><p>Compute <span class="process-math">\(SSE=\sum (n_i-1)Var_i\)</span> the sum of squares for errors.</p></li>
+<li><p>Compute <span class="process-math">\(df_E=\sum (n_i-1)=n-k\)</span> the degrees of freedom for errors.</p></li>
+<li><p>Compute <span class="process-math">\(MSE=\frac{SSE}{df_E}\)</span> the mean squares for errors.</p></li>
+<li><p>Compute <span class="process-math">\(F=\frac{MSG}{MSE}\)</span> the <span class="process-math">\(F\)</span> statistic.</p></li>
+<li><p>Compute <span class="process-math">\(P(F\lt X)\)</span> where <span class="process-math">\(X\)</span> is a <span class="process-math">\(F\)</span> distributed variable with parameters <span class="process-math">\(df_G, df_E\text{.}\)</span>  This value is the <span class="process-math">\(p\)</span>-value.</p></li>
+<li><p>Reject the  null hypothesis if <span class="process-math">\(p\)</span>-value <span class="process-math">\(\lt 0.05\text{.}\)</span></p></li>
+<li><p>Marvel that even for statistics, this is a <em class="emphasis">lot</em> of computation.</p></li>
+</ol></article><span class="incontext"><a href="Sec_ANOVA.html#remark-ANOVAsteps" class="internal">in-context</a></span>
 </body>
 </html>

@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-04-07T17:01:07-06:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="en-US">
-<head>
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Centers of Data (B4)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+<meta property="og:type" content="book">
+<meta property="book:title" content="Team Based Statistics">
+<meta property="book:author" content="Tien Chih">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
     tags: "none",
-    useLabelIds: true,
     tagSide: "right",
     tagIndent: ".8em",
     packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
   },
   options: {
-    ignoreHtmlClass: "tex2jax_ignore",
-    processHtmlClass: "has_am",
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
     renderActions: {
         findScript: [10, function (doc) {
             document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
@@ -48,38 +48,41 @@
     load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
     paths: {pretext: "https://pretextbook.org/js/lib"},
   },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script><script>$(function () {
-    // Make *any* div with class 'sagecell-r' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
-                           linked: true,
-                           languages: ['r'],
-                           evalButtonText: 'Evaluate (R)'});
-});
-</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg">miniversion=0.6</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
-</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
-<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
 </head>
-<body class="pretext-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\Q}{\terminology{Question:\ }}
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Q}{\terminology{Question:\ }}
 \newcommand{\Sol}{\terminology{Solution:\ }}
 \newcommand{\Fisg}{\emph{Fisg}}
 \newcommand{\Iisg}{\emph{Iisg}}
@@ -114,14 +117,16 @@
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
-\)</div>
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
 <h1 class="heading"><a href="book-1.html"><span class="title">Team Based Statistics</span></a></h1>
 <p class="byline">Tien Chih</p>
 </div>
 </div></div>
-<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="Sec_Visualization.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="Chap_DataBasics.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="Sec_Variation.html" title="Next">Next</a></span></div>
 </div>
@@ -129,85 +134,85 @@
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="Sec_Visualization.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="Chap_DataBasics.html" title="Up">Up</a><a class="next-button button toolbar-item" href="Sec_Variation.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
-<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
 <li class="link frontmatter">
-<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul>
-<li><a href="learning-outcomes.html" data-scroll="learning-outcomes">Learning Outcomes and Usage</a></li>
-<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
-<li><a href="author-bio-TC.html" data-scroll="author-bio-TC">Author Biography</a></li>
-<li><a href="dedication-1.html" data-scroll="dedication-1">Dedication</a></li>
+<a href="frontmatter-1.html" data-scroll="frontmatter-1" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="learning-outcomes.html" data-scroll="learning-outcomes" class="internal">Learning Outcomes and Usage</a></li>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="author-bio-TC.html" data-scroll="author-bio-TC" class="internal">Author Biography</a></li>
+<li><a href="dedication-1.html" data-scroll="dedication-1" class="internal">Dedication</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="Chap_DataBasics.html" data-scroll="Chap_DataBasics"><span class="codenumber">1</span> <span class="title">Data Basics (B)</span></a><ul>
-<li><a href="Sec_Variables.html" data-scroll="Sec_Variables">Types of Variables and their Relationships (B1)</a></li>
-<li><a href="Sec_Sampling.html" data-scroll="Sec_Sampling">Sampling Techniques (B2)</a></li>
-<li><a href="Sec_Visualization.html" data-scroll="Sec_Visualization">Visualizing Data (B3)</a></li>
+<a href="Chap_DataBasics.html" data-scroll="Chap_DataBasics" class="internal"><span class="codenumber">1</span> <span class="title">Data Basics (B)</span></a><ul>
+<li><a href="Sec_Variables.html" data-scroll="Sec_Variables" class="internal">Types of Variables and their Relationships (B1)</a></li>
+<li><a href="Sec_Sampling.html" data-scroll="Sec_Sampling" class="internal">Sampling Techniques (B2)</a></li>
+<li><a href="Sec_Visualization.html" data-scroll="Sec_Visualization" class="internal">Visualizing Data (B3)</a></li>
 <li><a href="Sec_Center.html" data-scroll="Sec_Center" class="active">Centers of Data (B4)</a></li>
-<li><a href="Sec_Variation.html" data-scroll="Sec_Variation">Variation of Data (B5)</a></li>
+<li><a href="Sec_Variation.html" data-scroll="Sec_Variation" class="internal">Variation of Data (B5)</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="Chap_Probability.html" data-scroll="Chap_Probability"><span class="codenumber">2</span> <span class="title">Probability (P)</span></a><ul>
-<li><a href="Sec_Introprob.html" data-scroll="Sec_Introprob">Introduction to Probability (P1)</a></li>
-<li><a href="Sec_Conditionalprob.html" data-scroll="Sec_Conditionalprob">Conditional Probability (P2)</a></li>
-<li><a href="Sec_Bayes.html" data-scroll="Sec_Bayes">Bayes Theorem (P3)</a></li>
-<li><a href="Sec_RandomVariables.html" data-scroll="Sec_RandomVariables">Random Variables (P4)</a></li>
-<li><a href="Sec_LinearCombofVariables.html" data-scroll="Sec_LinearCombofVariables">Linear Combinations of Random Variables (P5)</a></li>
+<a href="Chap_Probability.html" data-scroll="Chap_Probability" class="internal"><span class="codenumber">2</span> <span class="title">Probability (P)</span></a><ul>
+<li><a href="Sec_Introprob.html" data-scroll="Sec_Introprob" class="internal">Introduction to Probability (P1)</a></li>
+<li><a href="Sec_Conditionalprob.html" data-scroll="Sec_Conditionalprob" class="internal">Conditional Probability (P2)</a></li>
+<li><a href="Sec_Bayes.html" data-scroll="Sec_Bayes" class="internal">Bayes Theorem (P3)</a></li>
+<li><a href="Sec_RandomVariables.html" data-scroll="Sec_RandomVariables" class="internal">Random Variables (P4)</a></li>
+<li><a href="Sec_LinearCombofVariables.html" data-scroll="Sec_LinearCombofVariables" class="internal">Linear Combinations of Random Variables (P5)</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="Chap_Distributions.html" data-scroll="Chap_Distributions"><span class="codenumber">3</span> <span class="title">Distributions (D)</span></a><ul>
-<li><a href="Sec_StandardNormal.html" data-scroll="Sec_StandardNormal">Standard Normal Distribution (D1)</a></li>
-<li><a href="Sec_GeneralNormal.html" data-scroll="Sec_GeneralNormal">General Normal Distribution (D2)</a></li>
-<li><a href="Sec_Counting.html" data-scroll="Sec_Counting">Counting Principles (D3)</a></li>
-<li><a href="Sec_Binomial.html" data-scroll="Sec_Binomial">Binomial Distribution (D4)</a></li>
-<li><a href="Sec_NormalApprox.html" data-scroll="Sec_NormalApprox">Normal Approximation (D5)</a></li>
+<a href="Chap_Distributions.html" data-scroll="Chap_Distributions" class="internal"><span class="codenumber">3</span> <span class="title">Distributions (D)</span></a><ul>
+<li><a href="Sec_StandardNormal.html" data-scroll="Sec_StandardNormal" class="internal">Standard Normal Distribution (D1)</a></li>
+<li><a href="Sec_GeneralNormal.html" data-scroll="Sec_GeneralNormal" class="internal">General Normal Distribution (D2)</a></li>
+<li><a href="Sec_Counting.html" data-scroll="Sec_Counting" class="internal">Counting Principles (D3)</a></li>
+<li><a href="Sec_Binomial.html" data-scroll="Sec_Binomial" class="internal">Binomial Distribution (D4)</a></li>
+<li><a href="Sec_NormalApprox.html" data-scroll="Sec_NormalApprox" class="internal">Normal Approximation (D5)</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="Chap_Foundations.html" data-scroll="Chap_Foundations"><span class="codenumber">4</span> <span class="title">Foundations for Inference (F)</span></a><ul>
-<li><a href="Sec_PointEstimates.html" data-scroll="Sec_PointEstimates">Point Estimates (F1)</a></li>
-<li><a href="Sec_ConfidenceInterval.html" data-scroll="Sec_ConfidenceInterval">Introduction to Confidence Intervals (F2)</a></li>
-<li><a href="Sec_HypothesisTesing.html" data-scroll="Sec_HypothesisTesing">Introduction to Hypothesis Testing (F3)</a></li>
+<a href="Chap_Foundations.html" data-scroll="Chap_Foundations" class="internal"><span class="codenumber">4</span> <span class="title">Foundations for Inference (F)</span></a><ul>
+<li><a href="Sec_PointEstimates.html" data-scroll="Sec_PointEstimates" class="internal">Point Estimates (F1)</a></li>
+<li><a href="Sec_ConfidenceInterval.html" data-scroll="Sec_ConfidenceInterval" class="internal">Introduction to Confidence Intervals (F2)</a></li>
+<li><a href="Sec_HypothesisTesing.html" data-scroll="Sec_HypothesisTesing" class="internal">Introduction to Hypothesis Testing (F3)</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="Chap_Categorical.html" data-scroll="Chap_Categorical"><span class="codenumber">5</span> <span class="title">Inference for Categorical Variables (C)</span></a><ul>
-<li><a href="Sec_SizeofSampleCat.html" data-scroll="Sec_SizeofSampleCat">Size of Samples (Categorical)</a></li>
-<li><a href="Sec_TwoVarCat.html" data-scroll="Sec_TwoVarCat">Comparing Two Categorical Variables (C2)</a></li>
-<li><a href="Sec_ChiSquare.html" data-scroll="Sec_ChiSquare">Chi-Squared Test and Goodness of Fit (C3)</a></li>
-<li><a href="Sec_ChiIndependence.html" data-scroll="Sec_ChiIndependence">Chi-Squared Test and Independence (C4)</a></li>
+<a href="Chap_Categorical.html" data-scroll="Chap_Categorical" class="internal"><span class="codenumber">5</span> <span class="title">Inference for Categorical Variables (C)</span></a><ul>
+<li><a href="Sec_SizeofSampleCat.html" data-scroll="Sec_SizeofSampleCat" class="internal">Size of Samples (Categorical)</a></li>
+<li><a href="Sec_TwoVarCat.html" data-scroll="Sec_TwoVarCat" class="internal">Comparing Two Categorical Variables (C2)</a></li>
+<li><a href="Sec_ChiSquare.html" data-scroll="Sec_ChiSquare" class="internal">Chi-Squared Test and Goodness of Fit (C3)</a></li>
+<li><a href="Sec_ChiIndependence.html" data-scroll="Sec_ChiIndependence" class="internal">Chi-Squared Test and Independence (C4)</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="Chap_Numerical.html" data-scroll="Chap_Numerical"><span class="codenumber">6</span> <span class="title">Inference for Numerical Variables (N)</span></a><ul>
-<li><a href="Sec_tVariable.html" data-scroll="Sec_tVariable">The \(t\)-Variable and Sampling Distribution of Numerical Variables (N1)</a></li>
-<li><a href="Sec_OneVarNum.html" data-scroll="Sec_OneVarNum">Confidence Intervals and Hypothesis Testing for a single Numerical Variable (N2)</a></li>
-<li><a href="Sec_PairedData.html" data-scroll="Sec_PairedData">Paired Numerical Data (N3)</a></li>
-<li><a href="Sec_TwoVarNum.html" data-scroll="Sec_TwoVarNum">Comparing Two Numerical Variables (N4)</a></li>
-<li><a href="Sec_SizeofSampleNum.html" data-scroll="Sec_SizeofSampleNum">Size of Samples of Numerical Variables (N5)</a></li>
-<li><a href="Sec_ANOVA.html" data-scroll="Sec_ANOVA">ANOVA: Analysis of Variation (N6)</a></li>
+<a href="Chap_Numerical.html" data-scroll="Chap_Numerical" class="internal"><span class="codenumber">6</span> <span class="title">Inference for Numerical Variables (N)</span></a><ul>
+<li><a href="Sec_tVariable.html" data-scroll="Sec_tVariable" class="internal">The <span class="process-math">\(t\)</span>-Variable and Sampling Distribution of Numerical Variables (N1)</a></li>
+<li><a href="Sec_OneVarNum.html" data-scroll="Sec_OneVarNum" class="internal">Confidence Intervals and Hypothesis Testing for a single Numerical Variable (N2)</a></li>
+<li><a href="Sec_PairedData.html" data-scroll="Sec_PairedData" class="internal">Paired Numerical Data (N3)</a></li>
+<li><a href="Sec_TwoVarNum.html" data-scroll="Sec_TwoVarNum" class="internal">Comparing Two Numerical Variables (N4)</a></li>
+<li><a href="Sec_SizeofSampleNum.html" data-scroll="Sec_SizeofSampleNum" class="internal">Size of Samples of Numerical Variables (N5)</a></li>
+<li><a href="Sec_ANOVA.html" data-scroll="Sec_ANOVA" class="internal">ANOVA: Analysis of Variation (N6)</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="Chap_LinearRegression.html" data-scroll="Chap_LinearRegression"><span class="codenumber">7</span> <span class="title">Linear Regression (R)</span></a><ul>
-<li><a href="Sec_Correlation.html" data-scroll="Sec_Correlation">Linear Correlation of Variables (R1)</a></li>
-<li><a href="Sec_InterpretingRegression.html" data-scroll="Sec_InterpretingRegression">Interpreting Linear Regression (R2)</a></li>
-<li><a href="Sec_InferenceRegression.html" data-scroll="Sec_InferenceRegression">Inference and Linear Regression (R3)</a></li>
+<a href="Chap_LinearRegression.html" data-scroll="Chap_LinearRegression" class="internal"><span class="codenumber">7</span> <span class="title">Linear Regression (R)</span></a><ul>
+<li><a href="Sec_Correlation.html" data-scroll="Sec_Correlation" class="internal">Linear Correlation of Variables (R1)</a></li>
+<li><a href="Sec_InterpretingRegression.html" data-scroll="Sec_InterpretingRegression" class="internal">Interpreting Linear Regression (R2)</a></li>
+<li><a href="Sec_InferenceRegression.html" data-scroll="Sec_InferenceRegression" class="internal">Inference and Linear Regression (R3)</a></li>
 </ul>
 </li>
 </ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="Sec_Center"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="Sec_Center"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.4</span> <span class="title">Centers of Data (B4)</span>
 </h2>
 <section class="introduction" id="introduction-16"><p id="p-166">When using data to make predictions about random variables, it is useful to be able to discuss the notion of central or “average” values of that data.  There are different ways to approach this.</p>
 <p id="p-167">In this section, we will show how to identify and compute different notions of centrality.</p>
-<p id="p-168">Run the following code to download the <code class="code-inline tex2jax_ignore">ncbirths.csv</code> data set: <div class="sagecell-r" id="sage-16"><script type="text/x-sage">ncbirths = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/ncbirths.csv")
+<p id="p-168">Run the following code to download the <code class="code-inline tex2jax_ignore">ncbirths.csv</code> data set: <pre class="ptx-sagecell sagecell-r" id="sage-16"><script type="text/x-sage">ncbirths = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/ncbirths.csv")
 names(ncbirths)
-</script></div></p>
+</script></pre></p>
 <p id="p-169">In 2004, the state of North Carolina released to the public a large data set containing information on births recorded in this state. This data set has been of interest to medical researchers who are studying the relation between habits and practices of expectant mothers and the birth of their children. This is a random sample of 1,000 cases from this data set.</p></section><article class="exploration project-like" id="measurements-center-preview"><h3 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">1.4.1</span><span class="period">.</span>
 </h3>
@@ -231,75 +236,75 @@ names(ncbirths)
 <article class="task exercise-like" id="task-57"><h4 class="heading"><span class="codenumber">(a)</span></h4>
 <p id="p-172">“The most common tax refund is $3,000. Therefore, the average tax refund in this group is $3,000.”</p></article><article class="task exercise-like" id="task-58"><h4 class="heading"><span class="codenumber">(b)</span></h4>
 <p id="p-173">“When ordered from least to greatest, the middle tax refund is $3,500. Therefore, the average tax refund in this group is $3,500.”</p></article><article class="task exercise-like" id="task-59"><h4 class="heading"><span class="codenumber">(c)</span></h4>
-<p id="p-174">“When the seven refunds are added together and divided by \(7\text{,}\) the result is $5,000. Therefore, the average tax refund in this group is $5,000.”</p></article></article><article class="activity project-like" id="activity-17"><h3 class="heading">
+<p id="p-174">“When the seven refunds are added together and divided by <span class="process-math">\(7\text{,}\)</span> the result is $5,000. Therefore, the average tax refund in this group is $5,000.”</p></article></article><article class="activity project-like" id="activity-17"><h3 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.4.2</span><span class="period">.</span>
 </h3>
 <div class="introduction" id="introduction-18">
 <p id="p-175">There are several notions of “average”, that is, several ways to describe the center of a dataset.</p>
-<p id="p-176">Most commonly, “average” is used to describe the <dfn class="terminology">mean</dfn> of a dataset. If a dataset contains the \(n\) values \(x_0,x_1,\dots,x_{n-1}\text{,}\) then the mean is defined by the following formula:</p>
-<div class="displaymath">
+<p id="p-176">Most commonly, “average” is used to describe the <dfn class="terminology">mean</dfn> of a dataset. If a dataset contains the <span class="process-math">\(n\)</span> values <span class="process-math">\(x_0,x_1,\dots,x_{n-1}\text{,}\)</span> then the mean is defined by the following formula:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \frac{1}{n}\sum_{0\leq k&lt; n} x_k = \frac{x_0+x_1+\dots+x_{n-1}}{n}
 \end{equation*}
 </div>
-<p id="p-177">For example, the mean of the counting numbers \(2,3,5,7,18\) is \(\frac{2+3+5+7+18}{5}=7\text{:}\) all the values in the collection are added together, and then divided by the amount of data in the collection.</p>
+<p id="p-177">For example, the mean of the counting numbers <span class="process-math">\(2,3,5,7,18\)</span> is <span class="process-math">\(\frac{2+3+5+7+18}{5}=7\text{:}\)</span> all the values in the collection are added together, and then divided by the amount of data in the collection.</p>
 </div>
 <article class="task exercise-like" id="task-60"><h4 class="heading"><span class="codenumber">(a)</span></h4>
-<p id="p-178">Show that \(8\) is the mean of the counting numbers \(4,8,9,11\text{.}\)</p></article><article class="task exercise-like" id="task-61"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-178">Show that <span class="process-math">\(8\)</span> is the mean of the counting numbers <span class="process-math">\(4,8,9,11\text{.}\)</span></p></article><article class="task exercise-like" id="task-61"><h4 class="heading"><span class="codenumber">(b)</span></h4>
 <p id="p-179">Is it possible for the mean of a dataset to not belong to the dataset itself? If so, give an example of such a dataset. If not, explain why.</p></article></article><article class="activity project-like" id="activity-ncbirthsmean"><h3 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">Birth Weight Mean.</span>
 </h3>
 <article class="task exercise-like" id="task-62"><h4 class="heading"><span class="codenumber">(a)</span></h4>
-<p id="p-180">Run the following code to display the mean of the birth weight of babies from North Carolina in 2004 in pounds: <div class="sagecell-r" id="sage-17"><script type="text/x-sage">mean(ncbirths$weight)
-</script></div></p></article><article class="task exercise-like" id="task-63"><h4 class="heading"><span class="codenumber">(b)</span></h4>
-<p id="p-181">Run the following code to display the histogram birth weight of babies from North Carolina in 2004 in pounds, along with the mean: <div class="sagecell-r" id="sage-18"><script type="text/x-sage">m=mean(ncbirths$weight)
+<p id="p-180">Run the following code to display the mean of the birth weight of babies from North Carolina in 2004 in pounds: <pre class="ptx-sagecell sagecell-r" id="sage-17"><script type="text/x-sage">mean(ncbirths$weight)
+</script></pre></p></article><article class="task exercise-like" id="task-63"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-181">Run the following code to display the histogram birth weight of babies from North Carolina in 2004 in pounds, along with the mean: <pre class="ptx-sagecell sagecell-r" id="sage-18"><script type="text/x-sage">m=mean(ncbirths$weight)
 hist(ncbirths$weight)
 abline(v = m, col = "red")
-</script></div></p></article></article><article class="activity project-like" id="activity-ncbirthsmean2"><h3 class="heading">
+</script></pre></p></article></article><article class="activity project-like" id="activity-ncbirthsmean2"><h3 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.4.4</span><span class="period">.</span><span class="space"> </span><span class="title">Mean of Variable of Choice.</span>
 </h3>
 <article class="task exercise-like" id="task-64"><h4 class="heading"><span class="codenumber">(a)</span></h4>
 <p id="p-182">Follow this link and identify a numerical vairable whose mean you wish to find. <a class="external" href="https://www.openintro.org/data/index.php?data=ncbirths" target="_blank"><code class="code-inline tex2jax_ignore">https://www.openintro.org/data/index.php?data=ncbirths</code></a>.</p></article><article class="task exercise-like" id="task-65"><h4 class="heading"><span class="codenumber">(b)</span></h4>
-<p id="p-183">Edit the following code to display the mean of your chosen variable: <div class="sagecell-r" id="sage-19"><script type="text/x-sage">mean(ncbirths$FIXME)
-</script></div></p></article><article class="task exercise-like" id="task-66"><h4 class="heading"><span class="codenumber">(c)</span></h4>
-<p id="p-184">Run the following code to display the histogram for your variable, along with the mean: <div class="sagecell-r" id="sage-20"><script type="text/x-sage">m=mean(ncbirths$FIXME)
+<p id="p-183">Edit the following code to display the mean of your chosen variable: <pre class="ptx-sagecell sagecell-r" id="sage-19"><script type="text/x-sage">mean(ncbirths$FIXME)
+</script></pre></p></article><article class="task exercise-like" id="task-66"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-184">Run the following code to display the histogram for your variable, along with the mean: <pre class="ptx-sagecell sagecell-r" id="sage-20"><script type="text/x-sage">m=mean(ncbirths$FIXME)
 hist(ncbirths$FIXME)
 abline(v = m, col = "red")
-</script></div></p></article></article><p id="p-185">For smaller data sets, <code class="code-inline tex2jax_ignore">Desmos</code> is a useful way to compute the mean.  Enter your Data into <code class="code-inline tex2jax_ignore">L=[...]</code> <iframe src="https://www.desmos.com/calculator/gvpcc933r0" id="interactive-2" width="600" height="600"></iframe></p>
+</script></pre></p></article></article><p id="p-185">For smaller data sets, <code class="code-inline tex2jax_ignore">Desmos</code> is a useful way to compute the mean.  Enter your Data into <code class="code-inline tex2jax_ignore">L=[...]</code> <iframe src="https://www.desmos.com/calculator/gvpcc933r0" id="interactive-2" width="600" height="600"></iframe></p>
 <article class="definition definition-like" id="definition-11"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.4.2</span><span class="period">.</span>
 </h3>
 <p id="p-186">We use:</p>
 <ul class="disc">
-<li id="li-85"><p id="p-derived-li-85">\(\bar{x}\) the <em class="emphasis">sample mean</em> to denote the mean of data set representing a sample.</p></li>
-<li id="li-86"><p id="p-derived-li-86">\(\mu\) the <em class="emphasis">population mean</em> to denote the mean of data set representing a population.</p></li>
+<li id="li-85"><p id="p-derived-li-85"><span class="process-math">\(\bar{x}\)</span> the <em class="emphasis">sample mean</em> to denote the mean of data set representing a sample.</p></li>
+<li id="li-86"><p id="p-derived-li-86"><span class="process-math">\(\mu\)</span> the <em class="emphasis">population mean</em> to denote the mean of data set representing a population.</p></li>
 </ul></article><article class="activity project-like" id="activity-20"><h3 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.4.5</span><span class="period">.</span>
 </h3>
-<div class="introduction" id="introduction-19"><p id="p-187">When data is ordered from least to greatest, the middle value is called its <dfn class="terminology">median</dfn>. For example, the median of \(1,1,6,7,9\) is \(6\text{.}\)</p></div>
+<div class="introduction" id="introduction-19"><p id="p-187">When data is ordered from least to greatest, the middle value is called its <dfn class="terminology">median</dfn>. For example, the median of <span class="process-math">\(1,1,6,7,9\)</span> is <span class="process-math">\(6\text{.}\)</span></p></div>
 <article class="task exercise-like" id="task-67"><h4 class="heading"><span class="codenumber">(a)</span></h4>
-<p id="p-188">Find the median of \(9,12,3,0,11,9,2\text{.}\)</p></article><article class="task exercise-like" id="task-68"><h4 class="heading"><span class="codenumber">(b)</span></h4>
-<p id="p-189">If a dataset has two middle values, \(a\) and \(b\text{,}\) then their mean \(\frac{a+b}{2}\) is used as the median. For example, the median of \(4,6,7,9,10,13\) is \(\frac{7+9}{2}=8\text{.}\)</p>
-<p id="p-190">Make up a collection of six numbers such that its median is \(5.5\text{.}\)</p></article></article><article class="activity project-like" id="activity-ncbirthsmedian"><h3 class="heading">
+<p id="p-188">Find the median of <span class="process-math">\(9,12,3,0,11,9,2\text{.}\)</span></p></article><article class="task exercise-like" id="task-68"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-189">If a dataset has two middle values, <span class="process-math">\(a\)</span> and <span class="process-math">\(b\text{,}\)</span> then their mean <span class="process-math">\(\frac{a+b}{2}\)</span> is used as the median. For example, the median of <span class="process-math">\(4,6,7,9,10,13\)</span> is <span class="process-math">\(\frac{7+9}{2}=8\text{.}\)</span></p>
+<p id="p-190">Make up a collection of six numbers such that its median is <span class="process-math">\(5.5\text{.}\)</span></p></article></article><article class="activity project-like" id="activity-ncbirthsmedian"><h3 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.4.6</span><span class="period">.</span><span class="space"> </span><span class="title">Birth Weight Median.</span>
 </h3>
 <article class="task exercise-like" id="task-69"><h4 class="heading"><span class="codenumber">(a)</span></h4>
-<p id="p-191">Run the following code to display the median of the birth weight of babies from North Carolina in 2004 in pounds: <div class="sagecell-r" id="sage-21"><script type="text/x-sage">median(ncbirths$weight)
-</script></div></p></article><article class="task exercise-like" id="task-70"><h4 class="heading"><span class="codenumber">(b)</span></h4>
-<p id="p-192">Run the following code to display the histogram birth weight of babies from North Carolina in 2004 in pounds, along with the mean: <div class="sagecell-r" id="sage-22"><script type="text/x-sage">md=median(ncbirths$weight)
+<p id="p-191">Run the following code to display the median of the birth weight of babies from North Carolina in 2004 in pounds: <pre class="ptx-sagecell sagecell-r" id="sage-21"><script type="text/x-sage">median(ncbirths$weight)
+</script></pre></p></article><article class="task exercise-like" id="task-70"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-192">Run the following code to display the histogram birth weight of babies from North Carolina in 2004 in pounds, along with the mean: <pre class="ptx-sagecell sagecell-r" id="sage-22"><script type="text/x-sage">md=median(ncbirths$weight)
 hist(ncbirths$weight)
 abline(v = md, col = "blue")
-</script></div></p></article></article><article class="activity project-like" id="activity-ncbirthsmedian2"><h3 class="heading">
+</script></pre></p></article></article><article class="activity project-like" id="activity-ncbirthsmedian2"><h3 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.4.7</span><span class="period">.</span><span class="space"> </span><span class="title">Median of Variable of Choice.</span>
 </h3>
 <article class="task exercise-like" id="task-71"><h4 class="heading"><span class="codenumber">(a)</span></h4>
 <p id="p-193">Follow this link and identify a numerical vairable whose median you wish to find. <a class="external" href="https://www.openintro.org/data/index.php?data=ncbirths" target="_blank"><code class="code-inline tex2jax_ignore">https://www.openintro.org/data/index.php?data=ncbirths</code></a>.</p></article><article class="task exercise-like" id="task-72"><h4 class="heading"><span class="codenumber">(b)</span></h4>
-<p id="p-194">Edit the following code to display the mean of your chosen variable: <div class="sagecell-r" id="sage-23"><script type="text/x-sage">median(ncbirths$FIXME)
-</script></div></p></article><article class="task exercise-like" id="task-73"><h4 class="heading"><span class="codenumber">(c)</span></h4>
-<p id="p-195">Run the following code to display the histogram for your variable, along with the median: <div class="sagecell-r" id="sage-24"><script type="text/x-sage">md=median(ncbirths$FIXME)
+<p id="p-194">Edit the following code to display the mean of your chosen variable: <pre class="ptx-sagecell sagecell-r" id="sage-23"><script type="text/x-sage">median(ncbirths$FIXME)
+</script></pre></p></article><article class="task exercise-like" id="task-73"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-195">Run the following code to display the histogram for your variable, along with the median: <pre class="ptx-sagecell sagecell-r" id="sage-24"><script type="text/x-sage">md=median(ncbirths$FIXME)
 hist(ncbirths$FIXME)
 abline(v = md, col = "blue")
-</script></div></p></article></article><article class="activity project-like" id="activity-meanvsmedian"><h3 class="heading">
+</script></pre></p></article></article><article class="activity project-like" id="activity-meanvsmedian"><h3 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.4.8</span><span class="period">.</span><span class="space"> </span><span class="title">Comparing Means to Medians.</span>
 </h3>
 <article class="task exercise-like" id="task-74"><h4 class="heading"><span class="codenumber">(a)</span></h4>
@@ -311,22 +316,22 @@ abline(v = md, col = "blue")
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.4.3</span><span class="period">.</span>
 </h3>
 <ul id="p-201" class="disc">
-<li id="li-87">A numerical variable is said to have <em class="emphasis">positive skew</em> or <em class="emphasis">right skew</em> if there is a tail or outliers to the right of the bulk of the data.  This is categorized by the mean being greater than the median.  (Intuitively, the tail values or outliers “pull up” the value of the mean.) <figure class="figure figure-like" id="figure-8"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="external/images/positiveskew.png" class="contained" alt="A Positive Skewed Data Set."></div>
+<li id="li-87">A numerical variable is said to have <em class="emphasis">positive skew</em> or <em class="emphasis">right skew</em> if there is a tail or outliers to the right of the bulk of the data.  This is categorized by the mean being greater than the median.  (Intuitively, the tail values or outliers “pull up” the value of the mean.) <figure class="figure figure-like" id="figure-7"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="external/images/positiveskew.png" class="contained" alt="A Positive Skewed Data Set."></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.4.4<span class="period">.</span></span><span class="space"> </span>A Positive Skewed Data Set.</figcaption></figure>
 </li>
-<li id="li-88">A numerical variable is said to have <em class="emphasis">negative skew</em> or <em class="emphasis">left skew</em> if there is a tail or outliers to the left of the bulk of the data.  This is categorized by the mean being less than the median.  (Intuitively, the tail values or outliers “pull down” the value of the mean.) <figure class="figure figure-like" id="figure-9"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="external/images/negativeskew.png" class="contained" alt="A Negative Skewed Data Set."></div>
+<li id="li-88">A numerical variable is said to have <em class="emphasis">negative skew</em> or <em class="emphasis">left skew</em> if there is a tail or outliers to the left of the bulk of the data.  This is categorized by the mean being less than the median.  (Intuitively, the tail values or outliers “pull down” the value of the mean.) <figure class="figure figure-like" id="figure-8"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="external/images/negativeskew.png" class="contained" alt="A Negative Skewed Data Set."></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.4.5<span class="period">.</span></span><span class="space"> </span>A Negative Skewed Data Set.</figcaption></figure>
 </li>
-<li id="li-89">A numerical variable is said to have <em class="emphasis">no skew</em> or <em class="emphasis">symmetric</em> if the left and right extremal behavior resemble each other.  This is categorized by the mean being equal than the median. <figure class="figure figure-like" id="figure-10"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="external/images/noskew.png" class="contained" alt="A Symmetric Data Set."></div>
+<li id="li-89">A numerical variable is said to have <em class="emphasis">no skew</em> or <em class="emphasis">symmetric</em> if the left and right extremal behavior resemble each other.  This is categorized by the mean being equal than the median. <figure class="figure figure-like" id="figure-9"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="external/images/noskew.png" class="contained" alt="A Symmetric Data Set."></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.4.6<span class="period">.</span></span><span class="space"> </span>A Symmetric Data Set.</figcaption></figure>
 </li>
 </ul></article><article class="activity project-like" id="activity-ncbirthsskew"><h3 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.4.9</span><span class="period">.</span><span class="space"> </span><span class="title">Birth Weight Skew.</span>
 </h3>
 <article class="task exercise-like" id="task-79"><h4 class="heading"><span class="codenumber">(a)</span></h4>
-<p id="p-202">Run the following code to create a new data set, which consists of the subset of the originasl data set where the Mother was a smoker: <div class="sagecell-r" id="sage-25"><script type="text/x-sage">smoke=subset(ncbirths, habit=="smoker")
-</script></div></p></article><article class="task exercise-like" id="task-80"><h4 class="heading"><span class="codenumber">(b)</span></h4>
-<p id="p-203">Run the following code to display the histogram birth weight of babies whose mother smoked, along with the mean and median weights: <div class="sagecell-r" id="sage-26"><script type="text/x-sage">m=mean(smoke$weight)
+<p id="p-202">Run the following code to create a new data set, which consists of the subset of the originasl data set where the Mother was a smoker: <pre class="ptx-sagecell sagecell-r" id="sage-25"><script type="text/x-sage">smoke=subset(ncbirths, habit=="smoker")
+</script></pre></p></article><article class="task exercise-like" id="task-80"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-203">Run the following code to display the histogram birth weight of babies whose mother smoked, along with the mean and median weights: <pre class="ptx-sagecell sagecell-r" id="sage-26"><script type="text/x-sage">m=mean(smoke$weight)
 md=median(smoke$weight)
 hist(smoke$weight)
 abline(v = m, col = "red")
@@ -334,14 +339,14 @@ abline(v = md, col = "blue")
 
 print(m)
 print(md)
-</script></div></p></article><article class="task exercise-like" id="task-81"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+</script></pre></p></article><article class="task exercise-like" id="task-81"><h4 class="heading"><span class="codenumber">(c)</span></h4>
 <p id="p-204">What does this tell you about the skewness of the birth weights of babies who's mothers smoked?</p></article></article><article class="activity project-like" id="activity-ncbirthsskew2"><h3 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.4.10</span><span class="period">.</span><span class="space"> </span><span class="title">Skew of Variable of Choice.</span>
 </h3>
 <article class="task exercise-like" id="task-82"><h4 class="heading"><span class="codenumber">(a)</span></h4>
-<p id="p-205">Edit the following code and run it to create a new data set, based on whatever criteria you want this set to have: <div class="sagecell-r" id="sage-27"><script type="text/x-sage">FIXME=subset(ncbirths, FIXME)
-</script></div></p></article><article class="task exercise-like" id="task-83"><h4 class="heading"><span class="codenumber">(b)</span></h4>
-<p id="p-206">Edit  the following code to display the histogram of whatever numerical variable you choose, along with the mean and median: <div class="sagecell-r" id="sage-28"><script type="text/x-sage">m=mean(FIXME$FIXME)
+<p id="p-205">Edit the following code and run it to create a new data set, based on whatever criteria you want this set to have: <pre class="ptx-sagecell sagecell-r" id="sage-27"><script type="text/x-sage">FIXME=subset(ncbirths, FIXME)
+</script></pre></p></article><article class="task exercise-like" id="task-83"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-206">Edit  the following code to display the histogram of whatever numerical variable you choose, along with the mean and median: <pre class="ptx-sagecell sagecell-r" id="sage-28"><script type="text/x-sage">m=mean(FIXME$FIXME)
 md=median(FIXME$FIXME)
 hist(FIXME$FIXME)
 abline(v = m, col = "red")
@@ -349,20 +354,20 @@ abline(v = md, col = "blue")
 
 print(m)
 print(md)
-</script></div></p></article><article class="task exercise-like" id="task-84"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+</script></pre></p></article><article class="task exercise-like" id="task-84"><h4 class="heading"><span class="codenumber">(c)</span></h4>
 <p id="p-207">What does this tell you about the skewness of the the variable in question?</p></article></article><article class="activity project-like" id="activity-26"><h3 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.4.11</span><span class="period">.</span>
 </h3>
-<div class="introduction" id="introduction-20"><p id="p-208">The <dfn class="terminology">mode</dfn> of a dataset is simply its most-repeated value. For example, the mode of the collection of values \(3,3,5,5,5,8,8,9,10,10\) is \(5\text{.}\)</p></div>
+<div class="introduction" id="introduction-20"><p id="p-208">The <dfn class="terminology">mode</dfn> of a dataset is simply its most-repeated value. For example, the mode of the collection of values <span class="process-math">\(3,3,5,5,5,8,8,9,10,10\)</span> is <span class="process-math">\(5\text{.}\)</span></p></div>
 <article class="task exercise-like" id="task-85"><h4 class="heading"><span class="codenumber">(a)</span></h4>
-<p id="p-209">Find the mode of the values \(7, 5, 1, 3, 3, 1, 9, 9, 1, 5\text{.}\)</p></article><article class="task exercise-like" id="task-86"><h4 class="heading"><span class="codenumber">(b)</span></h4>
-<p id="p-210">It's possible that a dataset may have many different modes. For example, both \(2\) and \(5\) are modes for the values in the list <code class="code-inline tex2jax_ignore">[4,2,8,5,5,9,2,7]</code>.</p>
-<p id="p-211">Make up an example of a dataset with seven values that has both \(4\) and \(7\) as modes.</p></article></article><article class="activity project-like" id="activity-ncbirthsmode"><h3 class="heading">
+<p id="p-209">Find the mode of the values <span class="process-math">\(7, 5, 1, 3, 3, 1, 9, 9, 1, 5\text{.}\)</span></p></article><article class="task exercise-like" id="task-86"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-210">It's possible that a dataset may have many different modes. For example, both <span class="process-math">\(2\)</span> and <span class="process-math">\(5\)</span> are modes for the values in the list <code class="code-inline tex2jax_ignore">[4,2,8,5,5,9,2,7]</code>.</p>
+<p id="p-211">Make up an example of a dataset with seven values that has both <span class="process-math">\(4\)</span> and <span class="process-math">\(7\)</span> as modes.</p></article></article><article class="activity project-like" id="activity-ncbirthsmode"><h3 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.4.12</span><span class="period">.</span><span class="space"> </span><span class="title">Length of Pregnancy Mode.</span>
 </h3>
 <article class="task exercise-like" id="task-87"><h4 class="heading"><span class="codenumber">(a)</span></h4>
-<p id="p-212">Run the following code to display the histogram length of pregnancies for mothers from North Carolina in 2004 in weeks: <div class="sagecell-r" id="sage-29"><script type="text/x-sage">hist(ncbirths$weeks)
-</script></div></p></article><article class="task exercise-like" id="task-88"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-212">Run the following code to display the histogram length of pregnancies for mothers from North Carolina in 2004 in weeks: <pre class="ptx-sagecell sagecell-r" id="sage-29"><script type="text/x-sage">hist(ncbirths$weeks)
+</script></pre></p></article><article class="task exercise-like" id="task-88"><h4 class="heading"><span class="codenumber">(b)</span></h4>
 <p id="p-213">How is the mode reflected in the histogram?</p></article></article><article class="activity project-like" id="activity-averagecategorical"><h3 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.4.13</span><span class="period">.</span><span class="space"> </span><span class="title">Averages for Categorical Variables.</span>
 </h3>

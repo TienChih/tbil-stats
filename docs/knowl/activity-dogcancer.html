@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-27T13:18:19-06:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -12,61 +9,57 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script><script>$(function () {
-    // Make *any* div with class 'sagecell-r' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
-                           linked: true,
-                           languages: ['r'],
-                           evalButtonText: 'Evaluate (R)'});
-});
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
 </script>
 </head>
-<body>
-<article class="activity project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.7</span><span class="period">.</span><span class="space"> </span><span class="title">Cancer in Dogs.</span>
-</h6>
+</h4>
 <div class="introduction">
-<p xmlns:svg="http://www.w3.org/2000/svg">A study in 1994 examined 491 dogs that had developed cancer and 945 dogs as a control group to determine whether there is an <em class="emphasis">increased</em> risk of cancer in dogs that are exposed to the herbicide 2,4-Dichlorophenoxyacetic acid (2,4-D).  We analyze their data and see what their conclusion would be.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to download <code class="code-inline tex2jax_ignore">cancer_in_dogs.csv</code> and display it's variables. <div class="sagecell-r" id="sage-188"><script type="text/x-sage">cancer = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/cancer_in_dogs.csv")
+<p>A study in 1994 examined 491 dogs that had developed cancer and 945 dogs as a control group to determine whether there is an <em class="emphasis">increased</em> risk of cancer in dogs that are exposed to the herbicide 2,4-Dichlorophenoxyacetic acid (2,4-D).  We analyze their data and see what their conclusion would be.</p>
+<p>Run the following code to download <code class="code-inline tex2jax_ignore">cancer_in_dogs.csv</code> and display it's variables. <pre class="ptx-sagecell sagecell-r" id="sage-194"><script type="text/x-sage">cancer = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/cancer_in_dogs.csv")
 names(cancer)
-</script></div> <code class="code-inline tex2jax_ignore">order</code> records whther or not they were exposed to <code class="code-inline tex2jax_ignore">2,4-D</code>, and <code class="code-inline tex2jax_ignore">response</code> records whether or not they got <code class="code-inline tex2jax_ignore">cancer</code> or <code class="code-inline tex2jax_ignore">no cancer</code>.  To see a brief breakdown of the data, run the following code: <div class="sagecell-r" id="sage-189"><script type="text/x-sage">summary(cancer)
-</script></div></p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Let \(p_1\) denote the probability that a dog exposed to 2,4-D get's cancer and let \(p_2\) denote the proportion of dogs who aren'e exposed to 2,4-D get cancer.</p>
+</script></pre> <code class="code-inline tex2jax_ignore">order</code> records whther or not they were exposed to <code class="code-inline tex2jax_ignore">2,4-D</code>, and <code class="code-inline tex2jax_ignore">response</code> records whether or not they got <code class="code-inline tex2jax_ignore">cancer</code> or <code class="code-inline tex2jax_ignore">no cancer</code>.  To see a brief breakdown of the data, run the following code: <pre class="ptx-sagecell sagecell-r" id="sage-195"><script type="text/x-sage">summary(cancer)
+</script></pre></p>
+<p>Let <span class="process-math">\(p_1\)</span> denote the probability that a dog exposed to 2,4-D get's cancer and let <span class="process-math">\(p_2\)</span> denote the proportion of dogs who aren'e exposed to 2,4-D get cancer.</p>
 </div>
-<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
-<p>Which of the following best describes the null hypothesis \(H_0\text{?}\)</p>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>Which of the following best describes the null hypothesis <span class="process-math">\(H_0\text{?}\)</span></p>
 <ul class="disc">
-<li>\(p_1-p_2\lt 0\text{.}\)</li>
-<li>\(p_1-p_2&gt; 0\text{.}\)</li>
-<li>\(p_1-p_2\neq 0\text{.}\)</li>
-<li>\(p_1-p_2= 0\text{.}\)</li>
-</ul></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
-<p>Which of the following best describes the alternative hypothesis \(H_A\text{?}\)</p>
+<li><p><span class="process-math">\(p_1-p_2\lt 0\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(p_1-p_2&gt; 0\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(p_1-p_2\neq 0\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(p_1-p_2= 0\text{.}\)</span></p></li>
+</ul></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>Which of the following best describes the alternative hypothesis <span class="process-math">\(H_A\text{?}\)</span></p>
 <ul class="disc">
-<li>\(p_1-p_2\lt 0\text{.}\)</li>
-<li>\(p_1-p_2&gt; 0\text{.}\)</li>
-<li>\(p_1-p_2\neq 0\text{.}\)</li>
-<li>\(p_1-p_2= 0\text{.}\)</li>
-</ul></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(c)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following to show a two-way table of how many dogs were/weren't expose to 2,4-D and who got/didn't get cancer: <div class="sagecell-r" id="sage-190"><script type="text/x-sage">table(cancer$order, cancer$response)
-</script></div></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(d)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">How many dogs from the sample were exposed to 2,4-D?  Out of those dogs, how many got cancer?  Let these be \(x_1, n_1\) respectively.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(e)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">How many dogs from the sample were <em class="emphasis">not</em> exposed to 2,4-D?  Out of those dogs, how many got cancer?  Let these be \(x_2, n_2\) respectively.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(f)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Fix and run the following to perform the appropriate proportion hypothesis test.  Enter in how many dogs were exposed to 2,4-D and got Cancer, were not exposed to 2,4-D and got Cancer, were exposed to 2,4-D, and wern't exposed to 2,4-D respectively. <div class="sagecell-r" id="sage-191"><script type="text/x-sage">prop.test(c(FIXMEx1, FIXMEx2), c(FIXMEn1, FIXMEn2), 
+<li><p><span class="process-math">\(p_1-p_2\lt 0\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(p_1-p_2&gt; 0\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(p_1-p_2\neq 0\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(p_1-p_2= 0\text{.}\)</span></p></li>
+</ul></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>Run the following to show a two-way table of how many dogs were/weren't expose to 2,4-D and who got/didn't get cancer: <pre class="ptx-sagecell sagecell-r" id="sage-196"><script type="text/x-sage">table(cancer$order, cancer$response)
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>How many dogs from the sample were exposed to 2,4-D?  Out of those dogs, how many got cancer?  Let these be <span class="process-math">\(n_1, x_1\)</span> respectively.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p>How many dogs from the sample were <em class="emphasis">not</em> exposed to 2,4-D?  Out of those dogs, how many got cancer?  Let these be <span class="process-math">\(n_2, x_2\)</span> respectively.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p>Fix and run the following to perform the appropriate proportion hypothesis test.  Enter in how many dogs were exposed to 2,4-D and got Cancer, were not exposed to 2,4-D and got Cancer, were exposed to 2,4-D, and wern't exposed to 2,4-D respectively. <pre class="ptx-sagecell sagecell-r" id="sage-197"><script type="text/x-sage">prop.test(c(FIXMEx1, FIXMEx2), c(FIXMEn1, FIXMEn2), 
 		p=NULL, alternative="greater", correct=FALSE)
-</script></div></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(g)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(h)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Do we  reject the null hypothesis?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(i)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">What sort of error could have been made? (Type 1 or Type 2)</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(j)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Is it plausible to say that being exposed to 2,4-D do <em class="emphasis">not</em> have an increased risk of cancer?</p></article></article><span class="incontext"><a href="Sec_TwoVarCat.html#activity-dogcancer">in-context</a></span>
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p>State the meaning of the <span class="process-math">\(p\)</span>-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(h)</span></h5>
+<p>Do we  reject the null hypothesis?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(i)</span></h5>
+<p>What sort of error could have been made? (Type 1 or Type 2)</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(j)</span></h5>
+<p>Is it plausible to say that being exposed to 2,4-D do <em class="emphasis">not</em> have an increased risk of cancer?</p></article></article><span class="incontext"><a href="Sec_TwoVarCat.html#activity-dogcancer" class="internal">in-context</a></span>
 </body>
 </html>

@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-27T13:18:37-06:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -12,41 +9,37 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script><script>$(function () {
-    // Make *any* div with class 'sagecell-r' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
-                           linked: true,
-                           languages: ['r'],
-                           evalButtonText: 'Evaluate (R)'});
-});
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
 </script>
 </head>
-<body>
-<article class="activity project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">Shopping and Spending.</span>
-</h6>
+</h4>
 <div class="introduction">
-<p xmlns:svg="http://www.w3.org/2000/svg">Suppose that customers at department store A spend on average \(\mu_A=\$350\)  in a trip with standard deviation \(\sigma_A=\$75\text{.}\)  Customers who shopt at department store B spend on average \(\mu_B=\$200\)  in a trip with standard deviation \(\sigma_B=\$40\text{.}\)</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Consider the random variable \(X\) we get by taking a sample of 50 customers from store A, 30 customers from store B, taking the average spending by the A customers, and from that subtract the average spending from the B customers.</p>
+<p>Suppose that customers at department store A spend on average <span class="process-math">\(\mu_A=\$350\)</span>  in a trip with standard deviation <span class="process-math">\(\sigma_A=\$75\text{.}\)</span>  Customers who shopt at department store B spend on average <span class="process-math">\(\mu_B=\$200\)</span>  in a trip with standard deviation <span class="process-math">\(\sigma_B=\$40\text{.}\)</span></p>
+<p>Consider the random variable <span class="process-math">\(X\)</span> we get by taking a sample of 50 customers from store A, 30 customers from store B, taking the average spending by the A customers, and from that subtract the average spending from the B customers.</p>
 </div>
-<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">The average amount spent by 50 A customers is a random variable.  Use <a class="xref" data-knowl="./knowl/theorem-CLTnum.html" title="Theorem 6.1.2: The Central Limit Theorem (Numerical)">Theorem 6.1.2</a> to find the mean \(\mu_{\bar{a}}\) and standard error \(SE_{\bar{a}}\) for this variable.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">The average amount spent by 30 B customers is a random variable.  Use <a class="xref" data-knowl="./knowl/theorem-CLTnum.html" title="Theorem 6.1.2: The Central Limit Theorem (Numerical)">Theorem 6.1.2</a> to find the mean \(\mu_{\bar{b}}\) and standard error \(SE_{\bar{b}}\) for this variable.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(c)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Recall that the variance of a random variable is the square of it's standard deviations.  Find the variance for each of the two sampling variables.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(d)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Recall that the variance of a random variable is the square of it's standard deviations.  Find the variance for each of the two sampling variables.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(e)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Let \(D\) denote the difference between the sampling distributions.  Use <a class="xref" data-knowl="./knowl/remark-linofEandV.html" title="Remark 2.4.6">Remark 2.4.6</a> to find \(\mu_D\text{.}\)</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(f)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Use <a class="xref" data-knowl="./knowl/remark-linofEandV.html" title="Remark 2.4.6">Remark 2.4.6</a> to find the variance of \(D\text{:}\) \(Var_D\text{.}\)</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(g)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Find the standard deviation of \(D\text{:}\) \(SE_D=\sqrt{SE_D}\text{.}\)</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(h)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to simulate 1000 trials of sampling 50 customers from store A, 30 customers of store B, taking the difference in their average spending, and plotting a histogram of the results. <div class="sagecell-r" id="sage-281"><script type="text/x-sage">storeA=50
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>The average amount spent by 50 A customers is a random variable.  Use <a href="" class="xref" data-knowl="./knowl/theorem-CLTnum.html" title="Theorem 6.1.2: The Central Limit Theorem (Numerical)">Theorem 6.1.2</a> to find the mean <span class="process-math">\(\mu_{\bar{a}}\)</span> and standard error <span class="process-math">\(SE_{\bar{a}}\)</span> for this variable.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>The average amount spent by 30 B customers is a random variable.  Use <a href="" class="xref" data-knowl="./knowl/theorem-CLTnum.html" title="Theorem 6.1.2: The Central Limit Theorem (Numerical)">Theorem 6.1.2</a> to find the mean <span class="process-math">\(\mu_{\bar{b}}\)</span> and standard error <span class="process-math">\(SE_{\bar{b}}\)</span> for this variable.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>Recall that the variance of a random variable is the square of it's standard deviations.  Find the variance for each of the two sampling variables.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>Recall that the variance of a random variable is the square of it's standard deviations.  Find the variance for each of the two sampling variables.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p>Let <span class="process-math">\(D\)</span> denote the difference between the sampling distributions.  Use <a href="" class="xref" data-knowl="./knowl/remark-linofEandV.html" title="Remark 2.5.1">Remark 2.5.1</a> to find <span class="process-math">\(\mu_D\text{.}\)</span></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p>Use <a href="" class="xref" data-knowl="./knowl/remark-linofEandV.html" title="Remark 2.5.1">Remark 2.5.1</a> to find the variance of <span class="process-math">\(D\text{:}\)</span> <span class="process-math">\(Var_D\text{.}\)</span></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p>Find the standard deviation of <span class="process-math">\(D\text{:}\)</span> <span class="process-math">\(SE_D=\sqrt{Var_D}\text{.}\)</span></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(h)</span></h5>
+<p>Run the following code to simulate 1000 trials of sampling 50 customers from store A, 30 customers of store B, taking the difference in their average spending, and plotting a histogram of the results. <pre class="ptx-sagecell sagecell-r" id="sage-287"><script type="text/x-sage">storeA=50
 storeB=30
 Amean=350
 Asd=75
@@ -62,12 +55,12 @@ for(i in 1:trials){
   diff_spending[i]=mean(A_samp)-mean(B_samp)
 }
 hist(diff_spending, breaks=25, prob=TRUE)
-</script></div></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(i)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Fix and run the following code so that <code class="code-inline tex2jax_ignore">mu_D=</code>\(\mu_D\) and <code class="code-inline tex2jax_ignore">SE_D=</code>\(\sigma_D\) and plot a normal curve on top of our histogram. <div class="sagecell-r" id="sage-282"><script type="text/x-sage">mu_D=FIXME
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(i)</span></h5>
+<p>Fix and run the following code so that <code class="code-inline tex2jax_ignore">mu_D=</code><span class="process-math">\(\mu_D\)</span> and <code class="code-inline tex2jax_ignore">SE_D=</code><span class="process-math">\(\sigma_D\)</span> and plot a normal curve on top of our histogram. <pre class="ptx-sagecell sagecell-r" id="sage-288"><script type="text/x-sage">mu_D=FIXME
 SE_D=FIXME
 
 hist(diff_spending, breaks=25, prob=TRUE)
 curve(dnorm(x, mean=mu_D, sd=SE_D), col="darkblue", lwd=2, add=TRUE, yaxt="n")
-</script></div> How well does the normal distribution approximate the histogram?</p></article></article><span class="incontext"><a href="Sec_TwoVarNum.html#activity-spending">in-context</a></span>
+</script></pre> How well does the normal distribution approximate the histogram?</p></article></article><span class="incontext"><a href="Sec_TwoVarNum.html#activity-spending" class="internal">in-context</a></span>
 </body>
 </html>

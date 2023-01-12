@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-27T13:18:48-06:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -12,18 +9,27 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
 </head>
-<body>
-<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Determine which of the following appear to have linear relationships. <div class="sidebyside"><div class="sbsrow" style="margin-left:0.166666666666667%;margin-right:0.166666666666667%;">
-<div class="sbspanel" style="width:33.1103678929766%;justify-content:center;"><figure class="figure figure-like"><img src="images/splot1.png" style="width: 100%; height: auto;" alt="An Example Scatterplot."><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.1.3<span class="period">.</span></span><span class="space"> </span>(a)</figcaption></figure></div>
-<div class="sbspanel" style="width:33.1103678929766%;justify-content:center;"><figure class="figure figure-like"><img src="images/splot2.png" style="width: 100%; height: auto;" alt="An Example Scatterplot."><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.1.4<span class="period">.</span></span><span class="space"> </span>(b)</figcaption></figure></div>
-<div class="sbspanel" style="width:33.1103678929766%;justify-content:center;"><figure class="figure figure-like"><img src="images/splot3.png" style="width: 100%; height: auto;" alt="An Example Scatterplot."><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.1.5<span class="period">.</span></span><span class="space"> </span>(c)</figcaption></figure></div>
-</div></div> <div class="sidebyside"><div class="sbsrow" style="margin-left:0.166666666666667%;margin-right:0.166666666666667%;">
-<div class="sbspanel" style="width:33.1103678929766%;justify-content:center;"><figure class="figure figure-like"><img src="images/splot4.png" style="width: 100%; height: auto;" alt="An Example Scatterplot."><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.1.6<span class="period">.</span></span><span class="space"> </span>(d)</figcaption></figure></div>
-<div class="sbspanel" style="width:33.1103678929766%;justify-content:center;"><figure class="figure figure-like"><img src="images/splot5.png" style="width: 100%; height: auto;" alt="An Example Scatterplot."><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.1.7<span class="period">.</span></span><span class="space"> </span>(e)</figcaption></figure></div>
-<div class="sbspanel" style="width:33.1103678929766%;justify-content:center;"><figure class="figure figure-like"><img src="images/splot6.png" style="width: 100%; height: auto;" alt="An Example Scatterplot."><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.1.8<span class="period">.</span></span><span class="space"> </span>(f)</figcaption></figure></div>
-</div></div></p>
-<span class="incontext"><a href="Sec_Correlation.html#p-1615">in-context</a></span>
+<body class="ignore-math">
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Fix and run the following code to sample <code class="code-inline tex2jax_ignore">n</code> scores from Exam 1, and compute a 95% confidence interval: <pre class="ptx-sagecell sagecell-r" id="sage-307"><script type="text/x-sage">n=FIXME
+
+samp2=sample(students$score1, n)
+t.test(samp2, conf.level=0.95)$conf.int
+</script></pre> What is the margin of error?  (Recall that <span class="process-math">\(s\)</span> was just an estimator for <span class="process-math">\(\sigma\text{.}\)</span>)</p>
+<span class="incontext"><a href="Sec_SizeofSampleNum.html#p-1615" class="internal">in-context</a></span>
 </body>
 </html>

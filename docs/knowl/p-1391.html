@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-27T13:18:37-06:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -12,34 +9,24 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script><script>$(function () {
-    // Make *any* div with class 'sagecell-r' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
-                           linked: true,
-                           languages: ['r'],
-                           evalButtonText: 'Evaluate (R)'});
-});
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
 </script>
 </head>
-<body>
-<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">If two distributions have different means, we'd expect differences in the observed samples.  Run the following code to generate histograms for two samples of size 30, one from a normal distribution with mean 10, one from a normal distribution with mean 12, and draw lines indicating their means. <div class="sagecell-r" id="sage-279"><script type="text/x-sage">samp1=rnorm(30, 10, 3)
-samp2=rnorm(30, 12, 3)
-
-hist(samp1, col=rgb(1,0,0,0.5), prob=TRUE)
-hist(samp2, col=rgb(0,0,1,0.5), add=TRUE, prob=TRUE)
-abline(v = mean(samp1), col="red", lwd=3, lty=2)
-abline(v = mean(samp2), col="blue", lwd=3, lty=2)
-</script></div> Run it a few times to see different samples.</p>
-<span class="incontext"><a href="Sec_TwoVarNum.html#p-1391">in-context</a></span>
+<body class="ignore-math">
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Run the following code, to compute the actual average housing price of Ames, IA.  Does it fall within your interval? <pre class="ptx-sagecell sagecell-r" id="sage-243"><script type="text/x-sage">mean(ames$price)
+</script></pre></p>
+<span class="incontext"><a href="Sec_OneVarNum.html#p-1391" class="internal">in-context</a></span>
 </body>
 </html>

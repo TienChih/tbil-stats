@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-27T13:18:17-06:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -12,46 +9,42 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script><script>$(function () {
-    // Make *any* div with class 'sagecell-r' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
-                           linked: true,
-                           languages: ['r'],
-                           evalButtonText: 'Evaluate (R)'});
-});
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
 </script>
 </head>
-<body>
-<article class="activity project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Spicy Wings.</span>
-</h6>
-<div class="introduction"><p xmlns:svg="http://www.w3.org/2000/svg">A restaurateur owns two seperate restaraunts, and East and West location.  Before contacting her vendors, she want's to know if there is any difference in the rate at which customers at these locations order Spicy Wings.  Her plan is to poll 100 customers from each location, and compute a 90% confidence interval for the difference in ordering rates of Spicy Wings.</p></div>
-<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to poll 100 customers in the East location and see how many order spicy wings. <div class="sagecell-r" id="sage-179"><script type="text/x-sage">eastpoll=100
+</h4>
+<div class="introduction"><p>A restaurateur owns two seperate restaraunts, and East and West location.  Before contacting her vendors, she want's to know if there is any difference in the rate at which customers at these locations order Spicy Wings.  Her plan is to poll 100 customers from each location, and compute a 90% confidence interval for the difference in ordering rates of Spicy Wings.</p></div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>Run the following code to poll 100 customers in the East location and see how many order spicy wings. <pre class="ptx-sagecell sagecell-r" id="sage-185"><script type="text/x-sage">eastpoll=100
 east_p=sample(c(0.3, 0.4, 0.5), 1, prob=c(0.25, 0.5, 0.25))
 
 east_samp=sample(c("SPICYWINGS", "NO"), eastpoll, replace=TRUE, prob=c(east_p, 1-east_p))
 east_x=length(which(east_samp=="SPICYWINGS"))
-</script></div> We know that \(n_1=100\text{,}\) compute \(\hat{p_1}\text{,}\) the proportion of the East location sample who orders Spicy Wings.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to poll 100 customers in the West location and see how many order spicy wings. <div class="sagecell-r" id="sage-180"><script type="text/x-sage">westpoll=100
+</script></pre> We know that <span class="process-math">\(n_1=100\text{,}\)</span> compute <span class="process-math">\(\hat{p_1}\text{,}\)</span> the proportion of the East location sample who orders Spicy Wings.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>Run the following code to poll 100 customers in the West location and see how many order spicy wings. <pre class="ptx-sagecell sagecell-r" id="sage-186"><script type="text/x-sage">westpoll=100
 west_p=sample(c(0.3, 0.4, 0.5), 1, prob=c(0.25, 0.5, 0.25))
 
 west_samp=sample(c("SPICYWINGS", "NO"), westpoll, replace=TRUE, prob=c(west_p, 1-west_p))
 west_x=length(which(west_samp=="SPICYWINGS"))
-</script></div> We know that \(n_2=100\text{,}\) compute \(\hat{p_2}\text{,}\) the proportion of the West location sample who orders Spicy Wings.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(c)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Following <a class="xref" data-knowl="./knowl/remark-CIfordiffprop.html" title="Remark 5.2.4">Remark 5.2.4</a>, find \(d, SE_D\text{.}\)</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(d)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Use <a class="xref" data-knowl="./knowl/remark-CIfordiffprop.html" title="Remark 5.2.4">Remark 5.2.4</a> and \(d, SE_D\) to find a 90% confidence interval for the difference in East location ordering rates of Spicy Wings and West location ordering rates of Spicy Wings.  Is 0 in this interval?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(e)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Do you have good evidence that the ordering rates between the locations are different?  If so, who orders more wings?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(f)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to print the lower and upperbound of the confidence interval to check your answer. <div class="sagecell-r" id="sage-181"><script type="text/x-sage">east_phat=east_x/eastpoll
+</script></pre> We know that <span class="process-math">\(n_2=100\text{,}\)</span> compute <span class="process-math">\(\hat{p_2}\text{,}\)</span> the proportion of the West location sample who orders Spicy Wings.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>Following <a href="" class="xref" data-knowl="./knowl/remark-CIfordiffprop.html" title="Remark 5.2.4">Remark 5.2.4</a>, find <span class="process-math">\(d, SE_D\text{.}\)</span></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>Use <a href="" class="xref" data-knowl="./knowl/remark-CIfordiffprop.html" title="Remark 5.2.4">Remark 5.2.4</a> and <span class="process-math">\(d, SE_D\)</span> to find a 90% confidence interval for the difference in East location ordering rates of Spicy Wings and West location ordering rates of Spicy Wings.  Is 0 in this interval?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p>Do you have good evidence that the ordering rates between the locations are different?  If so, who orders more wings?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p>Run the following code to print the lower and upperbound of the confidence interval to check your answer. <pre class="ptx-sagecell sagecell-r" id="sage-187"><script type="text/x-sage">east_phat=east_x/eastpoll
 west_phat=west_x/westpoll
 
 d=east_phat-west_phat
@@ -60,8 +53,8 @@ SE_D=sqrt(east_phat*(1-east_phat)/eastpoll + west_phat*(1-west_phat)/westpoll)
 LB=d-1.645*SE_D
 UB=d+1.645*SE_D
 print(paste0("Lower Bound: ", LB , ", Upper Bound:", UB))
-</script></div></p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(g)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to print the actual differnce between the ordering rates.  Is it in your interval? (10% of the time it won't be!). <div class="sagecell-r" id="sage-182"><script type="text/x-sage">east_p-west_p
-</script></div> We know that \(n_2=100\text{,}\) compute \(\hat{p_2}\text{,}\) the proportion of the West location sample who orders Spicy Wings.</p></article></article><span class="incontext"><a href="Sec_TwoVarCat.html#activity-spicywings">in-context</a></span>
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p>Run the following code to print the actual differnce between the ordering rates.  Is it in your interval? (10% of the time it won't be!). <pre class="ptx-sagecell sagecell-r" id="sage-188"><script type="text/x-sage">east_p-west_p
+</script></pre> We know that <span class="process-math">\(n_2=100\text{,}\)</span> compute <span class="process-math">\(\hat{p_2}\text{,}\)</span> the proportion of the West location sample who orders Spicy Wings.</p></article></article><span class="incontext"><a href="Sec_TwoVarCat.html#activity-spicywings" class="internal">in-context</a></span>
 </body>
 </html>

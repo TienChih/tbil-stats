@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Run the following to create and summarize a linear model with <code class="code-inline tex2jax_ignore">protein</code> the protein content of an item in g as the explanatory variable and <code class="code-inline tex2jax_ignore">calories</code> the calories of each item measure in, well calories, as the response variable: <pre class="ptx-sagecell sagecell-r" id="sage-365"><script type="text/x-sage">starbucksmod=lm(calories~protein, data=starbucks)
+summary(starbucksmod)
+</script></pre></p>
+<span class="incontext"><a href="Sec_InferenceRegression.html#p-1869" class="internal">in-context</a></span>
+</body>
+</html>

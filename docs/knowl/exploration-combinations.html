@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-27T13:18:03-06:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -12,33 +9,31 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
 </script>
 </head>
-<body>
-<article class="exploration project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<body class="ignore-math">
+<article class="exploration project-like"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">3.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">Combinations.</span>
-</h6>
-<div class="introduction"><p xmlns:svg="http://www.w3.org/2000/svg">Suppose you had 4 tiles with letters W, X Y and Z written on them.  We know from <a class="xref" data-knowl="./knowl/definition-permutation.html" title="Definition 3.3.1">Definition 3.3.1</a> that there the number of ways to select 3 out of these 4 tiles and arrange them is \(P(4,3)=\frac{4!}{(4-3)!}=24\text{.}\)</p></div>
-<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(a)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Write out all 24 arrangements, grouping together the arrangemnets that use the same letters.  For example WXY and WYX would be in the same group along with other possible arrangements of the same letters.</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(b)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">How many different groups do you have?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(c)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">How many arrangements are in each group?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(d)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">How many ways could we select 3 out of 4 tiles if we were <em class="emphasis">unconcerned</em> about the order in which we selected them?</p></article><article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="codenumber">(e)</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Run the following code to display all the possible ways to select <code class="code-inline tex2jax_ignore">k=3</code> tiles out of <code class="code-inline tex2jax_ignore">W, X, Y, Z</code> without arranging them: <div class="sagecell-sage" id="sage-119"><script type="text/x-sage">S=['W', 'X', 'Y', 'Z']
+</h4>
+<div class="introduction"><p>Suppose you had 4 tiles with letters W, X Y and Z written on them.  We know from <a href="" class="xref" data-knowl="./knowl/definition-permutation.html" title="Definition 3.3.1">Definition 3.3.1</a> that there the number of ways to select 3 out of these 4 tiles and arrange them is <span class="process-math">\(P(4,3)=\frac{4!}{(4-3)!}=24\text{.}\)</span></p></div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>Write out all 24 arrangements, grouping together the arrangemnets that use the same letters.  For example WXY and WYX would be in the same group along with other possible arrangements of the same letters.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>How many different groups do you have?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>How many arrangements are in each group?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>How many ways could we select 3 out of 4 tiles if we were <em class="emphasis">unconcerned</em> about the order in which we selected them?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p>Run the following code to display all the possible ways to select <code class="code-inline tex2jax_ignore">k=3</code> tiles out of <code class="code-inline tex2jax_ignore">W, X, Y, Z</code> without arranging them: <pre class="ptx-sagecell sagecell-sage" id="sage-121"><script type="text/x-sage">S=['W', 'X', 'Y', 'Z']
 k=3
 C=Subsets(S,k)
 
 print(C.list())            
 print(C.cardinality() )
-</script></div></p>
-<p xmlns:svg="http://www.w3.org/2000/svg">How does this compare to what you've done above?</p></article></article><span class="incontext"><a href="Sec_Counting.html#exploration-combinations">in-context</a></span>
+</script></pre></p>
+<p>How does this compare to what you've done above?</p></article></article><span class="incontext"><a href="Sec_Counting.html#exploration-combinations" class="internal">in-context</a></span>
 </body>
 </html>

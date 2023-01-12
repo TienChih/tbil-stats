@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-27T13:18:26-06:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -12,11 +9,39 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
 </head>
-<body>
-<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Task</span><span class="space"> </span><span class="codenumber">6.1.1.e</span><span class="period">.</span>
-</h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Re-run the code in (c) with <code class="code-inline tex2jax_ignore">num_dice=3</code>, how do those values compare to what you found in (d)?</p></article><span class="incontext"><a href="Sec_tVariable.html#task-685">in-context</a></span>
+<body class="ignore-math">
+<article class="task exercise-like"><h5 class="heading">
+<span class="type">Task</span><span class="space"> </span><span class="codenumber">5.3.7.b</span><span class="period">.</span>
+</h5>
+<p><em class="alert">IF</em> adult male heights were normally distributed, we would expect it to be approximated by a normal random variable <span class="process-math">\(X\)</span> with mean <span class="process-math">\(\mu=m\)</span> and standard deviation <span class="process-math">\(\sigma=std\text{.}\)</span>  Confirm that if we subdivide a normal distribution into intervals of length <span class="process-math">\(std\text{,}\)</span> we would have:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+P(X\lt m-3std)\amp \approx 0.0014\\
+P(m-3std\leq X\lt m-2std)\amp \approx 0.0214\\
+P(m-2std\leq X\lt m-std)\amp \approx 0.1359\\
+P(m-std\leq X\lt m)\amp \approx 0.3413\\
+P(m\leq X\lt m+std)\amp \approx 0.3413\\
+P(m+std\leq X\lt m+2std)\amp \approx 0.1359\\
+P(m+2std\leq X\lt m+3std)\amp \approx 0.0214\\
+P(X\geq m+3std)\amp \approx 0.0014
+\end{align*}
+</div>
+<p class="continuation"><figure class="figure figure-like"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/image-32.svg" role="img" class="contained" alt="A normal curve segemented into lengths of one standard deviation."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.4<span class="period">.</span></span><span class="space"> </span>A normal curve segemented into lengths of one standard deviation.</figcaption></figure> <pre class="ptx-sagecell sagecell-r" id="sage-206"><script type="text/x-sage">
+</script></pre> <a href="" class="hint-knowl original" data-knowl="./knowl/hint-22-hidden.html" title="Hint 1: Desmos"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a></p></article><span class="incontext"><a href="Sec_ChiSquare.html#task-685" class="internal">in-context</a></span>
 </body>
 </html>

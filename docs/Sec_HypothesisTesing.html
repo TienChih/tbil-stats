@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-04-07T17:01:15-06:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="en-US">
-<head>
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Introduction to Hypothesis Testing (F3)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+<meta property="og:type" content="book">
+<meta property="book:title" content="Team Based Statistics">
+<meta property="book:author" content="Tien Chih">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
     tags: "none",
-    useLabelIds: true,
     tagSide: "right",
     tagIndent: ".8em",
     packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
   },
   options: {
-    ignoreHtmlClass: "tex2jax_ignore",
-    processHtmlClass: "has_am",
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
     renderActions: {
         findScript: [10, function (doc) {
             document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
@@ -48,38 +48,41 @@
     load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
     paths: {pretext: "https://pretextbook.org/js/lib"},
   },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script><script>$(function () {
-    // Make *any* div with class 'sagecell-r' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
-                           linked: true,
-                           languages: ['r'],
-                           evalButtonText: 'Evaluate (R)'});
-});
-</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg">miniversion=0.6</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
-</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
-<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
 </head>
-<body class="pretext-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\Q}{\terminology{Question:\ }}
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Q}{\terminology{Question:\ }}
 \newcommand{\Sol}{\terminology{Solution:\ }}
 \newcommand{\Fisg}{\emph{Fisg}}
 \newcommand{\Iisg}{\emph{Iisg}}
@@ -114,14 +117,16 @@
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
-\)</div>
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
 <h1 class="heading"><a href="book-1.html"><span class="title">Team Based Statistics</span></a></h1>
 <p class="byline">Tien Chih</p>
 </div>
 </div></div>
-<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="Sec_ConfidenceInterval.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="Chap_Foundations.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="Chap_Categorical.html" title="Next">Next</a></span></div>
 </div>
@@ -129,78 +134,78 @@
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="Sec_ConfidenceInterval.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="Chap_Foundations.html" title="Up">Up</a><a class="next-button button toolbar-item" href="Chap_Categorical.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
-<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
 <li class="link frontmatter">
-<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul>
-<li><a href="learning-outcomes.html" data-scroll="learning-outcomes">Learning Outcomes and Usage</a></li>
-<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
-<li><a href="author-bio-TC.html" data-scroll="author-bio-TC">Author Biography</a></li>
-<li><a href="dedication-1.html" data-scroll="dedication-1">Dedication</a></li>
+<a href="frontmatter-1.html" data-scroll="frontmatter-1" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="learning-outcomes.html" data-scroll="learning-outcomes" class="internal">Learning Outcomes and Usage</a></li>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="author-bio-TC.html" data-scroll="author-bio-TC" class="internal">Author Biography</a></li>
+<li><a href="dedication-1.html" data-scroll="dedication-1" class="internal">Dedication</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="Chap_DataBasics.html" data-scroll="Chap_DataBasics"><span class="codenumber">1</span> <span class="title">Data Basics (B)</span></a><ul>
-<li><a href="Sec_Variables.html" data-scroll="Sec_Variables">Types of Variables and their Relationships (B1)</a></li>
-<li><a href="Sec_Sampling.html" data-scroll="Sec_Sampling">Sampling Techniques (B2)</a></li>
-<li><a href="Sec_Visualization.html" data-scroll="Sec_Visualization">Visualizing Data (B3)</a></li>
-<li><a href="Sec_Center.html" data-scroll="Sec_Center">Centers of Data (B4)</a></li>
-<li><a href="Sec_Variation.html" data-scroll="Sec_Variation">Variation of Data (B5)</a></li>
+<a href="Chap_DataBasics.html" data-scroll="Chap_DataBasics" class="internal"><span class="codenumber">1</span> <span class="title">Data Basics (B)</span></a><ul>
+<li><a href="Sec_Variables.html" data-scroll="Sec_Variables" class="internal">Types of Variables and their Relationships (B1)</a></li>
+<li><a href="Sec_Sampling.html" data-scroll="Sec_Sampling" class="internal">Sampling Techniques (B2)</a></li>
+<li><a href="Sec_Visualization.html" data-scroll="Sec_Visualization" class="internal">Visualizing Data (B3)</a></li>
+<li><a href="Sec_Center.html" data-scroll="Sec_Center" class="internal">Centers of Data (B4)</a></li>
+<li><a href="Sec_Variation.html" data-scroll="Sec_Variation" class="internal">Variation of Data (B5)</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="Chap_Probability.html" data-scroll="Chap_Probability"><span class="codenumber">2</span> <span class="title">Probability (P)</span></a><ul>
-<li><a href="Sec_Introprob.html" data-scroll="Sec_Introprob">Introduction to Probability (P1)</a></li>
-<li><a href="Sec_Conditionalprob.html" data-scroll="Sec_Conditionalprob">Conditional Probability (P2)</a></li>
-<li><a href="Sec_Bayes.html" data-scroll="Sec_Bayes">Bayes Theorem (P3)</a></li>
-<li><a href="Sec_RandomVariables.html" data-scroll="Sec_RandomVariables">Random Variables (P4)</a></li>
-<li><a href="Sec_LinearCombofVariables.html" data-scroll="Sec_LinearCombofVariables">Linear Combinations of Random Variables (P5)</a></li>
+<a href="Chap_Probability.html" data-scroll="Chap_Probability" class="internal"><span class="codenumber">2</span> <span class="title">Probability (P)</span></a><ul>
+<li><a href="Sec_Introprob.html" data-scroll="Sec_Introprob" class="internal">Introduction to Probability (P1)</a></li>
+<li><a href="Sec_Conditionalprob.html" data-scroll="Sec_Conditionalprob" class="internal">Conditional Probability (P2)</a></li>
+<li><a href="Sec_Bayes.html" data-scroll="Sec_Bayes" class="internal">Bayes Theorem (P3)</a></li>
+<li><a href="Sec_RandomVariables.html" data-scroll="Sec_RandomVariables" class="internal">Random Variables (P4)</a></li>
+<li><a href="Sec_LinearCombofVariables.html" data-scroll="Sec_LinearCombofVariables" class="internal">Linear Combinations of Random Variables (P5)</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="Chap_Distributions.html" data-scroll="Chap_Distributions"><span class="codenumber">3</span> <span class="title">Distributions (D)</span></a><ul>
-<li><a href="Sec_StandardNormal.html" data-scroll="Sec_StandardNormal">Standard Normal Distribution (D1)</a></li>
-<li><a href="Sec_GeneralNormal.html" data-scroll="Sec_GeneralNormal">General Normal Distribution (D2)</a></li>
-<li><a href="Sec_Counting.html" data-scroll="Sec_Counting">Counting Principles (D3)</a></li>
-<li><a href="Sec_Binomial.html" data-scroll="Sec_Binomial">Binomial Distribution (D4)</a></li>
-<li><a href="Sec_NormalApprox.html" data-scroll="Sec_NormalApprox">Normal Approximation (D5)</a></li>
+<a href="Chap_Distributions.html" data-scroll="Chap_Distributions" class="internal"><span class="codenumber">3</span> <span class="title">Distributions (D)</span></a><ul>
+<li><a href="Sec_StandardNormal.html" data-scroll="Sec_StandardNormal" class="internal">Standard Normal Distribution (D1)</a></li>
+<li><a href="Sec_GeneralNormal.html" data-scroll="Sec_GeneralNormal" class="internal">General Normal Distribution (D2)</a></li>
+<li><a href="Sec_Counting.html" data-scroll="Sec_Counting" class="internal">Counting Principles (D3)</a></li>
+<li><a href="Sec_Binomial.html" data-scroll="Sec_Binomial" class="internal">Binomial Distribution (D4)</a></li>
+<li><a href="Sec_NormalApprox.html" data-scroll="Sec_NormalApprox" class="internal">Normal Approximation (D5)</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="Chap_Foundations.html" data-scroll="Chap_Foundations"><span class="codenumber">4</span> <span class="title">Foundations for Inference (F)</span></a><ul>
-<li><a href="Sec_PointEstimates.html" data-scroll="Sec_PointEstimates">Point Estimates (F1)</a></li>
-<li><a href="Sec_ConfidenceInterval.html" data-scroll="Sec_ConfidenceInterval">Introduction to Confidence Intervals (F2)</a></li>
+<a href="Chap_Foundations.html" data-scroll="Chap_Foundations" class="internal"><span class="codenumber">4</span> <span class="title">Foundations for Inference (F)</span></a><ul>
+<li><a href="Sec_PointEstimates.html" data-scroll="Sec_PointEstimates" class="internal">Point Estimates (F1)</a></li>
+<li><a href="Sec_ConfidenceInterval.html" data-scroll="Sec_ConfidenceInterval" class="internal">Introduction to Confidence Intervals (F2)</a></li>
 <li><a href="Sec_HypothesisTesing.html" data-scroll="Sec_HypothesisTesing" class="active">Introduction to Hypothesis Testing (F3)</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="Chap_Categorical.html" data-scroll="Chap_Categorical"><span class="codenumber">5</span> <span class="title">Inference for Categorical Variables (C)</span></a><ul>
-<li><a href="Sec_SizeofSampleCat.html" data-scroll="Sec_SizeofSampleCat">Size of Samples (Categorical)</a></li>
-<li><a href="Sec_TwoVarCat.html" data-scroll="Sec_TwoVarCat">Comparing Two Categorical Variables (C2)</a></li>
-<li><a href="Sec_ChiSquare.html" data-scroll="Sec_ChiSquare">Chi-Squared Test and Goodness of Fit (C3)</a></li>
-<li><a href="Sec_ChiIndependence.html" data-scroll="Sec_ChiIndependence">Chi-Squared Test and Independence (C4)</a></li>
+<a href="Chap_Categorical.html" data-scroll="Chap_Categorical" class="internal"><span class="codenumber">5</span> <span class="title">Inference for Categorical Variables (C)</span></a><ul>
+<li><a href="Sec_SizeofSampleCat.html" data-scroll="Sec_SizeofSampleCat" class="internal">Size of Samples (Categorical)</a></li>
+<li><a href="Sec_TwoVarCat.html" data-scroll="Sec_TwoVarCat" class="internal">Comparing Two Categorical Variables (C2)</a></li>
+<li><a href="Sec_ChiSquare.html" data-scroll="Sec_ChiSquare" class="internal">Chi-Squared Test and Goodness of Fit (C3)</a></li>
+<li><a href="Sec_ChiIndependence.html" data-scroll="Sec_ChiIndependence" class="internal">Chi-Squared Test and Independence (C4)</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="Chap_Numerical.html" data-scroll="Chap_Numerical"><span class="codenumber">6</span> <span class="title">Inference for Numerical Variables (N)</span></a><ul>
-<li><a href="Sec_tVariable.html" data-scroll="Sec_tVariable">The \(t\)-Variable and Sampling Distribution of Numerical Variables (N1)</a></li>
-<li><a href="Sec_OneVarNum.html" data-scroll="Sec_OneVarNum">Confidence Intervals and Hypothesis Testing for a single Numerical Variable (N2)</a></li>
-<li><a href="Sec_PairedData.html" data-scroll="Sec_PairedData">Paired Numerical Data (N3)</a></li>
-<li><a href="Sec_TwoVarNum.html" data-scroll="Sec_TwoVarNum">Comparing Two Numerical Variables (N4)</a></li>
-<li><a href="Sec_SizeofSampleNum.html" data-scroll="Sec_SizeofSampleNum">Size of Samples of Numerical Variables (N5)</a></li>
-<li><a href="Sec_ANOVA.html" data-scroll="Sec_ANOVA">ANOVA: Analysis of Variation (N6)</a></li>
+<a href="Chap_Numerical.html" data-scroll="Chap_Numerical" class="internal"><span class="codenumber">6</span> <span class="title">Inference for Numerical Variables (N)</span></a><ul>
+<li><a href="Sec_tVariable.html" data-scroll="Sec_tVariable" class="internal">The <span class="process-math">\(t\)</span>-Variable and Sampling Distribution of Numerical Variables (N1)</a></li>
+<li><a href="Sec_OneVarNum.html" data-scroll="Sec_OneVarNum" class="internal">Confidence Intervals and Hypothesis Testing for a single Numerical Variable (N2)</a></li>
+<li><a href="Sec_PairedData.html" data-scroll="Sec_PairedData" class="internal">Paired Numerical Data (N3)</a></li>
+<li><a href="Sec_TwoVarNum.html" data-scroll="Sec_TwoVarNum" class="internal">Comparing Two Numerical Variables (N4)</a></li>
+<li><a href="Sec_SizeofSampleNum.html" data-scroll="Sec_SizeofSampleNum" class="internal">Size of Samples of Numerical Variables (N5)</a></li>
+<li><a href="Sec_ANOVA.html" data-scroll="Sec_ANOVA" class="internal">ANOVA: Analysis of Variation (N6)</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="Chap_LinearRegression.html" data-scroll="Chap_LinearRegression"><span class="codenumber">7</span> <span class="title">Linear Regression (R)</span></a><ul>
-<li><a href="Sec_Correlation.html" data-scroll="Sec_Correlation">Linear Correlation of Variables (R1)</a></li>
-<li><a href="Sec_InterpretingRegression.html" data-scroll="Sec_InterpretingRegression">Interpreting Linear Regression (R2)</a></li>
-<li><a href="Sec_InferenceRegression.html" data-scroll="Sec_InferenceRegression">Inference and Linear Regression (R3)</a></li>
+<a href="Chap_LinearRegression.html" data-scroll="Chap_LinearRegression" class="internal"><span class="codenumber">7</span> <span class="title">Linear Regression (R)</span></a><ul>
+<li><a href="Sec_Correlation.html" data-scroll="Sec_Correlation" class="internal">Linear Correlation of Variables (R1)</a></li>
+<li><a href="Sec_InterpretingRegression.html" data-scroll="Sec_InterpretingRegression" class="internal">Interpreting Linear Regression (R2)</a></li>
+<li><a href="Sec_InferenceRegression.html" data-scroll="Sec_InferenceRegression" class="internal">Inference and Linear Regression (R3)</a></li>
 </ul>
 </li>
 </ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="Sec_HypothesisTesing"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="Sec_HypothesisTesing"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.3</span> <span class="title">Introduction to Hypothesis Testing (F3)</span>
 </h2>
 <section class="introduction" id="introduction-105"><p id="p-941">In this section, we lay the groundwork for <em class="emphasis">Hypothesis Testing</em>, where we make claims, and applying our statistical knowledge to collected data to support or cast doubt on these claims.</p></section><section class="subsection" id="subsection-philosophy"><h3 class="heading hide-type">
@@ -213,10 +218,10 @@
 </h4>
 <div class="introduction" id="introduction-107">
 <p id="p-943">Your friend has a point in this case: heads has come up quite a few times, more than half for sure, and they may be right to suspect that the coin may favor heads.  On the other hand, it's possible to get 16 coin flips out of 25 just by chance.  But is this a common event, or an event so rare that it's more likely the coin is biased?</p>
-<p id="p-944">In essence, your friends is claiming that the proportion of coin flips which come up heads isn't a half, or \(p\neq 0.5\text{.}\)  Your assertion is that this result could come from a fair coin and it's possible \(p=0.5\) despite this outcome.</p>
+<p id="p-944">In essence, your friends is claiming that the proportion of coin flips which come up heads isn't a half, or <span class="process-math">\(p\neq 0.5\text{.}\)</span>  Your assertion is that this result could come from a fair coin and it's possible <span class="process-math">\(p=0.5\)</span> despite this outcome.</p>
 </div>
 <article class="task exercise-like" id="task-517"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<p id="p-945">Find \(\hat{p}, SE_{\hat{p}}\) for the proportion of the sample that comes up heads.</p></article><article class="task exercise-like" id="task-518"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-945">Find <span class="process-math">\(\hat{p}, SE_{\hat{p}}\)</span> for the proportion of the sample that comes up heads.</p></article><article class="task exercise-like" id="task-518"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <p id="p-946">Find a 95% confidence interval for the proportion of coin flips that comes up heads.</p></article><article class="task exercise-like" id="task-519"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <p id="p-947">Verify that 0.5 falls in this interval, what does this mean?</p></article></article><article class="remark remark-like" id="remark-30"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.3.1</span><span class="period">.</span>
@@ -228,13 +233,13 @@
 </h4>
 <div class="introduction" id="introduction-108">
 <p id="p-951">Your friend insists on flipping their own coin.  So you switch to their coin, and over the next 50 days, it only shows a heads 7 times.  Now <em class="emphasis">you</em> start to question the fairness of this coin, and your friends defends it.</p>
-<p id="p-952">The situation has now reversed, you claim that the proportion of coin flips which come up heads isn't a half, or \(p\neq 0.5\text{.}\)  Your friend asserts that this result could come from a fair coin and it's possible \(p=0.5\) despite this outcome.</p>
+<p id="p-952">The situation has now reversed, you claim that the proportion of coin flips which come up heads isn't a half, or <span class="process-math">\(p\neq 0.5\text{.}\)</span>  Your friend asserts that this result could come from a fair coin and it's possible <span class="process-math">\(p=0.5\)</span> despite this outcome.</p>
 </div>
 <article class="task exercise-like" id="task-520"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<p id="p-953">Find \(\hat{p}, SE_{\hat{p}}\) for the proportion of the sample that comes up heads.</p></article><article class="task exercise-like" id="task-521"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-953">Find <span class="process-math">\(\hat{p}, SE_{\hat{p}}\)</span> for the proportion of the sample that comes up heads.</p></article><article class="task exercise-like" id="task-521"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <p id="p-954">Find a 95% confidence interval for the proportion of coin flips that comes up heads.</p></article><article class="task exercise-like" id="task-522"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <p id="p-955">Verify that 0.5 does not fall in this interval, what does this mean?</p></article><article class="task exercise-like" id="task-523"><h5 class="heading"><span class="codenumber">(d)</span></h5>
-<p id="p-956">Your friend insists the coin is fair.  We test their claim through a simulation.  Run the following code to simulate flipping  <code class="code-inline tex2jax_ignore">n=50</code> fair coins <code class="code-inline tex2jax_ignore">numsamp=1000</code> times, and plot a distribution of the proportion of heads from each flip of 50 coins.  How likely is it to get 14% (or fewer) heads when flipping 50 coins?  How plausible are your friends claims? <div class="sagecell-r" id="sage-161"><script type="text/x-sage">  numsamp=1000
+<p id="p-956">Your friend insists the coin is fair.  We test their claim through a simulation.  Run the following code to simulate flipping  <code class="code-inline tex2jax_ignore">n=50</code> fair coins <code class="code-inline tex2jax_ignore">numsamp=1000</code> times, and plot a distribution of the proportion of heads from each flip of 50 coins.  How likely is it to get 14% (or fewer) heads when flipping 50 coins?  How plausible are your friends claims? <pre class="ptx-sagecell sagecell-r" id="sage-161"><script type="text/x-sage">  numsamp=1000
   n=50
   p=0.5
 
@@ -247,7 +252,7 @@
 
 hist(samp_phat, xlim = c(0,1))
 abline(v = 0.14, lwd = 2, lty = 2, col = "red")
-</script></div></p></article></article><article class="remark remark-like" id="remark-31"><h4 class="heading">
+</script></pre></p></article></article><article class="remark remark-like" id="remark-31"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.3.2</span><span class="period">.</span>
 </h4>
 <p id="p-957">With the new confidence interval, since 0.5 is not in this interval, we can say that it's extremely unlikely that the coin is fair, and you are right in your suspicions.</p>
@@ -259,26 +264,26 @@ abline(v = 0.14, lwd = 2, lty = 2, col = "red")
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.3.4</span><span class="period">.</span>
 </h4>
 <p id="p-961">In a jury trial, we always presume that the defendant is innocent until proven guilty.  The default state is not guilty unless the evidence is sufficient to change this verdict.</p>
-<p id="p-962">Similarly, in a hypothesis test, the <em class="emphasis">Null Hypothesis</em> (\(H_0\))is analagous to the default claim of not guilty.  It is the claim that any presented evidence is just the product of random chance.  The <em class="emphasis">Alternative Hypothesis</em> (\(H_A\)) is analagous to the guilty verdict, in which case the evidence provided is sufficiently strong to reject the <em class="emphasis">Null</em>.</p>
+<p id="p-962">Similarly, in a hypothesis test, the <em class="emphasis">Null Hypothesis</em> (<span class="process-math">\(H_0\)</span>)is analagous to the default claim of not guilty.  It is the claim that any presented evidence is just the product of random chance.  The <em class="emphasis">Alternative Hypothesis</em> (<span class="process-math">\(H_A\)</span>) is analagous to the guilty verdict, in which case the evidence provided is sufficiently strong to reject the <em class="emphasis">Null</em>.</p>
 <p id="p-963">Note that in a jury trial, the veridcts are “guilty” and “not guilty”.  Innocence is not the goal of the defense, since it is the burden of the state to present evidence sufficiently strong to invalidate a not-guilty claim.  It is <em class="emphasis">not</em> their responsibility to prove innocence.</p>
 <p id="p-964">Similarly, accepting the Null Hypothesis in a hypothesis test <em class="emphasis">is not the same as saying the Null Hypothesis is true</em>.  It merely means that the evidence provided is not strong enough to convincingly say otherwise.  The Null Hypothesis could very well be false, but your evidence is too weak to say so.  As a Statistics practioner, your job is to analyze the evidence and see if it is strong enough to invalidate the Null.</p></article><article class="example example-like" id="example-biasedcoin"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-biasedcoin"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">Biased Coins.</span>
-</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-biasedcoin"><article class="example example-like"><p id="p-965">In <a href="" class="xref" data-knowl="./knowl/exploration-BadCoin.html" title="Exploration 4.3.1: Are we sure it is (isn't) Biased?">Exploration 4.3.1</a> the claim is that the coin is not fair, and the default state is that the coin <em class="emphasis">is</em> fair.  If we let \(p\) denote the proportion of coin flips which will come up heads, we have:</p>
-<div class="displaymath">
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-biasedcoin"><article class="example example-like"><p id="p-965">In <a href="" class="xref" data-knowl="./knowl/exploration-BadCoin.html" title="Exploration 4.3.1: Are we sure it is (isn't) Biased?">Exploration 4.3.1</a> the claim is that the coin is not fair, and the default state is that the coin <em class="emphasis">is</em> fair.  If we let <span class="process-math">\(p\)</span> denote the proportion of coin flips which will come up heads, we have:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/exploration-BadCoin.html ./knowl/exploration-BadCoin.html" id="md-5">
 \begin{align*}
 H_0:p\amp= 0.5\\
 H_A:p\amp\neq 0.5
 \end{align*}
 </div>
-<p class="continuation">In the case of <a href="" class="xref" data-knowl="./knowl/exploration-BadCoin.html" title="Exploration 4.3.1: Are we sure it is (isn't) Biased?">Exploration 4.3.1</a>, the evidence was not sufficiently strong to reject \(H_0\) so we accept that the coin may be fair.  (Again, the coin may not be fair, but our evidence isn't strong enough to say so.)</p>
-<p id="p-966">In <a href="" class="xref" data-knowl="./knowl/exploration-NewCoin.html" title="Exploration 4.3.2: A New Coin">Exploration 4.3.2</a> the claim is again that the coin is not fair, and the default state is that the coin <em class="emphasis">is</em> fair.  If we let \(p\) denote the proportion of coin flips which will come up heads, we have:</p>
-<div class="displaymath">
+<p class="continuation">In the case of <a href="" class="xref" data-knowl="./knowl/exploration-BadCoin.html" title="Exploration 4.3.1: Are we sure it is (isn't) Biased?">Exploration 4.3.1</a>, the evidence was not sufficiently strong to reject <span class="process-math">\(H_0\)</span> so we accept that the coin may be fair.  (Again, the coin may not be fair, but our evidence isn't strong enough to say so.)</p>
+<p id="p-966">In <a href="" class="xref" data-knowl="./knowl/exploration-NewCoin.html" title="Exploration 4.3.2: A New Coin">Exploration 4.3.2</a> the claim is again that the coin is not fair, and the default state is that the coin <em class="emphasis">is</em> fair.  If we let <span class="process-math">\(p\)</span> denote the proportion of coin flips which will come up heads, we have:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/exploration-NewCoin.html ./knowl/exploration-NewCoin.html" id="md-6">
 \begin{align*}
 H_0:p\amp= 0.5\\
 H_A:p\amp\neq 0.5
 \end{align*}
 </div>
-<p class="continuation">In the case of <a href="" class="xref" data-knowl="./knowl/exploration-NewCoin.html" title="Exploration 4.3.2: A New Coin">Exploration 4.3.2</a>, the evidence was strong  enough to reject \(H_0\text{.}\)  Thus we can say that the coin is not fair.  Since the 95% confidence interval falls <em class="emphasis">below</em> 0.5, we can say \(p\lt 0.5\) and the coin favors tails.</p></article></div>
+<p class="continuation">In the case of <a href="" class="xref" data-knowl="./knowl/exploration-NewCoin.html" title="Exploration 4.3.2: A New Coin">Exploration 4.3.2</a>, the evidence was strong  enough to reject <span class="process-math">\(H_0\text{.}\)</span>  Thus we can say that the coin is not fair.  Since the 95% confidence interval falls <em class="emphasis">below</em> 0.5, we can say <span class="process-math">\(p\lt 0.5\)</span> and the coin favors tails.</p></article></div>
 <article class="definition definition-like" id="definition-errors"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.3.6</span><span class="period">.</span>
 </h4>
@@ -288,7 +293,7 @@ H_A:p\amp\neq 0.5
 <li id="li-164"><p id="p-derived-li-164">If the Null Hypothesis is false and we do not reject it, this is a <em class="emphasis">Type 2 error</em>.</p></li>
 </ul>
 <p class="continuation">This can be summarized:</p>
-<div class="displaymath">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \begin{array}{|c|c|c|}
 \hline
@@ -301,70 +306,70 @@ H_A:p\amp\neq 0.5
 \end{array}
 \end{equation*}
 </div></article></section><section class="subsection" id="subsection-25"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">4.3.2</span> <span class="title">Formal Hypothesis Testing and \(p\)-values.</span>
+<span class="type">Subsection</span> <span class="codenumber">4.3.2</span> <span class="title">Formal Hypothesis Testing and <span class="process-math">\(p\)</span>-values.</span>
 </h3>
 <article class="remark remark-like" id="remark-33"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.3.7</span><span class="period">.</span>
 </h4>
 <p id="p-968">When doing proportional hypothesis testing, there are three types of Alternative Hypothesis:</p>
 <ul class="disc">
-<li id="li-165"><p id="p-derived-li-165">\(\displaystyle H_A: p\neq p_0\)</p></li>
-<li id="li-166"><p id="p-derived-li-166">\(\displaystyle H_A: p&gt;p_0\)</p></li>
-<li id="li-167"><p id="p-derived-li-167">\(\displaystyle H_A: p\lt p_0\)</p></li>
+<li id="li-165"><p id="p-derived-li-165"><span class="process-math">\(\displaystyle H_A: p\neq p_0\)</span></p></li>
+<li id="li-166"><p id="p-derived-li-166"><span class="process-math">\(\displaystyle H_A: p&gt;p_0\)</span></p></li>
+<li id="li-167"><p id="p-derived-li-167"><span class="process-math">\(\displaystyle H_A: p\lt p_0\)</span></p></li>
 </ul>
-<p class="continuation">Corresponding to “the population proportion is (not equal to/greater than/less than) \(p_0\)” for some value \(p_0\text{.}\)</p>
-<p id="p-969">In all of these cases, the Null Hypothesis will be: \(H_0: p=p_0\text{,}\) that is, the population proportion could be \(p_0\text{.}\)</p></article><article class="exploration project-like" id="exploration-CityCouncil"><h4 class="heading">
+<p class="continuation">Corresponding to “the population proportion is (not equal to/greater than/less than) <span class="process-math">\(p_0\)</span>” for some value <span class="process-math">\(p_0\text{.}\)</span></p>
+<p id="p-969">In all of these cases, the Null Hypothesis will be: <span class="process-math">\(H_0: p=p_0\text{,}\)</span> that is, the population proportion could be <span class="process-math">\(p_0\text{.}\)</span></p></article><article class="exploration project-like" id="exploration-CityCouncil"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">4.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Running for City Council.</span>
 </h4>
 <div class="introduction" id="introduction-109">
 <p id="p-970">A candidiate running for city council believes that she is in the lead.  She surveys 212 potential voters, and she is the favored candidiate for 122 of them.</p>
 <p id="p-971">Note that in this case the Alternative Hypothesis is that her share of support is over 50%, the Null Hypothesis is that it could be 50%. That is:</p>
 <ul class="disc">
-<li id="li-168"><p id="p-derived-li-168">\(\displaystyle H_0: p= 0.5\)</p></li>
-<li id="li-169"><p id="p-derived-li-169">\(\displaystyle H_A: p&gt;0.5\)</p></li>
+<li id="li-168"><p id="p-derived-li-168"><span class="process-math">\(\displaystyle H_0: p= 0.5\)</span></p></li>
+<li id="li-169"><p id="p-derived-li-169"><span class="process-math">\(\displaystyle H_A: p&gt;0.5\)</span></p></li>
 </ul>
-<p class="continuation">where \(p\) is her proportion of support among potential voters.</p>
-<p id="p-972"><div class="sagecell-r" id="sage-162"><script type="text/x-sage">
-</script></div> <a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-12" id="hint-12"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-12"><div class="hint solution-like"><p id="p-973"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-43" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-44" width="600" height="600"></iframe></p></div></div></p>
+<p class="continuation">where <span class="process-math">\(p\)</span> is her proportion of support among potential voters.</p>
+<p id="p-972"><pre class="ptx-sagecell sagecell-r" id="sage-162"><script type="text/x-sage">
+</script></pre> <a href="" data-knowl="" class="id-ref hint-knowl original has-interactive" data-refid="hk-hint-12" id="hint-12"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-12"><div class="hint solution-like"><p id="p-973"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-43" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-44" width="600" height="600"></iframe></p></div></div></p>
 </div>
 <article class="task exercise-like" id="task-524"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<p id="p-974">Suppose that her support <em class="emphasis">was</em> only 50%, that is assume \(p=0.5\text{.}\)  Note that the size of the sample is \(n=212\text{.}\)  Use <a href="" class="xref" data-knowl="./knowl/theorem-CLTprop.html" title="Theorem 4.1.4: The Central Limit Theorem (Proportion)">Theorem 4.1.4</a> to find \(\mu_{\hat{p}}, SE_{\hat{p}}\text{.}\)</p></article><article class="task exercise-like" id="task-525"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<p id="p-975">Let \(X\) be the normal random variable with mean \(\mu_{\hat{p}}\) and standard deviation \(SE_{\hat{p}}\) that approximates \(\hat{p}\text{.}\)  What is the probability  \(P(X&gt;\frac{122}{212})\text{?}\)</p></article><article class="task exercise-like" id="task-526"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-974">Suppose that her support <em class="emphasis">was</em> only 50%, that is assume <span class="process-math">\(p=0.5\text{.}\)</span>  Note that the size of the sample is <span class="process-math">\(n=212\text{.}\)</span>  Use <a href="" class="xref" data-knowl="./knowl/theorem-CLTprop.html" title="Theorem 4.1.4: The Central Limit Theorem (Proportion)">Theorem 4.1.4</a> to find <span class="process-math">\(\mu_{\hat{p}}, SE_{\hat{p}}\text{.}\)</span></p></article><article class="task exercise-like" id="task-525"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-975">Let <span class="process-math">\(X\)</span> be the normal random variable with mean <span class="process-math">\(\mu_{\hat{p}}\)</span> and standard deviation <span class="process-math">\(SE_{\hat{p}}\)</span> that approximates <span class="process-math">\(\hat{p}\text{.}\)</span>  What is the probability  <span class="process-math">\(P(X&gt;\frac{122}{212})\text{?}\)</span></p></article><article class="task exercise-like" id="task-526"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <p id="p-976">How likely is it to achieve values like we found in (b) if she were not in the lead?</p></article></article><article class="definition definition-like" id="definition-pvalue"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.3.8</span><span class="period">.</span>
 </h4>
-<p id="p-977">When conducting a hypothesis test, the <em class="emphasis">\(p\)-value</em> measures “the probability that a data point as extreme or more is encountered, IF we assume the null hypothesis.”</p>
-<p id="p-978">The way \(p\)-values are computed depends on the form of the alternative hypothesis:</p>
+<p id="p-977">When conducting a hypothesis test, the <em class="emphasis"><span class="process-math">\(p\)</span>-value</em> measures “the probability that a data point as extreme or more is encountered, IF we assume the null hypothesis.”</p>
+<p id="p-978">The way <span class="process-math">\(p\)</span>-values are computed depends on the form of the alternative hypothesis:</p>
 <ul class="disc">
 <li id="li-170">
-<em class="alert">If \(H_A\) is of the form \(p&gt;p_0\)</em> then allowing \(X\) to be the normal variable with mean \(\mu_{\hat{p}}\) and standard deviation \(SE_{\hat{p}}\text{,}\) the \(p\)-value is<div class="displaymath">
+<em class="alert">If <span class="process-math">\(H_A\)</span> is of the form <span class="process-math">\(p&gt;p_0\)</span></em> then allowing <span class="process-math">\(X\)</span> to be the normal variable with mean <span class="process-math">\(\mu_{\hat{p}}\)</span> and standard deviation <span class="process-math">\(SE_{\hat{p}}\text{,}\)</span> the <span class="process-math">\(p\)</span>-value is<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 p\text{-value}=P(X&gt;p_0).
 \end{equation*}
 </div>
-<figure class="figure figure-like" id="figure-24"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/image-24.svg" role="img" class="contained" alt="\(p\)-value for \(H_A:p&gt;p_0\text{.}\)"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.9<span class="period">.</span></span><span class="space"> </span>\(p\)-value for \(H_A:p&gt;p_0\text{.}\)</figcaption></figure> Equivalently, we can find the corresponding \(z\)-score of \(\hat{p}\) and find the probability that \(P(Z&gt;z_{\hat{p}})\) for the standard normal variable \(Z\text{:}\) <figure class="figure figure-like" id="figure-25"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/image-25.svg" role="img" class="contained" alt="\(p\)-value for \(H_A:p&gt;p_0\text{.}\)"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.10<span class="period">.</span></span><span class="space"> </span>\(p\)-value for \(H_A:p&gt;p_0\) using \(z\)-scores.</figcaption></figure>
+<figure class="figure figure-like" id="figure-23"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/image-23.svg" role="img" class="contained" alt="\(p\)-value for \(H_A:p&gt;p_0\text{.}\)"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.9<span class="period">.</span></span><span class="space"> </span><span class="process-math">\(p\)</span>-value for <span class="process-math">\(H_A:p&gt;p_0\text{.}\)</span></figcaption></figure> Equivalently, we can find the corresponding <span class="process-math">\(z\)</span>-score of <span class="process-math">\(\hat{p}\)</span> and find the probability that <span class="process-math">\(P(Z&gt;z_{\hat{p}})\)</span> for the standard normal variable <span class="process-math">\(Z\text{:}\)</span> <figure class="figure figure-like" id="figure-24"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/image-24.svg" role="img" class="contained" alt="\(p\)-value for \(H_A:p&gt;p_0\text{.}\)"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.10<span class="period">.</span></span><span class="space"> </span><span class="process-math">\(p\)</span>-value for <span class="process-math">\(H_A:p&gt;p_0\)</span> using <span class="process-math">\(z\)</span>-scores.</figcaption></figure>
 </li>
 <li id="li-171">
-<em class="alert">If \(H_A\) is of the form \(p\lt p_0\)</em> then allowing \(X\) to be the normal variable with mean \(\mu_{\hat{p}}\) and standard deviation \(SE_{\hat{p}}\text{,}\) the \(p\)-value is<div class="displaymath">
+<em class="alert">If <span class="process-math">\(H_A\)</span> is of the form <span class="process-math">\(p\lt p_0\)</span></em> then allowing <span class="process-math">\(X\)</span> to be the normal variable with mean <span class="process-math">\(\mu_{\hat{p}}\)</span> and standard deviation <span class="process-math">\(SE_{\hat{p}}\text{,}\)</span> the <span class="process-math">\(p\)</span>-value is<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 p\text{-value}=P(X\lt p_0).
 \end{equation*}
 </div>
-<figure class="figure figure-like" id="figure-26"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/image-26.svg" role="img" class="contained" alt="\(p\)-value for \(H_A:p\lt p_0\text{.}\)"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.11<span class="period">.</span></span><span class="space"> </span>\(p\)-value for \(H_A:p\lt p_0\text{.}\)</figcaption></figure> Equivalently, we can find the corresponding \(z\)-score of \(\hat{p}\) and find the probability that \(P(Z\lt z_{\hat{p}})\) for the standard normal variable \(Z\text{:}\) <figure class="figure figure-like" id="figure-27"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/image-27.svg" role="img" class="contained" alt="\(p\)-value for \(H_A:p\lt p_0\text{.}\)"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.12<span class="period">.</span></span><span class="space"> </span>\(p\)-value for \(H_A:p\lt p_0\) using \(z\)-scores.</figcaption></figure>
+<figure class="figure figure-like" id="figure-25"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/image-25.svg" role="img" class="contained" alt="\(p\)-value for \(H_A:p\lt p_0\text{.}\)"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.11<span class="period">.</span></span><span class="space"> </span><span class="process-math">\(p\)</span>-value for <span class="process-math">\(H_A:p\lt p_0\text{.}\)</span></figcaption></figure> Equivalently, we can find the corresponding <span class="process-math">\(z\)</span>-score of <span class="process-math">\(\hat{p}\)</span> and find the probability that <span class="process-math">\(P(Z\lt z_{\hat{p}})\)</span> for the standard normal variable <span class="process-math">\(Z\text{:}\)</span> <figure class="figure figure-like" id="figure-26"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/image-26.svg" role="img" class="contained" alt="\(p\)-value for \(H_A:p\lt p_0\text{.}\)"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.12<span class="period">.</span></span><span class="space"> </span><span class="process-math">\(p\)</span>-value for <span class="process-math">\(H_A:p\lt p_0\)</span> using <span class="process-math">\(z\)</span>-scores.</figcaption></figure>
 </li>
 <li id="li-172">
-<em class="alert">If \(H_A\) is of the form \(p\neq p_0\)</em> then things are more complicated.  We still let \(X\)  be the normal variable with mean \(\mu_{\hat{p}}\) and standard deviation \(SE_{\hat{p}}\text{.}\)   But in this case, extremal means at least as far to the left <em class="emphasis">or</em> the right of \(p\text{.}\) So we can compute the \(p\)-value via<div class="displaymath">
+<em class="alert">If <span class="process-math">\(H_A\)</span> is of the form <span class="process-math">\(p\neq p_0\)</span></em> then things are more complicated.  We still let <span class="process-math">\(X\)</span>  be the normal variable with mean <span class="process-math">\(\mu_{\hat{p}}\)</span> and standard deviation <span class="process-math">\(SE_{\hat{p}}\text{.}\)</span>   But in this case, extremal means at least as far to the left <em class="emphasis">or</em> the right of <span class="process-math">\(p\text{.}\)</span> So we can compute the <span class="process-math">\(p\)</span>-value via<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 p\text{-value}=P(|X-p_0|&gt; |\hat{p}-p_0|)=P(X&gt;p_0+|p_0-\hat{p}|)+P(X\lt p_0-|p_0-\hat{p}|). 
 \end{equation*}
 </div>
-<figure class="figure figure-like" id="figure-28"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/image-28.svg" role="img" class="contained" alt="\(p\)-value for \(H_A:p\neq p_0\text{.}\)"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.13<span class="period">.</span></span><span class="space"> </span>\(p\)-value for \(H_A:p\neq p_0\text{.}\)</figcaption></figure> Equivalently, we can find the corresponding \(z\)-score of \(\hat{p}\) and find the probability that \(P(|Z|&gt; |z_{\hat{p}}|)=P(Z&gt; |z_{\hat{p}}|)+P(Z\lt -|z_{\hat{p}}|)\) for the standard normal variable \(Z\text{:}\) <figure class="figure figure-like" id="figure-29"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/image-29.svg" role="img" class="contained" alt="\(p\)-value for \(H_A:p\neq p_0\text{.}\)"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.14<span class="period">.</span></span><span class="space"> </span>\(p\)-value for \(H_A:p\neq p_0\) using \(z\)-scores.</figcaption></figure> It's also worth noting that for either of these tails, \(P(X&gt;p_0+|\hat{p}-p_0|)=P(X\lt p_0-|\hat{p}-p_0|)\)   and \(P(Z&gt; |z_{\hat{p}}|)=P(Z\lt -|z_{\hat{p}}|)\text{.}\)  So if you find one of these tails, you can double it to find the sum of both tails.</li>
+<figure class="figure figure-like" id="figure-27"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/image-27.svg" role="img" class="contained" alt="\(p\)-value for \(H_A:p\neq p_0\text{.}\)"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.13<span class="period">.</span></span><span class="space"> </span><span class="process-math">\(p\)</span>-value for <span class="process-math">\(H_A:p\neq p_0\text{.}\)</span></figcaption></figure> Equivalently, we can find the corresponding <span class="process-math">\(z\)</span>-score of <span class="process-math">\(\hat{p}\)</span> and find the probability that <span class="process-math">\(P(|Z|&gt; |z_{\hat{p}}|)=P(Z&gt; |z_{\hat{p}}|)+P(Z\lt -|z_{\hat{p}}|)\)</span> for the standard normal variable <span class="process-math">\(Z\text{:}\)</span> <figure class="figure figure-like" id="figure-28"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/image-28.svg" role="img" class="contained" alt="\(p\)-value for \(H_A:p\neq p_0\text{.}\)"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.14<span class="period">.</span></span><span class="space"> </span><span class="process-math">\(p\)</span>-value for <span class="process-math">\(H_A:p\neq p_0\)</span> using <span class="process-math">\(z\)</span>-scores.</figcaption></figure> It's also worth noting that for either of these tails, <span class="process-math">\(P(X&gt;p_0+|\hat{p}-p_0|)=P(X\lt p_0-|\hat{p}-p_0|)\)</span>   and <span class="process-math">\(P(Z&gt; |z_{\hat{p}}|)=P(Z\lt -|z_{\hat{p}}|)\text{.}\)</span>  So if you find one of these tails, you can double it to find the sum of both tails.</li>
 </ul></article><article class="remark remark-like" id="remark-stepsofHT"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.3.15</span><span class="period">.</span><span class="space"> </span><span class="title">The Steps of Hypothesis Testing.</span>
 </h4>
@@ -373,211 +378,211 @@ p\text{-value}=P(|X-p_0|&gt; |\hat{p}-p_0|)=P(X&gt;p_0+|p_0-\hat{p}|)+P(X\lt p_0
 <li id="li-173"><p id="p-derived-li-173">A parameter of interest.</p></li>
 <li id="li-174"><p id="p-derived-li-174">A sample to determine a point estimate and a size for the sample.</p></li>
 <li id="li-175"><p id="p-derived-li-175">A question to be asked about the parameter of interest.</p></li>
-<li id="li-176"><p id="p-derived-li-176">A <em class="emphasis">level of significance</em> often denoted \(\alpha\text{,}\) which reflects how willing you are to risk accepting an alternative hypothesis if you are wrong.  Typically this level of significance is \(\alpha=0.05\) or 5%.  The higher the significance, the more willing you are willing to risk being wrong when claiming \(H_A\text{,}\) the lower the significance, the less likely we are to reject the Null.  So lower levels of significance corresponds to stronger demand for evidence.</p></li>
+<li id="li-176"><p id="p-derived-li-176">A <em class="emphasis">level of significance</em> often denoted <span class="process-math">\(\alpha\text{,}\)</span> which reflects how willing you are to risk accepting an alternative hypothesis if you are wrong.  Typically this level of significance is <span class="process-math">\(\alpha=0.05\)</span> or 5%.  The higher the significance, the more willing you are willing to risk being wrong when claiming <span class="process-math">\(H_A\text{,}\)</span> the lower the significance, the less likely we are to reject the Null.  So lower levels of significance corresponds to stronger demand for evidence.</p></li>
 </ul>
 <p class="continuation">Then the steps are:</p>
 <ol class="decimal">
-<li id="li-177"><p id="p-derived-li-177">Determine specifically both \(H_A\text{,}\) and \(H_0\text{.}\)</p></li>
-<li id="li-178"><p id="p-derived-li-178">Compute the point estimate.  (\(\hat{p}\))</p></li>
-<li id="li-179"><p id="p-derived-li-179">Assume \(H_0\) and compute the sampling distribution  (mean  \(\mu_{\hat{p}}\) and standard deviation \(SE_{\hat{p}}\)).</p></li>
-<li id="li-180"><p id="p-derived-li-180">Compute the \(p\)-value via <a href="" class="xref" data-knowl="./knowl/definition-pvalue.html" title="Definition 4.3.8">Definition 4.3.8</a> based on your \(H_A\text{.}\)</p></li>
+<li id="li-177"><p id="p-derived-li-177">Determine specifically both <span class="process-math">\(H_A\text{,}\)</span> and <span class="process-math">\(H_0\text{.}\)</span></p></li>
+<li id="li-178"><p id="p-derived-li-178">Compute the point estimate.  (<span class="process-math">\(\hat{p}\)</span>)</p></li>
+<li id="li-179"><p id="p-derived-li-179">Assume <span class="process-math">\(H_0\)</span> and compute the sampling distribution  (mean  <span class="process-math">\(\mu_{\hat{p}}\)</span> and standard deviation <span class="process-math">\(SE_{\hat{p}}\)</span>).</p></li>
+<li id="li-180"><p id="p-derived-li-180">Compute the <span class="process-math">\(p\)</span>-value via <a href="" class="xref" data-knowl="./knowl/definition-pvalue.html" title="Definition 4.3.8">Definition 4.3.8</a> based on your <span class="process-math">\(H_A\text{.}\)</span></p></li>
 <li id="li-181">
-<p id="p-980">Compare the \(p\)-value to the level of significance \(\alpha\text{:}\)</p>
+<p id="p-980">Compare the <span class="process-math">\(p\)</span>-value to the level of significance <span class="process-math">\(\alpha\text{:}\)</span></p>
 <ul class="disc">
-<li id="li-182"><p id="p-derived-li-182">If \(\alpha\leq \) \(p\)-value, then we <em class="emphasis">accept</em> the Null Hypothesis.</p></li>
-<li id="li-183"><p id="p-derived-li-183">If \(\alpha &gt; \) \(p\)-value, then we <em class="emphasis">reject</em> the Null Hypothesis.</p></li>
+<li id="li-182"><p id="p-derived-li-182">If <span class="process-math">\(\alpha\leq \)</span> <span class="process-math">\(p\)</span>-value, then we <em class="emphasis">accept</em> the Null Hypothesis.</p></li>
+<li id="li-183"><p id="p-derived-li-183">If <span class="process-math">\(\alpha &gt; \)</span> <span class="process-math">\(p\)</span>-value, then we <em class="emphasis">reject</em> the Null Hypothesis.</p></li>
 </ul>
 </li>
 </ol></article><article class="activity project-like" id="activity-CityCouncil"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Revisiting the City Council run.</span>
 </h4>
 <div class="introduction" id="introduction-110">
-<p id="p-981">Recall that from <a href="" class="xref" data-knowl="./knowl/exploration-CityCouncil.html" title="Exploration 4.3.3: Running for City Council">Exploration 4.3.3</a> that we a sample of size \(n=212\) and that \(\hat{p}=\frac{122}{212}\) is our point estimate.  We also have hypothesis:</p>
+<p id="p-981">Recall that from <a href="" class="xref" data-knowl="./knowl/exploration-CityCouncil.html" title="Exploration 4.3.3: Running for City Council">Exploration 4.3.3</a> that we a sample of size <span class="process-math">\(n=212\)</span> and that <span class="process-math">\(\hat{p}=\frac{122}{212}\)</span> is our point estimate.  We also have hypothesis:</p>
 <ul class="disc">
-<li id="li-184"><p id="p-derived-li-184">\(\displaystyle H_0: p= 0.5\)</p></li>
-<li id="li-185"><p id="p-derived-li-185">\(\displaystyle H_A: p&gt;0.5\)</p></li>
+<li id="li-184"><p id="p-derived-li-184"><span class="process-math">\(\displaystyle H_0: p= 0.5\)</span></p></li>
+<li id="li-185"><p id="p-derived-li-185"><span class="process-math">\(\displaystyle H_A: p&gt;0.5\)</span></p></li>
 </ul>
-<p class="continuation">Then finally note that in <a href="" class="xref" data-knowl="./knowl/exploration-CityCouncil.html" title="Exploration 4.3.3: Running for City Council">Exploration 4.3.3</a> (b), we have already computed the \(p\)-value.  Suppose we have a level of significance of \(\alpha=0.05\text{.}\)</p>
+<p class="continuation">Then finally note that in <a href="" class="xref" data-knowl="./knowl/exploration-CityCouncil.html" title="Exploration 4.3.3: Running for City Council">Exploration 4.3.3</a> (b), we have already computed the <span class="process-math">\(p\)</span>-value.  Suppose we have a level of significance of <span class="process-math">\(\alpha=0.05\text{.}\)</span></p>
 </div>
 <article class="task exercise-like" id="task-527"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<p id="p-982">Compare the \(p\)-value to \(\alpha=0.05\text{.}\)  Which is greater?</p></article><article class="task exercise-like" id="task-528"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-982">Compare the <span class="process-math">\(p\)</span>-value to <span class="process-math">\(\alpha=0.05\text{.}\)</span>  Which is greater?</p></article><article class="task exercise-like" id="task-528"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <p id="p-983">Do we  reject the null, based on <a href="" class="xref" data-knowl="./knowl/remark-stepsofHT.html" title="Remark 4.3.15: The Steps of Hypothesis Testing">Remark 4.3.15</a>?</p></article></article><article class="remark remark-like" id="remark-35"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.3.16</span><span class="period">.</span>
 </h4>
 <p id="p-984">To summarize what we just did:</p>
-<p id="p-985">We believe that more than 50% of voters support our candidiate.  <em class="emphasis">If</em> only 50% of supporters support our candidiate, then the probability that we could sample \(n=212\) candidiates and have \(\hat{p}=\frac{122}{212}\) or more support her is less than 5%, which is not very likely.  Thus we reject the Null and claim that more than 50% of the voters support her.</p></article><article class="activity project-like" id="activity-undergradresearch"><h4 class="heading">
+<p id="p-985">We believe that more than 50% of voters support our candidiate.  <em class="emphasis">If</em> only 50% of supporters support our candidiate, then the probability that we could sample <span class="process-math">\(n=212\)</span> candidiates and have <span class="process-math">\(\hat{p}=\frac{122}{212}\)</span> or more support her is less than 5%, which is not very likely.  Thus we reject the Null and claim that more than 50% of the voters support her.</p></article><article class="activity project-like" id="activity-undergradresearch"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">Undergraduate Research.</span>
 </h4>
 <div class="introduction" id="introduction-111">
 <p id="p-986">A professor believes that 20% of students at their institution conduct undergraduate research.  A colleague disagrees.  They survey 63 students and 9 of them have done undergraduate research.</p>
-<p id="p-987">Let \(p\) denote the proportion of students at this university that have done undergraduate research.  Suppose the level of significance is \(\alpha=0.05\)</p>
+<p id="p-987">Let <span class="process-math">\(p\)</span> denote the proportion of students at this university that have done undergraduate research.  Suppose the level of significance is <span class="process-math">\(\alpha=0.05\)</span></p>
 </div>
 <article class="task exercise-like" id="task-529"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<p id="p-988">Which of the following best describes the null hypothesis \(H_0\text{?}\)</p>
+<p id="p-988">Which of the following best describes the null hypothesis <span class="process-math">\(H_0\text{?}\)</span></p>
 <ul class="disc">
-<li id="li-186"><p id="p-derived-li-186">\(p\lt 0.2\text{.}\)</p></li>
-<li id="li-187"><p id="p-derived-li-187">\(p&gt; 0.2\text{.}\)</p></li>
-<li id="li-188"><p id="p-derived-li-188">\(p\neq 0.2\text{.}\)</p></li>
-<li id="li-189"><p id="p-derived-li-189">\(p= 0.2\text{.}\)</p></li>
+<li id="li-186"><p id="p-derived-li-186"><span class="process-math">\(p\lt 0.2\text{.}\)</span></p></li>
+<li id="li-187"><p id="p-derived-li-187"><span class="process-math">\(p&gt; 0.2\text{.}\)</span></p></li>
+<li id="li-188"><p id="p-derived-li-188"><span class="process-math">\(p\neq 0.2\text{.}\)</span></p></li>
+<li id="li-189"><p id="p-derived-li-189"><span class="process-math">\(p= 0.2\text{.}\)</span></p></li>
 </ul></article><article class="task exercise-like" id="task-530"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<p id="p-989">Which of the following best describes the alternative hypothesis \(H_A\text{?}\)</p>
+<p id="p-989">Which of the following best describes the alternative hypothesis <span class="process-math">\(H_A\text{?}\)</span></p>
 <ul class="disc">
-<li id="li-190"><p id="p-derived-li-190">\(p\lt 0.2\text{.}\)</p></li>
-<li id="li-191"><p id="p-derived-li-191">\(p&gt; 0.2\text{.}\)</p></li>
-<li id="li-192"><p id="p-derived-li-192">\(p\neq 0.2\text{.}\)</p></li>
-<li id="li-193"><p id="p-derived-li-193">\(p= 0.2\text{.}\)</p></li>
+<li id="li-190"><p id="p-derived-li-190"><span class="process-math">\(p\lt 0.2\text{.}\)</span></p></li>
+<li id="li-191"><p id="p-derived-li-191"><span class="process-math">\(p&gt; 0.2\text{.}\)</span></p></li>
+<li id="li-192"><p id="p-derived-li-192"><span class="process-math">\(p\neq 0.2\text{.}\)</span></p></li>
+<li id="li-193"><p id="p-derived-li-193"><span class="process-math">\(p= 0.2\text{.}\)</span></p></li>
 </ul></article><article class="task exercise-like" id="task-531"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<p id="p-990">Compute \(\hat{p}\text{.}\)</p></article><article class="task exercise-like" id="task-532"><h5 class="heading"><span class="codenumber">(d)</span></h5>
-<p id="p-991">Assuming the null hypothesis, compute \(\mu_{\hat{p}}, SE_{\hat{p}}\text{.}\)</p></article><article class="task exercise-like" id="task-533"><h5 class="heading"><span class="codenumber">(e)</span></h5>
-<p id="p-992">Compute \(|p-\hat{p}|\text{.}\)</p></article><article class="task exercise-like" id="task-534"><h5 class="heading"><span class="codenumber">(f)</span></h5>
-<p id="p-993">Let \(X\) be the normal variable mean \(\mu_{\hat{p}}\) and standard deviation \(SE_{\hat{p}}\text{.}\) Compute \(P(X&gt; p_0+|p_0-\hat{p}|)\text{.}\)</p>
-<p id="p-994"><div class="sagecell-r" id="sage-163"><script type="text/x-sage">
-</script></div> <a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-13" id="hint-13"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-13"><div class="hint solution-like"><p id="p-995"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-45" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-46" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-535"><h5 class="heading"><span class="codenumber">(g)</span></h5>
-<p id="p-996">Compute \(P(X\lt p_0-|p_0-\hat{p}|)\text{.}\)  How does this compare to what you found in (f)?</p>
-<p id="p-997"><div class="sagecell-r" id="sage-164"><script type="text/x-sage">
-</script></div> <a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-14" id="hint-14"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-14"><div class="hint solution-like"><p id="p-998"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-47" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-48" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-536"><h5 class="heading"><span class="codenumber">(h)</span></h5>
-<p id="p-999">Compute the \(z\)-score for \(\hat{p}\text{,}\) call this \(z_{\hat{p}}\text{.}\)</p></article><article class="task exercise-like" id="task-537"><h5 class="heading"><span class="codenumber">(i)</span></h5>
-<p id="p-1000">Let \(Z\) denote the standard normal variable.  Compute \(P(Z&gt;|z_{\hat{p}}|)\) and \(P(Z\lt -|z_{\hat{p}}|)\text{.}\)  How does these values compare to what you found in (f) and (g)?</p></article><article class="task exercise-like" id="task-538"><h5 class="heading"><span class="codenumber">(j)</span></h5>
-<p id="p-1001">Compute the \(p\)-value.</p></article><article class="task exercise-like" id="task-539"><h5 class="heading"><span class="codenumber">(k)</span></h5>
-<p id="p-1002">State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-540"><h5 class="heading"><span class="codenumber">(l)</span></h5>
+<p id="p-990">Compute <span class="process-math">\(\hat{p}\text{.}\)</span></p></article><article class="task exercise-like" id="task-532"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-991">Assuming the null hypothesis, compute <span class="process-math">\(\mu_{\hat{p}}, SE_{\hat{p}}\text{.}\)</span></p></article><article class="task exercise-like" id="task-533"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-992">Compute <span class="process-math">\(|p-\hat{p}|\text{.}\)</span></p></article><article class="task exercise-like" id="task-534"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p id="p-993">Let <span class="process-math">\(X\)</span> be the normal variable mean <span class="process-math">\(\mu_{\hat{p}}\)</span> and standard deviation <span class="process-math">\(SE_{\hat{p}}\text{.}\)</span> Compute <span class="process-math">\(P(X&gt; p_0+|p_0-\hat{p}|)\text{.}\)</span></p>
+<p id="p-994"><pre class="ptx-sagecell sagecell-r" id="sage-163"><script type="text/x-sage">
+</script></pre> <a href="" data-knowl="" class="id-ref hint-knowl original has-interactive" data-refid="hk-hint-13" id="hint-13"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-13"><div class="hint solution-like"><p id="p-995"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-45" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-46" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-535"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p id="p-996">Compute <span class="process-math">\(P(X\lt p_0-|p_0-\hat{p}|)\text{.}\)</span>  How does this compare to what you found in (f)?</p>
+<p id="p-997"><pre class="ptx-sagecell sagecell-r" id="sage-164"><script type="text/x-sage">
+</script></pre> <a href="" data-knowl="" class="id-ref hint-knowl original has-interactive" data-refid="hk-hint-14" id="hint-14"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-14"><div class="hint solution-like"><p id="p-998"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-47" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-48" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-536"><h5 class="heading"><span class="codenumber">(h)</span></h5>
+<p id="p-999">Compute the <span class="process-math">\(z\)</span>-score for <span class="process-math">\(\hat{p}\text{,}\)</span> call this <span class="process-math">\(z_{\hat{p}}\text{.}\)</span></p></article><article class="task exercise-like" id="task-537"><h5 class="heading"><span class="codenumber">(i)</span></h5>
+<p id="p-1000">Let <span class="process-math">\(Z\)</span> denote the standard normal variable.  Compute <span class="process-math">\(P(Z&gt;|z_{\hat{p}}|)\)</span> and <span class="process-math">\(P(Z\lt -|z_{\hat{p}}|)\text{.}\)</span>  How does these values compare to what you found in (f) and (g)?</p></article><article class="task exercise-like" id="task-538"><h5 class="heading"><span class="codenumber">(j)</span></h5>
+<p id="p-1001">Compute the <span class="process-math">\(p\)</span>-value.</p></article><article class="task exercise-like" id="task-539"><h5 class="heading"><span class="codenumber">(k)</span></h5>
+<p id="p-1002">State the meaning of the <span class="process-math">\(p\)</span>-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-540"><h5 class="heading"><span class="codenumber">(l)</span></h5>
 <p id="p-1003">Do we  reject the null hypothesis?</p></article><article class="task exercise-like" id="task-541"><h5 class="heading"><span class="codenumber">(m)</span></h5>
 <p id="p-1004">What sort of error could have been made? (Type 1 or Type 2)</p></article></article><article class="activity project-like" id="activity-resturaunt"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">Restaurant Closure Rate.</span>
 </h4>
 <div class="introduction" id="introduction-112">
 <p id="p-1005">Our newly elected city councilperson is spearheading an initiative to attract more restaurant to open in her city.  She hopes to convince potential investors that the 1 year closure rate in this town is less than the national average of 60%.  She randomly samples 50 restaurant that were  opened at least a year ago and 25 of them closed in the first year.</p>
-<p id="p-1006">Let \(p\) denote the proportion of restaurant in her town which close within a year.  Suppose her level of significance is \(\alpha=0.05\)</p>
+<p id="p-1006">Let <span class="process-math">\(p\)</span> denote the proportion of restaurant in her town which close within a year.  Suppose her level of significance is <span class="process-math">\(\alpha=0.05\)</span></p>
 </div>
 <article class="task exercise-like" id="task-542"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<p id="p-1007">Which of the following best describes the null hypothesis \(H_0\text{?}\)</p>
+<p id="p-1007">Which of the following best describes the null hypothesis <span class="process-math">\(H_0\text{?}\)</span></p>
 <ul class="disc">
-<li id="li-194"><p id="p-derived-li-194">\(p\lt 0.6\text{.}\)</p></li>
-<li id="li-195"><p id="p-derived-li-195">\(p&gt; 0.6\text{.}\)</p></li>
-<li id="li-196"><p id="p-derived-li-196">\(p\neq 0.6\text{.}\)</p></li>
-<li id="li-197"><p id="p-derived-li-197">\(p= 0.6\text{.}\)</p></li>
+<li id="li-194"><p id="p-derived-li-194"><span class="process-math">\(p\lt 0.6\text{.}\)</span></p></li>
+<li id="li-195"><p id="p-derived-li-195"><span class="process-math">\(p&gt; 0.6\text{.}\)</span></p></li>
+<li id="li-196"><p id="p-derived-li-196"><span class="process-math">\(p\neq 0.6\text{.}\)</span></p></li>
+<li id="li-197"><p id="p-derived-li-197"><span class="process-math">\(p= 0.6\text{.}\)</span></p></li>
 </ul></article><article class="task exercise-like" id="task-543"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<p id="p-1008">Which of the following best describes the alternative hypothesis \(H_A\text{?}\)</p>
+<p id="p-1008">Which of the following best describes the alternative hypothesis <span class="process-math">\(H_A\text{?}\)</span></p>
 <ul class="disc">
-<li id="li-198"><p id="p-derived-li-198">\(p\lt 0.6\text{.}\)</p></li>
-<li id="li-199"><p id="p-derived-li-199">\(p&gt; 0.6\text{.}\)</p></li>
-<li id="li-200"><p id="p-derived-li-200">\(p\neq 0.6\text{.}\)</p></li>
-<li id="li-201"><p id="p-derived-li-201">\(p= 0.6\text{.}\)</p></li>
+<li id="li-198"><p id="p-derived-li-198"><span class="process-math">\(p\lt 0.6\text{.}\)</span></p></li>
+<li id="li-199"><p id="p-derived-li-199"><span class="process-math">\(p&gt; 0.6\text{.}\)</span></p></li>
+<li id="li-200"><p id="p-derived-li-200"><span class="process-math">\(p\neq 0.6\text{.}\)</span></p></li>
+<li id="li-201"><p id="p-derived-li-201"><span class="process-math">\(p= 0.6\text{.}\)</span></p></li>
 </ul></article><article class="task exercise-like" id="task-544"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<p id="p-1009">Compute \(\hat{p}\text{.}\)</p></article><article class="task exercise-like" id="task-545"><h5 class="heading"><span class="codenumber">(d)</span></h5>
-<p id="p-1010">Assuming the null hypothesis, compute \(\mu_{\hat{p}}, SE_{\hat{p}}\text{.}\)</p></article><article class="task exercise-like" id="task-546"><h5 class="heading"><span class="codenumber">(e)</span></h5>
-<p id="p-1011">Compute the \(p\)-value.</p>
-<p id="p-1012"><div class="sagecell-r" id="sage-165"><script type="text/x-sage">
-</script></div> <a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-15" id="hint-15"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-15"><div class="hint solution-like"><p id="p-1013"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-49" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-50" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-547"><h5 class="heading"><span class="codenumber">(f)</span></h5>
-<p id="p-1014">State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-548"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p id="p-1009">Compute <span class="process-math">\(\hat{p}\text{.}\)</span></p></article><article class="task exercise-like" id="task-545"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-1010">Assuming the null hypothesis, compute <span class="process-math">\(\mu_{\hat{p}}, SE_{\hat{p}}\text{.}\)</span></p></article><article class="task exercise-like" id="task-546"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-1011">Compute the <span class="process-math">\(p\)</span>-value.</p>
+<p id="p-1012"><pre class="ptx-sagecell sagecell-r" id="sage-165"><script type="text/x-sage">
+</script></pre> <a href="" data-knowl="" class="id-ref hint-knowl original has-interactive" data-refid="hk-hint-15" id="hint-15"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-15"><div class="hint solution-like"><p id="p-1013"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-49" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-50" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-547"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p id="p-1014">State the meaning of the <span class="process-math">\(p\)</span>-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-548"><h5 class="heading"><span class="codenumber">(g)</span></h5>
 <p id="p-1015">Do we  reject the null hypothesis?</p></article><article class="task exercise-like" id="task-549"><h5 class="heading"><span class="codenumber">(h)</span></h5>
 <p id="p-1016">What sort of error could have been made? (Type 1 or Type 2)</p></article></article><article class="activity project-like" id="activity-repair"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.3.7</span><span class="period">.</span><span class="space"> </span><span class="title">Machine Repair.</span>
 </h4>
 <div class="introduction" id="introduction-113">
 <p id="p-1017">A manager in a manufacturing plant believes that less than 25% of the machines need repair in a month.  The chief repairmen believes it is higher.  In a random sample of 200 machines, 67 required repairs in a month.</p>
-<p id="p-1018">Let \(p\) denote the proportion machines that need repair in a month.  Suppose the level of significance is \(\alpha=0.05\)</p>
+<p id="p-1018">Let <span class="process-math">\(p\)</span> denote the proportion machines that need repair in a month.  Suppose the level of significance is <span class="process-math">\(\alpha=0.05\)</span></p>
 </div>
 <article class="task exercise-like" id="task-550"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<p id="p-1019">Which of the following best describes the null hypothesis \(H_0\text{?}\)</p>
+<p id="p-1019">Which of the following best describes the null hypothesis <span class="process-math">\(H_0\text{?}\)</span></p>
 <ul class="disc">
-<li id="li-202"><p id="p-derived-li-202">\(p\lt 0.25\text{.}\)</p></li>
-<li id="li-203"><p id="p-derived-li-203">\(p&gt; 0.25\text{.}\)</p></li>
-<li id="li-204"><p id="p-derived-li-204">\(p\neq 0.25\text{.}\)</p></li>
-<li id="li-205"><p id="p-derived-li-205">\(p= 0.25\text{.}\)</p></li>
+<li id="li-202"><p id="p-derived-li-202"><span class="process-math">\(p\lt 0.25\text{.}\)</span></p></li>
+<li id="li-203"><p id="p-derived-li-203"><span class="process-math">\(p&gt; 0.25\text{.}\)</span></p></li>
+<li id="li-204"><p id="p-derived-li-204"><span class="process-math">\(p\neq 0.25\text{.}\)</span></p></li>
+<li id="li-205"><p id="p-derived-li-205"><span class="process-math">\(p= 0.25\text{.}\)</span></p></li>
 </ul></article><article class="task exercise-like" id="task-551"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<p id="p-1020">Which of the following best describes the alternative hypothesis \(H_A\text{?}\)</p>
+<p id="p-1020">Which of the following best describes the alternative hypothesis <span class="process-math">\(H_A\text{?}\)</span></p>
 <ul class="disc">
-<li id="li-206"><p id="p-derived-li-206">\(p\lt 0.25\text{.}\)</p></li>
-<li id="li-207"><p id="p-derived-li-207">\(p&gt; 0.25\text{.}\)</p></li>
-<li id="li-208"><p id="p-derived-li-208">\(p\neq 0.25\text{.}\)</p></li>
-<li id="li-209"><p id="p-derived-li-209">\(p= 0.25\text{.}\)</p></li>
+<li id="li-206"><p id="p-derived-li-206"><span class="process-math">\(p\lt 0.25\text{.}\)</span></p></li>
+<li id="li-207"><p id="p-derived-li-207"><span class="process-math">\(p&gt; 0.25\text{.}\)</span></p></li>
+<li id="li-208"><p id="p-derived-li-208"><span class="process-math">\(p\neq 0.25\text{.}\)</span></p></li>
+<li id="li-209"><p id="p-derived-li-209"><span class="process-math">\(p= 0.25\text{.}\)</span></p></li>
 </ul></article><article class="task exercise-like" id="task-552"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<p id="p-1021">Compute \(\hat{p}\text{.}\)</p></article><article class="task exercise-like" id="task-553"><h5 class="heading"><span class="codenumber">(d)</span></h5>
-<p id="p-1022">Assuming the null hypothesis, compute \(\mu_{\hat{p}}, SE_{\hat{p}}\text{.}\)</p></article><article class="task exercise-like" id="task-554"><h5 class="heading"><span class="codenumber">(e)</span></h5>
-<p id="p-1023">Compute the \(p\)-value.</p>
-<p id="p-1024"><div class="sagecell-r" id="sage-166"><script type="text/x-sage">
-</script></div> <a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-16" id="hint-16"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-16"><div class="hint solution-like"><p id="p-1025"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-51" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-52" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-555"><h5 class="heading"><span class="codenumber">(f)</span></h5>
-<p id="p-1026">State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-556"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p id="p-1021">Compute <span class="process-math">\(\hat{p}\text{.}\)</span></p></article><article class="task exercise-like" id="task-553"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-1022">Assuming the null hypothesis, compute <span class="process-math">\(\mu_{\hat{p}}, SE_{\hat{p}}\text{.}\)</span></p></article><article class="task exercise-like" id="task-554"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-1023">Compute the <span class="process-math">\(p\)</span>-value.</p>
+<p id="p-1024"><pre class="ptx-sagecell sagecell-r" id="sage-166"><script type="text/x-sage">
+</script></pre> <a href="" data-knowl="" class="id-ref hint-knowl original has-interactive" data-refid="hk-hint-16" id="hint-16"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-16"><div class="hint solution-like"><p id="p-1025"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-51" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-52" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-555"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p id="p-1026">State the meaning of the <span class="process-math">\(p\)</span>-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-556"><h5 class="heading"><span class="codenumber">(g)</span></h5>
 <p id="p-1027">Do we  reject the null hypothesis?</p></article><article class="task exercise-like" id="task-557"><h5 class="heading"><span class="codenumber">(h)</span></h5>
 <p id="p-1028">What sort of error could have been made? (Type 1 or Type 2)</p></article></article><article class="activity project-like" id="activity-band"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.3.8</span><span class="period">.</span><span class="space"> </span><span class="title">Local Band.</span>
 </h4>
 <div class="introduction" id="introduction-114">
 <p id="p-1029">A guitarist in a local band thinks 35% of people in their town have heard of them.  The drummer disagrees.  They survey 40 random people and 18 have heard of them.</p>
-<p id="p-1030">Let \(p\) denote the proportion of people in their town who have heard of them.  Suppose the level of significance is \(\alpha=0.05\)</p>
+<p id="p-1030">Let <span class="process-math">\(p\)</span> denote the proportion of people in their town who have heard of them.  Suppose the level of significance is <span class="process-math">\(\alpha=0.05\)</span></p>
 </div>
 <article class="task exercise-like" id="task-558"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<p id="p-1031">Which of the following best describes the null hypothesis \(H_0\text{?}\)</p>
+<p id="p-1031">Which of the following best describes the null hypothesis <span class="process-math">\(H_0\text{?}\)</span></p>
 <ul class="disc">
-<li id="li-210"><p id="p-derived-li-210">\(p\lt 0.35\text{.}\)</p></li>
-<li id="li-211"><p id="p-derived-li-211">\(p&gt; 0.35\text{.}\)</p></li>
-<li id="li-212"><p id="p-derived-li-212">\(p\neq 0.35\text{.}\)</p></li>
-<li id="li-213"><p id="p-derived-li-213">\(p= 0.35\text{.}\)</p></li>
+<li id="li-210"><p id="p-derived-li-210"><span class="process-math">\(p\lt 0.35\text{.}\)</span></p></li>
+<li id="li-211"><p id="p-derived-li-211"><span class="process-math">\(p&gt; 0.35\text{.}\)</span></p></li>
+<li id="li-212"><p id="p-derived-li-212"><span class="process-math">\(p\neq 0.35\text{.}\)</span></p></li>
+<li id="li-213"><p id="p-derived-li-213"><span class="process-math">\(p= 0.35\text{.}\)</span></p></li>
 </ul></article><article class="task exercise-like" id="task-559"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<p id="p-1032">Which of the following best describes the alternative hypothesis \(H_A\text{?}\)</p>
+<p id="p-1032">Which of the following best describes the alternative hypothesis <span class="process-math">\(H_A\text{?}\)</span></p>
 <ul class="disc">
-<li id="li-214"><p id="p-derived-li-214">\(p\lt 0.35\text{.}\)</p></li>
-<li id="li-215"><p id="p-derived-li-215">\(p&gt; 0.35\text{.}\)</p></li>
-<li id="li-216"><p id="p-derived-li-216">\(p\neq 0.35\text{.}\)</p></li>
-<li id="li-217"><p id="p-derived-li-217">\(p= 0.35\text{.}\)</p></li>
+<li id="li-214"><p id="p-derived-li-214"><span class="process-math">\(p\lt 0.35\text{.}\)</span></p></li>
+<li id="li-215"><p id="p-derived-li-215"><span class="process-math">\(p&gt; 0.35\text{.}\)</span></p></li>
+<li id="li-216"><p id="p-derived-li-216"><span class="process-math">\(p\neq 0.35\text{.}\)</span></p></li>
+<li id="li-217"><p id="p-derived-li-217"><span class="process-math">\(p= 0.35\text{.}\)</span></p></li>
 </ul></article><article class="task exercise-like" id="task-560"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<p id="p-1033">Compute \(\hat{p}\text{.}\)</p></article><article class="task exercise-like" id="task-561"><h5 class="heading"><span class="codenumber">(d)</span></h5>
-<p id="p-1034">Assuming the null hypothesis, compute \(\mu_{\hat{p}}, SE_{\hat{p}}\text{.}\)</p></article><article class="task exercise-like" id="task-562"><h5 class="heading"><span class="codenumber">(e)</span></h5>
-<p id="p-1035">Compute the \(p\)-value.</p>
-<p id="p-1036"><div class="sagecell-r" id="sage-167"><script type="text/x-sage">
-</script></div> <a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-17" id="hint-17"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-17"><div class="hint solution-like"><p id="p-1037"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-53" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-54" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-563"><h5 class="heading"><span class="codenumber">(f)</span></h5>
-<p id="p-1038">State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-564"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p id="p-1033">Compute <span class="process-math">\(\hat{p}\text{.}\)</span></p></article><article class="task exercise-like" id="task-561"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-1034">Assuming the null hypothesis, compute <span class="process-math">\(\mu_{\hat{p}}, SE_{\hat{p}}\text{.}\)</span></p></article><article class="task exercise-like" id="task-562"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-1035">Compute the <span class="process-math">\(p\)</span>-value.</p>
+<p id="p-1036"><pre class="ptx-sagecell sagecell-r" id="sage-167"><script type="text/x-sage">
+</script></pre> <a href="" data-knowl="" class="id-ref hint-knowl original has-interactive" data-refid="hk-hint-17" id="hint-17"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-17"><div class="hint solution-like"><p id="p-1037"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-53" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-54" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-563"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p id="p-1038">State the meaning of the <span class="process-math">\(p\)</span>-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-564"><h5 class="heading"><span class="codenumber">(g)</span></h5>
 <p id="p-1039">Do we  reject the null hypothesis?</p></article><article class="task exercise-like" id="task-565"><h5 class="heading"><span class="codenumber">(h)</span></h5>
 <p id="p-1040">What sort of error could have been made? (Type 1 or Type 2)</p></article></article><article class="activity project-like" id="activity-burger"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.3.9</span><span class="period">.</span><span class="space"> </span><span class="title">Extra Large Combo.</span>
 </h4>
 <div class="introduction" id="introduction-115">
 <p id="p-1041">An owner of a burger shop believes that the 40% of customers get an Extra Large Combo, the alternative of course is that they don't.</p>
-<p id="p-1042">Let \(p\) denote the proportion of customers who order the Extra Large Combo.  Suppose the level of significance is \(\alpha=0.05\)</p>
+<p id="p-1042">Let <span class="process-math">\(p\)</span> denote the proportion of customers who order the Extra Large Combo.  Suppose the level of significance is <span class="process-math">\(\alpha=0.05\)</span></p>
 </div>
 <article class="task exercise-like" id="task-566"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<p id="p-1043">Which of the following best describes the null hypothesis \(H_0\text{?}\)</p>
+<p id="p-1043">Which of the following best describes the null hypothesis <span class="process-math">\(H_0\text{?}\)</span></p>
 <ul class="disc">
-<li id="li-218"><p id="p-derived-li-218">\(p\lt 0.4\text{.}\)</p></li>
-<li id="li-219"><p id="p-derived-li-219">\(p&gt; 0.4\text{.}\)</p></li>
-<li id="li-220"><p id="p-derived-li-220">\(p\neq 0.4\text{.}\)</p></li>
-<li id="li-221"><p id="p-derived-li-221">\(p= 0.4\text{.}\)</p></li>
+<li id="li-218"><p id="p-derived-li-218"><span class="process-math">\(p\lt 0.4\text{.}\)</span></p></li>
+<li id="li-219"><p id="p-derived-li-219"><span class="process-math">\(p&gt; 0.4\text{.}\)</span></p></li>
+<li id="li-220"><p id="p-derived-li-220"><span class="process-math">\(p\neq 0.4\text{.}\)</span></p></li>
+<li id="li-221"><p id="p-derived-li-221"><span class="process-math">\(p= 0.4\text{.}\)</span></p></li>
 </ul></article><article class="task exercise-like" id="task-567"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<p id="p-1044">Which of the following best describes the alternative hypothesis \(H_A\text{?}\)</p>
+<p id="p-1044">Which of the following best describes the alternative hypothesis <span class="process-math">\(H_A\text{?}\)</span></p>
 <ul class="disc">
-<li id="li-222"><p id="p-derived-li-222">\(p\lt 0.4\text{.}\)</p></li>
-<li id="li-223"><p id="p-derived-li-223">\(p&gt; 0.4\text{.}\)</p></li>
-<li id="li-224"><p id="p-derived-li-224">\(p\neq 0.4\text{.}\)</p></li>
-<li id="li-225"><p id="p-derived-li-225">\(p= 0.4\text{.}\)</p></li>
+<li id="li-222"><p id="p-derived-li-222"><span class="process-math">\(p\lt 0.4\text{.}\)</span></p></li>
+<li id="li-223"><p id="p-derived-li-223"><span class="process-math">\(p&gt; 0.4\text{.}\)</span></p></li>
+<li id="li-224"><p id="p-derived-li-224"><span class="process-math">\(p\neq 0.4\text{.}\)</span></p></li>
+<li id="li-225"><p id="p-derived-li-225"><span class="process-math">\(p= 0.4\text{.}\)</span></p></li>
 </ul></article><article class="task exercise-like" id="task-568"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<p id="p-1045">Let's survey some customers!  Run the following to randomly determine a <code class="code-inline tex2jax_ignore">p</code> the proportion of customers who order an Extra Large Combo,  a random sample of <code class="code-inline tex2jax_ignore">n=50</code> customers, and display how many customers in this sample ordered Extra Large Combos. <div class="sagecell-r" id="sage-168"><script type="text/x-sage">n=50
+<p id="p-1045">Let's survey some customers!  Run the following to randomly determine a <code class="code-inline tex2jax_ignore">p</code> the proportion of customers who order an Extra Large Combo,  a random sample of <code class="code-inline tex2jax_ignore">n=50</code> customers, and display how many customers in this sample ordered Extra Large Combos. <pre class="ptx-sagecell sagecell-r" id="sage-168"><script type="text/x-sage">n=50
 p=sample(c(0.38,0.4,0.43), 1, prob=c(0.25,.5,.25))
 samp_customer=sample(c("EXTRALARGECOMBO", "NO"), n, replace=TRUE, prob=c(p, 1-p))
 length(which(samp_customer=="EXTRALARGECOMBO"))
-</script></div> Note that while there is a population proportion \(p\text{,}\) we don't yet know what it is.  Is it different from 0.4?  Let's see if we can make a case for that or not!</p></article><article class="task exercise-like" id="task-569"><h5 class="heading"><span class="codenumber">(d)</span></h5>
-<p id="p-1046">Compute \(\hat{p}\text{.}\)</p></article><article class="task exercise-like" id="task-570"><h5 class="heading"><span class="codenumber">(e)</span></h5>
-<p id="p-1047">Assuming the null hypothesis, compute \(\mu_{\hat{p}}, SE_{\hat{p}}\text{.}\)</p></article><article class="task exercise-like" id="task-571"><h5 class="heading"><span class="codenumber">(f)</span></h5>
-<p id="p-1048">Compute the \(p\)-value.</p>
-<p id="p-1049"><div class="sagecell-r" id="sage-169"><script type="text/x-sage">
-</script></div> <a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-18" id="hint-18"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-18"><div class="hint solution-like"><p id="p-1050"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-55" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-56" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-572"><h5 class="heading"><span class="codenumber">(g)</span></h5>
-<p id="p-1051">State the meaning of the \(p\)-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-573"><h5 class="heading"><span class="codenumber">(h)</span></h5>
+</script></pre> Note that while there is a population proportion <span class="process-math">\(p\text{,}\)</span> we don't yet know what it is.  Is it different from 0.4?  Let's see if we can make a case for that or not!</p></article><article class="task exercise-like" id="task-569"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-1046">Compute <span class="process-math">\(\hat{p}\text{.}\)</span></p></article><article class="task exercise-like" id="task-570"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-1047">Assuming the null hypothesis, compute <span class="process-math">\(\mu_{\hat{p}}, SE_{\hat{p}}\text{.}\)</span></p></article><article class="task exercise-like" id="task-571"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p id="p-1048">Compute the <span class="process-math">\(p\)</span>-value.</p>
+<p id="p-1049"><pre class="ptx-sagecell sagecell-r" id="sage-169"><script type="text/x-sage">
+</script></pre> <a href="" data-knowl="" class="id-ref hint-knowl original has-interactive" data-refid="hk-hint-18" id="hint-18"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-18"><div class="hint solution-like"><p id="p-1050"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-55" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-56" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-572"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p id="p-1051">State the meaning of the <span class="process-math">\(p\)</span>-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-573"><h5 class="heading"><span class="codenumber">(h)</span></h5>
 <p id="p-1052">Do we  reject the null hypothesis?</p></article><article class="task exercise-like" id="task-574"><h5 class="heading"><span class="codenumber">(i)</span></h5>
 <p id="p-1053">What sort of error could have been made? (Type 1 or Type 2)</p></article><article class="task exercise-like" id="task-575"><h5 class="heading"><span class="codenumber">(j)</span></h5>
-<p id="p-1054">Run the following to display what <code class="code-inline tex2jax_ignore">p</code> was.  Did we mape an error?  If so what type? <div class="sagecell-r" id="sage-170"><script type="text/x-sage">p
-</script></div></p></article></article><article class="activity project-like" id="activity-proptestR"><h4 class="heading">
+<p id="p-1054">Run the following to display what <code class="code-inline tex2jax_ignore">p</code> was.  Did we mape an error?  If so what type? <pre class="ptx-sagecell sagecell-r" id="sage-170"><script type="text/x-sage">p
+</script></pre></p></article></article><article class="activity project-like" id="activity-proptestR"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.3.10</span><span class="period">.</span><span class="space"> </span><span class="title">Using <code class="code-inline tex2jax_ignore">R</code> to Hypothesis Test.</span>
 </h4>
 <div class="introduction" id="introduction-116"><p id="p-1055">We can use <code class="code-inline tex2jax_ignore">R</code> to Hypothesis Test Directly.  The structure of the command is <code class="code-inline tex2jax_ignore">prop.test(numberof successes, sample size, p=p_0, alternative="greater, less, two.sided" depending on H_A, correct=FALSE)</code></p></div>
 <article class="task exercise-like" id="task-576"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<p id="p-1056">Suppose we wanted to know if more than 30% of donuts sold in a shop had filling  \((H_A:p&gt;0.3)\text{.}\)  We sample 40 donuts and found 16 of them had filling.  Run the following code to obtain the \(p\)-value: <div class="sagecell-r" id="sage-171"><script type="text/x-sage">prop.test(16, 40, 
+<p id="p-1056">Suppose we wanted to know if more than 30% of donuts sold in a shop had filling  <span class="process-math">\((H_A:p&gt;0.3)\text{.}\)</span>  We sample 40 donuts and found 16 of them had filling.  Run the following code to obtain the <span class="process-math">\(p\)</span>-value: <pre class="ptx-sagecell sagecell-r" id="sage-171"><script type="text/x-sage">prop.test(16, 40, 
     p=0.3, alternative="greater", correct=FALSE)
-</script></div></p></article><article class="task exercise-like" id="task-577"><h5 class="heading"><span class="codenumber">(b)</span></h5>
-<p id="p-1057">Suppose we wanted to know if less than 45% of donuts sold in a shop had sprinkles \((H_A:p\lt 0.45)\text{.}\)  We sample 60 donuts and found 12 of them had filling.  Run the following code to obtain the \(p\)-value: <div class="sagecell-r" id="sage-172"><script type="text/x-sage">prop.test(12, 60, 
+</script></pre></p></article><article class="task exercise-like" id="task-577"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-1057">Suppose we wanted to know if less than 45% of donuts sold in a shop had sprinkles <span class="process-math">\((H_A:p\lt 0.45)\text{.}\)</span>  We sample 60 donuts and found 12 of them had filling.  Run the following code to obtain the <span class="process-math">\(p\)</span>-value: <pre class="ptx-sagecell sagecell-r" id="sage-172"><script type="text/x-sage">prop.test(12, 60, 
     p=0.45, alternative="less", correct=FALSE)
-</script></div></p></article><article class="task exercise-like" id="task-578"><h5 class="heading"><span class="codenumber">(c)</span></h5>
-<p id="p-1058">Suppose we wanted to know if customer satisfaction was or wasn't 50% \((H_A:p\neq0.5)\text{.}\)  We sample 100 customers and and found 88 were satisfied.  Run the following code to obtain the \(p\)-value: <div class="sagecell-r" id="sage-173"><script type="text/x-sage">prop.test(88, 100, 
+</script></pre></p></article><article class="task exercise-like" id="task-578"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-1058">Suppose we wanted to know if customer satisfaction was or wasn't 50% <span class="process-math">\((H_A:p\neq0.5)\text{.}\)</span>  We sample 100 customers and and found 88 were satisfied.  Run the following code to obtain the <span class="process-math">\(p\)</span>-value: <pre class="ptx-sagecell sagecell-r" id="sage-173"><script type="text/x-sage">prop.test(88, 100, 
     p=0.5, alternative="two.sided", correct=FALSE)
-</script></div></p></article></article></section></section></div></main>
+</script></pre></p></article></article></section></section></div></main>
 </div>
 </body>
 </html>

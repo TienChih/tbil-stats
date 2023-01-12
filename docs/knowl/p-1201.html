@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-27T13:18:26-06:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -12,42 +9,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script><script>$(function () {
-    // Make *any* div with class 'sagecell-r' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
-                           linked: true,
-                           languages: ['r'],
-                           evalButtonText: 'Evaluate (R)'});
-});
-</script>
 </head>
-<body>
-<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">We can see how the average die rolls of <a class="xref" data-knowl="./knowl/exploration-AverageDieRolls.html" title="Exploration 6.1.1: Rolling Dice and Averaging the results.">Exploration 6.1.1</a> follow this.  Run the following code to plot the histogram from <a class="xref" data-knowl="./knowl/exploration-AverageDieRolls.html" title="Exploration 6.1.1: Rolling Dice and Averaging the results.">Exploration 6.1.1</a>, along with a normal curve with parameters mean <code class="code-inline tex2jax_ignore">mu=3.5</code> and standard deviation <code class="code-inline tex2jax_ignore">SE=sqrt(35/12)/sqrt(num_dice)</code>: <div class="sagecell-r" id="sage-220"><script type="text/x-sage">trials=1000
-num_dice=30
-
-mu=3.5
-SE=sqrt(35/12)/sqrt(num_dice)
-
-averageroll=rep(NA, trials)
-
-for(i in 1:trials){
-  averageroll[i]=sum(sample(c(1,2,3,4,5,6), num_dice, replace=TRUE))/num_dice
-}
-hist(averageroll, breaks=25, prob=TRUE)
-curve(dnorm(x, mean=mu, sd=SE), col="darkblue", lwd=2, add=TRUE, yaxt="n")
-print(mean(averageroll))
-print(sd(averageroll))
-</script></div> Edit <code class="code-inline tex2jax_ignore">num_dice</code> and see how the curve matches the histogram.</p>
-<span class="incontext"><a href="Sec_tVariable.html#p-1201">in-context</a></span>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>As in other hypothesis tests, we are concerned with computing a <span class="process-math">\(p\)</span>-value: a probability we see results as extremal  as ours or more if we assume the null.  We do this by computing areas under the <em class="emphasis"><span class="process-math">\(\chi^2\)</span>-distribution</em>.  The <span class="process-math">\(\chi^2\)</span>-distribution has but one parameter: the <em class="emphasis">degrees of freedom</em>.</p>
+<span class="incontext"><a href="Sec_ChiSquare.html#p-1201" class="internal">in-context</a></span>
 </body>
 </html>

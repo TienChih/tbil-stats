@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-04-07T17:01:11-06:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="en-US">
-<head>
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Linear Combinations of Random Variables (P5)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+<meta property="og:type" content="book">
+<meta property="book:title" content="Team Based Statistics">
+<meta property="book:author" content="Tien Chih">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
     tags: "none",
-    useLabelIds: true,
     tagSide: "right",
     tagIndent: ".8em",
     packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
   },
   options: {
-    ignoreHtmlClass: "tex2jax_ignore",
-    processHtmlClass: "has_am",
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
     renderActions: {
         findScript: [10, function (doc) {
             document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
@@ -48,38 +48,41 @@
     load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
     paths: {pretext: "https://pretextbook.org/js/lib"},
   },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script><script>$(function () {
-    // Make *any* div with class 'sagecell-r' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
-                           linked: true,
-                           languages: ['r'],
-                           evalButtonText: 'Evaluate (R)'});
-});
-</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg">miniversion=0.6</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
-</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
-<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
 </head>
-<body class="pretext-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\Q}{\terminology{Question:\ }}
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Q}{\terminology{Question:\ }}
 \newcommand{\Sol}{\terminology{Solution:\ }}
 \newcommand{\Fisg}{\emph{Fisg}}
 \newcommand{\Iisg}{\emph{Iisg}}
@@ -114,14 +117,16 @@
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
-\)</div>
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
 <h1 class="heading"><a href="book-1.html"><span class="title">Team Based Statistics</span></a></h1>
 <p class="byline">Tien Chih</p>
 </div>
 </div></div>
-<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="Sec_RandomVariables.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="Chap_Probability.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="Chap_Distributions.html" title="Next">Next</a></span></div>
 </div>
@@ -129,86 +134,86 @@
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="Sec_RandomVariables.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="Chap_Probability.html" title="Up">Up</a><a class="next-button button toolbar-item" href="Chap_Distributions.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
-<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
 <li class="link frontmatter">
-<a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a><ul>
-<li><a href="learning-outcomes.html" data-scroll="learning-outcomes">Learning Outcomes and Usage</a></li>
-<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
-<li><a href="author-bio-TC.html" data-scroll="author-bio-TC">Author Biography</a></li>
-<li><a href="dedication-1.html" data-scroll="dedication-1">Dedication</a></li>
+<a href="frontmatter-1.html" data-scroll="frontmatter-1" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="learning-outcomes.html" data-scroll="learning-outcomes" class="internal">Learning Outcomes and Usage</a></li>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="author-bio-TC.html" data-scroll="author-bio-TC" class="internal">Author Biography</a></li>
+<li><a href="dedication-1.html" data-scroll="dedication-1" class="internal">Dedication</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="Chap_DataBasics.html" data-scroll="Chap_DataBasics"><span class="codenumber">1</span> <span class="title">Data Basics (B)</span></a><ul>
-<li><a href="Sec_Variables.html" data-scroll="Sec_Variables">Types of Variables and their Relationships (B1)</a></li>
-<li><a href="Sec_Sampling.html" data-scroll="Sec_Sampling">Sampling Techniques (B2)</a></li>
-<li><a href="Sec_Visualization.html" data-scroll="Sec_Visualization">Visualizing Data (B3)</a></li>
-<li><a href="Sec_Center.html" data-scroll="Sec_Center">Centers of Data (B4)</a></li>
-<li><a href="Sec_Variation.html" data-scroll="Sec_Variation">Variation of Data (B5)</a></li>
+<a href="Chap_DataBasics.html" data-scroll="Chap_DataBasics" class="internal"><span class="codenumber">1</span> <span class="title">Data Basics (B)</span></a><ul>
+<li><a href="Sec_Variables.html" data-scroll="Sec_Variables" class="internal">Types of Variables and their Relationships (B1)</a></li>
+<li><a href="Sec_Sampling.html" data-scroll="Sec_Sampling" class="internal">Sampling Techniques (B2)</a></li>
+<li><a href="Sec_Visualization.html" data-scroll="Sec_Visualization" class="internal">Visualizing Data (B3)</a></li>
+<li><a href="Sec_Center.html" data-scroll="Sec_Center" class="internal">Centers of Data (B4)</a></li>
+<li><a href="Sec_Variation.html" data-scroll="Sec_Variation" class="internal">Variation of Data (B5)</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="Chap_Probability.html" data-scroll="Chap_Probability"><span class="codenumber">2</span> <span class="title">Probability (P)</span></a><ul>
-<li><a href="Sec_Introprob.html" data-scroll="Sec_Introprob">Introduction to Probability (P1)</a></li>
-<li><a href="Sec_Conditionalprob.html" data-scroll="Sec_Conditionalprob">Conditional Probability (P2)</a></li>
-<li><a href="Sec_Bayes.html" data-scroll="Sec_Bayes">Bayes Theorem (P3)</a></li>
-<li><a href="Sec_RandomVariables.html" data-scroll="Sec_RandomVariables">Random Variables (P4)</a></li>
+<a href="Chap_Probability.html" data-scroll="Chap_Probability" class="internal"><span class="codenumber">2</span> <span class="title">Probability (P)</span></a><ul>
+<li><a href="Sec_Introprob.html" data-scroll="Sec_Introprob" class="internal">Introduction to Probability (P1)</a></li>
+<li><a href="Sec_Conditionalprob.html" data-scroll="Sec_Conditionalprob" class="internal">Conditional Probability (P2)</a></li>
+<li><a href="Sec_Bayes.html" data-scroll="Sec_Bayes" class="internal">Bayes Theorem (P3)</a></li>
+<li><a href="Sec_RandomVariables.html" data-scroll="Sec_RandomVariables" class="internal">Random Variables (P4)</a></li>
 <li><a href="Sec_LinearCombofVariables.html" data-scroll="Sec_LinearCombofVariables" class="active">Linear Combinations of Random Variables (P5)</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="Chap_Distributions.html" data-scroll="Chap_Distributions"><span class="codenumber">3</span> <span class="title">Distributions (D)</span></a><ul>
-<li><a href="Sec_StandardNormal.html" data-scroll="Sec_StandardNormal">Standard Normal Distribution (D1)</a></li>
-<li><a href="Sec_GeneralNormal.html" data-scroll="Sec_GeneralNormal">General Normal Distribution (D2)</a></li>
-<li><a href="Sec_Counting.html" data-scroll="Sec_Counting">Counting Principles (D3)</a></li>
-<li><a href="Sec_Binomial.html" data-scroll="Sec_Binomial">Binomial Distribution (D4)</a></li>
-<li><a href="Sec_NormalApprox.html" data-scroll="Sec_NormalApprox">Normal Approximation (D5)</a></li>
+<a href="Chap_Distributions.html" data-scroll="Chap_Distributions" class="internal"><span class="codenumber">3</span> <span class="title">Distributions (D)</span></a><ul>
+<li><a href="Sec_StandardNormal.html" data-scroll="Sec_StandardNormal" class="internal">Standard Normal Distribution (D1)</a></li>
+<li><a href="Sec_GeneralNormal.html" data-scroll="Sec_GeneralNormal" class="internal">General Normal Distribution (D2)</a></li>
+<li><a href="Sec_Counting.html" data-scroll="Sec_Counting" class="internal">Counting Principles (D3)</a></li>
+<li><a href="Sec_Binomial.html" data-scroll="Sec_Binomial" class="internal">Binomial Distribution (D4)</a></li>
+<li><a href="Sec_NormalApprox.html" data-scroll="Sec_NormalApprox" class="internal">Normal Approximation (D5)</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="Chap_Foundations.html" data-scroll="Chap_Foundations"><span class="codenumber">4</span> <span class="title">Foundations for Inference (F)</span></a><ul>
-<li><a href="Sec_PointEstimates.html" data-scroll="Sec_PointEstimates">Point Estimates (F1)</a></li>
-<li><a href="Sec_ConfidenceInterval.html" data-scroll="Sec_ConfidenceInterval">Introduction to Confidence Intervals (F2)</a></li>
-<li><a href="Sec_HypothesisTesing.html" data-scroll="Sec_HypothesisTesing">Introduction to Hypothesis Testing (F3)</a></li>
+<a href="Chap_Foundations.html" data-scroll="Chap_Foundations" class="internal"><span class="codenumber">4</span> <span class="title">Foundations for Inference (F)</span></a><ul>
+<li><a href="Sec_PointEstimates.html" data-scroll="Sec_PointEstimates" class="internal">Point Estimates (F1)</a></li>
+<li><a href="Sec_ConfidenceInterval.html" data-scroll="Sec_ConfidenceInterval" class="internal">Introduction to Confidence Intervals (F2)</a></li>
+<li><a href="Sec_HypothesisTesing.html" data-scroll="Sec_HypothesisTesing" class="internal">Introduction to Hypothesis Testing (F3)</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="Chap_Categorical.html" data-scroll="Chap_Categorical"><span class="codenumber">5</span> <span class="title">Inference for Categorical Variables (C)</span></a><ul>
-<li><a href="Sec_SizeofSampleCat.html" data-scroll="Sec_SizeofSampleCat">Size of Samples (Categorical)</a></li>
-<li><a href="Sec_TwoVarCat.html" data-scroll="Sec_TwoVarCat">Comparing Two Categorical Variables (C2)</a></li>
-<li><a href="Sec_ChiSquare.html" data-scroll="Sec_ChiSquare">Chi-Squared Test and Goodness of Fit (C3)</a></li>
-<li><a href="Sec_ChiIndependence.html" data-scroll="Sec_ChiIndependence">Chi-Squared Test and Independence (C4)</a></li>
+<a href="Chap_Categorical.html" data-scroll="Chap_Categorical" class="internal"><span class="codenumber">5</span> <span class="title">Inference for Categorical Variables (C)</span></a><ul>
+<li><a href="Sec_SizeofSampleCat.html" data-scroll="Sec_SizeofSampleCat" class="internal">Size of Samples (Categorical)</a></li>
+<li><a href="Sec_TwoVarCat.html" data-scroll="Sec_TwoVarCat" class="internal">Comparing Two Categorical Variables (C2)</a></li>
+<li><a href="Sec_ChiSquare.html" data-scroll="Sec_ChiSquare" class="internal">Chi-Squared Test and Goodness of Fit (C3)</a></li>
+<li><a href="Sec_ChiIndependence.html" data-scroll="Sec_ChiIndependence" class="internal">Chi-Squared Test and Independence (C4)</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="Chap_Numerical.html" data-scroll="Chap_Numerical"><span class="codenumber">6</span> <span class="title">Inference for Numerical Variables (N)</span></a><ul>
-<li><a href="Sec_tVariable.html" data-scroll="Sec_tVariable">The \(t\)-Variable and Sampling Distribution of Numerical Variables (N1)</a></li>
-<li><a href="Sec_OneVarNum.html" data-scroll="Sec_OneVarNum">Confidence Intervals and Hypothesis Testing for a single Numerical Variable (N2)</a></li>
-<li><a href="Sec_PairedData.html" data-scroll="Sec_PairedData">Paired Numerical Data (N3)</a></li>
-<li><a href="Sec_TwoVarNum.html" data-scroll="Sec_TwoVarNum">Comparing Two Numerical Variables (N4)</a></li>
-<li><a href="Sec_SizeofSampleNum.html" data-scroll="Sec_SizeofSampleNum">Size of Samples of Numerical Variables (N5)</a></li>
-<li><a href="Sec_ANOVA.html" data-scroll="Sec_ANOVA">ANOVA: Analysis of Variation (N6)</a></li>
+<a href="Chap_Numerical.html" data-scroll="Chap_Numerical" class="internal"><span class="codenumber">6</span> <span class="title">Inference for Numerical Variables (N)</span></a><ul>
+<li><a href="Sec_tVariable.html" data-scroll="Sec_tVariable" class="internal">The <span class="process-math">\(t\)</span>-Variable and Sampling Distribution of Numerical Variables (N1)</a></li>
+<li><a href="Sec_OneVarNum.html" data-scroll="Sec_OneVarNum" class="internal">Confidence Intervals and Hypothesis Testing for a single Numerical Variable (N2)</a></li>
+<li><a href="Sec_PairedData.html" data-scroll="Sec_PairedData" class="internal">Paired Numerical Data (N3)</a></li>
+<li><a href="Sec_TwoVarNum.html" data-scroll="Sec_TwoVarNum" class="internal">Comparing Two Numerical Variables (N4)</a></li>
+<li><a href="Sec_SizeofSampleNum.html" data-scroll="Sec_SizeofSampleNum" class="internal">Size of Samples of Numerical Variables (N5)</a></li>
+<li><a href="Sec_ANOVA.html" data-scroll="Sec_ANOVA" class="internal">ANOVA: Analysis of Variation (N6)</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="Chap_LinearRegression.html" data-scroll="Chap_LinearRegression"><span class="codenumber">7</span> <span class="title">Linear Regression (R)</span></a><ul>
-<li><a href="Sec_Correlation.html" data-scroll="Sec_Correlation">Linear Correlation of Variables (R1)</a></li>
-<li><a href="Sec_InterpretingRegression.html" data-scroll="Sec_InterpretingRegression">Interpreting Linear Regression (R2)</a></li>
-<li><a href="Sec_InferenceRegression.html" data-scroll="Sec_InferenceRegression">Inference and Linear Regression (R3)</a></li>
+<a href="Chap_LinearRegression.html" data-scroll="Chap_LinearRegression" class="internal"><span class="codenumber">7</span> <span class="title">Linear Regression (R)</span></a><ul>
+<li><a href="Sec_Correlation.html" data-scroll="Sec_Correlation" class="internal">Linear Correlation of Variables (R1)</a></li>
+<li><a href="Sec_InterpretingRegression.html" data-scroll="Sec_InterpretingRegression" class="internal">Interpreting Linear Regression (R2)</a></li>
+<li><a href="Sec_InferenceRegression.html" data-scroll="Sec_InferenceRegression" class="internal">Inference and Linear Regression (R3)</a></li>
 </ul>
 </li>
 </ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="Sec_LinearCombofVariables"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="Sec_LinearCombofVariables"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.5</span> <span class="title">Linear Combinations of Random Variables (P5)</span>
 </h2>
-<section class="introduction" id="introduction-59"><p id="p-592">When we sample data, we're picking a value from the probability distribution of a random variable.  But it's not usually the case that we do this one at a time.  When we take a sample of size \(n\text{,}\) this is \(n\) values of the random variable.  So we're naturally interested in dealing with multiple random variables at once.  In this section we address sums, differences and scaling of random variables.</p></section><article class="exploration project-like" id="exploration-sumdie"><h3 class="heading">
+<section class="introduction" id="introduction-59"><p id="p-592">When we sample data, we're picking a value from the probability distribution of a random variable.  But it's not usually the case that we do this one at a time.  When we take a sample of size <span class="process-math">\(n\text{,}\)</span> this is <span class="process-math">\(n\)</span> values of the random variable.  So we're naturally interested in dealing with multiple random variables at once.  In this section we address sums, differences and scaling of random variables.</p></section><article class="exploration project-like" id="exploration-sumdie"><h3 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.5.1</span><span class="period">.</span><span class="space"> </span><span class="title">Sum of Dice.</span>
 </h3>
 <div class="introduction" id="introduction-60">
-<p id="p-593">We saw in <a href="" class="xref" data-knowl="./knowl/exploration-dice.html" title="Exploration 2.4.3: Outcomes of dice">Exploration 2.4.3</a> the distribution, mean and variance of the outcome of a die roll, \(X\text{.}\)  Consider rolling a pair of die, a blue and green one as in <a href="" class="xref" data-knowl="./knowl/activity-doubledie.html" title="Activity 2.2.7">Activity 2.2.7</a>.  Consider the possible pairs of outcomes.</p>
-<div class="displaymath">
+<p id="p-593">We saw in <a href="" class="xref" data-knowl="./knowl/exploration-dice.html" title="Exploration 2.4.3: Outcomes of dice">Exploration 2.4.3</a> the distribution, mean and variance of the outcome of a die roll, <span class="process-math">\(X\text{.}\)</span>  Consider rolling a pair of die, a blue and green one as in <a href="" class="xref" data-knowl="./knowl/activity-doubledie.html" title="Activity 2.2.7">Activity 2.2.7</a>.  Consider the possible pairs of outcomes.</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/exploration-dice.html ./knowl/activity-doubledie.html">
 \begin{equation*}
 \begin{array}{cccccc}
 (1,1)\amp(2,1)\amp(3,1)\amp(4,1)\amp(5,1)\amp(6,1)\\
@@ -220,12 +225,12 @@
 \end{array}
 \end{equation*}
 </div>
-<p id="p-594">Let \(Y\) denote the sum of both die.</p>
+<p id="p-594">Let <span class="process-math">\(Y\)</span> denote the sum of both die.</p>
 </div>
 <article class="task exercise-like" id="task-312"><h4 class="heading"><span class="codenumber">(a)</span></h4>
-<p id="p-595">What are the possible values of \(Y\)</p></article><article class="task exercise-like" id="task-313"><h4 class="heading"><span class="codenumber">(b)</span></h4>
-<p id="p-596">For each possible sum (\(Y_i\)), find the probability that the sum of the die will give that value (\(P(Y=Y_i)\)).</p>
-<div class="displaymath">
+<p id="p-595">What are the possible values of <span class="process-math">\(Y\)</span></p></article><article class="task exercise-like" id="task-313"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-596">For each possible sum (<span class="process-math">\(Y_i\)</span>), find the probability that the sum of the die will give that value (<span class="process-math">\(P(Y=Y_i)\)</span>).</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \begin{array}{|c|c|c|c|c|c|c|c|c|c|}
 \hline
@@ -236,39 +241,39 @@ P(Y=Y_i) \amp  \amp  \amp \amp \amp \amp  \amp  \amp \amp \amp \amp  \\
 \end{array}
 \end{equation*}
 </div></article><article class="task exercise-like" id="task-314"><h4 class="heading"><span class="codenumber">(c)</span></h4>
-<p id="p-597">Compute \(E(Y)\) and \(Var(Y)\text{.}\)</p>
-<p id="p-598">How do these values compare to \(E(X), Var(X)\) found in <a href="" class="xref" data-knowl="./knowl/activity-dievariance.html" title="Activity 2.4.5: Die Variance">Activity 2.4.5</a>?</p></article><article class="task exercise-like" id="task-315"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-597">Compute <span class="process-math">\(E(Y)\)</span> and <span class="process-math">\(Var(Y)\text{.}\)</span></p>
+<p id="p-598">How do these values compare to <span class="process-math">\(E(X), Var(X)\)</span> found in <a href="" class="xref" data-knowl="./knowl/activity-dievariance.html" title="Activity 2.4.5: Die Variance">Activity 2.4.5</a>?</p></article><article class="task exercise-like" id="task-315"><h4 class="heading"><span class="codenumber">(d)</span></h4>
 <p id="p-599">Run the following code to simulate 1,000 blue and green die rolls and plot a histogram of their sum.</p>
-<p id="p-600"><div class="sagecell-r" id="sage-97"><script type="text/x-sage">bluedierolls = sample(c(1, 2, 3, 4, 5, 6), 1000, replace = TRUE, prob = c(1/6, 1/6, 1/6, 1/6, 1/6, 1/6))
+<p id="p-600"><pre class="ptx-sagecell sagecell-r" id="sage-97"><script type="text/x-sage">bluedierolls = sample(c(1, 2, 3, 4, 5, 6), 1000, replace = TRUE, prob = c(1/6, 1/6, 1/6, 1/6, 1/6, 1/6))
 greendierolls = sample(c(1, 2, 3, 4, 5, 6), 1000, replace = TRUE, prob = c(1/6, 1/6, 1/6, 1/6, 1/6, 1/6))
 diesum=bluedierolls+greendierolls
 hist(diesum)
-</script></div></p></article><article class="task exercise-like" id="task-316"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+</script></pre></p></article><article class="task exercise-like" id="task-316"><h4 class="heading"><span class="codenumber">(e)</span></h4>
 <p id="p-601">Run the following code to find the mean and variance of these dierolls.</p>
-<p id="p-602"><div class="sagecell-r" id="sage-98"><script type="text/x-sage">mean(diesum)
-</script></div> <div class="sagecell-r" id="sage-99"><script type="text/x-sage">var(diesum)
-</script></div></p>
+<p id="p-602"><pre class="ptx-sagecell sagecell-r" id="sage-98"><script type="text/x-sage">mean(diesum)
+</script></pre> <pre class="ptx-sagecell sagecell-r" id="sage-99"><script type="text/x-sage">var(diesum)
+</script></pre></p>
 <p id="p-603">How do these values compare to the what you found in (c)?</p></article></article><article class="remark remark-like" id="remark-linofEandV"><h3 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.5.1</span><span class="period">.</span>
 </h3>
-<p id="p-604">Given <em class="emphasis">independent</em> random variables \(X, Y\) and a constant \(c\text{,}\) the random variable \(X+Y\) has:</p>
-<div class="displaymath">
+<p id="p-604">Given <em class="emphasis">independent</em> random variables <span class="process-math">\(X, Y\)</span> and a constant <span class="process-math">\(c\text{,}\)</span> the random variable <span class="process-math">\(X+Y\)</span> has:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 E(X+Y)=E(X), +E(Y), Var(X+Y)=Var(X)+Var(Y)
 \end{equation*}
 </div>
-<p class="continuation">and the random variable \(cX\) has</p>
-<div class="displaymath">
+<p class="continuation">and the random variable <span class="process-math">\(cX\)</span> has</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 E(cX)=cE(X), Var(cX)=c^2Var(X).
 \end{equation*}
-</div></article><p id="p-605">What was computed in <a href="" class="xref" data-knowl="./knowl/exploration-sumdie.html" title="Exploration 2.5.1: Sum of Dice">Exploration 2.5.1</a> is the expectation and variance of \(Y=X_B+X_G\) the sum of the blue and green die rolls.  Note that both \(X_B, X_G\) have the same expectation and variance as a single die roll \(X\) as in <a href="" class="xref" data-knowl="./knowl/activity-dievariance.html" title="Activity 2.4.5: Die Variance">Activity 2.4.5</a>.</p>
+</div></article><p id="p-605">What was computed in <a href="" class="xref" data-knowl="./knowl/exploration-sumdie.html" title="Exploration 2.5.1: Sum of Dice">Exploration 2.5.1</a> is the expectation and variance of <span class="process-math">\(Y=X_B+X_G\)</span> the sum of the blue and green die rolls.  Note that both <span class="process-math">\(X_B, X_G\)</span> have the same expectation and variance as a single die roll <span class="process-math">\(X\)</span> as in <a href="" class="xref" data-knowl="./knowl/activity-dievariance.html" title="Activity 2.4.5: Die Variance">Activity 2.4.5</a>.</p>
 <article class="activity project-like" id="activity-diffdie"><h3 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">Difference of Dice.</span>
 </h3>
 <div class="introduction" id="introduction-61">
 <p id="p-606">W Consider rolling a pair of die, a blue and green one as in <a href="" class="xref" data-knowl="./knowl/exploration-sumdie.html" title="Exploration 2.5.1: Sum of Dice">Exploration 2.5.1</a>.  Consider the possible pairs of outcomes.</p>
-<div class="displaymath">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/exploration-sumdie.html">
 \begin{equation*}
 \begin{array}{cccccc}
 (1,1)\amp(2,1)\amp(3,1)\amp(4,1)\amp(5,1)\amp(6,1)\\
@@ -280,77 +285,77 @@ E(cX)=cE(X), Var(cX)=c^2Var(X).
 \end{array}
 \end{equation*}
 </div>
-<p id="p-607">Let \(Z\) denote the difference of the green die subtracted from the blue die (\(Z=X_B-X_G\)).  Note that \(Z=X_B+(-1)X_G\text{.}\)</p>
+<p id="p-607">Let <span class="process-math">\(Z\)</span> denote the difference of the green die subtracted from the blue die (<span class="process-math">\(Z=X_B-X_G\)</span>).  Note that <span class="process-math">\(Z=X_B+(-1)X_G\text{.}\)</span></p>
 </div>
 <article class="task exercise-like" id="task-317"><h4 class="heading"><span class="codenumber">(a)</span></h4>
 <p id="p-608">Use <a href="" class="xref" data-knowl="./knowl/remark-linofEandV.html" title="Remark 2.5.1">Remark 2.5.1</a> to rewrite</p>
-<div class="displaymath">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/remark-linofEandV.html">
 \begin{equation*}
 E(X_B+(-1)X_G)=E(X_B)+E((-1)X_G)=E(X_B)+(-1)E(X_G)
 \end{equation*}
 </div>
-<p class="continuation">and compute \(E(X_B+(-1)X_G).\)</p></article><article class="task exercise-like" id="task-318"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p class="continuation">and compute <span class="process-math">\(E(X_B+(-1)X_G).\)</span></p></article><article class="task exercise-like" id="task-318"><h4 class="heading"><span class="codenumber">(b)</span></h4>
 <p id="p-609">Use <a href="" class="xref" data-knowl="./knowl/remark-linofEandV.html" title="Remark 2.5.1">Remark 2.5.1</a> to rewrite</p>
-<div class="displaymath">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/remark-linofEandV.html">
 \begin{equation*}
 Var(X_B+(-1)X_G)=Var(X_B)+Var((-1)X_G)=Var(X_B)+(-1)^2Var(X_G)
 \end{equation*}
 </div>
-<p class="continuation">and compute \(Var(X_B+(-1)X_G).\)</p></article><article class="task exercise-like" id="task-319"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p class="continuation">and compute <span class="process-math">\(Var(X_B+(-1)X_G).\)</span></p></article><article class="task exercise-like" id="task-319"><h4 class="heading"><span class="codenumber">(c)</span></h4>
 <p id="p-610">Run the following code to simulate 1,000 blue and green die rolls and plot a histogram of their differences.</p>
-<p id="p-611"><div class="sagecell-r" id="sage-100"><script type="text/x-sage">bluedierolls = sample(c(1, 2, 3, 4, 5, 6), 1000, replace = TRUE, prob = c(1/6, 1/6, 1/6, 1/6, 1/6, 1/6))
+<p id="p-611"><pre class="ptx-sagecell sagecell-r" id="sage-100"><script type="text/x-sage">bluedierolls = sample(c(1, 2, 3, 4, 5, 6), 1000, replace = TRUE, prob = c(1/6, 1/6, 1/6, 1/6, 1/6, 1/6))
 greendierolls = sample(c(1, 2, 3, 4, 5, 6), 1000, replace = TRUE, prob = c(1/6, 1/6, 1/6, 1/6, 1/6, 1/6))
 diediff=bluedierolls-greendierolls
 hist(diediff)
-</script></div></p></article><article class="task exercise-like" id="task-320"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+</script></pre></p></article><article class="task exercise-like" id="task-320"><h4 class="heading"><span class="codenumber">(d)</span></h4>
 <p id="p-612">Run the following code to find the mean and variance of these dierolls.</p>
-<p id="p-613"><div class="sagecell-r" id="sage-101"><script type="text/x-sage">mean(diediff)
-</script></div> <div class="sagecell-r" id="sage-102"><script type="text/x-sage">var(diediff)
-</script></div></p>
+<p id="p-613"><pre class="ptx-sagecell sagecell-r" id="sage-101"><script type="text/x-sage">mean(diediff)
+</script></pre> <pre class="ptx-sagecell sagecell-r" id="sage-102"><script type="text/x-sage">var(diediff)
+</script></pre></p>
 <p id="p-614">How do these values compare to the what you found in (a) and (b)?</p></article></article><article class="activity project-like" id="activity-fastfoodgroup"><h3 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.3</span><span class="period">.</span><span class="space"> </span><span class="title">Fast Food Group Order.</span>
 </h3>
-<div class="introduction" id="introduction-62"><p id="p-615">Recall the fast food orders of <a href="" class="xref" data-knowl="./knowl/activity-fastfood.html" title="Activity 2.4.6: Fast Food Order">Activity 2.4.6</a>. Suppose a group of ten friends order together, and let the cost of their order be \(G=X_1+\ldots X_{10}\) where each \(X_i\) is the cost of an individual order as in <a href="" class="xref" data-knowl="./knowl/activity-fastfood.html" title="Activity 2.4.6: Fast Food Order">Activity 2.4.6</a>.  Also suppose these orders will be independent of each other.</p></div>
+<div class="introduction" id="introduction-62"><p id="p-615">Recall the fast food orders of <a href="" class="xref" data-knowl="./knowl/activity-fastfood.html" title="Activity 2.4.6: Fast Food Order">Activity 2.4.6</a>. Suppose a group of ten friends order together, and let the cost of their order be <span class="process-math">\(G=X_1+\ldots X_{10}\)</span> where each <span class="process-math">\(X_i\)</span> is the cost of an individual order as in <a href="" class="xref" data-knowl="./knowl/activity-fastfood.html" title="Activity 2.4.6: Fast Food Order">Activity 2.4.6</a>.  Also suppose these orders will be independent of each other.</p></div>
 <article class="task exercise-like" id="task-321"><h4 class="heading"><span class="codenumber">(a)</span></h4>
 <p id="p-616">Use <a href="" class="xref" data-knowl="./knowl/remark-linofEandV.html" title="Remark 2.5.1">Remark 2.5.1</a> and the fact that</p>
-<div class="displaymath">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/remark-linofEandV.html">
 \begin{equation*}
 G=X_1+X_2+X_3+X_4+X_5+X_6+X_7+X_8+X_9+X_{10}
 \end{equation*}
 </div>
-<p class="continuation">to find \(E(G), Var(G)\text{.}\)</p></article><article class="task exercise-like" id="task-322"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p class="continuation">to find <span class="process-math">\(E(G), Var(G)\text{.}\)</span></p></article><article class="task exercise-like" id="task-322"><h4 class="heading"><span class="codenumber">(b)</span></h4>
 <p id="p-617">Run the following code to simulate 200 groups of ten and plot a histogram of their purchase amounts.</p>
-<p id="p-618"><div class="sagecell-r" id="sage-103"><script type="text/x-sage">  groupcost=rep(0, 200)
+<p id="p-618"><pre class="ptx-sagecell sagecell-r" id="sage-103"><script type="text/x-sage">  groupcost=rep(0, 200)
   for(i in 1:10){
    groupcost = groupcost+sample(c(5, 7.5, 12), 200, replace = TRUE, prob = c(0.4, 0.25, 0.35))
 }
   hist(groupcost)
-</script></div></p></article><article class="task exercise-like" id="task-323"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+</script></pre></p></article><article class="task exercise-like" id="task-323"><h4 class="heading"><span class="codenumber">(c)</span></h4>
 <p id="p-619">Run the following code to find the mean and variance of the purchase amounts.</p>
-<p id="p-620"><div class="sagecell-r" id="sage-104"><script type="text/x-sage">mean(groupcost)
-</script></div> <div class="sagecell-r" id="sage-105"><script type="text/x-sage">var(groupcost)
-</script></div></p>
+<p id="p-620"><pre class="ptx-sagecell sagecell-r" id="sage-104"><script type="text/x-sage">mean(groupcost)
+</script></pre> <pre class="ptx-sagecell sagecell-r" id="sage-105"><script type="text/x-sage">var(groupcost)
+</script></pre></p>
 <p id="p-621">How do these values compare to the what you found in (a)?</p></article></article><article class="activity project-like" id="activity-icecream"><h3 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.4</span><span class="period">.</span><span class="space"> </span><span class="title">Ice Cream.</span>
 </h3>
 <div class="introduction" id="introduction-63"><p id="p-622">Suppose that a box of Ice Cream comes with on average 60 oz of ice cream, but because theyre not all packed evenly, with a standard deviation of 2 oz.  Suppose a scoop of ice cream is 3oz, but with standard deviation of 0.15oz.</p></div>
 <article class="task exercise-like" id="task-324"><h4 class="heading"><span class="codenumber">(a)</span></h4>
-<p id="p-623">Let \(B\) denote the number of oz in a box of ice cream and find \(E(B), Var(B)\text{.}\)  (Hint: recall <a href="" class="xref" data-knowl="./knowl/remark-varianceRV.html" title="Remark 2.4.5">Remark 2.4.5</a> and the relationship between standard deviation and variance.)</p></article><article class="task exercise-like" id="task-325"><h4 class="heading"><span class="codenumber">(b)</span></h4>
-<p id="p-624">Let \(S\) denote the number of oz in a scoop of ice cream and find \(E(S), Var(S)\text{.}\)</p></article><article class="task exercise-like" id="task-326"><h4 class="heading"><span class="codenumber">(c)</span></h4>
-<p id="p-625">Let \(R\) denote the amount of ice cream remaining in a box after I take 2 scoops out, note that \(R=B-S_1-S_2=B+(-1)S_1+(-1)S_2\text{.}\)</p>
-<p id="p-626">Find \(E(R), Var(R)\text{.}\)</p></article><article class="task exercise-like" id="task-327"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-623">Let <span class="process-math">\(B\)</span> denote the number of oz in a box of ice cream and find <span class="process-math">\(E(B), Var(B)\text{.}\)</span>  (Hint: recall <a href="" class="xref" data-knowl="./knowl/remark-varianceRV.html" title="Remark 2.4.5">Remark 2.4.5</a> and the relationship between standard deviation and variance.)</p></article><article class="task exercise-like" id="task-325"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-624">Let <span class="process-math">\(S\)</span> denote the number of oz in a scoop of ice cream and find <span class="process-math">\(E(S), Var(S)\text{.}\)</span></p></article><article class="task exercise-like" id="task-326"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-625">Let <span class="process-math">\(R\)</span> denote the amount of ice cream remaining in a box after I take 2 scoops out, note that <span class="process-math">\(R=B-S_1-S_2=B+(-1)S_1+(-1)S_2\text{.}\)</span></p>
+<p id="p-626">Find <span class="process-math">\(E(R), Var(R)\text{.}\)</span></p></article><article class="task exercise-like" id="task-327"><h4 class="heading"><span class="codenumber">(d)</span></h4>
 <p id="p-627">Run the following code to simulate 1000 boxes of icecream with 2 scoops removed.</p>
-<p id="p-628"><div class="sagecell-r" id="sage-106"><script type="text/x-sage">boxoz=rnorm(1000, mean = 60, sd = 2)
+<p id="p-628"><pre class="ptx-sagecell sagecell-r" id="sage-106"><script type="text/x-sage">boxoz=rnorm(1000, mean = 60, sd = 2)
 scooponeoz=rnorm(1000, mean = 2, sd = .15)
 scooptwooz=rnorm(1000, mean = 2, sd = .15)
 
 remainicecream=boxoz-scooponeoz-scooptwooz
 hist(remainicecream)
-</script></div></p></article><article class="task exercise-like" id="task-328"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+</script></pre></p></article><article class="task exercise-like" id="task-328"><h4 class="heading"><span class="codenumber">(e)</span></h4>
 <p id="p-629">Run the following code to find the mean and variance of these remains.</p>
-<p id="p-630"><div class="sagecell-r" id="sage-107"><script type="text/x-sage">mean(remainicecream)
-</script></div> <div class="sagecell-r" id="sage-108"><script type="text/x-sage">var(remainicecream)
-</script></div></p>
+<p id="p-630"><pre class="ptx-sagecell sagecell-r" id="sage-107"><script type="text/x-sage">mean(remainicecream)
+</script></pre> <pre class="ptx-sagecell sagecell-r" id="sage-108"><script type="text/x-sage">var(remainicecream)
+</script></pre></p>
 <p id="p-631">How do these values compare to the what you found in (c)?</p></article></article></section></div></main>
 </div>
 </body>

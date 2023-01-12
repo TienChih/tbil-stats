@@ -2,9 +2,6 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-27T13:18:16-06:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -12,38 +9,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script><script>$(function () {
-    // Make *any* div with class 'sagecell-r' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-r',
-                           linked: true,
-                           languages: ['r'],
-                           evalButtonText: 'Evaluate (R)'});
-});
-</script>
 </head>
-<body>
-<article class="task exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Task</span><span class="space"> </span><span class="codenumber">5.2.1.c</span><span class="period">.</span>
-</h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">The company claims that rates of raises are equal across gender and any deviation in a given year is by chance. If this were true, we would expect more men than women to get raises since there are more men in the sample.  But by how much?</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Let's put the companies claim to the test.  Run the following code to simulate a <code class="code-inline tex2jax_ignore">raise_rate</code> of \(\hat{p}\) found in (a).  We then simulate how many <code class="code-inline tex2jax_ignore">num_men=312</code> and <code class="code-inline tex2jax_ignore">num_women=216</code> got raises and calculate their difference <code class="code-inline tex2jax_ignore">d</code>. <div class="sagecell-r" id="sage-169"><script type="text/x-sage">raise_rate=FIXME
-num_men=312
-num_women=216
-
-menraise=sample(c("RAISE", "NO"), num_men, replace=TRUE, prob=c(raise_rate, 1-raise_rate))
-womenraise=sample(c("RAISE", "NO"), num_women, replace=TRUE, prob=c(raise_rate, 1-raise_rate))
-
-d=length(which(menraise=="RAISE"))-length(which(womenraise=="RAISE"))
-print(d)
-</script></div> How does this value compare to what you found in (b)?</p></article><span class="incontext"><a href="Sec_TwoVarCat.html#task-536">in-context</a></span>
+<body class="ignore-math">
+<article class="task exercise-like"><h5 class="heading">
+<span class="type">Task</span><span class="space"> </span><span class="codenumber">4.3.5.h</span><span class="period">.</span>
+</h5>
+<p>Compute the <span class="process-math">\(z\)</span>-score for <span class="process-math">\(\hat{p}\text{,}\)</span> call this <span class="process-math">\(z_{\hat{p}}\text{.}\)</span></p></article><span class="incontext"><a href="Sec_HypothesisTesing.html#task-536" class="internal">in-context</a></span>
 </body>
 </html>
