@@ -162,7 +162,7 @@ Run the following code to show a plot of 10 die rolls, and the proportion of die
       <image>
  <description>Test Venn Diagram.</description>     
 <latex-image>
-<![CDATA[\begin{venndiagram2sets}[scale=0.4]
+<![CDATA[\begin{venndiagram2sets}
 \fillA
 \fillB
 \end{venndiagram2sets}]]>
@@ -179,7 +179,7 @@ Run the following code to show a plot of 10 die rolls, and the proportion of die
       <image>
  <description>Test Venn Diagram.</description>     
 <latex-image>
-<![CDATA[\begin{venndiagram2sets}[scale=0.4]
+<![CDATA[\begin{venndiagram2sets}
 \fillACapB
 \end{venndiagram2sets}]]>
 </latex-image>
@@ -194,7 +194,7 @@ Run the following code to show a plot of 10 die rolls, and the proportion of die
       <image>
  <description>Test Venn Diagram.</description>     
 <latex-image>
-<![CDATA[\begin{venndiagram2sets}[scale=0.4]
+<![CDATA[\begin{venndiagram2sets}
 \fillNotA
 \end{venndiagram2sets}]]>
 </latex-image>
