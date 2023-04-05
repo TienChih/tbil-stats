@@ -113,7 +113,7 @@
           </p>
 
           <p>
-            The second row  starting with <c>skull_w</c> gives the point estimate, standard error, test statistic and <m>p</m>-value for the altnerative hypothesis <m>H_A:\beta_1\neq 1</m>.  This is the row about slopes.
+            The second row  starting with <c>skull_w</c> gives the point estimate, standard error, test statistic and <m>p</m>-value for the altnerative hypothesis <m>H_A:\beta_1\neq 0</m>.  This is the row about slopes.
           </p>
         </introduction>
 

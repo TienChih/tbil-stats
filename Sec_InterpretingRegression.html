@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Interpreting Linear Regression (R2)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Team Based Statistics">
+<meta property="book:author" content="Tien Chih">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Q}{\terminology{Question:\ }}
+\newcommand{\Sol}{\terminology{Solution:\ }}
+\newcommand{\Fisg}{\emph{Fisg}}
+\newcommand{\Iisg}{\emph{Iisg}}
+\newcommand{\Pisg}{\emph{Pisg}}
+\newcommand{\Tisg}{\emph{Tisg}}
+\newcommand{\Dom}{\emph{Dom}}
+\newcommand{\Img}{\emph{Im}}
+\DeclareMathOperator{\id}{id}
+\newcommand{\bcup}{\displaystyle\bigcup}
+\newcommand{\bcap}{\displaystyle\bigcap}
+\newcommand{\dsum}{\displaystyle\sum}
+\newcommand{\dint}{\displaystyle\int}
+\newcommand{\R}[1]{\mathbb{R}^{#1}}
+\newcommand{\C}[1]{\mathbb{C}^{#1}}
+\newcommand{\Z}[1]{\mathbb{Z}^{#1}}
+\newcommand{\K}[1]{\mathbb{K}^{#1}}
+\newcommand{\limit}[2]{\displaystyle{ \lim_{#1 \to #2}}}
+\newcommand{\TCB}[1]{\textcolor{blue}{#1}}
+\newcommand{\TCR}[1]{\textcolor{red}{#1}}
+\newcommand{\TCO}[1]{\textcolor{orange}{#1}}
+\newcommand{\TCG}[1]{\textcolor{ForestGreen}{#1}}
+\DeclareMathOperator{\Endo}{Endo}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Obj}{Obj}
+\DeclareMathOperator{\pleat}{\mathcal{P}\ell}
+\def\PX{\mathfrak{W}G}
+\def\Gph{\mathsf{Gph}}
+\def\HoGph{\mathsf{HoGph}}
+\def\into{\hookrightarrow}
+\def\con{\underline{}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Team Based Statistics</span></a></h1>
+<p class="byline">Tien Chih</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="Sec_Correlation.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="Chap_LinearRegression.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="Sec_InferenceRegression.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="Sec_Correlation.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="Chap_LinearRegression.html" title="Up">Up</a><a class="next-button button toolbar-item" href="Sec_InferenceRegression.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="learning-outcomes.html" data-scroll="learning-outcomes" class="internal">Learning Outcomes and Usage</a></li>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="author-bio-TC.html" data-scroll="author-bio-TC" class="internal">Author Biography</a></li>
+<li><a href="dedication-1.html" data-scroll="dedication-1" class="internal">Dedication</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_DataBasics.html" data-scroll="Chap_DataBasics" class="internal"><span class="codenumber">1</span> <span class="title">Data Basics (B)</span></a><ul>
+<li><a href="Sec_Variables.html" data-scroll="Sec_Variables" class="internal">Types of Variables and their Relationships (B1)</a></li>
+<li><a href="Sec_Sampling.html" data-scroll="Sec_Sampling" class="internal">Sampling Techniques (B2)</a></li>
+<li><a href="Sec_Visualization.html" data-scroll="Sec_Visualization" class="internal">Visualizing Data (B3)</a></li>
+<li><a href="Sec_Center.html" data-scroll="Sec_Center" class="internal">Centers of Data (B4)</a></li>
+<li><a href="Sec_Variation.html" data-scroll="Sec_Variation" class="internal">Variation of Data (B5)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Probability.html" data-scroll="Chap_Probability" class="internal"><span class="codenumber">2</span> <span class="title">Probability (P)</span></a><ul>
+<li><a href="Sec_Introprob.html" data-scroll="Sec_Introprob" class="internal">Introduction to Probability (P1)</a></li>
+<li><a href="Sec_Conditionalprob.html" data-scroll="Sec_Conditionalprob" class="internal">Conditional Probability (P2)</a></li>
+<li><a href="Sec_Bayes.html" data-scroll="Sec_Bayes" class="internal">Bayes Theorem (P3)</a></li>
+<li><a href="Sec_RandomVariables.html" data-scroll="Sec_RandomVariables" class="internal">Random Variables (P4)</a></li>
+<li><a href="Sec_LinearCombofVariables.html" data-scroll="Sec_LinearCombofVariables" class="internal">Linear Combinations of Random Variables (P5)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Distributions.html" data-scroll="Chap_Distributions" class="internal"><span class="codenumber">3</span> <span class="title">Distributions (D)</span></a><ul>
+<li><a href="Sec_StandardNormal.html" data-scroll="Sec_StandardNormal" class="internal">Standard Normal Distribution (D1)</a></li>
+<li><a href="Sec_GeneralNormal.html" data-scroll="Sec_GeneralNormal" class="internal">General Normal Distribution (D2)</a></li>
+<li><a href="Sec_Counting.html" data-scroll="Sec_Counting" class="internal">Counting Principles (D3)</a></li>
+<li><a href="Sec_Binomial.html" data-scroll="Sec_Binomial" class="internal">Binomial Distribution (D4)</a></li>
+<li><a href="Sec_NormalApprox.html" data-scroll="Sec_NormalApprox" class="internal">Normal Approximation (D5)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Foundations.html" data-scroll="Chap_Foundations" class="internal"><span class="codenumber">4</span> <span class="title">Foundations for Inference (F)</span></a><ul>
+<li><a href="Sec_PointEstimates.html" data-scroll="Sec_PointEstimates" class="internal">Point Estimates (F1)</a></li>
+<li><a href="Sec_ConfidenceInterval.html" data-scroll="Sec_ConfidenceInterval" class="internal">Introduction to Confidence Intervals (F2)</a></li>
+<li><a href="Sec_HypothesisTesing.html" data-scroll="Sec_HypothesisTesing" class="internal">Introduction to Hypothesis Testing (F3)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Categorical.html" data-scroll="Chap_Categorical" class="internal"><span class="codenumber">5</span> <span class="title">Inference for Categorical Variables (C)</span></a><ul>
+<li><a href="Sec_SizeofSampleCat.html" data-scroll="Sec_SizeofSampleCat" class="internal">Size of Samples (Categorical)</a></li>
+<li><a href="Sec_TwoVarCat.html" data-scroll="Sec_TwoVarCat" class="internal">Comparing Two Categorical Variables (C2)</a></li>
+<li><a href="Sec_ChiSquare.html" data-scroll="Sec_ChiSquare" class="internal">Chi-Squared Test and Goodness of Fit (C3)</a></li>
+<li><a href="Sec_ChiIndependence.html" data-scroll="Sec_ChiIndependence" class="internal">Chi-Squared Test and Independence (C4)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Numerical.html" data-scroll="Chap_Numerical" class="internal"><span class="codenumber">6</span> <span class="title">Inference for Numerical Variables (N)</span></a><ul>
+<li><a href="Sec_tVariable.html" data-scroll="Sec_tVariable" class="internal">The <span class="process-math">\(t\)</span>-Variable and Sampling Distribution of Numerical Variables (N1)</a></li>
+<li><a href="Sec_OneVarNum.html" data-scroll="Sec_OneVarNum" class="internal">Confidence Intervals and Hypothesis Testing for a single Numerical Variable (N2)</a></li>
+<li><a href="Sec_PairedData.html" data-scroll="Sec_PairedData" class="internal">Paired Numerical Data (N3)</a></li>
+<li><a href="Sec_TwoVarNum.html" data-scroll="Sec_TwoVarNum" class="internal">Comparing Two Numerical Variables (N4)</a></li>
+<li><a href="Sec_SizeofSampleNum.html" data-scroll="Sec_SizeofSampleNum" class="internal">Size of Samples of Numerical Variables (N5)</a></li>
+<li><a href="Sec_ANOVA.html" data-scroll="Sec_ANOVA" class="internal">ANOVA: Analysis of Variation (N6)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_LinearRegression.html" data-scroll="Chap_LinearRegression" class="internal"><span class="codenumber">7</span> <span class="title">Linear Regression (R)</span></a><ul>
+<li><a href="Sec_Correlation.html" data-scroll="Sec_Correlation" class="internal">Linear Correlation of Variables (R1)</a></li>
+<li><a href="Sec_InterpretingRegression.html" data-scroll="Sec_InterpretingRegression" class="active">Interpreting Linear Regression (R2)</a></li>
+<li><a href="Sec_InferenceRegression.html" data-scroll="Sec_InferenceRegression" class="internal">Inference and Linear Regression (R3)</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="Sec_InterpretingRegression"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">7.2</span> <span class="title">Interpreting Linear Regression (R2)</span>
+</h2>
+<section class="introduction" id="introduction-200"><p id="p-1785">We've shown how to perform linear regression in <a href="Sec_Correlation.html" class="internal" title="Section 7.1: Linear Correlation of Variables (R1)">Section 7.1</a>. In this section, we look at what the regression is telling us, what information we can draw from this analysis, and what we <em class="emphasis">can't</em> draw.</p></section><section class="subsection" id="subsection-47"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">7.2.1</span> <span class="title">Utilizing Regression Results</span>
+</h3>
+<article class="remark remark-like" id="remark-71"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.2.1</span><span class="period">.</span>
+</h4>
+<p id="p-1786">When modeling the relationship between two variables with a function (such as a linear function), the input (typically <span class="process-math">\(x\)</span>m values) is called the <em class="emphasis">explanatory variable</em> and the output (typically <span class="process-math">\(y\)</span> values) is called the <em class="emphasis">response variable</em>.  Recall <a href="" class="xref" data-knowl="./knowl/definition-explanatoryresponse.html" title="Definition 1.1.6">Definition 1.1.6</a>.</p>
+<p id="p-1787">The idea is that one can measure the change in <span class="process-math">\(y\)</span> as a <em class="emphasis">response</em> to changes in <span class="process-math">\(x\text{.}\)</span></p></article><article class="exploration project-like" id="exploration-possum2"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">7.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Possums Again.</span>
+</h4>
+<div class="introduction" id="introduction-201">
+<p id="p-1788">Recall from <a href="" class="xref" data-knowl="./knowl/exploration-possums.html" title="Exploration 7.1.1: Dimensions of Possums">Exploration 7.1.1</a> and <a href="" class="xref" data-knowl="./knowl/activity-possums.html" title="Activity 7.1.7: Possum Regression">Activity 7.1.7</a> that the “head length of possums in mm” (response variable <span class="process-math">\(y\)</span>) as a linear function of the “skull width of possums in mm” (explanatory variable <span class="process-math">\(x\)</span>) has regression line</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/exploration-possums.html ./knowl/activity-possums.html">
+\begin{equation*}
+y\approx 0.8158x+46.1954
+\end{equation*}
+</div>
+<p class="continuation">with correlation coefficient <span class="process-math">\(R\approx 0.7108, R^2\approx 0.5053.\)</span></p>
+<p id="p-1789">Run the following cell to re-compute these values: <pre class="ptx-sagecell sagecell-r" id="sage-349"><script type="text/x-sage">possum = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/possum.csv")
+possummod=lm(head_l~skull_w, data=possum)
+print(possummod)
+print(cor(possum$skull_w, possum$head_l))
+plot(possum$skull_w, possum$head_l,  pch=19)
+abline(possummod, col="red")
+</script></pre> Click here to learn more about this data set: <a class="external" href="https://www.openintro.org/data/index.php?data=possum" target="_blank"><code class="code-inline tex2jax_ignore">https://www.openintro.org/data/index.php?data=possum</code></a></p>
+</div>
+<article class="task exercise-like" id="task-1010"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1790">How would you describe the relationship between skull width and head length?  (Strong, Moderate or Weak?  Positive, Negative or None?)</p></article><article class="task exercise-like" id="task-1011"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-1791">What proportion of the head length is explained by skull width?  (See <a href="" class="xref" data-knowl="./knowl/remark-rsquared.html" title="Remark 7.1.20">Remark 7.1.20</a>)</p></article><article class="task exercise-like" id="task-1012"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-1792">For a possum with skull width 53mm, what is the <em class="emphasis">predicted</em> head length?  (Is skull width the explanatory or response variable?)</p></article><article class="task exercise-like" id="task-1013"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-1793">For a possum with skull width 62mm, what is the <em class="emphasis">predicted</em> head length?  (Is skull width the explanatory or response variable?)</p></article><article class="task exercise-like" id="task-1014"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-1794">For a possum with head length 92mm, what skull width <em class="emphasis">predicts</em> this head length?  (Is head length the explanatory or response variable?)</p></article><article class="task exercise-like" id="task-1015"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p id="p-1795">Given that the slope <span class="process-math">\(\beta_1=\frac{\Delta x}{\Delta y}\)</span>  what are the units of <span class="process-math">\(\beta_1\)</span> in this problem?</p></article><article class="task exercise-like" id="task-1016"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p id="p-1796">If the skull width of a possum is increased by 1mm, what is the predicted change in head length?</p></article></article><article class="remark remark-like" id="remark-slopemeaning"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.2.2</span><span class="period">.</span>
+</h4>
+<p id="p-1797">Since the <em class="emphasis">slope</em> of a line <span class="process-math">\(\beta_1\)</span> is measured by the change in <span class="process-math">\(y\)</span> over change in <span class="process-math">\(x\text{,}\)</span> the units of the slope are:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{\text{units of}\ y}{\text{units of}\ x}
+\end{equation*}
+</div>
+<p class="continuation">and each increase in <span class="process-math">\(x\)</span> by one unit results in a change of <span class="process-math">\(y\)</span> by <span class="process-math">\(\beta_1\)</span> units.</p></article><article class="activity project-like" id="activity-cardealership"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Car Dealership.</span>
+</h4>
+<div class="introduction" id="introduction-202">
+<p id="p-1798">A car salesmen analysis the cars he sold in the past year, how much he sold them for, and their age.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{array}{c|c}
+\text{Car Age (in years)} \amp \text{Sell Price (in dollars)}\\
+\hline
+4 \amp 6300\\
+4 \amp 5800\\
+5 \amp 5700\\
+7 \amp 4500\\
+7 \amp 4200\\
+8 \amp 4100\\
+9 \amp 3100\\
+10 \amp 6300\\
+11 \amp 2500\\
+12 \amp 2200\\
+\end{array}
+\end{equation*}
+</div>
+</div>
+<article class="task exercise-like" id="task-1017"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1799">Letting “Car Age” be the explanatory variable and “Sell Price” the response variable, enter the data into the  columns <code class="code-inline tex2jax_ignore">x_1</code>, <code class="code-inline tex2jax_ignore">y_1</code>: <iframe src="https://www.desmos.com/calculator/fteh98brsf" id="interactive-127" width="600" height="600"></iframe></p>
+<p id="p-1800">(You may have to rescale the window to see the data clearly)</p></article><article class="task exercise-like" id="task-1018"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-1801">What is <span class="process-math">\(R\text{?}\)</span>  What does it tell you about the relationship between the variables?   (Strong, Moderate or Weak?  Positive, Negative or None?)</p></article><article class="task exercise-like" id="task-1019"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-1802">What proportion of the weight is explained by height?  (See <a href="" class="xref" data-knowl="./knowl/remark-rsquared.html" title="Remark 7.1.20">Remark 7.1.20</a>)</p></article><article class="task exercise-like" id="task-1020"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-1803">State what the regression line is, and what it measures in the context of this problem.</p></article><article class="task exercise-like" id="task-1021"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-1804">Explain the meaning of the slope of the regression line in the context of this problem.</p></article><article class="task exercise-like" id="task-1022"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p id="p-1805">What is the predicted price of a 6 year old car?</p></article><article class="task exercise-like" id="task-1023"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p id="p-1806">What is the predicted age of a car that sells fpr $5000?</p></article></article><article class="activity project-like" id="activity-MTL"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Medial Temporal Lobe.</span>
+</h4>
+<div class="introduction" id="introduction-203">
+<p id="p-1807">In 2018, a study was done to show a relationship between sedentary behavior and thickness of the medial temporal lobe.</p>
+<p id="p-1808">Run the following code to download  the <code class="code-inline tex2jax_ignore">mtl.csv</code>  data set which contains information about 35 participants, demographic and psychological information, physical activity and measurements of the MTL: <pre class="ptx-sagecell sagecell-r" id="sage-350"><script type="text/x-sage">mtl = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/mtl.csv")
+
+names(mtl)
+</script></pre> Click here to learn more about this data set: <a class="external" href="https://www.openintro.org/data/index.php?data=mtl" target="_blank"><code class="code-inline tex2jax_ignore">https://www.openintro.org/data/index.php?data=mtl</code></a></p>
+</div>
+<article class="task exercise-like" id="task-1024"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1809">Run the following code to plot the total thickness of the MTL (in mm), versus their self reported daily time sitting (in hours). <pre class="ptx-sagecell sagecell-r" id="sage-351"><script type="text/x-sage">plot(mtl$sitting, mtl$total, pch=19)
+</script></pre></p></article><article class="task exercise-like" id="task-1025"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-1810">Run the following code to create a linear model for <code class="code-inline tex2jax_ignore">total</code>, as a function of <code class="code-inline tex2jax_ignore">sitting</code> and save it as <code class="code-inline tex2jax_ignore">mtlmod</code>. <pre class="ptx-sagecell sagecell-r" id="sage-352"><script type="text/x-sage">mtlmod=lm(total~sitting, data=mtl)
+</script></pre></p></article><article class="task exercise-like" id="task-1026"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-1811">Run the following code to show the correlation for this model. <pre class="ptx-sagecell sagecell-r" id="sage-353"><script type="text/x-sage">cor(mtl$sitting, mtl$total)
+</script></pre></p></article><article class="task exercise-like" id="task-1027"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-1812">Run the following code to plot the scatterplot and the least squares line. <pre class="ptx-sagecell sagecell-r" id="sage-354"><script type="text/x-sage">plot(mtl$sitting, mtl$total,  pch=19)
+abline(mtlmod, col="red")
+</script></pre></p></article><article class="task exercise-like" id="task-1028"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-1813">Run the following code to show a summary of <code class="code-inline tex2jax_ignore">mtlmod</code>. <pre class="ptx-sagecell sagecell-r" id="sage-355"><script type="text/x-sage">summary(mtlmod)
+</script></pre></p></article><article class="task exercise-like" id="task-1029"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p id="p-1814">What is <span class="process-math">\(R\text{?}\)</span>  What does it tell you about the relationship between the variables?   (Strong, Moderate or Weak?  Positive, Negative or None?)</p></article><article class="task exercise-like" id="task-1030"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p id="p-1815">What proportion of the MLT thickness is explained by hours sitting?  (See <a href="" class="xref" data-knowl="./knowl/remark-rsquared.html" title="Remark 7.1.20">Remark 7.1.20</a>)</p></article><article class="task exercise-like" id="task-1031"><h5 class="heading"><span class="codenumber">(h)</span></h5>
+<p id="p-1816">State what the regression line is, and what it measures in the context of this problem.</p></article><article class="task exercise-like" id="task-1032"><h5 class="heading"><span class="codenumber">(i)</span></h5>
+<p id="p-1817">Explain the meaning of the slope of the regression line in the context of this problem.</p></article><article class="task exercise-like" id="task-1033"><h5 class="heading"><span class="codenumber">(j)</span></h5>
+<p id="p-1818">What is the predicted total MTL thickness of a someone sitting 12 hours a day?</p></article><article class="task exercise-like" id="task-1034"><h5 class="heading"><span class="codenumber">(k)</span></h5>
+<p id="p-1819">What is the predicted time sitting a day for someone whose total MTL thickness is 2.5 mm?</p></article></article></section><section class="subsection" id="subsection-48"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">7.2.2</span> <span class="title">Pitfalls</span>
+</h3>
+<article class="remark remark-like" id="remark-73"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.2.3</span><span class="period">.</span>
+</h4>
+<p id="p-1820">As mentioned in <a href="" class="xref" data-knowl="./knowl/remark-corrcause.html" title="Remark 1.1.7">Remark 1.1.7</a>, Correlation is <em class="emphasis">Not</em> Causation!  Sometimes what one thinks is the explanatory and response variables are reversed.  Then sometimes two things can have strong correlation without <em class="emphasis">either</em> causing the other.</p></article><article class="activity project-like" id="activity-icecreamsunglasses"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Icecream and Sunglasses.</span>
+</h4>
+<div class="introduction" id="introduction-204">
+<p id="p-1821">A store owner notices thst when her sunglasses sales go up, so does her icecream sales: <iframe src="https://www.desmos.com/calculator/ixaxxknpcy" id="interactive-128" width="600" height="600"></iframe></p>
+<p id="p-1822">Depicted above is a plot of different months, the number of sunglasses she sold, and her sales of icecream in dollars in the same month, as well as the regression analysis.</p>
+</div>
+<article class="task exercise-like" id="task-1035"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1823">If she has surplus of icecream she needs to sell, would it make sense to put a sale on sunglasses to boost sunglasses sales?  What about reversing the roles?</p></article><article class="task exercise-like" id="task-1036"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-1824">Why <em class="emphasis">are</em> these variables correlated?</p></article></article><article class="remark remark-like" id="remark-extrapolation"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.2.4</span><span class="period">.</span>
+</h4>
+<p id="p-1825">A linear function is generally defined for all possible values of <span class="process-math">\(x\text{,}\)</span> but in the context of some problem, this may not be sensible <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/https://imgs.xkcd.com/comics/extrapolating.png" class="contained" alt="An XKCD Comic."></div></p>
+<p id="p-1826">It's important to know for what values it's sensible to apply the linear model, and for what values it is not.</p></article><article class="activity project-like" id="activity-heightandage"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Height and Age.</span>
+</h4>
+<div class="introduction" id="introduction-205"><p id="p-1827">The height of a female child (in inches) of a given age (in years) is as follows: <iframe src="https://www.desmos.com/calculator/mingwqtohu" id="interactive-129" width="600" height="600"></iframe></p></div>
+<article class="task exercise-like" id="task-1037"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1828">According this the regression analysis, how tall will she be when she is 35?</p></article><article class="task exercise-like" id="task-1038"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-1829">Why isn't this sensible?</p></article></article><article class="remark remark-like" id="remark-fooledregression"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.2.5</span><span class="period">.</span>
+</h4>
+<p id="p-1830">As is a theme in other chapters, sometimes random chance delivers data that's correlated, while the underlying variables are not, particularly if the samples are small.</p></article><article class="activity project-like" id="activity-randomcorrelation"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">Random Correlation.</span>
+</h4>
+<div class="introduction" id="introduction-206"><p id="p-1831">In this activity, we'll generate totally random data and try to find correlations between them.</p></div>
+<article class="task exercise-like" id="task-1039"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1832">Run the following code to generate <code class="code-inline tex2jax_ignore">n=10</code> random  <code class="code-inline tex2jax_ignore">X</code> and <code class="code-inline tex2jax_ignore">Y</code> values, plot them, find a regression line and print a correlation: <pre class="ptx-sagecell sagecell-r" id="sage-356"><script type="text/x-sage">n=10
+X=runif(n, 0, 10)
+Y=runif(n, 0, 10)
+mod=lm(Y~X)
+print(cor(X, Y))
+plot(X, Y, pch=19)
+abline(mod)
+</script></pre> Run it a few times, what sort of values can you get, what's the highest you achieved?</p></article><article class="task exercise-like" id="task-1040"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-1833">Chance <code class="code-inline tex2jax_ignore">n=2</code> and run it again, what do you notice?</p></article></article></section></section></div></main>
+</div>
+</body>
+</html>

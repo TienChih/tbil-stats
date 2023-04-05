@@ -268,7 +268,7 @@
 
         </p>
         <p>
-          Compute <m>(n_1-1)Var_1+(n_2-1)Var_2+(n_3-3)Var_1</m>.  This computes the total variance within groups, weighted for the size of the group.  Call this value <m>SSE</m> or the <q>sum of squares for errors</q>.
+          Compute <m>(n_1-1)Var_1+(n_2-1)Var_2+(n_3-1)Var_3</m>.  This computes the total variance within groups, weighted for the size of the group.  Call this value <m>SSE</m> or the <q>sum of squares for errors</q>.
         </p>
       </task>
 

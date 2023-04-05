@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Comparing Two Categorical Variables (C2)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Team Based Statistics">
+<meta property="book:author" content="Tien Chih">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Q}{\terminology{Question:\ }}
+\newcommand{\Sol}{\terminology{Solution:\ }}
+\newcommand{\Fisg}{\emph{Fisg}}
+\newcommand{\Iisg}{\emph{Iisg}}
+\newcommand{\Pisg}{\emph{Pisg}}
+\newcommand{\Tisg}{\emph{Tisg}}
+\newcommand{\Dom}{\emph{Dom}}
+\newcommand{\Img}{\emph{Im}}
+\DeclareMathOperator{\id}{id}
+\newcommand{\bcup}{\displaystyle\bigcup}
+\newcommand{\bcap}{\displaystyle\bigcap}
+\newcommand{\dsum}{\displaystyle\sum}
+\newcommand{\dint}{\displaystyle\int}
+\newcommand{\R}[1]{\mathbb{R}^{#1}}
+\newcommand{\C}[1]{\mathbb{C}^{#1}}
+\newcommand{\Z}[1]{\mathbb{Z}^{#1}}
+\newcommand{\K}[1]{\mathbb{K}^{#1}}
+\newcommand{\limit}[2]{\displaystyle{ \lim_{#1 \to #2}}}
+\newcommand{\TCB}[1]{\textcolor{blue}{#1}}
+\newcommand{\TCR}[1]{\textcolor{red}{#1}}
+\newcommand{\TCO}[1]{\textcolor{orange}{#1}}
+\newcommand{\TCG}[1]{\textcolor{ForestGreen}{#1}}
+\DeclareMathOperator{\Endo}{Endo}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Obj}{Obj}
+\DeclareMathOperator{\pleat}{\mathcal{P}\ell}
+\def\PX{\mathfrak{W}G}
+\def\Gph{\mathsf{Gph}}
+\def\HoGph{\mathsf{HoGph}}
+\def\into{\hookrightarrow}
+\def\con{\underline{}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Team Based Statistics</span></a></h1>
+<p class="byline">Tien Chih</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="Sec_SizeofSampleCat.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="Chap_Categorical.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="Sec_ChiSquare.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="Sec_SizeofSampleCat.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="Chap_Categorical.html" title="Up">Up</a><a class="next-button button toolbar-item" href="Sec_ChiSquare.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="learning-outcomes.html" data-scroll="learning-outcomes" class="internal">Learning Outcomes and Usage</a></li>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="author-bio-TC.html" data-scroll="author-bio-TC" class="internal">Author Biography</a></li>
+<li><a href="dedication-1.html" data-scroll="dedication-1" class="internal">Dedication</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_DataBasics.html" data-scroll="Chap_DataBasics" class="internal"><span class="codenumber">1</span> <span class="title">Data Basics (B)</span></a><ul>
+<li><a href="Sec_Variables.html" data-scroll="Sec_Variables" class="internal">Types of Variables and their Relationships (B1)</a></li>
+<li><a href="Sec_Sampling.html" data-scroll="Sec_Sampling" class="internal">Sampling Techniques (B2)</a></li>
+<li><a href="Sec_Visualization.html" data-scroll="Sec_Visualization" class="internal">Visualizing Data (B3)</a></li>
+<li><a href="Sec_Center.html" data-scroll="Sec_Center" class="internal">Centers of Data (B4)</a></li>
+<li><a href="Sec_Variation.html" data-scroll="Sec_Variation" class="internal">Variation of Data (B5)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Probability.html" data-scroll="Chap_Probability" class="internal"><span class="codenumber">2</span> <span class="title">Probability (P)</span></a><ul>
+<li><a href="Sec_Introprob.html" data-scroll="Sec_Introprob" class="internal">Introduction to Probability (P1)</a></li>
+<li><a href="Sec_Conditionalprob.html" data-scroll="Sec_Conditionalprob" class="internal">Conditional Probability (P2)</a></li>
+<li><a href="Sec_Bayes.html" data-scroll="Sec_Bayes" class="internal">Bayes Theorem (P3)</a></li>
+<li><a href="Sec_RandomVariables.html" data-scroll="Sec_RandomVariables" class="internal">Random Variables (P4)</a></li>
+<li><a href="Sec_LinearCombofVariables.html" data-scroll="Sec_LinearCombofVariables" class="internal">Linear Combinations of Random Variables (P5)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Distributions.html" data-scroll="Chap_Distributions" class="internal"><span class="codenumber">3</span> <span class="title">Distributions (D)</span></a><ul>
+<li><a href="Sec_StandardNormal.html" data-scroll="Sec_StandardNormal" class="internal">Standard Normal Distribution (D1)</a></li>
+<li><a href="Sec_GeneralNormal.html" data-scroll="Sec_GeneralNormal" class="internal">General Normal Distribution (D2)</a></li>
+<li><a href="Sec_Counting.html" data-scroll="Sec_Counting" class="internal">Counting Principles (D3)</a></li>
+<li><a href="Sec_Binomial.html" data-scroll="Sec_Binomial" class="internal">Binomial Distribution (D4)</a></li>
+<li><a href="Sec_NormalApprox.html" data-scroll="Sec_NormalApprox" class="internal">Normal Approximation (D5)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Foundations.html" data-scroll="Chap_Foundations" class="internal"><span class="codenumber">4</span> <span class="title">Foundations for Inference (F)</span></a><ul>
+<li><a href="Sec_PointEstimates.html" data-scroll="Sec_PointEstimates" class="internal">Point Estimates (F1)</a></li>
+<li><a href="Sec_ConfidenceInterval.html" data-scroll="Sec_ConfidenceInterval" class="internal">Introduction to Confidence Intervals (F2)</a></li>
+<li><a href="Sec_HypothesisTesing.html" data-scroll="Sec_HypothesisTesing" class="internal">Introduction to Hypothesis Testing (F3)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Categorical.html" data-scroll="Chap_Categorical" class="internal"><span class="codenumber">5</span> <span class="title">Inference for Categorical Variables (C)</span></a><ul>
+<li><a href="Sec_SizeofSampleCat.html" data-scroll="Sec_SizeofSampleCat" class="internal">Size of Samples (Categorical)</a></li>
+<li><a href="Sec_TwoVarCat.html" data-scroll="Sec_TwoVarCat" class="active">Comparing Two Categorical Variables (C2)</a></li>
+<li><a href="Sec_ChiSquare.html" data-scroll="Sec_ChiSquare" class="internal">Chi-Squared Test and Goodness of Fit (C3)</a></li>
+<li><a href="Sec_ChiIndependence.html" data-scroll="Sec_ChiIndependence" class="internal">Chi-Squared Test and Independence (C4)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Numerical.html" data-scroll="Chap_Numerical" class="internal"><span class="codenumber">6</span> <span class="title">Inference for Numerical Variables (N)</span></a><ul>
+<li><a href="Sec_tVariable.html" data-scroll="Sec_tVariable" class="internal">The <span class="process-math">\(t\)</span>-Variable and Sampling Distribution of Numerical Variables (N1)</a></li>
+<li><a href="Sec_OneVarNum.html" data-scroll="Sec_OneVarNum" class="internal">Confidence Intervals and Hypothesis Testing for a single Numerical Variable (N2)</a></li>
+<li><a href="Sec_PairedData.html" data-scroll="Sec_PairedData" class="internal">Paired Numerical Data (N3)</a></li>
+<li><a href="Sec_TwoVarNum.html" data-scroll="Sec_TwoVarNum" class="internal">Comparing Two Numerical Variables (N4)</a></li>
+<li><a href="Sec_SizeofSampleNum.html" data-scroll="Sec_SizeofSampleNum" class="internal">Size of Samples of Numerical Variables (N5)</a></li>
+<li><a href="Sec_ANOVA.html" data-scroll="Sec_ANOVA" class="internal">ANOVA: Analysis of Variation (N6)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_LinearRegression.html" data-scroll="Chap_LinearRegression" class="internal"><span class="codenumber">7</span> <span class="title">Linear Regression (R)</span></a><ul>
+<li><a href="Sec_Correlation.html" data-scroll="Sec_Correlation" class="internal">Linear Correlation of Variables (R1)</a></li>
+<li><a href="Sec_InterpretingRegression.html" data-scroll="Sec_InterpretingRegression" class="internal">Interpreting Linear Regression (R2)</a></li>
+<li><a href="Sec_InferenceRegression.html" data-scroll="Sec_InferenceRegression" class="internal">Inference and Linear Regression (R3)</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="Sec_TwoVarCat"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.2</span> <span class="title">Comparing Two Categorical Variables (C2)</span>
+</h2>
+<section class="introduction" id="introduction-122"><p id="p-1090">In this section, we consider what happens when we want to compare proportions between 2 categorical variables.</p>
+<article class="exploration project-like" id="exploration-genderdisc"><h3 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">5.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Gender and Raises.</span>
+</h3>
+<div class="introduction" id="introduction-123"><p id="p-1091">A watchdog group concerned about gender discrimination at a company randomly polls 528 of the company's employees, 312  men and 216  women.  At the end of last year of those surveyed, 102 employees recieved raises: 72 men and 30 women.  The watchdog group points out that the proportion of men who got raises is significantly greater than the proportion of women who got raises and suggests this is due to inequitable practices within the company.  The company claims that any difference between the rates and men and women getting raises is purely by random chance.</p></div>
+<article class="task exercise-like" id="task-591"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-1092">Find <span class="process-math">\(\hat{p}\)</span> the proportion of the sampled employees of the company who got a raise.</p></article><article class="task exercise-like" id="task-592"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-1093">How many more men than women in this sample got raises this year?</p></article><article class="task exercise-like" id="task-593"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-1094">The company claims that rates of raises are equal across gender and any deviation in a given year is by chance. If this were true, we would expect more men than women to get raises since there are more men in the sample.  But by how much?</p>
+<p id="p-1095">Let's put the companies claim to the test.  Run the following code to simulate a <code class="code-inline tex2jax_ignore">raise_rate</code> of <span class="process-math">\(\hat{p}\)</span> found in (a).  We then simulate how many <code class="code-inline tex2jax_ignore">num_men=312</code> and <code class="code-inline tex2jax_ignore">num_women=216</code> got raises and calculate their difference <code class="code-inline tex2jax_ignore">d</code>. <pre class="ptx-sagecell sagecell-r" id="sage-175"><script type="text/x-sage">raise_rate=FIXME
+num_men=312
+num_women=216
+
+menraise=sample(c("RAISE", "NO"), num_men, replace=TRUE, prob=c(raise_rate, 1-raise_rate))
+womenraise=sample(c("RAISE", "NO"), num_women, replace=TRUE, prob=c(raise_rate, 1-raise_rate))
+
+d=length(which(menraise=="RAISE"))-length(which(womenraise=="RAISE"))
+print(d)
+</script></pre> How does this value compare to what you found in (b)?</p></article><article class="task exercise-like" id="task-594"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-1096">Let's take it a step further.  Fix and run the following code to simulate a 1000 random promotion schedules, and plot a distribution of the differences between men and women promoted.  Enter in <code class="code-inline tex2jax_ignore">observed_diff</code> to be the value found in (b) <pre class="ptx-sagecell sagecell-r" id="sage-176"><script type="text/x-sage">observed_diff=FIXME
+
+diff_vec=rep(NA,1000)
+
+for(i in 1:1000){
+	menraise=sample(c("RAISE", "NO"), num_men, replace=TRUE, prob=c(raise_rate, 1-raise_rate))
+	womenraise=sample(c("RAISE", "NO"), num_women, replace=TRUE, prob=c(raise_rate, 1-raise_rate))
+	d=length(which(menraise=="RAISE"))-length(which(womenraise=="RAISE"))
+	diff_vec[i]=d
+}	
+hist(diff_vec)
+abline(v = observed_diff, col="red", lwd=3, lty=2)
+print(observed_diff)
+</script></pre> How likely is the difference you observed in (b)?</p></article><article class="task exercise-like" id="task-595"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<p id="p-1097">Run the following code to see the proportion of trials where the difference in promotions was as big or greater as found in (b). <pre class="ptx-sagecell sagecell-r" id="sage-177"><script type="text/x-sage">length(which(diff_vec>=observed_diff))/1000
+</script></pre></p></article><article class="task exercise-like" id="task-596"><h4 class="heading"><span class="codenumber">(f)</span></h4>
+<p id="p-1098">How plausible is the companies claim that this differences in promotion rates is purely due to chance?</p></article></article></section><section class="subsection" id="subsection-27"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.1</span> <span class="title">Differences of Proportion Variables</span>
+</h3>
+<article class="remark remark-like" id="remark-37"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.2.1</span><span class="period">.</span>
+</h4>
+<p id="p-1099">In this section, we sample two categorical variables <span class="process-math">\(X_1, X_2\text{.}\)</span>  Each variable has its own sample size <span class="process-math">\(n_1, n_2\)</span> and own sample proportion <span class="process-math">\(\hat{p_1}, \hat{p_2}\text{.}\)</span>  If we want to compare the proportions of each variable, we do so by looking at their difference:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+D=\hat{p_1}-\hat{p_2}.
+\end{equation*}
+</div></article><article class="remark remark-like" id="remark-varprop"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.2.2</span><span class="period">.</span>
+</h4>
+<p id="p-1100">Recall that via <a href="" class="xref" data-knowl="./knowl/theorem-CLTprop.html" title="Theorem 4.1.4: The Central Limit Theorem (Proportion)">Theorem 4.1.4</a> that the <em class="emphasis">Variance</em> of a sampling proportion distribution is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/theorem-CLTprop.html">
+\begin{equation*}
+Var_{\hat{p}}=\frac{p(1-p)}{n}.
+\end{equation*}
+</div></article><article class="activity project-like" id="activity-smokingweight"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Smoking and Baby Weight.</span>
+</h4>
+<div class="introduction" id="introduction-124"><p id="p-1101">A 1967 study shows that the probability that a baby has low birth weight is about 7.8% if the mother smokes, and 2.9% if the mother does not.</p></div>
+<article class="task exercise-like" id="task-597"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1102">Suppose we sampled 500 babies from mothers who smoke (<span class="process-math">\(n_1=500\)</span>).  We are given the probability a given baby is underweight is <span class="process-math">\(p_1=0.078\text{.}\)</span>  Following <a href="" class="xref" data-knowl="./knowl/theorem-CLTprop.html" title="Theorem 4.1.4: The Central Limit Theorem (Proportion)">Theorem 4.1.4</a> what is the expected proportion of this sample to be underweight: <span class="process-math">\(\hat{p_1}\text{?}\)</span></p></article><article class="task exercise-like" id="task-598"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-1103">Use <a href="" class="xref" data-knowl="./knowl/remark-varprop.html" title="Remark 5.2.2">Remark 5.2.2</a> to find the variance of <span class="process-math">\(\hat{p_1}\text{:}\)</span> <span class="process-math">\(Var_{\hat{p_1}}\text{.}\)</span></p></article><article class="task exercise-like" id="task-599"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-1104">Suppose we sampled 1000 babies from mothers who do not  smoke (<span class="process-math">\(n_2=1000\)</span>).  We are given the probability a given baby is underweight is <span class="process-math">\(p_2=0.029\text{.}\)</span>  Following <a href="" class="xref" data-knowl="./knowl/theorem-CLTprop.html" title="Theorem 4.1.4: The Central Limit Theorem (Proportion)">Theorem 4.1.4</a> what is the expected proportion of this sample to be underweight: <span class="process-math">\(\hat{p_2}\text{?}\)</span></p></article><article class="task exercise-like" id="task-600"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-1105">Use <a href="" class="xref" data-knowl="./knowl/remark-varprop.html" title="Remark 5.2.2">Remark 5.2.2</a> to find the variance of <span class="process-math">\(\hat{p_2}\text{:}\)</span> <span class="process-math">\(Var_{\hat{p_2}}\text{.}\)</span></p></article><article class="task exercise-like" id="task-601"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-1106">Let <span class="process-math">\(D\)</span> denote the difference between the sampling distributions.  Use <a href="" class="xref" data-knowl="./knowl/remark-linofEandV.html" title="Remark 2.5.1">Remark 2.5.1</a> to find <span class="process-math">\(\mu_D\text{.}\)</span></p></article><article class="task exercise-like" id="task-602"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p id="p-1107">Use <a href="" class="xref" data-knowl="./knowl/remark-linofEandV.html" title="Remark 2.5.1">Remark 2.5.1</a> to find the variance of <span class="process-math">\(D\text{:}\)</span> <span class="process-math">\(Var_D\text{.}\)</span></p></article><article class="task exercise-like" id="task-603"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p id="p-1108">Find the standard deviation of <span class="process-math">\(D\text{:}\)</span> <span class="process-math">\(SE_D=\sqrt{Var_D}\text{.}\)</span></p></article><article class="task exercise-like" id="task-604"><h5 class="heading"><span class="codenumber">(h)</span></h5>
+<p id="p-1109">Run the following code to simulate 1000 trials of sampling 500 babies from mothers who smoke, 1000 babies from mothers who do not smoke, taking the difference in proportions of babies who are underweight, and plotting a histogram of the results. <pre class="ptx-sagecell sagecell-r" id="sage-178"><script type="text/x-sage">smoke_n=500
+nosmoke_n=1000
+smoke_p=0.078
+nosmoke_p=0.029
+trials=1000
+
+diff_underweight=rep(NA, trials)
+
+for(i in 1:trials){
+	smoke_samp=sample(c("UNDERWEIGHT", "NO"), smoke_n, replace=TRUE, prob=c(smoke_p, 1-smoke_p))
+	nosmoke_samp=sample(c("UNDERWEIGHT", "NO"), nosmoke_n, replace=TRUE, prob=c(nosmoke_p, 1-nosmoke_p))
+	diff_underweight[i]=length(which(smoke_samp=="UNDERWEIGHT"))/smoke_n-length(which(nosmoke_samp=="UNDERWEIGHT"))/nosmoke_n
+}
+hist(diff_underweight, breaks=25, prob=TRUE)
+</script></pre></p></article><article class="task exercise-like" id="task-605"><h5 class="heading"><span class="codenumber">(i)</span></h5>
+<p id="p-1110">Fix and run the following code so that <code class="code-inline tex2jax_ignore">mu_D=</code><span class="process-math">\(\mu_D\)</span> and <code class="code-inline tex2jax_ignore">SE_D=</code><span class="process-math">\(\sigma_D\)</span> and plot a normal curve on top of our histogram. <pre class="ptx-sagecell sagecell-r" id="sage-179"><script type="text/x-sage">mu_D=FIXME
+SE_D=FIXME
+
+hist(diff_underweight, breaks=25, prob=TRUE)
+curve(dnorm(x, mean=mu_D, sd=SE_D), col="darkblue", lwd=2, add=TRUE, yaxt="n")
+</script></pre> How well does the normal distribution approximate the histogram?</p></article></article><article class="remark remark-like" id="remark-diffofprop"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Difference of Proportions.</span>
+</h4>
+<p id="p-1111">Let there be two random categorical variables, with population proportions <span class="process-math">\(, p_1, p_2\text{.}\)</span>  Then let <span class="process-math">\(D\)</span> be the random variable generated by taking random samples of size <span class="process-math">\(n_1, n_2\)</span> of the two variables and taking the difference in their proportions.  Then <span class="process-math">\(D\)</span> is approximated by a normal variable with mean and standard deviation:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\mu_D=p_1-p_2, SE_D=\sqrt{\frac{p_1(1-p_1)}{n_1}+\frac{p_2(1-p_2)}{n_2}}.
+\end{equation*}
+</div></article><article class="activity project-like" id="activity-toppings"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Toppings on Frozen Desserts.</span>
+</h4>
+<div class="introduction" id="introduction-125"><p id="p-1112">Let's suppose that 60% of ice cream eaters and 45% of frozen yogurt eaters put toppings on their frozen dessert of choice.  We sample 80 ice cream eaters and 110 frozen yogurt eaters.</p></div>
+<article class="task exercise-like" id="task-606"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1113">Run the following code to sample the ice cream eaters, see how many got toppings, and see what proportion of them got toppings. <pre class="ptx-sagecell sagecell-r" id="sage-180"><script type="text/x-sage">icecream_n=80
+icecream_p=0.6
+
+icecream_samp=sample(c("TOPPINGS", "NO"), icecream_n, replace=TRUE, prob=c(icecream_p, 1-icecream_p))
+length(which(icecream_samp=="TOPPINGS"))
+icecream_prop=length(which(icecream_samp=="TOPPINGS"))/icecream_n
+</script></pre></p></article><article class="task exercise-like" id="task-607"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-1114">Run the following code to sample the frozen yogurt eaters, see how many got toppings, and see what proportion of them got toppings. <pre class="ptx-sagecell sagecell-r" id="sage-181"><script type="text/x-sage">frozen_n=110
+frozen_p=0.45
+
+frozen_samp=sample(c("TOPPINGS", "NO"), frozen_n, replace=TRUE, prob=c(frozen_p, 1-frozen_p))
+length(which(frozen_samp=="TOPPINGS"))
+frozen_prop=length(which(frozen_samp=="TOPPINGS"))/frozen_n
+</script></pre></p></article><article class="task exercise-like" id="task-608"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-1115">Run the following code to compute the difference in proportions between the samples. <pre class="ptx-sagecell sagecell-r" id="sage-182"><script type="text/x-sage">icecream_prop-frozen_prop
+</script></pre></p></article><article class="task exercise-like" id="task-609"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-1116">Run the following code to simulate 1000 trials of random samplings, and plot a histogram of their differences. <pre class="ptx-sagecell sagecell-r" id="sage-183"><script type="text/x-sage">prop_diff=rep(NA,1000)
+
+for(i in 1:1000){
+	icecream_samp=sample(c("TOPPINGS", "NO"), icecream_n, replace=TRUE, prob=c(icecream_p, 1-icecream_p))
+	icecream_prop=length(which(icecream_samp=="TOPPINGS"))/icecream_n
+	frozen_samp=sample(c("TOPPINGS", "NO"), frozen_n, replace=TRUE, prob=c(frozen_p, 1-frozen_p))
+	frozen_prop=length(which(frozen_samp=="TOPPINGS"))/frozen_n
+	prop_diff[i]=icecream_prop-frozen_prop
+}
+hist(prop_diff, breaks=25, prob=TRUE)
+</script></pre></p></article><article class="task exercise-like" id="task-610"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-1117">Given that <span class="process-math">\(p_1=0.6, n_1=80, p_2=0.45, n_2=110\text{,}\)</span> use <a href="" class="xref" data-knowl="./knowl/remark-diffofprop.html" title="Remark 5.2.3: Difference of Proportions">Remark 5.2.3</a> to compute <span class="process-math">\(\mu_D\)</span> the mean of the distribution of differences, and <span class="process-math">\(SE_D\text{,}\)</span> the standard deviation of the distribution of differences.</p></article><article class="task exercise-like" id="task-611"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p id="p-1118">Fix and run the following code to overlay a normal curve with mean <code class="code-inline tex2jax_ignore">mu_D=</code><span class="process-math">\(\mu_D\)</span> and standard deviation <code class="code-inline tex2jax_ignore">SE_D=</code><span class="process-math">\(SE_D\)</span> over the histogram you found. <pre class="ptx-sagecell sagecell-r" id="sage-184"><script type="text/x-sage">mu_D=FIXME
+SE_D=FIXME
+
+
+hist(prop_diff, breaks=25, prob=TRUE)
+curve(dnorm(x, mean=mu_D, sd=SE_D), col="darkblue", lwd=2, add=TRUE, yaxt="n")
+</script></pre> How well does this normal curve approximate the distribution of differences?</p></article></article></section><section class="subsection" id="subsection-28"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.2</span> <span class="title">Confidence Intervals for Differences of Proportions</span>
+</h3>
+<article class="remark remark-like" id="remark-CIfordiffprop"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.2.4</span><span class="period">.</span>
+</h4>
+<p id="p-1119">Following the same reasoning as in <a href="Sec_ConfidenceInterval.html" class="internal" title="Section 4.2: Introduction to Confidence Intervals (F2)">Section 4.2</a> we can compute a confidence interval for the differences of true proportions.  Suppose you had two categorical variables from whom you collect samples of size <span class="process-math">\(n_1, n_2\)</span> and obtain sample proportions <span class="process-math">\(\hat{p}_1, \hat{p}_2\text{.}\)</span>  Then a C% confidence interval for the difference between the true proportions <span class="process-math">\(D=p_1-p_2\)</span> is an interval centered at <span class="process-math">\(d=\hat{p}_1-\hat{p}_2\)</span> which has a C% chance of containing D.</p>
+<p id="p-1120">We can compute this interval to be</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/remark-diffofprop.html ./knowl/remark-otherCI.html">
+\begin{equation*}
+[(p_1-p_2)-z^*SE_D, (p_1-p_2)+z^*SE_D]
+\end{equation*}
+</div>
+<p class="continuation">where <span class="process-math">\(SE_D=\sqrt{\frac{p_1(1-p_1)}{n_1}+\frac{p_2(1-p_2)}{n_2}}\)</span> as in <a href="" class="xref" data-knowl="./knowl/remark-diffofprop.html" title="Remark 5.2.3: Difference of Proportions">Remark 5.2.3</a> and <span class="process-math">\(z^*\)</span> is found as in <a href="" class="xref" data-knowl="./knowl/remark-otherCI.html" title="Remark 4.2.5">Remark 4.2.5</a>:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/remark-diffofprop.html ./knowl/remark-otherCI.html">
+\begin{equation*}
+\begin{array}{|c|c|}
+\hline
+C\% \amp z^*\\
+\hline
+90\% \amp 1.645\\
+95\% \amp 1.96\\
+99\% \amp 2.576 \\
+\hline
+\end{array}
+\end{equation*}
+</div></article><article class="example example-like" id="example-genderdisc"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-genderdisc"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Gender and Raises revisted again.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-genderdisc"><article class="example example-like"><p id="p-1121">We recall from <a href="" class="xref" data-knowl="./knowl/exploration-genderdisc.html" title="Exploration 5.2.1: Gender and Raises">Exploration 5.2.1</a> that we had <span class="process-math">\(n_1=312\)</span> men whose sample raise rate was <span class="process-math">\(\hat{p_1}=\frac{72}{312}\)</span> and there were <span class="process-math">\(n_2=216\)</span> women whose sample raise rate was <span class="process-math">\(\hat{p_2}=\frac{30}{216}\text{.}\)</span>  In this Activity, we also found that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/exploration-genderdisc.html">
+\begin{equation*}
+SE_D=\sqrt{\frac{\frac{72}{312}\left(1-\frac{72}{312}\right)}{312}+\frac{\frac{30}{216}\left(1-\frac{30}{216}\right)}{216}}\approx 0.033506. 
+\end{equation*}
+</div>
+<p id="p-1122">The differences between the sample proportions is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+d=\frac{72}{312}-\frac{30}{216}\approx 0.09188.
+\end{equation*}
+</div>
+<p id="p-1123">So we could compute a 95% confidence interval for the differences of proportions by</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-7">
+\begin{align*}
+\amp[(p_1-p_2)-z^*SE_D, (p_1-p_2)+z^*SE_D]\\
+\amp \approx [0.09188-1.96\cdot 0.033506, 0.09188+1.96\cdot 0.033506]\\
+\amp \approx[0.0262, 0.1576].
+\end{align*}
+</div>
+<p class="continuation">That is, there is a 95% chance that the difference in raise rates between men and women is between 2.62% and 15.76%.  Note that the companies claim was that raise rates were the same, that is, <em class="emphasis">the difference in raise rates was zero</em> which seems unlikely, given this evidence.</p></article></div>
+<article class="activity project-like" id="activity-spicywings"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Spicy Wings.</span>
+</h4>
+<div class="introduction" id="introduction-126"><p id="p-1124">A restaurateur owns two seperate restaraunts, and East and West location.  Before contacting her vendors, she want's to know if there is any difference in the rate at which customers at these locations order Spicy Wings.  Her plan is to poll 100 customers from each location, and compute a 90% confidence interval for the difference in ordering rates of Spicy Wings.</p></div>
+<article class="task exercise-like" id="task-612"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1125">Run the following code to poll 100 customers in the East location and see how many order spicy wings. <pre class="ptx-sagecell sagecell-r" id="sage-185"><script type="text/x-sage">eastpoll=100
+east_p=sample(c(0.3, 0.4, 0.5), 1, prob=c(0.25, 0.5, 0.25))
+
+east_samp=sample(c("SPICYWINGS", "NO"), eastpoll, replace=TRUE, prob=c(east_p, 1-east_p))
+east_x=length(which(east_samp=="SPICYWINGS"))
+</script></pre> We know that <span class="process-math">\(n_1=100\text{,}\)</span> compute <span class="process-math">\(\hat{p_1}\text{,}\)</span> the proportion of the East location sample who orders Spicy Wings.</p></article><article class="task exercise-like" id="task-613"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-1126">Run the following code to poll 100 customers in the West location and see how many order spicy wings. <pre class="ptx-sagecell sagecell-r" id="sage-186"><script type="text/x-sage">westpoll=100
+west_p=sample(c(0.3, 0.4, 0.5), 1, prob=c(0.25, 0.5, 0.25))
+
+west_samp=sample(c("SPICYWINGS", "NO"), westpoll, replace=TRUE, prob=c(west_p, 1-west_p))
+west_x=length(which(west_samp=="SPICYWINGS"))
+</script></pre> We know that <span class="process-math">\(n_2=100\text{,}\)</span> compute <span class="process-math">\(\hat{p_2}\text{,}\)</span> the proportion of the West location sample who orders Spicy Wings.</p></article><article class="task exercise-like" id="task-614"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-1127">Following <a href="" class="xref" data-knowl="./knowl/remark-CIfordiffprop.html" title="Remark 5.2.4">Remark 5.2.4</a>, find <span class="process-math">\(d, SE_D\text{.}\)</span></p></article><article class="task exercise-like" id="task-615"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-1128">Use <a href="" class="xref" data-knowl="./knowl/remark-CIfordiffprop.html" title="Remark 5.2.4">Remark 5.2.4</a> and <span class="process-math">\(d, SE_D\)</span> to find a 90% confidence interval for the difference in East location ordering rates of Spicy Wings and West location ordering rates of Spicy Wings.  Is 0 in this interval?</p></article><article class="task exercise-like" id="task-616"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-1129">Do you have good evidence that the ordering rates between the locations are different?  If so, who orders more wings?</p></article><article class="task exercise-like" id="task-617"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p id="p-1130">Run the following code to print the lower and upperbound of the confidence interval to check your answer. <pre class="ptx-sagecell sagecell-r" id="sage-187"><script type="text/x-sage">east_phat=east_x/eastpoll
+west_phat=west_x/westpoll
+
+d=east_phat-west_phat
+
+SE_D=sqrt(east_phat*(1-east_phat)/eastpoll + west_phat*(1-west_phat)/westpoll)
+LB=d-1.645*SE_D
+UB=d+1.645*SE_D
+print(paste0("Lower Bound: ", LB , ", Upper Bound:", UB))
+</script></pre></p></article><article class="task exercise-like" id="task-618"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p id="p-1131">Run the following code to print the actual differnce between the ordering rates.  Is it in your interval? (10% of the time it won't be!). <pre class="ptx-sagecell sagecell-r" id="sage-188"><script type="text/x-sage">east_p-west_p
+</script></pre> We know that <span class="process-math">\(n_2=100\text{,}\)</span> compute <span class="process-math">\(\hat{p_2}\text{,}\)</span> the proportion of the West location sample who orders Spicy Wings.</p></article></article></section><section class="subsection" id="subsection-29"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.2.3</span> <span class="title">Hypothesis Testing with two Categorical Variables</span>
+</h3>
+<article class="remark remark-like" id="remark-hypothesistestdiffofprop"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.2.6</span><span class="period">.</span>
+</h4>
+<p id="p-1132">We approach Hypothesis Testing of the difference of proportion variables in a similar spirit to <a href="" class="xref" data-knowl="./knowl/remark-stepsofHT.html" title="Remark 4.3.15: The Steps of Hypothesis Testing">Remark 4.3.15</a>.  From <a href="" class="xref" data-knowl="./knowl/remark-diffofprop.html" title="Remark 5.2.3: Difference of Proportions">Remark 5.2.3</a>, we let <span class="process-math">\(D\)</span> be the difference in sample proportions generated by samples of size <span class="process-math">\(n_1, n_2\)</span> from variables with true proportions <span class="process-math">\(p_1, p_2\text{.}\)</span>  Then our alternative hypothesis take the form of:</p>
+<ol class="decimal">
+<li id="li-239"><p id="p-derived-li-239"><span class="process-math">\(\displaystyle H_A:p_1-p_2\lt p_0\)</span></p></li>
+<li id="li-240"><p id="p-derived-li-240"><span class="process-math">\(\displaystyle H_A:p_1-p_2&gt; p_0\)</span></p></li>
+<li id="li-241"><p id="p-derived-li-241"><span class="process-math">\(\displaystyle H_A:p_1-p_2\neq p_0\)</span></p></li>
+</ol>
+<p class="continuation">We note here <span class="process-math">\(p_1-p_2=\mu_D\text{.}\)</span>  The null hypothesis for all of these is <span class="process-math">\(H_0: p_1-p_2=p_0\text{.}\)</span></p>
+<p id="p-1133">Then, given an observed differnce in proportions: <span class="process-math">\(d=\hat{p_1}-\hat{p_2}\)</span> we compute the <span class="process-math">\(p\)</span>-values by <em class="emphasis">assuming the null hypothesis <span class="process-math">\(p_1-p_2=p_0\)</span></em> and then computing:</p>
+<ol class="decimal">
+<li id="li-242"><p id="p-derived-li-242"><span class="process-math">\(\displaystyle P(D\lt d)\)</span></p></li>
+<li id="li-243"><p id="p-derived-li-243"><span class="process-math">\(\displaystyle P(D&gt; d)\)</span></p></li>
+<li id="li-244"><p id="p-derived-li-244"><span class="process-math">\(\displaystyle P(|D-p_0|&gt; |d-p_0|)\)</span></p></li>
+</ol>
+<p class="continuation">Note that we compute these by finding the areas of a right, left or both tails as in <a href="" class="xref" data-knowl="./knowl/definition-pvalue.html" title="Definition 4.3.8">Definition 4.3.8</a>.</p></article><article class="remark remark-like" id="remark-diffiszero"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.2.7</span><span class="period">.</span>
+</h4>
+<p id="p-1134">If the null hypothesis is that <span class="process-math">\(p_1-p_2=0\text{,}\)</span> which is to say <span class="process-math">\(p_1=p_2\text{,}\)</span> then this is what is assumed when we assume the null hypothesis.  If both populations have the same proportion, then we may as well treat it as one big population.  So if we take samples of size <span class="process-math">\(n_1, n_2\)</span> and have “successes” <span class="process-math">\(x_1, x_2\text{,}\)</span> then e then compute a “pooled” sample proportion:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\hat{p}_{pool}=\frac{x_1+x_2}{n_1+n_2}.
+\end{equation*}
+</div>
+<p class="continuation">We then use this pooled proportion as both <span class="process-math">\(\hat{p_1}\)</span> and <span class="process-math">\(\hat{p_2}\)</span> for the purpose of computing the standard error.</p>
+<p id="p-1135">So we would use</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+SE_D=\sqrt{\frac{\hat{p}_{pool}(1-\hat{p}_{pool})}{n_1}+\frac{\hat{p}_{pool}(1-\hat{p}_{pool})}{n_2}}.
+\end{equation*}
+</div></article><article class="activity project-like" id="activity-revisitinggenderdisc"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Gender and Raises: Hypothesis Test.</span>
+</h4>
+<div class="introduction" id="introduction-127">
+<p id="p-1136">Recall that from <a href="" class="xref" data-knowl="./knowl/exploration-genderdisc.html" title="Exploration 5.2.1: Gender and Raises">Exploration 5.2.1</a> that we have <span class="process-math">\(n_1=312\)</span>  men and <span class="process-math">\(n_2=216\)</span>  women, of whom <span class="process-math">\(x_1=72\)</span> men and <span class="process-math">\(x_2=30\)</span> women got raises. The company claims that men and women have equal raise rates.  The watchdog group claims that men get more raises than women.  Suppose we use a <span class="process-math">\(\alpha=0.05\)</span> level of significance.</p>
+<p id="p-1137"><pre class="ptx-sagecell sagecell-r" id="sage-189"><script type="text/x-sage">
+</script></pre> <a href="" data-knowl="" class="id-ref hint-knowl original has-interactive" data-refid="hk-hint-19" id="hint-19"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-19"><div class="hint solution-like"><p id="p-1138"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-57" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-58" width="600" height="600"></iframe></p></div></div></p>
+</div>
+<article class="task exercise-like" id="task-619"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1139">Which of the following best describes the null hypothesis <span class="process-math">\(H_0\text{?}\)</span></p>
+<ul class="disc">
+<li id="li-245"><p id="p-derived-li-245"><span class="process-math">\(p_1-p_2\lt 0\text{.}\)</span></p></li>
+<li id="li-246"><p id="p-derived-li-246"><span class="process-math">\(p_1-p_2&gt; 0\text{.}\)</span></p></li>
+<li id="li-247"><p id="p-derived-li-247"><span class="process-math">\(p_1-p_2\neq 0\text{.}\)</span></p></li>
+<li id="li-248"><p id="p-derived-li-248"><span class="process-math">\(p_1-p_2= 0\text{.}\)</span></p></li>
+</ul></article><article class="task exercise-like" id="task-620"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-1140">Which of the following best describes the alternative hypothesis <span class="process-math">\(H_A\text{?}\)</span></p>
+<ul class="disc">
+<li id="li-249"><p id="p-derived-li-249"><span class="process-math">\(p_1-p_2\lt 0\text{.}\)</span></p></li>
+<li id="li-250"><p id="p-derived-li-250"><span class="process-math">\(p_1-p_2&gt; 0\text{.}\)</span></p></li>
+<li id="li-251"><p id="p-derived-li-251"><span class="process-math">\(p_1-p_2\neq 0\text{.}\)</span></p></li>
+<li id="li-252"><p id="p-derived-li-252"><span class="process-math">\(p_1-p_2= 0\text{.}\)</span></p></li>
+</ul></article><article class="task exercise-like" id="task-621"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-1141">Compute <span class="process-math">\(p_{pool}\text{.}\)</span></p></article><article class="task exercise-like" id="task-622"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-1142">Assuming the null hypothesis, follow <a href="" class="xref" data-knowl="./knowl/remark-diffiszero.html" title="Remark 5.2.7">Remark 5.2.7</a> to compute <span class="process-math">\(\mu_D, SE_D\text{.}\)</span></p></article><article class="task exercise-like" id="task-623"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-1143">Compute <span class="process-math">\(d=\hat{p_1}-\hat{p_2}\)</span> the difference in proportions of men and women who got raises.</p></article><article class="task exercise-like" id="task-624"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p id="p-1144">Let <span class="process-math">\(X\)</span> be the normal variable mean <span class="process-math">\(\mu_{D}\)</span> and standard deviation <span class="process-math">\(SE_{D}\text{.}\)</span> Compute <span class="process-math">\(P(D&gt; p_0+|p_0-d|)\text{.}\)</span></p></article><article class="task exercise-like" id="task-625"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p id="p-1145">Use the above value to compute the <span class="process-math">\(p\)</span>-value.  (This is an area of one tail.)</p></article><article class="task exercise-like" id="task-626"><h5 class="heading"><span class="codenumber">(h)</span></h5>
+<p id="p-1146">Compute the <span class="process-math">\(z\)</span>-score for <span class="process-math">\(\hat{p}\text{,}\)</span> call this <span class="process-math">\(z_{\hat{p}}\text{.}\)</span></p></article><article class="task exercise-like" id="task-627"><h5 class="heading"><span class="codenumber">(i)</span></h5>
+<p id="p-1147">Let <span class="process-math">\(Z\)</span> denote the standard normal variable.  Compute <span class="process-math">\(P(Z&gt;|z_{\hat{p}}|)\)</span> and <span class="process-math">\(P(Z\lt -|z_{\hat{p}}|)\text{.}\)</span>  How does these values compare to what you found in (f) and (g)?</p></article><article class="task exercise-like" id="task-628"><h5 class="heading"><span class="codenumber">(j)</span></h5>
+<p id="p-1148">Compute the <span class="process-math">\(p\)</span>-value.</p></article><article class="task exercise-like" id="task-629"><h5 class="heading"><span class="codenumber">(k)</span></h5>
+<p id="p-1149">State the meaning of the <span class="process-math">\(p\)</span>-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-630"><h5 class="heading"><span class="codenumber">(l)</span></h5>
+<p id="p-1150">Do we  reject the null hypothesis?</p></article><article class="task exercise-like" id="task-631"><h5 class="heading"><span class="codenumber">(m)</span></h5>
+<p id="p-1151">What sort of error could have been made? (Type 1 or Type 2)</p></article><article class="task exercise-like" id="task-632"><h5 class="heading"><span class="codenumber">(n)</span></h5>
+<p id="p-1152">Run the following code to sample <code class="code-inline tex2jax_ignore">num_men=312</code> men where <span class="process-math">\(men_{raise}=72\)</span> get raises, then samples <code class="code-inline tex2jax_ignore">num_women=216</code> men where <span class="process-math">\(women_{raise}=30\)</span> get raises.  It does this <code class="code-inline tex2jax_ignore">trials=1000</code> times and plots a histogram of the differences. <pre class="ptx-sagecell sagecell-r" id="sage-190"><script type="text/x-sage">trials=1000
+num_men=312
+num_women=216
+m_raise=72
+w_raise=30
+
+raise_rate=(m_raise+w_raise)/(num_men+num_women)
+diffraise=rep(NA, trials)
+
+for(i in 1:trials){
+	menraise=sample(c("RAISE", "NO"), num_men, replace=TRUE, prob=c(raise_rate, 1-raise_rate))
+	womenraise=sample(c("RAISE", "NO"), num_women, replace=TRUE, prob=c(raise_rate, 1-raise_rate))
+	diffraise[i]=length(which(menraise=="RAISE"))/num_men-length(which(womenraise=="RAISE"))/num_women
+}
+hist(diffraise, breaks=25, prob=TRUE)
+</script></pre></p></article><article class="task exercise-like" id="task-633"><h5 class="heading"><span class="codenumber">(o)</span></h5>
+<p id="p-1153">Fix and run the following code to plot a normal curve with mean <code class="code-inline tex2jax_ignore">mu_D=</code><span class="process-math">\(p_0\)</span> and standard deviation <code class="code-inline tex2jax_ignore">SE_D=</code><span class="process-math">\(SE_D\text{,}\)</span> and plot a line for the observed difference <code class="code-inline tex2jax_ignore">observed_diff=</code><span class="process-math">\(d\)</span> <pre class="ptx-sagecell sagecell-r" id="sage-191"><script type="text/x-sage">mu_D=FIXME
+SE_D=FIXME
+observed_diff=FIXME
+
+hist(diffraise, breaks=25, prob=TRUE)
+curve(dnorm(x, mean=mu_D, sd=SE_D), col="darkblue", lwd=2, add=TRUE, yaxt="n")
+abline(v = observed_diff, col="red", lwd=3, lty=2)
+</script></pre> How well does this curve match the histogram?</p></article><article class="task exercise-like" id="task-634"><h5 class="heading"><span class="codenumber">(p)</span></h5>
+<p id="p-1154">Run the following code to see what proportion of these differences are greater than or equal to the <code class="code-inline tex2jax_ignore">observed_diff</code>.  How does this compare to the <span class="process-math">\(p\)</span>-value? <pre class="ptx-sagecell sagecell-r" id="sage-192"><script type="text/x-sage">length(which(diffraise>=observed_diff))/trials
+</script></pre></p></article></article><article class="remark remark-like" id="remark-diffisnotzero"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.2.8</span><span class="period">.</span>
+</h4>
+<p id="p-1155">In contrast to <a href="" class="xref" data-knowl="./knowl/remark-diffiszero.html" title="Remark 5.2.7">Remark 5.2.7</a>, if the null hypothesis is that <span class="process-math">\(p_1-p_2=p_0\text{,}\)</span> where <span class="process-math">\(p_0\neq 0\text{,}\)</span> then we're not actually claiming that the population proportions are equal.</p>
+<p id="p-1156">So when we assume the null, we would use</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\mu_D=p_0, SE_D=\sqrt{\frac{\hat{p}_{1}(1-\hat{p}_{1})}{n_1}+\frac{\hat{p}_{2}(1-\hat{p}_{2})}{n_2}}.
+\end{equation*}
+</div></article><article class="activity project-like" id="activity-studyguide"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">Study Guide and Exam Pass Rates.</span>
+</h4>
+<div class="introduction" id="introduction-128">
+<p id="p-1157">Suppose that a group of student's are studying for the notoriousluy difficult probability Actuarial exam. A publishing company claim's it's materials raises the average pass rate by more than 10%.  A Math professor is skeptical of this claim.  Suppose that out of  out of 30 people who used the material, 15 passed and 40 people who didn't use the material, 14 passed.</p>
+<p id="p-1158">Let <span class="process-math">\(p_1\)</span> denote the population proportion of people who used the material and passed, and <span class="process-math">\(p_2\)</span> denote the population proportion of people who did not use the material and passed.</p>
+<p id="p-1159"><pre class="ptx-sagecell sagecell-r" id="sage-193"><script type="text/x-sage">
+</script></pre> <a href="" data-knowl="" class="id-ref hint-knowl original has-interactive" data-refid="hk-hint-20" id="hint-20"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-20"><div class="hint solution-like"><p id="p-1160"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-59" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-60" width="600" height="600"></iframe></p></div></div></p>
+</div>
+<article class="task exercise-like" id="task-635"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1161">Which of the following best describes the null hypothesis <span class="process-math">\(H_0\text{?}\)</span></p>
+<ul class="disc">
+<li id="li-253"><p id="p-derived-li-253"><span class="process-math">\(p_1-p_2\lt 0.1\text{.}\)</span></p></li>
+<li id="li-254"><p id="p-derived-li-254"><span class="process-math">\(p_1-p_2&gt; 0.1\text{.}\)</span></p></li>
+<li id="li-255"><p id="p-derived-li-255"><span class="process-math">\(p_1-p_2\neq 0.1\text{.}\)</span></p></li>
+<li id="li-256"><p id="p-derived-li-256"><span class="process-math">\(p_1-p_2= 0.1\text{.}\)</span></p></li>
+</ul></article><article class="task exercise-like" id="task-636"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-1162">Which of the following best describes the alternative hypothesis <span class="process-math">\(H_A\text{?}\)</span></p>
+<ul class="disc">
+<li id="li-257"><p id="p-derived-li-257"><span class="process-math">\(p_1-p_2\lt 0.1\text{.}\)</span></p></li>
+<li id="li-258"><p id="p-derived-li-258"><span class="process-math">\(p_1-p_2&gt; 0.1\text{.}\)</span></p></li>
+<li id="li-259"><p id="p-derived-li-259"><span class="process-math">\(p_1-p_2\neq 0.1\text{.}\)</span></p></li>
+<li id="li-260"><p id="p-derived-li-260"><span class="process-math">\(p_1-p_2= 0.1\text{.}\)</span></p></li>
+</ul></article><article class="task exercise-like" id="task-637"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-1163">Find or compute <span class="process-math">\(n_1, n_2, \hat{p_1}, \hat{p_2}\text{.}\)</span></p></article><article class="task exercise-like" id="task-638"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-1164">Assuming the null hypothesis, follow <a href="" class="xref" data-knowl="./knowl/remark-diffisnotzero.html" title="Remark 5.2.8">Remark 5.2.8</a> compute <span class="process-math">\(\mu_D, SE_D\text{.}\)</span></p></article><article class="task exercise-like" id="task-639"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-1165">Compute <span class="process-math">\(d=\hat{p_1}-\hat{p_2}\)</span> the difference in proportions of men and women who got raises.</p></article><article class="task exercise-like" id="task-640"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p id="p-1166">Let <span class="process-math">\(X\)</span> be the normal variable mean <span class="process-math">\(\mu_{D}\)</span> and standard deviation <span class="process-math">\(SE_{D}\text{.}\)</span> Compute the <span class="process-math">\(p\)</span>-value <span class="process-math">\(P(X&gt; d)\text{.}\)</span></p></article><article class="task exercise-like" id="task-641"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p id="p-1167">State the meaning of the <span class="process-math">\(p\)</span>-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-642"><h5 class="heading"><span class="codenumber">(h)</span></h5>
+<p id="p-1168">Do we  reject the null hypothesis?</p></article><article class="task exercise-like" id="task-643"><h5 class="heading"><span class="codenumber">(i)</span></h5>
+<p id="p-1169">What sort of error could have been made? (Type 1 or Type 2)</p></article><article class="task exercise-like" id="task-644"><h5 class="heading"><span class="codenumber">(j)</span></h5>
+<p id="p-1170">Is a 10% increase in scores plausible?</p></article></article><article class="activity project-like" id="activity-dogcancer"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.7</span><span class="period">.</span><span class="space"> </span><span class="title">Cancer in Dogs.</span>
+</h4>
+<div class="introduction" id="introduction-129">
+<p id="p-1171">A study in 1994 examined 491 dogs that had developed cancer and 945 dogs as a control group to determine whether there is an <em class="emphasis">increased</em> risk of cancer in dogs that are exposed to the herbicide 2,4-Dichlorophenoxyacetic acid (2,4-D).  We analyze their data and see what their conclusion would be.</p>
+<p id="p-1172">Run the following code to download <code class="code-inline tex2jax_ignore">cancer_in_dogs.csv</code> and display it's variables. <pre class="ptx-sagecell sagecell-r" id="sage-194"><script type="text/x-sage">cancer = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/cancer_in_dogs.csv")
+names(cancer)
+</script></pre> <code class="code-inline tex2jax_ignore">order</code> records whther or not they were exposed to <code class="code-inline tex2jax_ignore">2,4-D</code>, and <code class="code-inline tex2jax_ignore">response</code> records whether or not they got <code class="code-inline tex2jax_ignore">cancer</code> or <code class="code-inline tex2jax_ignore">no cancer</code>.  To see a brief breakdown of the data, run the following code: <pre class="ptx-sagecell sagecell-r" id="sage-195"><script type="text/x-sage">summary(cancer)
+</script></pre></p>
+<p id="p-1173">Let <span class="process-math">\(p_1\)</span> denote the probability that a dog exposed to 2,4-D get's cancer and let <span class="process-math">\(p_2\)</span> denote the proportion of dogs who aren'e exposed to 2,4-D get cancer.</p>
+</div>
+<article class="task exercise-like" id="task-645"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1174">Which of the following best describes the null hypothesis <span class="process-math">\(H_0\text{?}\)</span></p>
+<ul class="disc">
+<li id="li-261"><p id="p-derived-li-261"><span class="process-math">\(p_1-p_2\lt 0\text{.}\)</span></p></li>
+<li id="li-262"><p id="p-derived-li-262"><span class="process-math">\(p_1-p_2&gt; 0\text{.}\)</span></p></li>
+<li id="li-263"><p id="p-derived-li-263"><span class="process-math">\(p_1-p_2\neq 0\text{.}\)</span></p></li>
+<li id="li-264"><p id="p-derived-li-264"><span class="process-math">\(p_1-p_2= 0\text{.}\)</span></p></li>
+</ul></article><article class="task exercise-like" id="task-646"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-1175">Which of the following best describes the alternative hypothesis <span class="process-math">\(H_A\text{?}\)</span></p>
+<ul class="disc">
+<li id="li-265"><p id="p-derived-li-265"><span class="process-math">\(p_1-p_2\lt 0\text{.}\)</span></p></li>
+<li id="li-266"><p id="p-derived-li-266"><span class="process-math">\(p_1-p_2&gt; 0\text{.}\)</span></p></li>
+<li id="li-267"><p id="p-derived-li-267"><span class="process-math">\(p_1-p_2\neq 0\text{.}\)</span></p></li>
+<li id="li-268"><p id="p-derived-li-268"><span class="process-math">\(p_1-p_2= 0\text{.}\)</span></p></li>
+</ul></article><article class="task exercise-like" id="task-647"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-1176">Run the following to show a two-way table of how many dogs were/weren't expose to 2,4-D and who got/didn't get cancer: <pre class="ptx-sagecell sagecell-r" id="sage-196"><script type="text/x-sage">table(cancer$order, cancer$response)
+</script></pre></p></article><article class="task exercise-like" id="task-648"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-1177">How many dogs from the sample were exposed to 2,4-D?  Out of those dogs, how many got cancer?  Let these be <span class="process-math">\(n_1, x_1\)</span> respectively.</p></article><article class="task exercise-like" id="task-649"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-1178">How many dogs from the sample were <em class="emphasis">not</em> exposed to 2,4-D?  Out of those dogs, how many got cancer?  Let these be <span class="process-math">\(n_2, x_2\)</span> respectively.</p></article><article class="task exercise-like" id="task-650"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p id="p-1179">Fix and run the following to perform the appropriate proportion hypothesis test.  Enter in how many dogs were exposed to 2,4-D and got Cancer, were not exposed to 2,4-D and got Cancer, were exposed to 2,4-D, and wern't exposed to 2,4-D respectively. <pre class="ptx-sagecell sagecell-r" id="sage-197"><script type="text/x-sage">prop.test(c(FIXMEx1, FIXMEx2), c(FIXMEn1, FIXMEn2), 
+		p=NULL, alternative="greater", correct=FALSE)
+</script></pre></p></article><article class="task exercise-like" id="task-651"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p id="p-1180">State the meaning of the <span class="process-math">\(p\)</span>-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-652"><h5 class="heading"><span class="codenumber">(h)</span></h5>
+<p id="p-1181">Do we  reject the null hypothesis?</p></article><article class="task exercise-like" id="task-653"><h5 class="heading"><span class="codenumber">(i)</span></h5>
+<p id="p-1182">What sort of error could have been made? (Type 1 or Type 2)</p></article><article class="task exercise-like" id="task-654"><h5 class="heading"><span class="codenumber">(j)</span></h5>
+<p id="p-1183">Is it plausible to say that being exposed to 2,4-D do <em class="emphasis">not</em> have an increased risk of cancer?</p></article></article></section></section></div></main>
+</div>
+</body>
+</html>

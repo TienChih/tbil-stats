@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Introduction to Confidence Intervals (F2)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Team Based Statistics">
+<meta property="book:author" content="Tien Chih">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Q}{\terminology{Question:\ }}
+\newcommand{\Sol}{\terminology{Solution:\ }}
+\newcommand{\Fisg}{\emph{Fisg}}
+\newcommand{\Iisg}{\emph{Iisg}}
+\newcommand{\Pisg}{\emph{Pisg}}
+\newcommand{\Tisg}{\emph{Tisg}}
+\newcommand{\Dom}{\emph{Dom}}
+\newcommand{\Img}{\emph{Im}}
+\DeclareMathOperator{\id}{id}
+\newcommand{\bcup}{\displaystyle\bigcup}
+\newcommand{\bcap}{\displaystyle\bigcap}
+\newcommand{\dsum}{\displaystyle\sum}
+\newcommand{\dint}{\displaystyle\int}
+\newcommand{\R}[1]{\mathbb{R}^{#1}}
+\newcommand{\C}[1]{\mathbb{C}^{#1}}
+\newcommand{\Z}[1]{\mathbb{Z}^{#1}}
+\newcommand{\K}[1]{\mathbb{K}^{#1}}
+\newcommand{\limit}[2]{\displaystyle{ \lim_{#1 \to #2}}}
+\newcommand{\TCB}[1]{\textcolor{blue}{#1}}
+\newcommand{\TCR}[1]{\textcolor{red}{#1}}
+\newcommand{\TCO}[1]{\textcolor{orange}{#1}}
+\newcommand{\TCG}[1]{\textcolor{ForestGreen}{#1}}
+\DeclareMathOperator{\Endo}{Endo}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Obj}{Obj}
+\DeclareMathOperator{\pleat}{\mathcal{P}\ell}
+\def\PX{\mathfrak{W}G}
+\def\Gph{\mathsf{Gph}}
+\def\HoGph{\mathsf{HoGph}}
+\def\into{\hookrightarrow}
+\def\con{\underline{}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Team Based Statistics</span></a></h1>
+<p class="byline">Tien Chih</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="Sec_PointEstimates.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="Chap_Foundations.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="Sec_HypothesisTesing.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="Sec_PointEstimates.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="Chap_Foundations.html" title="Up">Up</a><a class="next-button button toolbar-item" href="Sec_HypothesisTesing.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="learning-outcomes.html" data-scroll="learning-outcomes" class="internal">Learning Outcomes and Usage</a></li>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="author-bio-TC.html" data-scroll="author-bio-TC" class="internal">Author Biography</a></li>
+<li><a href="dedication-1.html" data-scroll="dedication-1" class="internal">Dedication</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_DataBasics.html" data-scroll="Chap_DataBasics" class="internal"><span class="codenumber">1</span> <span class="title">Data Basics (B)</span></a><ul>
+<li><a href="Sec_Variables.html" data-scroll="Sec_Variables" class="internal">Types of Variables and their Relationships (B1)</a></li>
+<li><a href="Sec_Sampling.html" data-scroll="Sec_Sampling" class="internal">Sampling Techniques (B2)</a></li>
+<li><a href="Sec_Visualization.html" data-scroll="Sec_Visualization" class="internal">Visualizing Data (B3)</a></li>
+<li><a href="Sec_Center.html" data-scroll="Sec_Center" class="internal">Centers of Data (B4)</a></li>
+<li><a href="Sec_Variation.html" data-scroll="Sec_Variation" class="internal">Variation of Data (B5)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Probability.html" data-scroll="Chap_Probability" class="internal"><span class="codenumber">2</span> <span class="title">Probability (P)</span></a><ul>
+<li><a href="Sec_Introprob.html" data-scroll="Sec_Introprob" class="internal">Introduction to Probability (P1)</a></li>
+<li><a href="Sec_Conditionalprob.html" data-scroll="Sec_Conditionalprob" class="internal">Conditional Probability (P2)</a></li>
+<li><a href="Sec_Bayes.html" data-scroll="Sec_Bayes" class="internal">Bayes Theorem (P3)</a></li>
+<li><a href="Sec_RandomVariables.html" data-scroll="Sec_RandomVariables" class="internal">Random Variables (P4)</a></li>
+<li><a href="Sec_LinearCombofVariables.html" data-scroll="Sec_LinearCombofVariables" class="internal">Linear Combinations of Random Variables (P5)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Distributions.html" data-scroll="Chap_Distributions" class="internal"><span class="codenumber">3</span> <span class="title">Distributions (D)</span></a><ul>
+<li><a href="Sec_StandardNormal.html" data-scroll="Sec_StandardNormal" class="internal">Standard Normal Distribution (D1)</a></li>
+<li><a href="Sec_GeneralNormal.html" data-scroll="Sec_GeneralNormal" class="internal">General Normal Distribution (D2)</a></li>
+<li><a href="Sec_Counting.html" data-scroll="Sec_Counting" class="internal">Counting Principles (D3)</a></li>
+<li><a href="Sec_Binomial.html" data-scroll="Sec_Binomial" class="internal">Binomial Distribution (D4)</a></li>
+<li><a href="Sec_NormalApprox.html" data-scroll="Sec_NormalApprox" class="internal">Normal Approximation (D5)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Foundations.html" data-scroll="Chap_Foundations" class="internal"><span class="codenumber">4</span> <span class="title">Foundations for Inference (F)</span></a><ul>
+<li><a href="Sec_PointEstimates.html" data-scroll="Sec_PointEstimates" class="internal">Point Estimates (F1)</a></li>
+<li><a href="Sec_ConfidenceInterval.html" data-scroll="Sec_ConfidenceInterval" class="active">Introduction to Confidence Intervals (F2)</a></li>
+<li><a href="Sec_HypothesisTesing.html" data-scroll="Sec_HypothesisTesing" class="internal">Introduction to Hypothesis Testing (F3)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Categorical.html" data-scroll="Chap_Categorical" class="internal"><span class="codenumber">5</span> <span class="title">Inference for Categorical Variables (C)</span></a><ul>
+<li><a href="Sec_SizeofSampleCat.html" data-scroll="Sec_SizeofSampleCat" class="internal">Size of Samples (Categorical)</a></li>
+<li><a href="Sec_TwoVarCat.html" data-scroll="Sec_TwoVarCat" class="internal">Comparing Two Categorical Variables (C2)</a></li>
+<li><a href="Sec_ChiSquare.html" data-scroll="Sec_ChiSquare" class="internal">Chi-Squared Test and Goodness of Fit (C3)</a></li>
+<li><a href="Sec_ChiIndependence.html" data-scroll="Sec_ChiIndependence" class="internal">Chi-Squared Test and Independence (C4)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Numerical.html" data-scroll="Chap_Numerical" class="internal"><span class="codenumber">6</span> <span class="title">Inference for Numerical Variables (N)</span></a><ul>
+<li><a href="Sec_tVariable.html" data-scroll="Sec_tVariable" class="internal">The <span class="process-math">\(t\)</span>-Variable and Sampling Distribution of Numerical Variables (N1)</a></li>
+<li><a href="Sec_OneVarNum.html" data-scroll="Sec_OneVarNum" class="internal">Confidence Intervals and Hypothesis Testing for a single Numerical Variable (N2)</a></li>
+<li><a href="Sec_PairedData.html" data-scroll="Sec_PairedData" class="internal">Paired Numerical Data (N3)</a></li>
+<li><a href="Sec_TwoVarNum.html" data-scroll="Sec_TwoVarNum" class="internal">Comparing Two Numerical Variables (N4)</a></li>
+<li><a href="Sec_SizeofSampleNum.html" data-scroll="Sec_SizeofSampleNum" class="internal">Size of Samples of Numerical Variables (N5)</a></li>
+<li><a href="Sec_ANOVA.html" data-scroll="Sec_ANOVA" class="internal">ANOVA: Analysis of Variation (N6)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_LinearRegression.html" data-scroll="Chap_LinearRegression" class="internal"><span class="codenumber">7</span> <span class="title">Linear Regression (R)</span></a><ul>
+<li><a href="Sec_Correlation.html" data-scroll="Sec_Correlation" class="internal">Linear Correlation of Variables (R1)</a></li>
+<li><a href="Sec_InterpretingRegression.html" data-scroll="Sec_InterpretingRegression" class="internal">Interpreting Linear Regression (R2)</a></li>
+<li><a href="Sec_InferenceRegression.html" data-scroll="Sec_InferenceRegression" class="internal">Inference and Linear Regression (R3)</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="Sec_ConfidenceInterval"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">4.2</span> <span class="title">Introduction to Confidence Intervals (F2)</span>
+</h2>
+<section class="introduction" id="introduction-99"><p id="p-893">We saw in <a href="Sec_PointEstimates.html" class="internal" title="Section 4.1: Point Estimates (F1)">Section 4.1</a> that the point estimates can be a very accurate predictor of the parameter of interest.  However, it is rarely exactly the same, and of course there is always some cases where it deviates significantly.</p>
+<p id="p-894">The odds that your point estimate matches the parameter of interest may be very unlikely, but we can perhaps use the point estimate to find a range of probable values for the parameter of interest.</p>
+<p id="p-895">In this section we compute and interpret confidence intervals for population proportions.</p></section><section class="subsection" id="subsection-22"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.2.1</span> <span class="title">Defining the Confidence Interval</span>
+</h3>
+<article class="exploration project-like" id="exploration-CI"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">4.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Finding an Interval.</span>
+</h4>
+<div class="introduction" id="introduction-100">
+<p id="p-896">Recall from <a href="" class="xref" data-knowl="./knowl/theorem-CLTprop.html" title="Theorem 4.1.4: The Central Limit Theorem (Proportion)">Theorem 4.1.4</a> that <span class="process-math">\(\hat{p}\)</span> can be approximated by a normal variable with parameters <span class="process-math">\(\mu_{\hat{p}}=p,  SE_{\hat{p}}=\sqrt{\frac{p(1-p)}{n}}.\)</span></p>
+<p id="p-897"><pre class="ptx-sagecell sagecell-r" id="sage-150"><script type="text/x-sage">
+</script></pre> <a href="" data-knowl="" class="id-ref hint-knowl original has-interactive" data-refid="hk-hint-7" id="hint-7"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-7"><div class="hint solution-like"><p id="p-898"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-33" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-34" width="600" height="600"></iframe></p></div></div></p>
+</div>
+<article class="task exercise-like" id="task-495"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-899">For the standard normal variable <span class="process-math">\(Z\)</span> (<a href="Sec_StandardNormal.html" class="internal" title="Section 3.1: Standard Normal Distribution (D1)">Section 3.1</a>) verify that <span class="process-math">\(P(-1.96\lt Z\lt 1.96)\approx 0.95\text{.}\)</span></p></article><article class="task exercise-like" id="task-496"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-900">Use the <span class="process-math">\(z\)</span>-score <span class="process-math">\(1.96\)</span> from (a) and <a href="" class="xref" data-knowl="./knowl/definition-zscore.html" title="Definition 3.2.1">Definition 3.2.1</a> to find the corresponding <span class="process-math">\(x\)</span> value for a normal variable with mean <span class="process-math">\(\mu_{\hat{p}}=p\)</span>  and standard deviation <span class="process-math">\(SE_{\hat{p}}=\sqrt{\frac{p(1-p)}{n}}.\text{.}\)</span></p></article></article><article class="definition definition-like" id="definition-CIprop"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.2.1</span><span class="period">.</span>
+</h4>
+<p id="p-901">Given a parameter of interest, a C% confidence interval is an interval <span class="process-math">\([L, U]\)</span> such that there is a C% chance the parameter lies in this interval.</p></article><article class="remark remark-like" id="remark-95prop"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.2.2</span><span class="period">.</span>
+</h4>
+<p id="p-902">Suppose you had a sample of size <span class="process-math">\(n\)</span> and a sample proportion of <span class="process-math">\(\hat{p}\text{.}\)</span>  Following <a href="" class="xref" data-knowl="./knowl/exploration-CI.html" title="Exploration 4.2.1: Finding an Interval">Exploration 4.2.1</a>, we have that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/exploration-CI.html">
+\begin{equation*}
+[\hat{p}-1.96SE_{\hat{p}}, \hat{p}+1.96SE_{\hat{p}}]
+\end{equation*}
+</div>
+<p class="continuation">is a 95% Confidence Interval for <span class="process-math">\(\hat{p}\text{.}\)</span>  In other words, there is a 95% chance that <span class="process-math">\(p\)</span> lies in this interval. <figure class="figure figure-like" id="figure-21"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/image-21.svg" role="img" class="contained" alt="A 95% confidence interval for \(p\text{.}\)"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.3<span class="period">.</span></span><span class="space"> </span>A 95% confidence interval for <span class="process-math">\(p\text{.}\)</span>  There is a 95% chance the population proportion <span class="process-math">\(p\)</span> lies in this interval, and a 5% chance it does not.</figcaption></figure></p></article><article class="example example-like" id="example-cordcut"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-cordcut"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Cord Cutting.</span>
+</h4></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-cordcut"><article class="example example-like"><p id="p-903">In a survey of 150 Adult Americans, 33 of them said they were “cord-cutters”, people who only consume television through internet streaming.  Find a 95% Confidence Interval for the proportion of American Adults who are cord cutters.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1" id="solution-1"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1"><div class="solution solution-like">
+<p id="p-904">We note that the the sample size is <span class="process-math">\(n=150\)</span> and the sample proportion is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\hat{p}=\frac{33}{150}=0.22
+\end{equation*}
+</div>
+<p class="continuation">or 22% of the sample were cord cutters.  The sample proportion is a random variable distributed with estimated standard error</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+SE_{\hat{p}}=\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}=\sqrt{\frac{0.22\cdot0.78}{150}}\approx 0.03382306.
+\end{equation*}
+</div>
+<p id="p-905">So following <a href="" class="xref" data-knowl="./knowl/remark-95prop.html" title="Remark 4.2.2">Remark 4.2.2</a>, we have that the lower bound for our Confidence Interval is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/remark-95prop.html">
+\begin{equation*}
+\hat{p}-1.96SE_{\hat{p}}\approx 0.22-1.96\cdot0.03382306\approx 0.1537 
+\end{equation*}
+</div>
+<p class="continuation">or 15.37%.  Similarly, the upper bound for our Confidence Interval is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/remark-95prop.html">
+\begin{equation*}
+\hat{p}+1.96SE_{\hat{p}}\approx 0.22+1.96\cdot0.03382306\approx 0.2863 
+\end{equation*}
+</div>
+<p class="continuation">or 28.63%.</p>
+<p id="p-906">So the 95% Confidence Interval is <span class="process-math">\([0.1537, 0.2863]\text{,}\)</span> that is, there is a 95% chance the population proportion lies in this interval.  In other words: <em class="emphasis">“There is a 95% chance that the proportion of American Adults who are cord-cutters is between 15.37% and 28.63%”.</em></p>
+<p id="p-907">Note this means that there is a 5% chance that the proportion of American Adults who are cord-cutters is higher than 28.63% or lower than 15.37%.</p>
+</div></div>
+</div></article></div>
+<article class="activity project-like" id="activity-Steak"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Medium Rare Steak.</span>
+</h4>
+<div class="introduction" id="introduction-101"><p id="p-908">Suppose 23% of of Americans prefer their steak medium-rare.  A researcher, not knowing this, polls 50 Americans for their doneness preference.</p></div>
+<article class="task exercise-like" id="task-497"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-909">If the researcher produces a 95% confidence interval, which of the following best describe this confidence interval?</p>
+<ol class="decimal">
+<li id="li-159"><p id="p-derived-li-159">95% of adult Americans lie in this interval</p></li>
+<li id="li-160"><p id="p-derived-li-160">There is a 23% chance that 95% of Americans prefer their steaks medium-rare.</p></li>
+<li id="li-161"><p id="p-derived-li-161">There is a 95% chance that 23% of Americans perfer their steak medium-rare.</p></li>
+<li id="li-162"><p id="p-derived-li-162">There is a 95% chance that the population proportion lies in this interval?</p></li>
+</ol></article><article class="task exercise-like" id="task-498"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-910">If 10 respondents to the survey say they prefer medium-rare, use <a href="" class="xref" data-knowl="./knowl/theorem-CLTprop.html" title="Theorem 4.1.4: The Central Limit Theorem (Proportion)">Theorem 4.1.4</a> find <span class="process-math">\(\hat{p}\)</span> and <span class="process-math">\(SE_{\hat{p}}\text{.}\)</span></p></article><article class="task exercise-like" id="task-499"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-911">Use <a href="" class="xref" data-knowl="./knowl/remark-95prop.html" title="Remark 4.2.2">Remark 4.2.2</a> to compute a 95% confidence interval for <span class="process-math">\(p\text{:}\)</span> the proportion of Americams who prefer their steaks medium-rare.  Is 23% in this interval? <pre class="ptx-sagecell sagecell-r" id="sage-151"><script type="text/x-sage">
+</script></pre> <a href="" data-knowl="" class="id-ref hint-knowl original has-interactive" data-refid="hk-hint-8" id="hint-8"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-8"><div class="hint solution-like"><p id="p-912"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-35" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-36" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-500"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-913">Run the following code to conduct your own survey of 50 Americans, and see how many of them like their steak medium-rare. <pre class="ptx-sagecell sagecell-r" id="sage-152"><script type="text/x-sage">steak_survey=sample(c("YES", "NO"), 50, replace = TRUE, prob = c(0.23, 0.77))
+print(length(which(steak_survey=="YES")))
+</script></pre></p></article><article class="task exercise-like" id="task-501"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-914">Use this new result to compute <span class="process-math">\(\hat{p}, SE_{\hat{p}}\)</span> and a new 95% Confidence Interval.  Does THIS new interval contain 23%?</p></article><article class="task exercise-like" id="task-502"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p id="p-915">State what this confidence interval means in the context of this problem using complete sentences.</p></article><article class="task exercise-like" id="task-503"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p id="p-916">Run the following code to, for 100 times, sample 50 Americans and construct a 95% confidence interval based on the results. <pre class="ptx-sagecell sagecell-r" id="sage-153"><script type="text/x-sage">  numsamp=100
+n=50
+p=0.23
+
+samp_phat = rep(NA, numsamp)
+samp_SE = rep(NA, numsamp)
+color_vec=rep(NA, numsamp)
+
+for(i in 1:numsamp){
+  samp = rbinom(1,n,p) # obtain a sample of size n  from the population
+  samp_phat[i] = samp/n    # Find the proportion for this sample
+  samp_SE[i] = sqrt(samp_phat[i]*(1-samp_phat[i])/n)  # Find the standard error
+}
+lower_vector = samp_phat - 1.96 * samp_SE
+upper_vector = samp_phat + 1.96 * samp_SE
+
+for (j in 1:numsamp){
+  color_vec[j]="red"
+  if(p>=lower_vector[j] & upper_vector[j]>=p){color_vec[j]="blue"}
+}
+plot(c(min(lower_vector),max(upper_vector)), c(0, 1 + numsamp), type = "n")
+for (i in 1:numsamp) lines( c(lower_vector[i], upper_vector[i]),c(i, i), lwd = 2, col=color_vec[i], add=TRUE)
+abline(v = p, lwd = 2, lty = 2)
+</script></pre></p>
+<p id="p-917">How many of these intervals do <em class="emphasis">not</em> contain 23%?  Is this suprising?</p></article></article></section><section class="subsection" id="subsection-23"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.2.2</span> <span class="title">Other Confidences</span>
+</h3>
+<article class="exploration project-like" id="exploration-otherCI"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">4.2.3</span><span class="period">.</span>
+</h4>
+<div class="introduction" id="introduction-102"><p id="p-918">Recall from <a href="" class="xref" data-knowl="./knowl/example-cordcut.html" title="Example 4.2.4: Cord Cutting">Example 4.2.4</a> that the 95% confidence interval for the proportion of American Adult cord cutters was <span class="process-math">\([0.1537, 0.2863]\text{.}\)</span></p></div>
+<article class="task exercise-like" id="task-504"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-919">If you needed an interval that had a 99% chance to contain the population proportion, should it be wider or narrower?</p></article><article class="task exercise-like" id="task-505"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-920">If you only needed an interval that had a 90% chance to contain the population proportion, should it be wider or narrower?</p></article></article><article class="remark remark-like" id="remark-otherCI"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.2.5</span><span class="period">.</span>
+</h4>
+<p id="p-921">In general, if we wanted to find a <span class="process-math">\(C\%\)</span> confidence interval given <span class="process-math">\(\hat{p}, SE_{\hat{p}}\)</span> we would find this via:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+[\hat{p}-z^*SE_{\hat{p}}, \hat{p}+z^*SE_{\hat{p}}]
+\end{equation*}
+</div>
+<p class="continuation">where <span class="process-math">\(s^*\)</span> is a standard normal value such that given the standard normal random variable <span class="process-math">\(Z\text{,}\)</span> <span class="process-math">\(P(-z^*\lt Z\lt z^*)=C%\text{.}\)</span></p>
+<p id="p-922">One can check that the following <span class="process-math">\(z^*\)</span> values correspond to the following commonly used confidence levels:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{array}{|c|c|}
+\hline
+C\% \amp z^*\\
+\hline
+90\% \amp 1.645\\
+95\% \amp 1.96\\
+99\% \amp 2.576 \\
+\hline
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation"><pre class="ptx-sagecell sagecell-r" id="sage-154"><script type="text/x-sage">
+</script></pre> <a href="" data-knowl="" class="id-ref hint-knowl original has-interactive" data-refid="hk-hint-9" id="hint-9"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-9"><div class="hint solution-like"><p id="p-923"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-37" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-38" width="600" height="600"></iframe></p></div></div></p>
+<figure class="figure figure-like" id="figure-22"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/image-22.svg" role="img" class="contained" alt="A 95% confidence interval for \(p\text{.}\)"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.6<span class="period">.</span></span><span class="space"> </span>Confidence intervals <span class="process-math">\([\hat{p}-z^*SE_{\hat{p}}, \hat{p}+z^*SE_{\hat{p}}]\)</span> where<span class="process-math">\(z^*\)</span> corresponds to different levels of confidence.</figcaption></figure></article><article class="activity project-like" id="activity-productreviews"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Product Reviews.</span>
+</h4>
+<div class="introduction" id="introduction-103"><p id="p-924">In a random survey of 250 customers who purchased a product, 33 of them gave the product a negative review.</p></div>
+<article class="task exercise-like" id="task-506"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-925">Find <span class="process-math">\(\hat{p}\text{,}\)</span> the sample proportion of customers who gave the product a negative review, as well as <span class="process-math">\(SE_{\hat{p}}\text{.}\)</span></p></article><article class="task exercise-like" id="task-507"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-926">Use <a href="" class="xref" data-knowl="./knowl/remark-otherCI.html" title="Remark 4.2.5">Remark 4.2.5</a> to find 90%, 95%, and 99% confidence intervals for the proportion of all customers who thought negatively of the product.  What do we notice as the confidence level increases?</p></article><article class="task exercise-like" id="task-508"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-927">State what this confidence interval means in the context of this problem using complete sentences.</p></article><article class="task exercise-like" id="task-509"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-928">Find a value <span class="process-math">\(z^*\)</span> so that given the standard normal random variable <span class="process-math">\(Z\text{,}\)</span> <span class="process-math">\(P(-z^*\lt Z\lt z^*)=0.85\text{.}\)</span> <pre class="ptx-sagecell sagecell-r" id="sage-155"><script type="text/x-sage">
+</script></pre> <a href="" data-knowl="" class="id-ref hint-knowl original has-interactive" data-refid="hk-hint-10" id="hint-10"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-10"><div class="hint solution-like"><p id="p-929"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-39" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-40" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-510"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-930">Use <span class="process-math">\(z^*\)</span> to find an 85% confidence intervals for the proportion of all customers who thought negatively of the product.  How does this value compare to what we found in (b)?</p></article><article class="task exercise-like" id="task-511"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p id="p-931">State what this confidence interval means in the context of this problem using complete sentences.</p></article></article><article class="activity project-like" id="activity-military"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Branches of the US Military.</span>
+</h4>
+<div class="introduction" id="introduction-104">
+<p id="p-932">We consider what proportion of the Military belongs to which branch of service.</p>
+<p id="p-933">Run the following code to download <code class="code-inline tex2jax_ignore">military.csv</code> and display it's variables. <pre class="ptx-sagecell sagecell-r" id="sage-156"><script type="text/x-sage">military = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/military.csv")
+names(military)
+</script></pre> This dataset contains demographic information on every member of the US armed forces including gender, race, and rank.</p>
+<p id="p-934">Let <span class="process-math">\(p\)</span> denote the proportion of military members who are in the Army.</p>
+</div>
+<article class="task exercise-like" id="task-512"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-935">Run the following to sample <code class="code-inline tex2jax_ignore">n=50</code> random members of the military: <pre class="ptx-sagecell sagecell-r" id="sage-157"><script type="text/x-sage">n=50
+index = sample(1:nrow(military), n)
+samp=military[index,]
+</script></pre></p></article><article class="task exercise-like" id="task-513"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-936">Run the following to see how many members of our sample are in the Army: <pre class="ptx-sagecell sagecell-r" id="sage-158"><script type="text/x-sage">length(which(samp$branch=="army"))
+</script></pre> Let <span class="process-math">\(\hat{p}\)</span> denote the proportion of the sample that's in the army.</p></article><article class="task exercise-like" id="task-514"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-937">Use <span class="process-math">\(\hat{p}\)</span> above and <span class="process-math">\(n=50\text{.}\)</span> to compute a 95% confidence interval for the proportion of miliary members in the Army. <pre class="ptx-sagecell sagecell-r" id="sage-159"><script type="text/x-sage">
+</script></pre> <a href="" data-knowl="" class="id-ref hint-knowl original has-interactive" data-refid="hk-hint-11" id="hint-11"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-11"><div class="hint solution-like"><p id="p-938"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-41" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-42" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-515"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-939">State what this confidence interval means in the context of this problem using complete sentences.</p></article><article class="task exercise-like" id="task-516"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-940">Run the following to see the actual proportion of military members in the Army: <pre class="ptx-sagecell sagecell-r" id="sage-160"><script type="text/x-sage">length(which(military$branch=="army"))/nrow(military)
+</script></pre> Is this in your condidence interval?</p></article></article></section></section></div></main>
+</div>
+</body>
+</html>

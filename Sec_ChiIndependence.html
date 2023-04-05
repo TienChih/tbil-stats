@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Chi-Squared Test and Independence (C4)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Team Based Statistics">
+<meta property="book:author" content="Tien Chih">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Q}{\terminology{Question:\ }}
+\newcommand{\Sol}{\terminology{Solution:\ }}
+\newcommand{\Fisg}{\emph{Fisg}}
+\newcommand{\Iisg}{\emph{Iisg}}
+\newcommand{\Pisg}{\emph{Pisg}}
+\newcommand{\Tisg}{\emph{Tisg}}
+\newcommand{\Dom}{\emph{Dom}}
+\newcommand{\Img}{\emph{Im}}
+\DeclareMathOperator{\id}{id}
+\newcommand{\bcup}{\displaystyle\bigcup}
+\newcommand{\bcap}{\displaystyle\bigcap}
+\newcommand{\dsum}{\displaystyle\sum}
+\newcommand{\dint}{\displaystyle\int}
+\newcommand{\R}[1]{\mathbb{R}^{#1}}
+\newcommand{\C}[1]{\mathbb{C}^{#1}}
+\newcommand{\Z}[1]{\mathbb{Z}^{#1}}
+\newcommand{\K}[1]{\mathbb{K}^{#1}}
+\newcommand{\limit}[2]{\displaystyle{ \lim_{#1 \to #2}}}
+\newcommand{\TCB}[1]{\textcolor{blue}{#1}}
+\newcommand{\TCR}[1]{\textcolor{red}{#1}}
+\newcommand{\TCO}[1]{\textcolor{orange}{#1}}
+\newcommand{\TCG}[1]{\textcolor{ForestGreen}{#1}}
+\DeclareMathOperator{\Endo}{Endo}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Obj}{Obj}
+\DeclareMathOperator{\pleat}{\mathcal{P}\ell}
+\def\PX{\mathfrak{W}G}
+\def\Gph{\mathsf{Gph}}
+\def\HoGph{\mathsf{HoGph}}
+\def\into{\hookrightarrow}
+\def\con{\underline{}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Team Based Statistics</span></a></h1>
+<p class="byline">Tien Chih</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="Sec_ChiSquare.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="Chap_Categorical.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="Chap_Numerical.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="Sec_ChiSquare.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="Chap_Categorical.html" title="Up">Up</a><a class="next-button button toolbar-item" href="Chap_Numerical.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="learning-outcomes.html" data-scroll="learning-outcomes" class="internal">Learning Outcomes and Usage</a></li>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="author-bio-TC.html" data-scroll="author-bio-TC" class="internal">Author Biography</a></li>
+<li><a href="dedication-1.html" data-scroll="dedication-1" class="internal">Dedication</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_DataBasics.html" data-scroll="Chap_DataBasics" class="internal"><span class="codenumber">1</span> <span class="title">Data Basics (B)</span></a><ul>
+<li><a href="Sec_Variables.html" data-scroll="Sec_Variables" class="internal">Types of Variables and their Relationships (B1)</a></li>
+<li><a href="Sec_Sampling.html" data-scroll="Sec_Sampling" class="internal">Sampling Techniques (B2)</a></li>
+<li><a href="Sec_Visualization.html" data-scroll="Sec_Visualization" class="internal">Visualizing Data (B3)</a></li>
+<li><a href="Sec_Center.html" data-scroll="Sec_Center" class="internal">Centers of Data (B4)</a></li>
+<li><a href="Sec_Variation.html" data-scroll="Sec_Variation" class="internal">Variation of Data (B5)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Probability.html" data-scroll="Chap_Probability" class="internal"><span class="codenumber">2</span> <span class="title">Probability (P)</span></a><ul>
+<li><a href="Sec_Introprob.html" data-scroll="Sec_Introprob" class="internal">Introduction to Probability (P1)</a></li>
+<li><a href="Sec_Conditionalprob.html" data-scroll="Sec_Conditionalprob" class="internal">Conditional Probability (P2)</a></li>
+<li><a href="Sec_Bayes.html" data-scroll="Sec_Bayes" class="internal">Bayes Theorem (P3)</a></li>
+<li><a href="Sec_RandomVariables.html" data-scroll="Sec_RandomVariables" class="internal">Random Variables (P4)</a></li>
+<li><a href="Sec_LinearCombofVariables.html" data-scroll="Sec_LinearCombofVariables" class="internal">Linear Combinations of Random Variables (P5)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Distributions.html" data-scroll="Chap_Distributions" class="internal"><span class="codenumber">3</span> <span class="title">Distributions (D)</span></a><ul>
+<li><a href="Sec_StandardNormal.html" data-scroll="Sec_StandardNormal" class="internal">Standard Normal Distribution (D1)</a></li>
+<li><a href="Sec_GeneralNormal.html" data-scroll="Sec_GeneralNormal" class="internal">General Normal Distribution (D2)</a></li>
+<li><a href="Sec_Counting.html" data-scroll="Sec_Counting" class="internal">Counting Principles (D3)</a></li>
+<li><a href="Sec_Binomial.html" data-scroll="Sec_Binomial" class="internal">Binomial Distribution (D4)</a></li>
+<li><a href="Sec_NormalApprox.html" data-scroll="Sec_NormalApprox" class="internal">Normal Approximation (D5)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Foundations.html" data-scroll="Chap_Foundations" class="internal"><span class="codenumber">4</span> <span class="title">Foundations for Inference (F)</span></a><ul>
+<li><a href="Sec_PointEstimates.html" data-scroll="Sec_PointEstimates" class="internal">Point Estimates (F1)</a></li>
+<li><a href="Sec_ConfidenceInterval.html" data-scroll="Sec_ConfidenceInterval" class="internal">Introduction to Confidence Intervals (F2)</a></li>
+<li><a href="Sec_HypothesisTesing.html" data-scroll="Sec_HypothesisTesing" class="internal">Introduction to Hypothesis Testing (F3)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Categorical.html" data-scroll="Chap_Categorical" class="internal"><span class="codenumber">5</span> <span class="title">Inference for Categorical Variables (C)</span></a><ul>
+<li><a href="Sec_SizeofSampleCat.html" data-scroll="Sec_SizeofSampleCat" class="internal">Size of Samples (Categorical)</a></li>
+<li><a href="Sec_TwoVarCat.html" data-scroll="Sec_TwoVarCat" class="internal">Comparing Two Categorical Variables (C2)</a></li>
+<li><a href="Sec_ChiSquare.html" data-scroll="Sec_ChiSquare" class="internal">Chi-Squared Test and Goodness of Fit (C3)</a></li>
+<li><a href="Sec_ChiIndependence.html" data-scroll="Sec_ChiIndependence" class="active">Chi-Squared Test and Independence (C4)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Numerical.html" data-scroll="Chap_Numerical" class="internal"><span class="codenumber">6</span> <span class="title">Inference for Numerical Variables (N)</span></a><ul>
+<li><a href="Sec_tVariable.html" data-scroll="Sec_tVariable" class="internal">The <span class="process-math">\(t\)</span>-Variable and Sampling Distribution of Numerical Variables (N1)</a></li>
+<li><a href="Sec_OneVarNum.html" data-scroll="Sec_OneVarNum" class="internal">Confidence Intervals and Hypothesis Testing for a single Numerical Variable (N2)</a></li>
+<li><a href="Sec_PairedData.html" data-scroll="Sec_PairedData" class="internal">Paired Numerical Data (N3)</a></li>
+<li><a href="Sec_TwoVarNum.html" data-scroll="Sec_TwoVarNum" class="internal">Comparing Two Numerical Variables (N4)</a></li>
+<li><a href="Sec_SizeofSampleNum.html" data-scroll="Sec_SizeofSampleNum" class="internal">Size of Samples of Numerical Variables (N5)</a></li>
+<li><a href="Sec_ANOVA.html" data-scroll="Sec_ANOVA" class="internal">ANOVA: Analysis of Variation (N6)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_LinearRegression.html" data-scroll="Chap_LinearRegression" class="internal"><span class="codenumber">7</span> <span class="title">Linear Regression (R)</span></a><ul>
+<li><a href="Sec_Correlation.html" data-scroll="Sec_Correlation" class="internal">Linear Correlation of Variables (R1)</a></li>
+<li><a href="Sec_InterpretingRegression.html" data-scroll="Sec_InterpretingRegression" class="internal">Interpreting Linear Regression (R2)</a></li>
+<li><a href="Sec_InferenceRegression.html" data-scroll="Sec_InferenceRegression" class="internal">Inference and Linear Regression (R3)</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="Sec_ChiIndependence"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.4</span> <span class="title">Chi-Squared Test and Independence (C4)</span>
+</h2>
+<section class="introduction" id="introduction-138"><p id="p-1250">In this section, we compare samples from two different populations, to see if the populations may have the same distribution.  In other words, are the outcomes equally likely, no matter which population I draw from?</p>
+<article class="exploration project-like" id="exploration-predatory"><h3 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">5.4.1</span><span class="period">.</span><span class="space"> </span><span class="title">OER vs Predatory Publishers and Student Access.</span>
+</h3>
+<div class="introduction" id="introduction-139">
+<p id="p-1251">Students across different sections of the same course are assigned  different texts.  Some students are assigned free OER resources as their text, and others are assigned overpriced  texts from predatory publishers.  After 2 weeks the professors take a random anonymous poll of their classes to see how many students have managed to begun the assigned readings in their respective texts.  The results are as follows:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{array}{|c|c|c|}
+\hline
+\textbf{Sample Frequency} \amp \text{Has Done Reading} \amp \text{Has Not Yet Done Reading} \\
+\hline
+\text{OER} \amp 66 \amp 14 \\
+\hline
+\text{Predatory Publisher} \amp 112 \amp 58 \\
+\hline
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">One professor claims that this constitutes a clear difference between the type of resource assigned to students and whether or not they can complete their assigned tasks.  Their colleague dismisses it and says any difference is purely due to random chance, and the type of material has no impact on student accesibility, in other words these things are independent.</p>
+</div>
+<article class="task exercise-like" id="task-696"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-1252">How many students in all were surveyed?  This is the sample size <span class="process-math">\(n\text{.}\)</span></p></article><article class="task exercise-like" id="task-697"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-1253">Let <span class="process-math">\(R\)</span> denote the event “student has done the reading”.  What proportion of the sample has done the reading?  This is <span class="process-math">\(P(R)\text{.}\)</span></p></article><article class="task exercise-like" id="task-698"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-1254">Note the event <span class="process-math">\(R^c\)</span> would denote “student has not done the reading”.  Compute <span class="process-math">\(P(R^c)\text{.}\)</span></p></article><article class="task exercise-like" id="task-699"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-1255">Let <span class="process-math">\(O\)</span> denote the event “student was assigned an OER”.  What proportion of the sample were assigned OER's?  This is <span class="process-math">\(P(O)\text{.}\)</span>  (Note the event <span class="process-math">\(O^c\)</span> would denote “student was assigned a publisher text”.)</p></article><article class="task exercise-like" id="task-700"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<p id="p-1256">Note the event <span class="process-math">\(O^c\)</span> would denote “student was assigned a publisher text”.  Compute <span class="process-math">\(P(O^c)\text{.}\)</span></p></article><article class="task exercise-like" id="task-701"><h4 class="heading"><span class="codenumber">(f)</span></h4>
+<p id="p-1257">Suppose we took the colleague at their word and assumed these events were <em class="alert">independent</em>.</p>
+<p id="p-1258">Using <a href="" class="xref" data-knowl="./knowl/remark-proddefofind.html" title="Remark 2.2.6">Remark 2.2.6</a> compute <span class="process-math">\(P(R\text{ and }O), P(R\text{ and }O^c), P(R^c\text{ and }O)\)</span> and <span class="process-math">\(P(R^c\text{ and }O^c)\text{.}\)</span></p></article><article class="task exercise-like" id="task-702"><h4 class="heading"><span class="codenumber">(g)</span></h4>
+<p id="p-1259">Using the probabilities found in (f), fill out the following table with the <em class="emphasis">expected</em> frequencies if one took a sample of size <span class="process-math">\(n\)</span> and the probabilities were as in (f).</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{array}{|c|c|c|}
+\hline
+\textbf{Expected Frequency} \amp \text{Has Done Reading} \amp \text{Has Not Yet Done Reading} \\
+\hline
+\text{OER} \amp   \amp   \\
+\hline
+\text{Predatory Publisher} \amp \phantom{\text{Has Not Yet Done Reading}}  \amp   \\
+\hline
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">How different are these values from the sample?</p></article></article></section><section class="subsection" id="subsection-32"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.4.1</span> <span class="title">Testing for Independence</span>
+</h3>
+<article class="remark remark-like" id="remark-chiteststatind"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.4.1</span><span class="period">.</span><span class="space"> </span><span class="title">Test statistics for <span class="process-math">\(\chi^2\)</span> tests for independence.</span>
+</h4>
+<p id="p-1260">When we test to see if the distributions of a variable is independent of which population it comes from, we approach this very similarly to when we did so in <a href="" class="xref" data-knowl="./knowl/remark-chiteststat.html" title="Remark 5.3.1">Remark 5.3.1</a>.  In <a href="" class="xref" data-knowl="./knowl/remark-chiteststat.html" title="Remark 5.3.1">Remark 5.3.1</a>, we quantify the difference between the frequencies of the sample and the expected frequencies of the outcomes if we assumed they came from a certain distribution.  <em class="emphasis">Here</em>, we will quantify the difference between the frequencies of the sample and the expected frequencies of the outcomes if we assumed distributions and populations were different.</p>
+<p id="p-1261">Suppose we had <span class="process-math">\(\ell\)</span> populations <span class="process-math">\(P_1, \ldots, P_\ell\text{,}\)</span> from which each random variable has <span class="process-math">\(k\)</span> outcomes <span class="process-math">\(O_1,\ldots O_k\text{.}\)</span>  We also have a sample of size <span class="process-math">\(n\)</span> where the frequency of occurences from Population <span class="process-math">\(i\)</span> and Outcome <span class="process-math">\(j\)</span> is <span class="process-math">\(n_{i,j}\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{array}{|c|c|c|c|c|}
+\hline
+\textbf{Sample Frequency} \amp O_1 \amp O_2 \amp \cdots \amp O_k  \\
+\hline
+P_1 \amp n_{1,1} \amp n_{1,2} \amp \cdots \amp n_{1,k} \\
+\hline
+P_2 \amp n_{2,1} \amp n_{2,2} \amp \cdots \amp n_{2,k} \\
+\hline
+\vdots \amp \vdots \amp \vdots \amp \vdots \amp \vdots \\
+\hline
+P_\ell \amp n_{\ell,1} \amp n_{\ell,2} \amp \cdots \amp n_{\ell,k} \\
+\hline
+\end{array}
+\end{equation*}
+</div>
+<p id="p-1262">We first note that the probability that if we selected an arbitrary data point from this sample, the probability it has Population <span class="process-math">\(P_i\)</span>  is the sum of row <span class="process-math">\(i\)</span> divided by <span class="process-math">\(n\)</span> the size of the sample. Similarly, the probability it has Outcome <span class="process-math">\(O_j\)</span>  is the sum of column <span class="process-math">\(j\)</span> divided by <span class="process-math">\(n\)</span> the size of the sample.  From this, <em class="emphasis">IF</em> we were to assume events <span class="process-math">\(P_i, O_j\)</span> were independent, we would have <span class="process-math">\(P(P_i\cap O_j)=P(P_i)P(O_j)\)</span> and the expected number of occurences from a sample of size <span class="process-math">\(n\)</span> from Population <span class="process-math">\(P_i\)</span> with Outcome <span class="process-math">\(O_j\)</span> is:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+E_{i,j}=n\cdot P(P_i)P(O_j)=n\cdot \frac{\text{sum of row $i$}}{n}\frac{\text{sum of column $j$}}{n}=\frac{\text{sum of row $i$}\cdot \text{sum of column $j$}}{n}.
+\end{equation*}
+</div>
+<p class="continuation">From here we can compute a table of <em class="emphasis">expected frequencys</em>.</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{array}{|c|c|c|c|c|}
+\hline
+\textbf{Expected Frequency} \amp O_1 \amp O_2 \amp \cdots \amp O_k  \\
+\hline
+P_1 \amp E_{1,1} \amp E_{1,2} \amp \cdots \amp E_{1,k} \\
+\hline
+P_2 \amp E_{2,1} \amp E_{2,2} \amp \cdots \amp E_{2,k} \\
+\hline
+\vdots \amp \vdots \amp \vdots \amp \vdots \amp \vdots \\
+\hline
+P_\ell \amp E_{\ell,1} \amp E_{\ell,2} \amp \cdots \amp E_{\ell,k} \\
+\hline
+\end{array}
+\end{equation*}
+</div>
+<p id="p-1263">Then, much like <a href="" class="xref" data-knowl="./knowl/remark-chiteststat.html" title="Remark 5.3.1">Remark 5.3.1</a>, <span class="process-math">\(Z_{i,j}\)</span> computes the test statistic for <span class="process-math">\(P_i\cap O_j\)</span> and is computed in a similar way:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/remark-chiteststat.html">
+\begin{equation*}
+Z_{i,j}=\frac{n_{i,j}-E_{i,j}}{\sqrt{E_{i,j}}}.
+\end{equation*}
+</div>
+<p class="continuation">Then once again <span class="process-math">\(\chi^2\)</span> is the sum of the squares of the <span class="process-math">\(Z_{i,j}\text{:}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/remark-chiteststat.html">
+\begin{equation*}
+\chi^2=\sum Z_{i,j}^2.
+\end{equation*}
+</div></article><article class="activity project-like" id="activity-predatorytest"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.4.2</span><span class="period">.</span><span class="space"> </span><span class="title">OER vs Predatory Publishers and Student Access: test statistics.</span>
+</h4>
+<div class="introduction" id="introduction-140">
+<p id="p-1264">Recall from <a href="" class="xref" data-knowl="./knowl/exploration-predatory.html" title="Exploration 5.4.1: OER vs Predatory Publishers and Student Access">Exploration 5.4.1</a> the following table of sample frequencies:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/exploration-predatory.html ./knowl/exploration-predatory.html">
+\begin{equation*}
+\begin{array}{|c|c|c|}
+\hline
+\textbf{Sample Frequency} \amp \text{Has Done Reading} \amp \text{Has Not Yet Done Reading} \\
+\hline
+\text{OER} \amp 66 \amp 14 \\
+\hline
+\text{Predatory Publisher} \amp 112 \amp 58 \\
+\hline
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">As well as the table of computed expected frequencies computed in <a href="" class="xref" data-knowl="./knowl/exploration-predatory.html" title="Exploration 5.4.1: OER vs Predatory Publishers and Student Access">Exploration 5.4.1</a> (g).</p>
+</div>
+<article class="task exercise-like" id="task-703"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1265">Use these two tables and  <a href="" class="xref" data-knowl="./knowl/remark-chiteststatind.html" title="Remark 5.4.1: Test statistics for \chi^2 tests for independence">Remark 5.4.1</a> to compute <span class="process-math">\(Z_{1,1}\)</span> the test statistic for “OER and Has Done Reading”.</p></article><article class="task exercise-like" id="task-704"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-1266">Use these two tables and  <a href="" class="xref" data-knowl="./knowl/remark-chiteststatind.html" title="Remark 5.4.1: Test statistics for \chi^2 tests for independence">Remark 5.4.1</a> to compute <span class="process-math">\(Z_{1,2}\)</span> the test statistic for “OER and Has not Done Reading”.</p></article><article class="task exercise-like" id="task-705"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-1267">Use these two tables and  <a href="" class="xref" data-knowl="./knowl/remark-chiteststatind.html" title="Remark 5.4.1: Test statistics for \chi^2 tests for independence">Remark 5.4.1</a> to compute <span class="process-math">\(Z_{2,1}\)</span> the test statistic for “Predatory Publisher and Has Done Reading”.</p></article><article class="task exercise-like" id="task-706"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-1268">Use these two tables and  <a href="" class="xref" data-knowl="./knowl/remark-chiteststatind.html" title="Remark 5.4.1: Test statistics for \chi^2 tests for independence">Remark 5.4.1</a> to compute <span class="process-math">\(Z_{2,2}\)</span> the test statistic for “Predatory Publisher and Has not Done Reading”.</p></article><article class="task exercise-like" id="task-707"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-1269">Use  <a href="" class="xref" data-knowl="./knowl/remark-chiteststatind.html" title="Remark 5.4.1: Test statistics for \chi^2 tests for independence">Remark 5.4.1</a> to compute <span class="process-math">\(\chi^2\text{.}\)</span></p></article></article><article class="remark remark-like" id="remark-hypothesistestingchisquareind"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.4.2</span><span class="period">.</span><span class="space"> </span><span class="title">Steps to <span class="process-math">\(\chi^2\)</span> Hypothesis Testing: Independence.</span>
+</h4>
+<p id="p-1270">Given the set of hypothesis:</p>
+<ul class="disc">
+<li id="li-273"><p id="p-derived-li-273"><span class="process-math">\(H_0\text{:}\)</span>“The outcomes are independent of the populations.”</p></li>
+<li id="li-274"><p id="p-derived-li-274"><span class="process-math">\(H_A\text{:}\)</span>“The outcomes are <em class="emphasis">not</em> independent of the populations.”</p></li>
+</ul>
+<p class="continuation">We compute the <span class="process-math">\(p\)</span>-value to be the area of the tail on the <span class="process-math">\(\chi^2\)</span> distribution corresponding to the <span class="process-math">\(\chi^2\)</span> value computed via <a href="" class="xref" data-knowl="./knowl/remark-chiteststatind.html" title="Remark 5.4.1: Test statistics for \chi^2 tests for independence">Remark 5.4.1</a> and with <span class="process-math">\((k-1)(\ell-1)\)</span> degrees of freedom (recall that <span class="process-math">\(k\)</span> is the number of possible values of the categorical variable.)</p>
+<p id="p-1271">As in other hypothesis testing scenarios, the <span class="process-math">\(p\)</span>-value measures the probability that, if we assume the null hypothesis, that we see values as or more extreme than what was observed.</p>
+<p id="p-1272">We then reject or accept the null based on the level of significance <span class="process-math">\(\alpha\)</span> which is as before usually 0.05 or 5%.  If the <span class="process-math">\(p\)</span>-value is less than <span class="process-math">\(\alpha\text{,}\)</span> we reject the null hypothesis, otherwise we accept it.  In this context, accepting the null is to say the the populations and outcomes are independent.  If we reject that then we say it is implausible that they are.</p></article><article class="activity project-like" id="activity-predatorypvalue"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">OER vs Predatory Publishers and Student Access: test statistics.</span>
+</h4>
+<div class="introduction" id="introduction-141"><p id="p-1273">Recall from <a href="" class="xref" data-knowl="./knowl/activity-predatorytest.html" title="Activity 5.4.2: OER vs Predatory Publishers and Student Access: test statistics">Activity 5.4.2</a> the <span class="process-math">\(\chi^2\)</span> value you computed.</p></div>
+<article class="task exercise-like" id="task-708"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1274">What is <span class="process-math">\(k\)</span> in this problem, what is <span class="process-math">\(\ell\text{?}\)</span>  How many degrees of freedom do we have?</p></article><article class="task exercise-like" id="task-709"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-1275">Use any method to compute a <span class="process-math">\(p\)</span>-value.</p>
+<p id="p-1276"><pre class="ptx-sagecell sagecell-r" id="sage-211"><script type="text/x-sage">
+</script></pre> <a href="" data-knowl="" class="id-ref hint-knowl original has-interactive" data-refid="hk-hint-23" id="hint-23"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-23"><div class="hint solution-like"><p id="p-1277"><iframe src="https://www.desmos.com/calculator/gtwsvcggpo" id="interactive-69" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-710"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-1278">State the meaning of the <span class="process-math">\(p\)</span>-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-711"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-1279">If we had a level of significance <span class="process-math">\(\alpha=0.05\)</span> do we  reject the null hypothesis?</p></article><article class="task exercise-like" id="task-712"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-1280">Is it plausible for the type of assigned materials and whether or not students do the reading, to be independent?</p></article></article><article class="activity project-like" id="activity-chiindwithR"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.4.4</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(\chi^2\)</span> independence testing with R.</span>
+</h4>
+<div class="introduction" id="introduction-142"><p id="p-1281">We can use <code class="code-inline tex2jax_ignore">R</code> to enter the data and compute the <span class="process-math">\(\chi^2\)</span> statistic and <span class="process-math">\(p\)</span>-value.</p></div>
+<article class="task exercise-like" id="task-713"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1282">Run the following code to input the sample data from <a href="" class="xref" data-knowl="./knowl/exploration-predatory.html" title="Exploration 5.4.1: OER vs Predatory Publishers and Student Access">Exploration 5.4.1</a> as a matrix. <pre class="ptx-sagecell sagecell-r" id="sage-212"><script type="text/x-sage">                      Input =("
+MaterialType   DoneReading    NoReading
+OER             66              14
+Predatory       112             58
+")
+
+datamatrix = as.matrix(read.table(textConnection(Input),header=TRUE,row.names=1))
+</script></pre> If you use this method <em class="emphasis">be sure to not use spaces in your names</em>.</p></article><article class="task exercise-like" id="task-714"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-1283">Run the following code to compute a <span class="process-math">\(\chi^2\)</span> statistic, <span class="process-math">\(p\)</span>-value and degrees of freedom. <pre class="ptx-sagecell sagecell-r" id="sage-213"><script type="text/x-sage">chisq.test(datamatrix, correct=FALSE)
+</script></pre> How do these values compare to what you found in <a href="" class="xref" data-knowl="./knowl/activity-predatorypvalue.html" title="Activity 5.4.3: OER vs Predatory Publishers and Student Access: test statistics">Activity 5.4.3</a>?</p></article></article><article class="activity project-like" id="activity-GenderFood"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.4.5</span><span class="period">.</span><span class="space"> </span><span class="title">Gender and Protein Preferences.</span>
+</h4>
+<div class="introduction" id="introduction-143">
+<p id="p-1284">A restaurateur wonders if there's any difference in  the type of meat her customers order and their gender.  She surveys 500 customers, 218 men and 282 women.  The choices for meat are Beef, Chicken and Pork.  The results are as follows:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{array}{|c|c|c|c|}
+\hline
+\textbf{Sample Frequency} \amp \text{Beef} \amp \text{Chicken} \amp \text{Pork} \\
+\hline
+\text{Men} \amp 65 \amp 108 \amp 45 \\
+\hline
+\text{Women} \amp 84 \amp 136 \amp 62 \\
+\hline
+\end{array}
+\end{equation*}
+</div>
+</div>
+<article class="task exercise-like" id="task-715"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1285">State a null and alternative hypothesis for the <span class="process-math">\(\chi^2\)</span> independence test.</p></article><article class="task exercise-like" id="task-716"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-1286">Use any method to compute a <span class="process-math">\(\chi^2\)</span> statistic and a <span class="process-math">\(p\)</span>-value.</p>
+<p id="p-1287"><pre class="ptx-sagecell sagecell-r" id="sage-214"><script type="text/x-sage">
+</script></pre> <a href="" data-knowl="" class="id-ref hint-knowl original has-interactive" data-refid="hk-hint-24" id="hint-24"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-24"><div class="hint solution-like"><p id="p-1288"><iframe src="https://www.desmos.com/calculator/gtwsvcggpo" id="interactive-70" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-717"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-1289">State the meaning of the <span class="process-math">\(p\)</span>-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-718"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-1290">If we had a level of significance <span class="process-math">\(\alpha=0.05\)</span> do we  reject the null hypothesis?</p></article><article class="task exercise-like" id="task-719"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-1291">Is it plausible for the gender and meat choice to be independent?</p></article><article class="task exercise-like" id="task-720"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p id="p-1292">Fix and run the following code to input the sample data and perform a <span class="process-math">\(\chi^2\)</span> independence test. <pre class="ptx-sagecell sagecell-r" id="sage-215"><script type="text/x-sage">                      Input =("
+ProteinType   Beef    Chicken    Pork
+Men           FIXME   FIXME      FIXME
+Women         FIXME   FIXME      FIXME
+")
+
+datamatrix = as.matrix(read.table(textConnection(Input),header=TRUE,row.names=1))
+chisq.test(datamatrix, correct=FALSE)
+</script></pre> How does the <span class="process-math">\(\chi^2\)</span> value and the <span class="process-math">\(p\)</span>-value compare to what you found in (b)?</p></article></article><article class="activity project-like" id="activity-Energy"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.4.6</span><span class="period">.</span><span class="space"> </span><span class="title">Pew Survey on Energy Sources in 2018.</span>
+</h4>
+<div class="introduction" id="introduction-144">
+<p id="p-1293">We examine data from a US-based survey on support for expanding six different sources of energy, including solar, wind, offshore drilling, hydrolic fracturing ("fracking"), coal, and nuclear.</p>
+<p id="p-1294">Run the following code to download <code class="code-inline tex2jax_ignore">pew_energy_2018.csv</code> data set and to display it's variables.  To learn more about this data click here: <a class="external" href="https://www.openintro.org/data/index.php?data=pew_energy_2018" target="_blank"><code class="code-inline tex2jax_ignore">https://www.openintro.org/data/index.php?data=pew_energy_2018</code></a> <pre class="ptx-sagecell sagecell-r" id="sage-216"><script type="text/x-sage">energy = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/pew_energy_2018.csv")
+names(energy)
+</script></pre></p>
+</div>
+<article class="task exercise-like" id="task-721"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1295">A researcher is curious to see if a person's position on expanding solar energy is independent of their attitude torwards expanding coal mining.  State a null and alternative for the <span class="process-math">\(\chi^2\)</span> independence test.</p></article><article class="task exercise-like" id="task-722"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-1296">Run the following code to display a sample frequency table comparing support levels for expanding solar energy as rows and expanding coal mining as columns. <pre class="ptx-sagecell sagecell-r" id="sage-217"><script type="text/x-sage">table(energy$solar_panel_farms, energy$coal_mining)
+</script></pre></p></article><article class="task exercise-like" id="task-723"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-1297">Run the following code to show a mosaic plots comparing support of expansion for solar and coal energy.  What can you tell from this plot? <pre class="ptx-sagecell sagecell-r" id="sage-218"><script type="text/x-sage">counts=table(energy$solar_panel_farms, energy$coal_mining)
+mosaicplot(counts)
+</script></pre></p></article><article class="task exercise-like" id="task-724"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-1298">Run the following code to run the <span class="process-math">\(\chi^2\)</span> independence test on <code class="code-inline tex2jax_ignore">energy$solar_panel_farms</code> and <code class="code-inline tex2jax_ignore">energy$coal_mining</code>. <pre class="ptx-sagecell sagecell-r" id="sage-219"><script type="text/x-sage">chisq.test(energy$solar_panel_farms, energy$coal_mining, correct=FALSE)
+</script></pre></p></article><article class="task exercise-like" id="task-725"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-1299">State the meaning of the <span class="process-math">\(p\)</span>-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-726"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p id="p-1300">If we had a level of significance <span class="process-math">\(\alpha=0.05\)</span> do we  reject the null hypothesis?</p></article><article class="task exercise-like" id="task-727"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p id="p-1301">Is it plausible for support for solar and coal expansion to be independent?</p></article><article class="task exercise-like" id="task-728"><h5 class="heading"><span class="codenumber">(h)</span></h5>
+<p id="p-1302">Pick any two energy sources and repeat the steps above for those energy sources.</p></article></article><article class="activity project-like" id="activity-Movies"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.4.7</span><span class="period">.</span><span class="space"> </span><span class="title">Movie Data.</span>
+</h4>
+<div class="introduction" id="introduction-145">
+<p id="p-1303">We examine data  obtained from IMDB and Rotten Tomatoes. The data represent 456 randomly sampled movies released between 1972 to 2014 in the Unites States.</p>
+<p id="p-1304">Run the following code to download <code class="code-inline tex2jax_ignore">movies.Rdata</code> data set and to display it's variables. <pre class="ptx-sagecell sagecell-r" id="sage-220"><script type="text/x-sage">load(url("https://github.com/TienChih/tbil-stats/raw/main/data/movies.Rdata"))
+names(movies)
+</script></pre></p>
+</div>
+<article class="task exercise-like" id="task-729"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1305">We're curious to see if genre of a movie, and how Rotten Tomatoes rates it, are independent.  State a null and alternative for the <span class="process-math">\(\chi^2\)</span> independence test.</p></article><article class="task exercise-like" id="task-730"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-1306">Run the following code to display a sample frequency table comparing the genre of a movie and their Rotten Tomatoes score. <pre class="ptx-sagecell sagecell-r" id="sage-221"><script type="text/x-sage">table(movies$genre, movies$critics_rating)
+</script></pre></p></article><article class="task exercise-like" id="task-731"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-1307">Run the following code to show a mosaic plots comparing the genre of a movie and their Rotten Tomatoes score.  What can you tell from this plot? <pre class="ptx-sagecell sagecell-r" id="sage-222"><script type="text/x-sage">counts=table(movies$genre, movies$critics_rating)
+mosaicplot(counts)
+</script></pre></p></article><article class="task exercise-like" id="task-732"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-1308">Run the following code to run the <span class="process-math">\(\chi^2\)</span> independence test on <code class="code-inline tex2jax_ignore">movies$genre</code> and <code class="code-inline tex2jax_ignore">movies$critics_rating</code>. <pre class="ptx-sagecell sagecell-r" id="sage-223"><script type="text/x-sage">chisq.test(movies$genre, movies$critics_rating, correct=FALSE)
+</script></pre></p></article><article class="task exercise-like" id="task-733"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-1309">State the meaning of the <span class="process-math">\(p\)</span>-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like" id="task-734"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p id="p-1310">If we had a level of significance <span class="process-math">\(\alpha=0.05\)</span> do we  reject the null hypothesis?</p></article><article class="task exercise-like" id="task-735"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p id="p-1311">Is it plausible for support for the genre of a movie and the Rotten Tomatoes rating to be independent?</p></article><article class="task exercise-like" id="task-736"><h5 class="heading"><span class="codenumber">(h)</span></h5>
+<p id="p-1312">Run the following code to obtain summaries of the variables.  Which are categorical? <pre class="ptx-sagecell sagecell-r" id="sage-224"><script type="text/x-sage">summary(movies)
+</script></pre></p></article><article class="task exercise-like" id="task-737"><h5 class="heading"><span class="codenumber">(i)</span></h5>
+<p id="p-1313">Repeat the above steps comparing any two categorical variables of your choice.</p></article></article></section></section></div></main>
+</div>
+</body>
+</html>

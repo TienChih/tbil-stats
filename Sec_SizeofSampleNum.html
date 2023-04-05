@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Size of Samples of Numerical Variables (N5)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Team Based Statistics">
+<meta property="book:author" content="Tien Chih">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Q}{\terminology{Question:\ }}
+\newcommand{\Sol}{\terminology{Solution:\ }}
+\newcommand{\Fisg}{\emph{Fisg}}
+\newcommand{\Iisg}{\emph{Iisg}}
+\newcommand{\Pisg}{\emph{Pisg}}
+\newcommand{\Tisg}{\emph{Tisg}}
+\newcommand{\Dom}{\emph{Dom}}
+\newcommand{\Img}{\emph{Im}}
+\DeclareMathOperator{\id}{id}
+\newcommand{\bcup}{\displaystyle\bigcup}
+\newcommand{\bcap}{\displaystyle\bigcap}
+\newcommand{\dsum}{\displaystyle\sum}
+\newcommand{\dint}{\displaystyle\int}
+\newcommand{\R}[1]{\mathbb{R}^{#1}}
+\newcommand{\C}[1]{\mathbb{C}^{#1}}
+\newcommand{\Z}[1]{\mathbb{Z}^{#1}}
+\newcommand{\K}[1]{\mathbb{K}^{#1}}
+\newcommand{\limit}[2]{\displaystyle{ \lim_{#1 \to #2}}}
+\newcommand{\TCB}[1]{\textcolor{blue}{#1}}
+\newcommand{\TCR}[1]{\textcolor{red}{#1}}
+\newcommand{\TCO}[1]{\textcolor{orange}{#1}}
+\newcommand{\TCG}[1]{\textcolor{ForestGreen}{#1}}
+\DeclareMathOperator{\Endo}{Endo}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Obj}{Obj}
+\DeclareMathOperator{\pleat}{\mathcal{P}\ell}
+\def\PX{\mathfrak{W}G}
+\def\Gph{\mathsf{Gph}}
+\def\HoGph{\mathsf{HoGph}}
+\def\into{\hookrightarrow}
+\def\con{\underline{}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Team Based Statistics</span></a></h1>
+<p class="byline">Tien Chih</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="Sec_TwoVarNum.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="Chap_Numerical.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="Sec_ANOVA.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="Sec_TwoVarNum.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="Chap_Numerical.html" title="Up">Up</a><a class="next-button button toolbar-item" href="Sec_ANOVA.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter-1.html" data-scroll="frontmatter-1" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="learning-outcomes.html" data-scroll="learning-outcomes" class="internal">Learning Outcomes and Usage</a></li>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="author-bio-TC.html" data-scroll="author-bio-TC" class="internal">Author Biography</a></li>
+<li><a href="dedication-1.html" data-scroll="dedication-1" class="internal">Dedication</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_DataBasics.html" data-scroll="Chap_DataBasics" class="internal"><span class="codenumber">1</span> <span class="title">Data Basics (B)</span></a><ul>
+<li><a href="Sec_Variables.html" data-scroll="Sec_Variables" class="internal">Types of Variables and their Relationships (B1)</a></li>
+<li><a href="Sec_Sampling.html" data-scroll="Sec_Sampling" class="internal">Sampling Techniques (B2)</a></li>
+<li><a href="Sec_Visualization.html" data-scroll="Sec_Visualization" class="internal">Visualizing Data (B3)</a></li>
+<li><a href="Sec_Center.html" data-scroll="Sec_Center" class="internal">Centers of Data (B4)</a></li>
+<li><a href="Sec_Variation.html" data-scroll="Sec_Variation" class="internal">Variation of Data (B5)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Probability.html" data-scroll="Chap_Probability" class="internal"><span class="codenumber">2</span> <span class="title">Probability (P)</span></a><ul>
+<li><a href="Sec_Introprob.html" data-scroll="Sec_Introprob" class="internal">Introduction to Probability (P1)</a></li>
+<li><a href="Sec_Conditionalprob.html" data-scroll="Sec_Conditionalprob" class="internal">Conditional Probability (P2)</a></li>
+<li><a href="Sec_Bayes.html" data-scroll="Sec_Bayes" class="internal">Bayes Theorem (P3)</a></li>
+<li><a href="Sec_RandomVariables.html" data-scroll="Sec_RandomVariables" class="internal">Random Variables (P4)</a></li>
+<li><a href="Sec_LinearCombofVariables.html" data-scroll="Sec_LinearCombofVariables" class="internal">Linear Combinations of Random Variables (P5)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Distributions.html" data-scroll="Chap_Distributions" class="internal"><span class="codenumber">3</span> <span class="title">Distributions (D)</span></a><ul>
+<li><a href="Sec_StandardNormal.html" data-scroll="Sec_StandardNormal" class="internal">Standard Normal Distribution (D1)</a></li>
+<li><a href="Sec_GeneralNormal.html" data-scroll="Sec_GeneralNormal" class="internal">General Normal Distribution (D2)</a></li>
+<li><a href="Sec_Counting.html" data-scroll="Sec_Counting" class="internal">Counting Principles (D3)</a></li>
+<li><a href="Sec_Binomial.html" data-scroll="Sec_Binomial" class="internal">Binomial Distribution (D4)</a></li>
+<li><a href="Sec_NormalApprox.html" data-scroll="Sec_NormalApprox" class="internal">Normal Approximation (D5)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Foundations.html" data-scroll="Chap_Foundations" class="internal"><span class="codenumber">4</span> <span class="title">Foundations for Inference (F)</span></a><ul>
+<li><a href="Sec_PointEstimates.html" data-scroll="Sec_PointEstimates" class="internal">Point Estimates (F1)</a></li>
+<li><a href="Sec_ConfidenceInterval.html" data-scroll="Sec_ConfidenceInterval" class="internal">Introduction to Confidence Intervals (F2)</a></li>
+<li><a href="Sec_HypothesisTesing.html" data-scroll="Sec_HypothesisTesing" class="internal">Introduction to Hypothesis Testing (F3)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Categorical.html" data-scroll="Chap_Categorical" class="internal"><span class="codenumber">5</span> <span class="title">Inference for Categorical Variables (C)</span></a><ul>
+<li><a href="Sec_SizeofSampleCat.html" data-scroll="Sec_SizeofSampleCat" class="internal">Size of Samples (Categorical)</a></li>
+<li><a href="Sec_TwoVarCat.html" data-scroll="Sec_TwoVarCat" class="internal">Comparing Two Categorical Variables (C2)</a></li>
+<li><a href="Sec_ChiSquare.html" data-scroll="Sec_ChiSquare" class="internal">Chi-Squared Test and Goodness of Fit (C3)</a></li>
+<li><a href="Sec_ChiIndependence.html" data-scroll="Sec_ChiIndependence" class="internal">Chi-Squared Test and Independence (C4)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_Numerical.html" data-scroll="Chap_Numerical" class="internal"><span class="codenumber">6</span> <span class="title">Inference for Numerical Variables (N)</span></a><ul>
+<li><a href="Sec_tVariable.html" data-scroll="Sec_tVariable" class="internal">The <span class="process-math">\(t\)</span>-Variable and Sampling Distribution of Numerical Variables (N1)</a></li>
+<li><a href="Sec_OneVarNum.html" data-scroll="Sec_OneVarNum" class="internal">Confidence Intervals and Hypothesis Testing for a single Numerical Variable (N2)</a></li>
+<li><a href="Sec_PairedData.html" data-scroll="Sec_PairedData" class="internal">Paired Numerical Data (N3)</a></li>
+<li><a href="Sec_TwoVarNum.html" data-scroll="Sec_TwoVarNum" class="internal">Comparing Two Numerical Variables (N4)</a></li>
+<li><a href="Sec_SizeofSampleNum.html" data-scroll="Sec_SizeofSampleNum" class="active">Size of Samples of Numerical Variables (N5)</a></li>
+<li><a href="Sec_ANOVA.html" data-scroll="Sec_ANOVA" class="internal">ANOVA: Analysis of Variation (N6)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="Chap_LinearRegression.html" data-scroll="Chap_LinearRegression" class="internal"><span class="codenumber">7</span> <span class="title">Linear Regression (R)</span></a><ul>
+<li><a href="Sec_Correlation.html" data-scroll="Sec_Correlation" class="internal">Linear Correlation of Variables (R1)</a></li>
+<li><a href="Sec_InterpretingRegression.html" data-scroll="Sec_InterpretingRegression" class="internal">Interpreting Linear Regression (R2)</a></li>
+<li><a href="Sec_InferenceRegression.html" data-scroll="Sec_InferenceRegression" class="internal">Inference and Linear Regression (R3)</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="Sec_SizeofSampleNum"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">6.5</span> <span class="title">Size of Samples of Numerical Variables (N5)</span>
+</h2>
+<section class="introduction" id="introduction-175"><p id="p-1592">In often, gathering data, conducting experiments or studies, and performing statistical analysis can be time consuming, arduous or expensive.  If we wish to achieve a certain level of precision in our results, we need samples of sufficient size.  We've done this for categorical variables in <a href="Sec_SizeofSampleCat.html" class="internal" title="Section 5.1: Size of Samples (Categorical)">Section 5.1</a>  In this section, we estimate the minimum size of a sample which will provide the precision of our choice for <em class="emphasis">numerical</em> variables.</p></section><section class="subsection" id="subsection-41"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.5.1</span> <span class="title">Sample Size and Margins of Error</span>
+</h3>
+<article class="remark remark-like" id="remark-sizeofsampnumCI"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">6.5.1</span><span class="period">.</span>
+</h4>
+<p id="p-1593">In <a href="" class="xref" data-knowl="./knowl/remark-numCI.html" title="Remark 6.2.1">Remark 6.2.1</a> we spoke about computing confidence intervals for the means of numerical variables.  Recall from <a href="" class="xref" data-knowl="./knowl/definition-MoEprop.html" title="Definition 5.1.2">Definition 5.1.2</a> that the margin of error for a confidence interval is the distance from the endpoints of the interval to it's center, or <span class="process-math">\(\frac{UB-LB}{2}\text{.}\)</span>  Since a numerical confidence interval is computed as:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/remark-numCI.html ./knowl/definition-MoEprop.html ./knowl/remark-numCI.html">
+\begin{equation*}
+\left[\bar{x}-t^*\frac{s}{\sqrt{n}}, \bar{x}+t^*\frac{s}{\sqrt{n}}\right]
+\end{equation*}
+</div>
+<p class="continuation">from <a href="" class="xref" data-knowl="./knowl/remark-numCI.html" title="Remark 6.2.1">Remark 6.2.1</a>, the margin of error of a numerical confidence interval is</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/remark-numCI.html ./knowl/definition-MoEprop.html ./knowl/remark-numCI.html">
+\begin{equation*}
+ME=t^*\frac{s}{\sqrt{n}}.
+\end{equation*}
+</div>
+<p class="continuation"><figure class="figure figure-like" id="figure-40"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/image-40.svg" role="img" class="contained" alt="Margin of Error."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.5.2<span class="period">.</span></span><span class="space"> </span>Margin of Error.</figcaption></figure></p>
+<p id="p-1594">But note from <a href="" class="xref" data-knowl="./knowl/definition-tcurve.html" title="Definition 6.1.4: t-Random Variable">Definition 6.1.4</a> that as <span class="process-math">\(n\)</span> increases, the <span class="process-math">\(t\)</span>-distribution greatly resembles the normal distribution.  In other words <span class="process-math">\(t^*\approx z^*\text{.}\)</span></p></article><article class="activity project-like" id="activity-findingsampsizeforME"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.5.1</span><span class="period">.</span>
+</h4>
+<div class="introduction" id="introduction-176">
+<p id="p-1595">Here, we walk through the steps of finding the sample size to estimate a confidence interval within a given margin of error.</p>
+<p id="p-1596">Suppose you sample a numerical variable and found a sample standard deviation <span class="process-math">\(s=25\text{.}\)</span>  We want to find a sample size <span class="process-math">\(n\)</span> so that we can take a sample of size <span class="process-math">\(n\)</span> and get a 95% confidence interval with margin of error <span class="process-math">\(ME=3\text{.}\)</span></p>
+</div>
+<article class="task exercise-like" id="task-917"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1597">Find <span class="process-math">\(z^*\)</span> such that <span class="process-math">\(P(-z^*\lt Z\lt z^*)=0.95\)</span> where <span class="process-math">\(Z\)</span> is the standard normal variable. <pre class="ptx-sagecell sagecell-r" id="sage-302"><script type="text/x-sage">
+</script></pre> <a href="" data-knowl="" class="id-ref hint-knowl original has-interactive" data-refid="hk-hint-39" id="hint-39"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-39"><div class="hint solution-like"><p id="p-1598"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-102" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-103" width="600" height="600"></iframe></p></div></div></p>
+<p id="p-1599">Also see <a href="" class="xref" data-knowl="./knowl/remark-otherCI.html" title="Remark 4.2.5">Remark 4.2.5</a>.</p></article><article class="task exercise-like" id="task-918"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-1600">Recall from <a href="" class="xref" data-knowl="./knowl/activity-findingsampsizeforME.html" title="Activity 6.5.1">Activity 6.5.1</a> that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/activity-findingsampsizeforME.html">
+\begin{equation*}
+ME=t^*\frac{s}{\sqrt{n}}.
+\end{equation*}
+</div>
+<p class="continuation">Using <span class="process-math">\(t^*=z^*, s=25\)</span> and <span class="process-math">\(ME=3\text{,}\)</span> solve for <span class="process-math">\(n\text{.}\)</span></p></article><article class="task exercise-like" id="task-919"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-1601">How large should your sample size be to get a 95% confidence interval with margin of error at least <span class="process-math">\(3\text{?}\)</span>  (It should be a whole number).</p></article><article class="task exercise-like" id="task-920"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-1602">Repeat the above tasks for a 99% confidence interval.</p></article></article><article class="remark remark-like" id="remark-57"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">6.5.3</span><span class="period">.</span>
+</h4>
+<p id="p-1603">Note that if we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+ME=z^*\frac{s}{\sqrt{n}}
+\end{equation*}
+</div>
+<p class="continuation">it follows algebraiacally:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+n=\frac{(z^*s)^2}{ME^2}.
+\end{equation*}
+</div></article><article class="activity project-like" id="activity-averageheight"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">Confidence Intervals for Average Test Scores.</span>
+</h4>
+<div class="introduction" id="introduction-177">
+<p id="p-1604">Let's put this in practice.  Recall that for <span class="process-math">\(s\)</span> to be good estimate for <span class="process-math">\(\sigma\)</span> and <span class="process-math">\(z^*\)</span> to be a good estimate for <span class="process-math">\(t^*\text{,}\)</span> the sample size should be at least 30.</p>
+<p id="p-1605">The <code class="code-inline tex2jax_ignore">studentscleaned.csv</code> data set consists of a sample of 4892 students who have taken a statistics course.  It records information such as their gender, major, whether or not they've participated in online statistics tutoring and their scores on the two exams in the course.</p>
+<p id="p-1606">Run the following code to download <code class="code-inline tex2jax_ignore">studentscleaned.csv</code> and display it's variables. <pre class="ptx-sagecell sagecell-r" id="sage-303"><script type="text/x-sage">students = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/studentscleaned.csv")
+names(students)
+</script></pre></p>
+<p id="p-1607">Our goal will be to find a confidence interval for the average score of Exam 1 with margin of error 2 points.</p>
+</div>
+<article class="task exercise-like" id="task-921"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1608">Run the following code to sample 30 scores from Exam 1: <pre class="ptx-sagecell sagecell-r" id="sage-304"><script type="text/x-sage">samp1=sample(students$score1, 30)
+</script></pre></p></article><article class="task exercise-like" id="task-922"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-1609">Run the following code to find a sample standard deviation: <pre class="ptx-sagecell sagecell-r" id="sage-305"><script type="text/x-sage">sd(samp1)
+</script></pre></p></article><article class="task exercise-like" id="task-923"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-1610">Find <span class="process-math">\(z^*\)</span> such that <span class="process-math">\(P(-z^*\lt Z\lt z^*)=0.95\)</span> where <span class="process-math">\(Z\)</span> is the standard normal variable. <pre class="ptx-sagecell sagecell-r" id="sage-306"><script type="text/x-sage">
+</script></pre> <a href="" data-knowl="" class="id-ref hint-knowl original has-interactive" data-refid="hk-hint-40" id="hint-40"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-40"><div class="hint solution-like"><p id="p-1611"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-104" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-105" width="600" height="600"></iframe></p></div></div></p>
+<p id="p-1612">Also see <a href="" class="xref" data-knowl="./knowl/remark-otherCI.html" title="Remark 4.2.5">Remark 4.2.5</a>.</p></article><article class="task exercise-like" id="task-924"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-1613">Recall from <a href="" class="xref" data-knowl="./knowl/activity-findingsampsizeforME.html" title="Activity 6.5.1">Activity 6.5.1</a> that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/activity-findingsampsizeforME.html">
+\begin{equation*}
+ME=t^*\frac{s}{\sqrt{n}}.
+\end{equation*}
+</div>
+<p class="continuation">Using <span class="process-math">\(t^*=z^*, s\)</span> and <span class="process-math">\(ME=2\text{,}\)</span> solve for <span class="process-math">\(n\text{.}\)</span></p></article><article class="task exercise-like" id="task-925"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-1614">How large should your sample size be to get a 95% confidence interval with margin of error at least <span class="process-math">\(2\text{?}\)</span>  (It should be a whole number).</p></article><article class="task exercise-like" id="task-926"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p id="p-1615">Fix and run the following code to sample <code class="code-inline tex2jax_ignore">n</code> scores from Exam 1, and compute a 95% confidence interval: <pre class="ptx-sagecell sagecell-r" id="sage-307"><script type="text/x-sage">n=FIXME
+
+samp2=sample(students$score1, n)
+t.test(samp2, conf.level=0.95)$conf.int
+</script></pre> What is the margin of error?  (Recall that <span class="process-math">\(s\)</span> was just an estimator for <span class="process-math">\(\sigma\text{.}\)</span>)</p></article><article class="task exercise-like" id="task-927"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p id="p-1616">Repeat the above for Exam 2.</p></article></article></section><section class="subsection" id="subsection-42"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.5.2</span> <span class="title">Power Calculations for difference of Means</span>
+</h3>
+<section class="introduction" id="introduction-178"><p id="p-1617">We know from the computation of the standard error that the larger the sample size, the smaller the standard error.  A moderate sample may be able to detect moderate differences in means, but be unable to detect smaller differences.  For that, we would need to find a bigger sample.</p></section><article class="activity project-like" id="activity-bloodpressure"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.5.3</span><span class="period">.</span><span class="space"> </span><span class="title">Blood Pressure and Medication.</span>
+</h4>
+<div class="introduction" id="introduction-179"><p id="p-1618">A team of medical researchers want to study the effects of two different medications on blood pressure, A and B.  They're interested to see if there is any difference in average blood pressure of patients who take either medication.  Prior research suggests that the standard deviation of blood pressure for patients who take either medication will be 12mmHG.  They test the drug on patients with two groups of 100 each. <em class="alert">Unbeknowst to the researchers, medication B lowers blood pressure by 3 mmHG on average.</em></p></div>
+<article class="task exercise-like" id="task-928"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1619">Which of the following best describes the null hypothesis <span class="process-math">\(H_0\text{?}\)</span></p>
+<ul class="disc">
+<li id="li-390"><p id="p-derived-li-390"><span class="process-math">\(\mu_1-\mu_2\lt 0\)</span> mmGH.</p></li>
+<li id="li-391"><p id="p-derived-li-391"><span class="process-math">\(\mu_1-\mu_2&gt; 0\)</span> mmGH.</p></li>
+<li id="li-392"><p id="p-derived-li-392"><span class="process-math">\(\mu_1-\mu_2\neq 0\)</span> mmGH.</p></li>
+<li id="li-393"><p id="p-derived-li-393"><span class="process-math">\(\mu_1-\mu_2= 0\)</span> mmGH.</p></li>
+</ul></article><article class="task exercise-like" id="task-929"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-1620">Which of the following best describes the alternative hypothesis <span class="process-math">\(H_A\text{?}\)</span></p>
+<ul class="disc">
+<li id="li-394"><p id="p-derived-li-394"><span class="process-math">\(\mu_1-\mu_2\lt 0\)</span> mmGH.</p></li>
+<li id="li-395"><p id="p-derived-li-395"><span class="process-math">\(\mu_1-\mu_2&gt; 0\)</span> mmGH.</p></li>
+<li id="li-396"><p id="p-derived-li-396"><span class="process-math">\(\mu_1-\mu_2\neq 0\)</span> mmGH.</p></li>
+<li id="li-397"><p id="p-derived-li-397"><span class="process-math">\(\mu_1-\mu_2= 0\)</span> mmGH.</p></li>
+</ul></article><article class="task exercise-like" id="task-930"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-1621">Assume that <span class="process-math">\(s_1=12=s_2\text{.}\)</span>  Find the standard error <span class="process-math">\(SE\text{.}\)</span></p></article><article class="task exercise-like" id="task-931"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-1622">Suppose that, suprise suprise! The results are back and <span class="process-math">\(\bar{x}_1-\bar{x}_2=3\text{.}\)</span> Find <span class="process-math">\(t\)</span>-score for <span class="process-math">\(\bar{x}_1-\bar{x}_2\text{.}\)</span></p></article><article class="task exercise-like" id="task-932"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-1623">Compute a <span class="process-math">\(p\)</span>-value (be sure to use the appropriate level of significance). <pre class="ptx-sagecell sagecell-r" id="sage-308"><script type="text/x-sage">
+</script></pre> <a href="" data-knowl="" class="id-ref hint-knowl original has-interactive" data-refid="hk-hint-41" id="hint-41"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-41"><div class="hint solution-like"><p id="p-1624"><iframe src="https://www.desmos.com/calculator/cim5hkaws3" id="interactive-106" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/yitcqiz5kx" id="interactive-107" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-933"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p id="p-1625">Do we  reject the null hypothesis?</p></article><article class="task exercise-like" id="task-934"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p id="p-1626">What sort of error <em class="alert">did we</em> make? (Type 1 or Type 2)</p></article></article><p id="p-1627">The issue of course is that this difference between medications A and B is potentially important and we would like to know it!</p>
+<article class="activity project-like" id="activity-bloodpressure2"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.5.4</span><span class="period">.</span><span class="space"> </span><span class="title">Blood Pressure and Medication: Power Computation.</span>
+</h4>
+<div class="introduction" id="introduction-180">
+<p id="p-1628">There is of course some chance that with 100 people in each group, that just by sheer chance the blood pressures are such that the null hypothesis can be rejected.  What are the chances of this?</p>
+<p id="p-1629">For simplicities sake, we will assume that this sample size allows a normal distribution to be utilized in place of a <span class="process-math">\(t\)</span>-distribution.</p>
+</div>
+<article class="task exercise-like" id="task-935"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1630">Recall that for a normal distribution with mean <span class="process-math">\(\mu=0\)</span> and standard deviation <span class="process-math">\(SE\)</span> that 95% of the distribution falls between <span class="process-math">\(-1.96SE, 1.96SE\text{.}\)</span>  Compute these values with the <span class="process-math">\(SE\)</span> we found in <a href="" class="xref" data-knowl="./knowl/activity-bloodpressure.html" title="Activity 6.5.3: Blood Pressure and Medication">Activity 6.5.3</a>.</p></article><article class="task exercise-like" id="task-936"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-1631">Recall that we reject the null hypothesis if <span class="process-math">\(\bar{x}_1-\bar{x}_2\)</span> falls into the 2.5% tail regions: <figure class="figure figure-like" id="figure-41"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/image-41.svg" role="img" class="contained" alt="2.5%tails."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.5.4<span class="period">.</span></span><span class="space"> </span>2.5% Tails.</figcaption></figure></p>
+<p id="p-1632">For what values of <span class="process-math">\(\bar{x}_1-\bar{x}_2\)</span> would we actually reject the null?</p></article><article class="task exercise-like" id="task-937"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-1633">But note that the <em class="emphasis">actual</em> sampling distribution would be centered at <span class="process-math">\(\mu_1-\mu_2=-3\text{:}\)</span> <figure class="figure figure-like" id="figure-42"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/image-42.svg" role="img" class="contained" alt="The real sampling distribution and the assumed null distribution."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.5.5<span class="period">.</span></span><span class="space"> </span>The real sampling distribution and the assumed null distribution.</figcaption></figure></p>
+<p id="p-1634">So what's the probability that this study would actually have statistically significant results?  Compute <span class="process-math">\(P(Y\lt -1.96SE)\)</span> where <span class="process-math">\(-1.96SE\)</span> as we've already computed, and <span class="process-math">\(Y\)</span> is the sampling distribution, a normal variable with mean <span class="process-math">\(-3\)</span> and standard deviation <span class="process-math">\(SE\text{.}\)</span> <pre class="ptx-sagecell sagecell-r" id="sage-309"><script type="text/x-sage">
+</script></pre> <a href="" data-knowl="" class="id-ref hint-knowl original has-interactive" data-refid="hk-hint-42" id="hint-42"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-42"><div class="hint solution-like"><p id="p-1635"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-108" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-109" width="600" height="600"></iframe></p></div></div></p>
+<p id="p-1636">This probability is called the <em class="emphasis">power</em> of the test for a difference of <span class="process-math">\(-3\text{.}\)</span></p></article><article class="task exercise-like" id="task-938"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-1637">To see what an actual study would look like, run the following code to sample <code class="code-inline tex2jax_ignore">n1=100</code>, <code class="code-inline tex2jax_ignore">n2=100</code> people from two distributions where the mean is different by 3, and see if we can reject the null hypothesis. <pre class="ptx-sagecell sagecell-r" id="sage-310"><script type="text/x-sage">n1=100
+n2=100
+
+sampA=rnorm(n1, 135, 12)
+sampB=rnorm(n2, 132, 12)
+boxplot(sampA, sampB)
+t.test(sampA, sampB, alternative="two.sided")
+</script></pre></p></article><article class="task exercise-like" id="task-939"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-1638">Run the following code to simiulate 1000 trials of this medication with 100 subjects in each group, and record the <code class="code-inline tex2jax_ignore">p.value</code> from each trial, and display a histogram of the results. <pre class="ptx-sagecell sagecell-r" id="sage-311"><script type="text/x-sage">n1=100
+n2=100
+trials=1000
+
+pvec=rep(NA, trials)
+
+for(i in 1:trials){
+  sampA=rnorm(n1, 135,12)
+  sampB=rnorm(n2, 132, 12)
+  pvec[i]=t.test(sampA, sampB, alternative="two.sided")$p.value
+}
+
+hist(pvec, breaks=25)
+abline(v = 0.05, col="red", lwd=3, lty=2)
+</script></pre> Then run the following to see what proportion of the time we reject the null: <pre class="ptx-sagecell sagecell-r" id="sage-312"><script type="text/x-sage">length(which(pvec < 0.05))/trials
+</script></pre> How does this value compare to the power of the test which you computed in (c)?</p></article></article><article class="remark remark-like" id="remark-58"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">6.5.6</span><span class="period">.</span>
+</h4>
+<p id="p-1639">So, this isn't fantastic.  Turns out there is a real difference in the efficacy of these two medications, but it's simply to small for our study to reliably detect.  The researchers may not know that this difference in the medication exists, but they're certainly aware that something like this could be an issue.</p>
+<p id="p-1640">The problem fundamentally is that the standard error <span class="process-math">\(SE\)</span> is simply to large, and the test is thus insensitive to this difference.  Since</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+SE=\sqrt{\frac{s_1^2}{n}+\frac{s_2^2}{n}}
+\end{equation*}
+</div>
+<p class="continuation">we could shrink the standard error by increasing <span class="process-math">\(n\)</span> and taking a larger sample.  But we can't just keep testing bigger and bigger groups, there are time and financial limitations.  Also the researchers don't know there is a difference to be found, and don't want their time looking for a difference that doesn't exist.</p></article><article class="activity project-like" id="activity-bloodpressure3"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.5.5</span><span class="period">.</span><span class="space"> </span><span class="title">Medication and Blood Pressure: Sample Size.</span>
+</h4>
+<div class="introduction" id="introduction-181"><p id="p-1641">The researchers decide to give the experiment one more chance, and they want to recruit enough subjects to that <em class="emphasis">if</em> there is a difference of 3 mmGH, there is an 80% chance that they detect it.  In other words, they want to solve for <span class="process-math">\(n\)</span> for a power of 80%.</p></div>
+<article class="task exercise-like" id="task-940"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1642">So if there was a difference of 3 mmGH, the sampling distribution would have mean <span class="process-math">\(\mu_1-\mu_2=-3\)</span> as in <a href="" class="xref" data-knowl="./knowl/activity-bloodpressure2.html" title="Activity 6.5.4: Blood Pressure and Medication: Power Computation">Activity 6.5.4</a>. <figure class="figure figure-like" id="figure-43"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/image-43.svg" role="img" class="contained" alt="80% tail of the real sampling distribution."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.5.7<span class="period">.</span></span><span class="space"> </span>80% tail of the real sampling distribution.</figcaption></figure></p>
+<p id="p-1643">Find a <span class="process-math">\(z^*\)</span> so that <span class="process-math">\(P(Z\lt z^*)=0.8\text{,}\)</span> where <span class="process-math">\(Z\)</span> is the standard normal variable.</p></article><article class="task exercise-like" id="task-941"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-1644">For these values to be statistically significant, they have to be less than <span class="process-math">\(-1.96SE\text{:}\)</span> <figure class="figure figure-like" id="figure-44"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/image-44.svg" role="img" class="contained" alt="80% tail is statistically significant."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.5.8<span class="period">.</span></span><span class="space"> </span>80% tail is statistically significant.</figcaption></figure></p>
+<p id="p-1645">Find <span class="process-math">\(SE\)</span> so that <span class="process-math">\(-3+z^*SE=-1.96SE.\)</span></p></article><article class="task exercise-like" id="task-942"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-1646">Using the fact that <span class="process-math">\(SE=\sqrt{\frac{s_1^2}{n}+\frac{s_2^2}{n}}\)</span> and <span class="process-math">\(s_1=12=s_2\text{,}\)</span> solve for <span class="process-math">\(n\text{.}\)</span></p></article><article class="task exercise-like" id="task-943"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-1647">How many people should be recruited to test each medication?  Recall this must be a whole number.</p></article><article class="task exercise-like" id="task-944"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p id="p-1648">Fix and run the following code to simiulate 1000 trials of this medication with <code class="code-inline tex2jax_ignore">n</code> subjects in each group, and record the <code class="code-inline tex2jax_ignore">p.value</code> from each trial, and display a histogram of the results. <pre class="ptx-sagecell sagecell-r" id="sage-313"><script type="text/x-sage">n=FIXME
+trials=1000
+
+pvec=rep(NA, trials)
+
+for(i in 1:trials){
+  sampA=rnorm(n, 135,12)
+  sampB=rnorm(n, 132, 12)
+  pvec[i]=t.test(sampA, sampB, alternative="two.sided")$p.value
+}
+
+hist(pvec, breaks=25)
+abline(v = 0.05, col="red", lwd=3, lty=2)
+</script></pre> Then run the following to see what proportion of the time we reject the null: <pre class="ptx-sagecell sagecell-r" id="sage-314"><script type="text/x-sage">length(which(pvec < 0.05))/trials
+</script></pre> How does this value compare to the power of 80% we hoped to achieve?</p></article><article class="task exercise-like" id="task-945"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p id="p-1649">Convince yourself that if patients taking medication B had on average blood pressure 3 mmGH <em class="emphasis">higher</em> than those on medication A, that a sample size each of <span class="process-math">\(n\)</span> would also allow you to detect it 80% of the time.</p></article></article><article class="remark remark-like" id="remark-59"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">6.5.9</span><span class="period">.</span>
+</h4>
+<p id="p-1650">Note that in practice, one rarely knows what the actual <span class="process-math">\(\mu_1, \mu_2\)</span> were (and if you did, there would be no need to run experiments!).  But what we've done in <a href="" class="xref" data-knowl="./knowl/activity-bloodpressure3.html" title="Activity 6.5.5: Medication and Blood Pressure: Sample Size">Activity 6.5.5</a> is show that <em class="emphasis">should</em> there be a difference of 3 mmGH, we would be able to detect it 80% of the time with sample sizes of size <span class="process-math">\(n\text{.}\)</span></p></article><article class="remark remark-like" id="remark-computepower"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">6.5.10</span><span class="period">.</span>
+</h4>
+<p id="p-1651">Following <a href="" class="xref" data-knowl="./knowl/activity-bloodpressure2.html" title="Activity 6.5.4: Blood Pressure and Medication: Power Computation">Activity 6.5.4</a>, given a hypothesis test where</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/activity-bloodpressure2.html ./knowl/remark-diffofmeans.html">
+\begin{equation*}
+H_A: \mu_1-\mu_2\neq 0, H_0 \mu_1-\mu_2 = 0
+\end{equation*}
+</div>
+<p class="continuation">and the null distribution has standard error <span class="process-math">\(SE\)</span> (as computed via <a href="" class="xref" data-knowl="./knowl/remark-diffofmeans.html" title="Remark 6.4.1: Difference of Means">Remark 6.4.1</a>),  the <em class="emphasis">power</em> of a difference <span class="process-math">\(\mu_d \lt 0\)</span> is the probability that this hypothesis test is able to detect a difference of <span class="process-math">\(\mu_1-\mu_2=\mu_d\text{.}\)</span></p>
+<p id="p-1652">We compute the power to be <span class="process-math">\(P(Y\lt -1.96SE)\)</span> where <span class="process-math">\(Y\)</span> is a normal variable with mean <span class="process-math">\(\mu_d\)</span> and standard deviation SE. <iframe src="https://www.desmos.com/calculator/wcbzhb0g1e" id="interactive-110" width="600" height="600"></iframe></p></article><article class="remark remark-like" id="remark-computepowersize"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">6.5.11</span><span class="period">.</span>
+</h4>
+<p id="p-1653">Following <a href="" class="xref" data-knowl="./knowl/activity-bloodpressure3.html" title="Activity 6.5.5: Medication and Blood Pressure: Sample Size">Activity 6.5.5</a>, given a difference <span class="process-math">\(\mu_d \lt 0\)</span> and a  <em class="emphasis">power</em> <span class="process-math">\(P\)</span> of  <span class="process-math">\(\mu_d \lt 0\text{,}\)</span> we compute the following to obtain a sample size which will give us this power for the test and difference.</p>
+<ol class="decimal">
+<li id="li-398"><p id="p-derived-li-398">Find <span class="process-math">\(z^*\)</span> so that <span class="process-math">\(P(Z\lt z^*)=P\)</span> where <span class="process-math">\(Z\)</span> is the standard normal variable.</p></li>
+<li id="li-399"><p id="p-derived-li-399">Set <span class="process-math">\(\mu_d+z^*SE=-1.96SE\)</span> and solve for <span class="process-math">\(SE\text{.}\)</span></p></li>
+<li id="li-400"><p id="p-derived-li-400">Use <span class="process-math">\(SE=\sqrt{\frac{s_1^2}{n}+\frac{s_2^2}{n}}\)</span> to solve for <span class="process-math">\(n\text{.}\)</span>  Remember to then round <span class="process-math">\(n\)</span> up.</p></li>
+</ol>
+<p id="p-1654"><iframe src="https://www.desmos.com/calculator/m2sbxb9mph" id="interactive-111" width="600" height="600"></iframe></p></article><article class="activity project-like" id="activity-evalsbias"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.5.6</span><span class="period">.</span><span class="space"> </span><span class="title">Student Evaluations and Gender Bias.</span>
+</h4>
+<div class="introduction" id="introduction-182"><p id="p-1655">An education researcher is studying gender bias in student valuations.  Student evaluations are score from 1-5 and generally are distributed with standard deviation 1.1 (regardless of gender).  They are looking to recruit an equal number of men and women to observe any average difference in the evaluations.  They want to be able to detect at least a 0.25 difference in average scores.</p></div>
+<article class="task exercise-like" id="task-946"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1656">Follow <a href="" class="xref" data-knowl="./knowl/remark-computepower.html" title="Remark 6.5.10">Remark 6.5.10</a> to compute the power of this hypothesis test for a difference of <span class="process-math">\(0.25\)</span> if they recruit 50 men and 50 women to the study. <pre class="ptx-sagecell sagecell-r" id="sage-315"><script type="text/x-sage">
+</script></pre> <a href="" data-knowl="" class="id-ref hint-knowl original has-interactive" data-refid="hk-hint-43" id="hint-43"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-43"><div class="hint solution-like"><p id="p-1657"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-112" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-113" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-947"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-1658">Explain what this power represents in the context of this problem using complete sentences.</p></article><article class="task exercise-like" id="task-948"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-1659">How many participants of both genders would need to be recruited to achieve a power of 90% for the 0.25 difference?  Follow <a href="" class="xref" data-knowl="./knowl/remark-computepowersize.html" title="Remark 6.5.11">Remark 6.5.11</a>. <pre class="ptx-sagecell sagecell-r" id="sage-316"><script type="text/x-sage">
+</script></pre> <a href="" data-knowl="" class="id-ref hint-knowl original has-interactive" data-refid="hk-hint-44" id="hint-44"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-44"><div class="hint solution-like"><p id="p-1660"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-114" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-115" width="600" height="600"></iframe></p></div></div></p></article></article><article class="activity project-like" id="activity-dataentry"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.5.7</span><span class="period">.</span><span class="space"> </span><span class="title">Time Spent in Data Entry.</span>
+</h4>
+<div class="introduction" id="introduction-183"><p id="p-1661">A nonprofit organization wants to test which data-entry system saves the most time for their volunteers.  They recruit an equal number of volunteers to test systems A and B.  The standard deviation of time spent in data entry is 45 minutes for both methods.  Suppose they wish to detect a difference of 15 minutes.</p></div>
+<article class="task exercise-like" id="task-949"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-1662">Follow <a href="" class="xref" data-knowl="./knowl/remark-computepower.html" title="Remark 6.5.10">Remark 6.5.10</a> to compute the power of this hypothesis test for a difference of <span class="process-math">\(15\)</span> minutes if they recruit 40 people for each method. <pre class="ptx-sagecell sagecell-r" id="sage-317"><script type="text/x-sage">
+</script></pre> <a href="" data-knowl="" class="id-ref hint-knowl original has-interactive" data-refid="hk-hint-45" id="hint-45"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-45"><div class="hint solution-like"><p id="p-1663"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-116" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-117" width="600" height="600"></iframe></p></div></div></p></article><article class="task exercise-like" id="task-950"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-1664">Explain what this power represents in the context of this problem using complete sentences.</p></article><article class="task exercise-like" id="task-951"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-1665">How many participants for both methods would need to be recruited to achieve a power of 85% for the 15 minute difference?  Follow <a href="" class="xref" data-knowl="./knowl/remark-computepowersize.html" title="Remark 6.5.11">Remark 6.5.11</a>. <pre class="ptx-sagecell sagecell-r" id="sage-318"><script type="text/x-sage">
+</script></pre> <a href="" data-knowl="" class="id-ref hint-knowl original has-interactive" data-refid="hk-hint-46" id="hint-46"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-46"><div class="hint solution-like"><p id="p-1666"><iframe src="https://www.desmos.com/calculator/84dbdr69to" id="interactive-118" width="600" height="600"></iframe> <iframe src="https://www.desmos.com/calculator/ca5xk6sbyl" id="interactive-119" width="600" height="600"></iframe></p></div></div></p></article></article></section></section></div></main>
+</div>
+</body>
+</html>
