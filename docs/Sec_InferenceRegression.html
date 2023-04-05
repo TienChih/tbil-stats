@@ -250,7 +250,7 @@ possummod=lm(head_l~skull_w, data=possum)
 summary(possummod)
 </script></pre> We're focused on the <code class="code-inline tex2jax_ignore">Coefficients</code>, in particular the second row.</p>
 <p id="p-1843">The first row starting with <code class="code-inline tex2jax_ignore">(Intercept)</code> gives the point estimate, standard error, test statistic and <span class="process-math">\(p\)</span>-value for the altnerative hypothesis <span class="process-math">\(H_A:\beta_0\neq 0\text{.}\)</span></p>
-<p id="p-1844">The second row  starting with <code class="code-inline tex2jax_ignore">skull_w</code> gives the point estimate, standard error, test statistic and <span class="process-math">\(p\)</span>-value for the altnerative hypothesis <span class="process-math">\(H_A:\beta_1\neq 1\text{.}\)</span>  This is the row about slopes.</p>
+<p id="p-1844">The second row  starting with <code class="code-inline tex2jax_ignore">skull_w</code> gives the point estimate, standard error, test statistic and <span class="process-math">\(p\)</span>-value for the altnerative hypothesis <span class="process-math">\(H_A:\beta_1\neq 0\text{.}\)</span>  This is the row about slopes.</p>
 </div>
 <article class="task exercise-like" id="task-1044"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <p id="p-1845">The first entry of this row gives us the point estimate for the slope.  How does this compare to slope found by running: <pre class="ptx-sagecell sagecell-r" id="sage-359"><script type="text/x-sage">possummod
