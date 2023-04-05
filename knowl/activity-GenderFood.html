@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.4.5</span><span class="period">.</span><span class="space"> </span><span class="title">Gender and Protein Preferences.</span>
+</h4>
+<div class="introduction">
+<p>A restaurateur wonders if there's any difference in  the type of meat her customers order and their gender.  She surveys 500 customers, 218 men and 282 women.  The choices for meat are Beef, Chicken and Pork.  The results are as follows:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{array}{|c|c|c|c|}
+\hline
+\textbf{Sample Frequency} \amp \text{Beef} \amp \text{Chicken} \amp \text{Pork} \\
+\hline
+\text{Men} \amp 65 \amp 108 \amp 45 \\
+\hline
+\text{Women} \amp 84 \amp 136 \amp 62 \\
+\hline
+\end{array}
+\end{equation*}
+</div>
+</div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>State a null and alternative hypothesis for the <span class="process-math">\(\chi^2\)</span> independence test.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>Use any method to compute a <span class="process-math">\(\chi^2\)</span> statistic and a <span class="process-math">\(p\)</span>-value.</p>
+<p><pre class="ptx-sagecell sagecell-r" id="sage-214"><script type="text/x-sage">
+</script></pre> <a href="" class="hint-knowl original" data-knowl="./knowl/hint-24-hidden.html" title="Hint 1: Desmos"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>State the meaning of the <span class="process-math">\(p\)</span>-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>If we had a level of significance <span class="process-math">\(\alpha=0.05\)</span> do we  reject the null hypothesis?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p>Is it plausible for the gender and meat choice to be independent?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p>Fix and run the following code to input the sample data and perform a <span class="process-math">\(\chi^2\)</span> independence test. <pre class="ptx-sagecell sagecell-r" id="sage-215"><script type="text/x-sage">                      Input =("
+ProteinType   Beef    Chicken    Pork
+Men           FIXME   FIXME      FIXME
+Women         FIXME   FIXME      FIXME
+")
+
+datamatrix = as.matrix(read.table(textConnection(Input),header=TRUE,row.names=1))
+chisq.test(datamatrix, correct=FALSE)
+</script></pre> How does the <span class="process-math">\(\chi^2\)</span> value and the <span class="process-math">\(p\)</span>-value compare to what you found in (b)?</p></article></article><span class="incontext"><a href="Sec_ChiIndependence.html#activity-GenderFood" class="internal">in-context</a></span>
+</body>
+</html>

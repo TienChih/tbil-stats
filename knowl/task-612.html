@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="task exercise-like"><h5 class="heading">
+<span class="type">Task</span><span class="space"> </span><span class="codenumber">5.2.4.a</span><span class="period">.</span>
+</h5>
+<p>Run the following code to poll 100 customers in the East location and see how many order spicy wings. <pre class="ptx-sagecell sagecell-r" id="sage-185"><script type="text/x-sage">eastpoll=100
+east_p=sample(c(0.3, 0.4, 0.5), 1, prob=c(0.25, 0.5, 0.25))
+
+east_samp=sample(c("SPICYWINGS", "NO"), eastpoll, replace=TRUE, prob=c(east_p, 1-east_p))
+east_x=length(which(east_samp=="SPICYWINGS"))
+</script></pre> We know that <span class="process-math">\(n_1=100\text{,}\)</span> compute <span class="process-math">\(\hat{p_1}\text{,}\)</span> the proportion of the East location sample who orders Spicy Wings.</p></article><span class="incontext"><a href="Sec_TwoVarCat.html#task-612" class="internal">in-context</a></span>
+</body>
+</html>

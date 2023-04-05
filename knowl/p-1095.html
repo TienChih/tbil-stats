@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>Let's put the companies claim to the test.  Run the following code to simulate a <code class="code-inline tex2jax_ignore">raise_rate</code> of <span class="process-math">\(\hat{p}\)</span> found in (a).  We then simulate how many <code class="code-inline tex2jax_ignore">num_men=312</code> and <code class="code-inline tex2jax_ignore">num_women=216</code> got raises and calculate their difference <code class="code-inline tex2jax_ignore">d</code>. <pre class="ptx-sagecell sagecell-r" id="sage-175"><script type="text/x-sage">raise_rate=FIXME
+num_men=312
+num_women=216
+
+menraise=sample(c("RAISE", "NO"), num_men, replace=TRUE, prob=c(raise_rate, 1-raise_rate))
+womenraise=sample(c("RAISE", "NO"), num_women, replace=TRUE, prob=c(raise_rate, 1-raise_rate))
+
+d=length(which(menraise=="RAISE"))-length(which(womenraise=="RAISE"))
+print(d)
+</script></pre> How does this value compare to what you found in (b)?</p>
+<span class="incontext"><a href="Sec_TwoVarCat.html#p-1095" class="internal">in-context</a></span>
+</body>
+</html>

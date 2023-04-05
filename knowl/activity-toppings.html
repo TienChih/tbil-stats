@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Toppings on Frozen Desserts.</span>
+</h4>
+<div class="introduction"><p>Let's suppose that 60% of ice cream eaters and 45% of frozen yogurt eaters put toppings on their frozen dessert of choice.  We sample 80 ice cream eaters and 110 frozen yogurt eaters.</p></div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>Run the following code to sample the ice cream eaters, see how many got toppings, and see what proportion of them got toppings. <pre class="ptx-sagecell sagecell-r" id="sage-180"><script type="text/x-sage">icecream_n=80
+icecream_p=0.6
+
+icecream_samp=sample(c("TOPPINGS", "NO"), icecream_n, replace=TRUE, prob=c(icecream_p, 1-icecream_p))
+length(which(icecream_samp=="TOPPINGS"))
+icecream_prop=length(which(icecream_samp=="TOPPINGS"))/icecream_n
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>Run the following code to sample the frozen yogurt eaters, see how many got toppings, and see what proportion of them got toppings. <pre class="ptx-sagecell sagecell-r" id="sage-181"><script type="text/x-sage">frozen_n=110
+frozen_p=0.45
+
+frozen_samp=sample(c("TOPPINGS", "NO"), frozen_n, replace=TRUE, prob=c(frozen_p, 1-frozen_p))
+length(which(frozen_samp=="TOPPINGS"))
+frozen_prop=length(which(frozen_samp=="TOPPINGS"))/frozen_n
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>Run the following code to compute the difference in proportions between the samples. <pre class="ptx-sagecell sagecell-r" id="sage-182"><script type="text/x-sage">icecream_prop-frozen_prop
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>Run the following code to simulate 1000 trials of random samplings, and plot a histogram of their differences. <pre class="ptx-sagecell sagecell-r" id="sage-183"><script type="text/x-sage">prop_diff=rep(NA,1000)
+
+for(i in 1:1000){
+	icecream_samp=sample(c("TOPPINGS", "NO"), icecream_n, replace=TRUE, prob=c(icecream_p, 1-icecream_p))
+	icecream_prop=length(which(icecream_samp=="TOPPINGS"))/icecream_n
+	frozen_samp=sample(c("TOPPINGS", "NO"), frozen_n, replace=TRUE, prob=c(frozen_p, 1-frozen_p))
+	frozen_prop=length(which(frozen_samp=="TOPPINGS"))/frozen_n
+	prop_diff[i]=icecream_prop-frozen_prop
+}
+hist(prop_diff, breaks=25, prob=TRUE)
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p>Given that <span class="process-math">\(p_1=0.6, n_1=80, p_2=0.45, n_2=110\text{,}\)</span> use <a href="" class="xref" data-knowl="./knowl/remark-diffofprop.html" title="Remark 5.2.3: Difference of Proportions">Remark 5.2.3</a> to compute <span class="process-math">\(\mu_D\)</span> the mean of the distribution of differences, and <span class="process-math">\(SE_D\text{,}\)</span> the standard deviation of the distribution of differences.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p>Fix and run the following code to overlay a normal curve with mean <code class="code-inline tex2jax_ignore">mu_D=</code><span class="process-math">\(\mu_D\)</span> and standard deviation <code class="code-inline tex2jax_ignore">SE_D=</code><span class="process-math">\(SE_D\)</span> over the histogram you found. <pre class="ptx-sagecell sagecell-r" id="sage-184"><script type="text/x-sage">mu_D=FIXME
+SE_D=FIXME
+
+
+hist(prop_diff, breaks=25, prob=TRUE)
+curve(dnorm(x, mean=mu_D, sd=SE_D), col="darkblue", lwd=2, add=TRUE, yaxt="n")
+</script></pre> How well does this normal curve approximate the distribution of differences?</p></article></article><span class="incontext"><a href="Sec_TwoVarCat.html#activity-toppings" class="internal">in-context</a></span>
+</body>
+</html>

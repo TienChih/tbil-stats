@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.4.4</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(\chi^2\)</span> independence testing with R.</span>
+</h4>
+<div class="introduction"><p>We can use <code class="code-inline tex2jax_ignore">R</code> to enter the data and compute the <span class="process-math">\(\chi^2\)</span> statistic and <span class="process-math">\(p\)</span>-value.</p></div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>Run the following code to input the sample data from <a href="" class="xref" data-knowl="./knowl/exploration-predatory.html" title="Exploration 5.4.1: OER vs Predatory Publishers and Student Access">Exploration 5.4.1</a> as a matrix. <pre class="ptx-sagecell sagecell-r" id="sage-212"><script type="text/x-sage">                      Input =("
+MaterialType   DoneReading    NoReading
+OER             66              14
+Predatory       112             58
+")
+
+datamatrix = as.matrix(read.table(textConnection(Input),header=TRUE,row.names=1))
+</script></pre> If you use this method <em class="emphasis">be sure to not use spaces in your names</em>.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>Run the following code to compute a <span class="process-math">\(\chi^2\)</span> statistic, <span class="process-math">\(p\)</span>-value and degrees of freedom. <pre class="ptx-sagecell sagecell-r" id="sage-213"><script type="text/x-sage">chisq.test(datamatrix, correct=FALSE)
+</script></pre> How do these values compare to what you found in <a href="" class="xref" data-knowl="./knowl/activity-predatorypvalue.html" title="Activity 5.4.3: OER vs Predatory Publishers and Student Access: test statistics">Activity 5.4.3</a>?</p></article></article><span class="incontext"><a href="Sec_ChiIndependence.html#activity-chiindwithR" class="internal">in-context</a></span>
+</body>
+</html>

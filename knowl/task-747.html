@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="task exercise-like"><h5 class="heading">
+<span class="type">Task</span><span class="space"> </span><span class="codenumber">6.1.2.d</span><span class="period">.</span>
+</h5>
+<p>Run the following code to, for <code class="code-inline tex2jax_ignore">trials=1000</code> times, sample 30 new random houses from Ames, Iowa and record the standard deviation of their housing prices, and display a histogram of the standard deviations: <pre class="ptx-sagecell sagecell-r" id="sage-231"><script type="text/x-sage">n=30
+trials=1000
+sdvec=rep(NA, trials)
+
+for(i in 1:trials){
+  index = sample(1:nrow(ames), n)
+  samp=ames[index,]
+  sdvec[i]=sd(samp$price)  
+}
+
+hist(sdvec, breaks=25)
+</script></pre> What do we notice about the possible variation in sample standard deviations?</p></article><span class="incontext"><a href="Sec_tVariable.html#task-747" class="internal">in-context</a></span>
+</body>
+</html>

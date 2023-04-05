@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="task exercise-like"><h4 class="heading">
+<span class="type">Task</span><span class="space"> </span><span class="codenumber">6.6.2.a</span><span class="period">.</span>
+</h4>
+<p>Run the following code to produce a data frame with two variables, a <code class="code-inline tex2jax_ignore">group</code> variable with values <code class="code-inline tex2jax_ignore">A</code>, <code class="code-inline tex2jax_ignore">B</code> and <code class="code-inline tex2jax_ignore">C</code>, and a <code class="code-inline tex2jax_ignore">values</code> variable that is identical across group, and plot boxplots of <code class="code-inline tex2jax_ignore">values</code> across the groups. <pre class="ptx-sagecell sagecell-r" id="sage-322"><script type="text/x-sage">group1=c(rep("A", 30), rep("B", 30), rep("C", 30))
+values1=c(rnorm(30,100,35), rnorm(30,100,35), rnorm(30,100,35))
+
+dummy1 = data.frame(group1, values1)
+summary(dummy1)
+boxplot(dummy1$values1~dummy1$group1)
+</script></pre></p></article><span class="incontext"><a href="Sec_ANOVA.html#task-954" class="internal">in-context</a></span>
+</body>
+</html>

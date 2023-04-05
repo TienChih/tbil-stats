@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Run the following code to sample <code class="code-inline tex2jax_ignore">num_men=312</code> men where <span class="process-math">\(men_{raise}=72\)</span> get raises, then samples <code class="code-inline tex2jax_ignore">num_women=216</code> men where <span class="process-math">\(women_{raise}=30\)</span> get raises.  It does this <code class="code-inline tex2jax_ignore">trials=1000</code> times and plots a histogram of the differences. <pre class="ptx-sagecell sagecell-r" id="sage-190"><script type="text/x-sage">trials=1000
+num_men=312
+num_women=216
+m_raise=72
+w_raise=30
+
+raise_rate=(m_raise+w_raise)/(num_men+num_women)
+diffraise=rep(NA, trials)
+
+for(i in 1:trials){
+	menraise=sample(c("RAISE", "NO"), num_men, replace=TRUE, prob=c(raise_rate, 1-raise_rate))
+	womenraise=sample(c("RAISE", "NO"), num_women, replace=TRUE, prob=c(raise_rate, 1-raise_rate))
+	diffraise[i]=length(which(menraise=="RAISE"))/num_men-length(which(womenraise=="RAISE"))/num_women
+}
+hist(diffraise, breaks=25, prob=TRUE)
+</script></pre></p>
+<span class="incontext"><a href="Sec_TwoVarCat.html#p-1152" class="internal">in-context</a></span>
+</body>
+</html>

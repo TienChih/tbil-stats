@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">Days of Extreme Temperature.</span>
+</h4>
+<div class="introduction">
+<p>The National Oceanic and Atmospheric Administration (NOAA) collects data on daily temperatures all across the globe.  We are interested in the number of days of extreme temperature at a sample of these locations, and how they may have changed over time.</p>
+<p>Run the following code to download <code class="code-inline tex2jax_ignore">climate70.csv</code> and display it's variables. <pre class="ptx-sagecell sagecell-r" id="sage-276"><script type="text/x-sage">climate = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/climate70.csv")
+names(climate)
+</script></pre> We record the Station ID, latitude and logitude of the NOAA stations, the number of days over 70 degrees in 1948 and 2018 at each of these locations, and the number of days over 90 degrees in both years at each of these locations.</p>
+<p>Click here to learn more about this data set: <a class="external" href="https://www.openintro.org/data/index.php?data=climate70" target="_blank"><code class="code-inline tex2jax_ignore">https://www.openintro.org/data/index.php?data=climate70</code></a>.</p>
+</div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>Let <span class="process-math">\(d\)</span> denote the number of days over 70 degrees in 1948 subtracted from the number of days over 70 degrees in 2008. We are curious to see if there is any change in the average number of days over 70 degrees from 1948 to 2018. Which of the following best describes the null hypothesis <span class="process-math">\(H_0\text{?}\)</span></p>
+<ul class="disc">
+<li><p><span class="process-math">\(\mu_d\lt 0\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(\mu_d&gt; 0\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(\mu_d\neq 0\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(\mu_d= 0\text{.}\)</span></p></li>
+</ul></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>Which of the following best describes the alternative hypothesis <span class="process-math">\(H_A\text{?}\)</span></p>
+<ul class="disc">
+<li><p><span class="process-math">\(\mu_d\lt 0\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(\mu_d&gt; 0\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(\mu_d\neq 0\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(\mu_d= 0\text{.}\)</span></p></li>
+</ul></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>Run the following code to define the difference in number of days over 70 degrees <code class="code-inline tex2jax_ignore">changeindays70</code> and display a histogram of the changes, including a line indicating 0 change, and a line indicating the sample average change: <pre class="ptx-sagecell sagecell-r" id="sage-277"><script type="text/x-sage">changeindays70=climate$dx70_2018-climate$dx70_1948
+hist(changeindays70)
+abline(v = 0, col="red", lwd=3, lty=2)
+abline(v = mean(changeindays70), col="blue", lwd=3, lty=2)
+</script></pre> Based on this graphic, do we think the null hypothesis is plausible?</p>
+<p>Fix and run the following code to perform the appropriate hypothesis test and compute a <span class="process-math">\(p\)</span>-value: <pre class="ptx-sagecell sagecell-r" id="sage-278"><script type="text/x-sage">t.test(changeindays70, mu=FIXME, alternative="FIXME")
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>State the meaning of the <span class="process-math">\(p\)</span>-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p>Do we  reject the null hypothesis?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p>What sort of error could have been made? (Type 1 or Type 2)</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p>Fix and run the following to compute a  95% confidence interval for  <span class="process-math">\(\mu_d\text{.}\)</span> <pre class="ptx-sagecell sagecell-r" id="sage-279"><script type="text/x-sage">t.test(changeindays70, conf.level=FIXME)$conf.int
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(h)</span></h5>
+<p>State what this confidence interval means in the context of this problem using complete sentences.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(i)</span></h5>
+<p>Repeat the above for days over 90.</p></article></article><span class="incontext"><a href="Sec_PairedData.html#activity-climatechage" class="internal">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.3.7</span><span class="period">.</span><span class="space"> </span><span class="title">Male Heights and Normal Distribution.</span>
+</h4>
+<div class="introduction">
+<p>We examine data from a random selection of adult males to see if their heights are possibly normally distributed.</p>
+<p>Run the following code to download the <code class="code-inline tex2jax_ignore">male_heights.csv</code> data set and to display it's variables. <pre class="ptx-sagecell sagecell-r" id="sage-204"><script type="text/x-sage">male_heights = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/male_heights.csv")
+names(male_heights)
+</script></pre></p>
+</div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>We begin by examining the heights of adult males in inches.  Run the following code to see the sample mean and standard deviation for the heights of adult males in inches, and set them to be <code class="code-inline tex2jax_ignore">m</code> and <code class="code-inline tex2jax_ignore">std</code> respectively. <pre class="ptx-sagecell sagecell-r" id="sage-205"><script type="text/x-sage">m=mean(male_heights$heights)
+std=sd(male_heights$heights)
+print(m)
+print(std)
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p><em class="alert">IF</em> adult male heights were normally distributed, we would expect it to be approximated by a normal random variable <span class="process-math">\(X\)</span> with mean <span class="process-math">\(\mu=m\)</span> and standard deviation <span class="process-math">\(\sigma=std\text{.}\)</span>  Confirm that if we subdivide a normal distribution into intervals of length <span class="process-math">\(std\text{,}\)</span> we would have:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+P(X\lt m-3std)\amp \approx 0.0014\\
+P(m-3std\leq X\lt m-2std)\amp \approx 0.0214\\
+P(m-2std\leq X\lt m-std)\amp \approx 0.1359\\
+P(m-std\leq X\lt m)\amp \approx 0.3413\\
+P(m\leq X\lt m+std)\amp \approx 0.3413\\
+P(m+std\leq X\lt m+2std)\amp \approx 0.1359\\
+P(m+2std\leq X\lt m+3std)\amp \approx 0.0214\\
+P(X\geq m+3std)\amp \approx 0.0014
+\end{align*}
+</div>
+<p class="continuation"><figure class="figure figure-like"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/image-32.svg" role="img" class="contained" alt="A normal curve segemented into lengths of one standard deviation."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.4<span class="period">.</span></span><span class="space"> </span>A normal curve segemented into lengths of one standard deviation.</figcaption></figure> <pre class="ptx-sagecell sagecell-r" id="sage-206"><script type="text/x-sage">
+</script></pre> <a href="" class="hint-knowl original" data-knowl="./knowl/hint-22-hidden.html" title="Hint 1: Desmos"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>Run the following code to compute the actual number of adult males were less than <span class="process-math">\(m-3std\)</span> inches. <pre class="ptx-sagecell sagecell-r" id="sage-207"><script type="text/x-sage">length(which(m-3*std>male_heights$heights))
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>Run the following code to compute the actual number of adult males whose heights were between <span class="process-math">\(m-3std, m-2std\)</span> inches. <pre class="ptx-sagecell sagecell-r" id="sage-208"><script type="text/x-sage">length(which(male_heights$heights>=m-3*std & m-2*std>male_heights$heights))
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p>Edit and run the above code for the remaining intervals, and record the number of adult males within them.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p>Edit and run the following code to run the <span class="process-math">\(\chi^2\)</span> goodness of fit test to see if the number of occurences in each interval corresponds to the theoritical value. <pre class="ptx-sagecell sagecell-r" id="sage-209"><script type="text/x-sage">chisq.test(c(FIXME, FIXME, FIXME, FIXME, FIXME, FIXME, FIXME, FIXME), p=c(0.0014, 0.0214, 0.1359, 0.3413, 0.3413, 0.1359, 0.0214, 0.0014), correct=FALSE)
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p>State a null hypothesis for this <span class="process-math">\(\chi^2\)</span> test.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(h)</span></h5>
+<p>State an alternative hypothesis for this <span class="process-math">\(\chi^2\)</span> test.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(i)</span></h5>
+<p>State the meaning of the <span class="process-math">\(p\)</span>-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(j)</span></h5>
+<p>If we had a level of significance <span class="process-math">\(\alpha=0.05\)</span> do we  reject the null hypothesis?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(k)</span></h5>
+<p>Is it plausible for adult male heights to be normally distributed?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(l)</span></h5>
+<p>Run the following code to plot a histogram of the adult male heights in inches and see how well a normal distribution matches this distribution. <pre class="ptx-sagecell sagecell-r" id="sage-210"><script type="text/x-sage">hist(male_heights$heights, prob=TRUE, breaks=15)
+curve(dnorm(x, mean=m, sd=std), col="darkblue", lwd=2, add=TRUE, yaxt="n")
+</script></pre></p></article></article><span class="incontext"><a href="Sec_ChiSquare.html#activity-maleheight" class="internal">in-context</a></span>
+</body>
+</html>

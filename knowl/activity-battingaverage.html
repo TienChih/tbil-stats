@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.6.7</span><span class="period">.</span><span class="space"> </span><span class="title">Fetilizer and Crop Yields: <code class="code-inline tex2jax_ignore">R</code>.</span>
+</h4>
+<div class="introduction"><p>We can finish what we started with <a href="" class="xref" data-knowl="./knowl/exploration-battingaverage.html" title="Exploration 6.6.1: Batting Average and Position">Exploration 6.6.1</a>.</p></div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>Run the following code to re-plot a boxplot for the batting averages of <code class="code-inline tex2jax_ignore">batters</code> seperated by position. <pre class="ptx-sagecell sagecell-r" id="sage-330"><script type="text/x-sage">boxplot(batters$AVG~batters$position)
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>Run the following code to create an <code class="code-inline tex2jax_ignore">aov</code> model of <code class="code-inline tex2jax_ignore">batters</code> and summarize it. <pre class="ptx-sagecell sagecell-r" id="sage-331"><script type="text/x-sage">battersaov=aov(AVG~position, data=batters)
+summary(battersaov)
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>State the meaning of the <span class="process-math">\(p\)</span>-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>Do we  reject the null hypothesis?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p>What sort of error could have been made? (Type 1 or Type 2)</p></article></article><span class="incontext"><a href="Sec_ANOVA.html#activity-battingaverage" class="internal">in-context</a></span>
+</body>
+</html>

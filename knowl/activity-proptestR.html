@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.3.10</span><span class="period">.</span><span class="space"> </span><span class="title">Using <code class="code-inline tex2jax_ignore">R</code> to Hypothesis Test.</span>
+</h4>
+<div class="introduction"><p>We can use <code class="code-inline tex2jax_ignore">R</code> to Hypothesis Test Directly.  The structure of the command is <code class="code-inline tex2jax_ignore">prop.test(numberof successes, sample size, p=p_0, alternative="greater, less, two.sided" depending on H_A, correct=FALSE)</code></p></div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>Suppose we wanted to know if more than 30% of donuts sold in a shop had filling  <span class="process-math">\((H_A:p&gt;0.3)\text{.}\)</span>  We sample 40 donuts and found 16 of them had filling.  Run the following code to obtain the <span class="process-math">\(p\)</span>-value: <pre class="ptx-sagecell sagecell-r" id="sage-171"><script type="text/x-sage">prop.test(16, 40, 
+    p=0.3, alternative="greater", correct=FALSE)
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>Suppose we wanted to know if less than 45% of donuts sold in a shop had sprinkles <span class="process-math">\((H_A:p\lt 0.45)\text{.}\)</span>  We sample 60 donuts and found 12 of them had filling.  Run the following code to obtain the <span class="process-math">\(p\)</span>-value: <pre class="ptx-sagecell sagecell-r" id="sage-172"><script type="text/x-sage">prop.test(12, 60, 
+    p=0.45, alternative="less", correct=FALSE)
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>Suppose we wanted to know if customer satisfaction was or wasn't 50% <span class="process-math">\((H_A:p\neq0.5)\text{.}\)</span>  We sample 100 customers and and found 88 were satisfied.  Run the following code to obtain the <span class="process-math">\(p\)</span>-value: <pre class="ptx-sagecell sagecell-r" id="sage-173"><script type="text/x-sage">prop.test(88, 100, 
+    p=0.5, alternative="two.sided", correct=FALSE)
+</script></pre></p></article></article><span class="incontext"><a href="Sec_HypothesisTesing.html#activity-proptestR" class="internal">in-context</a></span>
+</body>
+</html>

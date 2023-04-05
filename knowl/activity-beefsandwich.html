@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.4.5</span><span class="period">.</span><span class="space"> </span><span class="title">Beef Sandwiches.</span>
+</h4>
+<div class="introduction"><p>Our reoccuring restaurateur is back and wants to know what the difference is, if any, in the amount of Roast Beef Sandwiches sold each lunch rush in her East and West locations.  She takes a sample of 30 lunch rushes in the East Location and 45 in the West.</p></div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>Run the following code to sample 30 lunch rushes in the east location, display a histogram of the results, and show the mean and standard deviation. <pre class="ptx-sagecell sagecell-r" id="sage-290"><script type="text/x-sage">eastlunch=30
+east_mu=runif(1,30,50)
+
+east_samp=round(rnorm(eastlunch, east_mu, 8))
+hist(east_samp, col="red")
+print(mean(east_samp))
+print(sd(east_samp))
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>Run the following code to sample 45 lunch rushes in the 34st location, display a histogram of the results, and show the mean and standard deviation. <pre class="ptx-sagecell sagecell-r" id="sage-291"><script type="text/x-sage">westlunch=45
+west_mu=runif(1,30,50)
+
+west_samp=round(rnorm(westlunch, west_mu, 8))
+hist(west_samp, col="blue")
+print(mean(west_samp))
+print(sd(west_samp))
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>Run the following code to display the two histograms side by side, scaled for sample size, and with the means displayed, as well as side by side boxplots. <pre class="ptx-sagecell sagecell-r" id="sage-292"><script type="text/x-sage">hist(east_samp, col=rgb(1,0,0,0.5), prob=TRUE)
+hist(west_samp, col=rgb(0,0,1,0.5), prob=TRUE, add=TRUE)
+abline(v = mean(east_samp), col="red", lwd=3, lty=2)
+abline(v = mean(west_samp), col="blue", lwd=3, lty=2)
+
+boxplot(east_samp, west_samp)
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>Compute the  the difference in sample means <span class="process-math">\(\bar{x}_1-\bar{x}_2\text{.}\)</span></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p>Compute the standard error <span class="process-math">\(SE_D\)</span> for the difference in means using <a href="" class="xref" data-knowl="./knowl/remark-diffofmeans.html" title="Remark 6.4.1: Difference of Means">Remark 6.4.1</a>.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p>Compute the degrees of freedom.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p>Find <span class="process-math">\(t^*\)</span> such that for a <span class="process-math">\(t\)</span>-distribution with the appropriate degrees of freedom, <span class="process-math">\(P(-t^*\lt t\lt t^*)=0.95\text{.}\)</span> <pre class="ptx-sagecell sagecell-r" id="sage-293"><script type="text/x-sage">
+</script></pre> <a href="" class="hint-knowl original" data-knowl="./knowl/hint-36-hidden.html" title="Hint 1: Desmos"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(h)</span></h5>
+<p>Use <a href="" class="xref" data-knowl="./knowl/remark-numCItwo.html" title="Remark 6.4.2">Remark 6.4.2</a> to compute a 95% confidence interval for <span class="process-math">\(\mu\text{.}\)</span></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(i)</span></h5>
+<p>State what this confidence interval means in the context of this problem using complete sentences. X</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(j)</span></h5>
+<p>Run the following code to display the actual differences of means. <pre class="ptx-sagecell sagecell-r" id="sage-294"><script type="text/x-sage">east_mu-west_mu
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(k)</span></h5>
+<p>Run the following code to compute a 95% confidence interval through <code class="code-inline tex2jax_ignore">R</code>.  Note this should give you a different interval than what you found in (h) if you did it by hand. <pre class="ptx-sagecell sagecell-r" id="sage-295"><script type="text/x-sage">t.test(east_samp, west_samp, conf.level=0.95)$conf.int
+</script></pre></p></article></article><span class="incontext"><a href="Sec_TwoVarNum.html#activity-beefsandwich" class="internal">in-context</a></span>
+</body>
+</html>

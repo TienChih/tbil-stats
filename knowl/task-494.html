@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="task exercise-like"><h5 class="heading">
+<span class="type">Task</span><span class="space"> </span><span class="codenumber">4.1.5.g</span><span class="period">.</span>
+</h5>
+<p>Fix and run the following code to simulate the 1000 surveys of size <code class="code-inline tex2jax_ignore">n</code>, probability <code class="code-inline tex2jax_ignore">p</code> and point estimate <code class="code-inline tex2jax_ignore">phat</code>, as well as plot a histogram of the survey results, and the normal approximation: <pre class="ptx-sagecell sagecell-r" id="sage-149"><script type="text/x-sage">trials=1000
+
+n=FIXME
+p=FIXME
+phat=FIXME
+
+mu_p=p
+SE_p=sqrt(p*(1-p)/n)
+
+results=rep(0,trials)
+
+for(i in 1:n){
+  results=results+sample(c(1, 0), trials, replace = TRUE, prob = c(p, 1-p)) 
+}
+
+proportion=results/n
+
+hist(proportion, prob=TRUE, breaks=25)
+curve(dnorm(x, mean=mu_p, sd=SE_p), col="darkblue", lwd=2, add=TRUE, yaxt="n")
+abline(v=phat, col="red",lwd=3, lty=2 )
+print(trials)
+</script></pre> Would 48 respondents replying that they smoke be abnormal?</p></article><span class="incontext"><a href="Sec_PointEstimates.html#task-494" class="internal">in-context</a></span>
+</body>
+</html>

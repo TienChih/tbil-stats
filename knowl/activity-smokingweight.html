@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Smoking and Baby Weight.</span>
+</h4>
+<div class="introduction"><p>A 1967 study shows that the probability that a baby has low birth weight is about 7.8% if the mother smokes, and 2.9% if the mother does not.</p></div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>Suppose we sampled 500 babies from mothers who smoke (<span class="process-math">\(n_1=500\)</span>).  We are given the probability a given baby is underweight is <span class="process-math">\(p_1=0.078\text{.}\)</span>  Following <a href="" class="xref" data-knowl="./knowl/theorem-CLTprop.html" title="Theorem 4.1.4: The Central Limit Theorem (Proportion)">Theorem 4.1.4</a> what is the expected proportion of this sample to be underweight: <span class="process-math">\(\hat{p_1}\text{?}\)</span></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>Use <a href="" class="xref" data-knowl="./knowl/remark-varprop.html" title="Remark 5.2.2">Remark 5.2.2</a> to find the variance of <span class="process-math">\(\hat{p_1}\text{:}\)</span> <span class="process-math">\(Var_{\hat{p_1}}\text{.}\)</span></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>Suppose we sampled 1000 babies from mothers who do not  smoke (<span class="process-math">\(n_2=1000\)</span>).  We are given the probability a given baby is underweight is <span class="process-math">\(p_2=0.029\text{.}\)</span>  Following <a href="" class="xref" data-knowl="./knowl/theorem-CLTprop.html" title="Theorem 4.1.4: The Central Limit Theorem (Proportion)">Theorem 4.1.4</a> what is the expected proportion of this sample to be underweight: <span class="process-math">\(\hat{p_2}\text{?}\)</span></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>Use <a href="" class="xref" data-knowl="./knowl/remark-varprop.html" title="Remark 5.2.2">Remark 5.2.2</a> to find the variance of <span class="process-math">\(\hat{p_2}\text{:}\)</span> <span class="process-math">\(Var_{\hat{p_2}}\text{.}\)</span></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p>Let <span class="process-math">\(D\)</span> denote the difference between the sampling distributions.  Use <a href="" class="xref" data-knowl="./knowl/remark-linofEandV.html" title="Remark 2.5.1">Remark 2.5.1</a> to find <span class="process-math">\(\mu_D\text{.}\)</span></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p>Use <a href="" class="xref" data-knowl="./knowl/remark-linofEandV.html" title="Remark 2.5.1">Remark 2.5.1</a> to find the variance of <span class="process-math">\(D\text{:}\)</span> <span class="process-math">\(Var_D\text{.}\)</span></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p>Find the standard deviation of <span class="process-math">\(D\text{:}\)</span> <span class="process-math">\(SE_D=\sqrt{Var_D}\text{.}\)</span></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(h)</span></h5>
+<p>Run the following code to simulate 1000 trials of sampling 500 babies from mothers who smoke, 1000 babies from mothers who do not smoke, taking the difference in proportions of babies who are underweight, and plotting a histogram of the results. <pre class="ptx-sagecell sagecell-r" id="sage-178"><script type="text/x-sage">smoke_n=500
+nosmoke_n=1000
+smoke_p=0.078
+nosmoke_p=0.029
+trials=1000
+
+diff_underweight=rep(NA, trials)
+
+for(i in 1:trials){
+	smoke_samp=sample(c("UNDERWEIGHT", "NO"), smoke_n, replace=TRUE, prob=c(smoke_p, 1-smoke_p))
+	nosmoke_samp=sample(c("UNDERWEIGHT", "NO"), nosmoke_n, replace=TRUE, prob=c(nosmoke_p, 1-nosmoke_p))
+	diff_underweight[i]=length(which(smoke_samp=="UNDERWEIGHT"))/smoke_n-length(which(nosmoke_samp=="UNDERWEIGHT"))/nosmoke_n
+}
+hist(diff_underweight, breaks=25, prob=TRUE)
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(i)</span></h5>
+<p>Fix and run the following code so that <code class="code-inline tex2jax_ignore">mu_D=</code><span class="process-math">\(\mu_D\)</span> and <code class="code-inline tex2jax_ignore">SE_D=</code><span class="process-math">\(\sigma_D\)</span> and plot a normal curve on top of our histogram. <pre class="ptx-sagecell sagecell-r" id="sage-179"><script type="text/x-sage">mu_D=FIXME
+SE_D=FIXME
+
+hist(diff_underweight, breaks=25, prob=TRUE)
+curve(dnorm(x, mean=mu_D, sd=SE_D), col="darkblue", lwd=2, add=TRUE, yaxt="n")
+</script></pre> How well does the normal distribution approximate the histogram?</p></article></article><span class="incontext"><a href="Sec_TwoVarCat.html#activity-smokingweight" class="internal">in-context</a></span>
+</body>
+</html>

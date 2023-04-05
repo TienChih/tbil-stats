@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="task exercise-like"><h4 class="heading">
+<span class="type">Task</span><span class="space"> </span><span class="codenumber">6.1.1.c</span><span class="period">.</span>
+</h4>
+<p>Run the following code to simulate <code class="code-inline tex2jax_ignore">trials=1000</code> trials where one rolls <code class="code-inline tex2jax_ignore">num_dice=2</code> dice and takes the average, and display the mean and standard deviation of these outcomes: <pre class="ptx-sagecell sagecell-r" id="sage-225"><script type="text/x-sage">trials=1000
+num_dice=2
+
+averageroll=rep(NA, trials)
+
+for(i in 1:trials){
+  averageroll[i]=sum(sample(c(1,2,3,4,5,6), num_dice, replace=TRUE))/num_dice
+}
+hist(averageroll, breaks=25, prob=TRUE)
+print(mean(averageroll))
+print(sd(averageroll))
+</script></pre> How do these values compare to what you found in (b)?</p></article><span class="incontext"><a href="Sec_tVariable.html#task-740" class="internal">in-context</a></span>
+</body>
+</html>

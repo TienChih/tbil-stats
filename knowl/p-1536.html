@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Run the following code to simulate 1000 trials of sampling 50 customers from store A, 30 customers of store B, taking the difference in their average spending, and plotting a histogram of the results. <pre class="ptx-sagecell sagecell-r" id="sage-287"><script type="text/x-sage">storeA=50
+storeB=30
+Amean=350
+Asd=75
+Bmean=200
+Bsd=40
+trials=1000
+
+diff_spending=rep(NA, trials)
+
+for(i in 1:trials){
+  A_samp=rnorm(storeA, Amean, Asd)
+  B_samp=rnorm(storeB, Bmean, Bsd)
+  diff_spending[i]=mean(A_samp)-mean(B_samp)
+}
+hist(diff_spending, breaks=25, prob=TRUE)
+</script></pre></p>
+<span class="incontext"><a href="Sec_TwoVarNum.html#p-1536" class="internal">in-context</a></span>
+</body>
+</html>

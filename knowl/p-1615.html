@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Fix and run the following code to sample <code class="code-inline tex2jax_ignore">n</code> scores from Exam 1, and compute a 95% confidence interval: <pre class="ptx-sagecell sagecell-r" id="sage-307"><script type="text/x-sage">n=FIXME
+
+samp2=sample(students$score1, n)
+t.test(samp2, conf.level=0.95)$conf.int
+</script></pre> What is the margin of error?  (Recall that <span class="process-math">\(s\)</span> was just an estimator for <span class="process-math">\(\sigma\text{.}\)</span>)</p>
+<span class="incontext"><a href="Sec_SizeofSampleNum.html#p-1615" class="internal">in-context</a></span>
+</body>
+</html>

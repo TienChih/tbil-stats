@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">Difference of Dice.</span>
+</h3>
+<div class="introduction">
+<p>W Consider rolling a pair of die, a blue and green one as in <a href="" class="xref" data-knowl="./knowl/exploration-sumdie.html" title="Exploration 2.5.1: Sum of Dice">Exploration 2.5.1</a>.  Consider the possible pairs of outcomes.</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/exploration-sumdie.html">
+\begin{equation*}
+\begin{array}{cccccc}
+(1,1)\amp(2,1)\amp(3,1)\amp(4,1)\amp(5,1)\amp(6,1)\\
+(1,2)\amp(2,2)\amp(3,2)\amp(4,2)\amp(5,2)\amp(6,2)\\
+(1,3)\amp(2,3)\amp(3,3)\amp(4,3)\amp(5,3)\amp(6,3)\\
+(1,4)\amp(2,4)\amp(3,4)\amp(4,4)\amp(5,4)\amp(6,4)\\
+(1,5)\amp(2,5)\amp(3,5)\amp(4,5)\amp(5,5)\amp(6,5)\\
+(1,6)\amp(2,6)\amp(3,6)\amp(4,6)\amp(5,6)\amp(6,6)\\
+\end{array}
+\end{equation*}
+</div>
+<p>Let <span class="process-math">\(Z\)</span> denote the difference of the green die subtracted from the blue die (<span class="process-math">\(Z=X_B-X_G\)</span>).  Note that <span class="process-math">\(Z=X_B+(-1)X_G\text{.}\)</span></p>
+</div>
+<article class="task exercise-like"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p>Use <a href="" class="xref" data-knowl="./knowl/remark-linofEandV.html" title="Remark 2.5.1">Remark 2.5.1</a> to rewrite</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/remark-linofEandV.html">
+\begin{equation*}
+E(X_B+(-1)X_G)=E(X_B)+E((-1)X_G)=E(X_B)+(-1)E(X_G)
+\end{equation*}
+</div>
+<p class="continuation">and compute <span class="process-math">\(E(X_B+(-1)X_G).\)</span></p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p>Use <a href="" class="xref" data-knowl="./knowl/remark-linofEandV.html" title="Remark 2.5.1">Remark 2.5.1</a> to rewrite</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/remark-linofEandV.html">
+\begin{equation*}
+Var(X_B+(-1)X_G)=Var(X_B)+Var((-1)X_G)=Var(X_B)+(-1)^2Var(X_G)
+\end{equation*}
+</div>
+<p class="continuation">and compute <span class="process-math">\(Var(X_B+(-1)X_G).\)</span></p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p>Run the following code to simulate 1,000 blue and green die rolls and plot a histogram of their differences.</p>
+<p><pre class="ptx-sagecell sagecell-r" id="sage-100"><script type="text/x-sage">bluedierolls = sample(c(1, 2, 3, 4, 5, 6), 1000, replace = TRUE, prob = c(1/6, 1/6, 1/6, 1/6, 1/6, 1/6))
+greendierolls = sample(c(1, 2, 3, 4, 5, 6), 1000, replace = TRUE, prob = c(1/6, 1/6, 1/6, 1/6, 1/6, 1/6))
+diediff=bluedierolls-greendierolls
+hist(diediff)
+</script></pre></p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p>Run the following code to find the mean and variance of these dierolls.</p>
+<p><pre class="ptx-sagecell sagecell-r" id="sage-101"><script type="text/x-sage">mean(diediff)
+</script></pre> <pre class="ptx-sagecell sagecell-r" id="sage-102"><script type="text/x-sage">var(diediff)
+</script></pre></p>
+<p>How do these values compare to the what you found in (a) and (b)?</p></article></article><span class="incontext"><a href="Sec_LinearCombofVariables.html#activity-diffdie" class="internal">in-context</a></span>
+</body>
+</html>

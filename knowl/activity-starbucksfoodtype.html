@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.6.9</span><span class="period">.</span><span class="space"> </span><span class="title">Starbucks Nutrition and Item Type: <code class="code-inline tex2jax_ignore">R</code>.</span>
+</h4>
+<div class="introduction">
+<p>Is there any impact on the type of item Starbucks serves, <code class="code-inline tex2jax_ignore">bakery</code>, <code class="code-inline tex2jax_ignore">bistro box</code>, <code class="code-inline tex2jax_ignore">hot breakfast</code>, <code class="code-inline tex2jax_ignore">parfait</code>, <code class="code-inline tex2jax_ignore">petite</code>, <code class="code-inline tex2jax_ignore">salad</code>,  <code class="code-inline tex2jax_ignore">sandwich</code> ,and nutrition?</p>
+<p>Run the following code to download <code class="code-inline tex2jax_ignore">starbucks.csv</code> a data set comtaining information about 77 Starbucks menu items their nutritional value and show it's variable names. <pre class="ptx-sagecell sagecell-r" id="sage-335"><script type="text/x-sage">starbucks = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/starbucks.csv")
+
+names(starbucks)
+</script></pre> Click here to learn more about this data set: <a class="external" href="https://www.openintro.org/data/index.php?data=starbucks" target="_blank"><code class="code-inline tex2jax_ignore">https://www.openintro.org/data/index.php?data=starbucks</code></a>.</p>
+</div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>Run the following code to rplot a boxplot for <code class="code-inline tex2jax_ignore">fiber</code> fiber in g, seperated by food type <code class="code-inline tex2jax_ignore">type</code>. <pre class="ptx-sagecell sagecell-r" id="sage-336"><script type="text/x-sage">boxplot(fiber ~ type, data=starbucks)
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>Run the following code to create an <code class="code-inline tex2jax_ignore">aov</code> model of <code class="code-inline tex2jax_ignore">starbucks</code> and summarize it. <pre class="ptx-sagecell sagecell-r" id="sage-337"><script type="text/x-sage">starbucksaov=aov(fiber ~ type, data=starbucks)
+summary(starbucksaov)
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>State the meaning of the <span class="process-math">\(p\)</span>-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>Do we  reject the null hypothesis?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p>What sort of error could have been made? (Type 1 or Type 2)</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p>Re-run the above comparing another nutrtional variable across food type.</p></article></article><span class="incontext"><a href="Sec_ANOVA.html#activity-starbucksfoodtype" class="internal">in-context</a></span>
+</body>
+</html>

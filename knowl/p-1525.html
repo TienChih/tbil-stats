@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>If two distributions have the same mean, we'd <em class="emphasis">still</em> expect differences in the observed samples!  Run the following code to generate histograms for two samples of size 30, both from a normal distribution with mean 10 and draw lines indicating their means. <pre class="ptx-sagecell sagecell-r" id="sage-286"><script type="text/x-sage">samp1=rnorm(30, 10, 3)
+samp2=rnorm(30, 10, 3)
+
+hist(samp1, col=rgb(1,0,0,0.5), prob=TRUE)
+hist(samp2, col=rgb(0,0,1,0.5), add=TRUE, prob=TRUE)
+abline(v = mean(samp1), col="red", lwd=3, lty=2)
+abline(v = mean(samp2), col="blue", lwd=3, lty=2)
+</script></pre> Run it a few times to see different samples.</p>
+<span class="incontext"><a href="Sec_TwoVarNum.html#p-1525" class="internal">in-context</a></span>
+</body>
+</html>

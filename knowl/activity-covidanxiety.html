@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Student Anxiety and COVID-19.</span>
+</h4>
+<div class="introduction">
+<p>Ten students were surveyed and were asked to rank their anxiety about school on a scale from 1-10.  This was prior to the COVID pandemic.  The same students were surveyed again and asked the same question a year later after the pandemic begun.  The results are as follows:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{array}{|c|c|}
+\hline
+\text{Anxiety pre-Pandemic} \amp \text{Anxiety post-Pandemic}\\
+\hline
+5 \amp 7 \\
+3 \amp 6 \\
+10 \amp 10 \\
+8 \amp 9 \\
+7 \amp 4 \\
+8 \amp 10 \\
+4 \amp 4 \\
+1 \amp 3 \\
+7 \amp 6 \\
+2 \amp 2 \\
+\hline
+\end{array}
+\end{equation*}
+</div>
+</div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>Find the pairwise difference between these observations.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>Compute the sample mean and standard deviation for the differences <span class="process-math">\(\bar{x}_d, s_d\text{.}\)</span></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>Suppose we hypothesis that student anxiety went up from pre to post Pandemic.  Which of the following best describes the null hypothesis <span class="process-math">\(H_0\text{?}\)</span>  Which the alternative?</p>
+<ul class="disc">
+<li><p><span class="process-math">\(\mu_d\lt 0\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(\mu_d&gt; 0\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(\mu_d\neq 0\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(\mu_d= 0\text{.}\)</span></p></li>
+</ul></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>Find the standard error <span class="process-math">\(SE\text{.}\)</span></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p>Find <span class="process-math">\(t\)</span>-score for <span class="process-math">\(\bar{x}\text{.}\)</span></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p>Use any method to compute a <span class="process-math">\(p\)</span>-value (be sure to use the appropriate level of significance). <pre class="ptx-sagecell sagecell-r" id="sage-268"><script type="text/x-sage">
+</script></pre> <a href="" class="hint-knowl original" data-knowl="./knowl/hint-32-hidden.html" title="Hint 1: Desmos"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p>State the meaning of the <span class="process-math">\(p\)</span>-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(h)</span></h5>
+<p>Do we  reject the null hypothesis?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(i)</span></h5>
+<p>What sort of error could have been made? (Type 1 or Type 2)</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(j)</span></h5>
+<p>If instead we wanted to find a 99% confidence interval for  <span class="process-math">\(\mu_d\text{,}\)</span> find <span class="process-math">\(t^*\)</span> so that for the appropriate degrees of freedom, <span class="process-math">\(P(-t^*\lt t\lt t^*)=0.99\text{.}\)</span> <pre class="ptx-sagecell sagecell-r" id="sage-269"><script type="text/x-sage">
+</script></pre> <a href="" class="hint-knowl original" data-knowl="./knowl/hint-33-hidden.html" title="Hint 1: Desmos"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(k)</span></h5>
+<p>Compute the  99% confidence interval for  <span class="process-math">\(\mu_d\text{.}\)</span> <pre class="ptx-sagecell sagecell-r" id="sage-270"><script type="text/x-sage">
+</script></pre> <a href="" class="hint-knowl original" data-knowl="./knowl/hint-34-hidden.html" title="Hint 1: Desmos"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(l)</span></h5>
+<p>State what this confidence interval means in the context of this problem using complete sentences.</p></article></article><span class="incontext"><a href="Sec_PairedData.html#activity-covidanxiety" class="internal">in-context</a></span>
+</body>
+</html>

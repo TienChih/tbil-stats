@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.6.5</span><span class="period">.</span><span class="space"> </span><span class="title">Fetilizer and Crop Yields: <span class="process-math">\(F\)</span>-statistic and <span class="process-math">\(p\)</span>-value.</span>
+</h4>
+<div class="introduction"><p>We  continue from <a href="" class="xref" data-knowl="./knowl/activity-cropsvariationwithin.html" title="Activity 6.6.4: Fetilizer and Crop Yields: Variation within Groups">Activity 6.6.4</a> to produce a <span class="process-math">\(p\)</span>-value.</p></div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>Compute <span class="process-math">\(F=\frac{MSG}{MSE}\text{.}\)</span>  This is a comparison between the variation between groups and the variation within groups.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>The <span class="process-math">\(F\)</span>-distribution is a random variable who has two parameters, <code class="code-inline tex2jax_ignore">d_f1</code> and <code class="code-inline tex2jax_ignore">d_f2</code> two sets of degrees of freedom.  We compute the proportion of the distribution greater than <span class="process-math">\(F\)</span> where <code class="code-inline tex2jax_ignore">d_f1</code><span class="process-math">\(=df_G\text{,}\)</span> <code class="code-inline tex2jax_ignore">d_f2</code><span class="process-math">\(=df_E\text{.}\)</span></p>
+<p>Adjust the values for <code class="code-inline tex2jax_ignore">d_f1</code>, <code class="code-inline tex2jax_ignore">d_f2</code> and <code class="code-inline tex2jax_ignore">F</code> to compute the <span class="process-math">\(p\)</span>-value <code class="code-inline tex2jax_ignore">p</code>. <iframe src="https://www.desmos.com/calculator/hxyoc4lcbh" id="interactive-123" width="600" height="600"></iframe></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>Edit and run the following code to produce the <span class="process-math">\(p\)</span>-value through <code class="code-inline tex2jax_ignore">R</code>. <pre class="ptx-sagecell sagecell-r" id="sage-327"><script type="text/x-sage">pf(FIXME_F, FIXME_dfG, FICME_dfE, lower.tail = FALSE)
+</script></pre></p></article></article><span class="incontext"><a href="Sec_ANOVA.html#activity-cropsFstat" class="internal">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Suppose we wanted to know if less than 45% of donuts sold in a shop had sprinkles <span class="process-math">\((H_A:p\lt 0.45)\text{.}\)</span>  We sample 60 donuts and found 12 of them had filling.  Run the following code to obtain the <span class="process-math">\(p\)</span>-value: <pre class="ptx-sagecell sagecell-r" id="sage-172"><script type="text/x-sage">prop.test(12, 60, 
+    p=0.45, alternative="less", correct=FALSE)
+</script></pre></p>
+<span class="incontext"><a href="Sec_HypothesisTesing.html#p-1057" class="internal">in-context</a></span>
+</body>
+</html>

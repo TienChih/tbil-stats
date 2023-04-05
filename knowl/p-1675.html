@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>Run the following code to produce another data frame with the same variables, but the <code class="code-inline tex2jax_ignore">B</code> group has a different distribution than the others. <pre class="ptx-sagecell sagecell-r" id="sage-323"><script type="text/x-sage">group2=c(rep("A", 30), rep("B", 30), rep("C", 30))
+values2=c(rnorm(30,100,35), rnorm(30,90,35), rnorm(30,100,35))
+
+dummy2 = data.frame(group2, values2)
+summary(dummy2)
+boxplot(dummy2$values2~dummy2$group2)
+</script></pre></p>
+<span class="incontext"><a href="Sec_ANOVA.html#p-1675" class="internal">in-context</a></span>
+</body>
+</html>

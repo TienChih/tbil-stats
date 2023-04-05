@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.5.1</span><span class="period">.</span>
+</h4>
+<div class="introduction">
+<p>Here, we walk through the steps of finding the sample size to estimate a confidence interval within a given margin of error.</p>
+<p>Suppose you sample a numerical variable and found a sample standard deviation <span class="process-math">\(s=25\text{.}\)</span>  We want to find a sample size <span class="process-math">\(n\)</span> so that we can take a sample of size <span class="process-math">\(n\)</span> and get a 95% confidence interval with margin of error <span class="process-math">\(ME=3\text{.}\)</span></p>
+</div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>Find <span class="process-math">\(z^*\)</span> such that <span class="process-math">\(P(-z^*\lt Z\lt z^*)=0.95\)</span> where <span class="process-math">\(Z\)</span> is the standard normal variable. <pre class="ptx-sagecell sagecell-r" id="sage-302"><script type="text/x-sage">
+</script></pre> <a href="" class="hint-knowl original" data-knowl="./knowl/hint-39-hidden.html" title="Hint 1: Desmos"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a></p>
+<p>Also see <a href="" class="xref" data-knowl="./knowl/remark-otherCI.html" title="Remark 4.2.5">Remark 4.2.5</a>.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>Recall from <a href="" class="xref" data-knowl="./knowl/activity-findingsampsizeforME.html" title="Activity 6.5.1">Activity 6.5.1</a> that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/activity-findingsampsizeforME.html">
+\begin{equation*}
+ME=t^*\frac{s}{\sqrt{n}}.
+\end{equation*}
+</div>
+<p class="continuation">Using <span class="process-math">\(t^*=z^*, s=25\)</span> and <span class="process-math">\(ME=3\text{,}\)</span> solve for <span class="process-math">\(n\text{.}\)</span></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>How large should your sample size be to get a 95% confidence interval with margin of error at least <span class="process-math">\(3\text{?}\)</span>  (It should be a whole number).</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>Repeat the above tasks for a 99% confidence interval.</p></article></article><span class="incontext"><a href="Sec_SizeofSampleNum.html#activity-findingsampsizeforME" class="internal">in-context</a></span>
+</body>
+</html>

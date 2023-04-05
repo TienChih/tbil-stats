@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="task exercise-like"><h5 class="heading">
+<span class="type">Task</span><span class="space"> </span><span class="codenumber">4.3.2.d</span><span class="period">.</span>
+</h5>
+<p>Your friend insists the coin is fair.  We test their claim through a simulation.  Run the following code to simulate flipping  <code class="code-inline tex2jax_ignore">n=50</code> fair coins <code class="code-inline tex2jax_ignore">numsamp=1000</code> times, and plot a distribution of the proportion of heads from each flip of 50 coins.  How likely is it to get 14% (or fewer) heads when flipping 50 coins?  How plausible are your friends claims? <pre class="ptx-sagecell sagecell-r" id="sage-161"><script type="text/x-sage">  numsamp=1000
+  n=50
+  p=0.5
+
+  samp_phat = rep(NA, numsamp)
+
+  for(i in 1:numsamp){
+  samp = rbinom(1,n,p) # obtain a sample of size n  from the population
+  samp_phat[i] = samp/n    # Find the proportion for this sample
+}
+
+hist(samp_phat, xlim = c(0,1))
+abline(v = 0.14, lwd = 2, lty = 2, col = "red")
+</script></pre></p></article><span class="incontext"><a href="Sec_HypothesisTesing.html#task-523" class="internal">in-context</a></span>
+</body>
+</html>

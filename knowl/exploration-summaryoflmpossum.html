@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="exploration project-like"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">7.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Hypothesis Testing: Slope - Possums.</span>
+</h4>
+<div class="introduction">
+<p>Run the following code to download <code class="code-inline tex2jax_ignore">possum.csv</code> as seen in <a href="" class="xref" data-knowl="./knowl/exploration-possums.html" title="Exploration 7.1.1: Dimensions of Possums">Exploration 7.1.1</a>, <a href="" class="xref" data-knowl="./knowl/activity-possums.html" title="Activity 7.1.7: Possum Regression">Activity 7.1.7</a>, and <a href="" class="xref" data-knowl="./knowl/exploration-possum2.html" title="Exploration 7.2.1: Possums Again">Exploration 7.2.1</a>, and create a linear model for <code class="code-inline tex2jax_ignore">head_l~skull_w</code> and summarize it. <pre class="ptx-sagecell sagecell-r" id="sage-358"><script type="text/x-sage">possum = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/possum.csv")
+possummod=lm(head_l~skull_w, data=possum)
+summary(possummod)
+</script></pre> We're focused on the <code class="code-inline tex2jax_ignore">Coefficients</code>, in particular the second row.</p>
+<p>The first row starting with <code class="code-inline tex2jax_ignore">(Intercept)</code> gives the point estimate, standard error, test statistic and <span class="process-math">\(p\)</span>-value for the altnerative hypothesis <span class="process-math">\(H_A:\beta_0\neq 0\text{.}\)</span></p>
+<p>The second row  starting with <code class="code-inline tex2jax_ignore">skull_w</code> gives the point estimate, standard error, test statistic and <span class="process-math">\(p\)</span>-value for the altnerative hypothesis <span class="process-math">\(H_A:\beta_1\neq 0\text{.}\)</span>  This is the row about slopes.</p>
+</div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>The first entry of this row gives us the point estimate for the slope.  How does this compare to slope found by running: <pre class="ptx-sagecell sagecell-r" id="sage-359"><script type="text/x-sage">possummod
+</script></pre> We call this value <span class="process-math">\(\beta_1\text{.}\)</span></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>The second entry of this row gives us the standard  error for the slope.  Call this value <span class="process-math">\(SE_1\text{.}\)</span>  Find the <span class="process-math">\(t\)</span>-value for <span class="process-math">\(\beta_1\)</span> by computing</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+t_1=\frac{\beta_1-0}{SE_1}.
+\end{equation*}
+</div>
+<p class="continuation">How does this value compare to the third entry?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>According to the summary, how many degrees of freedom are there?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>Compute <span class="process-math">\(P(t&gt;t_1)\)</span> on the standard <span class="process-math">\(t\)</span>-distribution with the appropriate degrees of  freedom.  Then double it to obtain the <span class="process-math">\(p\)</span>-value for the alternative hypothesis <span class="process-math">\(H_A: \beta_1\neq 0\text{.}\)</span> <pre class="ptx-sagecell sagecell-r" id="sage-360"><script type="text/x-sage">
+</script></pre> <a href="" class="hint-knowl original" data-knowl="./knowl/hint-50-hidden.html" title="Hint 1: Desmos"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a></p>
+<p>How does this value compare to the 4th entry?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p>Do we accept or reject the null hypothesis that <span class="process-math">\(H_0: \beta_1=0\text{?}\)</span></p></article></article><span class="incontext"><a href="Sec_InferenceRegression.html#exploration-summaryoflmpossum" class="internal">in-context</a></span>
+</body>
+</html>

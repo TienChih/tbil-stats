@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Fix and run the following code so that <code class="code-inline tex2jax_ignore">mu_D=</code><span class="process-math">\(\mu_D\)</span> and <code class="code-inline tex2jax_ignore">SE_D=</code><span class="process-math">\(\sigma_D\)</span> and plot a normal curve on top of our histogram. <pre class="ptx-sagecell sagecell-r" id="sage-179"><script type="text/x-sage">mu_D=FIXME
+SE_D=FIXME
+
+hist(diff_underweight, breaks=25, prob=TRUE)
+curve(dnorm(x, mean=mu_D, sd=SE_D), col="darkblue", lwd=2, add=TRUE, yaxt="n")
+</script></pre> How well does the normal distribution approximate the histogram?</p>
+<span class="incontext"><a href="Sec_TwoVarCat.html#p-1110" class="internal">in-context</a></span>
+</body>
+</html>

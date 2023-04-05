@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Restaurant Bill.</span>
+</h4>
+<div class="introduction"><p>Our recurring restaurateur believes that the average amount spent by customers is over $12.  She plans on polling 50 customers to test this.  Suppose we had a level of significance <span class="process-math">\(\alpha=0.05\text{.}\)</span></p></div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>Which of the following best describes the null hypothesis <span class="process-math">\(H_0\text{?}\)</span></p>
+<ul class="disc">
+<li><p><span class="process-math">\(\mu\lt \$12\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(\mu&gt; \$12\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(\mu\neq \$12\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(\mu= \$12\text{.}\)</span></p></li>
+</ul></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>Which of the following best describes the alternative hypothesis <span class="process-math">\(H_A\text{?}\)</span></p>
+<ul class="disc">
+<li><p><span class="process-math">\(\mu\lt \$12\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(\mu&gt; \$12\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(\mu\neq \$12\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(\mu= \$12\text{.}\)</span></p></li>
+</ul></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>Let's poll some customers!  Run the following code to poll 50 customers and how much money they spent. <pre class="ptx-sagecell sagecell-r" id="sage-247"><script type="text/x-sage">n=50
+mu=runif(1, 10, 15)
+samp=round(rnorm(n, mu, 4), digits=2)
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>Run the following code to find the sample mean and sample standard deviation. <pre class="ptx-sagecell sagecell-r" id="sage-248"><script type="text/x-sage">print(mean(samp))
+print(sd(samp))
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p>Find the standard error <span class="process-math">\(SE\text{.}\)</span></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p>Find <span class="process-math">\(t\)</span>-score for <span class="process-math">\(\bar{x}\text{.}\)</span></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p>Compute a <span class="process-math">\(p\)</span>-value (be sure to use the appropriate level of significance). <pre class="ptx-sagecell sagecell-r" id="sage-249"><script type="text/x-sage">
+</script></pre> <a href="" class="hint-knowl original" data-knowl="./knowl/hint-29-hidden.html" title="Hint 1: Desmos"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(h)</span></h5>
+<p>State the meaning of the <span class="process-math">\(p\)</span>-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(i)</span></h5>
+<p>Do we  reject the null hypothesis?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(j)</span></h5>
+<p>What sort of error could have been made? (Type 1 or Type 2)</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(k)</span></h5>
+<p>Run the following to see what the true mean was: <pre class="ptx-sagecell sagecell-r" id="sage-250"><script type="text/x-sage">print(mu)
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(l)</span></h5>
+<p>Run the following to compute the <span class="process-math">\(p\)</span>-value another way, how does this compare to what you did in (f)? <pre class="ptx-sagecell sagecell-r" id="sage-251"><script type="text/x-sage">t.test(samp, mu=12, alternative="greater")
+</script></pre></p></article></article><span class="incontext"><a href="Sec_OneVarNum.html#activity-averagebill" class="internal">in-context</a></span>
+</body>
+</html>

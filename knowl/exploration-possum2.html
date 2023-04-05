@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="exploration project-like"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">7.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Possums Again.</span>
+</h4>
+<div class="introduction">
+<p>Recall from <a href="" class="xref" data-knowl="./knowl/exploration-possums.html" title="Exploration 7.1.1: Dimensions of Possums">Exploration 7.1.1</a> and <a href="" class="xref" data-knowl="./knowl/activity-possums.html" title="Activity 7.1.7: Possum Regression">Activity 7.1.7</a> that the “head length of possums in mm” (response variable <span class="process-math">\(y\)</span>) as a linear function of the “skull width of possums in mm” (explanatory variable <span class="process-math">\(x\)</span>) has regression line</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/exploration-possums.html ./knowl/activity-possums.html">
+\begin{equation*}
+y\approx 0.8158x+46.1954
+\end{equation*}
+</div>
+<p class="continuation">with correlation coefficient <span class="process-math">\(R\approx 0.7108, R^2\approx 0.5053.\)</span></p>
+<p>Run the following cell to re-compute these values: <pre class="ptx-sagecell sagecell-r" id="sage-349"><script type="text/x-sage">possum = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/possum.csv")
+possummod=lm(head_l~skull_w, data=possum)
+print(possummod)
+print(cor(possum$skull_w, possum$head_l))
+plot(possum$skull_w, possum$head_l,  pch=19)
+abline(possummod, col="red")
+</script></pre> Click here to learn more about this data set: <a class="external" href="https://www.openintro.org/data/index.php?data=possum" target="_blank"><code class="code-inline tex2jax_ignore">https://www.openintro.org/data/index.php?data=possum</code></a></p>
+</div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>How would you describe the relationship between skull width and head length?  (Strong, Moderate or Weak?  Positive, Negative or None?)</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>What proportion of the head length is explained by skull width?  (See <a href="" class="xref" data-knowl="./knowl/remark-rsquared.html" title="Remark 7.1.20">Remark 7.1.20</a>)</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>For a possum with skull width 53mm, what is the <em class="emphasis">predicted</em> head length?  (Is skull width the explanatory or response variable?)</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>For a possum with skull width 62mm, what is the <em class="emphasis">predicted</em> head length?  (Is skull width the explanatory or response variable?)</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p>For a possum with head length 92mm, what skull width <em class="emphasis">predicts</em> this head length?  (Is head length the explanatory or response variable?)</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p>Given that the slope <span class="process-math">\(\beta_1=\frac{\Delta x}{\Delta y}\)</span>  what are the units of <span class="process-math">\(\beta_1\)</span> in this problem?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p>If the skull width of a possum is increased by 1mm, what is the predicted change in head length?</p></article></article><span class="incontext"><a href="Sec_InterpretingRegression.html#exploration-possum2" class="internal">in-context</a></span>
+</body>
+</html>

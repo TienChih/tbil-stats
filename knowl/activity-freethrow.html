@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">Free Throws.</span>
+</h4>
+<div class="introduction"><p>Consider the basketball player from <a href="" class="xref" data-knowl="./knowl/exploration-freethrow.html" title="Exploration 3.4.1: Free Throws">Exploration 3.4.1</a>, taking <span class="process-math">\(n=4\)</span> free throws with a <span class="process-math">\(p=0.9\)</span> probability of each free-throw being a success.  Let <span class="process-math">\(X\)</span> denote the number of succesful free throws.</p></div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>What is the probability that she makes exactly 2 free throws, that is, <span class="process-math">\(P(X=2)\text{?}\)</span></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>Run the following code to simulate 1000 trials of <code class="code-inline tex2jax_ignore">freethrows=4</code> free throws taken with <code class="code-inline tex2jax_ignore">p=0.9</code> probability of success each, and plot a histogram of the number of succesful free throws: <pre class="ptx-sagecell sagecell-r" id="sage-122"><script type="text/x-sage">numbaskets = rep(0, 1000)
+
+freethrows=4
+p=0.9
+
+for(i in 1:freethrows){
+  numbaskets=numbaskets+sample(c(1, 0), 1000, replace = TRUE, prob = c(p, 1-p)) 
+}
+hist(numbaskets)
+print(freethrows)
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>Run the following code to see how many of these trials resulted in two succesful free throws: <pre class="ptx-sagecell sagecell-r" id="sage-123"><script type="text/x-sage">length(which(numbaskets==2))
+</script></pre> How does this compare to what you found in (a)?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>Suppose her less experienced teammate only has a <span class="process-math">\(p=0.65\)</span> chance of making a shot.  If she takes 5 free throws, what are the chances she makes exactly <span class="process-math">\(k=3\)</span> free throws?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p>Modify and run the following code to simulate 1000 trials of  free throws for the teammate and plot a histogram of the number of succesful free throws: <pre class="ptx-sagecell sagecell-r" id="sage-124"><script type="text/x-sage">numbasketsTM = rep(0, 1000)
+
+freethrows=FIXME
+p=FIXME
+
+for(i in 1:freethrows){
+  numbasketsTM=numbasketsTM+sample(c(1, 0), 1000, replace = TRUE, prob = c(p, 1-p)) 
+}
+hist(numbasketsTM)
+print(freethrows)
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p>Modify and run the following code to see how many of these trials resulted in three succesful free throws: <pre class="ptx-sagecell sagecell-r" id="sage-125"><script type="text/x-sage">length(which(numbasketsTM==FIXME))
+</script></pre> How does this compare to what you found in (a)?</p></article></article><span class="incontext"><a href="Sec_Binomial.html#activity-freethrow" class="internal">in-context</a></span>
+</body>
+</html>

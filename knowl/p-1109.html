@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Run the following code to simulate 1000 trials of sampling 500 babies from mothers who smoke, 1000 babies from mothers who do not smoke, taking the difference in proportions of babies who are underweight, and plotting a histogram of the results. <pre class="ptx-sagecell sagecell-r" id="sage-178"><script type="text/x-sage">smoke_n=500
+nosmoke_n=1000
+smoke_p=0.078
+nosmoke_p=0.029
+trials=1000
+
+diff_underweight=rep(NA, trials)
+
+for(i in 1:trials){
+	smoke_samp=sample(c("UNDERWEIGHT", "NO"), smoke_n, replace=TRUE, prob=c(smoke_p, 1-smoke_p))
+	nosmoke_samp=sample(c("UNDERWEIGHT", "NO"), nosmoke_n, replace=TRUE, prob=c(nosmoke_p, 1-nosmoke_p))
+	diff_underweight[i]=length(which(smoke_samp=="UNDERWEIGHT"))/smoke_n-length(which(nosmoke_samp=="UNDERWEIGHT"))/nosmoke_n
+}
+hist(diff_underweight, breaks=25, prob=TRUE)
+</script></pre></p>
+<span class="incontext"><a href="Sec_TwoVarCat.html#p-1109" class="internal">in-context</a></span>
+</body>
+</html>

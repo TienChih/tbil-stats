@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="task exercise-like"><h4 class="heading">
+<span class="type">Task</span><span class="space"> </span><span class="codenumber">2.5.4.d</span><span class="period">.</span>
+</h4>
+<p>Run the following code to simulate 1000 boxes of icecream with 2 scoops removed.</p>
+<p><pre class="ptx-sagecell sagecell-r" id="sage-106"><script type="text/x-sage">boxoz=rnorm(1000, mean = 60, sd = 2)
+scooponeoz=rnorm(1000, mean = 2, sd = .15)
+scooptwooz=rnorm(1000, mean = 2, sd = .15)
+
+remainicecream=boxoz-scooponeoz-scooptwooz
+hist(remainicecream)
+</script></pre></p></article><span class="incontext"><a href="Sec_LinearCombofVariables.html#task-327" class="internal">in-context</a></span>
+</body>
+</html>

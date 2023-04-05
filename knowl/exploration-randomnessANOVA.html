@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="exploration project-like"><h3 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">6.6.2</span><span class="period">.</span><span class="space"> </span><span class="title">Randomness.</span>
+</h3>
+<div class="introduction"><p>Much like in <a href="" class="xref" data-knowl="./knowl/exploration-fooledbyrandom.html" title="Exploration 6.4.2: Differences in Samples">Exploration 6.4.2</a>, the issue is that it's certainly possible for two different distributions to produce similar looking samples, or for identical distributions to produce very different looking examples.</p></div>
+<article class="task exercise-like"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p>Run the following code to produce a data frame with two variables, a <code class="code-inline tex2jax_ignore">group</code> variable with values <code class="code-inline tex2jax_ignore">A</code>, <code class="code-inline tex2jax_ignore">B</code> and <code class="code-inline tex2jax_ignore">C</code>, and a <code class="code-inline tex2jax_ignore">values</code> variable that is identical across group, and plot boxplots of <code class="code-inline tex2jax_ignore">values</code> across the groups. <pre class="ptx-sagecell sagecell-r" id="sage-322"><script type="text/x-sage">group1=c(rep("A", 30), rep("B", 30), rep("C", 30))
+values1=c(rnorm(30,100,35), rnorm(30,100,35), rnorm(30,100,35))
+
+dummy1 = data.frame(group1, values1)
+summary(dummy1)
+boxplot(dummy1$values1~dummy1$group1)
+</script></pre></p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p>Run the following code to produce another data frame with the same variables, but the <code class="code-inline tex2jax_ignore">B</code> group has a different distribution than the others. <pre class="ptx-sagecell sagecell-r" id="sage-323"><script type="text/x-sage">group2=c(rep("A", 30), rep("B", 30), rep("C", 30))
+values2=c(rnorm(30,100,35), rnorm(30,90,35), rnorm(30,100,35))
+
+dummy2 = data.frame(group2, values2)
+summary(dummy2)
+boxplot(dummy2$values2~dummy2$group2)
+</script></pre></p></article></article><span class="incontext"><a href="Sec_ANOVA.html#exploration-randomnessANOVA" class="internal">in-context</a></span>
+</body>
+</html>

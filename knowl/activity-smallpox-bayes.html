@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">Bayes Theorem and Smallpox.</span>
+</h4>
+<div class="introduction">
+<p>We show how Bayes Theorem is applied.</p>
+<p>Recall that there are 6224 patients in the <code class="code-inline tex2jax_ignore">smallpox</code> data set.</p>
+</div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>Run the following code to show how many patients were “inoculated”.</p>
+<p><pre class="ptx-sagecell sagecell-r" id="sage-73"><script type="text/x-sage">length(which(smallpox$inoculated=="yes"))
+</script></pre></p>
+<p>What is <code class="code-inline tex2jax_ignore">P(inoculated)</code>?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>Run the following code to subset the patients who were “inoculated”, the patients who were “not inoculated” and show how many patients were not inoculated.</p>
+<p><pre class="ptx-sagecell sagecell-r" id="sage-74"><script type="text/x-sage">inocpatients=subset(smallpox, smallpox$inoculated=="yes")
+notinocpatients=subset(smallpox, smallpox$inoculated=="no")
+nrow(notinocpatients)
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>Run the following code to see how many incoulated patients died.</p>
+<p><pre class="ptx-sagecell sagecell-r" id="sage-75"><script type="text/x-sage">length(which(inocpatients$result=="died"))
+</script></pre></p>
+<p>What is <code class="code-inline tex2jax_ignore">P(died|inoculated)</code></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>Run the following code to see how many not incoulated patients died.</p>
+<p><pre class="ptx-sagecell sagecell-r" id="sage-76"><script type="text/x-sage">length(which(notinocpatients$result=="died"))
+</script></pre></p>
+<p>What is <code class="code-inline tex2jax_ignore">P(died|not inoculated)</code></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p>Use <a href="" class="xref" data-knowl="./knowl/TheoremBayes.html" title="Theorem 2.3.6: Bayes Theorem">Theorem 2.3.6</a> to find <code class="code-inline tex2jax_ignore">P(inoculated|died)</code></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p>Run the following code to subset the patients who  “died” and show how many patients this was.</p>
+<p><pre class="ptx-sagecell sagecell-r" id="sage-77"><script type="text/x-sage">diedpatients=subset(smallpox, smallpox$result=="died")
+nrow(diedpatients)
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p>Run the following code to show how many of the patients who died were inoculated.</p>
+<p><pre class="ptx-sagecell sagecell-r" id="sage-78"><script type="text/x-sage">length(which(diedpatients$inoculated=="yes"))
+</script></pre></p>
+<p>Compute <code class="code-inline tex2jax_ignore">P(inoculated|died)</code> directly.  How does this compare to what you found in (e)?  To <code class="code-inline tex2jax_ignore">P(inoculated)</code>?</p></article></article><span class="incontext"><a href="Sec_Bayes.html#activity-smallpox-bayes" class="internal">in-context</a></span>
+</body>
+</html>

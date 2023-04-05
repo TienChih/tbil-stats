@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Fix and run the following code to see how many of the <code class="code-inline tex2jax_ignore">n</code> you captured are cured: <pre class="ptx-sagecell sagecell-r" id="sage-174"><script type="text/x-sage">n=FIXME
+p=runif(1,0.6,0.99)
+samp_zombie=sample(c("CURED", "nope"), n, replace=TRUE, prob=c(p, 1-p))
+length(which(samp_zombie=="CURED"))
+</script></pre></p>
+<span class="incontext"><a href="Sec_SizeofSampleCat.html#p-1087" class="internal">in-context</a></span>
+</body>
+</html>

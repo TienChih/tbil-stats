@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.6.4</span><span class="period">.</span><span class="space"> </span><span class="title">Fetilizer and Crop Yields: Variation <em class="emphasis">within</em> Groups.</span>
+</h4>
+<div class="introduction"><p>We now continue from <a href="" class="xref" data-knowl="./knowl/activity-cropsvariationbetween.html" title="Activity 6.6.3: Fetilizer and Crop Yields: Variation between Groups">Activity 6.6.3</a> to analyze variation within groups.</p></div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>Luckily there is a statistic which measures variation (it's implied by the name).  Compute <span class="process-math">\(Var_1\text{,}\)</span> the sample variance for the yield rates for Fertlizer A.  Repeat for <span class="process-math">\(Var_2, Var_3\text{.}\)</span> <pre class="ptx-sagecell sagecell-r" id="sage-326"><script type="text/x-sage">
+</script></pre> <a href="" class="hint-knowl original" data-knowl="./knowl/hint-49-hidden.html" title="Hint 1: Desmos"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>Now that we have the variance within each group, we compute the the total variation.</p>
+<p>Compute <span class="process-math">\((n_1-1)Var_1+(n_2-1)Var_2+(n_3-1)Var_3\text{.}\)</span>  This computes the total variance within groups, weighted for the size of the group.  Call this value <span class="process-math">\(SSE\)</span> or the “sum of squares for errors”.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>Compute the “degrees of freedom for errors” by summing the degrees of freedom for each group: <span class="process-math">\(df_{E}=(n_1-1)+(n_2-1)+(n_3-1).\)</span></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>Compute the “mean square error”: <span class="process-math">\(MSE=\frac{SSE}{df_E}.\)</span></p>
+<p>This value measure the variation within groups, normalized by the size of the groups.)</p></article></article><span class="incontext"><a href="Sec_ANOVA.html#activity-cropsvariationwithin" class="internal">in-context</a></span>
+</body>
+</html>

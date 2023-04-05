@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.4.7</span><span class="period">.</span><span class="space"> </span><span class="title">Movie Data.</span>
+</h4>
+<div class="introduction">
+<p>We examine data  obtained from IMDB and Rotten Tomatoes. The data represent 456 randomly sampled movies released between 1972 to 2014 in the Unites States.</p>
+<p>Run the following code to download <code class="code-inline tex2jax_ignore">movies.Rdata</code> data set and to display it's variables. <pre class="ptx-sagecell sagecell-r" id="sage-220"><script type="text/x-sage">load(url("https://github.com/TienChih/tbil-stats/raw/main/data/movies.Rdata"))
+names(movies)
+</script></pre></p>
+</div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>We're curious to see if genre of a movie, and how Rotten Tomatoes rates it, are independent.  State a null and alternative for the <span class="process-math">\(\chi^2\)</span> independence test.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>Run the following code to display a sample frequency table comparing the genre of a movie and their Rotten Tomatoes score. <pre class="ptx-sagecell sagecell-r" id="sage-221"><script type="text/x-sage">table(movies$genre, movies$critics_rating)
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>Run the following code to show a mosaic plots comparing the genre of a movie and their Rotten Tomatoes score.  What can you tell from this plot? <pre class="ptx-sagecell sagecell-r" id="sage-222"><script type="text/x-sage">counts=table(movies$genre, movies$critics_rating)
+mosaicplot(counts)
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>Run the following code to run the <span class="process-math">\(\chi^2\)</span> independence test on <code class="code-inline tex2jax_ignore">movies$genre</code> and <code class="code-inline tex2jax_ignore">movies$critics_rating</code>. <pre class="ptx-sagecell sagecell-r" id="sage-223"><script type="text/x-sage">chisq.test(movies$genre, movies$critics_rating, correct=FALSE)
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p>State the meaning of the <span class="process-math">\(p\)</span>-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p>If we had a level of significance <span class="process-math">\(\alpha=0.05\)</span> do we  reject the null hypothesis?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p>Is it plausible for support for the genre of a movie and the Rotten Tomatoes rating to be independent?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(h)</span></h5>
+<p>Run the following code to obtain summaries of the variables.  Which are categorical? <pre class="ptx-sagecell sagecell-r" id="sage-224"><script type="text/x-sage">summary(movies)
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(i)</span></h5>
+<p>Repeat the above steps comparing any two categorical variables of your choice.</p></article></article><span class="incontext"><a href="Sec_ChiIndependence.html#activity-Movies" class="internal">in-context</a></span>
+</body>
+</html>

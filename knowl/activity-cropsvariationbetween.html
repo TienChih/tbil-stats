@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.6.3</span><span class="period">.</span><span class="space"> </span><span class="title">Fetilizer and Crop Yields: Variation <em class="emphasis">between</em> Groups.</span>
+</h4>
+<div class="introduction">
+<p>Over the next few activities, we will explore how ANOVA works with a small data set, one that is honestly too samll to be considered a serious data set in practice.  However, it will allow us to see the inner workings of ANOVA without getting bogged down in huge computations.</p>
+<p>A farmer tests 3 types of fertilizer, A, B and C, on her crops.  She segements her farmland into different plots, applies one type of fertilizer for each plot, and in the end, records the bushels per acre for that plot.  The results are as follows:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{array}{c|c|c}
+\text{Fertilizer A} \amp \text{Fertilizer B} \amp \text{Fertilizer C} \\
+\hline
+176 \amp 168 \amp 177\\
+173 \amp 171 \amp 179\\
+175 \amp 172 \amp 173\\
+179 \amp     \amp 176\\
+\amp     \amp 181\\
+\end{array}
+\end{equation*}
+</div>
+</div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>Compute <span class="process-math">\(\bar{x}\)</span> the overall sample mean production rate for all 12 plots. <pre class="ptx-sagecell sagecell-r" id="sage-324"><script type="text/x-sage">
+</script></pre> <a href="" class="hint-knowl original" data-knowl="./knowl/hint-47-hidden.html" title="Hint 1: Desmos"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>Compute <span class="process-math">\(\bar{x}_1\)</span> the sample mean production rate for Fertilizer A.  Repeat for <span class="process-math">\(\bar{x}_2\)</span> for Fertilizer B and <span class="process-math">\(\bar{x}_3\)</span> for Fertilizer C. <pre class="ptx-sagecell sagecell-r" id="sage-325"><script type="text/x-sage">
+</script></pre> <a href="" class="hint-knowl original" data-knowl="./knowl/hint-48-hidden.html" title="Hint 1: Desmos"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>Now that we have the overall mean, and the mean of each group, we compute the “variation” amongst the groups.</p>
+<p>Compute <span class="process-math">\(n_1(\bar{x}_1-\bar{x})^2+n_2(\bar{x}_2-\bar{x})^2+n_3(\bar{x}_3-\bar{x})^2\text{,}\)</span> where <span class="process-math">\(n_i\)</span> is the size of the appropriate group.  This computes the “difference” from each groups mean from the overall mean, squared to remove signs, and weighted for the size of the group.  Call this value <span class="process-math">\(SSG\)</span> or the “sum of squares for groups”.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>Since there are <span class="process-math">\(k=3\)</span> groups, the <em class="emphasis">degrees of freedom for groups</em>: <span class="process-math">\(df_G\)</span> is <span class="process-math">\(k-1=3-1=2\text{.}\)</span>  Compute the “mean square for groups”: <span class="process-math">\(MSG=\frac{SSG}{df_G}.\)</span></p>
+<p>This value measure the variation between groups, normalized for the number of groups.  (If there were a lot of groups, we would see a lot of variation even if they were distributed identically, so we account for that.)</p></article></article><span class="incontext"><a href="Sec_ANOVA.html#activity-cropsvariationbetween" class="internal">in-context</a></span>
+</body>
+</html>

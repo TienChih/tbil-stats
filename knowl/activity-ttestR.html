@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">Using <code class="code-inline tex2jax_ignore">R</code> to Hypothesis Test.</span>
+</h4>
+<div class="introduction"><p>As in <a href="" class="xref" data-knowl="./knowl/activity-proptestR.html" title="Activity 4.3.10: Using R to Hypothesis Test">Activity 4.3.10</a>, we can use <code class="code-inline tex2jax_ignore">R</code> to Hypothesis Test Directly.  The structure of the command is <code class="code-inline tex2jax_ignore">t.test(data, mu=mu_0, alternative="greater, less, two.sided" depending on H_A)</code></p></div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>Suppose we wanted to know if the average number of chocolate donuts sold by a shop per day is more than 55 chocolate donuts  <span class="process-math">\((H_A:\mu&gt;55)\text{.}\)</span>  We sample 12 random days and the number of chocolate donuts sold were</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+55, 59, 59, 56, 55, 58, 53, 59, 50, 51, 60, 51.
+\end{equation*}
+</div>
+<p class="continuation">Run the following code to obtain the <span class="process-math">\(p\)</span>-value: <pre class="ptx-sagecell sagecell-r" id="sage-252"><script type="text/x-sage">t.test(c(55, 59, 59, 56, 55, 58, 53, 59, 50, 51, 60, 51), mu=55, alternative="greater")
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>Suppose we wanted to know if the average number of  donuts with filling sold by a shop per day is less than 100  donuts  <span class="process-math">\((H_A:\mu\lt 100)\text{.}\)</span>  We sample 10 random days and the number of  donuts with filling sold were</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+55, 59, 59, 56, 55, 58, 53, 59, 50, 51, 60, 51.
+\end{equation*}
+</div>
+<p class="continuation">Run the following code to obtain the <span class="process-math">\(p\)</span>-value: <pre class="ptx-sagecell sagecell-r" id="sage-253"><script type="text/x-sage">t.test(c(83, 83, 112, 108, 99, 104, 107, 113, 101, 107), mu=100, alternative="less")
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>Suppose we wanted to know if the average number of sprinkled donuts sold per day was or wasn't 120 <span class="process-math">\((H_A:\mu\neq120)\text{.}\)</span>  We sample 16 random days and the number of sprinkled donuts sold were</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+139, 101, 131, 122, 136, 123, 129, 127, 106, 109, 101, 117, 120, 136, 109, 124.
+\end{equation*}
+</div>
+<p class="continuation">Run the following code to obtain the <span class="process-math">\(p\)</span>-value: <pre class="ptx-sagecell sagecell-r" id="sage-254"><script type="text/x-sage">t.test(c(139, 101, 131, 122, 136, 123, 129, 127, 106, 109, 101, 117, 120, 136, 109, 124), mu=120, alternative="two.sided")
+</script></pre></p></article></article><span class="incontext"><a href="Sec_OneVarNum.html#activity-ttestR" class="internal">in-context</a></span>
+</body>
+</html>

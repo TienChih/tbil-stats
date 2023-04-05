@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="exploration project-like"><h3 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">7.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Estimating Regression.</span>
+</h3>
+<div class="introduction"><p>Let <code class="code-inline tex2jax_ignore">X</code> and <code class="code-inline tex2jax_ignore">Y</code> be variables where <span class="process-math">\(Y=0.8X+5+\epsilon\)</span> is a distributed by a normal variable with mean 0 and standard deviation 3.</p></div>
+<article class="task exercise-like"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p>What line probably best fits the relationship between <code class="code-inline tex2jax_ignore">X</code> and <code class="code-inline tex2jax_ignore">Y</code>?</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p>Run the following code to generate <code class="code-inline tex2jax_ignore">n=10</code> random  <code class="code-inline tex2jax_ignore">X</code> and <code class="code-inline tex2jax_ignore">Y</code> values, plot them, find a regression line and the line in (a): <pre class="ptx-sagecell sagecell-r" id="sage-357"><script type="text/x-sage">n=10
+X=runif(n, 0, 10)
+Y=0.8*X+5+rnorm(n,0,3)
+mod=lm(Y~X)
+plot(X, Y, pch=19)
+abline(mod)
+abline(5, 0.8, col="blue", lty=2)
+</script></pre> Run it a few times, what do you notice?</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p>Adjust <code class="code-inline tex2jax_ignore">n=100</code> and run it again, now what do you notice?</p></article></article><span class="incontext"><a href="Sec_InferenceRegression.html#exploration-35" class="internal">in-context</a></span>
+</body>
+</html>

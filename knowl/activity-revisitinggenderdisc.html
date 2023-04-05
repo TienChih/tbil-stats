@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Gender and Raises: Hypothesis Test.</span>
+</h4>
+<div class="introduction">
+<p>Recall that from <a href="" class="xref" data-knowl="./knowl/exploration-genderdisc.html" title="Exploration 5.2.1: Gender and Raises">Exploration 5.2.1</a> that we have <span class="process-math">\(n_1=312\)</span>  men and <span class="process-math">\(n_2=216\)</span>  women, of whom <span class="process-math">\(x_1=72\)</span> men and <span class="process-math">\(x_2=30\)</span> women got raises. The company claims that men and women have equal raise rates.  The watchdog group claims that men get more raises than women.  Suppose we use a <span class="process-math">\(\alpha=0.05\)</span> level of significance.</p>
+<p><pre class="ptx-sagecell sagecell-r" id="sage-189"><script type="text/x-sage">
+</script></pre> <a href="" class="hint-knowl original" data-knowl="./knowl/hint-19-hidden.html" title="Hint 1: Desmos"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a></p>
+</div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>Which of the following best describes the null hypothesis <span class="process-math">\(H_0\text{?}\)</span></p>
+<ul class="disc">
+<li><p><span class="process-math">\(p_1-p_2\lt 0\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(p_1-p_2&gt; 0\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(p_1-p_2\neq 0\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(p_1-p_2= 0\text{.}\)</span></p></li>
+</ul></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>Which of the following best describes the alternative hypothesis <span class="process-math">\(H_A\text{?}\)</span></p>
+<ul class="disc">
+<li><p><span class="process-math">\(p_1-p_2\lt 0\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(p_1-p_2&gt; 0\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(p_1-p_2\neq 0\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(p_1-p_2= 0\text{.}\)</span></p></li>
+</ul></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>Compute <span class="process-math">\(p_{pool}\text{.}\)</span></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>Assuming the null hypothesis, follow <a href="" class="xref" data-knowl="./knowl/remark-diffiszero.html" title="Remark 5.2.7">Remark 5.2.7</a> to compute <span class="process-math">\(\mu_D, SE_D\text{.}\)</span></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p>Compute <span class="process-math">\(d=\hat{p_1}-\hat{p_2}\)</span> the difference in proportions of men and women who got raises.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p>Let <span class="process-math">\(X\)</span> be the normal variable mean <span class="process-math">\(\mu_{D}\)</span> and standard deviation <span class="process-math">\(SE_{D}\text{.}\)</span> Compute <span class="process-math">\(P(D&gt; p_0+|p_0-d|)\text{.}\)</span></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p>Use the above value to compute the <span class="process-math">\(p\)</span>-value.  (This is an area of one tail.)</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(h)</span></h5>
+<p>Compute the <span class="process-math">\(z\)</span>-score for <span class="process-math">\(\hat{p}\text{,}\)</span> call this <span class="process-math">\(z_{\hat{p}}\text{.}\)</span></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(i)</span></h5>
+<p>Let <span class="process-math">\(Z\)</span> denote the standard normal variable.  Compute <span class="process-math">\(P(Z&gt;|z_{\hat{p}}|)\)</span> and <span class="process-math">\(P(Z\lt -|z_{\hat{p}}|)\text{.}\)</span>  How does these values compare to what you found in (f) and (g)?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(j)</span></h5>
+<p>Compute the <span class="process-math">\(p\)</span>-value.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(k)</span></h5>
+<p>State the meaning of the <span class="process-math">\(p\)</span>-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(l)</span></h5>
+<p>Do we  reject the null hypothesis?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(m)</span></h5>
+<p>What sort of error could have been made? (Type 1 or Type 2)</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(n)</span></h5>
+<p>Run the following code to sample <code class="code-inline tex2jax_ignore">num_men=312</code> men where <span class="process-math">\(men_{raise}=72\)</span> get raises, then samples <code class="code-inline tex2jax_ignore">num_women=216</code> men where <span class="process-math">\(women_{raise}=30\)</span> get raises.  It does this <code class="code-inline tex2jax_ignore">trials=1000</code> times and plots a histogram of the differences. <pre class="ptx-sagecell sagecell-r" id="sage-190"><script type="text/x-sage">trials=1000
+num_men=312
+num_women=216
+m_raise=72
+w_raise=30
+
+raise_rate=(m_raise+w_raise)/(num_men+num_women)
+diffraise=rep(NA, trials)
+
+for(i in 1:trials){
+	menraise=sample(c("RAISE", "NO"), num_men, replace=TRUE, prob=c(raise_rate, 1-raise_rate))
+	womenraise=sample(c("RAISE", "NO"), num_women, replace=TRUE, prob=c(raise_rate, 1-raise_rate))
+	diffraise[i]=length(which(menraise=="RAISE"))/num_men-length(which(womenraise=="RAISE"))/num_women
+}
+hist(diffraise, breaks=25, prob=TRUE)
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(o)</span></h5>
+<p>Fix and run the following code to plot a normal curve with mean <code class="code-inline tex2jax_ignore">mu_D=</code><span class="process-math">\(p_0\)</span> and standard deviation <code class="code-inline tex2jax_ignore">SE_D=</code><span class="process-math">\(SE_D\text{,}\)</span> and plot a line for the observed difference <code class="code-inline tex2jax_ignore">observed_diff=</code><span class="process-math">\(d\)</span> <pre class="ptx-sagecell sagecell-r" id="sage-191"><script type="text/x-sage">mu_D=FIXME
+SE_D=FIXME
+observed_diff=FIXME
+
+hist(diffraise, breaks=25, prob=TRUE)
+curve(dnorm(x, mean=mu_D, sd=SE_D), col="darkblue", lwd=2, add=TRUE, yaxt="n")
+abline(v = observed_diff, col="red", lwd=3, lty=2)
+</script></pre> How well does this curve match the histogram?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(p)</span></h5>
+<p>Run the following code to see what proportion of these differences are greater than or equal to the <code class="code-inline tex2jax_ignore">observed_diff</code>.  How does this compare to the <span class="process-math">\(p\)</span>-value? <pre class="ptx-sagecell sagecell-r" id="sage-192"><script type="text/x-sage">length(which(diffraise>=observed_diff))/trials
+</script></pre></p></article></article><span class="incontext"><a href="Sec_TwoVarCat.html#activity-revisitinggenderdisc" class="internal">in-context</a></span>
+</body>
+</html>

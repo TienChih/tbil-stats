@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Merchandise Purchasing.</span>
+</h4>
+<div class="introduction"><p>A recording artist wants to know what percentage of attendees of their shows purchase merchandise at the shows.  They randomly survey 100 attendees of their recent shows, and found that 22 of them purchased merchandise.</p></div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>What is the <em class="emphasis">population</em> under consideration?</p>
+<ol class="decimal">
+<li><p>People who listen to music.</p></li>
+<li><p>100 attendees.</p></li>
+<li><p>People who attended the recording artist's shows.</p></li>
+<li><p>22 people who purchased merchandise.</p></li>
+</ol></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>What is the parameter of interest?</p>
+<ol class="decimal">
+<li><p>The average number of shows fans attend a year.</p></li>
+<li><p>Proportion of show attendees who purchase merchandise.</p></li>
+<li><p>The average amount of money spent on merchandise.</p></li>
+<li><p>Proportion of people who bought the artist's album who attended shows.</p></li>
+</ol></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>What is the point estimate (<span class="process-math">\(\hat{p}\)</span>) for the parameter?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>Use <a href="" class="xref" data-knowl="./knowl/theorem-CLTprop.html" title="Theorem 4.1.4: The Central Limit Theorem (Proportion)">Theorem 4.1.4</a> and the point estimate to compute the Sample Error for the point estimate.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p>Suppose that the actual percentage of show attendees who purchase merchandise is 25%.  Is this suprising?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p>Recompute the Sample Error using <span class="process-math">\(p=0.25\)</span>  Is it much different than what you found in (d)?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p>Fix and run the following code to simulate the 1000 surveys of size <code class="code-inline tex2jax_ignore">n</code>=100, probability <code class="code-inline tex2jax_ignore">p</code>=0.25, and point estimate <code class="code-inline tex2jax_ignore">phat</code><span class="process-math">\(=\hat{p}=22/100\text{,}\)</span> as well as plot a histogram of the survey results, and the normal approximation: <pre class="ptx-sagecell sagecell-r" id="sage-148"><script type="text/x-sage">trials=1000
+
+n=FIXME
+p=FIXME
+phat=FIXME
+
+mu_p=p
+SE_p=sqrt(p*(1-p)/n)
+
+results=rep(0,trials)
+
+for(i in 1:n){
+  results=results+sample(c(1, 0), trials, replace = TRUE, prob = c(p, 1-p)) 
+}
+
+proportion=results/n
+
+hist(proportion, prob=TRUE, breaks=25)
+curve(dnorm(x, mean=mu_p, sd=SE_p), col="darkblue", lwd=2, add=TRUE, yaxt="n")
+abline(v=phat, col="red",lwd=3, lty=2 )
+print(trials)
+</script></pre> Would 22 respondents replying that they purchased merchandise be abnormal?</p></article></article><span class="incontext"><a href="Sec_PointEstimates.html#activity-merchandise" class="internal">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="exploration project-like"><h3 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">6.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">UCLA Bookstore vs Amazon.</span>
+</h3>
+<div class="introduction">
+<p>The authors of the excellent OpenIntro Statistics text noticed that their text was much more expensive at the UCLA bookstore than on Amazon in 2010.  Since then, more bookstores have transitioned to the online model, and have adapted to Amazon's presence in the marketplace.  Is there any average difference between UCLA and Amazon prices now?</p>
+<p>Run the following code to download  the <code class="code-inline tex2jax_ignore">textbooks.csv</code> data set which contains information about 73 textbooks sold by both the UCLA bookstore and Amazon, and display the variables: <pre class="ptx-sagecell sagecell-r" id="sage-260"><script type="text/x-sage">textbooks = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/textbooks.csv")
+
+names(textbooks)
+</script></pre> Click here to learn more about this data set: <a class="external" href="https://www.openintro.org/data/index.php?data=textbooks" target="_blank"><code class="code-inline tex2jax_ignore">https://www.openintro.org/data/index.php?data=textbooks</code></a>.</p>
+</div>
+<article class="task exercise-like"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p>Each row of this data frame represents a textbook sold by both the UCLA bookstore and Amazon.  Run the following to display the prices by the UCLA bookstore: <pre class="ptx-sagecell sagecell-r" id="sage-261"><script type="text/x-sage">textbooks$ucla_new
+</script></pre></p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p>Run the following to display the prices of the same books by Amazon: <pre class="ptx-sagecell sagecell-r" id="sage-262"><script type="text/x-sage">textbooks$amaz_new
+</script></pre></p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p>Run the following to compute the difference between the two stores for each text: <pre class="ptx-sagecell sagecell-r" id="sage-263"><script type="text/x-sage">pricediff=textbooks$ucla_new-textbooks$amaz_new
+</script></pre> This is a sample  of the differences. The true mean difference in textbook costs is denoted: <span class="process-math">\(\mu_{diff}\text{.}\)</span></p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p>Which of the following best describes the null hypothesis <span class="process-math">\(H_0\text{,}\)</span> that on average there is no difference on average between the cost of textbooks from either store?</p>
+<ul class="disc">
+<li><p><span class="process-math">\(\mu_{diff}\lt \$0\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(\mu_{diff}&gt; \$0\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(\mu_{diff}\neq \$0\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(\mu_{diff}= \$0\text{.}\)</span></p></li>
+</ul></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<p>Which of the following best describes the alternative hypothesis <span class="process-math">\(H_A\text{,}\)</span> that there <em class="emphasis">is</em> some difference on average between the two stores?</p>
+<ul class="disc">
+<li><p><span class="process-math">\(\mu_{diff}\lt \$0\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(\mu_{diff}&gt; \$0\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(\mu_{diff}\neq \$0\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(\mu_{diff}= \$0\text{.}\)</span></p></li>
+</ul></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(f)</span></h4>
+<p>Run the following code to display a histogram of the differences between stores: <pre class="ptx-sagecell sagecell-r" id="sage-264"><script type="text/x-sage">hist(pricediff)
+abline(v = 0, col="red", lwd=3, lty=2)
+</script></pre> Based on this graphic, do we think the null hypothesis is plausible?</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(g)</span></h4>
+<p>Run the following to show the sample mean and standard deviation of the differences: <pre class="ptx-sagecell sagecell-r" id="sage-265"><script type="text/x-sage">print(mean(pricediff))
+print(sd(pricediff))
+</script></pre> This is a sample mean of the differences, <span class="process-math">\(\bar{x}_{diff}\text{,}\)</span> and sample standard deviation of differences <span class="process-math">\(s_{diff}\text{.}\)</span></p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(h)</span></h4>
+<p>Find the standard error <span class="process-math">\(SE_{diff}\text{.}\)</span></p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(i)</span></h4>
+<p>Find <span class="process-math">\(t\)</span>-score for <span class="process-math">\(\bar{x}_{diff}\text{.}\)</span></p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(j)</span></h4>
+<p>Compute a <span class="process-math">\(p\)</span>-value (be sure to use the appropriate level of significance). <pre class="ptx-sagecell sagecell-r" id="sage-266"><script type="text/x-sage">
+</script></pre> <a href="" class="hint-knowl original" data-knowl="./knowl/hint-31-hidden.html" title="Hint 1: Desmos"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a></p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(k)</span></h4>
+<p>State the meaning of the <span class="process-math">\(p\)</span>-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(l)</span></h4>
+<p>Do we  reject the null hypothesis?</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(m)</span></h4>
+<p>What sort of error could have been made? (Type 1 or Type 2)</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(n)</span></h4>
+<p>Run the following to compute the <span class="process-math">\(p\)</span>-value another way, how does this compare to what you found above? <pre class="ptx-sagecell sagecell-r" id="sage-267"><script type="text/x-sage">t.test(pricediff, mu=0, alternative="two.sided")
+</script></pre></p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(o)</span></h4>
+<p>What store do we think charges more on average?  Or do we think they're the same?</p></article></article><span class="incontext"><a href="Sec_PairedData.html#exploration-bookstore" class="internal">in-context</a></span>
+</body>
+</html>

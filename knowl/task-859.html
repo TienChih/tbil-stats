@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="task exercise-like"><h5 class="heading">
+<span class="type">Task</span><span class="space"> </span><span class="codenumber">6.3.5.c</span><span class="period">.</span>
+</h5>
+<p>Run the following code to define the difference in number of days over 70 degrees <code class="code-inline tex2jax_ignore">changeindays70</code> and display a histogram of the changes, including a line indicating 0 change, and a line indicating the sample average change: <pre class="ptx-sagecell sagecell-r" id="sage-277"><script type="text/x-sage">changeindays70=climate$dx70_2018-climate$dx70_1948
+hist(changeindays70)
+abline(v = 0, col="red", lwd=3, lty=2)
+abline(v = mean(changeindays70), col="blue", lwd=3, lty=2)
+</script></pre> Based on this graphic, do we think the null hypothesis is plausible?</p>
+<p>Fix and run the following code to perform the appropriate hypothesis test and compute a <span class="process-math">\(p\)</span>-value: <pre class="ptx-sagecell sagecell-r" id="sage-278"><script type="text/x-sage">t.test(changeindays70, mu=FIXME, alternative="FIXME")
+</script></pre></p></article><span class="incontext"><a href="Sec_PairedData.html#task-859" class="internal">in-context</a></span>
+</body>
+</html>

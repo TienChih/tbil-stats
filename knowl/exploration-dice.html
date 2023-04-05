@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="exploration project-like"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">2.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">Outcomes of dice.</span>
+</h4>
+<div class="introduction"><p>Consider the equally likely outcomes of a dice roll <code class="code-inline tex2jax_ignore">1, 2, 3, 4, 5, 6</code>.</p></div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>Find the population mean and variance of this set.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>Run the following code to simulate 1,000 die rolls and plot a histogram of their outputs.</p>
+<p><pre class="ptx-sagecell sagecell-r" id="sage-88"><script type="text/x-sage">dierolls = sample(c(1, 2, 3, 4, 5, 6), 1000, replace = TRUE, prob = c(1/6, 1/6, 1/6, 1/6, 1/6, 1/6))
+hist(dierolls)
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>Run the following code to find the mean and variance of these dierolls.</p>
+<p><pre class="ptx-sagecell sagecell-r" id="sage-89"><script type="text/x-sage">mean(dierolls)
+</script></pre> <pre class="ptx-sagecell sagecell-r" id="sage-90"><script type="text/x-sage">var(dierolls)
+</script></pre></p>
+<p>How do these values compare to the what you found in (a)?</p></article></article><span class="incontext"><a href="Sec_RandomVariables.html#exploration-dice" class="internal">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.5.5</span><span class="period">.</span><span class="space"> </span><span class="title">Medication and Blood Pressure: Sample Size.</span>
+</h4>
+<div class="introduction"><p>The researchers decide to give the experiment one more chance, and they want to recruit enough subjects to that <em class="emphasis">if</em> there is a difference of 3 mmGH, there is an 80% chance that they detect it.  In other words, they want to solve for <span class="process-math">\(n\)</span> for a power of 80%.</p></div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>So if there was a difference of 3 mmGH, the sampling distribution would have mean <span class="process-math">\(\mu_1-\mu_2=-3\)</span> as in <a href="" class="xref" data-knowl="./knowl/activity-bloodpressure2.html" title="Activity 6.5.4: Blood Pressure and Medication: Power Computation">Activity 6.5.4</a>. <figure class="figure figure-like"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/image-43.svg" role="img" class="contained" alt="80% tail of the real sampling distribution."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.5.7<span class="period">.</span></span><span class="space"> </span>80% tail of the real sampling distribution.</figcaption></figure></p>
+<p>Find a <span class="process-math">\(z^*\)</span> so that <span class="process-math">\(P(Z\lt z^*)=0.8\text{,}\)</span> where <span class="process-math">\(Z\)</span> is the standard normal variable.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>For these values to be statistically significant, they have to be less than <span class="process-math">\(-1.96SE\text{:}\)</span> <figure class="figure figure-like"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/image-44.svg" role="img" class="contained" alt="80% tail is statistically significant."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.5.8<span class="period">.</span></span><span class="space"> </span>80% tail is statistically significant.</figcaption></figure></p>
+<p>Find <span class="process-math">\(SE\)</span> so that <span class="process-math">\(-3+z^*SE=-1.96SE.\)</span></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>Using the fact that <span class="process-math">\(SE=\sqrt{\frac{s_1^2}{n}+\frac{s_2^2}{n}}\)</span> and <span class="process-math">\(s_1=12=s_2\text{,}\)</span> solve for <span class="process-math">\(n\text{.}\)</span></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>How many people should be recruited to test each medication?  Recall this must be a whole number.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p>Fix and run the following code to simiulate 1000 trials of this medication with <code class="code-inline tex2jax_ignore">n</code> subjects in each group, and record the <code class="code-inline tex2jax_ignore">p.value</code> from each trial, and display a histogram of the results. <pre class="ptx-sagecell sagecell-r" id="sage-313"><script type="text/x-sage">n=FIXME
+trials=1000
+
+pvec=rep(NA, trials)
+
+for(i in 1:trials){
+  sampA=rnorm(n, 135,12)
+  sampB=rnorm(n, 132, 12)
+  pvec[i]=t.test(sampA, sampB, alternative="two.sided")$p.value
+}
+
+hist(pvec, breaks=25)
+abline(v = 0.05, col="red", lwd=3, lty=2)
+</script></pre> Then run the following to see what proportion of the time we reject the null: <pre class="ptx-sagecell sagecell-r" id="sage-314"><script type="text/x-sage">length(which(pvec < 0.05))/trials
+</script></pre> How does this value compare to the power of 80% we hoped to achieve?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p>Convince yourself that if patients taking medication B had on average blood pressure 3 mmGH <em class="emphasis">higher</em> than those on medication A, that a sample size each of <span class="process-math">\(n\)</span> would also allow you to detect it 80% of the time.</p></article></article><span class="incontext"><a href="Sec_SizeofSampleNum.html#activity-bloodpressure3" class="internal">in-context</a></span>
+</body>
+</html>

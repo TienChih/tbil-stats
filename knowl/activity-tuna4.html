@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Ahi Tuna part 4: Simulation.</span>
+</h3>
+<div class="introduction"><p>Suppose Ahi tuna weights are normally distributed with mean 120 lbs and standard deviation 25 lb's as in <a href="" class="xref" data-knowl="./knowl/activity-tuna.html" title="Activity 3.2.2: Ahi Tuna: Computing Probabilities">Activity 3.2.2</a>.    Let <span class="process-math">\(X\)</span> denote the weight of a random fish.</p></div>
+<article class="task exercise-like"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p>Run the following code to simulate the weights of 1000 random Ahi Tuna: <pre class="ptx-sagecell sagecell-r" id="sage-114"><script type="text/x-sage">n=1000
+ahiweight=rnorm(n,mean=120, sd=25)
+hist(ahiweight)
+</script></pre></p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p>Run the following code to see what proportion of tuna weighing over 150 lbs: <pre class="ptx-sagecell sagecell-r" id="sage-115"><script type="text/x-sage">length(which(ahiweight>150))/n
+</script></pre> How does this value compare to what you found in <a href="" class="xref" data-knowl="./knowl/activity-tuna.html" title="Activity 3.2.2: Ahi Tuna: Computing Probabilities">Activity 3.2.2</a> (c)?</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p>Run the following code setting <code class="code-inline tex2jax_ignore">X0</code> to be the <span class="process-math">\(x_0\)</span> found in <a href="" class="xref" data-knowl="./knowl/activity-tuna2.html" title="Activity 3.2.3: Ahi Tuna part 2: Computing Weights">Activity 3.2.3</a> (b). <pre class="ptx-sagecell sagecell-r" id="sage-116"><script type="text/x-sage">X0=FIXME
+length(which(ahiweight>X0))/n
+</script></pre> How does this compare to what you observed in  <a href="" class="xref" data-knowl="./knowl/activity-tuna2.html" title="Activity 3.2.3: Ahi Tuna part 2: Computing Weights">Activity 3.2.3</a> (b)?</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p>Run the following code to see what proportion of tuna weigh between 50 and 100 pounds: <pre class="ptx-sagecell sagecell-r" id="sage-117"><script type="text/x-sage">length(which(100>ahiweight & ahiweight>50))/n
+</script></pre> How does this value compare to what you found in <a href="" class="xref" data-knowl="./knowl/activity-tuna.html" title="Activity 3.2.2: Ahi Tuna: Computing Probabilities">Activity 3.2.2</a> (e)?</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<p>Run the following code setting <code class="code-inline tex2jax_ignore">k</code> to be the <span class="process-math">\(k\)</span> found in <a href="" class="xref" data-knowl="./knowl/activity-tuna2.html" title="Activity 3.2.3: Ahi Tuna part 2: Computing Weights">Activity 3.2.3</a> (d). <pre class="ptx-sagecell sagecell-r" id="sage-118"><script type="text/x-sage">k=FIXME
+length(which(120+k>ahiweight & ahiweight>120-k))/n
+</script></pre> How does this compare to what you observed in <a href="" class="xref" data-knowl="./knowl/activity-tuna2.html" title="Activity 3.2.3: Ahi Tuna part 2: Computing Weights">Activity 3.2.3</a> (d)?</p></article></article><span class="incontext"><a href="Sec_GeneralNormal.html#activity-tuna4" class="internal">in-context</a></span>
+</body>
+</html>

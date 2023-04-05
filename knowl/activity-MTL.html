@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Medial Temporal Lobe.</span>
+</h4>
+<div class="introduction">
+<p>In 2018, a study was done to show a relationship between sedentary behavior and thickness of the medial temporal lobe.</p>
+<p>Run the following code to download  the <code class="code-inline tex2jax_ignore">mtl.csv</code>  data set which contains information about 35 participants, demographic and psychological information, physical activity and measurements of the MTL: <pre class="ptx-sagecell sagecell-r" id="sage-350"><script type="text/x-sage">mtl = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/mtl.csv")
+
+names(mtl)
+</script></pre> Click here to learn more about this data set: <a class="external" href="https://www.openintro.org/data/index.php?data=mtl" target="_blank"><code class="code-inline tex2jax_ignore">https://www.openintro.org/data/index.php?data=mtl</code></a></p>
+</div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>Run the following code to plot the total thickness of the MTL (in mm), versus their self reported daily time sitting (in hours). <pre class="ptx-sagecell sagecell-r" id="sage-351"><script type="text/x-sage">plot(mtl$sitting, mtl$total, pch=19)
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>Run the following code to create a linear model for <code class="code-inline tex2jax_ignore">total</code>, as a function of <code class="code-inline tex2jax_ignore">sitting</code> and save it as <code class="code-inline tex2jax_ignore">mtlmod</code>. <pre class="ptx-sagecell sagecell-r" id="sage-352"><script type="text/x-sage">mtlmod=lm(total~sitting, data=mtl)
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>Run the following code to show the correlation for this model. <pre class="ptx-sagecell sagecell-r" id="sage-353"><script type="text/x-sage">cor(mtl$sitting, mtl$total)
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>Run the following code to plot the scatterplot and the least squares line. <pre class="ptx-sagecell sagecell-r" id="sage-354"><script type="text/x-sage">plot(mtl$sitting, mtl$total,  pch=19)
+abline(mtlmod, col="red")
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p>Run the following code to show a summary of <code class="code-inline tex2jax_ignore">mtlmod</code>. <pre class="ptx-sagecell sagecell-r" id="sage-355"><script type="text/x-sage">summary(mtlmod)
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p>What is <span class="process-math">\(R\text{?}\)</span>  What does it tell you about the relationship between the variables?   (Strong, Moderate or Weak?  Positive, Negative or None?)</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p>What proportion of the MLT thickness is explained by hours sitting?  (See <a href="" class="xref" data-knowl="./knowl/remark-rsquared.html" title="Remark 7.1.20">Remark 7.1.20</a>)</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(h)</span></h5>
+<p>State what the regression line is, and what it measures in the context of this problem.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(i)</span></h5>
+<p>Explain the meaning of the slope of the regression line in the context of this problem.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(j)</span></h5>
+<p>What is the predicted total MTL thickness of a someone sitting 12 hours a day?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(k)</span></h5>
+<p>What is the predicted time sitting a day for someone whose total MTL thickness is 2.5 mm?</p></article></article><span class="incontext"><a href="Sec_InterpretingRegression.html#activity-MTL" class="internal">in-context</a></span>
+</body>
+</html>

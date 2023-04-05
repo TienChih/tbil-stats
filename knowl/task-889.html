@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="task exercise-like"><h5 class="heading">
+<span class="type">Task</span><span class="space"> </span><span class="codenumber">6.4.5.c</span><span class="period">.</span>
+</h5>
+<p>Run the following code to display the two histograms side by side, scaled for sample size, and with the means displayed, as well as side by side boxplots. <pre class="ptx-sagecell sagecell-r" id="sage-292"><script type="text/x-sage">hist(east_samp, col=rgb(1,0,0,0.5), prob=TRUE)
+hist(west_samp, col=rgb(0,0,1,0.5), prob=TRUE, add=TRUE)
+abline(v = mean(east_samp), col="red", lwd=3, lty=2)
+abline(v = mean(west_samp), col="blue", lwd=3, lty=2)
+
+boxplot(east_samp, west_samp)
+</script></pre></p></article><span class="incontext"><a href="Sec_TwoVarNum.html#task-889" class="internal">in-context</a></span>
+</body>
+</html>

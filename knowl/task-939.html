@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="task exercise-like"><h5 class="heading">
+<span class="type">Task</span><span class="space"> </span><span class="codenumber">6.5.4.e</span><span class="period">.</span>
+</h5>
+<p>Run the following code to simiulate 1000 trials of this medication with 100 subjects in each group, and record the <code class="code-inline tex2jax_ignore">p.value</code> from each trial, and display a histogram of the results. <pre class="ptx-sagecell sagecell-r" id="sage-311"><script type="text/x-sage">n1=100
+n2=100
+trials=1000
+
+pvec=rep(NA, trials)
+
+for(i in 1:trials){
+  sampA=rnorm(n1, 135,12)
+  sampB=rnorm(n2, 132, 12)
+  pvec[i]=t.test(sampA, sampB, alternative="two.sided")$p.value
+}
+
+hist(pvec, breaks=25)
+abline(v = 0.05, col="red", lwd=3, lty=2)
+</script></pre> Then run the following to see what proportion of the time we reject the null: <pre class="ptx-sagecell sagecell-r" id="sage-312"><script type="text/x-sage">length(which(pvec < 0.05))/trials
+</script></pre> How does this value compare to the power of the test which you computed in (c)?</p></article><span class="incontext"><a href="Sec_SizeofSampleNum.html#task-939" class="internal">in-context</a></span>
+</body>
+</html>

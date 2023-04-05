@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.4</span><span class="period">.</span><span class="space"> </span><span class="title">Meeting Time.</span>
+</h4>
+<div class="introduction">
+<p>A department chair calls for a meeting at a certain time.  The ten faculty in the department each have a 60% chance of making the meeting.  Assume whether or not a professor can make the meeting is independent of the other faculty.  Let <span class="process-math">\(X\)</span> denote the number of professors who can make the meeting.</p>
+<p><iframe src="https://www.desmos.com/calculator/7xuuzqjkdm" id="interactive-26" width="600" height="600"></iframe> <pre class="ptx-sagecell sagecell-r" id="sage-127"><script type="text/x-sage">dbinom(FIXME, FIXME, FIXME)
+</script></pre></p>
+</div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>Compute <span class="process-math">\(P(X=k)\)</span> for <span class="process-math">\(k=8, 9\)</span> and <span class="process-math">\(10\text{.}\)</span></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>Sum the values you found in (a) to find the probability that at least 8 professors make the meeting (<span class="process-math">\(P(X\geq 8)\)</span>).</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>If less than 4 professors make the meeting, how many professors could have made the meeting?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>Find the probability that less than 4 professors make the meeting.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p>In the <code class="code-inline tex2jax_ignore">Desmos</code> above, set <code class="code-inline tex2jax_ignore">Min:8</code>, <code class="code-inline tex2jax_ignore">Max:10</code> and compare the output to what you found in (a).</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p>In the <code class="code-inline tex2jax_ignore">Desmos</code> above, set <code class="code-inline tex2jax_ignore">Min:</code> and <code class="code-inline tex2jax_ignore">Max:</code> to values which correspond to “less than 4”.  (Less than 4 would mean 4 is not included.)  Compare the output to what you found in (d).</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p>Run the following to compute the probability that 3 or fewer professors would make the meeting: <pre class="ptx-sagecell sagecell-r" id="sage-128"><script type="text/x-sage">pbinom(3, 10, 0.6, lower.tail = TRUE)
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(h)</span></h5>
+<p>Run the following to compute the probability that more than 7 professors would make the meeting: <pre class="ptx-sagecell sagecell-r" id="sage-129"><script type="text/x-sage">pbinom(7, 10, 0.6, lower.tail = FALSE)
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(i)</span></h5>
+<p>What is the probability that at least 4 and at most 7 professors make the meeting?</p></article></article><span class="incontext"><a href="Sec_Binomial.html#activity-meeting" class="internal">in-context</a></span>
+</body>
+</html>

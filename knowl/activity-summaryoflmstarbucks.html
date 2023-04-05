@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">Inference for Nutrition and Starbucks.</span>
+</h4>
+<div class="introduction"><p>Run the following code to download <code class="code-inline tex2jax_ignore">starbucks.csv</code> a data set comtaining information about 77 Starbucks menu items their nutritional value and show it's variable names. <pre class="ptx-sagecell sagecell-r" id="sage-364"><script type="text/x-sage">starbucks = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/starbucks.csv")
+
+names(starbucks)
+</script></pre> Click here to learn more about this data set: <a class="external" href="https://www.openintro.org/data/index.php?data=starbucks" target="_blank"><code class="code-inline tex2jax_ignore">https://www.openintro.org/data/index.php?data=starbucks</code></a>.</p></div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>Run the following to create and summarize a linear model with <code class="code-inline tex2jax_ignore">protein</code> the protein content of an item in g as the explanatory variable and <code class="code-inline tex2jax_ignore">calories</code> the calories of each item measure in, well calories, as the response variable: <pre class="ptx-sagecell sagecell-r" id="sage-365"><script type="text/x-sage">starbucksmod=lm(calories~protein, data=starbucks)
+summary(starbucksmod)
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>Run the following to plot <code class="code-inline tex2jax_ignore">calories</code> of these items against the <code class="code-inline tex2jax_ignore">protein</code> and draw a regression line: <pre class="ptx-sagecell sagecell-r" id="sage-366"><script type="text/x-sage">plot(starbucks$protein, starbucks$calories)
+abline(starbucksmod, col="red")
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>State what the slope <span class="process-math">\(\beta_1\)</span> means in the context of this problem.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>Interpret the <span class="process-math">\(p\)</span>-value for the alternative hypothesis <span class="process-math">\(H_A:\beta_1\neq 0\)</span> in the context of this problem.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p>Do we reject the null hypothesis that <span class="process-math">\(H_0:\beta_1=0\text{?}\)</span>  What does that say about the relationship between calories and protein?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p>Find a <span class="process-math">\(t^*\)</span> so that <span class="process-math">\(P(-t^*\lt t\lt t^*)=C\%\)</span> for the appropriate degrees of freedom.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p>Use the point estimate and standard error for <span class="process-math">\(\beta_1\text{,}\)</span> <span class="process-math">\(t^*\)</span> and <a href="" class="xref" data-knowl="./knowl/remark-CIregression.html" title="Remark 7.3.3">Remark 7.3.3</a> to compute a 95% confidence interval for <span class="process-math">\(\beta_1\text{.}\)</span></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(h)</span></h5>
+<p>Explain what this confidence interval means within the context of the problem.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(i)</span></h5>
+<p>Repeat this for any other pair of numerical variables.</p></article></article><span class="incontext"><a href="Sec_InferenceRegression.html#activity-summaryoflmstarbucks" class="internal">in-context</a></span>
+</body>
+</html>

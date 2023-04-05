@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="task exercise-like"><h5 class="heading">
+<span class="type">Task</span><span class="space"> </span><span class="codenumber">4.1.3.c</span><span class="period">.</span>
+</h5>
+<p>Fix and run un the following code to display the histogram from <a href="" class="xref" data-knowl="./knowl/exploration-solarenergy.html" title="Exploration 4.1.2: American's Support for Solar Energy">Exploration 4.1.2</a> (e), overlayed with a normal curve with mean <code class="code-inline tex2jax_ignore">mu_p</code>=<span class="process-math">\(\mu_{\hat{p}}\)</span> and <code class="code-inline tex2jax_ignore">SE_p</code>=<span class="process-math">\(SE_{\hat{p}}\text{.}\)</span> <pre class="ptx-sagecell sagecell-r" id="sage-145"><script type="text/x-sage">mu_p=FIXME
+SE_p=FIXME
+
+hist(solar_support, prob=TRUE, breaks=25)
+curve(dnorm(x, mean=mu_p, sd=SE_p), col="darkblue", lwd=2, add=TRUE, yaxt="n")
+print(sample_size)
+</script></pre> How well does the normal curve match the histogram?</p></article><span class="incontext"><a href="Sec_PointEstimates.html#task-477" class="internal">in-context</a></span>
+</body>
+</html>

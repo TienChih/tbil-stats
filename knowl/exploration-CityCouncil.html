@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="exploration project-like"><h4 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">4.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Running for City Council.</span>
+</h4>
+<div class="introduction">
+<p>A candidiate running for city council believes that she is in the lead.  She surveys 212 potential voters, and she is the favored candidiate for 122 of them.</p>
+<p>Note that in this case the Alternative Hypothesis is that her share of support is over 50%, the Null Hypothesis is that it could be 50%. That is:</p>
+<ul class="disc">
+<li><p><span class="process-math">\(\displaystyle H_0: p= 0.5\)</span></p></li>
+<li><p><span class="process-math">\(\displaystyle H_A: p&gt;0.5\)</span></p></li>
+</ul>
+<p class="continuation">where <span class="process-math">\(p\)</span> is her proportion of support among potential voters.</p>
+<p><pre class="ptx-sagecell sagecell-r" id="sage-162"><script type="text/x-sage">
+</script></pre> <a href="" class="hint-knowl original" data-knowl="./knowl/hint-12-hidden.html" title="Hint 1: Desmos"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a></p>
+</div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>Suppose that her support <em class="emphasis">was</em> only 50%, that is assume <span class="process-math">\(p=0.5\text{.}\)</span>  Note that the size of the sample is <span class="process-math">\(n=212\text{.}\)</span>  Use <a href="" class="xref" data-knowl="./knowl/theorem-CLTprop.html" title="Theorem 4.1.4: The Central Limit Theorem (Proportion)">Theorem 4.1.4</a> to find <span class="process-math">\(\mu_{\hat{p}}, SE_{\hat{p}}\text{.}\)</span></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>Let <span class="process-math">\(X\)</span> be the normal random variable with mean <span class="process-math">\(\mu_{\hat{p}}\)</span> and standard deviation <span class="process-math">\(SE_{\hat{p}}\)</span> that approximates <span class="process-math">\(\hat{p}\text{.}\)</span>  What is the probability  <span class="process-math">\(P(X&gt;\frac{122}{212})\text{?}\)</span></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>How likely is it to achieve values like we found in (b) if she were not in the lead?</p></article></article><span class="incontext"><a href="Sec_HypothesisTesing.html#exploration-CityCouncil" class="internal">in-context</a></span>
+</body>
+</html>

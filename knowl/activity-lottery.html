@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.7</span><span class="period">.</span><span class="space"> </span><span class="title">Lottery Winnings.</span>
+</h4>
+<div class="introduction"><p>Suppose a lottery ticket that costs $2 has a 20% chance of winning $5, a 0.1% chance of winning $100 and a 0.001% chance of winning $10000.  Let <span class="process-math">\(X\)</span> denote the winnings of a ticket.</p></div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>What are the possible <em class="emphasis">net</em> winnings (<span class="process-math">\(X_i\)</span>) of a ticket?  (Remember to account for the $2 purchasing cost, and that there is a scenario where you do not win).</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>Write down a table recording each of the <span class="process-math">\(X_i\)</span> and their associated probability:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\begin{array}{|c|c|c|c|c|}
+\hline
+X_i \amp \hspace{1in} \amp \hspace{1in} \amp \hspace{1in} \amp \hspace{1in} \\
+\hline
+P(X=X_i) \amp  \amp  \amp \amp \\
+\hline
+\end{array}
+\end{equation*}
+</div></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>Compute <span class="process-math">\(E(X), Var(X)\text{.}\)</span></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>Do you think overall, do you think the lottery ticket sellers make or lose money?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p>Run the following code to simulate 1,000,000 lottery ticket winnings and plot a histogram of their outputs.</p>
+<p><pre class="ptx-sagecell sagecell-r" id="sage-94"><script type="text/x-sage">ticketwinnings = sample(c(-2, 3, 98, 998), 1000000, replace = TRUE, prob = c(0.6989, 0.3, 0.001, 0.0001))
+hist(ticketwinnings)
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p>Run the following code to find the mean and variance of these winnings.</p>
+<p><pre class="ptx-sagecell sagecell-r" id="sage-95"><script type="text/x-sage">mean(ticketwinnings)
+</script></pre> <pre class="ptx-sagecell sagecell-r" id="sage-96"><script type="text/x-sage">var(ticketwinnings)
+</script></pre></p>
+<p>How do these values compare to the what you found in (c)?</p></article></article><span class="incontext"><a href="Sec_RandomVariables.html#activity-lottery" class="internal">in-context</a></span>
+</body>
+</html>

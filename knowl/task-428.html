@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="task exercise-like"><h5 class="heading">
+<span class="type">Task</span><span class="space"> </span><span class="codenumber">3.4.3.b</span><span class="period">.</span>
+</h5>
+<p>Run the following code to simulate 1000 trials of <code class="code-inline tex2jax_ignore">freethrows=4</code> free throws taken with <code class="code-inline tex2jax_ignore">p=0.9</code> probability of success each, and plot a histogram of the number of succesful free throws: <pre class="ptx-sagecell sagecell-r" id="sage-122"><script type="text/x-sage">numbaskets = rep(0, 1000)
+
+freethrows=4
+p=0.9
+
+for(i in 1:freethrows){
+  numbaskets=numbaskets+sample(c(1, 0), 1000, replace = TRUE, prob = c(p, 1-p)) 
+}
+hist(numbaskets)
+print(freethrows)
+</script></pre></p></article><span class="incontext"><a href="Sec_Binomial.html#task-428" class="internal">in-context</a></span>
+</body>
+</html>

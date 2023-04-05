@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Racial Demographics and Jurors.</span>
+</h4>
+<div class="introduction">
+<p>Recall from <a href="" class="xref" data-knowl="./knowl/activity-jurydemostats.html" title="Activity 5.3.2: Racial Demographics and Jurors: Z and \chi^2 Statistics">Activity 5.3.2</a> that we have a sample of size <span class="process-math">\(n=300\)</span> where 237 are White, 26 are Black, 24 are Hispanic and 13 are Asian.  We also have a proposed distribution: 70% White, 15% Black, 10% Hispanic and 5% Asian.</p>
+<p>We also note that since each juror could be one of 4 races, that <span class="process-math">\(k=4\text{.}\)</span></p>
+<p><pre class="ptx-sagecell sagecell-r" id="sage-201"><script type="text/x-sage">pchisq(FIXME, FIXME, ncp = 0, lower.tail = FALSE)
+</script></pre> <iframe src="https://www.desmos.com/calculator/gtwsvcggpo" id="interactive-63" width="600" height="600"></iframe></p>
+</div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>Compute the number of degrees of freedom.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>Using the <span class="process-math">\(\chi^2\)</span> value found in <a href="" class="xref" data-knowl="./knowl/activity-jurydemostats.html" title="Activity 5.3.2: Racial Demographics and Jurors: Z and \chi^2 Statistics">Activity 5.3.2</a> and the degrees of freedom, compute the <span class="process-math">\(p\)</span>-value.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>State the meaning of the <span class="process-math">\(p\)</span>-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>If we had a level of significance <span class="process-math">\(\alpha=0.05\text{,}\)</span> do we  reject the null hypothesis?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p>Is it plausible that the juror racial demographics is identical to that of the town?</p></article></article><span class="incontext"><a href="Sec_ChiSquare.html#activity-jurydemotest" class="internal">in-context</a></span>
+</body>
+</html>

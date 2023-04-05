@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="task exercise-like"><h5 class="heading">
+<span class="type">Task</span><span class="space"> </span><span class="codenumber">5.2.5.o</span><span class="period">.</span>
+</h5>
+<p>Fix and run the following code to plot a normal curve with mean <code class="code-inline tex2jax_ignore">mu_D=</code><span class="process-math">\(p_0\)</span> and standard deviation <code class="code-inline tex2jax_ignore">SE_D=</code><span class="process-math">\(SE_D\text{,}\)</span> and plot a line for the observed difference <code class="code-inline tex2jax_ignore">observed_diff=</code><span class="process-math">\(d\)</span> <pre class="ptx-sagecell sagecell-r" id="sage-191"><script type="text/x-sage">mu_D=FIXME
+SE_D=FIXME
+observed_diff=FIXME
+
+hist(diffraise, breaks=25, prob=TRUE)
+curve(dnorm(x, mean=mu_D, sd=SE_D), col="darkblue", lwd=2, add=TRUE, yaxt="n")
+abline(v = observed_diff, col="red", lwd=3, lty=2)
+</script></pre> How well does this curve match the histogram?</p></article><span class="incontext"><a href="Sec_TwoVarCat.html#task-633" class="internal">in-context</a></span>
+</body>
+</html>

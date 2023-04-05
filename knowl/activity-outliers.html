@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.5.8</span><span class="period">.</span><span class="space"> </span><span class="title">Identifying Outliers.</span>
+</h4>
+<div class="introduction">
+<p>Quartiles and the <span class="process-math">\(IQR\)</span> provide a useful heuristic to identify outliers to our data.  Outliers are data points that are outlandishly distinct from the rest of the data set and can potentially screw the results.</p>
+<p>Consider the set of data <code class="code-inline tex2jax_ignore">[2,66,8,14,9,2,3,11,62,8,45,19,12,41,5,5,5,85,52,8,96,5,2,2,15,12,0,1]</code></p>
+</div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>Identify the min, <span class="process-math">\(Q_1\text{,}\)</span> median, <span class="process-math">\(Q_3\)</span> and max for this data set.  This is called the <em class="emphasis">5 number summary</em>.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>We define <em class="emphasis">right outliers</em> to be any data points in the set greater than <span class="process-math">\(Q_3+1.5\cdot IQR\text{.}\)</span></p>
+<p>We define <em class="emphasis">left outliers</em> to be any data points in the set less than <span class="process-math">\(Q_1-1.5\cdot IQR\text{.}\)</span></p>
+<p>Does this set have any outliers?  What (if any) are they?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>Remove the outliers from the set and recompute the min, <span class="process-math">\(Q_1\text{,}\)</span> median, <span class="process-math">\(Q_3\)</span> and max for the modified data set.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>Plot a boxplot for the original data set.</p>
+<p><iframe src="https://www.desmos.com/calculator/fxqeuayamh" id="interactive-10" width="600" height="600"></iframe></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p>Click <code class="code-inline tex2jax_ignore">Exclude Outliers</code>, how does this boxplot compare to what we found in (c).</p></article></article><span class="incontext"><a href="Sec_Variation.html#activity-outliers" class="internal">in-context</a></span>
+</body>
+</html>

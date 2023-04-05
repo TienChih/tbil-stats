@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.8</span><span class="period">.</span><span class="space"> </span><span class="title">Simulating the double die.</span>
+</h4>
+<div class="introduction"><p>We simulate 100 rolls of a pair of dice.</p></div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>Run the following code to simulate 1000 blue die rolls and 1000 green die rolls, and show the first 10 pairs.</p>
+<p><pre class="ptx-sagecell sagecell-r" id="sage-64"><script type="text/x-sage">bluedie = sample(1:6, 1000, replace = TRUE)
+greendie = sample(1:6, 1000, replace = TRUE)
+
+doubledie=data.frame(bluedie, greendie)
+
+head(doubledie, n=10)
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>Run the following code to see how many of these rolls satisfied <span class="process-math">\(A\text{:}\)</span> “the blue die comes up a 5”.</p>
+<p><pre class="ptx-sagecell sagecell-r" id="sage-65"><script type="text/x-sage">length(which(doubledie$bluedie==5))
+</script></pre> What proportion of the die rolls was <span class="process-math">\(A\)</span> satisfied?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>Run the following code to see how many of these rolls satisfied <span class="process-math">\(B\text{:}\)</span> “the green die comes up even”.</p>
+<p><pre class="ptx-sagecell sagecell-r" id="sage-66"><script type="text/x-sage">length(which(doubledie$greendie%%2==0))
+</script></pre> What proportion of the die rolls was <span class="process-math">\(B\)</span> satisfied?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>Run the following code to subset out the pairs satisfying <span class="process-math">\(B\)</span> i.e. where the green die was even, and display the first 10 rows.</p>
+<p><pre class="ptx-sagecell sagecell-r" id="sage-67"><script type="text/x-sage">greendieeven=subset(doubledie, doubledie$greendie%%2==0)
+
+head(greendieeven, n=10)
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p>Run the following code to see how many of the rolls satisfying <span class="process-math">\(B\)</span> also satisfied <span class="process-math">\(A\text{.}\)</span></p>
+<p><pre class="ptx-sagecell sagecell-r" id="sage-68"><script type="text/x-sage">length(which(greendieeven$bluedie==5))
+</script></pre> What proportion of the die rolls satisfying <span class="process-math">\(B\)</span> was <span class="process-math">\(A\)</span> also satisfied?</p></article></article><span class="incontext"><a href="Sec_Conditionalprob.html#activity-doubledie-simulate" class="internal">in-context</a></span>
+</body>
+</html>

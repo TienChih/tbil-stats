@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Fix the following code to display the histogram of your chosen variable, along with the mean, plus and minus 1 standard deviation: <pre class="ptx-sagecell sagecell-r" id="sage-37"><script type="text/x-sage">m=mean(ncbirths$FIXME)
+s=sd(ncbirths$FIXME)
+hist(ncbirths$FIXME)
+abline(v = m, col = "red")
+abline(v = m-s, col = "forestgreen")
+abline(v = m+s, col = "forestgreen")
+</script></pre></p>
+<span class="incontext"><a href="Sec_Variation.html#p-252" class="internal">in-context</a></span>
+</body>
+</html>

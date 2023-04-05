@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Online Tutoring and Changes in Test Scores.</span>
+</h4>
+<div class="introduction">
+<p>The <code class="code-inline tex2jax_ignore">studentscleaned.csv</code> data set consists of a sample of 4892 students who have taken a statistics course.  It records information such as their gender, major, whether or not they've participated in online statistics tutoring and their scores on the two exams in the course.</p>
+<p>Run the following code to download <code class="code-inline tex2jax_ignore">studentscleaned.csv</code> and display it's variables. <pre class="ptx-sagecell sagecell-r" id="sage-271"><script type="text/x-sage">students = read.csv("https://github.com/TienChih/tbil-stats/raw/main/data/studentscleaned.csv")
+names(students)
+</script></pre></p>
+</div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>We are curious to see for students who have done the online tutoring, whether or not on average they will improve from test 1 to test 2.  Let <span class="process-math">\(d\)</span> denote the score from the first test, subtracted from the score from the second test. Which of the following best describes the null hypothesis <span class="process-math">\(H_0\text{?}\)</span></p>
+<ul class="disc">
+<li><p><span class="process-math">\(\mu_d\lt 0\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(\mu_d&gt; 0\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(\mu_d\neq 0\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(\mu_d= 0\text{.}\)</span></p></li>
+</ul></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>Which of the following best describes the alternative hypothesis <span class="process-math">\(H_A\text{?}\)</span></p>
+<ul class="disc">
+<li><p><span class="process-math">\(\mu_d\lt 0\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(\mu_d&gt; 0\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(\mu_d\neq 0\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(\mu_d= 0\text{.}\)</span></p></li>
+</ul></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>We first subset out the students who took online tutoring.  Run the following to define <code class="code-inline tex2jax_ignore">studentstutor</code>, the subset of students who took online tutoring, and summarize the findings: <pre class="ptx-sagecell sagecell-r" id="sage-272"><script type="text/x-sage">studentstutor=subset(students, students$online.tutorial==1)
+summary(studentstutor)
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>Run the following code to define the difference of the scores between exams <code class="code-inline tex2jax_ignore">changeinscore</code> and display a histogram of the changes, including a line indicating 0 change, and a line indicating the sample average change: <pre class="ptx-sagecell sagecell-r" id="sage-273"><script type="text/x-sage">changeinscore=studentstutor$score2-studentstutor$score1
+hist(changeinscore)
+abline(v = 0, col="red", lwd=3, lty=2)
+abline(v = mean(changeinscore), col="blue", lwd=3, lty=2)
+</script></pre> Based on this graphic, do we think the null hypothesis is plausible?</p>
+<p>Fix and run the following code to perform the appropriate hypothesis test and compute a <span class="process-math">\(p\)</span>-value: <pre class="ptx-sagecell sagecell-r" id="sage-274"><script type="text/x-sage">t.test(changeinscore, mu=FIXME, alternative="FIXME")
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p>State the meaning of the <span class="process-math">\(p\)</span>-value within the context of this problem in a complete sentence.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p>Do we  reject the null hypothesis?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p>What sort of error could have been made? (Type 1 or Type 2)</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(h)</span></h5>
+<p>Fix and run the following to compute a  95% confidence interval for  <span class="process-math">\(\mu_d\text{.}\)</span> <pre class="ptx-sagecell sagecell-r" id="sage-275"><script type="text/x-sage">t.test(changeinscore, conf.level=FIXME)$conf.int
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(i)</span></h5>
+<p>State what this confidence interval means in the context of this problem using complete sentences.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(j)</span></h5>
+<p>Repeat the above for students who did not do the online tutoring.</p></article></article><span class="incontext"><a href="Sec_PairedData.html#activity-studentscores" class="internal">in-context</a></span>
+</body>
+</html>

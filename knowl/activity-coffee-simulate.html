@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Simulating Coffee Drinkers.</span>
+</h4>
+<div class="introduction"><p>Suppose that  a coffee drinkers has a 70% chance to use cream (<span class="process-math">\(P(C)\)</span>), out of coffee drinkers who use cream, they have an 80% chance to use sugar (<span class="process-math">\(P(S|C)\)</span>), and out of those who do not use cream, they have a 40% chance to use sugar (<span class="process-math">\(P(S|C^c)\)</span>).</p></div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>Run the following code to simulate 100 random coffee drinkers and whether or not they use cream.</p>
+<p><pre class="ptx-sagecell sagecell-r" id="sage-70"><script type="text/x-sage">cream = sample(c("cream", "no cream"), 100, replace = TRUE, prob = c(0.7, 0.3))
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>Run the following code to simulate the coffee drinker's sugar preference, based on if they use cream.</p>
+<p><pre class="ptx-sagecell sagecell-r" id="sage-71"><script type="text/x-sage">sugar = rep(NA, 100)
+
+for(i in 1:100){
+  if(cream[i]=="cream"){
+    sugar[i]=sample(c("sugar", "no sugar"), 1, replace = TRUE, prob = c(0.8, 0.2))
+  }
+  else{
+    sugar[i]=sample(c("sugar", "no sugar"), 1, replace = TRUE, prob = c(0.4, 0.6))
+  }
+}
+
+sugar
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>Run the following code to show coffee drinkers preferences for cream and sugar.</p>
+<p><pre class="ptx-sagecell sagecell-r" id="sage-72"><script type="text/x-sage">table(cream,sugar)
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>How do these values compare to what you found in <a href="" class="xref" data-knowl="./knowl/activity-conditional-on-coffee.html" title="Activity 2.3.1: Conditional Probability and Coffee">Activity 2.3.1</a>?</p></article></article><span class="incontext"><a href="Sec_Bayes.html#activity-coffee-simulate" class="internal">in-context</a></span>
+</body>
+</html>

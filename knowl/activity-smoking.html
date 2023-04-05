@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">Adults who Smoke.</span>
+</h4>
+<div class="introduction"><p>A research team wishes to decide what percentage of adults in a town smokes.  In an survey of 232 adults from the town, 48 of them smoke.</p></div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>What is the population under consideration?</p>
+<ol class="decimal">
+<li><p>Adults who smoke.</p></li>
+<li><p>The adults who live in the town.</p></li>
+<li><p>232 adults.</p></li>
+<li><p>48 smokers.</p></li>
+</ol></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>What is the parameter of interest?</p>
+<ol class="decimal">
+<li><p>Proportion of adults who smoke.</p></li>
+<li><p>Proportion of adults living in this town who smoke.</p></li>
+<li><p>Average number of times adults smoke each week.</p></li>
+<li><p>Proportion of adult humans on earth who live in this town.</p></li>
+</ol></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>What is the point estimate for the parameter?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>Use <a href="" class="xref" data-knowl="./knowl/theorem-CLTprop.html" title="Theorem 4.1.4: The Central Limit Theorem (Proportion)">Theorem 4.1.4</a> and the point estimate to compute the Sample Error for the point estimate.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p>Suppose that the actual percentage of adults who smoke in the town is 20%.  Is this suprising?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<p>Recompute the Sample Error using <span class="process-math">\(p=0.2\)</span>  Is it much different than what you found in (d)?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<p>Fix and run the following code to simulate the 1000 surveys of size <code class="code-inline tex2jax_ignore">n</code>, probability <code class="code-inline tex2jax_ignore">p</code> and point estimate <code class="code-inline tex2jax_ignore">phat</code>, as well as plot a histogram of the survey results, and the normal approximation: <pre class="ptx-sagecell sagecell-r" id="sage-149"><script type="text/x-sage">trials=1000
+
+n=FIXME
+p=FIXME
+phat=FIXME
+
+mu_p=p
+SE_p=sqrt(p*(1-p)/n)
+
+results=rep(0,trials)
+
+for(i in 1:n){
+  results=results+sample(c(1, 0), trials, replace = TRUE, prob = c(p, 1-p)) 
+}
+
+proportion=results/n
+
+hist(proportion, prob=TRUE, breaks=25)
+curve(dnorm(x, mean=mu_p, sd=SE_p), col="darkblue", lwd=2, add=TRUE, yaxt="n")
+abline(v=phat, col="red",lwd=3, lty=2 )
+print(trials)
+</script></pre> Would 48 respondents replying that they smoke be abnormal?</p></article></article><span class="incontext"><a href="Sec_PointEstimates.html#activity-smoking" class="internal">in-context</a></span>
+</body>
+</html>

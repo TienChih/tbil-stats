@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="remark remark-like"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.2.4</span><span class="period">.</span>
+</h4>
+<p>Following the same reasoning as in <a href="Sec_ConfidenceInterval.html" class="internal" title="Section 4.2: Introduction to Confidence Intervals (F2)">Section 4.2</a> we can compute a confidence interval for the differences of true proportions.  Suppose you had two categorical variables from whom you collect samples of size <span class="process-math">\(n_1, n_2\)</span> and obtain sample proportions <span class="process-math">\(\hat{p}_1, \hat{p}_2\text{.}\)</span>  Then a C% confidence interval for the difference between the true proportions <span class="process-math">\(D=p_1-p_2\)</span> is an interval centered at <span class="process-math">\(d=\hat{p}_1-\hat{p}_2\)</span> which has a C% chance of containing D.</p>
+<p>We can compute this interval to be</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/remark-diffofprop.html ./knowl/remark-otherCI.html">
+\begin{equation*}
+[(p_1-p_2)-z^*SE_D, (p_1-p_2)+z^*SE_D]
+\end{equation*}
+</div>
+<p class="continuation">where <span class="process-math">\(SE_D=\sqrt{\frac{p_1(1-p_1)}{n_1}+\frac{p_2(1-p_2)}{n_2}}\)</span> as in <a href="" class="xref" data-knowl="./knowl/remark-diffofprop.html" title="Remark 5.2.3: Difference of Proportions">Remark 5.2.3</a> and <span class="process-math">\(z^*\)</span> is found as in <a href="" class="xref" data-knowl="./knowl/remark-otherCI.html" title="Remark 4.2.5">Remark 4.2.5</a>:</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/remark-diffofprop.html ./knowl/remark-otherCI.html">
+\begin{equation*}
+\begin{array}{|c|c|}
+\hline
+C\% \amp z^*\\
+\hline
+90\% \amp 1.645\\
+95\% \amp 1.96\\
+99\% \amp 2.576 \\
+\hline
+\end{array}
+\end{equation*}
+</div></article><span class="incontext"><a href="Sec_TwoVarCat.html#remark-CIfordiffprop" class="internal">in-context</a></span>
+</body>
+</html>

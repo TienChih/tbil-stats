@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.5.4</span><span class="period">.</span><span class="space"> </span><span class="title">Blood Pressure and Medication: Power Computation.</span>
+</h4>
+<div class="introduction">
+<p>There is of course some chance that with 100 people in each group, that just by sheer chance the blood pressures are such that the null hypothesis can be rejected.  What are the chances of this?</p>
+<p>For simplicities sake, we will assume that this sample size allows a normal distribution to be utilized in place of a <span class="process-math">\(t\)</span>-distribution.</p>
+</div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>Recall that for a normal distribution with mean <span class="process-math">\(\mu=0\)</span> and standard deviation <span class="process-math">\(SE\)</span> that 95% of the distribution falls between <span class="process-math">\(-1.96SE, 1.96SE\text{.}\)</span>  Compute these values with the <span class="process-math">\(SE\)</span> we found in <a href="" class="xref" data-knowl="./knowl/activity-bloodpressure.html" title="Activity 6.5.3: Blood Pressure and Medication">Activity 6.5.3</a>.</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>Recall that we reject the null hypothesis if <span class="process-math">\(\bar{x}_1-\bar{x}_2\)</span> falls into the 2.5% tail regions: <figure class="figure figure-like"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/image-41.svg" role="img" class="contained" alt="2.5%tails."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.5.4<span class="period">.</span></span><span class="space"> </span>2.5% Tails.</figcaption></figure></p>
+<p>For what values of <span class="process-math">\(\bar{x}_1-\bar{x}_2\)</span> would we actually reject the null?</p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>But note that the <em class="emphasis">actual</em> sampling distribution would be centered at <span class="process-math">\(\mu_1-\mu_2=-3\text{:}\)</span> <figure class="figure figure-like"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/image-42.svg" role="img" class="contained" alt="The real sampling distribution and the assumed null distribution."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.5.5<span class="period">.</span></span><span class="space"> </span>The real sampling distribution and the assumed null distribution.</figcaption></figure></p>
+<p>So what's the probability that this study would actually have statistically significant results?  Compute <span class="process-math">\(P(Y\lt -1.96SE)\)</span> where <span class="process-math">\(-1.96SE\)</span> as we've already computed, and <span class="process-math">\(Y\)</span> is the sampling distribution, a normal variable with mean <span class="process-math">\(-3\)</span> and standard deviation <span class="process-math">\(SE\text{.}\)</span> <pre class="ptx-sagecell sagecell-r" id="sage-309"><script type="text/x-sage">
+</script></pre> <a href="" class="hint-knowl original" data-knowl="./knowl/hint-42-hidden.html" title="Hint 1: Desmos"><span class="type">Hint</span><span class="period">.</span><span class="space"> </span><span class="title">Desmos</span></a></p>
+<p>This probability is called the <em class="emphasis">power</em> of the test for a difference of <span class="process-math">\(-3\text{.}\)</span></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p>To see what an actual study would look like, run the following code to sample <code class="code-inline tex2jax_ignore">n1=100</code>, <code class="code-inline tex2jax_ignore">n2=100</code> people from two distributions where the mean is different by 3, and see if we can reject the null hypothesis. <pre class="ptx-sagecell sagecell-r" id="sage-310"><script type="text/x-sage">n1=100
+n2=100
+
+sampA=rnorm(n1, 135, 12)
+sampB=rnorm(n2, 132, 12)
+boxplot(sampA, sampB)
+t.test(sampA, sampB, alternative="two.sided")
+</script></pre></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<p>Run the following code to simiulate 1000 trials of this medication with 100 subjects in each group, and record the <code class="code-inline tex2jax_ignore">p.value</code> from each trial, and display a histogram of the results. <pre class="ptx-sagecell sagecell-r" id="sage-311"><script type="text/x-sage">n1=100
+n2=100
+trials=1000
+
+pvec=rep(NA, trials)
+
+for(i in 1:trials){
+  sampA=rnorm(n1, 135,12)
+  sampB=rnorm(n2, 132, 12)
+  pvec[i]=t.test(sampA, sampB, alternative="two.sided")$p.value
+}
+
+hist(pvec, breaks=25)
+abline(v = 0.05, col="red", lwd=3, lty=2)
+</script></pre> Then run the following to see what proportion of the time we reject the null: <pre class="ptx-sagecell sagecell-r" id="sage-312"><script type="text/x-sage">length(which(pvec < 0.05))/trials
+</script></pre> How does this value compare to the power of the test which you computed in (c)?</p></article></article><span class="incontext"><a href="Sec_SizeofSampleNum.html#activity-bloodpressure2" class="internal">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Run the following code to simulate 10,000 possible surveys, and display a histogram of the proportion of respondents who support solar energy: <pre class="ptx-sagecell sagecell-r" id="sage-144"><script type="text/x-sage">trials=10000       
+solar_support= rep(0, trials)
+
+sample_size=1000
+
+
+for(i in 1:trials){
+  samp=sample(possible_entries, size=sample_size)
+  solar_support[i]=length(which(samp=="support"))/1000
+}
+hist(solar_support, breaks=25)
+print(sample_size)
+</script></pre> What do we notice about the shape of the histogram?</p>
+<span class="incontext"><a href="Sec_PointEstimates.html#p-865" class="internal">in-context</a></span>
+</body>
+</html>

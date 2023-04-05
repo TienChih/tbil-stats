@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="task exercise-like"><h5 class="heading">
+<span class="type">Task</span><span class="space"> </span><span class="codenumber">6.4.5.a</span><span class="period">.</span>
+</h5>
+<p>Run the following code to sample 30 lunch rushes in the east location, display a histogram of the results, and show the mean and standard deviation. <pre class="ptx-sagecell sagecell-r" id="sage-290"><script type="text/x-sage">eastlunch=30
+east_mu=runif(1,30,50)
+
+east_samp=round(rnorm(eastlunch, east_mu, 8))
+hist(east_samp, col="red")
+print(mean(east_samp))
+print(sd(east_samp))
+</script></pre></p></article><span class="incontext"><a href="Sec_TwoVarNum.html#task-887" class="internal">in-context</a></span>
+</body>
+</html>

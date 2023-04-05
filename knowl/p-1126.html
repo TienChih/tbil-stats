@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script>// Make *any* pre with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
+                       linked: true,
+                       languages: ['r'],
+                       evalButtonText: 'Evaluate (R)'});
+</script>
+</head>
+<body class="ignore-math">
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Run the following code to poll 100 customers in the West location and see how many order spicy wings. <pre class="ptx-sagecell sagecell-r" id="sage-186"><script type="text/x-sage">westpoll=100
+west_p=sample(c(0.3, 0.4, 0.5), 1, prob=c(0.25, 0.5, 0.25))
+
+west_samp=sample(c("SPICYWINGS", "NO"), westpoll, replace=TRUE, prob=c(west_p, 1-west_p))
+west_x=length(which(west_samp=="SPICYWINGS"))
+</script></pre> We know that <span class="process-math">\(n_2=100\text{,}\)</span> compute <span class="process-math">\(\hat{p_2}\text{,}\)</span> the proportion of the West location sample who orders Spicy Wings.</p>
+<span class="incontext"><a href="Sec_TwoVarCat.html#p-1126" class="internal">in-context</a></span>
+</body>
+</html>
