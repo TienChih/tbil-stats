@@ -228,7 +228,7 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-r',
 </h4>
 <p id="p-948">The 95% confidence interval is a range of values, so that the actual proportion of heads has a 95% chance of being in the interval.  Since 0.5 is in this interval, we can't rule out the probability that the coin really is fair.</p>
 <p id="p-949">Note that we <em class="emphasis">have not proven the coin is fair</em>.  After all, there are many values in this interval other than 0.5  There's also the 5% chance that the proportion of heads this coin will show is outside of this interval, which is small, but not 0.</p>
-<p id="p-950">But the evidence certainly isn't strong enough to rule out that the coin is fair.  So we accept the coin may be fair.</p></article><article class="exploration project-like" id="exploration-NewCoin"><h4 class="heading">
+<p id="p-950">But the evidence certainly isn't strong enough to rule out that the coin is fair.  So we accept the coin may be fair, since we fail to show strong enough evidence that it isn't.</p></article><article class="exploration project-like" id="exploration-NewCoin"><h4 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">4.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">A New Coin.</span>
 </h4>
 <div class="introduction" id="introduction-108">
@@ -257,7 +257,7 @@ abline(v = 0.14, lwd = 2, lty = 2, col = "red")
 </h4>
 <p id="p-957">With the new confidence interval, since 0.5 is not in this interval, we can say that it's extremely unlikely that the coin is fair, and you are right in your suspicions.</p>
 <p id="p-958">Note that we technically <em class="emphasis">have not proven the coin is biased</em>.  There's still the 5% chance that the proportion of heads this coin will show is outside of this interval.</p>
-<p id="p-959">But this is a highly unlikely event, given the evidence, we accept that coin is likely biased.</p></article><article class="definition definition-like" id="definition-hypothesis"><h4 class="heading">
+<p id="p-959">But this is a highly unlikely event, given the evidence, we reject the idea that the coin could be fair, and accept that coin is likely biased.</p></article><article class="definition definition-like" id="definition-hypothesis"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.3.3</span><span class="period">.</span>
 </h4>
 <p id="p-960">When presented with a possible claim, the <em class="emphasis">Null Hypothesis</em> is the skeptical perspective, and presents a claim to be tested.  The <em class="emphasis">Alternative Hypothesis</em> is the presented claim which we give credence to if the Null is rejected.</p></article><article class="remark remark-like" id="remark-jury"><h4 class="heading">
@@ -389,7 +389,7 @@ p\text{-value}=P(|X-p_0|&gt; |\hat{p}-p_0|)=P(X&gt;p_0+|p_0-\hat{p}|)+P(X\lt p_0
 <li id="li-181">
 <p id="p-980">Compare the <span class="process-math">\(p\)</span>-value to the level of significance <span class="process-math">\(\alpha\text{:}\)</span></p>
 <ul class="disc">
-<li id="li-182"><p id="p-derived-li-182">If <span class="process-math">\(\alpha\leq \)</span> <span class="process-math">\(p\)</span>-value, then we <em class="emphasis">accept</em> the Null Hypothesis.</p></li>
+<li id="li-182"><p id="p-derived-li-182">If <span class="process-math">\(\alpha\leq \)</span> <span class="process-math">\(p\)</span>-value, then we <em class="emphasis">fail to reject</em> the Null Hypothesis (and must accept that it <em class="emphasis">could</em> be true.)</p></li>
 <li id="li-183"><p id="p-derived-li-183">If <span class="process-math">\(\alpha &gt; \)</span> <span class="process-math">\(p\)</span>-value, then we <em class="emphasis">reject</em> the Null Hypothesis.</p></li>
 </ul>
 </li>

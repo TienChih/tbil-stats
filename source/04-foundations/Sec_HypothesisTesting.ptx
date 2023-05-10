@@ -80,7 +80,7 @@
             </p>
 
             <p>
-              But the evidence certainly isn't strong enough to rule out that the coin is fair.  So we accept the coin may be fair.
+              But the evidence certainly isn't strong enough to rule out that the coin is fair.  So we accept the coin may be fair, since we fail to show strong enough evidence that it isn't.
             </p>
           </remark>
 
@@ -168,7 +168,7 @@
             </p>
 
             <p>
-              But this is a highly unlikely event, given the evidence, we accept that coin is likely biased.
+              But this is a highly unlikely event, given the evidence, we reject the idea that the coin could be fair, and accept that coin is likely biased.
             </p>
           </remark>
  
@@ -624,7 +624,7 @@
                 <li>Compute the <m>p</m>-value via <xref ref="definition-pvalue"/> based on your <m>H_A</m>.</li>
                 <li><p>Compare the <m>p</m>-value to the level of significance <m>\alpha</m>:
                   <ul>
-                    <li>If <m>\alpha\leq </m> <m>p</m>-value, then we <em>accept</em> the Null Hypothesis.</li>
+                    <li>If <m>\alpha\leq </m> <m>p</m>-value, then we <em>fail to reject</em> the Null Hypothesis (and must accept that it <em>could</em> be true.)</li>
                     <li>If <m>\alpha > </m> <m>p</m>-value, then we <em>reject</em> the Null Hypothesis.</li>
                   </ul>
                 </p>

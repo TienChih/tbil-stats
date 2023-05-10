@@ -74,7 +74,7 @@
 
           <remark xml:id="remark-95prop">
           <p>
-            Suppose you had a sample of size <m>n</m> and a sample proportion of <m>\hat{p}</m>.  Following <xref ref="exploration-CI"/>, we have that <me>[\hat{p}-1.96SE_{\hat{p}}, \hat{p}+1.96SE_{\hat{p}}]</me> is a 95% Confidence Interval for <m>\hat{p}</m>.  In other words, there is a 95% chance that <m>p</m> lies in this interval.
+            Suppose you had a sample of size <m>n</m> and a sample proportion of <m>\hat{p}</m>.  Following <xref ref="exploration-CI"/>, we have that <me>[\hat{p}-1.96SE_{\hat{p}}, \hat{p}+1.96SE_{\hat{p}}]</me> is a 95% Confidence Interval for <m>p</m>.  In other words, there is a 95% chance that <m>p</m> lies in this interval.
 
              <figure>
 <caption>A 95% confidence interval for <m>p</m>.  There is a 95% chance the population proportion <m>p</m> lies in this interval, and a 5% chance it does not.</caption>      
@@ -185,7 +185,7 @@
 
           <task>
             <p>
-              Use <xref  ref="remark-95prop"/> to compute a 95% confidence interval for <m>p</m>: the proportion of Americams who prefer their steaks medium-rare.  Is 23% in this interval?
+              Use <xref  ref="remark-95prop"/> to compute a 95% confidence interval for <m>p</m>: the proportion of Americans who prefer their steaks medium-rare.  Is 23% in this interval?
               <sage language="r">
                       <input>
         
